@@ -11,8 +11,9 @@ export const SITE = {
   phoneHref: 'tel:+15033580443',
   whatsapp: '15033580443',
   whatsappDisplay: '+1 503-358-0443',
+  // Same opening line as the rest of the portfolio: greeting, brand, site URL.
   whatsappMessage:
-    'Hi, I would like a quote for custom retail packaging. Here is what I need:',
+    'Hi The Retail Packaging! I need more info about The Retail Packaging https://theretailpackaging.com/',
   country: 'US',
   social: [] as string[], // no invented profiles
   priceLine:
