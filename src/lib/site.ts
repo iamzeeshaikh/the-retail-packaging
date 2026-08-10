@@ -6,7 +6,7 @@ export const SITE = {
   lang: 'en-US',
   description:
     'Custom retail packaging manufactured to order for US brands. Boxes, bags, pouches, labels and displays built to your dimensions and printed with your artwork.',
-  email: 'quotes@theretailpackaging.com',
+  email: 'info@theretailpackaging.com',
   phone: '+1 503-358-0443',
   phoneHref: 'tel:+15033580443',
   whatsapp: '15033580443',

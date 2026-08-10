@@ -213,7 +213,7 @@ export default async function handler(req, res) {
     console.error('[quote] SMTP not configured — set SMTP_* and QUOTE_TO_EMAIL', { ref })
     return res.status(503).json({
       ok: false,
-      error: 'Our quote inbox is not reachable right now. Please email quotes@theretailpackaging.com.',
+      error: 'Our quote inbox is not reachable right now. Please email info@theretailpackaging.com.',
     })
   }
 
@@ -240,7 +240,7 @@ export default async function handler(req, res) {
     console.error('[quote] send failed', { ref, error: err.message })
     return res.status(502).json({
       ok: false,
-      error: 'We could not send that just now. Please email quotes@theretailpackaging.com.',
+      error: 'We could not send that just now. Please email info@theretailpackaging.com.',
     })
   }
 }

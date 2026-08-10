@@ -31,7 +31,7 @@ export const legalPages: LegalPage[] = [
       { h2: 'Your rights', body: ['You can ask us for a copy of the data we hold about you, ask us to correct it, or ask us to delete it where we are not required to keep it. Write to the contact address below and we will respond within 30 days.'] },
       { h2: 'Cookies and analytics', body: ['The site sets no advertising cookies. Where analytics is enabled it is used to understand which pages are useful, not to identify individuals. Full detail is in our cookie policy.'] },
       { h2: 'Security', body: ['Form submissions travel over HTTPS. Uploaded files are validated by type and size and renamed before storage. Credentials for our email systems are held in environment variables and never appear in the website code delivered to your browser.'] },
-      { h2: 'Contact', body: ['Questions about this policy, or requests about your data, can be sent to quotes@theretailpackaging.com or by phone on +1 503-358-0443.'] },
+      { h2: 'Contact', body: ['Questions about this policy, or requests about your data, can be sent to info@theretailpackaging.com or by phone on +1 503-358-0443.'] },
     ],
   },
   {
@@ -95,7 +95,7 @@ export const legalPages: LegalPage[] = [
       ]},
       { h2: 'Known limitations', body: ['The 3D box preview in the packaging tool is decorative and conveys no information that is not also present in the written specification summary beside it. It is hidden from assistive technology rather than described.', 'Some product photography is supplied by manufacturers and its alt text describes the product rather than every visual detail of the image.', 'Complex specification tables scroll horizontally on narrow screens. They remain keyboard scrollable and are marked up with proper row and column headers.'] },
       { h2: 'Testing', body: ['Components are tested with keyboard navigation and against automated accessibility checks during the build. We have not commissioned an independent third-party audit, and we would rather say so than imply certification we do not hold.'] },
-      { h2: 'Reporting a problem', body: ['If any part of this site prevents you from doing something, tell us and we will fix it. Email quotes@theretailpackaging.com or call +1 503-358-0443 and describe what you were trying to do.', 'We aim to respond within 5 business days and will offer an alternative way to complete the task in the meantime.'] },
+      { h2: 'Reporting a problem', body: ['If any part of this site prevents you from doing something, tell us and we will fix it. Email info@theretailpackaging.com or call +1 503-358-0443 and describe what you were trying to do.', 'We aim to respond within 5 business days and will offer an alternative way to complete the task in the meantime.'] },
     ],
   },
 ]
