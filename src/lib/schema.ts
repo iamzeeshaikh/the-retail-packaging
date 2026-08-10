@@ -151,12 +151,18 @@ export interface ProductSchemaInput {
 
 export function product(input: ProductSchemaInput): Json {
   const url = canonical(input.path)
+  /* Merchant listings want a product identifier. These formats are made to
+     order, so there is no GTIN to quote — an SKU and MPN derived from the
+     format slug are stable, honest and unique across the catalogue. */
+  const code = `TRP-${input.path.replace(/\//g, '').toUpperCase()}`
   const node: Json = {
     '@type': 'Product',
     '@id': `${url}#product`,
     name: input.name,
     description: input.description,
     url,
+    sku: code,
+    mpn: code,
     category: input.category,
     brand: { '@type': 'Brand', name: SITE.name },
     manufacturer: { '@id': `${SITE.origin}/#organization` },
