@@ -1,0 +1,139 @@
+---
+import Base from '../layouts/Base.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import CtaBand from '../components/CtaBand.astro'
+import Faqs from '../components/Faqs.astro'
+import { bySlug } from '../lib/catalog'
+import { clampText } from '../lib/copy'
+import * as S from '../lib/schema'
+
+export interface Props {
+  data: any
+  section: 'blog' | 'resources'
+  sectionName: string
+  path: string
+  wordCount: number
+  faqs?: { q: string; a: string }[]
+  headings?: { depth: number; slug: string; text: string }[]
+}
+const { data, section, sectionName, path, wordCount, faqs = [], headings = [] } = Astro.props
+
+const hero = data.heroProduct ? bySlug.get(data.heroProduct) : undefined
+const heroImg = hero?.images?.[0]
+const title = clampText(data.metaTitle ?? `${data.title} | ${sectionName}`, 62)
+const description = clampText(data.description, 132)
+const published = new Date(data.publishDate).toISOString()
+const updated = new Date(data.updatedDate ?? data.publishDate).toISOString()
+const fmt = (d: string) => new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+const minutes = Math.max(4, Math.round(wordCount / 225))
+
+const trail = [
+  { name: 'Home', url: '/' },
+  { name: sectionName, url: `/${section}/` },
+  { name: data.title, url: path },
+]
+
+const nodes: (ReturnType<typeof S.organization> | null)[] = [
+  S.organization(), S.website(),
+  S.webPage({ path, title, description, image: heroImg ? `${heroImg.base}-1400.webp` : undefined, datePublished: published, dateModified: updated }),
+  S.breadcrumbs(path, trail),
+]
+if (section === 'blog') {
+  nodes.push(S.article({
+    path, headline: data.title, description,
+    image: heroImg ? `${heroImg.base}-1400.webp` : '/brand/og-default.png',
+    datePublished: published, dateModified: updated, authorName: data.author, wordCount,
+  }))
+} else if (data.kind === 'howto') {
+  nodes.push(S.howTo({
+    path, name: data.title, description,
+    steps: headings.filter((h) => h.depth === 2).map((h) => ({ name: h.text, text: h.text })),
+  }))
+} else {
+  nodes.push(S.article({
+    path, headline: data.title, description,
+    image: heroImg ? `${heroImg.base}-1400.webp` : '/brand/og-default.png',
+    datePublished: published, dateModified: updated, authorName: data.author, wordCount,
+  }))
+}
+if (faqs.length) nodes.push(S.faqPage(path, faqs))
+const schema = S.graph(nodes)
+const toc = headings.filter((h) => h.depth === 2)
+---
+<Base
+  title={title} description={description} path={path}
+  image={heroImg ? `${heroImg.base}-1400.webp` : undefined}
+  imageAlt={data.heroAlt ?? data.title}
+  schema={schema}
+>
+  <Breadcrumbs trail={trail} />
+  <article>
+    <header class="art-head">
+      <div class="wrap wrap-narrow">
+        <p class="eyebrow">{sectionName}</p>
+        <h1>{data.title}</h1>
+        <p class="lede">{data.description}</p>
+        <div class="art-meta">
+          <span>{data.author}</span>
+          <span aria-hidden="true">·</span>
+          <time datetime={published}>{fmt(published)}</time>
+          {updated !== published && (<><span aria-hidden="true">·</span><span>Updated {fmt(updated)}</span></>)}
+          <span aria-hidden="true">·</span>
+          <span>{minutes} min read</span>
+        </div>
+      </div>
+    </header>
+
+    {heroImg && (
+      <div class="wrap">
+        <figure class="art-hero">
+          <img src={`${heroImg.base}-1400.webp`}
+            srcset={`${heroImg.base}-800.webp 800w, ${heroImg.base}-1400.webp 1400w`}
+            sizes="(max-width: 1240px) 94vw, 1160px"
+            width={heroImg.width} height={heroImg.height}
+            alt={data.heroAlt ?? `${hero?.name} produced as custom retail packaging`}
+            fetchpriority="high" decoding="async" />
+        </figure>
+      </div>
+    )}
+
+    <div class="wrap art-body">
+      {toc.length > 2 && (
+        <aside class="toc">
+          <nav aria-labelledby="toc-h">
+            <p class="toc-h" id="toc-h">On this page</p>
+            <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+          </nav>
+        </aside>
+      )}
+      <div class="prose art-prose"><slot /></div>
+    </div>
+  </article>
+
+  {faqs.length > 0 && <Faqs faqs={faqs} title="Related questions" />}
+  <CtaBand />
+</Base>
+
+<style>
+  .art-head { background: linear-gradient(180deg,var(--ivory),var(--ivory-deep)); border-bottom:1px solid var(--border);
+    padding-block: clamp(1rem,.5rem + 2vw,2.5rem) clamp(2rem,1.5rem + 2vw,3rem); }
+  .art-head h1 { font-size: var(--fs-3xl); }
+  .art-head .lede { margin-top: var(--s-4); }
+  .art-meta { display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; margin-top:var(--s-6);
+    font-size:var(--fs-xs); color:var(--text-faint); }
+  .art-hero { margin: var(--s-8) 0 0; border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--border); aspect-ratio:16/7; }
+  .art-hero img { width:100%; height:100%; object-fit:cover; }
+  .art-body { display:grid; grid-template-columns:minmax(0,240px) minmax(0,1fr); gap:clamp(2rem,1rem + 4vw,4rem);
+    align-items:start; padding-block: var(--section-y); }
+  @media (max-width: 980px) { .art-body { grid-template-columns:1fr; } .toc { position:static !important; } }
+  .toc { position:sticky; top:calc(var(--header-h) + 1.5rem); }
+  .toc-h { font-size:var(--fs-xs); font-weight:700; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--text-faint); margin-bottom:var(--s-3); }
+  .toc ol { list-style:none; padding:0; margin:0; display:grid; gap:.5rem; counter-reset:t; }
+  .toc li { counter-increment:t; }
+  .toc a { font-size:var(--fs-sm); color:var(--text-muted); text-decoration:none; display:block; padding-left:1.6rem; position:relative; }
+  .toc a::before { content:counter(t,decimal-leading-zero); position:absolute; left:0; color:var(--stone-300); font-size:.7rem; top:.15em; }
+  .toc a:hover { color:var(--forest); }
+  .art-prose { max-width: 74ch; }
+  .art-prose :global(h2) { scroll-margin-top: 6rem; }
+</style>

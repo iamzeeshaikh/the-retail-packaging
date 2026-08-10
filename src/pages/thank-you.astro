@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro'
+import { SITE, whatsappUrl } from '../lib/site'
+---
+<Base title="Thank You | Request Received" description="Your packaging request has been received. We reply with a specification and a written price, usually within one business day." path="/thank-you/" noindex>
+  <section class="section">
+    <div class="wrap wrap-narrow ty">
+      <div class="tick" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m4 12.5 5.5 5.5L20 7"/></svg>
+      </div>
+      <h1>Request received</h1>
+      <p class="lede">
+        Thanks — your request is with our team. We reply with a specification, a lead time and a
+        written price, usually within one business day.
+      </p>
+      <p class="ref" data-ref hidden>Your reference: <strong data-ref-value></strong></p>
+
+      <h2>What happens next</h2>
+      <ol class="next">
+        <li>We review your dimensions and quantity and confirm the format suits the product.</li>
+        <li>You receive a written specification — board grade, structure, print method, finishing and lead time.</li>
+        <li>If anything is unclear, we call or email before quoting rather than guessing.</li>
+        <li>Once you approve, we send a dieline template sized to your product.</li>
+      </ol>
+
+      <h2>While you wait</h2>
+      <p class="muted">
+        If your project is still taking shape, our
+        <a href="/resources/">packaging specification guides</a> cover materials, box styles,
+        printing methods and file setup.
+      </p>
+
+      <div class="btn-row" style="margin-top:var(--s-8)">
+        <a class="btn btn-outline" href={SITE.phoneHref} data-analytics="phone-click">Call {SITE.phone}</a>
+        <a class="btn btn-ghost" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" data-analytics="whatsapp-click">WhatsApp us</a>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .ty { text-align:center; }
+  .ty .lede, .ty .muted { margin-inline:auto; }
+  .tick { width:64px; height:64px; margin:0 auto var(--s-6); border-radius:50%;
+    background:var(--forest-tint); color:var(--forest); display:grid; place-items:center; }
+  .ref { margin-top:var(--s-5); font-size:var(--fs-sm); color:var(--text-muted); }
+  .next { text-align:left; max-width:56ch; margin:var(--s-5) auto 0; padding-left:var(--s-6);
+    display:grid; gap:var(--s-3); color:var(--text-muted); font-size:var(--fs-sm); }
+  .next li::marker { color:var(--champagne); font-weight:700; }
+  .ty h2 { margin-top:var(--s-12); font-size:var(--fs-xl); }
+</style>
+<script>
+  const ref = sessionStorage.getItem('trp_quote_ref')
+  if (ref && ref !== 'ok') {
+    const box = document.querySelector<HTMLElement>('[data-ref]')
+    const val = document.querySelector<HTMLElement>('[data-ref-value]')
+    if (box && val) { val.textContent = ref; box.hidden = false }
+    sessionStorage.removeItem('trp_quote_ref')
+  }
+  const w = window as any
+  if (typeof w.gtag === 'function') w.gtag('event', 'quote_thank_you')
+  else if (Array.isArray(w.dataLayer)) w.dataLayer.push({ event: 'quote_thank_you' })
+</script>

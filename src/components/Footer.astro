@@ -1,0 +1,133 @@
+---
+import { categories, productsIn } from '../lib/catalog'
+import { SITE } from '../lib/site'
+
+export interface Props { year: number }
+const { year } = Astro.props
+
+// Footer links to category hubs only — never to all 371 products.
+const topCats = categories
+  .map((c) => ({ ...c, count: productsIn(c.slug).length }))
+  .sort((a, b) => b.count - a.count)
+  .slice(0, 12)
+
+const company = [
+  { name: 'About us', url: '/about-us/' },
+  { name: 'How it works', url: '/how-it-works/' },
+  { name: 'Packaging design services', url: '/packaging-design-services/' },
+  { name: 'Custom printing', url: '/custom-printing/' },
+  { name: 'Sustainability', url: '/sustainability/' },
+  { name: 'Order samples', url: '/samples/' },
+  { name: 'Contact us', url: '/contact-us/' },
+]
+
+const help = [
+  { name: 'Materials', url: '/materials/' },
+  { name: 'Printing options', url: '/printing-options/' },
+  { name: 'Finishes and add-ons', url: '/finishes-and-add-ons/' },
+  { name: 'Artwork guidelines', url: '/artwork-guidelines/' },
+  { name: 'Shipping information', url: '/shipping-information/' },
+  { name: 'FAQs', url: '/faqs/' },
+  { name: 'Resource hub', url: '/resources/' },
+  { name: 'Packaging blog', url: '/blog/' },
+]
+
+const legal = [
+  { name: 'Privacy policy', url: '/privacy-policy/' },
+  { name: 'Terms and conditions', url: '/terms-and-conditions/' },
+  { name: 'Cookie policy', url: '/cookie-policy/' },
+  { name: 'Accessibility statement', url: '/accessibility-statement/' },
+  { name: 'Sitemap', url: '/sitemap/' },
+]
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="brand-name">The Retail Packaging</span>
+        <p>
+          We manufacture custom retail packaging to order for brands selling across the United
+          States — boxes, bags, pouches, labels, sleeves and retail displays, all cut to your
+          dimensions and printed with your artwork.
+        </p>
+        <div class="foot-contact">
+          <a href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a>
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          <span>{SITE.hours}</span>
+        </div>
+        <a class="btn btn-gold" href="/request-a-quote/">Request a Quote</a>
+      </div>
+
+      <nav class="foot-cols" aria-label="Footer">
+        <div>
+          <h2 class="foot-h">Packaging categories</h2>
+          <ul role="list">
+            {topCats.map((c) => <li><a href={c.url}>{c.name}</a></li>)}
+            <li><a href="/sitemap/" class="all-link">All 26 categories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="foot-h">Company</h2>
+          <ul role="list">{company.map((l) => <li><a href={l.url}>{l.name}</a></li>)}</ul>
+        </div>
+        <div>
+          <h2 class="foot-h">Buyer guides</h2>
+          <ul role="list">{help.map((l) => <li><a href={l.url}>{l.name}</a></li>)}</ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="foot-bottom">
+      <p>© {year} {SITE.name}. All rights reserved.</p>
+      <ul role="list" class="legal">
+        {legal.map((l) => <li><a href={l.url}>{l.name}</a></li>)}
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--ink);
+    color: rgba(246, 243, 237, 0.72);
+    font-size: var(--fs-sm);
+    padding-block: var(--s-16) var(--s-8);
+    margin-top: var(--s-24);
+  }
+  .foot-top { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: var(--s-16); }
+  @media (max-width: 980px) { .foot-top { grid-template-columns: 1fr; gap: var(--s-10); } }
+
+  .brand-name { font-family: var(--font-display); font-size: var(--fs-xl); color: #fff; display: block; margin-bottom: var(--s-4); }
+  .foot-brand p { max-width: 42ch; margin-bottom: var(--s-5); line-height: 1.65; }
+  .foot-contact { display: grid; gap: 0.35rem; margin-bottom: var(--s-6); }
+  .foot-contact a { color: var(--champagne-soft); text-decoration: none; }
+  .foot-contact a:hover { text-decoration: underline; }
+  .foot-contact span { color: rgba(246, 243, 237, 0.5); font-size: var(--fs-xs); }
+
+  .foot-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-8); }
+  @media (max-width: 720px) { .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 460px) { .foot-cols { grid-template-columns: 1fr; } }
+
+  .foot-h {
+    font-family: var(--font-body);
+    font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.09em;
+    text-transform: uppercase; color: rgba(246, 243, 237, 0.5);
+    margin-bottom: var(--s-4);
+  }
+  .foot-cols ul { display: grid; gap: 0.45rem; margin: 0; padding: 0; }
+  .foot-cols a { color: rgba(246, 243, 237, 0.78); text-decoration: none; }
+  .foot-cols a:hover { color: #fff; text-decoration: underline; }
+  .all-link { color: var(--champagne-soft) !important; font-weight: 600; }
+
+  .foot-bottom {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-4);
+    margin-top: var(--s-12); padding-top: var(--s-6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: var(--fs-xs); color: rgba(246, 243, 237, 0.5);
+  }
+  .foot-bottom p { margin: 0; }
+  .legal { display: flex; flex-wrap: wrap; gap: var(--s-4); margin: 0; padding: 0; }
+  .legal a { color: rgba(246, 243, 237, 0.6); text-decoration: none; }
+  .legal a:hover { color: #fff; text-decoration: underline; }
+</style>

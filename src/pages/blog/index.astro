@@ -1,0 +1,79 @@
+---
+import Base from '../../layouts/Base.astro'
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
+import CtaBand from '../../components/CtaBand.astro'
+import { getCollection } from 'astro:content'
+import { bySlug } from '../../lib/catalog'
+import * as S from '../../lib/schema'
+
+const path = '/blog/'
+const posts = (await getCollection('blog')).sort(
+  (a, b) => +new Date(b.data.publishDate) - +new Date(a.data.publishDate)
+)
+const title = 'Packaging Blog | Guides for Retail and E-Commerce Brands'
+const description = 'Practical writing on choosing, specifying and ordering custom retail packaging — materials, printing, costs, artwork and retail requirements.'
+const trail = [{ name: 'Home', url: '/' }, { name: 'Packaging blog', url: path }]
+const fmt = (d: Date) => new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+
+const schema = S.graph([
+  S.organization(), S.website(),
+  S.webPage({ path, title, description, type: 'CollectionPage' }),
+  S.breadcrumbs(path, trail),
+  S.itemList(path, posts.map((p) => ({ name: p.data.title, url: `/blog/${p.id}/` }))),
+])
+---
+<Base title={title} description={description} path={path} schema={schema}>
+  <Breadcrumbs trail={trail} />
+  <section class="hub-hero">
+    <div class="wrap">
+      <p class="eyebrow">Packaging blog</p>
+      <h1>Writing for people specifying packaging</h1>
+      <p class="lede">
+        No trend pieces. These are the decisions that come up when a brand is choosing a format,
+        arguing with a quote, or trying to work out why artwork keeps bouncing at prepress.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid g-3">
+        {posts.map((p, i) => {
+          const hero = p.data.heroProduct ? bySlug.get(p.data.heroProduct) : undefined
+          const img = hero?.images?.[0]
+          return (
+            <article class="card card-hover reveal">
+              <a class="card-link" href={`/blog/${p.id}/`}>
+                {img && (
+                  <div class="card-media">
+                    <img src={`${img.base}-400.webp`}
+                      srcset={`${img.base}-400.webp 400w, ${img.base}-800.webp 800w`}
+                      sizes="(max-width:620px) 92vw, (max-width:1024px) 45vw, 380px"
+                      width={img.width} height={img.height}
+                      loading={i < 3 ? 'eager' : 'lazy'} decoding="async"
+                      alt={p.data.heroAlt ?? p.data.title} />
+                  </div>
+                )}
+                <div class="card-body">
+                  <p class="card-meta">{fmt(p.data.publishDate)}</p>
+                  <h2 class="card-title">{p.data.title}</h2>
+                  <p class="card-text">{p.data.description}</p>
+                  <span class="card-foot">Read the article
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+                  </span>
+                </div>
+              </a>
+            </article>
+          )
+        })}
+      </div>
+    </div>
+  </section>
+  <CtaBand />
+</Base>
+<style>
+  .hub-hero { background:linear-gradient(180deg,var(--ivory),var(--ivory-deep)); border-bottom:1px solid var(--border);
+    padding-block:clamp(1.5rem,1rem + 2vw,3rem) clamp(2.5rem,2rem + 3vw,4rem); }
+  .hub-hero .lede { margin-top:var(--s-5); }
+  .card-title { font-size: var(--fs-md); }
+</style>

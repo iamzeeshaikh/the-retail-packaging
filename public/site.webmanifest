@@ -1,0 +1,13 @@
+{
+  "name": "The Retail Packaging",
+  "short_name": "Retail Packaging",
+  "description": "Custom retail packaging manufactured to order for US brands.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf8f4",
+  "theme_color": "#14432f",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

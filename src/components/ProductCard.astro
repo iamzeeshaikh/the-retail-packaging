@@ -1,0 +1,40 @@
+---
+import type { Product } from '../lib/catalog'
+export interface Props { product: Product; loading?: 'lazy' | 'eager'; showCategory?: boolean }
+const { product: p, loading = 'lazy', showCategory = false } = Astro.props
+const img = p.images[0]
+---
+<article class="card card-hover">
+  <a class="card-link" href={p.url}>
+    <div class="card-media">
+      {img ? (
+        <img
+          src={`${img.base}-400.webp`}
+          srcset={`${img.base}-400.webp 400w, ${img.base}-800.webp 800w`}
+          sizes="(max-width: 620px) 92vw, (max-width: 1024px) 45vw, 300px"
+          width={img.width}
+          height={img.height}
+          loading={loading}
+          decoding="async"
+          alt={`${p.name} shown as a finished custom-printed pack`}
+        />
+      ) : (
+        <div class="ph" aria-hidden="true"><span>{p.name}</span></div>
+      )}
+    </div>
+    <div class="card-body">
+      {showCategory && <p class="card-meta">{p.category}</p>}
+      <h3 class="card-title">{p.name}</h3>
+      <p class="card-text">{p.form.singular.charAt(0).toUpperCase() + p.form.singular.slice(1)} · {p.images.length} photos</p>
+      <span class="card-foot">
+        View details
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>
+  </a>
+</article>
+
+<style>
+  .ph { display: grid; place-items: center; height: 100%; background: var(--ivory-deep);
+    color: var(--stone-400); font-size: var(--fs-sm); padding: var(--s-4); text-align: center; }
+</style>

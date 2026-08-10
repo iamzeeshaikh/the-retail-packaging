@@ -1,0 +1,601 @@
+---
+import Base from '../layouts/Base.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import Faqs from '../components/Faqs.astro'
+import CtaBand from '../components/CtaBand.astro'
+import { categories, productsIn } from '../lib/catalog'
+import { SITE } from '../lib/site'
+import * as S from '../lib/schema'
+
+const path = '/custom-packaging-tool/'
+const title = 'Custom Packaging Design Tool | Build a Specification'
+const description = 'Configure box style, dimensions, material, printing, colours, finish and add-ons, then send the full specification with your quote request.'
+const trail = [{ name: 'Home', url: '/' }, { name: 'Packaging design tool', url: path }]
+
+const catOptions = categories
+  .map((c) => ({ ...c, count: productsIn(c.slug).length }))
+  .sort((a, b) => a.name.localeCompare(b.name))
+
+const styles = [
+  'Reverse tuck end carton', 'Straight tuck end carton', 'Auto-lock bottom carton',
+  'Roll-end tuck front mailer', 'Regular slotted shipper', 'Rigid two-piece box',
+  'Rigid hinged lid box', 'Sleeve and tray', 'Display case with tear-away front',
+  'Locking-corner tray', 'Stand-up pouch', 'Flat pouch', 'Paper bag with handles',
+  'Pressure-sensitive label', 'Die-cut sticker', 'Not sure — advise me',
+]
+const materials = [
+  '12pt SBS paperboard', '14pt SBS paperboard', '16pt SBS paperboard', '18pt SBS paperboard',
+  'Kraft board', 'Recycled CCNB board', 'E-flute corrugated', 'B-flute corrugated',
+  'BC double-wall corrugated', 'Rigid greyboard 1.5mm', 'Rigid greyboard 2mm',
+  'Laminated barrier film', 'Recyclable mono-PE film', 'Certified compostable film',
+  'Not sure — advise me',
+]
+const printing = ['Digital press', 'Offset lithography', 'Flexography', 'Screen printing', 'Unprinted', 'Not sure — advise me']
+const finishes = ['Matte lamination', 'Gloss lamination', 'Soft-touch lamination', 'Aqueous coating', 'Spot UV', 'Foil stamping', 'Embossing', 'Uncoated / none']
+const coatings = ['None', 'Aqueous', 'UV', 'Grease-resistant', 'Moisture-resistant', 'Not sure — advise me']
+const swatches = [
+  { n: 'Natural kraft', v: '#c8a97e' }, { n: 'White', v: '#f7f5f1' },
+  { n: 'Charcoal', v: '#22262b' }, { n: 'Forest green', v: '#14432f' },
+  { n: 'Deep navy', v: '#1b2a44' }, { n: 'Burgundy', v: '#5c1f28' },
+  { n: 'Champagne', v: '#b08d46' }, { n: 'Terracotta', v: '#a8563b' },
+  { n: 'Sage', v: '#8a9a82' }, { n: 'Black', v: '#14161a' },
+]
+
+const faqs = [
+  { q: 'Does this tool give me a price?', a: 'No. It builds a specification and sends it with your quote request. We do not display an instant price because a verified pricing formula that accounts for size, board, print, finishing and quantity does not reduce to a calculator without misleading you.' },
+  { q: 'Do I have to complete every step?', a: 'No. Anything you are unsure about can be left as "advise me" and we will recommend an option. The dimensions and quantity are the two that matter most.' },
+  { q: 'Is the 3D preview an accurate render of my box?', a: 'It is a visual approximation showing proportions, colour and finish character. It is not a colour-accurate proof. For that, ask for a printed prototype on the actual substrate.' },
+  { q: 'Will my configuration be saved?', a: 'Yes, in your own browser using local storage. Nothing is sent to us until you submit the form, and clearing your browser data removes it.' },
+  { q: 'Can I upload artwork through the tool?', a: 'Yes. Up to five files of 10 MB each in PDF, AI, EPS, SVG, PNG, JPG, WEBP or ZIP.' },
+  { q: 'Can I use the tool on a phone?', a: 'Yes. On smaller screens it becomes a step-by-step flow rather than a single long form, and every control is reachable by keyboard.' },
+  { q: 'What happens after I submit?', a: 'Your full configuration arrives with our team alongside your contact details and any artwork. We reply with a specification, a lead time and a written price, usually within one business day.' },
+  { q: 'What if my requirement is not in the options?', a: 'Describe it in the additional instructions field. The option lists cover common cases, not every possible structure.' },
+  { q: 'Can I change the specification after submitting?', a: 'Yes. Nothing is committed until you approve a quote, and changes before production cost nothing beyond a reissued price.' },
+  { q: 'How accurate do my dimensions need to be?', a: 'As accurate as you can manage — measure the product at its widest point in the state it will be packed. If you only have an approximation, say so and we will confirm before tooling.' },
+]
+
+const schema = S.graph([
+  S.organization(), S.website(),
+  S.webPage({ path, title, description }),
+  S.breadcrumbs(path, trail),
+  S.faqPage(path, faqs),
+])
+---
+
+<Base title={title} description={description} path={path} schema={schema}>
+  <Breadcrumbs trail={trail} />
+
+  <section class="tool-hero">
+    <div class="wrap">
+      <p class="eyebrow">Interactive</p>
+      <h1>Build your packaging specification</h1>
+      <p class="lede">
+        Work through the options below and send the whole configuration with your quote request.
+        Anything you are unsure about can be left for us to advise on.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap tool-grid">
+      <form class="tool-form" id="pkg-tool" novalidate data-tool>
+        <ol class="steps-nav" data-steps-nav aria-label="Configuration steps">
+          <li><button type="button" data-goto="0" aria-current="step">Format</button></li>
+          <li><button type="button" data-goto="1">Size</button></li>
+          <li><button type="button" data-goto="2">Material</button></li>
+          <li><button type="button" data-goto="3">Print</button></li>
+          <li><button type="button" data-goto="4">Finish</button></li>
+          <li><button type="button" data-goto="5">Details</button></li>
+        </ol>
+
+        <!-- step 1 -->
+        <fieldset class="step-panel" data-step="0">
+          <legend>Format</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="t-cat">Packaging category</label>
+              <select class="select" id="t-cat" name="category" data-field>
+                <option value="">Select a category</option>
+                {catOptions.map((c) => <option value={c.name}>{c.name} ({c.count})</option>)}
+              </select>
+            </div>
+            <div class="field">
+              <label for="t-style">Box style or product type</label>
+              <select class="select" id="t-style" name="style" data-field>
+                <option value="">Select a style</option>
+                {styles.map((s) => <option value={s}>{s}</option>)}
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- step 2 -->
+        <fieldset class="step-panel" data-step="1" hidden>
+          <legend>Dimensions and quantity</legend>
+          <div class="form-grid">
+            <div class="field"><label for="t-l">Length</label>
+              <input class="input" id="t-l" name="length" type="number" min="0" step="0.1" inputmode="decimal" data-field data-dim /></div>
+            <div class="field"><label for="t-w">Width</label>
+              <input class="input" id="t-w" name="width" type="number" min="0" step="0.1" inputmode="decimal" data-field data-dim /></div>
+            <div class="field"><label for="t-h">Height / depth</label>
+              <input class="input" id="t-h" name="height" type="number" min="0" step="0.1" inputmode="decimal" data-field data-dim /></div>
+            <div class="field"><label for="t-unit">Unit</label>
+              <select class="select" id="t-unit" name="unit" data-field>
+                <option value="in">Inches</option><option value="mm">Millimetres</option><option value="cm">Centimetres</option>
+              </select></div>
+            <div class="field span-2"><label for="t-qty">Quantity</label>
+              <input class="input" id="t-qty" name="quantity" type="number" min="1" step="1" inputmode="numeric" placeholder="e.g. 2500" data-field />
+              <p class="hint">If you are unsure, give the quantity you expect to use in six months.</p></div>
+          </div>
+        </fieldset>
+
+        <!-- step 3 -->
+        <fieldset class="step-panel" data-step="2" hidden>
+          <legend>Material</legend>
+          <div class="form-grid">
+            <div class="field span-2"><label for="t-mat">Material</label>
+              <select class="select" id="t-mat" name="material" data-field>
+                {materials.map((m) => <option value={m} selected={m.startsWith('Not sure')}>{m}</option>)}
+              </select></div>
+            <div class="field span-2">
+              <span class="swatch-label">Exterior colour</span>
+              <div class="swatches" role="radiogroup" aria-label="Exterior colour">
+                {swatches.map((s, i) => (
+                  <label class="sw">
+                    <input type="radio" name="exterior" value={s.n} checked={i === 0} data-field data-preview-ext />
+                    <span class="chip" style={`--c:${s.v}`} aria-hidden="true"></span>
+                    <span class="sw-n">{s.n}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+            <div class="field span-2">
+              <span class="swatch-label">Interior colour</span>
+              <div class="swatches" role="radiogroup" aria-label="Interior colour">
+                {swatches.slice(0, 6).map((s, i) => (
+                  <label class="sw">
+                    <input type="radio" name="interior" value={s.n} checked={i === 1} data-field />
+                    <span class="chip" style={`--c:${s.v}`} aria-hidden="true"></span>
+                    <span class="sw-n">{s.n}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- step 4 -->
+        <fieldset class="step-panel" data-step="3" hidden>
+          <legend>Printing</legend>
+          <div class="form-grid">
+            <div class="field"><label for="t-print">Printing method</label>
+              <select class="select" id="t-print" name="printing" data-field>
+                {printing.map((p) => <option value={p} selected={p.startsWith('Not sure')}>{p}</option>)}
+              </select></div>
+            <div class="field"><label for="t-sides">Printed sides</label>
+              <select class="select" id="t-sides" name="printed_sides" data-field>
+                <option>Outside only</option><option>Outside and inside</option><option>Inside only</option>
+              </select></div>
+          </div>
+        </fieldset>
+
+        <!-- step 5 -->
+        <fieldset class="step-panel" data-step="4" hidden>
+          <legend>Finish and add-ons</legend>
+          <div class="form-grid">
+            <div class="field"><label for="t-finish">Finish</label>
+              <select class="select" id="t-finish" name="finish" data-field data-preview-finish>
+                {finishes.map((f) => <option value={f}>{f}</option>)}
+              </select></div>
+            <div class="field"><label for="t-coat">Coating</label>
+              <select class="select" id="t-coat" name="coating" data-field>
+                {coatings.map((c) => <option value={c}>{c}</option>)}
+              </select></div>
+            <div class="field"><label for="t-window">Window</label>
+              <select class="select" id="t-window" name="window" data-field data-preview-window>
+                <option value="No window">No window</option>
+                <option value="Rectangular window">Rectangular window</option>
+                <option value="Circular window">Circular window</option>
+                <option value="Custom shape window">Custom shape window</option>
+              </select></div>
+            <div class="field"><label for="t-insert">Insert</label>
+              <select class="select" id="t-insert" name="insert" data-field>
+                <option value="No insert">No insert</option>
+                <option value="Corrugated insert">Corrugated insert</option>
+                <option value="Chipboard insert">Chipboard insert</option>
+                <option value="Foam insert">Foam insert</option>
+                <option value="Moulded pulp insert">Moulded pulp insert</option>
+                <option value="Not sure — advise me">Not sure — advise me</option>
+              </select></div>
+          </div>
+        </fieldset>
+
+        <!-- step 6 -->
+        <fieldset class="step-panel" data-step="5" hidden>
+          <legend>Your details</legend>
+          <div class="form-grid">
+            <div class="field"><label for="t-name">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="t-name" name="name" type="text" autocomplete="name" required />
+              <p class="field-error" id="t-name-err" hidden></p></div>
+            <div class="field"><label for="t-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="t-email" name="email" type="email" autocomplete="email" required />
+              <p class="field-error" id="t-email-err" hidden></p></div>
+            <div class="field"><label for="t-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" id="t-phone" name="phone" type="tel" autocomplete="tel" required />
+              <p class="field-error" id="t-phone-err" hidden></p></div>
+            <div class="field"><label for="t-date">Required delivery date</label>
+              <input class="input" id="t-date" name="required_date" type="date" data-field /></div>
+            <div class="field span-2"><label for="t-msg">Additional instructions <span class="req" aria-hidden="true">*</span></label>
+              <textarea class="textarea" id="t-msg" name="message" required minlength="10"
+                placeholder="What you are packing, anything unusual about the structure, and anything the options above did not cover."></textarea>
+              <p class="field-error" id="t-msg-err" hidden></p></div>
+            <div class="field span-2"><label for="t-file">Upload artwork</label>
+              <div class="file-drop" data-drop>
+                <input id="t-file" name="artwork" type="file" multiple accept=".pdf,.ai,.eps,.svg,.png,.jpg,.jpeg,.webp,.zip" />
+                <p class="drop-main">Drop files here or <span class="drop-link">browse</span></p>
+                <p class="hint">Up to 5 files, 10&nbsp;MB each.</p>
+                <ul class="file-list" data-file-list role="list"></ul>
+              </div></div>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="t-hp">Leave empty</label>
+            <input id="t-hp" type="text" name="company_url" tabindex="-1" autocomplete="off" />
+          </div>
+        </fieldset>
+
+        <div class="tool-nav">
+          <button type="button" class="btn btn-outline" data-prev hidden>Back</button>
+          <button type="button" class="btn btn-primary" data-next>Next step</button>
+          <button type="submit" class="btn btn-primary btn-lg" data-submit hidden>
+            <span class="btn-label">Send configuration for a quote</span>
+          </button>
+          <button type="button" class="btn btn-ghost btn-sm" data-reset>Reset</button>
+        </div>
+
+        <div class="alert alert-err" data-form-error hidden role="alert"></div>
+        <p class="saved-note" data-saved hidden>Draft saved in this browser.</p>
+      </form>
+
+      <aside class="tool-aside">
+        <div class="preview-wrap">
+          <p class="prev-h">Live preview</p>
+          <div class="prev-scene" data-prev-scene>
+            <div class="prev-box" data-prev-box>
+              <span class="pf pf-front"><span class="pf-window" data-prev-win hidden></span></span>
+              <span class="pf pf-side"></span>
+              <span class="pf pf-top"></span>
+            </div>
+            <div class="prev-shadow" aria-hidden="true"></div>
+          </div>
+          <p class="prev-note">A visual approximation of proportion, colour and finish — not a colour-accurate proof.</p>
+        </div>
+
+        <div class="tile summary">
+          <h2 class="sum-h">Your specification</h2>
+          <dl class="spec-list" data-summary>
+            <div><dt>Category</dt><dd data-sum="category">Not set</dd></div>
+            <div><dt>Style</dt><dd data-sum="style">Not set</dd></div>
+            <div><dt>Dimensions</dt><dd data-sum="dims">Not set</dd></div>
+            <div><dt>Quantity</dt><dd data-sum="quantity">Not set</dd></div>
+            <div><dt>Material</dt><dd data-sum="material">Not set</dd></div>
+            <div><dt>Exterior</dt><dd data-sum="exterior">Not set</dd></div>
+            <div><dt>Interior</dt><dd data-sum="interior">Not set</dd></div>
+            <div><dt>Printing</dt><dd data-sum="printing">Not set</dd></div>
+            <div><dt>Sides</dt><dd data-sum="printed_sides">Not set</dd></div>
+            <div><dt>Finish</dt><dd data-sum="finish">Not set</dd></div>
+            <div><dt>Coating</dt><dd data-sum="coating">Not set</dd></div>
+            <div><dt>Window</dt><dd data-sum="window">Not set</dd></div>
+            <div><dt>Insert</dt><dd data-sum="insert">Not set</dd></div>
+          </dl>
+          <p class="price-note">{SITE.priceLine}</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <Faqs faqs={faqs} title="Packaging tool questions" />
+  <CtaBand title="Prefer to describe it in your own words?" text="Skip the configurator and send us a plain description of what you are packing. We will come back with a specification." />
+</Base>
+
+<style>
+  .tool-hero { background:linear-gradient(180deg,var(--ivory),var(--ivory-deep)); border-bottom:1px solid var(--border);
+    padding-block:clamp(1.5rem,1rem + 2vw,3rem) clamp(2rem,1.5rem + 2vw,3rem); }
+  .tool-hero .lede { margin-top:var(--s-5); }
+
+  .tool-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,360px); gap:clamp(2rem,1rem + 4vw,3.5rem); align-items:start; }
+  @media (max-width:1000px){ .tool-grid{ grid-template-columns:1fr; } .tool-aside{ order:-1; } }
+
+  .tool-form { background:var(--paper); border:1px solid var(--border); border-radius:var(--r-lg); padding:clamp(1.25rem,1rem + 1.5vw,2rem); }
+  fieldset { border:0; padding:0; margin:0; }
+  legend { font-family:var(--font-display); font-size:var(--fs-xl); margin-bottom:var(--s-5); padding:0; }
+
+  .steps-nav { display:flex; flex-wrap:wrap; gap:var(--s-1); list-style:none; padding:0 0 var(--s-6); margin:0 0 var(--s-6);
+    border-bottom:1px solid var(--border); counter-reset:s; }
+  .steps-nav li { counter-increment:s; }
+  .steps-nav button { border:0; background:transparent; cursor:pointer; font-size:var(--fs-xs); font-weight:600;
+    color:var(--text-faint); padding:.4rem .7rem; border-radius:var(--r-pill); display:flex; align-items:center; gap:.4rem; min-height:36px; }
+  .steps-nav button::before { content:counter(s); width:1.25rem; height:1.25rem; border-radius:50%;
+    background:var(--ivory-deep); display:grid; place-items:center; font-size:.65rem; }
+  .steps-nav button:hover { color:var(--ink); background:var(--ivory-deep); }
+  .steps-nav button[aria-current='step'] { color:var(--forest); background:var(--forest-tint); }
+  .steps-nav button[aria-current='step']::before { background:var(--forest); color:#fff; }
+  .steps-nav button.done::before { background:var(--champagne); color:#221a06; }
+
+  .swatch-label { font-size:var(--fs-sm); font-weight:600; display:block; margin-bottom:var(--s-3); }
+  .swatches { display:grid; grid-template-columns:repeat(auto-fill,minmax(96px,1fr)); gap:var(--s-2); }
+  .sw { display:flex; align-items:center; gap:.45rem; padding:.4rem .5rem; border:1px solid var(--border);
+    border-radius:var(--r-sm); cursor:pointer; font-size:var(--fs-xs); min-height:40px; }
+  .sw:hover { border-color:var(--border-strong); }
+  .sw input { position:absolute; opacity:0; width:1px; height:1px; }
+  .sw:has(input:checked) { border-color:var(--forest); box-shadow:0 0 0 1px var(--forest); background:var(--forest-tint); }
+  .sw:has(input:focus-visible) { outline:2px solid var(--focus); outline-offset:2px; }
+  .chip { width:18px; height:18px; border-radius:3px; background:var(--c); border:1px solid rgba(0,0,0,.15); flex:none; }
+  .sw-n { color:var(--text-muted); }
+
+  .tool-nav { display:flex; flex-wrap:wrap; gap:var(--s-3); align-items:center; margin-top:var(--s-8);
+    padding-top:var(--s-6); border-top:1px solid var(--border); }
+  .tool-nav [data-reset] { margin-left:auto; }
+  .saved-note { font-size:var(--fs-xs); color:var(--text-faint); margin-top:var(--s-3); }
+
+  .preview-wrap { background:var(--ivory-deep); border:1px solid var(--border); border-radius:var(--r-lg);
+    padding:var(--s-6); margin-bottom:var(--s-5); }
+  .prev-h { font-size:var(--fs-xs); font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--text-faint); margin-bottom:var(--s-5); }
+  .prev-scene { perspective:900px; display:grid; place-items:center; padding-block:var(--s-4) var(--s-8); position:relative; }
+  .prev-box { position:relative; width:150px; aspect-ratio:1/1.14; transform-style:preserve-3d;
+    --d:52px; --ext:#c8a97e; --sheen:.16;
+    transform:rotateX(9deg) rotateY(-26deg); transition:transform 400ms var(--ease); }
+  .pf { position:absolute; inset:0; }
+  .pf-front { background:var(--ext); transform:translateZ(calc(var(--d)/2)); border-radius:2px;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.12); overflow:hidden; }
+  .pf-front::after { content:''; position:absolute; inset:0;
+    background:linear-gradient(118deg,rgba(255,255,255,0) 40%,rgba(255,255,255,var(--sheen)) 50%,rgba(255,255,255,0) 60%); }
+  .pf-side { width:var(--d); left:auto; right:0; background:var(--ext); filter:brightness(.74);
+    transform:rotateY(90deg) translateZ(calc(150px - var(--d)/2)); transform-origin:right center; }
+  .pf-top { height:var(--d); bottom:auto; background:var(--ext); filter:brightness(1.14);
+    transform:rotateX(90deg) translateZ(calc(var(--d)/2)); transform-origin:center top; }
+  .pf-window { position:absolute; left:50%; top:46%; transform:translate(-50%,-50%);
+    width:52%; height:40%; background:rgba(255,255,255,.34); border:1px solid rgba(255,255,255,.5);
+    backdrop-filter:blur(1px); }
+  .pf-window.circle { border-radius:50%; width:46%; height:36%; }
+  .prev-shadow { position:absolute; bottom:8px; left:22%; right:22%; height:16px;
+    background:radial-gradient(ellipse at center,rgba(20,22,26,.3),transparent 70%); filter:blur(6px); }
+  .prev-note { font-size:var(--fs-xs); color:var(--text-faint); text-align:center; }
+
+  .summary { position:sticky; top:calc(var(--header-h) + 1.5rem); }
+  @media (max-width:1000px){ .summary{ position:static; } }
+  .sum-h { font-size:var(--fs-lg); margin-bottom:var(--s-4); }
+  .price-note { font-size:var(--fs-xs); color:var(--text-faint); margin-top:var(--s-5);
+    padding-top:var(--s-4); border-top:1px solid var(--border); }
+
+  @media (prefers-reduced-motion: reduce) { .prev-box { transition:none; } }
+</style>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-tool]')
+  if (form) {
+    const KEY = 'trp-pkg-tool-v1'
+    const panels = Array.from(form.querySelectorAll<HTMLElement>('.step-panel'))
+    const navBtns = Array.from(form.querySelectorAll<HTMLButtonElement>('[data-goto]'))
+    const prevBtn = form.querySelector<HTMLButtonElement>('[data-prev]')!
+    const nextBtn = form.querySelector<HTMLButtonElement>('[data-next]')!
+    const submitBtn = form.querySelector<HTMLButtonElement>('[data-submit]')!
+    const resetBtn = form.querySelector<HTMLButtonElement>('[data-reset]')!
+    const errBox = form.querySelector<HTMLElement>('[data-form-error]')!
+    const savedNote = form.querySelector<HTMLElement>('[data-saved]')!
+    const box = document.querySelector<HTMLElement>('[data-prev-box]')
+    const win = document.querySelector<HTMLElement>('[data-prev-win]')
+    let step = 0
+
+    const SWATCH: Record<string, string> = {
+      'Natural kraft': '#c8a97e', 'White': '#f7f5f1', 'Charcoal': '#22262b',
+      'Forest green': '#14432f', 'Deep navy': '#1b2a44', 'Burgundy': '#5c1f28',
+      'Champagne': '#b08d46', 'Terracotta': '#a8563b', 'Sage': '#8a9a82', 'Black': '#14161a',
+    }
+
+    /* ---------- step navigation ---------- */
+    const show = (i: number) => {
+      step = Math.max(0, Math.min(panels.length - 1, i))
+      panels.forEach((p, n) => (p.hidden = n !== step))
+      navBtns.forEach((b, n) => {
+        b.setAttribute('aria-current', n === step ? 'step' : 'false')
+        b.classList.toggle('done', n < step)
+      })
+      prevBtn.hidden = step === 0
+      nextBtn.hidden = step === panels.length - 1
+      submitBtn.hidden = step !== panels.length - 1
+      const focusable = panels[step].querySelector<HTMLElement>('select,input,textarea')
+      focusable?.focus({ preventScroll: true })
+    }
+    navBtns.forEach((b, n) => b.addEventListener('click', () => show(n)))
+    prevBtn.addEventListener('click', () => show(step - 1))
+    nextBtn.addEventListener('click', () => show(step + 1))
+
+    /* ---------- summary + preview ---------- */
+    const setSum = (k: string, v: string) => {
+      const el = document.querySelector<HTMLElement>(`[data-sum="${k}"]`)
+      if (el) el.textContent = v || 'Not set'
+    }
+
+    const sync = () => {
+      const fd = new FormData(form)
+      const get = (k: string) => String(fd.get(k) ?? '')
+
+      setSum('category', get('category'))
+      setSum('style', get('style'))
+      const l = get('length'), w = get('width'), h = get('height'), u = get('unit')
+      setSum('dims', l && w && h ? `${l} × ${w} × ${h} ${u}` : '')
+      setSum('quantity', get('quantity'))
+      setSum('material', get('material'))
+      setSum('exterior', get('exterior'))
+      setSum('interior', get('interior'))
+      setSum('printing', get('printing'))
+      setSum('printed_sides', get('printed_sides'))
+      setSum('finish', get('finish'))
+      setSum('coating', get('coating'))
+      setSum('window', get('window'))
+      setSum('insert', get('insert'))
+
+      if (box) {
+        box.style.setProperty('--ext', SWATCH[get('exterior')] ?? '#c8a97e')
+        const f = get('finish')
+        const sheen = f.includes('Gloss') ? '0.42' : f.includes('Spot UV') ? '0.3'
+          : f.includes('Soft-touch') ? '0.05' : f.includes('Matte') ? '0.07' : '0.16'
+        box.style.setProperty('--sheen', sheen)
+        // Proportion the preview to the entered dimensions.
+        const nl = parseFloat(l), nw = parseFloat(w), nh = parseFloat(h)
+        if (nl > 0 && nw > 0 && nh > 0) {
+          const base = Math.max(nl, nh)
+          box.style.width = `${Math.round(110 + (nl / base) * 70)}px`
+          box.style.aspectRatio = `${nl} / ${nh}`
+          box.style.setProperty('--d', `${Math.round(Math.max(18, (nw / base) * 90))}px`)
+        }
+      }
+      if (win) {
+        const wv = get('window')
+        win.hidden = wv === 'No window' || wv === ''
+        win.classList.toggle('circle', wv === 'Circular window')
+      }
+    }
+
+    /* ---------- local draft ---------- */
+    const save = () => {
+      const obj: Record<string, string> = {}
+      new FormData(form).forEach((v, k) => { if (typeof v === 'string' && k !== 'company_url') obj[k] = v })
+      try {
+        localStorage.setItem(KEY, JSON.stringify(obj))
+        savedNote.hidden = false
+      } catch { /* storage unavailable — the form still works */ }
+    }
+    const load = () => {
+      try {
+        const raw = localStorage.getItem(KEY)
+        if (!raw) return
+        const obj = JSON.parse(raw) as Record<string, string>
+        Object.entries(obj).forEach(([k, v]) => {
+          const els = form.querySelectorAll<HTMLInputElement>(`[name="${k}"]`)
+          els.forEach((el) => {
+            if (el.type === 'radio') el.checked = el.value === v
+            else el.value = v
+          })
+        })
+        savedNote.hidden = false
+      } catch { /* ignore malformed drafts */ }
+    }
+
+    form.addEventListener('input', () => { sync(); save() })
+    form.addEventListener('change', () => { sync(); save() })
+
+    resetBtn.addEventListener('click', () => {
+      form.reset()
+      try { localStorage.removeItem(KEY) } catch {}
+      savedNote.hidden = true
+      sync()
+      show(0)
+    })
+
+    /* ---------- files ---------- */
+    const fileInput = form.querySelector<HTMLInputElement>('input[type="file"]')
+    const dropZone = form.querySelector<HTMLElement>('[data-drop]')
+    const fileList = form.querySelector<HTMLElement>('[data-file-list]')
+    const renderFiles = () => {
+      if (!fileList || !fileInput) return
+      fileList.innerHTML = ''
+      Array.from(fileInput.files ?? []).slice(0, 5).forEach((f) => {
+        const li = document.createElement('li')
+        li.textContent = `${f.name} — ${(f.size / 1048576).toFixed(1)} MB`
+        fileList.appendChild(li)
+      })
+    }
+    fileInput?.addEventListener('change', renderFiles)
+    if (dropZone && fileInput) {
+      dropZone.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).tagName !== 'INPUT') fileInput.click()
+      })
+      ;['dragenter', 'dragover'].forEach((ev) => dropZone.addEventListener(ev, (e) => { e.preventDefault(); dropZone.classList.add('is-over') }))
+      ;['dragleave', 'drop'].forEach((ev) => dropZone.addEventListener(ev, (e) => { e.preventDefault(); dropZone.classList.remove('is-over') }))
+      dropZone.addEventListener('drop', (e) => {
+        const dt = (e as DragEvent).dataTransfer
+        if (dt?.files?.length) { fileInput.files = dt.files; renderFiles() }
+      })
+    }
+
+    /* ---------- submit ---------- */
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      errBox.hidden = true
+
+      const checks: [string, (v: string) => boolean, string][] = [
+        ['name', (v) => v.length >= 2, 'Please enter your name.'],
+        ['email', (v) => /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v), 'Please enter a valid email address.'],
+        ['phone', (v) => v.replace(/\D/g, '').length >= 7, 'Please enter a contact number.'],
+        ['message', (v) => v.length >= 10, 'Please add a few details about the project.'],
+      ]
+      let bad: HTMLElement | null = null
+      for (const [n, test, msg] of checks) {
+        const el = form.querySelector<HTMLInputElement>(`[name="${n}"]`)!
+        const box2 = document.getElementById(`${el.id}-err`)
+        if (!test(el.value.trim())) {
+          el.setAttribute('aria-invalid', 'true')
+          if (box2) { box2.textContent = msg; box2.hidden = false }
+          if (!bad) bad = el
+        } else {
+          el.removeAttribute('aria-invalid')
+          if (box2) box2.hidden = true
+        }
+      }
+      if (bad) { show(panels.length - 1); bad.focus(); return }
+
+      // Flatten the whole configuration into one readable block for the email.
+      const fd = new FormData(form)
+      const keys = ['category','style','length','width','height','unit','quantity','material',
+        'exterior','interior','printing','printed_sides','finish','coating','window','insert']
+      const config = keys
+        .map((k) => [k.replace(/_/g, ' '), String(fd.get(k) ?? '')])
+        .filter(([, v]) => v)
+        .map(([k, v]) => `${k}: ${v}`)
+        .join(' | ')
+      fd.set('configuration', config)
+      fd.set('form_source', 'packaging-tool')
+      fd.set('product', String(fd.get('style') || fd.get('category') || 'Custom packaging'))
+      fd.set('page_url', location.pathname)
+      fd.set('dimensions', `${fd.get('length') ?? ''} x ${fd.get('width') ?? ''} x ${fd.get('height') ?? ''}`)
+
+      submitBtn.disabled = true
+      const label = submitBtn.querySelector('.btn-label')!
+      label.textContent = 'Sending…'
+      try {
+        const res = await fetch('/api/quote', { method: 'POST', body: fd })
+        const data = await res.json().catch(() => ({}))
+        if (res.ok && data.ok) {
+          const w2 = window as any
+          if (typeof w2.gtag === 'function') w2.gtag('event', 'custom_tool_completion')
+          else if (Array.isArray(w2.dataLayer)) w2.dataLayer.push({ event: 'custom_tool_completion' })
+          try { localStorage.removeItem(KEY) } catch {}
+          location.href = '/thank-you/'
+          return
+        }
+        throw new Error(data.error || 'We could not send that just now.')
+      } catch (err) {
+        errBox.textContent = `${(err as Error).message} Please try again, or email us directly.`
+        errBox.hidden = false
+      } finally {
+        submitBtn.disabled = false
+        label.textContent = 'Send configuration for a quote'
+      }
+    })
+
+    // Tool-start event on first interaction.
+    let started = false
+    form.addEventListener('input', () => {
+      if (started) return
+      started = true
+      const w2 = window as any
+      if (typeof w2.gtag === 'function') w2.gtag('event', 'custom_tool_start')
+      else if (Array.isArray(w2.dataLayer)) w2.dataLayer.push({ event: 'custom_tool_start' })
+    }, { once: false })
+
+    load()
+    sync()
+    show(0)
+  }
+</script>

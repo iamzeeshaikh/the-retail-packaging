@@ -1,0 +1,39 @@
+---
+/**
+ * Analytics loader.
+ *
+ * Nothing is emitted unless a real measurement ID is set in the environment,
+ * so the shipped site carries no third-party script by default and no fake IDs
+ * exist anywhere in the repository.
+ */
+const GA4 = import.meta.env.PUBLIC_GA4_ID
+const GTM = import.meta.env.PUBLIC_GTM_ID
+const GSC = import.meta.env.PUBLIC_GSC_VERIFICATION
+---
+{GSC && <meta name="google-site-verification" content={GSC} />}
+
+{GA4 && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4}`}></script>
+    <script is:inline define:vars={{ GA4 }}>
+      window.dataLayer = window.dataLayer || []
+      function gtag() { dataLayer.push(arguments) }
+      window.gtag = gtag
+      gtag('js', new Date())
+      gtag('config', GA4, { anonymize_ip: true })
+    </script>
+  </>
+)}
+
+{!GA4 && GTM && (
+  <script is:inline define:vars={{ GTM }}>
+    ;(function (w, d, s, i) {
+      w[l = 'dataLayer'] = w[l] || []
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+      var f = d.getElementsByTagName(s)[0], j = d.createElement(s)
+      j.async = true
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i
+      f.parentNode.insertBefore(j, f)
+    })(window, document, 'script', GTM)
+  </script>
+)}

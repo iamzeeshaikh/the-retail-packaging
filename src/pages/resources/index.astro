@@ -1,0 +1,76 @@
+---
+import Base from '../../layouts/Base.astro'
+import Breadcrumbs from '../../components/Breadcrumbs.astro'
+import CtaBand from '../../components/CtaBand.astro'
+import Faqs from '../../components/Faqs.astro'
+import { getCollection } from 'astro:content'
+import * as S from '../../lib/schema'
+
+const path = '/resources/'
+const docs = (await getCollection('resources')).sort((a, b) => a.data.order - b.data.order)
+const title = 'Packaging Resource Hub | Guides, Specs and Checklists'
+const description = 'Reference guides for specifying custom packaging — materials, box styles, printing, finishes, sizing, dielines, inserts, costs and file requirements.'
+const trail = [{ name: 'Home', url: '/' }, { name: 'Resources', url: path }]
+
+const faqs = [
+  { q: 'What are these resource guides for?', a: 'They answer the specification questions that come up repeatedly before an order — which material, which box style, which print method, what file to send. They are reference documents rather than marketing pages.' },
+  { q: 'Do I need to read these before requesting a quote?', a: 'No. If you send us the product dimensions, weight, quantity and deadline, we will recommend a specification. The guides are for buyers who want to understand the reasoning behind that recommendation.' },
+  { q: 'Which guide should I start with?', a: 'If you are choosing a format, start with the box style guide. If the format is settled and you are choosing a substrate, start with the material guide. If you are preparing files, start with the dieline and artwork guide.' },
+  { q: 'Are the size guides based on stock sizes?', a: 'No. Everything we produce is cut to order, so the sizes quoted are practical ranges for each format rather than a stock list. Your dieline is built around your product.' },
+  { q: 'Do these guides cover food-contact requirements?', a: 'They cover the practical barrier and material considerations. Regulatory compliance for direct food contact depends on your product and jurisdiction, so confirm the specific grade with us before ordering.' },
+  { q: 'How current is this information?', a: 'Each guide carries a published and updated date. We revise them when materials, print capabilities or requirements change rather than on a fixed schedule.' },
+  { q: 'Can I get a printable version?', a: 'The guides print cleanly from the browser — navigation, forms and the chat button are removed automatically in print stylesheets. Contact us if you need a formatted specification document for internal approval.' },
+  { q: 'Do you offer design help as well as guidance?', a: 'Yes. Our design team can build packaging artwork from a logo and a brand direction, or adapt existing artwork onto a new dieline.' },
+  { q: 'What if my requirement is not covered here?', a: 'Send us the details in a quote request. Unusual structures and non-standard materials are common enough that no set of guides covers everything.' },
+  { q: 'How do I get a specification recommendation for my product?', a: 'Send the product dimensions, its weight, the quantity you need and how it ships. We reply with a board grade, structure, print method, lead time and written price, usually within one business day.' },
+]
+
+const schema = S.graph([
+  S.organization(), S.website(),
+  S.webPage({ path, title, description, type: 'CollectionPage' }),
+  S.breadcrumbs(path, trail),
+  S.itemList(path, docs.map((d) => ({ name: d.data.title, url: `/resources/${d.id}/` }))),
+  S.faqPage(path, faqs),
+])
+---
+<Base title={title} description={description} path={path} schema={schema}>
+  <Breadcrumbs trail={trail} />
+  <section class="hub-hero">
+    <div class="wrap">
+      <p class="eyebrow">Resource hub</p>
+      <h1>Packaging specification guides</h1>
+      <p class="lede">
+        Reference material for the decisions that happen before artwork — substrate, structure,
+        print route, finish and file setup. Written for buyers who want to understand the
+        reasoning, not just the recommendation.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="grid g-3">
+        {docs.map((d) => (
+          <a class="res-card tile reveal" href={`/resources/${d.id}/`}>
+            <span class="badge badge-neutral">{d.data.kind}</span>
+            <h2>{d.data.title}</h2>
+            <p>{d.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Faqs faqs={faqs} title="About these guides" />
+  <CtaBand />
+</Base>
+<style>
+  .hub-hero { background:linear-gradient(180deg,var(--ivory),var(--ivory-deep)); border-bottom:1px solid var(--border);
+    padding-block:clamp(1.5rem,1rem + 2vw,3rem) clamp(2.5rem,2rem + 3vw,4rem); }
+  .hub-hero .lede { margin-top:var(--s-5); }
+  .res-card { display:block; text-decoration:none; height:100%;
+    transition:border-color var(--dur) var(--ease), transform var(--dur) var(--ease); }
+  .res-card:hover { border-color:var(--forest); transform:translateY(-3px); }
+  .res-card h2 { font-size:var(--fs-md); margin:var(--s-3) 0 var(--s-2); color:var(--ink); }
+  .res-card p { font-size:var(--fs-sm); color:var(--text-muted); }
+</style>

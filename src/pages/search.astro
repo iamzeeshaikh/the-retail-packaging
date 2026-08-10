@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import { totals } from '../lib/catalog'
+import * as S from '../lib/schema'
+
+const path = '/search/'
+const title = 'Search Packaging Products and Guides'
+const description = 'Search across every packaging category, product, article and specification guide on the site.'
+const trail = [{ name: 'Home', url: '/' }, { name: 'Search', url: path }]
+// Search results are not indexable — noindex prevents parameter pages entering the index.
+const schema = S.graph([S.organization(), S.website(), S.breadcrumbs(path, trail)])
+---
+<Base title={title} description={description} path={path} noindex schema={schema}>
+  <Breadcrumbs trail={trail} />
+  <section class="section">
+    <div class="wrap wrap-narrow">
+      <h1>Search</h1>
+      <p class="lede">Across {totals.categories} categories, {totals.products} products, 10 articles and 15 guides.</p>
+      <form class="s-form" role="search" data-search-form>
+        <label class="sr-only" for="q">Search term</label>
+        <input class="input" id="q" name="q" type="search" placeholder="Try mailer, kraft, pouch, labels…"
+          autocomplete="off" autocapitalize="off" spellcheck="false" />
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+      <p class="s-count" data-count aria-live="polite"></p>
+      <ul class="s-results" data-results role="list"></ul>
+      <div class="s-empty" data-empty hidden>
+        <p>Nothing matched that. A shorter or more general word usually helps — try "box" rather than a full product name.</p>
+        <p>If you would rather not hunt for it, the <a href="/sitemap/">full index of every page on the site</a> lists all categories, guides and articles.</p>
+        <p>You can also send us the requirement directly and we will point you to the right format.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .s-form { display:flex; gap:var(--s-3); margin:var(--s-8) 0 var(--s-5); }
+  .s-form .input { min-height:52px; font-size:var(--fs-md); }
+  .s-count { font-size:var(--fs-sm); color:var(--text-faint); }
+  .s-results { list-style:none; padding:0; margin:var(--s-5) 0 0; display:grid; gap:var(--s-2); }
+  .s-results a { display:flex; justify-content:space-between; gap:var(--s-4); align-items:center;
+    padding:var(--s-4); background:var(--paper); border:1px solid var(--border); border-radius:var(--r-md);
+    text-decoration:none; min-height:44px; transition:border-color var(--dur) var(--ease); }
+  .s-results a:hover { border-color:var(--forest); }
+  .s-t { font-weight:600; color:var(--ink); font-size:var(--fs-sm); }
+  .s-k { font-size:var(--fs-xs); color:var(--text-faint); white-space:nowrap; }
+  .s-empty { margin-top:var(--s-8); color:var(--text-muted); }
+</style>
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-search-form]')
+  const input = document.querySelector<HTMLInputElement>('#q')
+  const list = document.querySelector<HTMLElement>('[data-results]')
+  const count = document.querySelector<HTMLElement>('[data-count]')
+  const empty = document.querySelector<HTMLElement>('[data-empty]')
+
+  if (form && input && list) {
+    type Doc = { t: string; u: string; k: string }
+    let docs: Doc[] = []
+    let loaded = false
+
+    const load = async () => {
+      if (loaded) return
+      try {
+        docs = await (await fetch('/search-index.json')).json()
+        loaded = true
+      } catch { /* leave docs empty; the empty state explains itself */ }
+    }
+
+    const score = (d: Doc, q: string) => {
+      const t = d.t.toLowerCase()
+      if (t === q) return 100
+      if (t.startsWith(q)) return 60
+      if (t.includes(q)) return 40
+      const words = q.split(/\s+/).filter(Boolean)
+      return words.every((w) => t.includes(w)) ? 20 : 0
+    }
+
+    const run = async (raw: string) => {
+      const q = raw.trim().toLowerCase()
+      list.innerHTML = ''
+      if (!q) { if (count) count.textContent = ''; if (empty) empty.hidden = true; return }
+      await load()
+      const hits = docs.map((d) => ({ d, s: score(d, q) })).filter((x) => x.s > 0)
+        .sort((a, b) => b.s - a.s || a.d.t.length - b.d.t.length).slice(0, 60)
+      if (count) count.textContent = `${hits.length} result${hits.length === 1 ? '' : 's'} for “${raw.trim()}”`
+      if (empty) empty.hidden = hits.length > 0
+      for (const { d } of hits) {
+        const li = document.createElement('li')
+        const a = document.createElement('a')
+        a.href = d.u
+        a.innerHTML = `<span class="s-t"></span><span class="s-k"></span>`
+        a.querySelector('.s-t')!.textContent = d.t
+        a.querySelector('.s-k')!.textContent = d.k
+        li.appendChild(a)
+        list.appendChild(li)
+      }
+    }
+
+    form.addEventListener('submit', (e) => { e.preventDefault(); run(input.value) })
+    let t: number | undefined
+    input.addEventListener('input', () => {
+      window.clearTimeout(t)
+      t = window.setTimeout(() => run(input.value), 140)
+    })
+    // Honour ?q= arriving from the header search without creating an indexable page.
+    const initial = new URLSearchParams(location.search).get('q')
+    if (initial) { input.value = initial; run(initial) }
+    input.focus()
+  }
+</script>

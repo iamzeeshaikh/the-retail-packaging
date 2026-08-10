@@ -1,0 +1,46 @@
+---
+import type { GetStaticPaths } from 'astro'
+import Base from '../layouts/Base.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import { legalPages, type LegalPage } from '../data/legal'
+import { clampText } from '../lib/copy'
+import * as S from '../lib/schema'
+
+export const getStaticPaths = (() =>
+  legalPages.map((p) => ({ params: { legal: p.slug }, props: { page: p } }))) satisfies GetStaticPaths
+
+const { page } = Astro.props as { page: LegalPage }
+const path = `/${page.slug}/`
+const title = clampText(page.metaTitle, 62)
+const description = clampText(page.description, 132)
+const trail = [{ name: 'Home', url: '/' }, { name: page.title, url: path }]
+const schema = S.graph([
+  S.organization(), S.website(),
+  S.webPage({ path, title, description, dateModified: '2026-08-10' }),
+  S.breadcrumbs(path, trail),
+])
+---
+<Base title={title} description={description} path={path} schema={schema}>
+  <Breadcrumbs trail={trail} />
+  <section class="section">
+    <div class="wrap wrap-narrow">
+      <h1>{page.title}</h1>
+      <p class="updated">Last updated {page.updated}</p>
+      <p class="lede">{page.intro}</p>
+      <div class="prose" style="margin-top:var(--s-10)">
+        {page.sections.map((s) => (
+          <>
+            <h2>{s.h2}</h2>
+            {s.body.map((b) => <p>{b}</p>)}
+            {s.list && <ul>{s.list.map((i) => <li>{i}</li>)}</ul>}
+          </>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .updated { font-size:var(--fs-xs); color:var(--text-faint); margin:var(--s-3) 0 var(--s-5);
+    text-transform:uppercase; letter-spacing:.06em; }
+  .prose > h2:first-child { margin-top:0; }
+</style>

@@ -1,0 +1,51 @@
+---
+/**
+ * Root-level catalogue route.
+ *
+ * Category URLs (/custom-bags/) and product URLs (/bakery-bags/) both sit at the
+ * root, so a single dynamic segment serves both and delegates to the right
+ * template. Explicit page files (/about-us/ etc.) win over this route in Astro's
+ * priority order, so there is no collision with the static pages.
+ *
+ * A build-time guard fails loudly if a category slug ever collides with a
+ * product slug, since that would silently drop a page.
+ */
+import type { GetStaticPaths } from 'astro'
+import CategoryPage from '../../templates/CategoryPage.astro'
+import ProductPage from '../../templates/ProductPage.astro'
+import { categories, products, type Category, type Product } from '../../lib/catalog'
+
+export const getStaticPaths = (() => {
+  const catSlugs = new Set(categories.map((c) => c.slug))
+  const clash = products.filter((p) => catSlugs.has(p.slug)).map((p) => p.slug)
+  if (clash.length) {
+    throw new Error(
+      `Slug collision between categories and products: ${clash.join(', ')}. ` +
+        'Each URL must resolve to exactly one page.'
+    )
+  }
+
+  const seen = new Set<string>()
+  const dupes: string[] = []
+  for (const s of [...categories.map((c) => c.slug), ...products.map((p) => p.slug)]) {
+    if (seen.has(s)) dupes.push(s)
+    seen.add(s)
+  }
+  if (dupes.length) throw new Error(`Duplicate catalogue slugs: ${dupes.join(', ')}`)
+
+  return [
+    ...categories.map((c) => ({ params: { slug: c.slug }, props: { kind: 'category' as const, category: c } })),
+    ...products.map((p) => ({ params: { slug: p.slug }, props: { kind: 'product' as const, product: p } })),
+  ]
+}) satisfies GetStaticPaths
+
+type Props =
+  | { kind: 'category'; category: Category }
+  | { kind: 'product'; product: Product }
+
+const props = Astro.props as Props
+---
+
+{props.kind === 'category'
+  ? <CategoryPage category={props.category} />
+  : <ProductPage product={props.product} />}

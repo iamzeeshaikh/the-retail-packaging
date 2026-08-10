@@ -1,0 +1,192 @@
+---
+/**
+ * CSS-only 3D retail box.
+ *
+ * Pure transforms and opacity, no library, no canvas. It renders as a static
+ * composed box before JavaScript runs, gains a slow idle rotation and optional
+ * pointer parallax after, and freezes flat under prefers-reduced-motion. On
+ * coarse pointers the parallax listener is never attached.
+ */
+export interface Props {
+  /** Photo shown on the front panel — usually the page's hero product image. */
+  face?: { src: string; srcset?: string; alt: string; width: number; height: number }
+  size?: 'lg' | 'md'
+  eager?: boolean
+  label?: string
+}
+const { face, size = 'lg', eager = false, label = 'Custom printed retail box' } = Astro.props
+---
+
+<div class={`scene scene-${size}`} data-box-scene>
+  <div class="stage">
+    <div class="box" data-box>
+      <div class="f front">
+        {face ? (
+          <img
+            src={face.src}
+            srcset={face.srcset}
+            sizes="(max-width: 900px) 78vw, 460px"
+            width={face.width}
+            height={face.height}
+            alt={face.alt}
+            loading={eager ? 'eager' : 'lazy'}
+            fetchpriority={eager ? 'high' : 'auto'}
+            decoding="async"
+          />
+        ) : (
+          <div class="blank"><span>{label}</span></div>
+        )}
+        <span class="sheen" aria-hidden="true"></span>
+      </div>
+      <div class="f side" aria-hidden="true"></div>
+      <div class="f top" aria-hidden="true"></div>
+    </div>
+    <div class="shadow" aria-hidden="true"></div>
+  </div>
+</div>
+
+<style>
+  .scene {
+    perspective: 1400px;
+    perspective-origin: 50% 42%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .scene-lg { --w: clamp(240px, 34vw, 430px); }
+  .scene-md { --w: clamp(180px, 26vw, 300px); }
+
+  .stage { position: relative; width: var(--w); }
+
+  .box {
+    position: relative;
+    width: var(--w);
+    aspect-ratio: 1 / 1.16;
+    transform-style: preserve-3d;
+    /* Depth is derived from width so the box scales as one solid. */
+    --d: calc(var(--w) * 0.34);
+    transform: rotateX(var(--rx, 8deg)) rotateY(var(--ry, -26deg));
+    transition: transform 900ms var(--ease-out);
+    will-change: transform;
+  }
+
+  .f { position: absolute; inset: 0; backface-visibility: hidden; }
+
+  .front {
+    overflow: hidden;
+    border-radius: 3px;
+    background: var(--ivory-deep);
+    box-shadow: 0 0 0 1px rgba(20, 22, 26, 0.09) inset;
+    transform: translateZ(calc(var(--d) / 2));
+  }
+  .front img { width: 100%; height: 100%; object-fit: cover; }
+  .blank {
+    width: 100%; height: 100%;
+    display: grid; place-items: center;
+    padding: var(--s-6); text-align: center;
+    background: linear-gradient(150deg, #1b4d37, #0d2e20);
+    color: rgba(255,255,255,.82); font-size: var(--fs-sm); letter-spacing: .04em;
+  }
+
+  /* Right wall — darker so the form reads as a solid, not a flat card. */
+  .side {
+    width: var(--d);
+    left: auto; right: 0;
+    background: linear-gradient(100deg, #123626, #0c2419);
+    transform: rotateY(90deg) translateZ(calc(var(--w) - var(--d) / 2));
+    transform-origin: right center;
+    border-radius: 2px;
+  }
+
+  /* Lid — lighter, catching the key light. */
+  .top {
+    height: var(--d);
+    bottom: auto;
+    background: linear-gradient(180deg, #2b6b4d, #1b4a35);
+    transform: rotateX(90deg) translateZ(calc(var(--d) / 2));
+    transform-origin: center top;
+    border-radius: 2px;
+  }
+
+  .sheen {
+    position: absolute; inset: 0;
+    background: linear-gradient(115deg, rgba(255,255,255,0) 38%, rgba(255,255,255,.24) 50%, rgba(255,255,255,0) 62%);
+    opacity: .8;
+    pointer-events: none;
+  }
+
+  .shadow {
+    position: absolute;
+    left: 8%; right: 8%;
+    bottom: -7%;
+    height: 26px;
+    background: radial-gradient(ellipse at center, rgba(20,22,26,.34), rgba(20,22,26,0) 68%);
+    filter: blur(7px);
+    transform: translateZ(0);
+  }
+
+  /* Entrance — runs once, transform/opacity only. */
+  @media (prefers-reduced-motion: no-preference) {
+    .box { animation: boxIn 1100ms var(--ease-out) both; }
+    @keyframes boxIn {
+      from { opacity: 0; transform: rotateX(14deg) rotateY(-44deg) translateY(26px) scale(.94); }
+      to   { opacity: 1; transform: rotateX(8deg) rotateY(-26deg); }
+    }
+    /* Idle drift, added by script only on capable devices. */
+    [data-box-scene].idle .box { animation: boxIn 1100ms var(--ease-out) both, drift 15s 1.2s ease-in-out infinite; }
+    @keyframes drift {
+      0%, 100% { transform: rotateX(8deg) rotateY(-26deg); }
+      50%      { transform: rotateX(6deg) rotateY(-18deg); }
+    }
+  }
+
+  /* Pointer parallax overrides the idle animation while in use. */
+  [data-box-scene].tracking .box { animation: none; transition: transform 260ms var(--ease-out); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .box { animation: none !important; transition: none; transform: rotateX(6deg) rotateY(-20deg); }
+    .sheen { display: none; }
+  }
+</style>
+
+<script>
+  const scenes = document.querySelectorAll<HTMLElement>('[data-box-scene]')
+  if (scenes.length) {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    // Skip the extra work on low-core devices — the static box is the fallback.
+    const capable = (navigator.hardwareConcurrency ?? 4) > 4
+
+    scenes.forEach((scene) => {
+      if (reduce) return
+      if (capable) scene.classList.add('idle')
+      if (!fine || !capable) return
+
+      const box = scene.querySelector<HTMLElement>('[data-box]')
+      if (!box) return
+      let frame = 0
+
+      const move = (e: PointerEvent) => {
+        if (frame) return
+        frame = requestAnimationFrame(() => {
+          frame = 0
+          const r = scene.getBoundingClientRect()
+          const x = (e.clientX - r.left) / r.width - 0.5
+          const y = (e.clientY - r.top) / r.height - 0.5
+          box.style.setProperty('--ry', `${-26 + x * 22}deg`)
+          box.style.setProperty('--rx', `${8 - y * 12}deg`)
+        })
+      }
+      const reset = () => {
+        if (frame) cancelAnimationFrame(frame)
+        frame = 0
+        box.style.removeProperty('--ry')
+        box.style.removeProperty('--rx')
+        scene.classList.remove('tracking')
+      }
+      scene.addEventListener('pointerenter', () => scene.classList.add('tracking'))
+      scene.addEventListener('pointermove', move)
+      scene.addEventListener('pointerleave', reset)
+    })
+  }
+</script>

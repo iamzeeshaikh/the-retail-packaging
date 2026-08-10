@@ -1,0 +1,35 @@
+---
+export interface Props {
+  faqs: { q: string; a: string }[]
+  title?: string
+  intro?: string
+  id?: string
+}
+const { faqs, title = 'Frequently asked questions', intro, id = 'faqs' } = Astro.props
+---
+<section class="section" id={id}>
+  <div class="wrap">
+    <div class="faq-wrap">
+      <div class="faq-head">
+        <p class="eyebrow">Answers</p>
+        <h2>{title}</h2>
+        {intro && <p class="lede">{intro}</p>}
+      </div>
+      <div class="faq-list reveal">
+        {faqs.map((f) => (
+          <details class="faq-item">
+            <summary><span>{f.q}</span><span class="ico" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>{f.a}</p></div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-wrap { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: var(--s-12); align-items: start; }
+  @media (max-width: 900px) { .faq-wrap { grid-template-columns: 1fr; gap: var(--s-6); } }
+  .faq-head { position: sticky; top: calc(var(--header-h) + 2rem); }
+  @media (max-width: 900px) { .faq-head { position: static; } }
+</style>

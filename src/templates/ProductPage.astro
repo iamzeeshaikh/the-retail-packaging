@@ -1,0 +1,302 @@
+---
+import Base from '../layouts/Base.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import Gallery from '../components/Gallery.astro'
+import ProductCard from '../components/ProductCard.astro'
+import QuoteForm from '../components/QuoteForm.astro'
+import Faqs from '../components/Faqs.astro'
+import CtaBand from '../components/CtaBand.astro'
+import { relatedProducts, categoryBySlug, type Product } from '../lib/catalog'
+import { productFaqs, productIntro, productMeta, productSummary, productBenefits, PRICE_LINE, CATEGORY_NOTES } from '../lib/copy'
+import { SITE } from '../lib/site'
+import * as S from '../lib/schema'
+
+export interface Props { product: Product }
+const { product: p } = Astro.props
+
+const f = p.form
+const path = p.url
+const cat = categoryBySlug.get(p.categorySlug)!
+const note = CATEGORY_NOTES[p.categorySlug]
+const intro = productIntro(p)
+const faqs = productFaqs(p)
+const benefits = productBenefits(p)
+const related = relatedProducts(p, 4)
+const { title, description } = productMeta(p)
+const hero = p.images[0]
+
+const trail = [
+  { name: 'Home', url: '/' },
+  { name: cat.name, url: cat.url },
+  { name: p.name, url: path },
+]
+
+const specs: [string, string][] = [
+  ['Product', p.name],
+  ['Category', cat.name],
+  ['Construction', f.singular.charAt(0).toUpperCase() + f.singular.slice(1)],
+  ...Object.entries(f.specNotes),
+  ['Materials', f.materials.slice(0, 4).join(', ')],
+  ['Printing', f.printing.join(', ')],
+  ['Finishes', f.finishes.slice(0, 5).join(', ')],
+  ['Minimum order', f.moq.replace(/^[^.]*?from /i, 'From ').split('.')[0] + '.'],
+  ['Lead time', '8 to 15 business days after artwork approval'],
+  ['Shipping', 'Nationwide across the United States'],
+]
+
+const schema = S.graph([
+  S.organization(),
+  S.website(),
+  S.webPage({ path, title, description, type: 'ItemPage', image: hero ? `${hero.base}-1400.webp` : undefined }),
+  S.breadcrumbs(path, trail),
+  S.product({
+    path,
+    name: p.name,
+    description: `${productSummary(p)} ${f.sizing}`,
+    images: p.images.slice(0, 6).map((i) => `${i.base}-1400.webp`),
+    category: cat.name,
+    material: f.materials[0],
+    // No rating passed — verified review data does not exist yet.
+  }),
+  S.faqPage(path, faqs),
+])
+---
+
+<Base
+  title={title}
+  description={description}
+  path={path}
+  image={hero ? `${hero.base}-1400.webp` : undefined}
+  imageAlt={`${p.name} manufactured by The Retail Packaging`}
+  schema={schema}
+  preloadImage={hero ? {
+    href: `${hero.base}-800.webp`,
+    srcset: `${hero.base}-400.webp 400w, ${hero.base}-800.webp 800w, ${hero.base}-1400.webp 1400w`,
+    sizes: '(max-width: 900px) 94vw, 620px',
+  } : undefined}
+>
+  <Breadcrumbs trail={trail} />
+
+  <!-- ============ top: gallery + summary + inline quote ============ -->
+  <section class="p-top">
+    <div class="wrap p-grid">
+      <div class="p-media">
+        <Gallery product={p} />
+      </div>
+
+      <div class="p-info">
+        <p class="eyebrow">{cat.name}</p>
+        <h1>{p.name}</h1>
+        <p class="p-summary">{productSummary(p)}</p>
+
+        <div class="price-box">
+          <p class="price-line">{PRICE_LINE}</p>
+          <p class="price-note">Every order is quoted individually. There is no fixed unit price.</p>
+        </div>
+
+        <dl class="quick-specs">
+          <div><dt>Construction</dt><dd>{f.singular}</dd></div>
+          <div><dt>Minimum order</dt><dd>{f.moq.split('.')[0].replace(/^.*?(from|start(?:s)? at)\s*/i, 'From ')}</dd></div>
+          <div><dt>Lead time</dt><dd>8–15 business days</dd></div>
+          <div><dt>Images</dt><dd>{p.images.length} product photos</dd></div>
+        </dl>
+
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="#quote">Request a Quote</a>
+          <a class="btn btn-outline btn-lg" href="/samples/">Order a sample</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ inline short quote form ============ -->
+  <section class="section-tight quote-strip" id="quote">
+    <div class="wrap">
+      <QuoteForm
+        id="quote"
+        variant="short"
+        productName={p.name}
+        categoryName={cat.name}
+        source={`product:${p.slug}`}
+        title={`Quote ${p.name.toLowerCase()}`}
+        intro={`Tell us the size and quantity you need. We reply with a specification and a written price, usually within one business day.`}
+      />
+    </div>
+  </section>
+
+  <!-- ============ description ============ -->
+  <section class="section">
+    <div class="wrap p-body">
+      <div class="prose">
+        <h2>About {p.name.toLowerCase()}</h2>
+        {intro.map((para) => <p>{para}</p>)}
+
+        <h2>Customization options</h2>
+        <p>
+          Nothing on this page is fixed. The dimensions, board, print method and finish are all set
+          per order, and we quote each combination rather than charging a flat rate.
+          {note && ` ${note.decides}`}
+        </p>
+
+        <h3>Materials</h3>
+        <p>
+          {f.materials.slice(0, 3).join(', ')} cover most orders for this format. Heavier stocks add
+          rigidity and cost; lighter stocks reduce both. Our
+          <a href="/resources/packaging-material-guide/"> comparison of packaging board grades</a>
+          {' '}sets out how each one behaves in transit.
+        </p>
+        <ul>{f.materials.map((m) => <li>{m}</li>)}</ul>
+
+        <h3>Size options</h3>
+        <p>{f.sizing} If your product sits outside that range, send the measurements and we will tell you whether this format still works or whether a different structure would serve you better.</p>
+
+        <h3>Printing options</h3>
+        <p>
+          {f.printing.join(', ')} are all available. Run length is usually the deciding factor:
+          digital removes the plate cost on short quantities, while
+          {' '}<a href="/printing-options/">offset and flexographic printing</a>
+          {' '}become cheaper per unit once volumes climb.
+        </p>
+
+        <h3>Finishes</h3>
+        <p>Finishing is applied in the same production run, so stock is not shipped between vendors. Each option below adds a step and is priced separately.</p>
+        <ul>{f.finishes.map((m) => <li>{m}</li>)}</ul>
+
+        <h3>Add-ons</h3>
+        <p>
+          Structural extras change how the pack performs rather than how it looks. Where a product
+          needs to be held in place, a fitted
+          {' '}<a href="/custom-packaging-inserts/">packaging insert cut to the product profile</a>
+          {' '}does more for damage rates than a heavier outer board.
+        </p>
+        <ul>{f.addons.map((m) => <li>{m}</li>)}</ul>
+
+        <h2>Applications</h2>
+        <p>
+          {p.name} are used across {p.industries.map((i) => i.name.toLowerCase()).join(', ')}.
+          {p.industries[0] && ` ${p.industries[0].blurb}`}
+        </p>
+        <ul>{f.applications.map((m) => <li>{m}</li>)}</ul>
+
+        <h2>Artwork guidance</h2>
+        <p>{f.artwork}</p>
+        <p>
+          Supply a print-ready PDF or vector file with fonts outlined and images at 300 dpi. Full
+          file requirements are set out in our
+          {' '}<a href="/artwork-guidelines/">artwork and dieline preparation guidelines</a>.
+        </p>
+
+        <h2>Turnaround and shipping</h2>
+        <p>
+          Most {f.noun} complete production in 8 to 15 business days after artwork approval, with
+          transit on top. {f.shipping} Delivery windows are confirmed in writing when your order
+          moves into production, and we flag any risk to the date before you approve rather than after.
+        </p>
+
+        <h2>How to order {p.name.toLowerCase()}</h2>
+        <ol>
+          <li>Send your product dimensions, quantity and deadline through the quote form.</li>
+          <li>We reply with a specification, a lead time and a written price.</li>
+          <li>You approve the quote and we send a dieline template sized to your product.</li>
+          <li>Our prepress team checks your artwork and issues a proof.</li>
+          <li>Production runs, and we ship to your address or fulfilment centre.</li>
+        </ol>
+      </div>
+
+      <aside class="p-aside">
+        <div class="tile sticky">
+          <h2 class="aside-h">Specifications</h2>
+          <dl class="spec-list">
+            {specs.map(([k, v]) => (
+              <div><dt>{k}</dt><dd>{v}</dd></div>
+            ))}
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ benefits ============ -->
+  <section class="section section-sunken">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What you get</p>
+        <h2>Why buyers specify {p.name.toLowerCase()} with us</h2>
+      </div>
+      <div class="grid g-4">
+        {benefits.map((b) => (
+          <div class="tile reveal">
+            <h3 style="font-size:var(--fs-md)">{b.title}</h3>
+            <p class="muted" style="font-size:var(--fs-sm);margin-top:var(--s-2)">{b.text}</p>
+          </div>
+        ))}
+      </div>
+      <p class="cat-back">
+        This format sits in our <a href={cat.url}>{cat.name.toLowerCase()} range</a>, alongside
+        {' '}{Math.max(0, (cat.products?.length ?? 1) - 1)} other made-to-order formats.
+      </p>
+    </div>
+  </section>
+
+  <Faqs faqs={faqs} title={`${p.name} questions`} intro={`Specification, minimums and lead times for ${p.name.toLowerCase()}.`} />
+
+  <!-- ============ related ============ -->
+  {related.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Related formats</p>
+          <h2>Packaging often specified alongside this</h2>
+        </div>
+        <div class="grid g-4">
+          {related.map((r) => (
+            <div class="reveal"><ProductCard product={r} showCategory /></div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <CtaBand
+    title={`Get a price for ${p.name.toLowerCase()}`}
+    text={`Send the dimensions and quantity you need. We reply with a full specification and a written price, usually within one business day.`}
+  />
+</Base>
+
+<style>
+  .p-top { padding-block: var(--s-6) var(--s-10); }
+  .p-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(1.5rem, 1rem + 3vw, 3.5rem); align-items: start; }
+  @media (max-width: 900px) { .p-grid { grid-template-columns: 1fr; } }
+
+  .p-info h1 { font-size: var(--fs-3xl); }
+  .p-summary { font-size: var(--fs-md); color: var(--text-muted); margin-top: var(--s-4); max-width: 52ch; }
+
+  .price-box {
+    margin-top: var(--s-6);
+    padding: var(--s-5);
+    background: var(--champagne-tint);
+    border: 1px solid rgba(176, 141, 70, 0.26);
+    border-radius: var(--r-md);
+  }
+  .price-line { font-size: var(--fs-sm); color: #6b4d10; font-weight: 500; }
+  .price-note { font-size: var(--fs-xs); color: #8a6414; margin-top: var(--s-2); }
+
+  .quick-specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4); margin-top: var(--s-6); }
+  @media (max-width: 420px) { .quick-specs { grid-template-columns: 1fr; } }
+  .quick-specs div { border-left: 2px solid var(--border-strong); padding-left: var(--s-3); }
+  .quick-specs dt { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--text-faint); }
+  .quick-specs dd { margin: 0.15rem 0 0; font-size: var(--fs-sm); font-weight: 600; color: var(--ink); }
+
+  .p-info .btn-row { margin-top: var(--s-8); }
+
+  .quote-strip { background: var(--ivory-deep); border-block: 1px solid var(--border); }
+
+  .p-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: clamp(2rem, 1rem + 4vw, 4rem); align-items: start; }
+  @media (max-width: 980px) { .p-body { grid-template-columns: 1fr; } }
+  .p-body .prose > h2:first-child { margin-top: 0; }
+  .sticky { position: sticky; top: calc(var(--header-h) + 1.5rem); }
+  @media (max-width: 980px) { .sticky { position: static; } }
+  .aside-h { font-size: var(--fs-lg); margin-bottom: var(--s-4); }
+
+  .cat-back { margin-top: var(--s-8); font-size: var(--fs-sm); color: var(--text-muted); }
+</style>

@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import { categories, productsIn, totals } from '../lib/catalog'
+import { states, cities } from '../data/locations'
+import { infoPages } from '../data/pages'
+import { getCollection } from 'astro:content'
+import * as S from '../lib/schema'
+
+const path = '/sitemap/'
+const blog = (await getCollection('blog')).sort((a, b) => a.data.title.localeCompare(b.data.title))
+const resources = (await getCollection('resources')).sort((a, b) => a.data.order - b.data.order)
+const title = 'Sitemap | Every Page on The Retail Packaging'
+const description = 'A complete index of packaging categories, products, guides, articles, locations and company pages.'
+const trail = [{ name: 'Home', url: '/' }, { name: 'Sitemap', url: path }]
+const cats = categories.map((c) => ({ c, list: productsIn(c.slug) }))
+const schema = S.graph([S.organization(), S.website(), S.webPage({ path, title, description }), S.breadcrumbs(path, trail)])
+---
+<Base title={title} description={description} path={path} schema={schema}>
+  <Breadcrumbs trail={trail} />
+  <section class="section">
+    <div class="wrap">
+      <h1>Sitemap</h1>
+      <p class="lede">Every indexable page — {totals.categories} categories, {totals.products} products, {resources.length} guides, {blog.length} articles and {states.length + cities.length} locations.</p>
+
+      <h2>Packaging categories and products</h2>
+      {cats.map(({ c, list }) => (
+        <section class="sm-block">
+          <h3><a href={c.url}>{c.name}</a> <span class="sm-n">{list.length}</span></h3>
+          <ul class="sm-list" role="list">{list.map((p) => <li><a href={p.url}>{p.name}</a></li>)}</ul>
+        </section>
+      ))}
+
+      <h2>Guides</h2>
+      <ul class="sm-list" role="list">
+        <li><a href="/resources/">Resource hub</a></li>
+        {resources.map((d) => <li><a href={`/resources/${d.id}/`}>{d.data.title}</a></li>)}
+      </ul>
+
+      <h2>Articles</h2>
+      <ul class="sm-list" role="list">
+        <li><a href="/blog/">Packaging blog</a></li>
+        {blog.map((b) => <li><a href={`/blog/${b.id}/`}>{b.data.title}</a></li>)}
+      </ul>
+
+      <h2>Locations</h2>
+      <ul class="sm-list" role="list">
+        <li><a href="/locations/">All US locations</a></li>
+        {[...states, ...cities].map((p) => <li><a href={`/locations/${p.slug}/`}>{p.name}</a></li>)}
+      </ul>
+
+      <h2>Company and services</h2>
+      <ul class="sm-list" role="list">
+        <li><a href="/request-a-quote/">Request a quote</a></li>
+        <li><a href="/contact-us/">Contact us</a></li>
+        <li><a href="/custom-packaging-tool/">Packaging design tool</a></li>
+        <li><a href="/search/">Search</a></li>
+        {infoPages.map((p) => <li><a href={`/${p.slug}/`}>{p.title}</a></li>)}
+      </ul>
+
+      <h2>Legal</h2>
+      <ul class="sm-list" role="list">
+        <li><a href="/privacy-policy/">Privacy policy</a></li>
+        <li><a href="/terms-and-conditions/">Terms and conditions</a></li>
+        <li><a href="/cookie-policy/">Cookie policy</a></li>
+        <li><a href="/accessibility-statement/">Accessibility statement</a></li>
+      </ul>
+    </div>
+  </section>
+</Base>
+<style>
+  .sm-block { margin-top:var(--s-8); padding-top:var(--s-5); border-top:1px solid var(--border); }
+  .sm-block h3 { font-size:var(--fs-md); display:flex; align-items:baseline; gap:var(--s-3); }
+  .sm-n { font-size:var(--fs-xs); color:var(--stone-300); }
+  .sm-list { list-style:none; padding:0; margin:var(--s-4) 0 0; display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr)); gap:.35rem var(--s-4); }
+  .sm-list a { font-size:var(--fs-sm); color:var(--text-muted); text-decoration:none; }
+  .sm-list a:hover { color:var(--forest); text-decoration:underline; }
+  h2 { margin-top:var(--s-16); }
+</style>

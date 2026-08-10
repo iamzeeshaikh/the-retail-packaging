@@ -1,0 +1,238 @@
+---
+import type { GetStaticPaths } from 'astro'
+import Base from '../../../layouts/Base.astro'
+import Breadcrumbs from '../../../components/Breadcrumbs.astro'
+import QuoteForm from '../../../components/QuoteForm.astro'
+import Faqs from '../../../components/Faqs.astro'
+import CtaBand from '../../../components/CtaBand.astro'
+import CategoryCard from '../../../components/CategoryCard.astro'
+import { allPlaces, cities, type Place } from '../../../data/locations'
+import { categoryBySlug, productsIn } from '../../../lib/catalog'
+import { clampText } from '../../../lib/copy'
+import { SITE } from '../../../lib/site'
+import * as S from '../../../lib/schema'
+
+export const getStaticPaths = (() =>
+  allPlaces.map((p) => ({ params: { place: p.slug }, props: { place: p } }))) satisfies GetStaticPaths
+
+const { place } = Astro.props as { place: Place }
+const path = `/locations/${place.slug}/`
+const isCity = place.kind === 'city'
+const where = isCity ? `${place.name}, ${place.state}` : place.name
+
+const recommended = place.recommend
+  .map((s) => categoryBySlug.get(s))
+  .filter(Boolean)
+  .map((c) => ({ c: c!, list: productsIn(c!.slug) }))
+
+// Cities inside this state, for state pages.
+const childCities = !isCity ? cities.filter((c) => c.stateSlug === place.slug) : []
+
+const trail = [
+  { name: 'Home', url: '/' },
+  { name: 'Locations', url: '/locations/' },
+  ...(isCity && place.stateSlug ? [{ name: place.state!, url: `/locations/${place.stateSlug}/` }] : []),
+  { name: place.name, url: path },
+]
+
+const title = clampText(`Custom Packaging ${where} | Made to Order`, 60)
+const description = clampText(
+  `Custom retail packaging for ${where} brands. Boxes, bags, pouches and labels made to your size, printed to your artwork, shipped to ${place.name}.`,
+  132
+)
+
+const faqs = [
+  {
+    q: `Do you supply custom packaging to businesses in ${where}?`,
+    a: `Yes. We manufacture to order and ship across the United States, including ${where}. ${place.freight}`,
+  },
+  {
+    q: `Do you have a facility in ${place.name}?`,
+    a: `No. We do not operate an office or plant in ${place.name}, and we would rather say so than imply otherwise. Production runs through our manufacturing partners and ships directly to your ${place.name} address.`,
+  },
+  {
+    q: `How long does delivery to ${place.name} take?`,
+    a: `${place.freight} Add 8 to 15 business days of production time after artwork approval, and we confirm the full timeline in writing with your quote.`,
+  },
+  {
+    q: `Which industries in ${where} do you supply most?`,
+    a: `${place.sectors.join(', ')}. ${place.context}`,
+  },
+  {
+    q: `What should ${place.name} buyers know before ordering?`,
+    a: place.note,
+  },
+  {
+    q: `What is the minimum order for delivery to ${place.name}?`,
+    a: `Minimums are set by format and print method, not by destination. Digital runs start as low as 50 to 100 units, while offset and flexo need larger quantities. Shipping to ${place.name} does not change the minimum.`,
+  },
+  {
+    q: `Can you ship to multiple addresses in ${place.kind === 'city' ? place.state : place.name}?`,
+    a: `Yes. We can split a production run across several delivery points, which suits brands with more than one store or fulfilment site. Tell us the split at quoting so freight is costed correctly.`,
+  },
+  {
+    q: `How much does custom packaging cost for a ${place.name} business?`,
+    a: `${SITE.priceLine} Freight to ${place.name} is quoted separately and depends on consignment size.`,
+  },
+  {
+    q: `Can I get samples sent to ${place.name} first?`,
+    a: `Yes. We can send a plain structural sample so you can check the fit, or a printed prototype for colour and finish. Sample costs are normally credited against the production order.`,
+  },
+  {
+    q: `Do you offer sustainable packaging for ${where} brands?`,
+    a: `Yes. Recycled board, recyclable mono-material films and certified compostable stocks are all available. Those are three different environmental claims, so tell us which one you intend to print on the pack.`,
+  },
+  {
+    q: `Who do I contact about a ${place.name} order?`,
+    a: `Send a quote request through this page, email ${SITE.email} or call ${SITE.phone}. One person handles your specification, proof and production so you are not re-explaining the job.`,
+  },
+]
+
+const schema = S.graph([
+  S.organization(),
+  S.website(),
+  S.webPage({ path, title, description }),
+  S.breadcrumbs(path, trail),
+  S.service({
+    path,
+    name: `Custom packaging manufacturing for ${where}`,
+    description,
+    areaName: where,
+  }),
+  S.faqPage(path, faqs),
+])
+---
+
+<Base title={title} description={description} path={path} schema={schema}>
+  <Breadcrumbs trail={trail} />
+
+  <section class="loc-hero">
+    <div class="wrap">
+      <p class="eyebrow">{isCity ? 'City' : 'State'} · United States</p>
+      <h1>Custom packaging for {where}</h1>
+      <p class="lede">{place.context}</p>
+      <div class="btn-row">
+        <a class="btn btn-primary btn-lg" href="#quote">Request a Quote</a>
+        <a class="btn btn-outline btn-lg" href="/locations/">All US locations</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap two-col">
+      <div class="prose">
+        <h2>Packaging for {place.name} businesses</h2>
+        <p>
+          We manufacture to order and ship nationwide, which means a brand in {place.name} gets the
+          same specification process, board options and print routes as one anywhere else. What
+          changes is the freight plan and, occasionally, the material — local storage conditions and
+          regional retail requirements do affect what we recommend.
+        </p>
+        <p>{place.freight}</p>
+
+        <h2>Sectors we supply in {where}</h2>
+        <p>
+          Demand here is concentrated in a handful of sectors, and each one pushes the specification
+          in a different direction.
+        </p>
+        <ul>{place.sectors.map((s) => <li>{s}</li>)}</ul>
+
+        <h2>One thing worth knowing before you order</h2>
+        <p>{place.note}</p>
+
+        <h2>How ordering works from {place.name}</h2>
+        <p>
+          Send your product dimensions, the quantity you need and your deadline. We reply with a
+          board grade, a structure, a print method and a written price. Once you approve, we send a
+          dieline template sized to your product, check your artwork in prepress and issue a proof
+          before anything runs. Our
+          {' '}<a href="/how-it-works/">step-by-step packaging production process</a>
+          {' '}sets out what happens at each stage.
+        </p>
+
+        {isCity && place.stateSlug && (
+          <p>
+            {place.name} sits within our wider
+            {' '}<a href={`/locations/${place.stateSlug}/`}>{place.state} packaging coverage</a>,
+            {' '}which follows the same production and freight arrangements.
+          </p>
+        )}
+
+        {!isCity && childCities.length > 0 && (
+          <>
+            <h2>Cities we ship to in {place.name}</h2>
+            <ul>
+              {childCities.map((c) => (
+                <li><a href={`/locations/${c.slug}/`}>{`Custom packaging in ${c.name}`}</a></li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+
+      <aside>
+        <div class="tile sticky">
+          <h2 class="aside-h">Delivery to {place.name}</h2>
+          <dl class="spec-list">
+            <div><dt>Coverage</dt><dd>{where}</dd></div>
+            <div><dt>Production</dt><dd>8–15 business days after approval</dd></div>
+            <div><dt>Local facility</dt><dd>None — we ship to you directly</dd></div>
+            <div><dt>Contact</dt><dd>{SITE.phone}</dd></div>
+          </dl>
+          <a class="btn btn-primary btn-block" href="#quote" style="margin-top:var(--s-5)">Get a quote</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-sunken">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Recommended</p>
+        <h2>Packaging categories most ordered in {place.name}</h2>
+        <p class="lede">
+          Based on the sectors that drive demand locally, these ranges are where most {place.name}
+          {' '}enquiries start.
+        </p>
+      </div>
+      <div class="grid g-4">
+        {recommended.map(({ c, list }) => (
+          <div class="reveal"><CategoryCard category={c} count={list.length} sample={list[0]} /></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="quote">
+    <div class="wrap two-col">
+      <div>
+        <p class="eyebrow">Get a price</p>
+        <h2>Quote a {place.name} delivery</h2>
+        <p class="lede">
+          Tell us what you are packing, how many you need and where in {place.name} it should land.
+          We reply with a specification and a written price, usually within one business day.
+        </p>
+        <p class="muted">{SITE.priceLine}</p>
+      </div>
+      <QuoteForm id="quote" source={`location:${place.slug}`} title={`Quote for ${place.name}`} />
+    </div>
+  </section>
+
+  <Faqs faqs={faqs} title={`Custom packaging in ${place.name} — questions`} />
+
+  <CtaBand title={`Shipping packaging to ${place.name}`} />
+</Base>
+
+<style>
+  .loc-hero { background: linear-gradient(180deg, var(--ivory), var(--ivory-deep));
+    border-bottom: 1px solid var(--border); padding-block: clamp(1.5rem,1rem + 2vw,3rem) clamp(2.5rem,2rem + 3vw,4rem); }
+  .loc-hero h1 { max-width: 20ch; }
+  .loc-hero .lede { margin-top: var(--s-5); max-width: 68ch; }
+  .loc-hero .btn-row { margin-top: var(--s-8); }
+  .two-col { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,320px); gap: clamp(2rem,1rem + 4vw,4rem); align-items: start; }
+  @media (max-width: 980px) { .two-col { grid-template-columns: 1fr; } }
+  .sticky { position: sticky; top: calc(var(--header-h) + 1.5rem); }
+  @media (max-width: 980px) { .sticky { position: static; } }
+  .aside-h { font-size: var(--fs-lg); margin-bottom: var(--s-4); }
+  .prose > h2:first-child { margin-top: 0; }
+</style>

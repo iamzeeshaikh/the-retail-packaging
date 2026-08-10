@@ -1,0 +1,437 @@
+---
+import { categories, productsIn } from '../lib/catalog'
+import { SITE } from '../lib/site'
+
+/**
+ * Desktop mega menu + mobile drawer.
+ *
+ * The catalogue holds 371 products, so the menu deliberately exposes category
+ * hubs and a curated set of high-demand products. The full catalogue is reached
+ * through category pages and search, never dumped into the nav.
+ */
+
+const catsWithCounts = categories
+  .map((c) => ({ ...c, count: productsIn(c.slug).length }))
+  .sort((a, b) => b.count - a.count)
+
+// Split into three balanced mega-menu columns.
+const col = (i: number) => catsWithCounts.filter((_, idx) => idx % 3 === i)
+
+const popular = [
+  { name: 'Mailer Boxes', url: '/mailer-boxes/' },
+  { name: 'Cosmetic Boxes', url: '/cosmetic-boxes/' },
+  { name: 'Candle Boxes with Window', url: '/candle-boxes-with-window/' },
+  { name: 'Kraft Paper Bags', url: '/kraft-paper-bags/' },
+  { name: 'Stand Up Pouches', url: '/stand-up-pouches/' },
+  { name: 'Custom Die Cut Stickers', url: '/custom-die-cut-stickers/' },
+]
+
+const industries = [
+  { name: 'Food and beverage', url: '/custom-food-packaging/' },
+  { name: 'Beauty and personal care', url: '/custom-cosmetic-packaging/' },
+  { name: 'E-commerce and DTC', url: '/custom-mailers/' },
+  { name: 'CBD and wellness', url: '/custom-cbd-packaging/' },
+  { name: 'Candles and home', url: '/custom-candle-packaging/' },
+  { name: 'Apparel and accessories', url: '/custom-apparel-packaging/' },
+  { name: 'Jewellery and gifting', url: '/custom-jewellery-boxes/' },
+  { name: 'Electronics and hardware', url: '/electronics-packaging/' },
+]
+
+const boxStyles = [
+  { name: 'Folding cartons', url: '/custom-cosmetic-packaging/' },
+  { name: 'Rigid boxes', url: '/custom-jewellery-boxes/' },
+  { name: 'Mailer boxes', url: '/custom-mailers/' },
+  { name: 'Display boxes', url: '/custom-display-boxes/' },
+  { name: 'Trays and containers', url: '/custom-food-trays/' },
+  { name: 'Sleeves and bands', url: '/custom-sleeves/' },
+]
+
+const materialsLinks = [
+  { name: 'Material guide', url: '/resources/packaging-material-guide/' },
+  { name: 'Box style guide', url: '/resources/box-style-guide/' },
+  { name: 'Printing methods', url: '/resources/printing-methods-guide/' },
+  { name: 'Finishes guide', url: '/resources/packaging-finishes-guide/' },
+  { name: 'Sizing guide', url: '/resources/custom-packaging-size-guide/' },
+  { name: 'Sustainable options', url: '/sustainability/' },
+]
+
+const resourceLinks = [
+  { name: 'Resource hub', url: '/resources/' },
+  { name: 'Packaging blog', url: '/blog/' },
+  { name: 'Artwork guidelines', url: '/artwork-guidelines/' },
+  { name: 'Dieline and artwork guide', url: '/resources/dieline-and-artwork-guide/' },
+  { name: 'Packaging glossary', url: '/resources/custom-packaging-glossary/' },
+  { name: 'Cost factors', url: '/resources/packaging-cost-factors/' },
+]
+
+const aboutLinks = [
+  { name: 'About us', url: '/about-us/' },
+  { name: 'How it works', url: '/how-it-works/' },
+  { name: 'Packaging design services', url: '/packaging-design-services/' },
+  { name: 'Custom printing', url: '/custom-printing/' },
+  { name: 'Order samples', url: '/samples/' },
+  { name: 'Contact us', url: '/contact-us/' },
+]
+---
+
+<header class="site-header" data-header>
+  <div class="topbar">
+    <div class="wrap topbar-in">
+      <p>Made-to-order packaging for US brands. Nationwide delivery.</p>
+      <div class="topbar-links">
+        <a href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a>
+        <span aria-hidden="true">·</span>
+        <a href="/samples/">Order samples</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap bar">
+    <a href="/" class="brand" aria-label={`${SITE.name} home`}>
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <path d="M4 12.5 20 4l16 8.5v15L20 36 4 27.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M4 12.5 20 21l16-8.5M20 21v15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" opacity=".55"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">The Retail Packaging</span>
+        <span class="brand-sub">Custom packaging manufacturing</span>
+      </span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul class="nav-list">
+        <li class="has-mega">
+          <button type="button" aria-expanded="false" aria-controls="mega-products" class="nav-btn">
+            Products<span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="mega" id="mega-products" hidden>
+            <div class="wrap mega-in mega-products">
+              <div class="mega-cats">
+                <p class="mega-title">All categories</p>
+                <div class="mega-cols">
+                  {[0, 1, 2].map((i) => (
+                    <ul class="mega-list">
+                      {col(i).map((c) => (
+                        <li>
+                          <a href={c.url}>
+                            {c.name}
+                            <span class="count">{c.count}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  ))}
+                </div>
+              </div>
+              <div class="mega-side">
+                <p class="mega-title">Frequently ordered</p>
+                <ul class="mega-list">
+                  {popular.map((p) => <li><a href={p.url}>{p.name}</a></li>)}
+                </ul>
+                <form class="mega-search" action="/search/" role="search">
+                  <label class="sr-only" for="mega-q">Search packaging products</label>
+                  <input class="input" type="search" id="mega-q" name="q" placeholder="Search 371 products" autocomplete="off" />
+                  <button class="btn btn-primary btn-sm" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="has-mega">
+          <button type="button" aria-expanded="false" aria-controls="mega-industry" class="nav-btn">
+            Industries<span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="mega mega-sm" id="mega-industry" hidden>
+            <div class="wrap mega-in mega-three">
+              <div>
+                <p class="mega-title">By industry</p>
+                <ul class="mega-list">{industries.map((i) => <li><a href={i.url}>{i.name}</a></li>)}</ul>
+              </div>
+              <div>
+                <p class="mega-title">Box styles</p>
+                <ul class="mega-list">{boxStyles.map((i) => <li><a href={i.url}>{i.name}</a></li>)}</ul>
+              </div>
+              <div>
+                <p class="mega-title">Materials and printing</p>
+                <ul class="mega-list">{materialsLinks.map((i) => <li><a href={i.url}>{i.name}</a></li>)}</ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="has-mega">
+          <button type="button" aria-expanded="false" aria-controls="mega-resources" class="nav-btn">
+            Resources<span class="chev" aria-hidden="true"></span>
+          </button>
+          <div class="mega mega-sm" id="mega-resources" hidden>
+            <div class="wrap mega-in mega-three">
+              <div>
+                <p class="mega-title">Guides</p>
+                <ul class="mega-list">{resourceLinks.map((i) => <li><a href={i.url}>{i.name}</a></li>)}</ul>
+              </div>
+              <div>
+                <p class="mega-title">Company</p>
+                <ul class="mega-list">{aboutLinks.map((i) => <li><a href={i.url}>{i.name}</a></li>)}</ul>
+              </div>
+              <div>
+                <p class="mega-title">Where we ship</p>
+                <ul class="mega-list">
+                  <li><a href="/locations/">All US locations</a></li>
+                  <li><a href="/locations/california/">California</a></li>
+                  <li><a href="/locations/texas/">Texas</a></li>
+                  <li><a href="/locations/new-york/">New York</a></li>
+                  <li><a href="/locations/florida/">Florida</a></li>
+                  <li><a href="/shipping-information/">Shipping information</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li><a class="nav-link" href="/materials/">Materials</a></li>
+        <li><a class="nav-link" href="/custom-packaging-tool/">Design tool</a></li>
+      </ul>
+    </nav>
+
+    <div class="bar-actions">
+      <a class="icon-btn" href="/search/" aria-label="Search the site">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+        </svg>
+      </a>
+      <a class="btn btn-primary btn-sm quote-cta" href="/request-a-quote/">Request a Quote</a>
+      <button type="button" class="burger" data-burger aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden data-mobile>
+    <div class="mobile-in">
+      <form class="mobile-search" action="/search/" role="search">
+        <label class="sr-only" for="m-q">Search packaging products</label>
+        <input class="input" type="search" id="m-q" name="q" placeholder="Search products" />
+      </form>
+      <details class="m-group">
+        <summary>Product categories<span class="chev" aria-hidden="true"></span></summary>
+        <ul>{catsWithCounts.map((c) => <li><a href={c.url}>{c.name} <span class="count">{c.count}</span></a></li>)}</ul>
+      </details>
+      <details class="m-group">
+        <summary>Industries<span class="chev" aria-hidden="true"></span></summary>
+        <ul>{industries.map((i) => <li><a href={i.url}>{i.name}</a></li>)}</ul>
+      </details>
+      <details class="m-group">
+        <summary>Resources<span class="chev" aria-hidden="true"></span></summary>
+        <ul>{[...resourceLinks, { name: 'US locations', url: '/locations/' }].map((i) => <li><a href={i.url}>{i.name}</a></li>)}</ul>
+      </details>
+      <details class="m-group">
+        <summary>Company<span class="chev" aria-hidden="true"></span></summary>
+        <ul>{aboutLinks.map((i) => <li><a href={i.url}>{i.name}</a></li>)}</ul>
+      </details>
+      <a class="m-flat" href="/materials/">Materials</a>
+      <a class="m-flat" href="/custom-packaging-tool/">Packaging design tool</a>
+      <div class="mobile-cta">
+        <a class="btn btn-primary btn-block" href="/request-a-quote/">Request a Quote</a>
+        <a class="btn btn-outline btn-block" href={SITE.phoneHref} data-analytics="phone-click">Call {SITE.phone}</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background: rgba(250, 248, 244, 0.92);
+    backdrop-filter: saturate(150%) blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header.is-stuck { box-shadow: var(--sh-2); }
+
+  .topbar { background: var(--ink); color: rgba(246, 243, 237, 0.78); font-size: var(--fs-xs); }
+  .topbar-in { display: flex; justify-content: space-between; align-items: center; gap: var(--s-4); min-height: 34px; }
+  .topbar p { margin: 0; }
+  .topbar-links { display: flex; gap: var(--s-2); align-items: center; }
+  .topbar a { color: rgba(246, 243, 237, 0.9); text-decoration: none; }
+  .topbar a:hover { color: var(--champagne-soft); text-decoration: underline; }
+  @media (max-width: 780px) { .topbar p { display: none; } .topbar-in { justify-content: center; } }
+
+  .bar { display: flex; align-items: center; gap: var(--s-6); min-height: var(--header-h); }
+
+  .brand { display: flex; align-items: center; gap: var(--s-3); text-decoration: none; color: var(--ink); flex: none; }
+  .brand-mark { width: 34px; height: 34px; color: var(--forest); flex: none; }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-name { font-family: var(--font-display); font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.015em; }
+  .brand-sub { font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+  @media (max-width: 460px) { .brand-sub { display: none; } .brand-name { font-size: 0.95rem; } }
+
+  .nav-desktop { margin-left: auto; }
+  .nav-list { display: flex; align-items: center; gap: var(--s-1); list-style: none; margin: 0; padding: 0; }
+  .nav-btn, .nav-link {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    padding: 0.55rem 0.75rem; border: 0; background: transparent;
+    font-size: var(--fs-sm); font-weight: 600; color: var(--ink);
+    text-decoration: none; cursor: pointer; border-radius: var(--r-sm);
+    transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+  }
+  .nav-btn:hover, .nav-link:hover, .nav-btn[aria-expanded='true'] { color: var(--forest); background: var(--forest-tint); }
+  .chev { width: 8px; height: 8px; border-right: 1.6px solid currentColor; border-bottom: 1.6px solid currentColor;
+    transform: rotate(45deg) translate(-2px, -2px); transition: transform var(--dur) var(--ease); }
+  .nav-btn[aria-expanded='true'] .chev { transform: rotate(-135deg) translate(-3px, -3px); }
+
+  .mega {
+    position: absolute; left: 0; right: 0; top: 100%;
+    background: var(--paper); border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border); box-shadow: var(--sh-3);
+    animation: megaIn 200ms var(--ease-out);
+  }
+  @keyframes megaIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .mega { animation: none; } }
+  .mega-in { display: grid; gap: var(--s-8); padding-block: var(--s-8); }
+  .mega-products { grid-template-columns: minmax(0, 1fr) 300px; }
+  .mega-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mega-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-6); }
+  .mega-title { font-size: var(--fs-xs); font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--text-faint); margin-bottom: var(--s-3); }
+  .mega-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; }
+  .mega-list a {
+    display: flex; justify-content: space-between; gap: var(--s-3);
+    padding: 0.4rem 0.5rem; margin-left: -0.5rem; border-radius: var(--r-sm);
+    font-size: var(--fs-sm); color: var(--text-muted); text-decoration: none;
+  }
+  .mega-list a:hover { background: var(--forest-tint); color: var(--forest); }
+  .count { font-size: 0.6875rem; color: var(--stone-300); font-variant-numeric: tabular-nums; }
+  .mega-side { border-left: 1px solid var(--border); padding-left: var(--s-8); }
+  .mega-search { display: flex; gap: var(--s-2); margin-top: var(--s-6); }
+  .mega-search .input { min-height: 38px; font-size: var(--fs-sm); }
+
+  .bar-actions { display: flex; align-items: center; gap: var(--s-2); flex: none; }
+  .icon-btn {
+    display: grid; place-items: center; width: 38px; height: 38px;
+    border-radius: var(--r-sm); color: var(--ink); text-decoration: none;
+    transition: background var(--dur) var(--ease);
+  }
+  .icon-btn:hover { background: var(--ivory-deep); color: var(--forest); }
+
+  .burger { display: none; width: 42px; height: 38px; border: 0; background: transparent; cursor: pointer;
+    flex-direction: column; justify-content: center; gap: 5px; padding: 0 8px; }
+  .burger span { display: block; height: 1.8px; background: var(--ink); border-radius: 2px;
+    transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease); }
+  .burger[aria-expanded='true'] span:nth-child(1) { transform: translateY(6.8px) rotate(45deg); }
+  .burger[aria-expanded='true'] span:nth-child(2) { opacity: 0; }
+  .burger[aria-expanded='true'] span:nth-child(3) { transform: translateY(-6.8px) rotate(-45deg); }
+
+  @media (max-width: 1080px) {
+    .nav-desktop { display: none; }
+    .burger { display: flex; }
+    .bar-actions { margin-left: auto; }
+  }
+  @media (max-width: 560px) { .quote-cta { display: none; } }
+
+  .mobile-nav {
+    border-top: 1px solid var(--border);
+    background: var(--paper);
+    max-height: calc(100dvh - var(--header-h) - 34px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .mobile-in { padding: var(--s-4) var(--gutter) var(--s-8); display: grid; gap: var(--s-1); }
+  .mobile-search { margin-bottom: var(--s-3); }
+  .m-group summary {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.85rem 0; font-weight: 600; cursor: pointer; list-style: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .m-group summary::-webkit-details-marker { display: none; }
+  .m-group[open] summary .chev { transform: rotate(-135deg) translate(-3px, -3px); }
+  .m-group ul { list-style: none; margin: 0; padding: var(--s-2) 0 var(--s-3); display: grid; gap: 1px; }
+  .m-group ul a { display: flex; justify-content: space-between; padding: 0.6rem 0.5rem;
+    font-size: var(--fs-sm); color: var(--text-muted); text-decoration: none; border-radius: var(--r-sm); min-height: 44px; align-items: center; }
+  .m-group ul a:hover { background: var(--ivory-deep); color: var(--forest); }
+  .m-flat { display: block; padding: 0.85rem 0; font-weight: 600; color: var(--ink);
+    text-decoration: none; border-bottom: 1px solid var(--border); }
+  .mobile-cta { display: grid; gap: var(--s-3); margin-top: var(--s-5); }
+</style>
+
+<script>
+  const header = document.querySelector('[data-header]') as HTMLElement | null
+  if (header) {
+    // --- sticky shadow ---
+    const onScroll = () => header.classList.toggle('is-stuck', window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+
+    // --- mega menus ---
+    const triggers = Array.from(header.querySelectorAll<HTMLButtonElement>('.nav-btn'))
+    const panels = triggers.map((t) => document.getElementById(t.getAttribute('aria-controls')!))
+    let openIdx = -1
+    let closeTimer: number | undefined
+
+    const close = (i: number) => {
+      if (i < 0) return
+      triggers[i].setAttribute('aria-expanded', 'false')
+      panels[i]?.setAttribute('hidden', '')
+      if (openIdx === i) openIdx = -1
+    }
+    const open = (i: number) => {
+      if (openIdx === i) return
+      close(openIdx)
+      triggers[i].setAttribute('aria-expanded', 'true')
+      panels[i]?.removeAttribute('hidden')
+      openIdx = i
+    }
+
+    triggers.forEach((t, i) => {
+      t.addEventListener('click', (e) => {
+        e.preventDefault()
+        openIdx === i ? close(i) : open(i)
+      })
+      const li = t.closest('li')!
+      li.addEventListener('mouseenter', () => {
+        if (window.matchMedia('(hover: hover)').matches) {
+          window.clearTimeout(closeTimer)
+          open(i)
+        }
+      })
+      li.addEventListener('mouseleave', () => {
+        if (window.matchMedia('(hover: hover)').matches) {
+          closeTimer = window.setTimeout(() => close(i), 180)
+        }
+      })
+      panels[i]?.addEventListener('mouseenter', () => window.clearTimeout(closeTimer))
+      panels[i]?.addEventListener('mouseleave', () => {
+        closeTimer = window.setTimeout(() => close(i), 180)
+      })
+    })
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && openIdx > -1) {
+        const t = triggers[openIdx]
+        close(openIdx)
+        t.focus()
+      }
+    })
+    document.addEventListener('click', (e) => {
+      if (openIdx > -1 && !header.contains(e.target as Node)) close(openIdx)
+    })
+    // Close when focus leaves the open panel entirely (keyboard users).
+    header.addEventListener('focusout', () => {
+      window.setTimeout(() => {
+        if (openIdx > -1 && !header.contains(document.activeElement)) close(openIdx)
+      }, 0)
+    })
+
+    // --- mobile drawer ---
+    const burger = header.querySelector<HTMLButtonElement>('[data-burger]')
+    const drawer = header.querySelector<HTMLElement>('[data-mobile]')
+    burger?.addEventListener('click', () => {
+      const isOpen = burger.getAttribute('aria-expanded') === 'true'
+      burger.setAttribute('aria-expanded', String(!isOpen))
+      burger.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu')
+      if (isOpen) drawer?.setAttribute('hidden', '')
+      else drawer?.removeAttribute('hidden')
+    })
+  }
+</script>

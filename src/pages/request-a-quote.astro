@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro'
+import Breadcrumbs from '../components/Breadcrumbs.astro'
+import QuoteForm from '../components/QuoteForm.astro'
+import Faqs from '../components/Faqs.astro'
+import { SITE, whatsappUrl } from '../lib/site'
+import { totals } from '../lib/catalog'
+import * as S from '../lib/schema'
+
+const path = '/request-a-quote/'
+const title = 'Request a Custom Packaging Quote | Free, No Obligation'
+const description = 'Send your product dimensions, quantity and deadline. We reply with a full specification, lead time and written price, usually within one business day.'
+const trail = [{ name: 'Home', url: '/' }, { name: 'Request a quote', url: path }]
+
+const faqs = [
+  { q: 'How quickly will I get a reply?', a: 'Usually within one business day. If a requirement needs a structural mock-up before we can price it accurately, we tell you that rather than guessing at a number.' },
+  { q: 'What information do you need from me?', a: 'Product dimensions at the widest point, product weight, the quantity you need, your deadline and the delivery destination. Anything else is helpful but not essential.' },
+  { q: 'Do I need artwork to get a quote?', a: 'No. Pricing depends on dimensions, material, print method and quantity, not on finished artwork. Artwork comes after the specification is agreed.' },
+  { q: 'Is the quote binding on me?', a: 'No. There is no obligation and no account required. A quote is a specification and a price you can compare with anything else.' },
+  { q: 'What does the quote include?', a: 'Board grade, finished dimensions, print method and colour count, finishing operations, quantity, tooling position, lead time and price. Freight is quoted separately.' },
+  { q: 'Can I get prices at more than one quantity?', a: 'Yes, and it is worth asking. Two quantities show you the shape of the price curve, and a modest increase in order size often lowers the unit cost noticeably.' },
+  { q: 'What if I do not know what material I need?', a: 'Say so. An honest blank is more useful than a guess. Send the product weight and how it ships and we will recommend a specification.' },
+  { q: 'Can I upload artwork with the request?', a: 'Yes, up to five files of 10 MB each. PDF, AI, EPS, SVG, PNG, JPG, WEBP and ZIP are accepted. Reference photos are just as useful as finished artwork at this stage.' },
+  { q: 'What happens to my details?', a: 'We use them to answer this request. We do not sell or share contact data. Full detail is in our privacy policy.' },
+  { q: 'Can I speak to someone instead?', a: `Yes. Call ${SITE.phone} during ${SITE.hours}, or message us on WhatsApp. Some specifications are faster to settle in conversation.` },
+]
+
+const schema = S.graph([
+  S.organization(), S.website(),
+  S.webPage({ path, title, description, type: 'ContactPage' }),
+  S.breadcrumbs(path, trail),
+  S.faqPage(path, faqs),
+])
+---
+<Base title={title} description={description} path={path} schema={schema}>
+  <Breadcrumbs trail={trail} />
+  <section class="q-hero">
+    <div class="wrap q-grid">
+      <div>
+        <p class="eyebrow">No obligation</p>
+        <h1>Request a custom packaging quote</h1>
+        <p class="lede">
+          Tell us what you are packing, how many you need and when you need it. We come back with a
+          board grade, a structure, a print method, a lead time and a written price.
+        </p>
+        <ul class="tick-list">
+          <li>Reply usually within one business day</li>
+          <li>Full written specification, not just a number</li>
+          <li>{totals.products} formats across {totals.categories} categories</li>
+          <li>No account required and nothing to sign</li>
+        </ul>
+        <div class="alt-contact">
+          <p class="alt-h">Prefer to talk?</p>
+          <a class="btn btn-outline" href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a>
+          <a class="btn btn-ghost" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" data-analytics="whatsapp-click">WhatsApp</a>
+          <p class="small muted">{SITE.hours}</p>
+        </div>
+      </div>
+      <QuoteForm id="quote" variant="full" source="quote-page" title="Your packaging requirement"
+        intro="The more detail you give, the more accurate the quote. Fields marked with an asterisk are required." />
+    </div>
+  </section>
+  <Faqs faqs={faqs} title="Quoting questions" />
+</Base>
+<style>
+  .q-hero { padding-block: clamp(1.5rem,1rem + 2vw,3rem) var(--section-y);
+    background:linear-gradient(180deg,var(--ivory),var(--ivory-deep)); }
+  .q-grid { display:grid; grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr); gap:clamp(2rem,1rem + 4vw,4rem); align-items:start; }
+  @media (max-width:980px){ .q-grid{ grid-template-columns:1fr; } }
+  .q-hero .lede { margin-top:var(--s-5); }
+  .tick-list { list-style:none; padding:0; margin:var(--s-6) 0; display:grid; gap:var(--s-2); }
+  .tick-list li { position:relative; padding-left:1.75rem; font-size:var(--fs-sm); color:var(--text-muted); }
+  .tick-list li::before { content:''; position:absolute; left:0; top:.45em; width:.95rem; height:.5rem;
+    border-left:2px solid var(--forest-bright); border-bottom:2px solid var(--forest-bright); transform:rotate(-45deg); }
+  .alt-contact { margin-top:var(--s-8); padding-top:var(--s-6); border-top:1px solid var(--border-strong); display:flex; flex-wrap:wrap; gap:var(--s-3); align-items:center; }
+  .alt-h { width:100%; font-weight:600; font-size:var(--fs-sm); }
+  .alt-contact .small { width:100%; margin-top:var(--s-2); }
+</style>

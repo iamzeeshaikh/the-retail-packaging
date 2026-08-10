@@ -1,0 +1,397 @@
+---
+import { SITE } from '../lib/site'
+
+export interface Props {
+  /** `short` for inline placements, `full` for the dedicated quote page. */
+  variant?: 'short' | 'full'
+  /** Pre-fills the product field on product pages. */
+  productName?: string
+  categoryName?: string
+  title?: string
+  intro?: string
+  id?: string
+  /** Extra context recorded with the submission, e.g. "product-page". */
+  source?: string
+}
+
+const {
+  variant = 'short',
+  productName = '',
+  categoryName = '',
+  title = 'Request a quote',
+  intro,
+  id = 'quote',
+  source = 'site',
+} = Astro.props
+
+const full = variant === 'full'
+const formId = `qf-${id}`
+---
+
+<section class="quote-form" id={id}>
+  <div class="qf-card">
+    <div class="qf-head">
+      <p class="eyebrow">No obligation</p>
+      <h2 class="qf-title">{title}</h2>
+      <p class="qf-intro">
+        {intro ??
+          `Send us the product details and quantity. We reply with a specification and a written price, usually within one business day.`}
+      </p>
+    </div>
+
+    <form
+      class="qf-form"
+      id={formId}
+      method="POST"
+      action="/api/quote"
+      enctype="multipart/form-data"
+      novalidate
+      data-quote-form
+      data-source={source}
+    >
+      {/* Honeypot — hidden from users, catches naive bots. */}
+      <div class="hp" aria-hidden="true">
+        <label for={`${formId}-company-url`}>Leave this field empty</label>
+        <input id={`${formId}-company-url`} type="text" name="company_url" tabindex="-1" autocomplete="off" />
+      </div>
+      <input type="hidden" name="form_source" value={source} />
+      <input type="hidden" name="page_url" id={`${formId}-page`} />
+      <input type="hidden" name="started_at" id={`${formId}-ts`} />
+
+      <div class="form-grid">
+        <div class="field">
+          <label for={`${formId}-name`}>Full name <span class="req" aria-hidden="true">*</span></label>
+          <input class="input" id={`${formId}-name`} name="name" type="text" required
+            autocomplete="name" maxlength="120" aria-describedby={`${formId}-name-err`} />
+          <p class="field-error" id={`${formId}-name-err`} hidden></p>
+        </div>
+
+        <div class="field">
+          <label for={`${formId}-email`}>Email address <span class="req" aria-hidden="true">*</span></label>
+          <input class="input" id={`${formId}-email`} name="email" type="email" required
+            autocomplete="email" maxlength="180" aria-describedby={`${formId}-email-err`} />
+          <p class="field-error" id={`${formId}-email-err`} hidden></p>
+        </div>
+
+        <div class="field">
+          <label for={`${formId}-phone`}>Phone <span class="req" aria-hidden="true">*</span></label>
+          <input class="input" id={`${formId}-phone`} name="phone" type="tel" required
+            autocomplete="tel" maxlength="40" aria-describedby={`${formId}-phone-err`} />
+          <p class="field-error" id={`${formId}-phone-err`} hidden></p>
+        </div>
+
+        <div class="field">
+          <label for={`${formId}-product`}>Product type</label>
+          <input class="input" id={`${formId}-product`} name="product" type="text"
+            value={productName} maxlength="140" placeholder="e.g. Mailer boxes" />
+        </div>
+
+        {full && (
+          <>
+            <div class="field">
+              <label for={`${formId}-qty`}>Quantity</label>
+              <input class="input" id={`${formId}-qty`} name="quantity" type="text" inputmode="numeric" maxlength="20" placeholder="e.g. 2500" />
+            </div>
+            <div class="field">
+              <label for={`${formId}-dims`}>Dimensions (L × W × H)</label>
+              <input class="input" id={`${formId}-dims`} name="dimensions" type="text" maxlength="80" placeholder="e.g. 8 × 6 × 3" />
+            </div>
+            <div class="field">
+              <label for={`${formId}-unit`}>Unit</label>
+              <select class="select" id={`${formId}-unit`} name="unit">
+                <option value="in">Inches</option>
+                <option value="mm">Millimetres</option>
+                <option value="cm">Centimetres</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for={`${formId}-material`}>Material</label>
+              <select class="select" id={`${formId}-material`} name="material">
+                <option value="">Not sure yet — advise me</option>
+                <option>Paperboard (SBS)</option>
+                <option>Kraft board</option>
+                <option>Corrugated</option>
+                <option>Rigid greyboard</option>
+                <option>Laminated film</option>
+                <option>Recycled board</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for={`${formId}-printing`}>Printing</label>
+              <select class="select" id={`${formId}-printing`} name="printing">
+                <option value="">Not sure yet — advise me</option>
+                <option>Digital</option>
+                <option>Offset lithography</option>
+                <option>Flexography</option>
+                <option>Screen printing</option>
+                <option>Unprinted</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for={`${formId}-finish`}>Finish</label>
+              <select class="select" id={`${formId}-finish`} name="finish">
+                <option value="">Not sure yet — advise me</option>
+                <option>Matte lamination</option>
+                <option>Gloss lamination</option>
+                <option>Soft-touch lamination</option>
+                <option>Spot UV</option>
+                <option>Foil stamping</option>
+                <option>Uncoated</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for={`${formId}-date`}>Required delivery date</label>
+              <input class="input" id={`${formId}-date`} name="required_date" type="date" />
+            </div>
+          </>
+        )}
+
+        <div class="field span-2">
+          <label for={`${formId}-msg`}>
+            Project details <span class="req" aria-hidden="true">*</span>
+          </label>
+          <textarea class="textarea" id={`${formId}-msg`} name="message" required minlength="10" maxlength="4000"
+            aria-describedby={`${formId}-msg-err ${formId}-msg-hint`}
+            placeholder={categoryName
+              ? `What you are packing, quantity, and any ${categoryName.toLowerCase()} details you already know.`
+              : 'What you are packing, quantity, dimensions if you have them, and your deadline.'}></textarea>
+          <p class="hint" id={`${formId}-msg-hint`}>The more detail you give, the more accurate the quote.</p>
+          <p class="field-error" id={`${formId}-msg-err`} hidden></p>
+        </div>
+
+        <div class="field span-2">
+          <label for={`${formId}-file`}>Upload artwork or a reference photo</label>
+          <div class="file-drop" data-drop>
+            <input id={`${formId}-file`} name="artwork" type="file" multiple
+              accept=".pdf,.ai,.eps,.svg,.png,.jpg,.jpeg,.webp,.zip"
+              aria-describedby={`${formId}-file-hint`} />
+            <p class="drop-main">Drop files here or <span class="drop-link">browse</span></p>
+            <p class="hint" id={`${formId}-file-hint`}>PDF, AI, EPS, SVG, PNG, JPG, WEBP or ZIP. Up to 5 files, 10&nbsp;MB each.</p>
+            <ul class="file-list" data-file-list role="list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="qf-actions">
+        <button class="btn btn-primary btn-lg" type="submit" data-submit>
+          <span class="btn-label">Send my request</span>
+          <span class="spinner" aria-hidden="true" hidden></span>
+        </button>
+        <p class="qf-note">
+          We use your details to answer this request only. See our
+          <a href="/privacy-policy/">privacy policy</a> for how data is handled.
+        </p>
+      </div>
+
+      <div class="alert alert-err" data-form-error hidden role="alert"></div>
+      <div class="alert alert-ok" data-form-ok hidden role="status"></div>
+
+      <noscript>
+        <p class="qf-note">
+          JavaScript is off, so the form posts directly and you will land on a confirmation page.
+          You can also email {SITE.email} or call {SITE.phone}.
+        </p>
+      </noscript>
+    </form>
+  </div>
+</section>
+
+<style>
+  .quote-form { container-type: inline-size; }
+  .qf-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: clamp(1.25rem, 1rem + 1.6vw, 2.25rem);
+    box-shadow: var(--sh-2);
+  }
+  .qf-head { margin-bottom: var(--s-6); }
+  .qf-title { font-size: var(--fs-xl); }
+  .qf-intro { color: var(--text-muted); font-size: var(--fs-sm); margin-top: var(--s-2); max-width: 56ch; }
+
+  .drop-main { font-size: var(--fs-sm); font-weight: 600; color: var(--ink); margin-bottom: 0.15rem; }
+  .drop-link { color: var(--forest-bright); text-decoration: underline; }
+  .file-list { list-style: none; margin: var(--s-3) 0 0; padding: 0; display: grid; gap: 0.35rem; text-align: left; }
+  .file-list li {
+    display: flex; justify-content: space-between; gap: var(--s-3);
+    font-size: var(--fs-xs); background: var(--paper);
+    border: 1px solid var(--border); border-radius: var(--r-sm); padding: 0.4rem 0.6rem;
+  }
+  .file-list .bad { color: var(--err); }
+
+  .qf-actions { margin-top: var(--s-6); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4); }
+  .qf-note { font-size: var(--fs-xs); color: var(--text-faint); margin: 0; max-width: 44ch; }
+  .qf-actions .btn { position: relative; }
+
+  .spinner {
+    width: 15px; height: 15px; border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.4); border-top-color: #fff;
+    animation: spin 700ms linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 2s; } }
+
+  .alert { margin-top: var(--s-5); }
+</style>
+
+<script>
+  const MAX_FILES = 5
+  const MAX_BYTES = 10 * 1024 * 1024
+  const ALLOWED = ['pdf','ai','eps','svg','png','jpg','jpeg','webp','zip']
+
+  document.querySelectorAll<HTMLFormElement>('[data-quote-form]').forEach((form) => {
+    const pageField = form.querySelector<HTMLInputElement>('input[name="page_url"]')
+    const tsField = form.querySelector<HTMLInputElement>('input[name="started_at"]')
+    if (pageField) pageField.value = location.pathname
+    if (tsField) tsField.value = String(Date.now())
+
+    const errBox = form.querySelector<HTMLElement>('[data-form-error]')
+    const okBox = form.querySelector<HTMLElement>('[data-form-ok]')
+    const submit = form.querySelector<HTMLButtonElement>('[data-submit]')
+    const fileInput = form.querySelector<HTMLInputElement>('input[type="file"]')
+    const dropZone = form.querySelector<HTMLElement>('[data-drop]')
+    const fileList = form.querySelector<HTMLElement>('[data-file-list]')
+
+    /* ---------- file handling ---------- */
+    const renderFiles = () => {
+      if (!fileList || !fileInput) return
+      fileList.innerHTML = ''
+      const files = Array.from(fileInput.files ?? [])
+      files.slice(0, MAX_FILES).forEach((f) => {
+        const ext = f.name.split('.').pop()?.toLowerCase() ?? ''
+        const bad = !ALLOWED.includes(ext) || f.size > MAX_BYTES
+        const li = document.createElement('li')
+        if (bad) li.className = 'bad'
+        li.innerHTML = `<span>${f.name.replace(/[<>&]/g, '')}</span><span>${
+          bad ? (f.size > MAX_BYTES ? 'too large' : 'unsupported type') : (f.size / 1048576).toFixed(1) + ' MB'
+        }</span>`
+        fileList.appendChild(li)
+      })
+      if (files.length > MAX_FILES) {
+        const li = document.createElement('li')
+        li.className = 'bad'
+        li.textContent = `Only the first ${MAX_FILES} files will be sent.`
+        fileList.appendChild(li)
+      }
+    }
+    fileInput?.addEventListener('change', renderFiles)
+
+    if (dropZone && fileInput) {
+      dropZone.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).tagName !== 'INPUT') fileInput.click()
+      })
+      ;['dragenter', 'dragover'].forEach((ev) =>
+        dropZone.addEventListener(ev, (e) => {
+          e.preventDefault()
+          dropZone.classList.add('is-over')
+        })
+      )
+      ;['dragleave', 'drop'].forEach((ev) =>
+        dropZone.addEventListener(ev, (e) => {
+          e.preventDefault()
+          dropZone.classList.remove('is-over')
+        })
+      )
+      dropZone.addEventListener('drop', (e) => {
+        const dt = (e as DragEvent).dataTransfer
+        if (dt?.files?.length) {
+          fileInput.files = dt.files
+          renderFiles()
+        }
+      })
+    }
+
+    /* ---------- validation ---------- */
+    const showError = (input: HTMLInputElement | HTMLTextAreaElement, msg: string) => {
+      const box = document.getElementById(`${input.id}-err`)
+      input.setAttribute('aria-invalid', 'true')
+      if (box) {
+        box.textContent = msg
+        box.hidden = false
+      }
+    }
+    const clearError = (input: HTMLInputElement | HTMLTextAreaElement) => {
+      const box = document.getElementById(`${input.id}-err`)
+      input.removeAttribute('aria-invalid')
+      if (box) box.hidden = true
+    }
+
+    const validate = () => {
+      let firstBad: HTMLElement | null = null
+      const check = (sel: string, test: (v: string) => boolean, msg: string) => {
+        const el = form.querySelector<HTMLInputElement>(sel)
+        if (!el) return
+        const v = el.value.trim()
+        if (!test(v)) {
+          showError(el, msg)
+          if (!firstBad) firstBad = el
+        } else clearError(el)
+      }
+      check('input[name="name"]', (v) => v.length >= 2, 'Please enter your name.')
+      check('input[name="email"]', (v) => /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v), 'Please enter a valid email address.')
+      check('input[name="phone"]', (v) => v.replace(/\D/g, '').length >= 7, 'Please enter a contact number.')
+      check('textarea[name="message"]', (v) => v.length >= 10, 'Please tell us a little about the project.')
+      return firstBad
+    }
+
+    form.querySelectorAll<HTMLInputElement>('input[required], textarea[required]').forEach((el) => {
+      el.addEventListener('blur', () => {
+        if (el.value.trim()) clearError(el)
+      })
+    })
+
+    /* ---------- submit ---------- */
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      errBox && (errBox.hidden = true)
+      okBox && (okBox.hidden = true)
+
+      const bad = validate()
+      if (bad) {
+        ;(bad as HTMLElement).focus()
+        ;(bad as HTMLElement).scrollIntoView({ block: 'center', behavior: 'smooth' })
+        return
+      }
+
+      const label = submit?.querySelector('.btn-label')
+      const spin = submit?.querySelector<HTMLElement>('.spinner')
+      submit && (submit.disabled = true)
+      label && (label.textContent = 'Sending…')
+      spin && (spin.hidden = false)
+
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form) })
+        const data = await res.json().catch(() => ({}))
+        if (res.ok && data.ok) {
+          const w = window as any
+          if (typeof w.gtag === 'function') w.gtag('event', 'quote_completion', { form_source: form.dataset.source })
+          else if (Array.isArray(w.dataLayer)) w.dataLayer.push({ event: 'quote_completion', form_source: form.dataset.source })
+          sessionStorage.setItem('trp_quote_ref', data.ref ?? '')
+          location.href = '/thank-you/'
+          return
+        }
+        throw new Error(data.error || 'We could not send that just now.')
+      } catch (err) {
+        // The entered data stays in the form — nothing is cleared on failure.
+        if (errBox) {
+          errBox.textContent = `${(err as Error).message} Please try again, or email us directly.`
+          errBox.hidden = false
+        }
+      } finally {
+        submit && (submit.disabled = false)
+        label && (label.textContent = 'Send my request')
+        spin && (spin.hidden = true)
+      }
+    })
+
+    // Quote-start event on first meaningful interaction.
+    let started = false
+    form.addEventListener('input', () => {
+      if (started) return
+      started = true
+      const w = window as any
+      if (typeof w.gtag === 'function') w.gtag('event', 'quote_start', { form_source: form.dataset.source })
+      else if (Array.isArray(w.dataLayer)) w.dataLayer.push({ event: 'quote_start', form_source: form.dataset.source })
+    })
+  })
+</script>

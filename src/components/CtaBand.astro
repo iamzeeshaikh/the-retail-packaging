@@ -1,0 +1,34 @@
+---
+import { SITE, whatsappUrl } from '../lib/site'
+export interface Props { title?: string; text?: string; primary?: string; primaryHref?: string }
+const {
+  title = 'Tell us what you are packing',
+  text = 'Send the product dimensions and the quantity you need. We come back with a specification, a lead time and a written price.',
+  primary = 'Request a Quote',
+  primaryHref = '/request-a-quote/',
+} = Astro.props
+---
+<section class="section section-forest cta-band">
+  <div class="wrap cta-in reveal">
+    <div>
+      <p class="eyebrow">Next step</p>
+      <h2>{title}</h2>
+      <p class="cta-text">{text}</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-gold btn-lg" href={primaryHref}>{primary}</a>
+      <a class="btn btn-invert-outline btn-lg" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" data-analytics="whatsapp-click">WhatsApp us</a>
+      <a class="cta-phone" href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-in { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: var(--s-10); align-items: center; }
+  @media (max-width: 860px) { .cta-in { grid-template-columns: 1fr; gap: var(--s-6); } }
+  .cta-text { max-width: 56ch; margin-top: var(--s-3); }
+  .cta-actions { display: flex; flex-direction: column; gap: var(--s-3); align-items: flex-start; }
+  @media (max-width: 860px) { .cta-actions { flex-direction: row; flex-wrap: wrap; align-items: center; } }
+  .cta-phone { color: rgba(246,243,237,.7); font-size: var(--fs-sm); text-decoration: none; }
+  .cta-phone:hover { color: #fff; text-decoration: underline; }
+</style>

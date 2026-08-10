@@ -1,0 +1,129 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import WhatsAppFab from '../components/WhatsAppFab.astro'
+import Analytics from '../components/Analytics.astro'
+import { SITE, canonical, abs } from '../lib/site'
+
+export interface Props {
+  title: string
+  description: string
+  path: string
+  /** Absolute or root-relative OG image. */
+  image?: string
+  imageAlt?: string
+  noindex?: boolean
+  /** Pre-serialised JSON-LD @graph string. */
+  schema?: string
+  /** Preload the LCP image for this page. */
+  preloadImage?: { href: string; srcset?: string; sizes?: string }
+  bodyClass?: string
+}
+
+const {
+  title,
+  description,
+  path,
+  image = '/brand/og-default.png',
+  imageAlt = 'Custom retail packaging produced by The Retail Packaging',
+  noindex = false,
+  schema,
+  preloadImage,
+  bodyClass = '',
+} = Astro.props
+
+const url = canonical(path)
+const ogImage = abs(image)
+const year = new Date().getFullYear()
+---
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+
+    {noindex
+      ? <meta name="robots" content="noindex, nofollow" />
+      : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:locale" content={SITE.locale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={imageAlt} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+
+    <meta name="theme-color" content="#14432f" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} blog`} href="/rss.xml" />
+
+    {preloadImage && (
+      <link
+        rel="preload"
+        as="image"
+        href={preloadImage.href}
+        imagesrcset={preloadImage.srcset}
+        imagesizes={preloadImage.sizes}
+        fetchpriority="high"
+      />
+    )}
+
+    {/* Swap the no-js class before paint so reveal animations never trap content. */}
+    <script is:inline>
+      document.documentElement.classList.remove('no-js')
+    </script>
+
+    {schema && <script type="application/ld+json" set:html={schema} />}
+
+    <Analytics />
+  </head>
+
+  <body class={bodyClass}>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer year={year} />
+    <WhatsAppFab />
+
+    <script>
+      // Scroll reveal — one observer, transform/opacity only, honours reduced motion.
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      const items = document.querySelectorAll('.reveal')
+      if (reduce || !('IntersectionObserver' in window)) {
+        items.forEach((el) => el.classList.add('is-in'))
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-in')
+                io.unobserve(e.target)
+              }
+            }
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.05 }
+        )
+        items.forEach((el) => io.observe(el))
+      }
+    </script>
+  </body>
+</html>

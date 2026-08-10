@@ -1,0 +1,139 @@
+---
+import type { Product } from '../lib/catalog'
+
+/**
+ * Product gallery. The main image is a real <img> so it can be the LCP element;
+ * thumbnails swap the source with no layout shift because the frame is fixed.
+ * Without JavaScript every image remains reachable as a plain list.
+ */
+export interface Props { product: Product }
+const { product: p } = Astro.props
+const imgs = p.images
+
+/** Alt text varies per frame so a gallery never repeats one string. */
+const angles = [
+  'shown as a finished custom-printed pack',
+  'photographed from a second angle showing the side panel',
+  'displayed with the closure detail visible',
+  'shown at an angle that reveals the depth of the pack',
+  'presented alongside its printed surface detail',
+  'photographed to show the finish across the panel',
+  'shown in a retail presentation setting',
+  'captured to show scale and proportion',
+  'displayed with the interior structure visible',
+  'shown as part of a matched packaging set',
+  'photographed against a plain background for detail',
+  'shown with the print coverage across the full face',
+]
+const altFor = (i: number) => `${p.name} ${angles[i % angles.length]}`
+---
+
+{imgs.length > 0 && (
+  <div class="gallery" data-gallery>
+    <figure class="g-main">
+      <img
+        id={`g-main-${p.slug}`}
+        src={`${imgs[0].base}-800.webp`}
+        srcset={`${imgs[0].base}-400.webp 400w, ${imgs[0].base}-800.webp 800w, ${imgs[0].base}-1400.webp 1400w`}
+        sizes="(max-width: 900px) 94vw, 620px"
+        width={imgs[0].width}
+        height={imgs[0].height}
+        alt={altFor(0)}
+        fetchpriority="high"
+        decoding="async"
+        data-main
+      />
+    </figure>
+
+    {imgs.length > 1 && (
+      <ul class="g-thumbs" role="list">
+        {imgs.map((im, i) => (
+          <li>
+            <button
+              type="button"
+              class={i === 0 ? 'is-active' : ''}
+              data-thumb
+              data-src={`${im.base}-800.webp`}
+              data-srcset={`${im.base}-400.webp 400w, ${im.base}-800.webp 800w, ${im.base}-1400.webp 1400w`}
+              data-alt={altFor(i)}
+              data-w={im.width}
+              data-h={im.height}
+              aria-label={`Show image ${i + 1} of ${imgs.length}`}
+            >
+              <img
+                src={`${im.base}-400.webp`}
+                width={im.width}
+                height={im.height}
+                loading="lazy"
+                decoding="async"
+                alt=""
+              />
+            </button>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+)}
+
+<style>
+  .gallery { display: grid; gap: var(--s-3); }
+  .g-main {
+    margin: 0;
+    background: var(--ivory-deep);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+  .g-main img { width: 100%; height: 100%; object-fit: cover; }
+
+  .g-thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
+    gap: var(--s-2);
+    margin: 0; padding: 0;
+  }
+  .g-thumbs button {
+    display: block; width: 100%; padding: 0; cursor: pointer;
+    background: var(--ivory-deep);
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    overflow: hidden; aspect-ratio: 1;
+    transition: border-color var(--dur) var(--ease), opacity var(--dur) var(--ease);
+    opacity: .72;
+  }
+  .g-thumbs button:hover { opacity: 1; border-color: var(--border-strong); }
+  .g-thumbs button.is-active { opacity: 1; border-color: var(--forest); box-shadow: 0 0 0 1px var(--forest); }
+  .g-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-gallery]').forEach((g) => {
+    const main = g.querySelector<HTMLImageElement>('[data-main]')
+    const thumbs = g.querySelectorAll<HTMLButtonElement>('[data-thumb]')
+    if (!main || thumbs.length < 2) return
+
+    const show = (btn: HTMLButtonElement) => {
+      main.src = btn.dataset.src!
+      main.srcset = btn.dataset.srcset!
+      main.alt = btn.dataset.alt!
+      main.width = Number(btn.dataset.w)
+      main.height = Number(btn.dataset.h)
+      main.removeAttribute('fetchpriority')
+      thumbs.forEach((t) => t.classList.toggle('is-active', t === btn))
+    }
+
+    thumbs.forEach((btn, i) => {
+      btn.addEventListener('click', () => show(btn))
+      btn.addEventListener('keydown', (e) => {
+        const k = (e as KeyboardEvent).key
+        if (k !== 'ArrowRight' && k !== 'ArrowLeft') return
+        e.preventDefault()
+        const next = thumbs[(i + (k === 'ArrowRight' ? 1 : thumbs.length - 1)) % thumbs.length]
+        next.focus()
+        show(next)
+      })
+    })
+  })
+</script>
