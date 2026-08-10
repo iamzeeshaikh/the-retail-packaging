@@ -5,7 +5,7 @@ import ProductCard from '../components/ProductCard.astro'
 import QuoteForm from '../components/QuoteForm.astro'
 import Faqs from '../components/Faqs.astro'
 import CtaBand from '../components/CtaBand.astro'
-import { categories, products, productsIn, bySlug, totals } from '../lib/catalog'
+import { categories, products, productsIn, bySlug, categoryHero, totals } from '../lib/catalog'
 import { INDUSTRIES } from '../lib/taxonomy'
 import { SITE } from '../lib/site'
 import * as S from '../lib/schema'
@@ -21,8 +21,8 @@ const cat = (s: string) => {
 /* Hero: two large photo tiles, the noissue opening, using our own photography. */
 const heroA = cat('custom-mailers')
 const heroB = cat('custom-cosmetic-packaging')
-const heroImgA = heroA.list[0]?.images?.[0]
-const heroImgB = get('cosmetic-boxes')?.images?.[0] ?? heroB.list[0]?.images?.[0]
+const heroImgA = categoryHero(heroA.c.slug)?.images?.[0]
+const heroImgB = categoryHero(heroB.c.slug)?.images?.[0]
 
 const featured = ['custom-mailers', 'custom-food-packaging', 'custom-cosmetic-packaging',
   'custom-bags', 'custom-pouches', 'custom-labels', 'custom-display-boxes', 'custom-printed-cups']
@@ -82,16 +82,24 @@ const schema = S.graph([
     sizes: '(max-width: 900px) 96vw, 48vw',
   } : undefined}
 >
-  <!-- ============ HERO: two photo tiles ============ -->
+  <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="wrap">
-      <div class="hero-lead">
-        <p class="eyebrow">Made to order · United States</p>
-        <h1>Packaging cut for one product only — yours</h1>
-        <p class="hero-sub">
-          {totals.categories} categories, {totals.products} formats, no stock sizes. Send the
-          dimensions and the quantity; we return a specification, a lead time and a written price.
-        </p>
+      <div class="hero-top">
+        <div class="hero-copy">
+          <p class="eyebrow">Made to order · United States</p>
+          <h1>Packaging built around your product</h1>
+        </div>
+        <div class="hero-aside">
+          <p class="hero-sub">
+            {totals.categories} categories, {totals.products} formats, no stock sizes. Send the
+            dimensions and the quantity; we return a specification, a lead time and a written price.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/request-a-quote/">Request a quote</a>
+            <a class="btn btn-outline" href="/custom-packaging-tool/">Build a specification</a>
+          </div>
+        </div>
       </div>
 
       <div class="hero-tiles">
@@ -99,7 +107,7 @@ const schema = S.graph([
           {heroImgA && (
             <img src={`${heroImgA.base}-1400.webp`}
               srcset={`${heroImgA.base}-800.webp 800w, ${heroImgA.base}-1400.webp 1400w`}
-              sizes="(max-width: 900px) 96vw, 48vw"
+              sizes="(max-width: 900px) 96vw, 62vw"
               width={heroImgA.width} height={heroImgA.height}
               alt="Custom printed mailer boxes with full-colour exterior artwork"
               fetchpriority="high" decoding="async" />
@@ -111,11 +119,11 @@ const schema = S.graph([
           </span>
         </a>
 
-        <a class="tile-photo hero-tile" href={heroB.c.url}>
+        <a class="tile-photo hero-tile hero-tile-sm" href={heroB.c.url}>
           {heroImgB && (
-            <img src={`${heroImgB.base}-1400.webp`}
-              srcset={`${heroImgB.base}-800.webp 800w, ${heroImgB.base}-1400.webp 1400w`}
-              sizes="(max-width: 900px) 96vw, 48vw"
+            <img src={`${heroImgB.base}-800.webp`}
+              srcset={`${heroImgB.base}-400.webp 400w, ${heroImgB.base}-800.webp 800w`}
+              sizes="(max-width: 900px) 96vw, 34vw"
               width={heroImgB.width} height={heroImgB.height}
               alt="Custom cosmetic cartons printed with brand artwork"
               loading="eager" decoding="async" />
@@ -123,14 +131,8 @@ const schema = S.graph([
           <span class="tile-copy">
             <span class="k">{heroB.list.length} formats</span>
             <span class="tt">{heroB.c.name}</span>
-            <span class="sub">Fine detail print, ingredient panel space, foil and emboss</span>
           </span>
         </a>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn btn-ink btn-lg" href="/request-a-quote/">Request a quote</a>
-        <a class="btn btn-outline btn-lg" href="/custom-packaging-tool/">Build a specification</a>
       </div>
     </div>
   </section>
@@ -175,7 +177,7 @@ const schema = S.graph([
       <div class="cat-grid">
         {featured.map(({ c, list }, i) => (
           <div class={`reveal reveal-d${i % 4}`}>
-            <CategoryCard category={c} count={list.length} sample={list[0]} />
+            <CategoryCard category={c} count={list.length} sample={categoryHero(c.slug)} />
           </div>
         ))}
       </div>
@@ -198,7 +200,7 @@ const schema = S.graph([
       <div class="ind-grid">
         {industryTiles.map((x, i) => {
           const c = categories.find((k) => k.slug === x.slug)!
-          const s = get(x.sample) ?? productsIn(x.slug)[0]
+          const s = categoryHero(x.slug) ?? get(x.sample)
           return (
             <a class={`ind reveal reveal-d${i % 4}`} href={c.url}>
               <div class="ind-media">
@@ -332,24 +334,52 @@ const schema = S.graph([
 
 <style>
   /* ---------- hero ---------- */
-  .hero { padding-block: clamp(2.25rem, 1.5rem + 3vw, 4.5rem) clamp(2rem, 1.5rem + 2vw, 3.5rem); }
-  .hero-lead { max-width: 30ch; margin-bottom: clamp(1.75rem, 1rem + 2.5vw, 3rem); }
-  .hero h1 { max-width: 15ch; }
-  .hero-sub { font-size: var(--fs-md); color: var(--text-muted); max-width: 52ch; margin-top: var(--s-6); }
+  .hero { padding-block: clamp(2rem, 1.4rem + 2.5vw, 4rem) clamp(2rem, 1.5rem + 2vw, 3.5rem); }
 
-  .hero-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4); }
-  @media (max-width: 780px) { .hero-tiles { grid-template-columns: 1fr; } .hero-lead { max-width: none; } }
-  .hero-tile { aspect-ratio: 5 / 4; }
-  @media (max-width: 780px) { .hero-tile { aspect-ratio: 4 / 3; } }
+  /* Headline left, supporting copy and actions right — the full width is used,
+     and the h1 is never squeezed into a narrow column that breaks words. */
+  .hero-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 1rem + 3vw, 4rem);
+    align-items: end;
+    padding-bottom: clamp(1.75rem, 1.2rem + 2vw, 3rem);
+  }
+  @media (max-width: 900px) { .hero-top { grid-template-columns: 1fr; align-items: start; gap: var(--s-6); } }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 1.2rem + 5.4vw, 6rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    max-width: 18ch;
+    text-wrap: balance;
+    hyphens: none;
+    overflow-wrap: normal;
+  }
+  .hero-sub { font-size: var(--fs-md); color: var(--text-muted); max-width: 46ch; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-6); }
+
+  /* Asymmetric pair — a lead tile and a secondary, rather than two equal halves. */
+  .hero-tiles {
+    display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+    gap: var(--s-3); align-items: stretch;
+  }
+  @media (max-width: 780px) { .hero-tiles { grid-template-columns: 1fr; } }
+  /* The lead tile sets the height; the secondary stretches to match it, so the
+     pair reads as one band rather than two misaligned rectangles. */
+  .hero-tile { aspect-ratio: 16 / 10; }
+  .hero-tile-sm { aspect-ratio: auto; height: 100%; }
+  @media (max-width: 780px) {
+    .hero-tile { aspect-ratio: 3 / 2; }
+    .hero-tile-sm { aspect-ratio: 3 / 2; height: auto; }
+  }
   .hero-tile img { width: 100%; height: 100%; object-fit: cover; }
   .tile-copy .tt {
     display: block; margin-top: var(--s-2);
-    font-family: var(--font-display); font-size: var(--fs-2xl);
-    line-height: 1.04; letter-spacing: -0.025em; color: #fff;
+    font-family: var(--font-display); font-weight: 500;
+    font-size: var(--fs-xl); line-height: 1.05; letter-spacing: -0.03em; color: #fff;
   }
-  .tile-copy .sub { display: block; margin-top: var(--s-2); font-size: var(--fs-sm); color: rgba(255,255,255,.8); }
-
-  .hero-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-8); }
+  .tile-copy .sub { display: block; margin-top: var(--s-2); font-size: var(--fs-sm); color: rgba(255,255,255,.82); }
 
   /* ---------- trust ---------- */
   .trust { background: var(--ink-deep); color: rgba(247,243,236,.72); }
@@ -374,7 +404,7 @@ const schema = S.graph([
   .sec-link:hover { color: var(--ox); border-color: var(--ox); }
 
   /* ---------- category grid ---------- */
-  .cat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-4); }
+  .cat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 0.6rem + 1.4vw, 2rem) var(--s-4); }
   @media (max-width: 1024px) { .cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 560px)  { .cat-grid { grid-template-columns: 1fr; } }
 

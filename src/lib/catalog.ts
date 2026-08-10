@@ -1,5 +1,6 @@
 import raw from '../data/catalog.json'
 import imagesRaw from '../data/images.json'
+import catImagesRaw from '../data/category-images.json'
 import { classify, FORM_FACTORS, industriesFor, type FormFactor, type Industry } from './taxonomy'
 
 export interface RawProduct {
@@ -52,6 +53,18 @@ export const products: Product[] = (raw.products as RawProduct[]).map((p) => ({
 
 export const bySlug = new Map(products.map((p) => [p.slug, p]))
 export const categoryBySlug = new Map(categories.map((c) => [c.slug, c]))
+
+/**
+ * Curated hero product per category, chosen by scripts/pick-category-images.mjs
+ * on how calm the photograph reads at tile size. Falls back to the first
+ * product if a category has no scored winner.
+ */
+const curated = catImagesRaw as Record<string, string>
+
+export function categoryHero(categorySlug: string): Product | undefined {
+  const slug = curated[categorySlug]
+  return (slug ? bySlug.get(slug) : undefined) ?? productsIn(categorySlug)[0]
+}
 
 export function productsIn(categorySlug: string): Product[] {
   return products.filter((p) => p.categorySlug === categorySlug)

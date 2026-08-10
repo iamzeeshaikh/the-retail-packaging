@@ -1,20 +1,10 @@
 /* ==========================================================================
-   The Retail Packaging — "Maison" design system
-   Bone ground, ink type, oxblood accent, deep ink used only as punctuation.
-   Bodoni Moda (display) + Jost (body) — the couture pairing, self-hosted.
+   The Retail Packaging — neutral premium design system
+   Near-monochrome UI so the product photography supplies the only colour.
+   Jost throughout, self-hosted variable subset, tightly tracked at display size.
    ========================================================================== */
 
 /* ---------- fonts: self-hosted, variable, one file each ---------- */
-@font-face {
-  font-family: 'Bodoni Moda';
-  src: url('/fonts/bodoni-moda.woff2') format('woff2-variations');
-  font-weight: 400 900;
-  font-style: normal;
-  font-display: swap;
-  /* Latin only — keeps the file small and avoids a second request */
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215;
-}
 @font-face {
   font-family: 'Jost';
   src: url('/fonts/jost.woff2') format('woff2-variations');
@@ -43,35 +33,37 @@ ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
 
 /* ---------- tokens ---------- */
 :root {
-  /* ground — warm bone, forgiving of white-background product photography */
-  --bone:        #f6f2ea;
-  --bone-deep:   #efe9dd;
-  --sand:        #e8e0d1;
-  --paper:       #fffdfa;
+  /* ground — neutral, very slightly cool so warm product shots pop against it */
+  --bone:        #f4f4f5;   /* page ground */
+  --bone-deep:   #ebebed;   /* sunken band */
+  --sand:        #e4e4e7;   /* strongest band */
+  --paper:       #ffffff;   /* cards */
 
-  /* ink */
-  --ink:         #1b1a18;
-  --ink-deep:    #121110;
-  --ink-2:       #4f4a42;
-  --ink-3:       #7c7568;
-  --ink-4:       #a49b8b;
+  /* ink — graphite, not pure black */
+  --ink:         #111113;
+  --ink-deep:    #08080a;
+  --ink-2:       #45454b;
+  --ink-3:       #6e6e77;
+  --ink-4:       #a1a1aa;
 
-  /* accent — oxblood, used sparingly */
-  --ox:          #6b2231;
-  --ox-deep:     #521a26;
-  --ox-bright:   #8a2d3f;
-  --ox-tint:     #f5ebec;
+  /* accent — deliberately achromatic. Ink is the accent; photography is the
+     only colour on the page. --ox is kept as a token name so nothing else
+     needs rewriting, but it now resolves to graphite. */
+  --ox:          #111113;
+  --ox-deep:     #08080a;
+  --ox-bright:   #2a2a30;
+  --ox-tint:     #ececee;
 
   /* rules and edges */
-  --rule:        #ddd5c7;
-  --rule-strong: #c9bfad;
-  --rule-ink:    rgba(255, 253, 250, 0.16);
+  --rule:        #dedee1;
+  --rule-strong: #c4c4c9;
+  --rule-ink:    rgba(255, 255, 255, 0.18);
 
   /* semantic */
   --text:         var(--ink);
   --text-muted:   var(--ink-2);
   --text-faint:   var(--ink-3);
-  --text-invert:  #f7f3ec;
+  --text-invert:  #f4f4f5;
   --surface:      var(--bone);
   --surface-2:    var(--bone-deep);
   --surface-card: var(--paper);
@@ -83,11 +75,11 @@ ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
   --focus:   var(--ox);
 
   /* type */
-  --font-display: 'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif;
+  --font-display: 'Jost', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
   --font-body: 'Jost', 'Avenir Next', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
 
-  /* Bodoni is high-contrast; it wants to be large and tightly tracked. */
+  /* Jost is geometric: it takes tight tracking and holds up large. */
   --fs-xs:   0.75rem;
   --fs-sm:   0.8438rem;
   --fs-base: 0.9688rem;
@@ -98,11 +90,11 @@ ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
   --fs-3xl:  clamp(2.125rem, 1.65rem + 2.38vw, 3.5rem);
   --fs-4xl:  clamp(2.5rem, 1.7rem + 4vw, 4.75rem);
 
-  --lh-tight: 1.06;
+  --lh-tight: 1.02;
   --lh-snug:  1.22;
   --lh-body:  1.68;
 
-  --track-display: -0.022em;
+  --track-display: -0.035em;
   --track-caps:    0.16em;
 
   /* spacing */
@@ -148,7 +140,7 @@ body {
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 400;
+  font-weight: 500;
   line-height: var(--lh-tight);
   letter-spacing: var(--track-display);
   color: var(--ink);
@@ -200,7 +192,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
 .section-ink { background: var(--ink-deep); color: var(--text-invert); }
 .section-ink h1, .section-ink h2, .section-ink h3, .section-ink h4 { color: #fff; }
 .section-ink p { color: rgba(247, 243, 236, 0.78); }
-.section-ink a { color: #e0b9b0; }
+.section-ink a { color: #ffffff; }
 .section-ink a:hover { color: #fff; }
 
 .grid { display: grid; gap: var(--s-6); }
@@ -223,7 +215,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
   color: var(--ox);
   margin-bottom: var(--s-4);
 }
-.section-ink .eyebrow { color: #cfa39a; }
+.section-ink .eyebrow { color: #a1a1aa; }
 
 .lede { font-size: var(--fs-md); color: var(--text-muted); max-width: 60ch; line-height: 1.62; }
 .muted { color: var(--text-muted); }
@@ -274,8 +266,8 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
 }
 .btn:active { transform: translateY(1px); }
 
-.btn-primary { background: var(--ox); color: #fdf9f3; }
-.btn-primary:hover { background: var(--ox-deep); color: #fdf9f3; }
+.btn-primary { background: var(--ink); color: #ffffff; }
+.btn-primary:hover { background: var(--ink-deep); color: #ffffff; }
 
 .btn-ink { background: var(--ink); color: var(--bone); }
 .btn-ink:hover { background: var(--ink-deep); color: #fff; }
@@ -331,9 +323,10 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
 }
 .card-title {
   font-family: var(--font-display);
-  font-size: var(--fs-lg);
+  font-size: var(--fs-md);
+  font-weight: 500;
   line-height: var(--lh-snug);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin-top: var(--s-2);
 }
@@ -582,8 +575,11 @@ table.data td.num { font-variant-numeric: tabular-nums; text-align: right; }
 @media (hover: hover) { .tile-photo:hover img { transform: scale(1.045); } }
 .tile-photo::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(18, 15, 12, 0.78), rgba(18, 15, 12, 0.06) 62%);
+  background: linear-gradient(to top, rgba(8, 8, 10, 0.72), rgba(8, 8, 10, 0.02) 58%);
 }
+/* Label sits below the frame instead of over it — light packaging shots
+   swallowed white text no matter how heavy the scrim. */
+.tile-photo.label-below::after { display: none; }
 .tile-copy { position: absolute; inset: auto 0 0 0; padding: clamp(1.1rem, 2.5vw, 2rem); z-index: 1; }
 .tile-copy .k { font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.82; }
 .tile-copy h3, .tile-copy h2 { color: #fff; margin-top: var(--s-2); }
@@ -624,7 +620,7 @@ table.data td.num { font-variant-numeric: tabular-nums; text-align: right; }
   font-family: var(--font-display); font-size: var(--fs-lg);
   color: var(--ox); letter-spacing: 0;
 }
-.section-ink .step::before { color: #cfa39a; }
+.section-ink .step::before { color: #a1a1aa; }
 
 .tick-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-2); }
 .tick-list li { position: relative; padding-left: 1.6rem; font-size: var(--fs-sm); color: var(--text-muted); }
@@ -635,7 +631,7 @@ table.data td.num { font-variant-numeric: tabular-nums; text-align: right; }
   transform: rotate(-45deg);
 }
 .section-ink .tick-list li { color: rgba(247, 243, 236, 0.8); }
-.section-ink .tick-list li::before { border-color: #cfa39a; }
+.section-ink .tick-list li::before { border-color: #ffffff; }
 
 /* ---------- scroll reveal ---------- */
 .reveal { opacity: 0; transform: translateY(14px); }
