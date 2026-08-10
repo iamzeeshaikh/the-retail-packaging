@@ -34,7 +34,6 @@ ${cats}
 ## Contact
 Phone: ${SITE.phone}
 Email: ${SITE.email}
-Hours: ${SITE.hours}
 `
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
 }

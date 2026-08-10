@@ -396,7 +396,7 @@ export function categoryFaqs(c: Category, count: number): Faq[] {
     },
     {
       q: `What is the minimum order for ${k}?`,
-      a: `Minimums vary by format within this range. Digitally printed items usually start between 100 and 500 units, while litho and flexo runs need a larger quantity to absorb the plate cost. Tell us the quantity you need and we will quote the closest efficient batch.`,
+      a: `A flat 100 units on any format in this range. Print method changes the unit price rather than the minimum, so tell us your quantity and we will quote the most efficient route.`,
     },
     {
       q: `How do I choose the right specification for ${k}?`,
@@ -416,7 +416,7 @@ export function categoryFaqs(c: Category, count: number): Faq[] {
     },
     {
       q: `How long does production take for ${k}?`,
-      a: `Most orders in this range move through production in 8 to 15 business days after artwork approval, with shipping on top. Hand-assembled and specialty-finished items sit at the longer end. We confirm a firm date with your quote.`,
+      a: `Most orders in this range move through production in 3 to 5 business days after artwork approval, with shipping on top. Hand-assembled and specialty-finished items sit at the longer end. We confirm a firm date with your quote.`,
     },
     {
       q: `Can I order samples of ${k} before a full run?`,

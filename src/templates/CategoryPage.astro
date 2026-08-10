@@ -94,7 +94,7 @@ const schema = S.graph([
       <div class="listing-head">
         <div>
           <p class="eyebrow">The range</p>
-          <h2>{category.name} we produce</h2>
+          <h2>{category.name} We Produce</h2>
         </div>
         {list.length > 8 && (
           <div class="filter-bar">
@@ -121,7 +121,7 @@ const schema = S.graph([
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Specification</p>
-        <h2>Choosing a {category.name.toLowerCase().replace(/^custom /, '')} specification</h2>
+        <h2>Choosing a {category.name.replace(/^Custom /, '')} Specification</h2>
       </div>
       <div class="spec-cols">
         <div class="tile">
@@ -134,7 +134,7 @@ const schema = S.graph([
           </p>
         </div>
         <div class="tile">
-          <h3>Printing options</h3>
+          <h3>Printing Options</h3>
           <ul class="dot-list">{printing.map((m) => <li>{m}</li>)}</ul>
           <p class="tile-note">
             Run length usually decides this. Digital wins under about 1,000 units because there is no
@@ -165,7 +165,7 @@ const schema = S.graph([
     <div class="wrap two-col">
       <div>
         <p class="eyebrow">Why this range</p>
-        <h2>What you get with custom {category.name.toLowerCase().replace(/^custom /, '')}</h2>
+        <h2>What You Get with {category.name}</h2>
         <p class="lede">{note?.angle}</p>
         <p class="muted">
           Nothing in this range is a stock item. We cut a dieline for your product, choose a board
@@ -190,7 +190,7 @@ const schema = S.graph([
           { h: 'Share the product', d: `Dimensions, weight and how it ships. ${note?.watchOut ?? ''}` },
           { h: 'We specify and quote', d: 'Board grade, structure, print route, lead time and a written price.' },
           { h: 'Dieline and proof', d: 'A template sized to your product, then a digital proof or a physical sample.' },
-          { h: 'Production and delivery', d: 'Typically 8 to 15 business days after approval, shipped anywhere in the US.' },
+          { h: 'Production and delivery', d: 'Typically 3 to 5 business days after approval, shipped anywhere in the US.' },
         ].map((x) => (
           <div class="step reveal">
             <h3 style="font-size:var(--fs-md)">{x.h}</h3>
@@ -206,18 +206,18 @@ const schema = S.graph([
     <div class="wrap two-col">
       <div>
         <p class="eyebrow">Get a price</p>
-        <h2>Quote a {category.name.toLowerCase().replace(/^custom /, '')} run</h2>
+        <h2>Quote a {category.name.replace(/^Custom /, '')} Run</h2>
         <p class="lede">
           Send the product details and the quantity you have in mind. We reply with a specification
           and a written price, usually within one business day.
         </p>
         <p class="muted">{SITE.priceLine}</p>
       </div>
-      <QuoteForm id="quote" source={`category:${category.slug}`} categoryName={category.name} title={`Quote ${category.name.toLowerCase()}`} />
+      <QuoteForm id="quote" source={`category:${category.slug}`} categoryName={category.name} title={`Quote ${category.name}`} />
     </div>
   </section>
 
-  <Faqs faqs={faqs} title={`${category.name} questions`} intro={`What buyers ask before ordering ${category.name.toLowerCase()}.`} />
+  <Faqs faqs={faqs} title={`${category.name} Questions`} intro={`What buyers ask before ordering ${category.name.toLowerCase()}.`} />
 
   <!-- related categories -->
   {related.length > 0 && (
@@ -225,7 +225,7 @@ const schema = S.graph([
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">Related ranges</p>
-          <h2>Other packaging categories worth comparing</h2>
+          <h2>Other Categories Worth Comparing</h2>
         </div>
         <div class="grid g-4">
           {related.map((r) => (
@@ -239,7 +239,7 @@ const schema = S.graph([
     </section>
   )}
 
-  <CtaBand title={`Ready to specify your ${category.name.toLowerCase().replace(/^custom /, '')}?`} />
+  <CtaBand title={`Ready to Specify Your ${category.name.replace(/^Custom /, '')}?`} />
 </Base>
 
 <style>

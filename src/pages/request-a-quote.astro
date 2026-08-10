@@ -22,7 +22,7 @@ const faqs = [
   { q: 'What if I do not know what material I need?', a: 'Say so. An honest blank is more useful than a guess. Send the product weight and how it ships and we will recommend a specification.' },
   { q: 'Can I upload artwork with the request?', a: 'Yes, up to five files of 10 MB each. PDF, AI, EPS, SVG, PNG, JPG, WEBP and ZIP are accepted. Reference photos are just as useful as finished artwork at this stage.' },
   { q: 'What happens to my details?', a: 'We use them to answer this request. We do not sell or share contact data. Full detail is in our privacy policy.' },
-  { q: 'Can I speak to someone instead?', a: `Yes. Call ${SITE.phone} during ${SITE.hours}, or message us on WhatsApp. Some specifications are faster to settle in conversation.` },
+  { q: 'Can I speak to someone instead?', a: `Yes. Call ${SITE.phone}, or message us on WhatsApp. Some specifications are faster to settle in conversation.` },
 ]
 
 const schema = S.graph([
@@ -53,8 +53,7 @@ const schema = S.graph([
           <p class="alt-h">Prefer to talk?</p>
           <a class="btn btn-outline" href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a>
           <a class="btn btn-ghost" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" data-analytics="whatsapp-click">WhatsApp</a>
-          <p class="small muted">{SITE.hours}</p>
-        </div>
+          </div>
       </div>
       <QuoteForm id="quote" variant="full" source="quote-page" title="Your packaging requirement"
         intro="The more detail you give, the more accurate the quote. Fields marked with an asterisk are required." />

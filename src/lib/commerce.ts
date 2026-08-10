@@ -13,50 +13,50 @@
 import type { Product } from './catalog'
 import type { FormFactorId } from './taxonomy'
 
-/** Smallest efficient run per form factor, matching the MOQ text in taxonomy.ts. */
+/** Minimum order quantity. The business runs a flat 100-unit minimum. */
 const MIN_QTY: Record<FormFactorId, number> = {
-  'folding-carton': 250,
+  'folding-carton': 100,
   'rigid-box': 100,
-  'corrugated-box': 250,
+  'corrugated-box': 100,
   mailer: 100,
-  'poly-mailer': 1000,
-  'bubble-mailer': 1000,
-  'paper-bag': 500,
+  'poly-mailer': 100,
+  'bubble-mailer': 100,
+  'paper-bag': 100,
   'tote-bag': 100,
-  pouch: 500,
-  'paper-cup': 1000,
-  tray: 1000,
-  sleeve: 500,
-  label: 250,
-  sticker: 50,
-  insert: 250,
-  display: 250,
-  tube: 500,
-  band: 500,
-  wrap: 1000,
+  pouch: 100,
+  'paper-cup': 100,
+  tray: 100,
+  sleeve: 100,
+  label: 100,
+  sticker: 100,
+  insert: 100,
+  display: 100,
+  tube: 100,
+  band: 100,
+  wrap: 100,
 }
 
-/** Production window in business days, before transit. */
+/** Production window in business days, before transit. Flat 3-5 days. */
 const LEAD: Record<FormFactorId, [number, number]> = {
-  'folding-carton': [8, 12],
-  'rigid-box': [12, 18],
-  'corrugated-box': [8, 12],
-  mailer: [8, 12],
-  'poly-mailer': [10, 14],
-  'bubble-mailer': [10, 14],
-  'paper-bag': [10, 15],
-  'tote-bag': [12, 18],
-  pouch: [10, 15],
-  'paper-cup': [12, 16],
-  tray: [10, 14],
-  sleeve: [8, 12],
-  label: [6, 10],
-  sticker: [5, 9],
-  insert: [8, 12],
-  display: [10, 15],
-  tube: [10, 15],
-  band: [8, 12],
-  wrap: [10, 14],
+  'folding-carton': [3, 5],
+  'rigid-box': [3, 5],
+  'corrugated-box': [3, 5],
+  mailer: [3, 5],
+  'poly-mailer': [3, 5],
+  'bubble-mailer': [3, 5],
+  'paper-bag': [3, 5],
+  'tote-bag': [3, 5],
+  pouch: [3, 5],
+  'paper-cup': [3, 5],
+  tray: [3, 5],
+  sleeve: [3, 5],
+  label: [3, 5],
+  sticker: [3, 5],
+  insert: [3, 5],
+  display: [3, 5],
+  tube: [3, 5],
+  band: [3, 5],
+  wrap: [3, 5],
 }
 
 export const minQty = (p: Product): number => MIN_QTY[p.form.id] ?? 250
@@ -76,7 +76,7 @@ export function specLine(p: Product): string {
  */
 export function quantityBands(p: Product): number[] {
   const m = minQty(p)
-  const ladder = [50, 100, 250, 500, 1000, 2500, 5000, 10000, 25000]
+  const ladder = [100, 250, 500, 1000, 2500, 5000, 10000, 25000]
   const bands = ladder.filter((n) => n >= m).slice(0, 6)
   return bands.length ? bands : [m, m * 2, m * 5, m * 10]
 }

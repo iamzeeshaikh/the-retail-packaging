@@ -111,9 +111,9 @@ ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
   --section-y: clamp(3.75rem, 2.5rem + 5vw, 7rem);
 
   /* layout */
-  --wrap: 1280px;
-  --wrap-narrow: 760px;
-  --gutter: clamp(1.125rem, 0.7rem + 2vw, 3rem);
+  --wrap: 1580px;
+  --wrap-narrow: 820px;
+  --gutter: clamp(1.125rem, 0.6rem + 1.6vw, 2.5rem);
 
   /* Maison is square. 2px is the whole radius system. */
   --r-sm: 2px;
@@ -237,7 +237,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
 .prose > * + * { margin-top: var(--s-5); }
 .prose h2 { margin-top: var(--s-12); font-size: var(--fs-2xl); }
 .prose h3 { margin-top: var(--s-8); font-size: var(--fs-lg); }
-.prose p, .prose li { color: var(--text-muted); font-size: var(--fs-md); }
+.prose p, .prose li { color: var(--text-muted); font-size: var(--fs-md); max-width: 76ch; }
 .prose ul, .prose ol { padding-left: var(--s-6); }
 .prose li + li { margin-top: var(--s-2); }
 .prose li::marker { color: var(--ox); }

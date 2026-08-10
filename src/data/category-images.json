@@ -1,28 +1,106 @@
 {
- "custom-bags": "luxury-gift-bags",
- "custom-beverage-packaging": "beverage-gift-boxes",
- "custom-candle-packaging": "tealight-boxes",
- "custom-home-fragrance-packaging": "essential-oil-boxes",
- "custom-cbd-packaging": "cbd-oil-boxes",
- "custom-cosmetic-packaging": "face-mask-boxes",
- "custom-printed-cups": "coffee-cups",
- "custom-containers": "cold-cup-boxes",
- "custom-food-trays": "custom-printed-food-trays",
- "custom-display-boxes": "retail-display-boxes",
- "custom-mailers": "black-poly-mailers",
- "custom-food-packaging": "chinese-takeout-boxes",
- "custom-gift-boxes": "birthday-gable-boxes",
- "promotional-packaging": "event-tickets",
- "custom-packaging-inserts": "booklet-boxes-with-inserts",
- "custom-jewellery-boxes": "pendant-boxes",
- "custom-apparel-packaging": "wallet-boxes",
- "custom-labels": "pressure-sensitive-labels",
- "custom-stickers": "custom-ink-stickers",
- "pharmaceutical-packaging": "medical-device-boxes",
- "wellness-packaging": "cbd-dissolvable-sleep-tablets-boxes",
- "custom-pouches": "mylar-food-bags",
- "custom-sleeves": "cup-sleeves",
- "custom-bands": "belly-band-packaging",
- "electronics-packaging": "headphone-boxes",
- "sustainable-packaging": "kraft-packaging"
+ "custom-bags": {
+  "calm": "luxury-gift-bags",
+  "vivid": "custom-paper-lunch-bags"
+ },
+ "custom-beverage-packaging": {
+  "calm": "beverage-gift-boxes",
+  "vivid": "e-juice-display-boxes"
+ },
+ "custom-candle-packaging": {
+  "calm": "tealight-boxes",
+  "vivid": "candle-jar-boxes"
+ },
+ "custom-home-fragrance-packaging": {
+  "calm": "essential-oil-boxes",
+  "vivid": "home-fragrance-boxes"
+ },
+ "custom-cbd-packaging": {
+  "calm": "cbd-oil-boxes",
+  "vivid": "cbd-oil-boxes"
+ },
+ "custom-cosmetic-packaging": {
+  "calm": "face-mask-boxes",
+  "vivid": "serum-boxes"
+ },
+ "custom-printed-cups": {
+  "calm": "coffee-cups",
+  "vivid": "french-fry-cups"
+ },
+ "custom-containers": {
+  "calm": "cold-cup-boxes",
+  "vivid": "cold-cup-boxes"
+ },
+ "custom-food-trays": {
+  "calm": "custom-printed-food-trays",
+  "vivid": "waffle-trays"
+ },
+ "custom-display-boxes": {
+  "calm": "retail-display-boxes",
+  "vivid": "candle-display-boxes"
+ },
+ "custom-mailers": {
+  "calm": "black-poly-mailers",
+  "vivid": "halloween-mailers"
+ },
+ "custom-food-packaging": {
+  "calm": "chinese-takeout-boxes",
+  "vivid": "french-fry-boxes"
+ },
+ "custom-gift-boxes": {
+  "calm": "birthday-gable-boxes",
+  "vivid": "subscription-boxes"
+ },
+ "promotional-packaging": {
+  "calm": "event-tickets",
+  "vivid": "pr-boxes"
+ },
+ "custom-packaging-inserts": {
+  "calm": "booklet-boxes-with-inserts",
+  "vivid": "custom-printed-boxes-with-inserts"
+ },
+ "custom-jewellery-boxes": {
+  "calm": "pendant-boxes",
+  "vivid": "pendant-boxes"
+ },
+ "custom-apparel-packaging": {
+  "calm": "wallet-boxes",
+  "vivid": "shirt-boxes"
+ },
+ "custom-labels": {
+  "calm": "pressure-sensitive-labels",
+  "vivid": "cake-labels"
+ },
+ "custom-stickers": {
+  "calm": "custom-ink-stickers",
+  "vivid": "pot-leaf-stickers"
+ },
+ "pharmaceutical-packaging": {
+  "calm": "medical-device-boxes",
+  "vivid": "medicine-boxes"
+ },
+ "wellness-packaging": {
+  "calm": "cbd-dissolvable-sleep-tablets-boxes",
+  "vivid": "cbd-dissolvable-sleep-tablets-boxes"
+ },
+ "custom-pouches": {
+  "calm": "mylar-food-bags",
+  "vivid": "die-cut-mylar-bags"
+ },
+ "custom-sleeves": {
+  "calm": "cup-sleeves",
+  "vivid": "sandwich-sleeves"
+ },
+ "custom-bands": {
+  "calm": "belly-band-packaging",
+  "vivid": "resistance-band-packaging"
+ },
+ "electronics-packaging": {
+  "calm": "headphone-boxes",
+  "vivid": "earbud-boxes"
+ },
+ "sustainable-packaging": {
+  "calm": "kraft-packaging",
+  "vivid": "eco-friendly-soap-packaging-boxes"
+ }
 }

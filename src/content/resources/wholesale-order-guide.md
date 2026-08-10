@@ -67,7 +67,7 @@ Keep your own archive too. A brand holding its own copies is never dependent on 
 
 The common failure is not over-ordering — it is running out mid-lead-time.
 
-Production is 8 to 15 business days after approval, plus transit, plus proof time. A realistic reorder lead time is four to six weeks.
+Production is 3 to 5 business days after approval, plus transit, plus proof time. A realistic reorder lead time is four to six weeks.
 
 Set the trigger accordingly. Using 5,000 a month with a six-week lead time means reordering at around 7,500 remaining, not 2,000.
 

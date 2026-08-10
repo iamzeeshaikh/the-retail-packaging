@@ -55,14 +55,21 @@ export const bySlug = new Map(products.map((p) => [p.slug, p]))
 export const categoryBySlug = new Map(categories.map((c) => [c.slug, c]))
 
 /**
- * Curated hero product per category, chosen by scripts/pick-category-images.mjs
- * on how calm the photograph reads at tile size. Falls back to the first
- * product if a category has no scored winner.
+ * Curated hero product per category, scored by scripts/pick-category-images.mjs.
+ *
+ * Two picks are stored. `vivid` favours a photograph with real colour in the
+ * product on a clean ground — that is the default, because a grid of grey
+ * studio shots reads as dull. `calm` is the low-chroma alternative, kept for
+ * places where consistency matters more than colour.
  */
-const curated = catImagesRaw as Record<string, string>
+const curated = catImagesRaw as Record<string, { calm: string; vivid: string }>
 
-export function categoryHero(categorySlug: string): Product | undefined {
-  const slug = curated[categorySlug]
+export function categoryHero(
+  categorySlug: string,
+  tone: 'vivid' | 'calm' = 'vivid'
+): Product | undefined {
+  const entry = curated[categorySlug]
+  const slug = entry?.[tone] ?? entry?.vivid
   return (slug ? bySlug.get(slug) : undefined) ?? productsIn(categorySlug)[0]
 }
 

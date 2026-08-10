@@ -156,9 +156,15 @@ const id = `cfg-${p.slug}`
   .cfg-title { font-size: var(--fs-xl); }
   .cfg-sub { font-size: var(--fs-sm); color: var(--text-muted); margin-top: var(--s-2); }
 
-  .cfg-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--s-3); padding-block: var(--s-5); border-bottom: 1px solid var(--rule); }
-  .cfg-facts div { display: flex; flex-direction: column; gap: 0.15rem; }
+  /* Stacked rows rather than three cramped columns — "10–15 days" and
+     "paper bag" were wrapping and colliding with their own headers. */
+  .cfg-facts { display: grid; gap: 0; padding-block: var(--s-2) var(--s-4);
+    border-bottom: 1px solid var(--rule); }
+  .cfg-facts div {
+    display: grid; grid-template-columns: 42% 1fr; gap: var(--s-3);
+    align-items: baseline; padding: 0.55rem 0; border-bottom: 1px solid var(--rule);
+  }
+  .cfg-facts div:last-child { border-bottom: 0; }
   .cfg-facts dt { font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
   .cfg-facts dd { margin: 0; font-size: var(--fs-sm); font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
 

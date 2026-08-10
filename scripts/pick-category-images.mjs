@@ -51,12 +51,16 @@ async function score(file) {
   // Ideal luminance sits light-mid; punish the distance from it.
   const lumPenalty = Math.abs(meanLum - 178) / 178
 
-  return (
-    100 -
-    meanChroma * 0.85 -            // garish backdrop
-    Math.sqrt(varChroma) * 0.35 -  // busy, multi-colour frame
-    lumPenalty * 45                // too dark or blown out
-  )
+  const sd = Math.sqrt(varChroma)
+
+  return {
+    // Calm: for small tiles in a grid, where consistency matters most.
+    calm: 100 - meanChroma * 0.85 - sd * 0.35 - lumPenalty * 45,
+    // Vivid: for large hero tiles, where flat grey reads as dull. Rewards
+    // colour in the product while still punishing a busy, multi-colour frame
+    // and a blown-out or murky exposure.
+    vivid: 100 + meanChroma * 0.55 - sd * 0.85 - lumPenalty * 40,
+  }
 }
 
 const out = {}
@@ -71,30 +75,24 @@ for (const cat of catalog.categories) {
     if (!meta) continue
     const file = path.join(ROOT, 'public', `${meta.base}-400.webp`.replace(/^\//, ''))
     try {
-      candidates.push({ slug: p.slug, name: p.name, s: await score(file) })
+      const sc = await score(file)
+      candidates.push({ slug: p.slug, name: p.name, calm: sc.calm, vivid: sc.vivid })
     } catch {
       /* unreadable file — skip rather than fail the whole run */
     }
   }
 
   if (!candidates.length) continue
-  candidates.sort((a, b) => b.s - a.s)
-  const win = candidates[0]
-  out[cat.slug] = win.slug
-  report.push({
-    category: cat.name,
-    chosen: win.name,
-    score: +win.s.toFixed(1),
-    was: products[0]?.name,
-    changed: products[0]?.slug !== win.slug,
-  })
+  const calm = [...candidates].sort((a, b) => b.calm - a.calm)[0]
+  const vivid = [...candidates].sort((a, b) => b.vivid - a.vivid)[0]
+  out[cat.slug] = { calm: calm.slug, vivid: vivid.slug }
+  report.push({ category: cat.name, calm: calm.name, vivid: vivid.name })
 }
 
 await writeFile(path.join(ROOT, 'src/data/category-images.json'), JSON.stringify(out, null, 1))
 await writeFile(path.join(ROOT, 'reports/category-images.json'), JSON.stringify(report, null, 1))
 
-const changed = report.filter((r) => r.changed).length
-console.log(`${report.length} categories scored, ${changed} images changed`)
+console.log(`${report.length} categories scored`)
 for (const r of report) {
-  console.log(`  ${r.category.padEnd(34)} ${r.chosen}`)
+  console.log(`  ${r.category.padEnd(32)} calm: ${r.calm.padEnd(30)} vivid: ${r.vivid}`)
 }

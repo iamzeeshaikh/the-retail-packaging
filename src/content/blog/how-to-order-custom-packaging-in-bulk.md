@@ -75,7 +75,7 @@ Keep your own archive too — the approved print file, the dieline and the speci
 
 The most common bulk-order failure is not over-ordering. It is running out during a lead time.
 
-Production takes 8 to 15 business days after artwork approval for most formats, plus transit. Add a buffer for proof approval and any artwork changes, and a realistic reorder lead time is four to six weeks.
+Production takes 3 to 5 business days after artwork approval for most formats, plus transit. Add a buffer for proof approval and any artwork changes, and a realistic reorder lead time is four to six weeks.
 
 Set a reorder trigger based on that. If you use 5,000 units a month and the lead time is six weeks, the trigger point is around 7,500 units remaining, not 2,000.
 

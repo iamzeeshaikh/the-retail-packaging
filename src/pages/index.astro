@@ -48,8 +48,8 @@ const industryTiles = [
 const faqs = [
   { q: 'What does The Retail Packaging actually make?', a: `We manufacture custom retail packaging to order — ${totals.products} formats across ${totals.categories} categories, covering folding cartons, rigid boxes, corrugated mailers, paper bags, pouches, labels, sleeves, trays and retail displays. Everything is cut to your dimensions rather than pulled from a stock catalogue.` },
   { q: 'How much does custom packaging cost?', a: `${SITE.priceLine} A small run of digitally printed cartons and a 50,000-unit flexo run sit at opposite ends of that range, which is why we quote each project rather than publishing a price list.` },
-  { q: 'What is the minimum order quantity?', a: 'It depends on the format and the printing route. Digital printing starts as low as 50 pieces for stickers and 100 for mailer boxes. Offset and flexo runs need larger quantities to absorb the plate cost, usually from 1,000 units. Tell us your quantity and we will quote the most efficient way to produce it.' },
-  { q: 'How long does production take?', a: 'Most orders move through production in 8 to 15 business days once artwork is approved, with shipping on top. Hand-assembled rigid boxes and specialty finishes sit at the longer end. We confirm a firm date in writing with every quote.' },
+  { q: 'What is the minimum order quantity?', a: 'It depends on the format and the printing route. Our minimum is 100 units on any format. Below about 1,000 units we print digitally, which removes the plate cost; above that, offset and flexo become cheaper per unit. Tell us your quantity and we will quote the most efficient route.' },
+  { q: 'How long does production take?', a: 'Most orders move through production in 3 to 5 business days once artwork is approved, with shipping on top. Hand-assembled rigid boxes and specialty finishes sit at the longer end. We confirm a firm date in writing with every quote.' },
   { q: 'Can I get a sample before committing to a full run?', a: 'Yes. We can produce a plain structural sample so you can check that your product actually fits, or a printed prototype so you can judge colour and finish. Sample costs are normally credited against the production order that follows.' },
   { q: 'What artwork files do you need?', a: 'A print-ready PDF or vector AI file works best, with fonts outlined, images at 300 dpi and CMYK colour. We send you a dieline template for your chosen size, and our prepress team checks every file before it goes to press.' },
   { q: 'Do you help if I do not have artwork yet?', a: 'Yes. Our design team can build packaging artwork from a logo and a brand direction, or adapt existing artwork onto a new dieline. Tell us what you have and we will tell you what is missing.' },
@@ -88,12 +88,12 @@ const schema = S.graph([
       <div class="hero-top">
         <div class="hero-copy">
           <p class="eyebrow">Made to order · United States</p>
-          <h1>Packaging built around your product</h1>
+          <h1>Packaging Built Around Your Product</h1>
         </div>
         <div class="hero-aside">
           <p class="hero-sub">
-            {totals.categories} categories, {totals.products} formats, no stock sizes. Send the
-            dimensions and the quantity; we return a specification, a lead time and a written price.
+            No stock sizes. Send the product dimensions and the quantity you need, and we return
+            a specification, a lead time and a written price.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="/request-a-quote/">Request a quote</a>
@@ -141,7 +141,7 @@ const schema = S.graph([
   <div class="trust">
     <div class="wrap trust-in">
       <span>Made to order, never stock</span>
-      <span>{totals.products} formats in production</span>
+      <span>Made to order, never stock</span>
       <span>Written specification with every price</span>
       <span>Delivery to all 50 states</span>
       <span>From $0.30 per piece at volume</span>
@@ -154,9 +154,9 @@ const schema = S.graph([
       <div class="sec-head">
         <div>
           <p class="eyebrow">Short runs</p>
-          <h2>Low minimum, quick turnaround</h2>
+          <h2>Low Minimum, Quick Turnaround</h2>
         </div>
-        <a class="sec-link" href="/sitemap/">All {totals.products} formats</a>
+        <a class="sec-link" href="/sitemap/">Browse everything</a>
       </div>
       <div class="rail rail-bleed">
         {lowMin.map((p, i) => <ProductCard product={p} loading={i < 4 ? 'eager' : 'lazy'} showCategory />)}
@@ -169,10 +169,9 @@ const schema = S.graph([
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <p class="eyebrow">Categories</p>
-          <h2>Eight ranges that carry most of the volume</h2>
+          <h2>Eight Ranges That Carry Most of the Volume</h2>
         </div>
-        <a class="sec-link" href="/sitemap/">All {totals.categories} categories</a>
+        <a class="sec-link" href="/sitemap/">All categories</a>
       </div>
       <div class="cat-grid">
         {featured.map(({ c, list }, i) => (
@@ -190,7 +189,7 @@ const schema = S.graph([
       <div class="sec-head">
         <div>
           <p class="eyebrow">By industry</p>
-          <h2>What you sell decides the specification</h2>
+          <h2>What You Sell Decides the Specification</h2>
         </div>
       </div>
       <p class="lede" style="margin-bottom:var(--s-10)">
@@ -231,7 +230,7 @@ const schema = S.graph([
       <div class="sec-head">
         <div>
           <p class="eyebrow">Frequently specified</p>
-          <h2>Formats buyers ask for most</h2>
+          <h2>Formats Buyers Ask For Most</h2>
         </div>
       </div>
       <div class="rail rail-bleed">
@@ -245,7 +244,7 @@ const schema = S.graph([
     <div class="wrap two-col">
       <div>
         <p class="eyebrow">How it works</p>
-        <h2>Six stages, no surprises</h2>
+        <h2>Six Stages, No Surprises</h2>
         <p class="lede">
           The only variable is how long each stage takes, and that depends almost entirely on how
           complete the information is at the start.
@@ -258,7 +257,7 @@ const schema = S.graph([
           { h: 'Specification and quote', d: 'Board grade, structure, print method, lead time, written price.' },
           { h: 'Dieline', d: 'A template cut to your product, not a stock rectangle.' },
           { h: 'Prepress and proof', d: 'Bleed, resolution, fonts and cut lines checked before plate.' },
-          { h: 'Production', d: 'Print, die-cut, finish and assemble. 8 to 15 business days.' },
+          { h: 'Production', d: 'Print, die-cut, finish and assemble. 3 to 5 business days.' },
           { h: 'Delivery', d: 'Flat or assembled, to one address or split across sites.' },
         ].map((x) => (
           <div class="step reveal">
@@ -275,7 +274,7 @@ const schema = S.graph([
     <div class="wrap two-col">
       <div>
         <p class="eyebrow">Materials</p>
-        <h2>Claims you can defend</h2>
+        <h2>Claims You Can Defend</h2>
         <p class="lede">
           Recycled content, kerbside recyclability and certified compostability are three separate
           claims with three separate evidence requirements. Brands get into trouble by treating them
@@ -311,7 +310,7 @@ const schema = S.graph([
     <div class="wrap two-col">
       <div>
         <p class="eyebrow">Get a price</p>
-        <h2>Tell us what you are packing</h2>
+        <h2>Tell Us What You Are Packing</h2>
         <p class="lede">
           Most quotes go back the same working day. If your requirement needs a structural mock-up
           first, we say so instead of guessing at a number.

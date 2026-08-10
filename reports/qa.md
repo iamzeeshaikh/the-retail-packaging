@@ -23,7 +23,7 @@ None.
 ## MEDIUM — 1
 
 ### excessive-links (1)
-- {"route":"/sitemap/","count":652}
+- {"route":"/sitemap/","count":654}
 
 
 ## INFO — 0

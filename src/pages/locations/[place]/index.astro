@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     q: `How long does delivery to ${place.name} take?`,
-    a: `${place.freight} Add 8 to 15 business days of production time after artwork approval, and we confirm the full timeline in writing with your quote.`,
+    a: `${place.freight} Add 3 to 5 business days of production time after artwork approval, and we confirm the full timeline in writing with your quote.`,
   },
   {
     q: `Which industries in ${where} do you supply most?`,
@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     q: `What is the minimum order for delivery to ${place.name}?`,
-    a: `Minimums are set by format and print method, not by destination. Digital runs start as low as 50 to 100 units, while offset and flexo need larger quantities. Shipping to ${place.name} does not change the minimum.`,
+    a: `A flat 100 units on any format, wherever it ships. Shipping to ${place.name} does not change the minimum.`,
   },
   {
     q: `Can you ship to multiple addresses in ${place.kind === 'city' ? place.state : place.name}?`,
@@ -121,7 +121,7 @@ const schema = S.graph([
   <section class="section">
     <div class="wrap two-col">
       <div class="prose">
-        <h2>Packaging for {place.name} businesses</h2>
+        <h2>Packaging for {place.name} Businesses</h2>
         <p>
           We manufacture to order and ship nationwide, which means a brand in {place.name} gets the
           same specification process, board options and print routes as one anywhere else. What
@@ -130,17 +130,17 @@ const schema = S.graph([
         </p>
         <p>{place.freight}</p>
 
-        <h2>Sectors we supply in {where}</h2>
+        <h2>Sectors We Supply in {where}</h2>
         <p>
           Demand here is concentrated in a handful of sectors, and each one pushes the specification
           in a different direction.
         </p>
         <ul>{place.sectors.map((s) => <li>{s}</li>)}</ul>
 
-        <h2>One thing worth knowing before you order</h2>
+        <h2>One Thing Worth Knowing Before You Order</h2>
         <p>{place.note}</p>
 
-        <h2>How ordering works from {place.name}</h2>
+        <h2>How Ordering Works from {place.name}</h2>
         <p>
           Send your product dimensions, the quantity you need and your deadline. We reply with a
           board grade, a structure, a print method and a written price. Once you approve, we send a
@@ -160,7 +160,7 @@ const schema = S.graph([
 
         {!isCity && childCities.length > 0 && (
           <>
-            <h2>Cities we ship to in {place.name}</h2>
+            <h2>Cities We Ship To in {place.name}</h2>
             <ul>
               {childCities.map((c) => (
                 <li><a href={`/locations/${c.slug}/`}>{`Custom packaging in ${c.name}`}</a></li>
@@ -175,7 +175,7 @@ const schema = S.graph([
           <h2 class="aside-h">Delivery to {place.name}</h2>
           <dl class="spec-list">
             <div><dt>Coverage</dt><dd>{where}</dd></div>
-            <div><dt>Production</dt><dd>8–15 business days after approval</dd></div>
+            <div><dt>Production</dt><dd>3–5 business days after approval</dd></div>
             <div><dt>Local facility</dt><dd>None — we ship to you directly</dd></div>
             <div><dt>Contact</dt><dd>{SITE.phone}</dd></div>
           </dl>
@@ -189,7 +189,7 @@ const schema = S.graph([
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Recommended</p>
-        <h2>Packaging categories most ordered in {place.name}</h2>
+        <h2>Packaging Categories Most Ordered in {place.name}</h2>
         <p class="lede">
           Based on the sectors that drive demand locally, these ranges are where most {place.name}
           {' '}enquiries start.
@@ -207,7 +207,7 @@ const schema = S.graph([
     <div class="wrap two-col">
       <div>
         <p class="eyebrow">Get a price</p>
-        <h2>Quote a {place.name} delivery</h2>
+        <h2>Quote a {place.name} Delivery</h2>
         <p class="lede">
           Tell us what you are packing, how many you need and where in {place.name} it should land.
           We reply with a specification and a written price, usually within one business day.
@@ -218,9 +218,9 @@ const schema = S.graph([
     </div>
   </section>
 
-  <Faqs faqs={faqs} title={`Custom packaging in ${place.name} — questions`} />
+  <Faqs faqs={faqs} title={`Custom Packaging in ${place.name} — Questions`} />
 
-  <CtaBand title={`Shipping packaging to ${place.name}`} />
+  <CtaBand title={`Shipping Packaging to ${place.name}`} />
 </Base>
 
 <style>

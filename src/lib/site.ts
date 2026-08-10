@@ -14,7 +14,6 @@ export const SITE = {
   whatsappMessage:
     'Hi, I would like a quote for custom retail packaging. Here is what I need:',
   country: 'US',
-  hours: 'Monday to Friday, 9am to 6pm Pacific',
   social: [] as string[], // no invented profiles
   priceLine:
     'Prices start from $0.30 per piece for large-volume orders. Final pricing depends on size, material, printing, finishes, and quantity.',
