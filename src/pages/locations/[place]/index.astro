@@ -4,239 +4,471 @@ import Base from '../../../layouts/Base.astro'
 import Breadcrumbs from '../../../components/Breadcrumbs.astro'
 import QuoteForm from '../../../components/QuoteForm.astro'
 import Faqs from '../../../components/Faqs.astro'
-import CtaBand from '../../../components/CtaBand.astro'
 import CategoryCard from '../../../components/CategoryCard.astro'
-import { allPlaces, cities, type Place } from '../../../data/locations'
+import { allPlaces, placeBySlug, citiesIn, type Place } from '../../../data/locations'
 import { categoryBySlug, productsIn, categoryHero } from '../../../lib/catalog'
 import { clampText } from '../../../lib/copy'
-import { SITE } from '../../../lib/site'
 import * as S from '../../../lib/schema'
 
+/**
+ * Location page.
+ *
+ * There is no fixed section order here. Each place declares which sections it
+ * carries and in what sequence, and its variant decides how the hero and the
+ * lead section are presented. Two places therefore rarely produce the same
+ * visible page even though they share this template.
+ */
 export const getStaticPaths = (() =>
   allPlaces.map((p) => ({ params: { place: p.slug }, props: { place: p } }))) satisfies GetStaticPaths
 
 const { place } = Astro.props as { place: Place }
-const path = `/locations/${place.slug}/`
-const isCity = place.kind === 'city'
-const where = isCity ? `${place.name}, ${place.state}` : place.name
-
-const recommended = place.recommend
-  .map((s) => categoryBySlug.get(s))
-  .filter(Boolean)
-  .map((c) => ({ c: c!, list: productsIn(c!.slug) }))
-
-// Cities inside this state, for state pages.
-const childCities = !isCity ? cities.filter((c) => c.stateSlug === place.slug) : []
+const p = place
+const path = `/locations/${p.slug}/`
+const isCity = p.kind === 'city'
+const parent = p.stateSlug ? placeBySlug.get(p.stateSlug) : undefined
+const childCities = isCity ? [] : citiesIn(p.slug)
 
 const trail = [
   { name: 'Home', url: '/' },
   { name: 'Locations', url: '/locations/' },
-  ...(isCity && place.stateSlug ? [{ name: place.state!, url: `/locations/${place.stateSlug}/` }] : []),
-  { name: place.name, url: path },
+  ...(isCity && parent ? [{ name: parent.name, url: `/locations/${parent.slug}/` }] : []),
+  { name: p.name, url: path },
 ]
 
-const title = clampText(`Custom Packaging ${where} | Made to Order`, 60)
-const description = clampText(
-  `Custom retail packaging for ${where} brands. Boxes, bags, pouches and labels made to your size, printed to your artwork, shipped to ${place.name}.`,
-  132
-)
+const title = clampText(p.metaTitle, 62)
+const description = clampText(p.metaDescription, 158)
 
-const faqs = [
-  {
-    q: `Do you supply custom packaging to businesses in ${where}?`,
-    a: `Yes. We manufacture to order and ship across the United States, including ${where}. ${place.freight}`,
-  },
-  {
-    q: `Do you have a facility in ${place.name}?`,
-    a: `No. We do not operate an office or plant in ${place.name}, and we would rather say so than imply otherwise. Production runs through our manufacturing partners and ships directly to your ${place.name} address.`,
-  },
-  {
-    q: `How long does delivery to ${place.name} take?`,
-    a: `${place.freight} Add 3 to 5 business days of production time after artwork approval, and we confirm the full timeline in writing with your quote.`,
-  },
-  {
-    q: `Which industries in ${where} do you supply most?`,
-    a: `${place.sectors.join(', ')}. ${place.context}`,
-  },
-  {
-    q: `What should ${place.name} buyers know before ordering?`,
-    a: place.note,
-  },
-  {
-    q: `What is the minimum order for delivery to ${place.name}?`,
-    a: `A flat 100 units on any format, wherever it ships. Shipping to ${place.name} does not change the minimum.`,
-  },
-  {
-    q: `Can you ship to multiple addresses in ${place.kind === 'city' ? place.state : place.name}?`,
-    a: `Yes. We can split a production run across several delivery points, which suits brands with more than one store or fulfilment site. Tell us the split at quoting so freight is costed correctly.`,
-  },
-  {
-    q: `How much does custom packaging cost for a ${place.name} business?`,
-    a: `${SITE.priceLine} Freight to ${place.name} is quoted separately and depends on consignment size.`,
-  },
-  {
-    q: `Can I get samples sent to ${place.name} first?`,
-    a: `Yes. We can send a plain structural sample so you can check the fit, or a printed prototype for colour and finish. Sample costs are normally credited against the production order.`,
-  },
-  {
-    q: `Do you offer sustainable packaging for ${where} brands?`,
-    a: `Yes. Recycled board, recyclable mono-material films and certified compostable stocks are all available. Those are three different environmental claims, so tell us which one you intend to print on the pack.`,
-  },
-  {
-    q: `Who do I contact about a ${place.name} order?`,
-    a: `Send a quote request through this page, email ${SITE.email} or call ${SITE.phone}. One person handles your specification, proof and production so you are not re-explaining the job.`,
-  },
-]
+/* Category cards for the formats block, with the reason each was chosen. */
+const formatPicks = p.formats.picks
+  .map((x) => {
+    const c = categoryBySlug.get(x.slug)
+    return c ? { c, why: x.why, count: productsIn(c.slug).length, hero: categoryHero(c.slug) } : null
+  })
+  .filter(Boolean) as { c: any; why: string; count: number; hero: any }[]
+
+const nearby = p.nearby
+  .map((n) => {
+    const q = placeBySlug.get(n.slug)
+    return q ? { q, why: n.why } : null
+  })
+  .filter(Boolean) as { q: Place; why: string }[]
+
+const heroImg = formatPicks[0]?.hero?.images?.[0]
 
 const schema = S.graph([
   S.organization(),
   S.website(),
-  S.webPage({ path, title, description }),
+  S.webPage({ path, title, description, image: heroImg ? `${heroImg.base}-1400.webp` : undefined }),
   S.breadcrumbs(path, trail),
   S.service({
     path,
-    name: `Custom packaging manufacturing for ${where}`,
+    name: `Custom packaging manufacturing for ${p.name}`,
     description,
-    areaName: where,
+    areaName: isCity && p.state ? `${p.name}, ${p.state}` : p.name,
   }),
-  S.faqPage(path, faqs),
+  S.faqPage(path, p.faqs),
 ])
+
+const imageHero =
+  p.variant === 'material-led' || p.variant === 'retail-led' ||
+  p.variant === 'maker-led' || p.variant === 'hospitality-led'
+const chipHero = p.variant === 'industry-led' || p.variant === 'sector-spotlight'
+const statHero =
+  p.variant === 'distribution-led' || p.variant === 'logistics-hub' || p.variant === 'ecommerce-led'
+/* demand-led leads on the order mix, so the hero previews that table. */
+const tableHero = p.variant === 'demand-led' && !!p.demandTable
 ---
 
-<Base title={title} description={description} path={path} schema={schema}>
+<Base title={title} description={description} path={path}
+  image={heroImg ? `${heroImg.base}-1400.webp` : undefined} schema={schema}>
   <Breadcrumbs trail={trail} />
 
-  <section class="loc-hero">
-    <div class="wrap">
-      <p class="eyebrow">{isCity ? 'City' : 'State'} · United States</p>
-      <h1>Custom packaging for {where}</h1>
-      <p class="lede">{place.context}</p>
-      <div class="btn-row">
-        <a class="btn btn-primary btn-lg" href="#quote">Request a Quote</a>
-        <a class="btn btn-outline btn-lg" href="/locations/">All US locations</a>
+  <!-- ============ hero: composition varies by variant ============ -->
+  <section class={`lp-hero lp-hero--${p.variant}`}>
+    <div class="wrap lp-hero-in">
+      <div class="lp-hero-copy">
+        <p class="eyebrow">{p.eyebrow}</p>
+        <h1>{p.h1}</h1>
+        <p class="lede">{p.lede}</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="#quote">Request a Quote</a>
+          <a class="btn btn-outline btn-lg" href="/locations/">All US locations</a>
+        </div>
       </div>
+
+      {/* The right column always carries something, so the hero never leaves
+          half the width empty. What it carries is what the variant is about. */}
+      {imageHero && heroImg && (
+        <figure class="lp-hero-fig">
+          <img src={`${heroImg.base}-800.webp`}
+            srcset={`${heroImg.base}-400.webp 400w, ${heroImg.base}-800.webp 800w, ${heroImg.base}-1400.webp 1400w`}
+            sizes="(max-width:960px) 94vw, 520px"
+            width={heroImg.width} height={heroImg.height}
+            alt={`${formatPicks[0].hero.name} produced for ${p.name} businesses`}
+            fetchpriority="high" decoding="async" />
+        </figure>
+      )}
+
+      {chipHero && (
+        <aside class="lp-panel">
+          <p class="lp-panel-h">Sectors we quote here</p>
+          <ul class="lp-chips" role="list">
+            {p.sectors.map((s) => <li>{s}</li>)}
+          </ul>
+          <p class="lp-panel-note">
+            We hold no premises in {p.name}. Everything is made to order and shipped to you.
+          </p>
+        </aside>
+      )}
+
+      {tableHero && p.demandTable && (
+        <aside class="lp-panel">
+          <p class="lp-panel-h">{p.demandTable.head[0]} · {p.demandTable.head[1]}</p>
+          <ul class="lp-preview" role="list">
+            {p.demandTable.rows.slice(0, 4).map((r) => (
+              <li><strong>{r[0]}</strong><span>{r[1]}</span></li>
+            ))}
+          </ul>
+          <p class="lp-panel-note">
+            We hold no premises in {p.name}. Everything is made to order and shipped to you.
+          </p>
+        </aside>
+      )}
+
+      {statHero && (
+        <aside class="lp-panel">
+          <p class="lp-panel-h">At a glance</p>
+          <dl class="lp-stats">
+            <div><dt>Minimum order</dt><dd>100 units</dd></div>
+            <div><dt>Production</dt><dd>3–5 business days</dd></div>
+            <div><dt>Freight</dt><dd>{p.logistics.body[0].match(/\d+ to \d+ business days/)?.[0] ?? 'Quoted per consignment'}</dd></div>
+            <div><dt>Local facility</dt><dd>None — we ship to you</dd></div>
+          </dl>
+        </aside>
+      )}
     </div>
   </section>
 
-  <section class="section">
-    <div class="wrap two-col">
-      <div class="prose">
-        <h2>Packaging for {place.name} Businesses</h2>
-        <p>
-          We manufacture to order and ship nationwide, which means a brand in {place.name} gets the
-          same specification process, board options and print routes as one anywhere else. What
-          changes is the freight plan and, occasionally, the material — local storage conditions and
-          regional retail requirements do affect what we recommend.
-        </p>
-        <p>{place.freight}</p>
+  <!-- ============ body sections, in this place's declared order ============ -->
+  {p.sections.map((key, i) => {
+    const sunken = i % 2 === 1
 
-        <h2>Sectors We Supply in {where}</h2>
-        <p>
-          Demand here is concentrated in a handful of sectors, and each one pushes the specification
-          in a different direction.
-        </p>
-        <ul>{place.sectors.map((s) => <li>{s}</li>)}</ul>
+    if (key === 'overview' || key === 'logistics' || key === 'climate' || key === 'retail' || key === 'ordering') {
+      const block = p[key]
+      if (!block) return null
+      const wide = key === 'retail' || key === 'climate'
+      return (
+        <section class={`section ${sunken ? 'section-sunken' : ''}`}>
+          <div class="wrap">
+            <div class={wide ? 'lp-prose lp-prose--wide' : 'lp-prose'}>
+              <h2>{block.h}</h2>
+              {block.body.map((t: string) => <p>{t}</p>)}
+            </div>
+          </div>
+        </section>
+      )
+    }
 
-        <h2>One Thing Worth Knowing Before You Order</h2>
-        <p>{place.note}</p>
+    if (key === 'industries') {
+      return (
+        <section class={`section ${sunken ? 'section-sunken' : ''}`}>
+          <div class="wrap">
+            <div class="lp-head">
+              <h2>{p.industries.h}</h2>
+              {p.industries.body.map((t: string) => <p class="lede">{t}</p>)}
+            </div>
+            <div class="lp-cards">
+              {p.industries.items.map((it) => (
+                <article class="lp-card">
+                  <h3>{it.name}</h3>
+                  <p>{it.detail}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
 
-        <h2>How Ordering Works from {place.name}</h2>
-        <p>
-          Send your product dimensions, the quantity you need and your deadline. We reply with a
-          board grade, a structure, a print method and a written price. Once you approve, we send a
-          dieline template sized to your product, check your artwork in prepress and issue a proof
-          before anything runs. Our
-          {' '}<a href="/how-it-works/">step-by-step packaging production process</a>
-          {' '}sets out what happens at each stage.
-        </p>
+    if (key === 'demandTable' && p.demandTable) {
+      const t = p.demandTable
+      return (
+        <section class={`section ${sunken ? 'section-sunken' : ''}`}>
+          <div class="wrap">
+            <div class="lp-head">
+              <h2>{t.h}</h2>
+              <p class="lede">{t.intro}</p>
+            </div>
+            <div class="table-scroll">
+              <table class="data">
+                <thead><tr>{t.head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+                <tbody>
+                  {t.rows.map((r) => (
+                    <tr><th scope="row">{r[0]}</th><td>{r[1]}</td><td>{r[2]}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )
+    }
 
-        {isCity && place.stateSlug && (
-          <p>
-            {place.name} sits within our wider
-            {' '}<a href={`/locations/${place.stateSlug}/`}>{place.state} packaging coverage</a>,
-            {' '}which follows the same production and freight arrangements.
-          </p>
-        )}
+    if (key === 'checklist' && p.checklist) {
+      const c = p.checklist
+      return (
+        <section class={`section ${sunken ? 'section-sunken' : ''}`}>
+          <div class="wrap lp-split">
+            <div>
+              <h2>{c.h}</h2>
+              <p class="lede">{c.intro}</p>
+            </div>
+            <ol class="lp-check" role="list">
+              {c.items.map((it) => <li>{it}</li>)}
+            </ol>
+          </div>
+        </section>
+      )
+    }
 
-        {!isCity && childCities.length > 0 && (
-          <>
-            <h2>Cities We Ship To in {place.name}</h2>
-            <ul>
+    if (key === 'formats') {
+      return (
+        <section class={`section ${sunken ? 'section-sunken' : ''}`}>
+          <div class="wrap">
+            <div class="lp-head">
+              <h2>{p.formats.h}</h2>
+              <p class="lede">{p.formats.intro}</p>
+            </div>
+            <div class="lp-formats">
+              {formatPicks.map((f) => (
+                <div class="lp-format">
+                  <CategoryCard category={f.c} count={f.count} sample={f.hero} />
+                  <p class="lp-why">{f.why}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    if (key === 'nearby' && (nearby.length > 0 || childCities.length > 0)) {
+      return (
+        <section class={`section ${sunken ? 'section-sunken' : ''}`}>
+          <div class="wrap">
+            <h2 class="lp-h2">{isCity
+              ? 'Other markets we ship to from the same network'
+              : `Where else we deliver near ${p.name}`}</h2>
+            <ul class="lp-nearby" role="list">
+              {nearby.map((n) => (
+                <li>
+                  <a href={`/locations/${n.q.slug}/`}>{n.q.kind === 'city' && n.q.state
+                    ? `Custom packaging in ${n.q.name}, ${n.q.state}`
+                    : `Custom packaging across ${n.q.name}`}</a>
+                  <span>{n.why}</span>
+                </li>
+              ))}
               {childCities.map((c) => (
-                <li><a href={`/locations/${c.slug}/`}>{`Custom packaging in ${c.name}`}</a></li>
+                <li>
+                  <a href={`/locations/${c.slug}/`}>{`Packaging supply into ${c.name}`}</a>
+                  <span>{c.lede.split('.')[0]}.</span>
+                </li>
               ))}
             </ul>
-          </>
-        )}
-      </div>
+          </div>
+        </section>
+      )
+    }
 
-      <aside>
-        <div class="tile sticky">
-          <h2 class="aside-h">Delivery to {place.name}</h2>
-          <dl class="spec-list">
-            <div><dt>Coverage</dt><dd>{where}</dd></div>
-            <div><dt>Production</dt><dd>3–5 business days after approval</dd></div>
-            <div><dt>Local facility</dt><dd>None — we ship to you directly</dd></div>
-            <div><dt>Contact</dt><dd>{SITE.phone}</dd></div>
-          </dl>
-          <a class="btn btn-primary btn-block" href="#quote" style="margin-top:var(--s-5)">Get a quote</a>
-        </div>
-      </aside>
-    </div>
-  </section>
+    if (key === 'resources') {
+      return (
+        <section class={`section ${sunken ? 'section-sunken' : ''}`}>
+          <div class="wrap">
+            <h2 class="lp-h2">Reading that helps before you order</h2>
+            <ul class="lp-res" role="list">
+              {p.resources.map((r) => (
+                <li>
+                  <a href={r.href}>{r.anchor}</a>
+                  <span>{r.note}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
 
-  <section class="section section-sunken">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Recommended</p>
-        <h2>Packaging Categories Most Ordered in {place.name}</h2>
-        <p class="lede">
-          Based on the sectors that drive demand locally, these ranges are where most {place.name}
-          {' '}enquiries start.
-        </p>
-      </div>
-      <div class="grid g-4">
-        {recommended.map(({ c, list }) => (
-          <div class="reveal"><CategoryCard category={c} count={list.length} sample={categoryHero(c.slug)} /></div>
-        ))}
-      </div>
-    </div>
-  </section>
+    return null
+  })}
 
-  <section class="section" id="quote">
-    <div class="wrap two-col">
-      <div class="quote-intro">
+  <!-- ============ quote: one wide form, no sticky column ============ -->
+  <section class="section section-sand" id="quote">
+    <div class="wrap lp-quote">
+      <div class="lp-quote-copy">
         <p class="eyebrow">Get a price</p>
-        <h2>Quote a {place.name} Delivery</h2>
-        <p class="lede">
-          Tell us what you are packing, how many you need and where in {place.name} it should land.
-          We reply with a specification and a written price, usually within one business day.
-        </p>
-        <p class="muted">{SITE.priceLine}</p>
+        <h2>{p.cta.h}</h2>
+        <p class="lede">{p.cta.body}</p>
+        <ul class="lp-assure" role="list">
+          <li>Written specification, not just a number</li>
+          <li>Minimum 100 units on any format</li>
+          <li>Reply usually within one business day</li>
+        </ul>
       </div>
-      <QuoteForm id="quote" source={`location:${place.slug}`} title={`Quote for ${place.name}`} />
+      <div class="lp-quote-form">
+        <QuoteForm id="quote-form" variant="full" source={`location:${p.slug}`}
+          title={`Quote for ${p.name}`}
+          intro="Tell us what you are packing, how many you need and where it should land." />
+      </div>
     </div>
   </section>
 
-  <Faqs faqs={faqs} title={`Custom Packaging in ${place.name} — Questions`} />
-
-  <CtaBand title={`Shipping Packaging to ${place.name}`} />
+  <Faqs faqs={p.faqs} title={`${p.name}: your questions answered`}
+    intro={`Specification, freight and ordering detail for buyers in ${p.name}.`} />
 </Base>
 
 <style>
-  .loc-hero { background: linear-gradient(180deg, var(--bone), var(--bone-deep));
-    border-bottom: 1px solid var(--border); padding-block: clamp(1.5rem,1rem + 2vw,3rem) clamp(2.5rem,2rem + 3vw,4rem); }
-  .loc-hero h1 { max-width: 20ch; }
-  .loc-hero .lede { margin-top: var(--s-5); max-width: 68ch; }
-  .loc-hero .btn-row { margin-top: var(--s-8); }
-  .two-col { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,320px); gap: clamp(2rem,1rem + 4vw,4rem); align-items: start; }
-  @media (max-width: 980px) { .two-col { grid-template-columns: minmax(0, 1fr); } }
-  /* Scoped to the closing CTA only — .two-col also wraps .prose here, and a
-     bare `.two-col h2` would outrank the prose heading scale. */
-  .quote-intro h2 { margin-bottom: var(--s-5); font-size: var(--fs-2xl); }
-  .quote-intro p + p { margin-top: var(--s-4); }
-  .sticky { position: sticky; top: calc(var(--header-h) + 1.5rem); }
-  @media (max-width: 980px) { .sticky { position: static; } }
-  .aside-h { font-size: var(--fs-lg); margin-bottom: var(--s-4); }
-  .prose > h2:first-child { margin-top: 0; }
+  /* ---------- hero ---------- */
+  .lp-hero {
+    background: linear-gradient(180deg, var(--bone), var(--bone-deep));
+    border-bottom: 1px solid var(--border);
+    padding-block: clamp(1.5rem, 1rem + 2vw, 3rem) clamp(2.5rem, 2rem + 3vw, 4rem);
+  }
+  .lp-hero-in {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+    gap: clamp(1.5rem, 1rem + 3vw, 3.5rem); align-items: center;
+  }
+  @media (max-width: 960px) { .lp-hero-in { grid-template-columns: minmax(0, 1fr); } }
+  .lp-hero-copy h1 { font-size: var(--fs-3xl); max-width: 22ch; text-wrap: balance; }
+  .lp-hero-copy .lede { margin-top: var(--s-5); max-width: 54ch; }
+  .lp-hero-copy .btn-row { margin-top: var(--s-8); }
+
+  .lp-hero-fig {
+    margin: 0; border-radius: var(--r-lg); overflow: hidden;
+    border: 1px solid var(--border); aspect-ratio: 4 / 3;
+  }
+  .lp-hero-fig img { width: 100%; height: 100%; object-fit: cover; }
+
+  .lp-panel {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: var(--r-lg); padding: var(--s-6);
+  }
+  .lp-panel-h {
+    font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-faint); margin-bottom: var(--s-4);
+  }
+  .lp-panel-note {
+    margin-top: var(--s-5); padding-top: var(--s-4); border-top: 1px solid var(--rule);
+    font-size: var(--fs-sm); color: var(--text-muted); line-height: 1.55;
+  }
+
+  .lp-chips { display: flex; flex-wrap: wrap; gap: var(--s-2); list-style: none; padding: 0; }
+  .lp-chips li {
+    border: 1px solid var(--rule-strong); border-radius: var(--r-pill);
+    padding: 0.4rem 0.9rem; font-size: var(--fs-sm); color: var(--text-muted);
+  }
+
+  .lp-stats {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-5); margin: 0;
+  }
+
+  .lp-preview { list-style: none; padding: 0; display: grid; gap: var(--s-3); }
+  .lp-preview li {
+    display: flex; justify-content: space-between; gap: var(--s-4);
+    padding-bottom: var(--s-3); border-bottom: 1px solid var(--rule);
+    font-size: var(--fs-sm);
+  }
+  .lp-preview li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .lp-preview strong { font-weight: 500; }
+  .lp-preview span { color: var(--text-muted); text-align: right; }
+  .lp-stats dt {
+    font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-faint);
+  }
+  .lp-stats dd { margin: var(--s-2) 0 0; font-weight: 500; }
+
+  /* ---------- prose blocks ---------- */
+  .lp-prose { max-width: 74ch; margin-inline: auto; }
+  .lp-prose--wide { max-width: 62ch; margin-inline: 0; }
+  .lp-prose h2 { font-size: var(--fs-2xl); margin-bottom: var(--s-5); text-wrap: balance; }
+  .lp-prose p { color: var(--text-muted); font-size: var(--fs-md); line-height: 1.65; }
+  .lp-prose p + p { margin-top: var(--s-4); }
+
+  .lp-head { max-width: 68ch; margin-bottom: var(--s-8); }
+  .lp-head h2, .lp-h2 { font-size: var(--fs-2xl); text-wrap: balance; }
+  .lp-head .lede { margin-top: var(--s-4); }
+
+  /* ---------- cards ---------- */
+  .lp-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: var(--s-5);
+  }
+  .lp-card {
+    background: var(--paper); border: 1px solid var(--border);
+    border-radius: var(--r-md); padding: var(--s-6);
+  }
+  .lp-card h3 { font-size: var(--fs-md); margin-bottom: var(--s-3); }
+  .lp-card p { color: var(--text-muted); font-size: var(--fs-sm); line-height: 1.6; }
+
+  /* ---------- checklist ---------- */
+  .lp-split {
+    display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(2rem, 1rem + 4vw, 4rem); align-items: start;
+  }
+  @media (max-width: 900px) { .lp-split { grid-template-columns: minmax(0, 1fr); } }
+  .lp-split h2 { font-size: var(--fs-2xl); margin-bottom: var(--s-4); text-wrap: balance; }
+  .lp-check { list-style: none; padding: 0; counter-reset: c; display: grid; gap: var(--s-3); }
+  .lp-check li {
+    counter-increment: c; position: relative;
+    padding: var(--s-4) var(--s-5) var(--s-4) 3.25rem;
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--r-sm);
+    color: var(--text-muted); font-size: var(--fs-sm); line-height: 1.6;
+  }
+  .lp-check li::before {
+    content: counter(c, decimal-leading-zero);
+    position: absolute; left: var(--s-5); top: var(--s-4);
+    color: var(--accent); font-size: var(--fs-xs); font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- formats ---------- */
+  .lp-formats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: var(--s-6);
+  }
+  .lp-why { margin-top: var(--s-3); font-size: var(--fs-sm); color: var(--text-muted); line-height: 1.55; }
+
+  /* ---------- link lists ---------- */
+  .lp-nearby, .lp-res {
+    list-style: none; padding: 0; margin-top: var(--s-6);
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: var(--s-4);
+  }
+  .lp-nearby li, .lp-res li {
+    border-top: 1px solid var(--rule); padding-top: var(--s-4);
+    display: flex; flex-direction: column; gap: var(--s-2);
+  }
+  .lp-nearby a, .lp-res a { font-size: var(--fs-md); }
+  .lp-nearby span, .lp-res span { color: var(--text-muted); font-size: var(--fs-sm); line-height: 1.55; }
+
+  /* ---------- quote ---------- */
+  /* Two substantial columns, no sticky positioning: the old 320px sidebar made
+     the form a tall thin ribbon with an empty column beside it. */
+  .lp-quote {
+    display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(2rem, 1rem + 4vw, 4rem); align-items: start;
+  }
+  @media (max-width: 1040px) { .lp-quote { grid-template-columns: minmax(0, 1fr); } }
+  .lp-quote-copy h2 { font-size: var(--fs-2xl); margin-bottom: var(--s-4); text-wrap: balance; }
+  .lp-assure { list-style: none; padding: 0; margin-top: var(--s-6); display: grid; gap: var(--s-3); }
+  .lp-assure li { position: relative; padding-left: 1.5rem; color: var(--text-muted); font-size: var(--fs-sm); }
+  .lp-assure li::before {
+    content: ''; position: absolute; left: 0; top: 0.5em;
+    width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+  }
+
+  /* Long words wrap, never split letter by letter. */
+  .lp-hero-copy h1, .lp-prose h2, .lp-head h2, .lp-h2, .lp-quote-copy h2, .lp-split h2 {
+    overflow-wrap: break-word; word-break: normal; hyphens: none;
+  }
 </style>
