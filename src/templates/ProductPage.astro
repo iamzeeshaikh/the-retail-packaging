@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro'
 import Breadcrumbs from '../components/Breadcrumbs.astro'
 import Gallery from '../components/Gallery.astro'
-import Configurator from '../components/Configurator.astro'
+import QuickSpec from '../components/QuickSpec.astro'
 import ProductCard from '../components/ProductCard.astro'
 import QuoteForm from '../components/QuoteForm.astro'
 import Faqs from '../components/Faqs.astro'
@@ -212,21 +212,12 @@ const schema = S.graph([
     </div>
   </section>
 
-  <!-- ============ configurator ============ -->
-  <section class="section" id="specify">
-    <div class="wrap cfg-grid">
-      <div class="cfg-intro">
-        <p class="eyebrow">Optional</p>
-        <h2>Build a Full Specification</h2>
-        <p class="lede">
-          If you already know the size, board and finish you want, set them here. The configuration
-          carries into the quote form so nothing gets retyped.
-        </p>
-        <p class="muted small">{PRICE_LINE}</p>
-      </div>
-      <Configurator product={p} />
-    </div>
-  </section>
+  <QuickSpec
+    categorySlug={p.categorySlug}
+    productName={p.name}
+    variant="band"
+    title={`Specify ${p.name} in under a minute`}
+  />
 
   <!-- ============ benefits ============ -->
   <section class="section section-sunken">

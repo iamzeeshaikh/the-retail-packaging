@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro'
 import CategoryCard from '../components/CategoryCard.astro'
 import ProductCard from '../components/ProductCard.astro'
 import QuoteForm from '../components/QuoteForm.astro'
+import QuickSpec from '../components/QuickSpec.astro'
 import Faqs from '../components/Faqs.astro'
 import CtaBand from '../components/CtaBand.astro'
 import { categories, products, productsIn, bySlug, categoryHero, totals } from '../lib/catalog'
@@ -238,6 +239,8 @@ const schema = S.graph([
       </div>
     </div>
   </section>
+
+  <QuickSpec variant="band" />
 
   <!-- ============ PROCESS ============ -->
   <section class="section">

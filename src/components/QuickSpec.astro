@@ -1,0 +1,363 @@
+---
+import { categories, productsIn, categoryHero } from '../lib/catalog'
+import { SITE } from '../lib/site'
+
+/**
+ * Compact specification builder.
+ *
+ * The full page tool was a six-step wizard, which buries the point. This shows
+ * every choice at once as a single panel, so a visitor can see the whole
+ * decision in one glance and hand it over in a few clicks. It posts straight to
+ * the quote endpoint — no price is calculated, because the business quotes each
+ * project individually.
+ *
+ * Used on the homepage, category pages and product pages.
+ */
+export interface Props {
+  /** Preselects the category chip when placed on a category or product page. */
+  categorySlug?: string
+  productName?: string
+  variant?: 'band' | 'panel'
+  title?: string
+  intro?: string
+}
+const {
+  categorySlug,
+  productName = '',
+  variant = 'band',
+  title = 'Build your specification in under a minute',
+  intro = 'Set what you know, leave the rest. Everything here travels with your request, so nothing gets retyped.',
+} = Astro.props
+
+const catList = categories
+  .map((c) => ({ ...c, count: productsIn(c.slug).length, hero: categoryHero(c.slug) }))
+  .sort((a, b) => b.count - a.count)
+
+const STYLES = ['Folding carton', 'Mailer box', 'Rigid box', 'Shipping box', 'Paper bag',
+  'Stand-up pouch', 'Label', 'Sticker', 'Tray', 'Sleeve', 'Not sure yet']
+const MATERIALS = ['Paperboard', 'Kraft board', 'Corrugated', 'Rigid greyboard',
+  'Barrier film', 'Recycled board', 'Advise me']
+const PRINTS = ['Digital', 'Offset', 'Flexo', 'Unprinted', 'Advise me']
+const FINISHES = ['Matte', 'Gloss', 'Soft-touch', 'Spot UV', 'Foil', 'None']
+const QTYS = [100, 250, 500, 1000, 2500, 5000, 10000]
+const SWATCHES = [
+  { n: 'Natural kraft', v: '#c8a97e' }, { n: 'White', v: '#f7f5f1' },
+  { n: 'Black', v: '#16161a' }, { n: 'Terracotta', v: '#b8532b' },
+  { n: 'Forest', v: '#1f4433' }, { n: 'Navy', v: '#1b2a44' },
+  { n: 'Blush', v: '#e6c7c0' }, { n: 'Sage', v: '#8a9a82' },
+]
+const uid = `qs-${Math.random().toString(36).slice(2, 8)}`
+---
+
+<section class={`qs qs-${variant}`} aria-labelledby={`${uid}-h`}>
+  <div class="wrap qs-in">
+    <header class="qs-head">
+      <p class="eyebrow">Specification builder</p>
+      <h2 id={`${uid}-h`}>{title}</h2>
+      <p class="qs-intro">{intro}</p>
+      <ul class="qs-assure" role="list">
+        <li>100-unit minimum</li>
+        <li>3–5 day production</li>
+        <li>Free dieline</li>
+        <li>No obligation</li>
+      </ul>
+    </header>
+
+    <form class="qs-form" data-qs method="POST" action="/api/quote" enctype="multipart/form-data" novalidate>
+      <div class="hp" aria-hidden="true">
+        <label for={`${uid}-hp`}>Leave empty</label>
+        <input id={`${uid}-hp`} type="text" name="company_url" tabindex="-1" autocomplete="off" />
+      </div>
+      <input type="hidden" name="form_source" value="quick-spec" />
+      <input type="hidden" name="configuration" data-qs-config />
+      <input type="hidden" name="started_at" data-qs-ts />
+      <input type="hidden" name="product" value={productName} />
+
+      <div class="qs-row">
+        <span class="qs-lab">Packaging type</span>
+        <div class="chips" role="radiogroup" aria-label="Packaging type">
+          {catList.slice(0, 10).map((c, i) => (
+            <label class="chip">
+              <input type="radio" name="category" value={c.name}
+                checked={categorySlug ? c.slug === categorySlug : i === 0} />
+              <span>{c.name.replace(/^Custom /, '')}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div class="qs-row">
+        <span class="qs-lab">Box style</span>
+        <div class="chips" role="radiogroup" aria-label="Box style">
+          {STYLES.map((s, i) => (
+            <label class="chip">
+              <input type="radio" name="style" value={s} checked={i === STYLES.length - 1} />
+              <span>{s}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div class="qs-grid">
+        <div class="field">
+          <label for={`${uid}-l`}>Length</label>
+          <input class="input" id={`${uid}-l`} name="length" type="number" min="0" step="0.1" inputmode="decimal" placeholder="8" />
+        </div>
+        <div class="field">
+          <label for={`${uid}-w`}>Width</label>
+          <input class="input" id={`${uid}-w`} name="width" type="number" min="0" step="0.1" inputmode="decimal" placeholder="6" />
+        </div>
+        <div class="field">
+          <label for={`${uid}-h2`}>Height</label>
+          <input class="input" id={`${uid}-h2`} name="height" type="number" min="0" step="0.1" inputmode="decimal" placeholder="3" />
+        </div>
+        <div class="field">
+          <label for={`${uid}-u`}>Unit</label>
+          <select class="select" id={`${uid}-u`} name="unit">
+            <option value="in">Inches</option><option value="mm">mm</option><option value="cm">cm</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="qs-row">
+        <span class="qs-lab">Quantity</span>
+        <div class="chips" role="radiogroup" aria-label="Quantity">
+          {QTYS.map((q, i) => (
+            <label class="chip">
+              <input type="radio" name="quantity" value={String(q)} checked={i === 2} />
+              <span>{q.toLocaleString('en-US')}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div class="qs-row">
+        <span class="qs-lab">Colour</span>
+        <div class="chips chips-sw" role="radiogroup" aria-label="Colour">
+          {SWATCHES.map((s, i) => (
+            <label class="chip chip-sw">
+              <input type="radio" name="exterior" value={s.n} checked={i === 0} />
+              <span class="dot" style={`--c:${s.v}`} aria-hidden="true"></span>
+              <span>{s.n}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div class="qs-three">
+        <div class="qs-row">
+          <span class="qs-lab">Material</span>
+          <div class="chips" role="radiogroup" aria-label="Material">
+            {MATERIALS.map((m, i) => (
+              <label class="chip"><input type="radio" name="material" value={m} checked={i === MATERIALS.length - 1} /><span>{m}</span></label>
+            ))}
+          </div>
+        </div>
+        <div class="qs-row">
+          <span class="qs-lab">Printing</span>
+          <div class="chips" role="radiogroup" aria-label="Printing">
+            {PRINTS.map((m, i) => (
+              <label class="chip"><input type="radio" name="printing" value={m} checked={i === PRINTS.length - 1} /><span>{m}</span></label>
+            ))}
+          </div>
+        </div>
+        <div class="qs-row">
+          <span class="qs-lab">Finish</span>
+          <div class="chips" role="radiogroup" aria-label="Finish">
+            {FINISHES.map((m, i) => (
+              <label class="chip"><input type="radio" name="finish" value={m} checked={i === 0} /><span>{m}</span></label>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="qs-contact">
+        <div class="field"><label for={`${uid}-n`}>Name <span class="req">*</span></label>
+          <input class="input" id={`${uid}-n`} name="name" type="text" required autocomplete="name" /></div>
+        <div class="field"><label for={`${uid}-e`}>Email <span class="req">*</span></label>
+          <input class="input" id={`${uid}-e`} name="email" type="email" required autocomplete="email" /></div>
+        <div class="field"><label for={`${uid}-p`}>Phone <span class="req">*</span></label>
+          <input class="input" id={`${uid}-p`} name="phone" type="tel" required autocomplete="tel" /></div>
+        <div class="field span-all"><label for={`${uid}-m`}>Anything else <span class="req">*</span></label>
+          <textarea class="textarea" id={`${uid}-m`} name="message" required minlength="10"
+            placeholder="What you are packing, and anything the options above did not cover."></textarea></div>
+        <div class="field span-all">
+          <label for={`${uid}-f`}>Upload artwork</label>
+          <div class="file-drop" data-drop>
+            <input id={`${uid}-f`} name="artwork" type="file" multiple accept=".pdf,.ai,.eps,.svg,.png,.jpg,.jpeg,.webp,.zip" />
+            <p class="drop-main">Drop files or <span class="drop-link">browse</span></p>
+            <p class="hint">Up to 5 files, 10&nbsp;MB each.</p>
+            <ul class="file-list" data-file-list role="list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="qs-foot">
+        <button class="btn btn-primary btn-lg" type="submit" data-qs-submit>
+          <span class="btn-label">Send my specification</span>
+        </button>
+        <p class="qs-price">{SITE.priceLine}</p>
+      </div>
+
+      <div class="alert alert-err" data-qs-err hidden role="alert"></div>
+    </form>
+  </div>
+</section>
+
+<style>
+  .qs { container-type: inline-size; }
+  .qs-band { background: var(--ink-deep); color: var(--text-invert); padding-block: var(--section-y); }
+  .qs-panel { background: var(--bone-deep); padding-block: var(--section-y); }
+
+  .qs-in { display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: start; }
+  @media (max-width: 1000px) { .qs-in { grid-template-columns: 1fr; } }
+
+  .qs-head h2 { font-size: var(--fs-2xl); margin-bottom: var(--s-4); }
+  .qs-band .qs-head h2 { color: #fff; }
+  .qs-intro { font-size: var(--fs-md); max-width: 46ch; }
+  .qs-band .qs-intro { color: rgba(244, 244, 245, 0.78); }
+  .qs-panel .qs-intro { color: var(--text-muted); }
+  .qs-assure { display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); margin-top: var(--s-6);
+    font-size: var(--fs-xs); letter-spacing: 0.06em; text-transform: uppercase; }
+  .qs-band .qs-assure { color: var(--accent-soft); }
+  .qs-panel .qs-assure { color: var(--accent); }
+
+  .qs-form { background: var(--paper); color: var(--text);
+    border: 1px solid var(--rule); border-radius: var(--r-lg);
+    padding: clamp(1.1rem, 0.8rem + 1.4vw, 2rem); display: grid; gap: var(--s-5); }
+
+  .qs-row { display: grid; gap: var(--s-3); }
+  .qs-lab { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink); }
+
+  /* chips — everything visible at once, no wizard */
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip { position: relative; display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.45rem 0.85rem; border: 1px solid var(--rule-strong); border-radius: var(--r-pill);
+    font-size: var(--fs-sm); cursor: pointer; background: var(--paper);
+    transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), color var(--dur) var(--ease);
+    font-variant-numeric: tabular-nums; }
+  .chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+  .chip:hover { border-color: var(--ink-3); }
+  .chip:has(input:checked) { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chip:has(input:focus-visible) { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .chip-sw:has(input:checked) .dot { box-shadow: 0 0 0 2px #fff inset; }
+  .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--c);
+    border: 1px solid rgba(0,0,0,.18); flex: none; }
+
+  .qs-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-3); }
+  @media (max-width: 620px) { .qs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+  .qs-three { display: grid; gap: var(--s-5); }
+
+  .qs-contact { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-3);
+    padding-top: var(--s-5); border-top: 1px solid var(--rule); }
+  @media (max-width: 780px) { .qs-contact { grid-template-columns: 1fr; } }
+  .qs-contact .span-all { grid-column: 1 / -1; }
+  .qs-contact .textarea { min-height: 92px; }
+
+  .qs-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4);
+    padding-top: var(--s-4); border-top: 1px solid var(--rule); }
+  .qs-price { font-size: var(--fs-xs); color: var(--text-faint); max-width: 44ch; margin: 0; }
+
+  .drop-main { font-size: var(--fs-sm); font-weight: 500; }
+  .drop-link { color: var(--accent); text-decoration: underline; }
+  .file-list { list-style: none; margin: var(--s-3) 0 0; padding: 0; display: grid; gap: 0.3rem;
+    font-size: var(--fs-xs); text-align: left; }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-qs]').forEach((form) => {
+    const ts = form.querySelector<HTMLInputElement>('[data-qs-ts]')
+    if (ts) ts.value = String(Date.now())
+    const cfg = form.querySelector<HTMLInputElement>('[data-qs-config]')
+    const err = form.querySelector<HTMLElement>('[data-qs-err]')
+    const submit = form.querySelector<HTMLButtonElement>('[data-qs-submit]')
+    const fileInput = form.querySelector<HTMLInputElement>('input[type="file"]')
+    const drop = form.querySelector<HTMLElement>('[data-drop]')
+    const list = form.querySelector<HTMLElement>('[data-file-list]')
+
+    const renderFiles = () => {
+      if (!list || !fileInput) return
+      list.innerHTML = ''
+      Array.from(fileInput.files ?? []).slice(0, 5).forEach((f) => {
+        const li = document.createElement('li')
+        li.textContent = `${f.name} — ${(f.size / 1048576).toFixed(1)} MB`
+        list.appendChild(li)
+      })
+    }
+    fileInput?.addEventListener('change', renderFiles)
+    if (drop && fileInput) {
+      drop.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).tagName !== 'INPUT') fileInput.click()
+      })
+      ;['dragenter', 'dragover'].forEach((ev) =>
+        drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add('is-over') }))
+      ;['dragleave', 'drop'].forEach((ev) =>
+        drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove('is-over') }))
+      drop.addEventListener('drop', (e) => {
+        const dt = (e as DragEvent).dataTransfer
+        if (dt?.files?.length) { fileInput.files = dt.files; renderFiles() }
+      })
+    }
+
+    const buildConfig = () => {
+      const fd = new FormData(form)
+      const keys = ['category', 'style', 'length', 'width', 'height', 'unit',
+        'quantity', 'exterior', 'material', 'printing', 'finish']
+      const parts = keys
+        .map((k) => [k, String(fd.get(k) ?? '')] as [string, string])
+        .filter(([, v]) => v)
+        .map(([k, v]) => `${k}: ${v}`)
+      if (cfg) cfg.value = parts.join(' | ')
+    }
+    form.addEventListener('change', buildConfig)
+    buildConfig()
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      if (err) err.hidden = true
+      buildConfig()
+
+      const checks: [string, (v: string) => boolean, string][] = [
+        ['name', (v) => v.length >= 2, 'Please enter your name.'],
+        ['email', (v) => /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v), 'Please enter a valid email address.'],
+        ['phone', (v) => v.replace(/\D/g, '').length >= 7, 'Please enter a contact number.'],
+        ['message', (v) => v.length >= 10, 'Please add a line about the project.'],
+      ]
+      for (const [n, test, msg] of checks) {
+        const el = form.querySelector<HTMLInputElement>(`[name="${n}"]`)!
+        if (!test(el.value.trim())) {
+          el.setAttribute('aria-invalid', 'true')
+          if (err) { err.textContent = msg; err.hidden = false }
+          el.focus()
+          return
+        }
+        el.removeAttribute('aria-invalid')
+      }
+
+      submit && (submit.disabled = true)
+      const label = submit?.querySelector('.btn-label')
+      label && (label.textContent = 'Sending…')
+      try {
+        const res = await fetch('/api/quote', { method: 'POST', body: new FormData(form) })
+        const data = await res.json().catch(() => ({}))
+        if (res.ok && data.ok) {
+          const w = window as any
+          if (typeof w.gtag === 'function') w.gtag('event', 'custom_tool_completion')
+          else if (Array.isArray(w.dataLayer)) w.dataLayer.push({ event: 'custom_tool_completion' })
+          sessionStorage.setItem('trp_quote_ref', data.ref ?? '')
+          location.href = '/thank-you/'
+          return
+        }
+        throw new Error(data.error || 'We could not send that just now.')
+      } catch (e2) {
+        if (err) { err.textContent = `${(e2 as Error).message} Please try again, or email us directly.`; err.hidden = false }
+      } finally {
+        submit && (submit.disabled = false)
+        label && (label.textContent = 'Send my specification')
+      }
+    })
+  })
+</script>
