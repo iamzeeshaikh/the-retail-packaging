@@ -35,7 +35,9 @@ def text_of(fragment: str) -> str:
 def strip_chrome(doc: str) -> str:
     """Body copy only — header, footer and nav repeat by design."""
     body = doc
-    for tag in ("header", "footer", "nav"):
+    # Form microcopy (upload hints, privacy line, no-JS fallback) is repeated UI,
+    # not editorial content, so it is excluded from body-copy comparison.
+    for tag in ("header", "footer", "nav", "form"):
         body = re.sub(rf"<{tag}\b.*?</{tag}>", " ", body, flags=re.S)
     body = re.sub(r"<script\b.*?</script>", " ", body, flags=re.S)
     body = re.sub(r"<style\b.*?</style>", " ", body, flags=re.S)
