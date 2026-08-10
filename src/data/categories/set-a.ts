@@ -349,7 +349,7 @@ export const categoriesA: CategoryMap = {
     eyebrow: '25 made-to-order formats',
     lede: 'Ingredient lists and warnings are not optional and they take more room than brands allow for. On a small carton, panel space is the binding constraint — not the structure.',
     metaTitle: 'Custom Cosmetic Packaging | Cartons, Sleeves & Sets',
-    metaDescription: 'Custom cosmetic and beauty packaging made to order. Bottle cartons sized to the container, panel space planned for ingredient copy, finishes that read at arm’s length.',
+    metaDescription: 'Custom cosmetic and beauty packaging made to order. Bottle cartons sized to the container, with panel space planned for ingredient copy.',
     guidance: {
       h: 'Lay out the back panel first',
       body: [
