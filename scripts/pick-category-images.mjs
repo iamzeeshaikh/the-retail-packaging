@@ -63,11 +63,39 @@ async function score(file) {
   }
 }
 
+/**
+ * Editorial veto, applied before scoring.
+ *
+ * The scorer only sees pixels, so it happily crowned a Halloween star print as
+ * the face of Custom Mailers and a cannabis-leaf sticker as the face of Custom
+ * Stickers. Both are real products and keep their own pages; neither should
+ * represent a whole range on the homepage. A theme is still allowed to
+ * represent the category that is actually about it — CBD products may front
+ * the CBD range.
+ */
+const VETO = [
+  // Seasonal: dates a page that is meant to sell all year.
+  'halloween', 'christmas', 'xmas', 'santa', 'easter', 'valentine',
+  'thanksgiving', 'new-year', 'ramadan', 'eid', 'diwali',
+  // Regulated or off-brand for a mainstream US retail buyer.
+  'pot-leaf', 'weed', 'cannabis', 'marijuana', 'thc',
+  'vape', 'e-juice', 'e-liquid', 'e-cig', 'tobacco', 'cigarette', 'cigar',
+  'nicotine', 'kratom',
+]
+
+/** A product may front a category unless a veto term applies to it but not to the category. */
+function canRepresent(productSlug, categorySlug) {
+  return !VETO.some((term) => productSlug.includes(term) && !categorySlug.includes(term))
+}
+
 const out = {}
 const report = []
 
 for (const cat of catalog.categories) {
-  const products = catalog.products.filter((p) => p.categorySlug === cat.slug)
+  const inCat = catalog.products.filter((p) => p.categorySlug === cat.slug)
+  const allowed = inCat.filter((p) => canRepresent(p.slug, cat.slug))
+  // A range made entirely of vetoed formats still needs a face.
+  const products = allowed.length ? allowed : inCat
   const candidates = []
 
   for (const p of products) {

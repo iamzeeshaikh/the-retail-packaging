@@ -338,7 +338,8 @@ const aboutLinks = [
   .mega-list a:hover { background: var(--accent-tint); color: var(--accent); }
   .count { font-size: 0.6875rem; color: var(--ink-4); font-variant-numeric: tabular-nums; }
   .mega-side { border-left: 1px solid var(--border); padding-left: var(--s-8); }
-  .mega-title-2 { margin-top: var(--s-7); }
+  /* --s-7 does not exist in the scale, so this margin never applied. */
+  .mega-title-2 { margin-top: var(--s-8); }
 
   .mega-rail { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-3);
     list-style: none; margin: 0 0 var(--s-2); padding: 0; }

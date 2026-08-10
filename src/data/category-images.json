@@ -5,7 +5,7 @@
  },
  "custom-beverage-packaging": {
   "calm": "beverage-gift-boxes",
-  "vivid": "e-juice-display-boxes"
+  "vivid": "water-bottle-boxes"
  },
  "custom-candle-packaging": {
   "calm": "tealight-boxes",
@@ -41,7 +41,7 @@
  },
  "custom-mailers": {
   "calm": "black-poly-mailers",
-  "vivid": "halloween-mailers"
+  "vivid": "branded-bubble-mailers"
  },
  "custom-food-packaging": {
   "calm": "chinese-takeout-boxes",
@@ -73,7 +73,7 @@
  },
  "custom-stickers": {
   "calm": "custom-ink-stickers",
-  "vivid": "pot-leaf-stickers"
+  "vivid": "food-stickers"
  },
  "pharmaceutical-packaging": {
   "calm": "medical-device-boxes",

@@ -24,6 +24,7 @@ const heroA = cat('custom-mailers')
 const heroB = cat('custom-cosmetic-packaging')
 const heroImgA = categoryHero(heroA.c.slug)?.images?.[0]
 const heroImgB = categoryHero(heroB.c.slug)?.images?.[0]
+const heroSlugs = new Set([heroA.c.slug, heroB.c.slug])
 
 const featured = ['custom-mailers', 'custom-food-packaging', 'custom-cosmetic-packaging',
   'custom-bags', 'custom-pouches', 'custom-labels', 'custom-display-boxes', 'custom-printed-cups']
@@ -142,7 +143,7 @@ const schema = S.graph([
   <div class="trust">
     <div class="wrap trust-in">
       <span>Made to order, never stock</span>
-      <span>Made to order, never stock</span>
+      <span>Minimum order 100 units</span>
       <span>Written specification with every price</span>
       <span>Delivery to all 50 states</span>
       <span>From $0.30 per piece at volume</span>
@@ -177,7 +178,10 @@ const schema = S.graph([
       <div class="cat-grid">
         {featured.map(({ c, list }, i) => (
           <div class={`reveal reveal-d${i % 4}`}>
-            <CategoryCard category={c} count={list.length} sample={categoryHero(c.slug)} />
+            {/* The two ranges already in the hero switch to their calm pick so the
+                same photograph does not appear twice on one page. */}
+            <CategoryCard category={c} count={list.length}
+              sample={categoryHero(c.slug, heroSlugs.has(c.slug) ? 'calm' : 'vivid')} />
           </div>
         ))}
       </div>
@@ -200,7 +204,9 @@ const schema = S.graph([
       <div class="ind-grid">
         {industryTiles.map((x, i) => {
           const c = categories.find((k) => k.slug === x.slug)!
-          const s = categoryHero(x.slug) ?? get(x.sample)
+          // The hand-picked sample leads: preferring categoryHero() here put the
+          // same two photos on the page for a third time.
+          const s = get(x.sample) ?? categoryHero(x.slug)
           return (
             <a class={`ind reveal reveal-d${i % 4}`} href={c.url}>
               <div class="ind-media">
@@ -432,7 +438,12 @@ const schema = S.graph([
 
   /* ---------- shared ---------- */
   .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: start; }
-  @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+  /* minmax(0,…) not 1fr: the sustainability table has a 480px min-width and an
+     auto-sized track lets it push the page wider than the viewport. */
+  @media (max-width: 900px) { .two-col { grid-template-columns: minmax(0, 1fr); } }
   .two-col h2 { margin-bottom: var(--s-5); font-size: var(--fs-2xl); }
+  /* The global reset zeroes every margin, so a lede followed by body copy
+     collided on the sustainability block. */
+  .two-col p + p { margin-top: var(--s-4); }
   .step-h { font-family: var(--font-body); font-size: var(--fs-md); font-weight: 600; letter-spacing: 0; }
 </style>

@@ -30,6 +30,9 @@ input, button, textarea, select { font: inherit; color: inherit; }
 p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
 :target { scroll-margin-top: 6.5rem; }
+/* Components that set their own display (.alert is a flex row) would otherwise
+   beat the UA [hidden] rule and render as empty coloured boxes. */
+[hidden] { display: none !important; }
 
 /* ---------- tokens ---------- */
 :root {
@@ -225,6 +228,11 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
 .section-ink .eyebrow { color: var(--accent-soft); }
 
 .lede { font-size: var(--fs-md); color: var(--text-muted); max-width: 60ch; line-height: 1.62; }
+/* Headings carry no margin after the reset, so a lede placed straight after one
+   sat flush against it — on the FAQ block of every product page among others.
+   Adjacent margins collapse, so blocks that already space their heading are
+   unaffected. */
+:is(h1, h2, h3) + .lede { margin-top: var(--s-5); }
 .muted { color: var(--text-muted); }
 .small { font-size: var(--fs-sm); }
 .measure { max-width: 66ch; }
@@ -429,6 +437,11 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
   border-color: var(--err); box-shadow: 0 0 0 3px rgba(140, 47, 36, 0.1);
 }
 .input::placeholder, .textarea::placeholder { color: var(--ink-4); }
+/* Safari on iOS zooms the whole page when a focused field is under 16px.
+   --fs-base is 15.5px, so lift text-entry controls to 16px on small screens. */
+@media (max-width: 900px) {
+  .input, .select, .textarea { font-size: 16px; }
+}
 .field-error { font-size: var(--fs-xs); color: var(--err); }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
@@ -477,7 +490,13 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
 /* ---------- tables ---------- */
 .table-scroll { overflow-x: auto; border: 1px solid var(--border); background: var(--paper); }
 table.data { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); min-width: 480px; }
-table.data caption { text-align: left; padding: var(--s-4) var(--s-5) 0; font-size: var(--fs-xs); color: var(--text-faint); }
+/* Sits inside .table-scroll's border, so a plain white caption strip read as an
+   empty text input. Tone it with the header row instead. */
+table.data caption {
+  text-align: left; padding: var(--s-3) var(--s-5); background: var(--bone-deep);
+  border-bottom: 1px solid var(--border); font-size: var(--fs-xs);
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+}
 table.data th, table.data td { padding: 0.85rem 1.1rem; text-align: left; border-bottom: 1px solid var(--border); vertical-align: top; }
 table.data thead th {
   background: var(--bone-deep); font-weight: 500; color: var(--ink);

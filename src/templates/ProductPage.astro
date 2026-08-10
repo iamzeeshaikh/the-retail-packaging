@@ -33,17 +33,22 @@ const trail = [
   { name: p.name, url: path },
 ]
 
+/* A Map, not an array: most forms also define Construction in specNotes, which
+   printed the row twice — "Paper bag" and then "Side-gusseted, bottom-glued".
+   The later, more specific value wins and keeps the row in its original place. */
 const specs: [string, string][] = [
-  ['Product', p.name],
-  ['Category', cat.name],
-  ['Construction', f.singular.charAt(0).toUpperCase() + f.singular.slice(1)],
-  ...Object.entries(f.specNotes),
-  ['Materials', f.materials.slice(0, 4).join(', ')],
-  ['Printing', f.printing.join(', ')],
-  ['Finishes', f.finishes.slice(0, 5).join(', ')],
-  ['Minimum order', f.moq.replace(/^[^.]*?from /i, 'From ').split('.')[0] + '.'],
-  ['Lead time', '3 to 5 business days after artwork approval'],
-  ['Shipping', 'Nationwide across the United States'],
+  ...new Map<string, string>([
+    ['Product', p.name],
+    ['Category', cat.name],
+    ['Construction', f.singular.charAt(0).toUpperCase() + f.singular.slice(1)],
+    ...Object.entries(f.specNotes),
+    ['Materials', f.materials.slice(0, 4).join(', ')],
+    ['Printing', f.printing.join(', ')],
+    ['Finishes', f.finishes.slice(0, 5).join(', ')],
+    ['Minimum order', f.moq.replace(/^[^.]*?from /i, 'From ').split('.')[0] + '.'],
+    ['Lead time', '3 to 5 business days after artwork approval'],
+    ['Shipping', 'Nationwide across the United States'],
+  ]),
 ]
 
 const schema = S.graph([
@@ -304,7 +309,9 @@ const schema = S.graph([
   @media (max-width: 1040px) { .p-panel { position: static; } }
 
   /* ---------- prose ---------- */
-  .p-prose { max-width: 74ch; }
+  /* Centred: left-aligned inside the 1580px wrap left ~900px of dead space to
+     the right of every paragraph on all 371 product pages. */
+  .p-prose { max-width: 74ch; margin-inline: auto; }
   .p-prose > h2:first-child { margin-top: 0; }
 
   /* ---------- specifications ---------- */
