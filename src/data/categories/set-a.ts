@@ -1,0 +1,612 @@
+import type { CategoryMap } from './types'
+
+/** The largest ranges, where navigating the catalogue is the main job. */
+export const categoriesA: CategoryMap = {
+  'custom-food-packaging': {
+    slug: 'custom-food-packaging',
+    variant: 'application-led',
+    sections: ['subgroups', 'intro', 'chooseTable', 'range', 'mistakes', 'gallery', 'resources', 'related'],
+    keyword: 'custom food packaging',
+    h1: 'Food packaging chosen by what goes inside it',
+    eyebrow: '34 made-to-order formats',
+    lede: 'Hot, greasy, wet and cold each break packaging in a different way. This range is organised by the problem rather than by the shape of the box.',
+    metaTitle: 'Custom Food Packaging | Takeaway, Bakery & Delivery',
+    metaDescription: 'Custom food packaging made to order — burger, pizza, bakery, takeaway and delivery formats. Grease-resistant, vented and moisture-tolerant builds from 100 units.',
+    intro: {
+      h: 'Four failure modes, not thirty-four products',
+      body: [
+        'Almost every food packaging complaint we are asked to solve comes down to one of four things: grease striking through the board, steam condensing and softening the contents, sauce finding a seam, or a base that fails under a hot load. The format matters far less than which of those four you are up against.',
+        'That is why picking by product name is the slow route. Tell us what the food does — how hot, how greasy, how wet, how long between kitchen and customer — and the format follows from it.',
+      ],
+    },
+    subgroups: {
+      h: 'How the range divides',
+      intro: 'Four groups, by what the packaging has to survive.',
+      items: [
+        { name: 'Hot and greasy', detail: 'Fried food that releases oil and steam together. Grease-resistant coating and venting are both required, and they are separate decisions.', slugs: ['chicken-boxes', 'french-fry-boxes', 'wings-boxes', 'burger-boxes'] },
+        { name: 'Wet and saucy', detail: 'Dishes where liquid finds the weakest seam. Lining matters more than caliper, and the base fold is usually the failure point.', slugs: ['chinese-takeout-boxes', 'noodle-boxes', 'salad-boxes'] },
+        { name: 'Fragile and presented', detail: 'Bakery and confectionery where the product must arrive looking as it left. Cavity fit and lid clearance do the work.', slugs: ['cake-boxes', 'macaron-boxes', 'cupcake-boxes', 'chocolate-boxes'] },
+        { name: 'Retail and shelf', detail: 'Sealed product where the carton presents and stacks rather than protects, because an inner bag carries the barrier.', slugs: ['cereal-boxes', 'coffee-boxes', 'tea-boxes', 'frozen-food-boxes'] },
+      ],
+    },
+    chooseTable: {
+      h: 'Matching the food to the build',
+      intro: 'The specification that actually follows from each condition.',
+      head: ['If the food is', 'The failure to design out', 'What we specify'],
+      rows: [
+        ['Hot and fried', 'Grease strike-through and sogginess', 'Grease-resistant coating plus venting'],
+        ['Hot and saucy', 'Leakage at the base seam', 'Poly or PLA lining, glued corners'],
+        ['Cold and damp', 'Wilting from trapped condensation', 'Slight ventilation, moisture-tolerant base'],
+        ['Frozen', 'Freeze-thaw delamination', 'Moisture-resistant coat, cold-tolerant adhesive'],
+        ['Dry and sealed', 'Nothing structural', 'Lighter board — the inner bag is the barrier'],
+      ],
+    },
+    mistakes: {
+      h: 'What goes wrong most often',
+      intro: 'Four patterns that account for most of the food packaging problems we are asked to fix.',
+      items: [
+        'Treating grease resistance as a thickness question. It is a coating property — a heavier untreated board stains slightly later and then stains anyway.',
+        'Sealing a pack to keep food hot, which is exactly what makes fried food soggy.',
+        'Specifying a divider that stops below the lid, so sauce simply goes over the top of it.',
+        'Ordering a year of stock at a better unit price and storing half of it through a humid summer.',
+      ],
+    },
+    resources: [
+      { href: '/materials/', anchor: 'grease-resistant boards compared', note: 'Coating versus liner, and when each is the right answer.' },
+      { href: '/resources/box-style-guide/', anchor: 'closures that hold under weight', note: 'The structural detail behind lids that stay shut in a delivery bag.' },
+    ],
+    faqs: [
+      { q: 'How do I choose between all these food packaging formats?', a: 'Start from what the food does rather than what the box is called. How hot, how greasy, how wet, and how long between the kitchen and the customer. Those four answers narrow 34 formats to two or three, and we can do that with you in a single message.' },
+      { q: 'Is all your food packaging food-contact compliant?', a: 'Where the pack touches food directly we specify compliant boards and inks. Tell us whether contact is direct or through a liner, because it changes which stocks are available and what documentation we can supply.' },
+      { q: 'What stops grease showing through the box?', a: 'A grease-resistant coating or a greaseproof liner. Untreated board will always strike through eventually with hot oily food — it is a property of the material rather than a quality fault, and it is inexpensive to design out.' },
+      { q: 'Should takeaway packaging be vented or sealed?', a: 'It depends on the dish. Fried and crisp food needs venting or it steams itself soft. Soups and wet dishes are better sealed. Getting this the wrong way round is the single most common specification error in the category.' },
+      { q: 'Can you make packaging that keeps food hot?', a: 'Board contributes very little insulation. What actually helps is reducing trapped air, a well-fitting lid and venting only where the dish needs it. We would rather tell you that than sell you a heavier board that does not do the job.' },
+      { q: 'Do you supply compostable food packaging?', a: 'Yes, though certified compostable stock generally needs industrial facilities rather than a home heap. If kerbside recycling is the realistic route for your customers, a recyclable coated board usually does more good. We will be straight about the trade-off.' },
+      { q: 'What is the minimum order for food packaging?', a: 'A flat 100 units on any format. For a restaurant that is enough to test a pack through real deliveries before committing to a season of stock.' },
+      { q: 'Can you deliver in batches so it does not fill our kitchen?', a: 'Yes, and it is common for food-service work. We produce the run and schedule drops against your storage capacity rather than sending everything at once.' },
+      { q: 'Can we change the print for a seasonal menu?', a: 'Yes, and it is far cheaper than a new structure. Keep the same box and change the artwork, or run a plain base with a printed sleeve if the menu changes frequently.' },
+      { q: 'How much does custom food packaging cost?', a: 'From $0.30 per piece at large volumes. Grease-resistant coatings add a small amount; heavier boards for hot heavy contents add more. Both cost less than a remade order.' },
+    ],
+    cta: {
+      h: 'Tell us what the food does',
+      body: 'How hot, how greasy, how wet, and how long it travels. That is enough for us to specify the format and price it.',
+    },
+  },
+
+  'custom-mailers': {
+    slug: 'custom-mailers',
+    variant: 'guidance-led',
+    sections: ['chooseTable', 'intro', 'guidance', 'range', 'mistakes', 'gallery', 'resources', 'related'],
+    keyword: 'custom mailers',
+    h1: 'Mailers judged on what they cost to ship, not what they cost to buy',
+    eyebrow: '32 made-to-order formats',
+    lede: 'For anyone shipping at volume, the purchase price of a mailer is the smallest number in the calculation. The freight it generates and the damage it fails to prevent are the ones that matter.',
+    metaTitle: 'Custom Mailers | Right-Sized Shipping Packaging',
+    metaDescription: 'Custom mailers made to order — corrugated, poly, bubble and rigid. Right-sized to cut dimensional weight, with fitted inserts to cut damage. From 100 units.',
+    intro: {
+      h: 'The arithmetic that should drive the choice',
+      body: [
+        'A mailer that costs three cents more but drops a dimensional weight band pays for itself on the first parcel and every parcel after it. A mailer that costs three cents less and raises damage by half a percent is a bad trade on almost any product value.',
+        'Most boxes in service were inherited rather than chosen, so the honest starting point is measuring the product, not quoting a replacement for the box you already use.',
+      ],
+    },
+    chooseTable: {
+      h: 'Which mailer type fits',
+      intro: 'Four constructions with genuinely different jobs.',
+      head: ['Type', 'Best for', 'Where it fails'],
+      rows: [
+        ['Corrugated mailer box', 'Rigid or fragile goods, branded unboxing', 'Bulky and heavier than needed for soft goods'],
+        ['Poly mailer', 'Soft goods, apparel, low weight', 'No crush protection at all'],
+        ['Bubble mailer', 'Small fragile items, documents', 'Padding adds volumetric weight'],
+        ['Rigid mailer', 'Flat items that must not bend', 'Expensive per unit for anything else'],
+      ],
+    },
+    guidance: {
+      h: 'Two failures, two different fixes',
+      body: [
+        'Crushed boxes mean the board grade is too light for the stack above it. Intact boxes with damaged contents mean the product moved inside, and a heavier outer will not help — a fitted insert will, usually at lower cost because you can then drop a grade on the outer.',
+        'Separating those two before changing anything is the difference between a fix and an expensive guess. Tell us which one you are actually seeing.',
+      ],
+    },
+    mistakes: {
+      h: 'Where money leaks on a mailer programme',
+      intro: 'Five things we find on almost every audit.',
+      items: [
+        'Using void fill to compensate for a box that is simply one size too large.',
+        'Running more box sizes than the product range needs, which multiplies purchasing and pick complexity.',
+        'Shipping soft goods in cartons out of habit when a flat mailer would do.',
+        'Dropping a board grade when the damage is caused by movement rather than crushing.',
+        'Printing the outer for parcels that go to a business address and are opened by a warehouse.',
+      ],
+    },
+    resources: [
+      { href: '/resources/custom-packaging-size-guide/', anchor: 'finding the dimensional weight band below yours', note: 'Where the recurring saving on a mailer actually comes from.' },
+      { href: '/resources/packaging-insert-guide/', anchor: 'trading outer board for a fitted cavity', note: 'How to cut damage without adding weight.' },
+    ],
+    faqs: [
+      { q: 'Which mailer type should I choose?', a: 'Poly for soft goods with no crush risk, bubble for small fragile items, corrugated for anything rigid or where the unboxing matters, rigid for flat items that must not bend. If more than one fits, the cheapest to ship usually wins.' },
+      { q: 'How much can right-sizing actually save?', a: 'It depends how far you currently sit from the band below, but for a seller shipping thousands of parcels a year the freight saving typically dwarfs any difference in the unit price of the box.' },
+      { q: 'Will a lighter box increase my damage rate?', a: 'Only if crushing is what damages your product. If damage comes from movement inside the box, a fitted insert lets you go lighter with no increase. Establish which failure you have before changing board.' },
+      { q: 'Should I print my mailers?', a: 'It is a brand decision rather than a cost or protection one — print changes neither freight nor damage. For direct-to-consumer parcels it can be worth it; for business deliveries it usually is not.' },
+      { q: 'How many mailer sizes should we stock?', a: 'Usually fewer than you do. Every extra size adds purchasing, storage and pick complexity. Send us your product dimensions and we will propose a consolidated set.' },
+      { q: 'Are poly mailers recyclable?', a: 'Through store drop-off in many areas rather than kerbside. Mono-material polyethylene is the more recyclable option; mixed-material films generally are not. If recyclability is a stated claim, we will keep to mono-material.' },
+      { q: 'Can you match a mailer we already use?', a: 'Yes — send the dimensions or a sample. But it is worth asking whether the existing box is right before we reproduce it, because most are inherited rather than chosen.' },
+      { q: 'What is the minimum order for mailers?', a: 'A flat 100 units on any format, which is enough to trial a smaller size against real shipments before switching a line over.' },
+      { q: 'Do you supply plain unprinted mailers?', a: 'Yes, and for third-party fulfilment or wholesale despatch it is usually the sensible choice — one plain stock serves every client.' },
+      { q: 'How much do custom mailers cost?', a: 'From $0.30 per piece at large volumes. For a shipper the more useful figure is total cost per parcel including freight and damage, which we are happy to work through with you.' },
+    ],
+    cta: {
+      h: 'Audit a mailer programme',
+      body: 'Send your product dimensions and your damage rate. We will tell you whether the box can shrink and what that saves per parcel.',
+    },
+  },
+
+  'custom-bags': {
+    slug: 'custom-bags',
+    variant: 'guidance-led',
+    sections: ['guidance', 'intro', 'chooseTable', 'range', 'mistakes', 'gallery', 'resources', 'related'],
+    keyword: 'custom bags',
+    h1: 'Bags that survive the walk home',
+    eyebrow: '27 made-to-order formats',
+    lede: 'A retail bag leaves the store with the customer, which makes it a second storefront. It also makes it the only piece of packaging that has to carry weight in someone’s hand.',
+    metaTitle: 'Custom Bags | Paper, Kraft & Tote Carriers',
+    metaDescription: 'Custom paper, kraft and fabric bags made to order. Handle and paper weight specified for the real load, sized width × gusset × height. From 100 units.',
+    intro: {
+      h: 'Gusset, not width, is where first orders go wrong',
+      body: [
+        'Bags are quoted width × gusset × height, and the gusset is the dimension buyers most often get wrong. It is the depth of the bag when it is opened out, and it is what determines whether a boxed product actually fits.',
+        'Send the largest thing the bag has to hold rather than a bag size you have seen elsewhere. We will work the three dimensions back from it.',
+      ],
+    },
+    guidance: {
+      h: 'The handle is rarely what fails',
+      body: [
+        'Buyers choose handles by appearance and then find the bag tearing at the top edge under load. In almost every failure we see, the handle held and the paper around it did not.',
+        'So the specification is really two decisions taken together: handle type for the look and the load, and a reinforced top edge for anything above a few kilos. Twisted paper suits a bakery; a boutique packing candles or bottles needs flat paper or rope handles and a doubled top.',
+      ],
+    },
+    chooseTable: {
+      h: 'Handle and paper weight against load',
+      intro: 'A rough guide before we specify against your actual contents.',
+      head: ['Load', 'Paper weight', 'Handle'],
+      rows: [
+        ['Light — pastries, cards, small goods', '100–120gsm', 'Twisted paper'],
+        ['Medium — apparel, boxed cosmetics', '150gsm', 'Flat paper, reinforced top'],
+        ['Heavy — bottles, candles, multiples', '170gsm and up', 'Cotton rope, doubled top edge'],
+        ['Reusable — grocery, promotional', 'Cotton or jute', 'Stitched fabric handles'],
+      ],
+    },
+    mistakes: {
+      h: 'What buyers get wrong with bags',
+      intro: 'Four recurring problems, all avoidable at quoting.',
+      items: [
+        'Specifying the gusset from a guess rather than from the widest product the bag must hold.',
+        'Choosing a handle for appearance and skipping the reinforced top edge that actually carries the load.',
+        'Ordering uncoated kraft for a bag that will carry anything damp or greasy.',
+        'Printing full-bleed dark ink on kraft, which reads muddy and undoes the reason kraft was chosen.',
+      ],
+    },
+    resources: [
+      { href: '/resources/custom-packaging-size-guide/', anchor: 'measuring width, gusset and height correctly', note: 'The dimension that causes most first-order failures.' },
+      { href: '/materials/', anchor: 'paper weights and what each one carries', note: 'Matching gsm to a real load rather than a category.' },
+    ],
+    faqs: [
+      { q: 'What is a gusset and why does it matter?', a: 'It is the depth of the bag when opened out — the third dimension after width and height. It decides whether a boxed product fits, and it is the measurement first-time buyers most often get wrong.' },
+      { q: 'Which handle type should I choose?', a: 'It depends on the load, not the look. Twisted paper suits light contents, flat paper is stronger for similar cost, cotton rope carries the most. Above a few kilos the top edge reinforcement matters as much as the handle itself.' },
+      { q: 'How much weight will a paper bag carry?', a: 'That is set by paper weight and top-edge reinforcement together. Tell us the heaviest thing you will put in it and we will specify to that rather than to a category average.' },
+      { q: 'Can you produce fabric and tote bags as well as paper?', a: 'Yes. Cotton, canvas and jute totes are all available, and they are a different product commercially — reusable, heavier, and usually bought as a brand item rather than a carrier.' },
+      { q: 'Will kraft bags cope with damp or greasy contents?', a: 'Not uncoated. An internal coating keeps the natural kraft appearance outside while stopping strike-through, which is usually what you want if the bag was chosen for its look.' },
+      { q: 'Can I print full colour on a kraft bag?', a: 'You can, but heavy coverage on unbleached stock reads muddy. One or two colours generally look better and cost less, and they keep the material doing the work it was chosen for.' },
+      { q: 'What is the minimum order for custom bags?', a: 'A flat 100 units on any format, which is a practical quantity for trialling a size before committing to a season.' },
+      { q: 'Do bags ship flat?', a: 'Paper bags ship flat and folded, which keeps freight low. Fabric totes ship folded but take more volume, so allow for that if storage is tight.' },
+      { q: 'Can you match an existing bag?', a: 'Yes. Send a physical sample if you can — paper weight and handle construction are hard to judge from a photograph, and both affect the quote.' },
+      { q: 'How much do custom bags cost?', a: 'From $0.30 per piece at large volumes. Paper weight, handle type and print coverage are the three levers, and rope handles are the single biggest step in cost.' },
+    ],
+    cta: {
+      h: 'Quote a bag run',
+      body: 'Tell us the heaviest thing the bag has to carry and the largest thing it has to fit. We will size and specify from those.',
+    },
+  },
+
+  'custom-pouches': {
+    slug: 'custom-pouches',
+    variant: 'material-led',
+    sections: ['materials', 'intro', 'chooseTable', 'range', 'guidance', 'gallery', 'resources', 'related'],
+    keyword: 'custom pouches',
+    h1: 'Pouches, and the barrier you actually need',
+    eyebrow: '27 made-to-order formats',
+    lede: 'Every pouch decision is a trade between shelf life and recyclability. The right answer is the lowest barrier that holds your product for as long as it genuinely needs.',
+    metaTitle: 'Custom Pouches | Barrier Films, Valves & Resealable',
+    metaDescription: 'Custom stand-up and flat pouches made to order. Honest guidance on barrier films versus recyclability, plus valves, zips and window options. From 100 units.',
+    materials: {
+      h: 'Why the two goals conflict',
+      body: [
+        'The films that block oxygen and moisture best are multi-layer laminates, and multi-layer structures are difficult to recycle precisely because they combine materials bonded together. That is not a marketing problem; it is a physical one.',
+        'Mono-material films have improved considerably and are recyclable through store drop-off in many areas, but they generally give a shorter shelf life than a full laminate. You are choosing a point on a scale rather than getting both ends of it.',
+      ],
+    },
+    intro: {
+      h: 'Start from shelf life, not from the film',
+      body: [
+        'The useful question is how long the product has to stay good, and what degrades it — oxygen, moisture or light. A coffee that sells within three weeks needs far less barrier than one sitting in distribution for six months.',
+        'Over-specifying the barrier is common and it costs twice: once on the film, and again on the recyclability claim you then cannot make.',
+      ],
+    },
+    chooseTable: {
+      h: 'Barrier options compared honestly',
+      intro: 'What each material actually gives you.',
+      head: ['Material', 'Barrier performance', 'Recovery route'],
+      rows: [
+        ['Multi-layer laminate', 'Highest — longest shelf life', 'Not kerbside recyclable'],
+        ['Mono-material film', 'Good, shorter shelf life', 'Store drop-off in many areas'],
+        ['Kraft with liner', 'Moderate, depends on the liner', 'Depends entirely on the liner'],
+        ['Certified compostable', 'Lowest, shortest shelf life', 'Industrial facilities only'],
+      ],
+    },
+    guidance: {
+      h: 'Valves, zips and windows',
+      body: [
+        'A one-way degassing valve is for products that off-gas, freshly roasted coffee above all — without one, a sealed bag inflates. It is not a fix for anything else.',
+        'A resealable zip suits products opened repeatedly and adds real cost, so it is worth asking whether your product is actually used that way. A window sells the contents and reduces barrier area, which matters more on a long shelf life than a short one.',
+      ],
+    },
+    resources: [
+      { href: '/resources/sustainable-packaging-guide/', anchor: 'where each sustainable film falls short', note: 'Written to be honest rather than promotional.' },
+      { href: '/materials/', anchor: 'barrier films and what each one blocks', note: 'The technical comparison behind the choice.' },
+    ],
+    faqs: [
+      { q: 'Can I have a fully recyclable pouch with a full barrier?', a: 'Not currently, and we would rather say so. The best barriers are multi-layer laminates, which resist recycling for the same reason they resist oxygen. Mono-material films recycle through store drop-off but give a shorter shelf life.' },
+      { q: 'How much shelf life do I lose with a mono-material film?', a: 'It depends on the specific film and product, but expect a meaningful reduction against a full laminate. If your product reaches customers quickly, the difference may not matter commercially at all.' },
+      { q: 'Do I need a degassing valve?', a: 'Only if your product off-gasses — freshly roasted coffee is the main case. Without a valve the bag inflates. For anything that does not off-gas, a valve adds cost and does nothing.' },
+      { q: 'Should I choose a stand-up or flat pouch?', a: 'Stand-up pouches present better on a shelf and hold more for their footprint; flat pouches are cheaper and post more easily. If the product is sold online rather than shelved, flat often wins.' },
+      { q: 'Can pouches have a window?', a: 'Yes, and it sells the contents effectively. It does reduce the barrier area though, so on a long shelf life it is a real trade rather than a free addition.' },
+      { q: 'Is a resealable zip worth the cost?', a: 'Only if the product is genuinely opened repeatedly. For single-use portions it adds cost and no benefit, and it is one of the more common over-specifications in this category.' },
+      { q: 'Are compostable pouches a good option?', a: 'Only if your customers can actually compost them, which usually means industrial facilities rather than a home heap. They also give the shortest shelf life of the options.' },
+      { q: 'What is the minimum order for pouches?', a: 'A flat 100 units on any format, which suits a single-origin or limited-edition run well.' },
+      { q: 'Can I vary the design per product without a new film run?', a: 'Yes — print a common base pouch and apply a variable label per variant. It is considerably cheaper than a separate print run for each.' },
+      { q: 'How much do custom pouches cost?', a: 'From $0.30 per piece at large volumes. Barrier film, valves and zips each add cost, and we quote the material options side by side so the trade-off is visible.' },
+    ],
+    cta: {
+      h: 'Specify a pouch',
+      body: 'Tell us the shelf life you need and the claim you want to print. We will be straight about what is achievable together.',
+    },
+  },
+
+  'custom-stickers': {
+    slug: 'custom-stickers',
+    variant: 'material-led',
+    sections: ['materials', 'intro', 'chooseTable', 'range', 'applications', 'gallery', 'resources', 'related'],
+    keyword: 'custom stickers',
+    h1: 'Stickers specified for where they will actually live',
+    eyebrow: '26 made-to-order formats',
+    lede: 'The difference between a sticker that lasts three weeks and one that lasts three years is entirely in the face stock and the laminate, not in the printing.',
+    metaTitle: 'Custom Stickers | Vinyl, Paper & Die-Cut',
+    metaDescription: 'Custom die-cut stickers made to order in paper and vinyl, with UV laminate options for outdoor use. Adhesive matched to the surface. From 100 units.',
+    materials: {
+      h: 'Paper or vinyl decides everything else',
+      body: [
+        'Paper stickers are cheaper, print beautifully and fail quickly outdoors — they fade in weeks and lift at the edges as soon as they get damp. Vinyl costs more, survives weather and handling, and takes a UV laminate that extends it further.',
+        'Almost every disappointing sticker order we are asked about is a paper stock used where a vinyl one belonged. The printing was fine; the material was wrong for the environment.',
+      ],
+    },
+    intro: {
+      h: 'Tell us the surface, not just the size',
+      body: [
+        'Adhesive keys differently to glass, coated card, matte plastic, powder-coated metal and anything cold or damp. A general-purpose adhesive on a low-energy plastic will lift at the edges within days.',
+        'Application temperature matters too. Adhesive applied below room temperature never keys properly, and it is one of the few sticker faults that cannot be corrected afterwards.',
+      ],
+    },
+    chooseTable: {
+      h: 'Choosing a stock',
+      intro: 'Four combinations covering most orders.',
+      head: ['Use', 'Face stock', 'Finish'],
+      rows: [
+        ['Indoor packaging seals, short life', 'Coated paper', 'None or gloss varnish'],
+        ['Product labels handled often', 'Vinyl', 'Matte or gloss laminate'],
+        ['Outdoor, vehicles, equipment', 'Vinyl', 'UV laminate'],
+        ['Windows and glass, viewed both sides', 'Clear vinyl', 'Gloss laminate'],
+      ],
+    },
+    applications: {
+      h: 'Where our sticker work goes',
+      intro: 'The contexts that come up most, each with a different stock behind it.',
+      items: [
+        'Packaging seals and tamper marks on cartons and mailers',
+        'Product labelling on jars, bottles and tubs',
+        'Promotional and merchandise sheets given away at events',
+        'Window and door graphics for retail frontage',
+        'Equipment and asset marking that has to survive handling',
+      ],
+    },
+    resources: [
+      { href: '/materials/', anchor: 'face stocks and adhesives compared', note: 'Matching the stock to the surface it goes on.' },
+      { href: '/resources/dieline-and-artwork-guide/', anchor: 'preparing a die-cut shape', note: 'Cut lines, bleed and how close artwork can sit to the edge.' },
+    ],
+    faqs: [
+      { q: 'Will paper stickers survive outdoors?', a: 'No. They fade within weeks and lift at the edges as soon as they get damp. Outdoor use needs vinyl with a UV laminate, which lasts considerably longer.' },
+      { q: 'What surface will the stickers go on?', a: 'It matters more than most buyers expect. Adhesive keys differently to glass, coated card, matte plastic and powder-coated metal. Tell us the surface and the application temperature and we will match the adhesive.' },
+      { q: 'Can you cut any shape?', a: 'Yes, within reason — very fine points and narrow necks tear during weeding and application. We will flag it if a shape is going to be fragile before we cut the die.' },
+      { q: 'What is the difference between die-cut and kiss-cut?', a: 'Die-cut goes through the backing so each sticker is separate. Kiss-cut cuts only the face material, leaving stickers on a backing sheet — better for sheets, sets and anything applied in sequence.' },
+      { q: 'Do you supply stickers on rolls?', a: 'Yes, and for anything applied by machine or in volume at a bench, rolls are considerably faster to work with than sheets. Tell us the application method and we will supply accordingly.' },
+      { q: 'Can stickers be applied to cold surfaces?', a: 'Only with the right adhesive. General-purpose adhesive does not key below room temperature and will lift. If application happens cold, say so and we will specify a cold-apply adhesive.' },
+      { q: 'Are your stickers recyclable?', a: 'Paper face stocks generally are; vinyl is not. If recyclability matters more than durability, a paper stock with a light varnish is the honest choice — but it will not last outdoors.' },
+      { q: 'What is the minimum order for stickers?', a: 'A flat 100 units on any format. Digital printing means short runs carry no plate cost, so small quantities are genuinely economical here.' },
+      { q: 'Can I have several designs in one order?', a: 'Yes. On digital there is no plate cost per design, so a mixed run of several artworks is usually barely more expensive than one design at the same total quantity.' },
+      { q: 'How much do custom stickers cost?', a: 'From $0.30 per piece at large volumes. Vinyl and laminate both add cost over paper, and the size and shape complexity affect how efficiently the sheet is used.' },
+    ],
+    cta: {
+      h: 'Quote a sticker run',
+      body: 'Tell us the surface they go on and whether they live indoors or out. Those two answers set the stock.',
+    },
+  },
+
+  'custom-cosmetic-packaging': {
+    slug: 'custom-cosmetic-packaging',
+    variant: 'guidance-led',
+    sections: ['guidance', 'intro', 'chooseTable', 'range', 'mistakes', 'gallery', 'resources', 'related'],
+    keyword: 'custom cosmetic packaging',
+    h1: 'Cosmetic packaging, where the panel runs out before the design does',
+    eyebrow: '25 made-to-order formats',
+    lede: 'Ingredient lists and warnings are not optional and they take more room than brands allow for. On a small carton, panel space is the binding constraint — not the structure.',
+    metaTitle: 'Custom Cosmetic Packaging | Cartons, Sleeves & Sets',
+    metaDescription: 'Custom cosmetic and beauty packaging made to order. Bottle cartons sized to the container, panel space planned for ingredient copy, finishes that read at arm’s length.',
+    guidance: {
+      h: 'Lay out the back panel first',
+      body: [
+        'The instinct is to design the front and fit the regulatory copy afterwards. On a 2 × 2 × 4 in carton that reliably fails, and the fix is either a larger carton than the product needs or a type size that is uncomfortable to read.',
+        'Working the other way round costs nothing: block out the ingredient panel at dieline stage, then design the front into what is left. We supply the template with the area reserved.',
+      ],
+    },
+    intro: {
+      h: 'Measuring a container properly',
+      body: [
+        'Cosmetic cartons wrap around bottles, jars and tubes, and the measurement that matters is the widest point — which is frequently not the base. Cap height, pump height and any applied label thickness all count.',
+        'Send the actual container if you can. A measurement taken from a drawing misses flex in a squeezable tube and the thickness of a label already applied, and both decide whether the carton closes cleanly.',
+      ],
+    },
+    chooseTable: {
+      h: 'Carton, sleeve or label',
+      intro: 'Three routes with very different economics across a range.',
+      head: ['Route', 'Relative cost', 'Best when'],
+      rows: [
+        ['Full printed carton', 'Highest', 'Retail shelf presence is the priority'],
+        ['Printed sleeve over the container', 'Middle', 'A range with many variants'],
+        ['Label only', 'Lowest', 'Direct sales, minimal positioning'],
+        ['Carton plus fitted insert', 'Highest', 'Glass or pumps that must be held still'],
+      ],
+    },
+    mistakes: {
+      h: 'What costs cosmetic brands money',
+      intro: 'Four patterns we see repeatedly on first orders.',
+      items: [
+        'Tooling a carton around the current formulation, then re-tooling when the ingredient panel changes.',
+        'Measuring a bottle at the base rather than at its widest point, so the carton rattles or will not close.',
+        'Specifying full-coverage foil on a short run, where the per-unit finishing labour dominates.',
+        'Designing one carton per variant when a shared structure with a variable sleeve would do.',
+      ],
+    },
+    resources: [
+      { href: '/artwork-guidelines/', anchor: 'reserving panel space before layout', note: 'What to block out before design time is committed.' },
+      { href: '/finishes-and-add-ons/', anchor: 'which finishes read from arm’s length', note: 'Where a limited finish budget returns most.' },
+    ],
+    faqs: [
+      { q: 'How much panel space do ingredient lists need?', a: 'More than most brands allow for. Ingredient copy and any warnings compete directly with the design, and adding them late usually forces a reflow. We block the area on the dieline before you commit design time.' },
+      { q: 'How do I measure a bottle for its carton?', a: 'At the widest point, which is often not the base, and including the cap or pump. Send us the actual container if possible — drawings miss flex and applied label thickness.' },
+      { q: 'Why does my bottle rattle inside the carton?', a: 'Almost always a measurement taken at the wrong point. A carton sized to the base leaves a bottle that is wider higher up sitting loose. A structural sample with your real bottle catches it before print.' },
+      { q: 'Is a sleeve cheaper than a printed carton?', a: 'Usually, especially across several variants. You print one small element per variant instead of a whole carton, so setup costs fall sharply as the range grows.' },
+      { q: 'Which finishes are worth it on a small carton?', a: 'Ones that read at arm’s length — soft-touch lamination and deboss change how the whole pack reads. A small foil detail is often lost at shelf distance and costs a separate pass.' },
+      { q: 'Can one carton work for retail and direct shipping?', a: 'Rarely without compromise, especially with glass or pumps. A presentation carton inside a plain protective mailer usually costs less overall than one box trying to do both.' },
+      { q: 'Can you produce packaging for a range with many variants?', a: 'Yes, and it is worth designing for from the start. A shared structure with a variable sleeve or label lets you add variants without new tooling each time.' },
+      { q: 'What is the minimum order for cosmetic packaging?', a: 'A flat 100 units on any format, which suits a genuine launch test rather than a forecast you are not confident in.' },
+      { q: 'Do you supply the containers as well?', a: 'No — we manufacture the printed packaging around your containers. Send us the container and we will build the carton, sleeve or label to it.' },
+      { q: 'How much does cosmetic packaging cost?', a: 'From $0.30 per piece at large volumes. Launch quantities sit above that, and soft-touch lamination, foil and rigid construction each add a production pass we quote separately.' },
+    ],
+    cta: {
+      h: 'Send us the container',
+      body: 'The actual bottle, jar or tube is the single most useful thing for getting a cosmetic carton right first time.',
+    },
+  },
+
+  'custom-sleeves': {
+    slug: 'custom-sleeves',
+    variant: 'application-led',
+    sections: ['intro', 'guidance', 'chooseTable', 'range', 'applications', 'gallery', 'resources', 'related'],
+    keyword: 'custom sleeves',
+    h1: 'Sleeves: the cheapest way to brand something you already have',
+    eyebrow: '24 made-to-order formats',
+    lede: 'A printed sleeve over a plain base pack gives you a branded product without tooling a new structure — and it is what makes a range with many variants affordable.',
+    metaTitle: 'Custom Sleeves | Belly Bands, Cup & Product Sleeves',
+    metaDescription: 'Custom printed sleeves and belly bands made to order. Brand a plain base pack, run variants without new tooling, and change designs without a new structure.',
+    intro: {
+      h: 'Why a sleeve often beats a printed pack',
+      body: [
+        'If you run several product variants, printing each pack in full means paying a setup cost per variant. A common plain base with a printed sleeve moves that cost onto a much smaller piece of material, and the visual difference between variants is just as clear.',
+        'It also decouples the structure from the artwork. You can change a season, a flavour or a promotion without touching the pack itself, which matters if the pack is tooled and the artwork is not settled.',
+      ],
+    },
+    guidance: {
+      h: 'Fit is the whole specification',
+      body: [
+        'A sleeve that is a millimetre loose slides off in handling; a millimetre tight will not go on without tearing. Because the sleeve wraps something else, its dimensions are derived from that object rather than chosen.',
+        'Send the item the sleeve goes around — or its exact dimensions including any lid overhang — and tell us whether it is applied by hand or by machine, because machine application needs a slightly more generous tolerance.',
+      ],
+    },
+    chooseTable: {
+      h: 'Sleeve types and what they suit',
+      intro: 'Four constructions with different jobs.',
+      head: ['Type', 'Wraps', 'Chosen for'],
+      rows: [
+        ['Belly band', 'A box or tray around its middle', 'Branding without covering the pack'],
+        ['Full sleeve', 'A carton or tray end to end', 'Maximum print area on a plain base'],
+        ['Cup sleeve', 'A hot drink cup', 'Insulation as well as branding'],
+        ['Product sleeve', 'A bottle, jar or bar', 'Variant identification on a shared container'],
+      ],
+    },
+    applications: {
+      h: 'Where sleeves earn their place',
+      intro: 'The situations where a sleeve is genuinely the better answer.',
+      items: [
+        'A product range where only the flavour or variant changes',
+        'Seasonal editions on a pack that is already tooled',
+        'Meal-prep and ready-meal trays that ship plain and brand late',
+        'Hot drink cups where insulation and branding come together',
+        'Gift and subscription boxes needing a personalised outer element',
+      ],
+    },
+    resources: [
+      { href: '/printing-options/', anchor: 'what a setup charge actually covers', note: 'The cost that makes sleeves worth it across a range.' },
+      { href: '/resources/custom-packaging-size-guide/', anchor: 'deriving sleeve dimensions from the pack', note: 'Including lid overhang and application tolerance.' },
+    ],
+    faqs: [
+      { q: 'Why use a sleeve instead of printing the pack?', a: 'Cost across variants. Printing each pack in full means a setup charge per variant; a common base with a printed sleeve moves that cost onto a much smaller piece of material while keeping the variants visually distinct.' },
+      { q: 'How do I measure for a sleeve?', a: 'From the item it wraps, including any lid overhang. Send the object or its exact dimensions — a sleeve is derived rather than chosen, and a millimetre either way is the difference between sliding off and tearing.' },
+      { q: 'Are sleeves applied by hand or machine?', a: 'Either, but tell us which. Machine application needs a slightly more generous tolerance than hand application, and specifying for the wrong one causes jams or loose sleeves.' },
+      { q: 'Do cup sleeves provide insulation?', a: 'Yes, meaningfully. A single-wall cup with a sleeve is usually cheaper than a double-wall cup and performs comparably, which is why the combination is so common in coffee service.' },
+      { q: 'Can a sleeve carry all my regulatory copy?', a: 'Often, yes, and it can be a good solution — the sleeve carries the variable information while the base pack stays constant. Check that the copy remains legible at the sleeve width before committing.' },
+      { q: 'What material are sleeves made from?', a: 'Usually a lighter board than the pack itself, since the sleeve carries no load. Kraft, coated board and corrugated are all used, with corrugated mostly for cup sleeves where insulation matters.' },
+      { q: 'What is the minimum order for sleeves?', a: 'A flat 100 units on any format. Because sleeves use little material, short runs are relatively economical here.' },
+      { q: 'Can I run several sleeve designs in one order?', a: 'Yes, and it is the main reason to use sleeves. On digital there is no plate cost per design, so several artworks in one run cost little more than one.' },
+      { q: 'Will the sleeve stay in place in transit?', a: 'A correctly sized sleeve will. If the pack ships loose in a carton rather than snugly, we would usually recommend a light adhesive spot to stop the sleeve migrating.' },
+      { q: 'How much do custom sleeves cost?', a: 'From $0.30 per piece at large volumes, and typically less than a fully printed pack because there is far less material and no structural requirement.' },
+    ],
+    cta: {
+      h: 'Quote a sleeve',
+      body: 'Send the pack the sleeve wraps and tell us how many variants you run. That is where the saving shows up.',
+    },
+  },
+
+  'custom-printed-cups': {
+    slug: 'custom-printed-cups',
+    variant: 'guidance-led',
+    sections: ['guidance', 'chooseTable', 'intro', 'range', 'mistakes', 'gallery', 'resources', 'related'],
+    keyword: 'custom printed cups',
+    h1: 'Cups: wall construction decides cost and feel',
+    eyebrow: '22 made-to-order formats',
+    lede: 'Single-wall with a sleeve or double-wall is the decision that sets both your unit cost and how the cup feels in a customer’s hand. Everything else follows from it.',
+    metaTitle: 'Custom Printed Cups | Hot, Cold & Double-Wall',
+    metaDescription: 'Custom printed paper cups made to order — single-wall, double-wall and ripple, hot and cold. Lid compatibility and wall construction explained. From 100 units.',
+    guidance: {
+      h: 'Single-wall plus sleeve, or double-wall',
+      body: [
+        'A single-wall cup with a separate sleeve is usually cheaper than a double-wall cup and performs comparably on insulation. It also lets you change branding on the sleeve without reprinting cups, which suits seasonal work.',
+        'Double-wall feels better in the hand and needs no second component to manage, which matters at a busy counter. Neither is right in general; it depends on whether you value the unit cost or the operational simplicity more.',
+      ],
+    },
+    chooseTable: {
+      h: 'Cup constructions compared',
+      intro: 'What each build is actually for.',
+      head: ['Construction', 'Best for', 'Trade-off'],
+      rows: [
+        ['Single-wall', 'Cold drinks, short-hold hot drinks', 'Hot to hold without a sleeve'],
+        ['Single-wall plus sleeve', 'Hot drinks, seasonal branding', 'Two components to stock'],
+        ['Double-wall', 'Hot drinks, premium feel', 'Higher unit cost'],
+        ['Ripple wall', 'Maximum insulation and grip', 'Highest cost, bulkier to store'],
+      ],
+    },
+    intro: {
+      h: 'Lids are sized to a cup family',
+      body: [
+        'Lid fit is determined by the rim diameter, which is set by the cup family rather than by volume. Two 12 oz cups from different families can take different lids, and changing cup supplier mid-year is how operators end up with stranded lid stock.',
+        'Tell us what lids you already hold and we will match the rim, or tell us you are starting fresh and we will specify a family that covers your full size range with one lid.',
+      ],
+    },
+    mistakes: {
+      h: 'What catches cup buyers out',
+      intro: 'Four practical problems, all avoidable at ordering.',
+      items: [
+        'Changing cup supplier without checking rim diameter, which strands existing lid stock.',
+        'Ordering a hot-service cup for cold drinks, which then sweats and slips.',
+        'Underestimating storage — cups nest, but a bulk order still takes considerable space.',
+        'Printing to the rim, where the lid then covers the artwork.',
+      ],
+    },
+    resources: [
+      { href: '/materials/', anchor: 'cup linings and what each one suits', note: 'PE, PLA and aqueous linings compared.' },
+      { href: '/resources/packaging-cost-factors/', anchor: 'where cup costs actually sit', note: 'Construction and volume rather than print.' },
+    ],
+    faqs: [
+      { q: 'Should I choose single-wall with a sleeve, or double-wall?', a: 'Single-wall plus a sleeve is usually cheaper and lets you change branding without reprinting cups. Double-wall feels better and is one component instead of two. It comes down to unit cost versus operational simplicity.' },
+      { q: 'Will one lid fit all my cup sizes?', a: 'Only if the sizes share a rim diameter, which depends on the cup family rather than the volume. Tell us your size range and we will specify a family that takes one lid across it where possible.' },
+      { q: 'Can the same cup be used for hot and cold drinks?', a: 'Not well. A hot cup lining and a cold cup lining behave differently, and a hot-service cup will sweat with a cold drink. Tell us which service you need, or both if you want a compromise stock item.' },
+      { q: 'Are your cups recyclable or compostable?', a: 'PLA-lined cups are certified compostable through industrial facilities; standard PE-lined cups are recyclable only through specialist streams. We will tell you honestly what is realistically available to your customers.' },
+      { q: 'How much storage do cups take?', a: 'More than most operators expect. Cups nest, but a bulk order still occupies significant space, so tell us your capacity and we can phase deliveries against it.' },
+      { q: 'Where should print stop near the rim?', a: 'Below the lid line, or the artwork disappears once a lid goes on. We mark the lid line on the template so this is decided before design rather than after.' },
+      { q: 'Can you print inside the cup?', a: 'On some constructions, yes, though the lining limits ink options. It is an unusual request and worth discussing before you design around it.' },
+      { q: 'What is the minimum order for printed cups?', a: 'A flat 100 units on any format, though cup economics improve sharply with volume because the forming setup is the same regardless of quantity.' },
+      { q: 'Can you match our brand colour on a cup?', a: 'Flexo on a cup holds a spot colour well. Bear in mind the substrate is slightly absorbent, so a colour will read marginally softer than the same ink on a coated carton.' },
+      { q: 'How much do custom printed cups cost?', a: 'From $0.30 per piece at large volumes. Wall construction is the biggest lever — ripple and double-wall sit well above single-wall — with print a secondary factor.' },
+    ],
+    cta: {
+      h: 'Quote a cup run',
+      body: 'Tell us the sizes, the service — hot or cold — and whether you already hold lids. Those three set the specification.',
+    },
+  },
+
+  'custom-packaging-inserts': {
+    slug: 'custom-packaging-inserts',
+    variant: 'guidance-led',
+    sections: ['guidance', 'intro', 'chooseTable', 'range', 'applications', 'gallery', 'resources', 'related'],
+    keyword: 'custom packaging inserts',
+    h1: 'Inserts stop the movement that causes most damage',
+    eyebrow: '21 made-to-order formats',
+    lede: 'Most transit damage happens inside an otherwise intact box. A fitted insert usually fixes it at lower cost than a heavier outer — and often lets you drop a board grade.',
+    metaTitle: 'Custom Packaging Inserts | Foam, Board & Moulded',
+    metaDescription: 'Custom packaging inserts made to order in board, foam and moulded pulp. Cut to your product geometry to stop movement and reduce damage. From 100 units.',
+    guidance: {
+      h: 'Diagnose before you spend',
+      body: [
+        'Two damage patterns look similar on a report and need opposite fixes. Boxes arriving crushed mean the board grade is too light for the stack above. Boxes arriving intact with damaged contents mean the product moved inside — and no amount of extra board will change that.',
+        'The second is far more common. It is also the cheaper one to fix, because a fitted cavity that holds the product still often lets you reduce the outer at the same time.',
+      ],
+    },
+    intro: {
+      h: 'Transit fit and presentation fit are different jobs',
+      body: [
+        'An insert that grips a product firmly for transit is usually invisible and slightly tight. An insert that presents a product on opening seats it loosely and is part of what the recipient sees. Asking one insert to do both tends to compromise one of them.',
+        'Decide which matters more before we cut. If both genuinely matter, the answer is usually a presentation insert inside a protective outer rather than a single clever part.',
+      ],
+    },
+    chooseTable: {
+      h: 'Insert materials compared',
+      intro: 'Three materials, three different strengths.',
+      head: ['Material', 'Best for', 'Limitation'],
+      rows: [
+        ['Board / paperboard', 'Light and regular shapes, presentation', 'Little shock absorption'],
+        ['Foam', 'Fragile, irregular, high-value items', 'Bulkier, harder to recycle'],
+        ['Moulded pulp', 'Repeatable shapes, recyclable requirement', 'Tooling cost, less precise than foam'],
+        ['Corrugated dividers', 'Multiple units in one carton', 'Only works for regular grids'],
+      ],
+    },
+    applications: {
+      h: 'Where inserts do the real work',
+      intro: 'The cases we quote most often.',
+      items: [
+        'Glass bottles and jars that must not touch each other',
+        'Electronics and devices where the geometry is irregular',
+        'Laboratory kits with several components in one box',
+        'Subscription and gift boxes where the layout is the experience',
+        'Machined parts where the shape dictates the cavity',
+      ],
+    },
+    resources: [
+      { href: '/resources/packaging-insert-guide/', anchor: 'matching an insert to an irregular item', note: 'Where a protective specification starts.' },
+      { href: '/materials/', anchor: 'board grades against contents weight', note: 'What you can save on the outer once movement is controlled.' },
+    ],
+    faqs: [
+      { q: 'Do I need a heavier box or an insert?', a: 'Look at what arrives damaged. Crushed boxes mean the board is too light. Intact boxes with damaged contents mean the product moved inside, and an insert is the fix — usually at lower cost than upgrading the outer.' },
+      { q: 'Which insert material should I choose?', a: 'Board is cheapest and suits light or regular shapes. Foam holds fragile and irregular items and absorbs shock. Moulded pulp sits between them and is the more recyclable cushioning option. Send the item and we will recommend.' },
+      { q: 'Can an insert let me use a lighter outer box?', a: 'Frequently, yes. Once the contents cannot move, the outer only has to resist crushing rather than absorb internal impact. The two changes together can be close to cost-neutral.' },
+      { q: 'How do you make an insert for an irregular shape?', a: 'From the item itself where possible, or from drawings. Send a sample if you can — irregular geometry is difficult to capture accurately from a technical drawing alone.' },
+      { q: 'Should the insert grip the product or present it?', a: 'Decide explicitly, because the answers differ. A transit insert grips firmly and is often invisible; a presentation insert seats loosely and is part of the reveal. One insert doing both usually compromises one.' },
+      { q: 'Are foam inserts recyclable?', a: 'Generally not through kerbside collection. If a recyclable requirement is firm, moulded pulp or a board structure is the honest route, accepting slightly less shock absorption.' },
+      { q: 'Is there tooling cost for an insert?', a: 'For die-cut board and foam, a cutting die is needed and it is a one-off. Moulded pulp needs a mould, which is a larger up-front cost and only pays back at volume.' },
+      { q: 'What is the minimum order for inserts?', a: 'A flat 100 units on any format, which is enough to validate a cavity against your real handling process before committing.' },
+      { q: 'Can you supply inserts for boxes we already have?', a: 'Yes. Send the box dimensions and the item, and we will cut an insert to fit inside what you are already using.' },
+      { q: 'How much do custom inserts cost?', a: 'From $0.30 per piece at large volumes for simple board inserts. Foam and moulded pulp sit above that, and the right comparison is against the value of what they protect.' },
+    ],
+    cta: {
+      h: 'Send us the item',
+      body: 'Drawings or a sample, plus where damage is happening now. We will specify the cavity and tell you what the outer can drop to.',
+    },
+  },
+}

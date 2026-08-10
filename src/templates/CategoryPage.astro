@@ -9,6 +9,7 @@ import Faqs from '../components/Faqs.astro'
 import CtaBand from '../components/CtaBand.astro'
 import { productsIn, relatedCategories, categoryHero, type Category } from '../lib/catalog'
 import { categoryFaqs, categoryIntro, categoryMeta, CATEGORY_NOTES } from '../lib/copy'
+import { categoryContent } from '../data/categories'
 import { industriesFor, FORM_FACTORS } from '../lib/taxonomy'
 import { SITE } from '../lib/site'
 import * as S from '../lib/schema'
@@ -20,11 +21,23 @@ const list = productsIn(category.slug)
 const path = category.url
 const note = CATEGORY_NOTES[category.slug]
 const inds = industriesFor(category.slug)
+/* Written category content, where it exists: its own H1, section set and
+   order, comparison table and FAQs. Falls back to the generated copy. */
+const c = categoryContent(category.slug)
 const intro = categoryIntro(category, list.length)
-const faqs = categoryFaqs(category, list.length)
+const faqs = c ? c.faqs : categoryFaqs(category, list.length)
 const related = relatedCategories(category.slug, 4)
-const { title, description } = categoryMeta(category, list.length)
+const gen = categoryMeta(category, list.length)
+const title = c ? c.metaTitle : gen.title
+const description = c ? c.metaDescription : gen.description
 const short = category.name.replace(/^Custom /, '')
+
+/* The catalogue grid, spec panel and gallery are fixed markup, so the declared
+   section order is split around wherever the category places 'range'. */
+const declared = c ? c.sections.filter((k) => k !== 'gallery') : []
+const rangeAt = declared.indexOf('range')
+const beforeRange = rangeAt >= 0 ? declared.slice(0, rangeAt) : declared
+const afterRange = rangeAt >= 0 ? declared.slice(rangeAt + 1) : []
 
 // Real capability set across the formats actually in this category.
 const forms = [...new Set(list.map((p) => p.form.id))].map((id) => FORM_FACTORS[id])
@@ -67,9 +80,9 @@ const schema = S.graph([
   <section class="c-hero">
     <div class="wrap c-hero-in">
       <div class="c-copy">
-        <p class="eyebrow">{list.length} made-to-order formats</p>
-        <h1>{category.name}</h1>
-        {intro.map((para) => <p class="c-p">{para}</p>)}
+        <p class="eyebrow">{c ? c.eyebrow : `${list.length} made-to-order formats`}</p>
+        <h1>{c ? c.h1 : category.name}</h1>
+        {c ? <p class="c-p c-lede">{c.lede}</p> : intro.map((para) => <p class="c-p">{para}</p>)}
         <dl class="c-facts">
           <div><dt>Minimum</dt><dd>100 units</dd></div>
           <div><dt>Production</dt><dd>3–5 days</dd></div>
@@ -116,6 +129,108 @@ const schema = S.graph([
       </div>
     </section>
   )}
+
+  <!-- ============ composed sections: order set by the category ============ -->
+  {c && beforeRange.map((key, i) => {
+    const sunken = i % 2 === 1
+    const cls = `section ${sunken ? 'section-sunken' : ''}`
+
+    if (key === 'intro' || key === 'guidance' || key === 'materials') {
+      const b = key === 'intro' ? c.intro : key === 'guidance' ? c.guidance : c.materials
+      if (!b) return null
+      return (
+        <section class={cls}>
+          <div class="wrap"><div class="cc-prose">
+            <h2>{b.h}</h2>
+            {b.body.map((t) => <p>{t}</p>)}
+          </div></div>
+        </section>
+      )
+    }
+
+    if (key === 'subgroups' && c.subgroups) {
+      return (
+        <section class={cls}>
+          <div class="wrap">
+            <div class="cc-head"><h2>{c.subgroups.h}</h2><p class="lede">{c.subgroups.intro}</p></div>
+            <div class="cc-groups">
+              {c.subgroups.items.map((g) => (
+                <article class="cc-group">
+                  <h3>{g.name}</h3>
+                  <p>{g.detail}</p>
+                  <ul class="cc-links" role="list">
+                    {g.slugs.map((sl) => {
+                      const prod = list.find((x) => x.slug === sl)
+                      return prod ? <li><a href={prod.url}>{prod.name}</a></li> : null
+                    })}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    if (key === 'chooseTable' && c.chooseTable) {
+      const t = c.chooseTable
+      return (
+        <section class={cls}>
+          <div class="wrap">
+            <div class="cc-head"><h2>{t.h}</h2><p class="lede">{t.intro}</p></div>
+            <div class="table-scroll">
+              <table class="data">
+                <thead><tr>{t.head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+                <tbody>{t.rows.map((r) => (
+                  <tr><th scope="row">{r[0]}</th><td>{r[1]}</td><td>{r[2]}</td></tr>
+                ))}</tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    if (key === 'applications' && c.applications) {
+      return (
+        <section class={cls}>
+          <div class="wrap"><div class="cc-prose">
+            <h2>{c.applications.h}</h2>
+            <p>{c.applications.intro}</p>
+            <ul class="cc-bullets">{c.applications.items.map((x) => <li>{x}</li>)}</ul>
+          </div></div>
+        </section>
+      )
+    }
+
+    if (key === 'mistakes' && c.mistakes) {
+      return (
+        <section class={cls}>
+          <div class="wrap cc-split">
+            <div><h2>{c.mistakes.h}</h2><p class="lede">{c.mistakes.intro}</p></div>
+            <ol class="cc-check" role="list">{c.mistakes.items.map((x) => <li>{x}</li>)}</ol>
+          </div>
+        </section>
+      )
+    }
+
+    if (key === 'resources') {
+      return (
+        <section class={cls}>
+          <div class="wrap">
+            <h2 class="cc-h2">Worth reading before you specify</h2>
+            <ul class="cc-res" role="list">
+              {c.resources.map((r) => (
+                <li><a href={r.href}>{r.anchor}</a><span>{r.note}</span></li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )
+    }
+
+    return null
+  })}
 
   <!-- ============ RANGE ============ -->
   <section class="section" id="range">
@@ -226,46 +341,59 @@ const schema = S.graph([
     </section>
   )}
 
-  <!-- ============ WHY / PROCESS ============ -->
-  <section class="section section-sunken">
-    <div class="wrap two-col">
-      <div>
-        <p class="eyebrow">Why this range</p>
-        <h2>What You Get with {category.name}</h2>
-        <p class="lede">{note?.angle}</p>
-        <p class="muted">
-          Nothing in this range is a stock item. We cut a dieline for your product, choose a board
-          that suits its weight, and print in whatever way makes sense for your quantity.
-          {gallery[0] && (
-            <>
-              {' '}Buyers comparing options here often start with
-              {' '}<a href={gallery[0].url}>{gallery[0].name.toLowerCase()} and their material choices</a>
-              {' '}before narrowing the specification.
-            </>
-          )}
-        </p>
-        <ul class="tick-list" style="margin-top:var(--s-6)">
-          <li>Dimensions cut to your product, not to a stock size</li>
-          <li>Board grade recommended against real product weight</li>
-          <li>Printing and finishing completed in one run</li>
-          <li>Written specification before you commit to production</li>
-        </ul>
-      </div>
-      <div class="steps">
-        {[
-          { h: 'Share the product', d: `Dimensions, weight and how it ships. ${note?.watchOut ?? ''}` },
-          { h: 'We specify and quote', d: 'Board grade, structure, print route, lead time and a written price.' },
-          { h: 'Dieline and proof', d: 'A template sized to your product, then a digital proof or a physical sample.' },
-          { h: 'Production and delivery', d: 'Typically 3 to 5 business days after approval, shipped anywhere in the US.' },
-        ].map((x) => (
-          <div class="step">
-            <h3 class="step-h">{x.h}</h3>
-            <p class="muted small">{x.d}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- ============ remaining declared sections ============ -->
+  {c && afterRange.map((key, i) => {
+    const sunken = i % 2 === 0
+    const cls = `section ${sunken ? 'section-sunken' : ''}`
+    if (key === 'intro' || key === 'guidance' || key === 'materials') {
+      const b = key === 'intro' ? c.intro : key === 'guidance' ? c.guidance : c.materials
+      if (!b) return null
+      return (
+        <section class={cls}><div class="wrap"><div class="cc-prose">
+          <h2>{b.h}</h2>{b.body.map((t) => <p>{t}</p>)}
+        </div></div></section>
+      )
+    }
+    if (key === 'chooseTable' && c.chooseTable) {
+      const t = c.chooseTable
+      return (
+        <section class={cls}><div class="wrap">
+          <div class="cc-head"><h2>{t.h}</h2><p class="lede">{t.intro}</p></div>
+          <div class="table-scroll"><table class="data">
+            <thead><tr>{t.head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+            <tbody>{t.rows.map((r) => (<tr><th scope="row">{r[0]}</th><td>{r[1]}</td><td>{r[2]}</td></tr>))}</tbody>
+          </table></div>
+        </div></section>
+      )
+    }
+    if (key === 'applications' && c.applications) {
+      return (
+        <section class={cls}><div class="wrap"><div class="cc-prose">
+          <h2>{c.applications.h}</h2><p>{c.applications.intro}</p>
+          <ul class="cc-bullets">{c.applications.items.map((x) => <li>{x}</li>)}</ul>
+        </div></div></section>
+      )
+    }
+    if (key === 'mistakes' && c.mistakes) {
+      return (
+        <section class={cls}><div class="wrap cc-split">
+          <div><h2>{c.mistakes.h}</h2><p class="lede">{c.mistakes.intro}</p></div>
+          <ol class="cc-check" role="list">{c.mistakes.items.map((x) => <li>{x}</li>)}</ol>
+        </div></section>
+      )
+    }
+    if (key === 'resources') {
+      return (
+        <section class={cls}><div class="wrap">
+          <h2 class="cc-h2">Worth reading before you specify</h2>
+          <ul class="cc-res" role="list">
+            {c.resources.map((r) => (<li><a href={r.href}>{r.anchor}</a><span>{r.note}</span></li>))}
+          </ul>
+        </div></section>
+      )
+    }
+    return null
+  })}
 
   <!-- ============ QUOTE ============ -->
   <section class="section" id="quote">
@@ -367,6 +495,45 @@ const schema = S.graph([
   .dot-list li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 5px; height: 5px;
     border-radius: 50%; background: var(--accent); }
   .tile-note { font-size: var(--fs-sm); color: var(--text-muted); border-top: 1px solid var(--rule); padding-top: var(--s-4); }
+
+  /* ---------- composed category sections ---------- */
+  .cc-prose { max-width: 74ch; margin-inline: auto; }
+  .cc-prose h2, .cc-head h2, .cc-h2, .cc-split h2 {
+    font-size: var(--fs-2xl); margin-bottom: var(--s-5); text-wrap: balance;
+    overflow-wrap: break-word; word-break: normal;
+  }
+  .cc-prose p { color: var(--text-muted); font-size: var(--fs-md); line-height: 1.65; }
+  .cc-prose p + p { margin-top: var(--s-4); }
+  .cc-head { max-width: 68ch; margin-bottom: var(--s-8); }
+  .cc-bullets { margin-top: var(--s-5); padding-left: 1.1rem; display: grid; gap: var(--s-2); }
+  .cc-bullets li { color: var(--text-muted); font-size: var(--fs-md); }
+
+  .cc-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: var(--s-5); }
+  .cc-group { background: var(--paper); border: 1px solid var(--border); border-radius: var(--r-md); padding: var(--s-6); }
+  .cc-group h3 { font-size: var(--fs-md); margin-bottom: var(--s-3); }
+  .cc-group p { color: var(--text-muted); font-size: var(--fs-sm); line-height: 1.6; }
+  .cc-links { list-style: none; padding: 0; margin-top: var(--s-4); display: grid; gap: var(--s-2); }
+  .cc-links a { font-size: var(--fs-sm); }
+
+  .cc-split { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(2rem, 1rem + 4vw, 4rem); align-items: start; }
+  @media (max-width: 900px) { .cc-split { grid-template-columns: minmax(0, 1fr); } }
+  .cc-check { list-style: none; padding: 0; counter-reset: cc; display: grid; gap: var(--s-3); }
+  .cc-check li {
+    counter-increment: cc; position: relative; padding: var(--s-4) var(--s-5) var(--s-4) 3.25rem;
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--r-sm);
+    color: var(--text-muted); font-size: var(--fs-sm); line-height: 1.6;
+  }
+  .cc-check li::before {
+    content: counter(cc, decimal-leading-zero); position: absolute; left: var(--s-5); top: var(--s-4);
+    color: var(--accent); font-size: var(--fs-xs); font-weight: 600; font-variant-numeric: tabular-nums;
+  }
+
+  .cc-res { list-style: none; padding: 0; margin-top: var(--s-6);
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: var(--s-4); }
+  .cc-res li { border-top: 1px solid var(--rule); padding-top: var(--s-4); display: flex; flex-direction: column; gap: var(--s-2); }
+  .cc-res span { color: var(--text-muted); font-size: var(--fs-sm); line-height: 1.55; }
+
+  .c-lede { font-size: var(--fs-md); }
 
   .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: start; }
