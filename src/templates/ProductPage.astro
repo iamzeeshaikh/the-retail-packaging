@@ -2,12 +2,14 @@
 import Base from '../layouts/Base.astro'
 import Breadcrumbs from '../components/Breadcrumbs.astro'
 import Gallery from '../components/Gallery.astro'
+import Configurator from '../components/Configurator.astro'
 import ProductCard from '../components/ProductCard.astro'
 import QuoteForm from '../components/QuoteForm.astro'
 import Faqs from '../components/Faqs.astro'
 import CtaBand from '../components/CtaBand.astro'
 import { relatedProducts, categoryBySlug, type Product } from '../lib/catalog'
 import { productFaqs, productIntro, productMeta, productSummary, productBenefits, PRICE_LINE, CATEGORY_NOTES } from '../lib/copy'
+import { specLine, minQty, leadTime, fmtQty } from '../lib/commerce'
 import { SITE } from '../lib/site'
 import * as S from '../lib/schema'
 
@@ -77,50 +79,18 @@ const schema = S.graph([
 >
   <Breadcrumbs trail={trail} />
 
-  <!-- ============ top: gallery + summary + inline quote ============ -->
+  <!-- ============ top: gallery + configurator panel ============ -->
   <section class="p-top">
     <div class="wrap p-grid">
       <div class="p-media">
-        <Gallery product={p} />
-      </div>
-
-      <div class="p-info">
-        <p class="eyebrow">{cat.name}</p>
+        <p class="p-eyebrow">{cat.name}</p>
         <h1>{p.name}</h1>
         <p class="p-summary">{productSummary(p)}</p>
-
-        <div class="price-box">
-          <p class="price-line">{PRICE_LINE}</p>
-          <p class="price-note">Every order is quoted individually. There is no fixed unit price.</p>
-        </div>
-
-        <dl class="quick-specs">
-          <div><dt>Construction</dt><dd>{f.singular}</dd></div>
-          <div><dt>Minimum order</dt><dd>{f.moq.split('.')[0].replace(/^.*?(from|start(?:s)? at)\s*/i, 'From ')}</dd></div>
-          <div><dt>Lead time</dt><dd>8–15 business days</dd></div>
-          <div><dt>Images</dt><dd>{p.images.length} product photos</dd></div>
-        </dl>
-
-        <div class="btn-row">
-          <a class="btn btn-primary btn-lg" href="#quote">Request a Quote</a>
-          <a class="btn btn-outline btn-lg" href="/samples/">Order a sample</a>
-        </div>
+        <Gallery product={p} />
       </div>
-    </div>
-  </section>
-
-  <!-- ============ inline short quote form ============ -->
-  <section class="section-tight quote-strip" id="quote">
-    <div class="wrap">
-      <QuoteForm
-        id="quote"
-        variant="short"
-        productName={p.name}
-        categoryName={cat.name}
-        source={`product:${p.slug}`}
-        title={`Quote ${p.name.toLowerCase()}`}
-        intro={`Tell us the size and quantity you need. We reply with a specification and a written price, usually within one business day.`}
-      />
+      <div class="p-panel">
+        <Configurator product={p} />
+      </div>
     </div>
   </section>
 
@@ -204,7 +174,7 @@ const schema = S.graph([
       </div>
 
       <aside class="p-aside">
-        <div class="tile sticky">
+        <div class="tile">
           <h2 class="aside-h">Specifications</h2>
           <dl class="spec-list">
             {specs.map(([k, v]) => (
@@ -213,6 +183,36 @@ const schema = S.graph([
           </dl>
         </div>
       </aside>
+    </div>
+  </section>
+
+  <!-- ============ quote ============ -->
+  <section class="section section-sunken" id="quote">
+    <div class="wrap q-grid">
+      <div>
+        <p class="eyebrow">Get a price</p>
+        <h2 class="q-h">Quote {p.name.toLowerCase()}</h2>
+        <p class="lede">
+          Your configuration from the panel above carries into this form. Add anything it did not
+          cover and we come back with a specification and a written price, usually within one
+          business day.
+        </p>
+        <dl class="q-facts">
+          <div><dt>Minimum</dt><dd>{fmtQty(minQty(p))} units</dd></div>
+          <div><dt>Production</dt><dd>{leadTime(p)[0]}–{leadTime(p)[1]} business days</dd></div>
+          <div><dt>Delivery</dt><dd>All 50 states</dd></div>
+        </dl>
+        <p class="muted small" style="margin-top:var(--s-6)">{PRICE_LINE}</p>
+      </div>
+      <QuoteForm
+        id="quote-form"
+        variant="short"
+        productName={p.name}
+        categoryName={cat.name}
+        source={`product:${p.slug}`}
+        title={`Quote ${p.name.toLowerCase()}`}
+        intro="Tell us the size and quantity you need. We reply with a specification and a written price."
+      />
     </div>
   </section>
 
@@ -264,39 +264,47 @@ const schema = S.graph([
 </Base>
 
 <style>
-  .p-top { padding-block: var(--s-6) var(--s-10); }
-  .p-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(1.5rem, 1rem + 3vw, 3.5rem); align-items: start; }
-  @media (max-width: 900px) { .p-grid { grid-template-columns: 1fr; } }
-
-  .p-info h1 { font-size: var(--fs-3xl); }
-  .p-summary { font-size: var(--fs-md); color: var(--text-muted); margin-top: var(--s-4); max-width: 52ch; }
-
-  .price-box {
-    margin-top: var(--s-6);
-    padding: var(--s-5);
-    background: var(--champagne-tint);
-    border: 1px solid rgba(176, 141, 70, 0.26);
-    border-radius: var(--r-md);
+  /* ---------- top: gallery left, sticky configurator right ---------- */
+  .p-top { padding-block: var(--s-6) var(--s-16); }
+  .p-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+    gap: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+    align-items: start;
   }
-  .price-line { font-size: var(--fs-sm); color: #6b4d10; font-weight: 500; }
-  .price-note { font-size: var(--fs-xs); color: #8a6414; margin-top: var(--s-2); }
+  @media (max-width: 1000px) { .p-grid { grid-template-columns: 1fr; } }
 
-  .quick-specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4); margin-top: var(--s-6); }
-  @media (max-width: 420px) { .quick-specs { grid-template-columns: 1fr; } }
-  .quick-specs div { border-left: 2px solid var(--border-strong); padding-left: var(--s-3); }
-  .quick-specs dt { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--text-faint); }
-  .quick-specs dd { margin: 0.15rem 0 0; font-size: var(--fs-sm); font-weight: 600; color: var(--ink); }
+  .p-eyebrow {
+    font-size: var(--fs-xs); letter-spacing: var(--track-caps);
+    text-transform: uppercase; color: var(--ox); margin-bottom: var(--s-4);
+  }
+  .p-media h1 { font-size: var(--fs-3xl); }
+  .p-summary { font-size: var(--fs-md); color: var(--text-muted); max-width: 56ch; margin: var(--s-5) 0 var(--s-8); }
 
-  .p-info .btn-row { margin-top: var(--s-8); }
+  /* the panel follows the gallery down the page on desktop */
+  .p-panel { position: sticky; top: calc(var(--header-h) + 1.5rem); }
+  @media (max-width: 1000px) { .p-panel { position: static; } }
 
-  .quote-strip { background: var(--ivory-deep); border-block: 1px solid var(--border); }
-
-  .p-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: clamp(2rem, 1rem + 4vw, 4rem); align-items: start; }
+  /* ---------- body ---------- */
+  .p-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 330px);
+    gap: clamp(2rem, 1rem + 4vw, 4rem);
+    align-items: start;
+  }
   @media (max-width: 980px) { .p-body { grid-template-columns: 1fr; } }
   .p-body .prose > h2:first-child { margin-top: 0; }
-  .sticky { position: sticky; top: calc(var(--header-h) + 1.5rem); }
-  @media (max-width: 980px) { .sticky { position: static; } }
   .aside-h { font-size: var(--fs-lg); margin-bottom: var(--s-4); }
+
+  /* ---------- quote ---------- */
+  .q-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(2rem, 1rem + 4vw, 4rem); align-items: start; }
+  @media (max-width: 980px) { .q-grid { grid-template-columns: 1fr; } }
+  .q-h { font-size: var(--fs-2xl); margin-bottom: var(--s-4); }
+  .q-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); margin-top: var(--s-8); }
+  .q-facts div { border-top: 1px solid var(--ink); padding-top: var(--s-3); }
+  .q-facts dt { font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+  .q-facts dd { margin: 0.2rem 0 0; font-size: var(--fs-sm); font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
 
   .cat-back { margin-top: var(--s-8); font-size: var(--fs-sm); color: var(--text-muted); }
 </style>

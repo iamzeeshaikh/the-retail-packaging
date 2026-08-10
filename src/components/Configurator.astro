@@ -1,0 +1,253 @@
+---
+import type { Product } from '../lib/catalog'
+import { minQty, leadTime, quantityBands, sizePresets, sizeUnit, fmtQty } from '../lib/commerce'
+import { SITE } from '../lib/site'
+
+/**
+ * Product configurator panel.
+ *
+ * Modelled on the noissue product panel — option grids rather than prose — but
+ * it ends in a quote request, not a cart. No unit price is calculated: the
+ * business quotes each project, and a fabricated instant price would be a claim
+ * we cannot support. What the buyer gets instead is a fully specified request.
+ */
+export interface Props { product: Product }
+const { product: p } = Astro.props
+
+const f = p.form
+const [leadA, leadB] = leadTime(p)
+const sizes = sizePresets(p)
+const bands = quantityBands(p)
+const materials = f.materials.slice(0, 5)
+const printing = f.printing
+const finishes = f.finishes.slice(0, 5)
+const id = `cfg-${p.slug}`
+---
+
+<aside class="cfg" aria-labelledby={`${id}-h`}>
+  <div class="cfg-head">
+    <h2 class="cfg-title" id={`${id}-h`}>Specify this pack</h2>
+    <p class="cfg-sub">
+      Set what you know and leave the rest. Anything unset comes back as a recommendation.
+    </p>
+  </div>
+
+  <div class="cfg-facts">
+    <div><dt>Minimum</dt><dd>{fmtQty(minQty(p))} units</dd></div>
+    <div><dt>Production</dt><dd>{leadA}–{leadB} days</dd></div>
+    <div><dt>Construction</dt><dd>{f.singular}</dd></div>
+  </div>
+
+  <form class="cfg-form" data-cfg data-product={p.name} data-slug={p.slug}>
+    <fieldset class="cfg-grp">
+      <legend>Size <span class="lg-unit">{sizeUnit(p)}</span></legend>
+      <div class="opt-grid">
+        {sizes.map((s, i) => (
+          <label class="opt">
+            <input type="radio" name="size" value={s} checked={i === 0} />
+            <span>{s}</span>
+          </label>
+        ))}
+        <label class="opt">
+          <input type="radio" name="size" value="Custom — see notes" />
+          <span>Custom</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset class="cfg-grp">
+      <legend>Material</legend>
+      <div class="opt-grid opt-grid-wide">
+        {materials.map((m, i) => (
+          <label class="opt">
+            <input type="radio" name="material" value={m} checked={i === 0} />
+            <span>{m}</span>
+          </label>
+        ))}
+        <label class="opt">
+          <input type="radio" name="material" value="Advise me" />
+          <span>Advise me</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset class="cfg-grp">
+      <legend>Printing</legend>
+      <div class="opt-grid opt-grid-wide">
+        {printing.map((m, i) => (
+          <label class="opt">
+            <input type="radio" name="printing" value={m} checked={i === 0} />
+            <span>{m}</span>
+          </label>
+        ))}
+        <label class="opt">
+          <input type="radio" name="printing" value="Advise me" />
+          <span>Advise me</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset class="cfg-grp">
+      <legend>Finish</legend>
+      <div class="opt-grid opt-grid-wide">
+        {finishes.map((m, i) => (
+          <label class="opt">
+            <input type="radio" name="finish" value={m} checked={i === 0} />
+            <span>{m}</span>
+          </label>
+        ))}
+        <label class="opt">
+          <input type="radio" name="finish" value="None" />
+          <span>None</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset class="cfg-grp">
+      <legend>Quantity</legend>
+      <div class="opt-grid">
+        {bands.map((n, i) => (
+          <label class="opt">
+            <input type="radio" name="quantity" value={String(n)} checked={i === 1 || (bands.length === 1 && i === 0)} />
+            <span>{n.toLocaleString('en-US')}</span>
+          </label>
+        ))}
+      </div>
+      <p class="cfg-note">
+        Unit cost falls sharply across these bands because setup is a fixed cost. Ask us for two
+        quantities and the difference is usually larger than expected.
+      </p>
+    </fieldset>
+
+    <div class="cfg-price">
+      <p class="cfg-price-line">{SITE.priceLine}</p>
+      <p class="cfg-price-note">
+        We do not show an instant unit price because size, board, print and finishing move it too far
+        to guess honestly. Your configuration goes over with the request and comes back priced.
+      </p>
+    </div>
+
+    <div class="cfg-summary" data-cfg-summary hidden>
+      <p class="cfg-sum-h">Your specification</p>
+      <dl data-cfg-list></dl>
+    </div>
+
+    <div class="cfg-actions">
+      <a class="btn btn-primary btn-block btn-lg" href="#quote" data-cfg-go>Get this quoted</a>
+      <a class="btn btn-ghost btn-block" href="/samples/">Order a sample first</a>
+    </div>
+
+    <ul class="cfg-assure" role="list">
+      <li>Free dieline template with every order</li>
+      <li>Prepress check on every file</li>
+      <li>Delivery to all 50 states</li>
+    </ul>
+  </form>
+</aside>
+
+<style>
+  .cfg {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    padding: clamp(1.1rem, 0.9rem + 1vw, 1.75rem);
+  }
+  .cfg-head { padding-bottom: var(--s-5); border-bottom: 1px solid var(--rule); }
+  .cfg-title { font-size: var(--fs-xl); }
+  .cfg-sub { font-size: var(--fs-sm); color: var(--text-muted); margin-top: var(--s-2); }
+
+  .cfg-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--s-3); padding-block: var(--s-5); border-bottom: 1px solid var(--rule); }
+  .cfg-facts div { display: flex; flex-direction: column; gap: 0.15rem; }
+  .cfg-facts dt { font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+  .cfg-facts dd { margin: 0; font-size: var(--fs-sm); font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+  .cfg-grp { border: 0; padding: var(--s-5) 0 0; margin: 0 0 var(--s-5); }
+  .cfg-grp legend {
+    padding: 0 0 var(--s-3);
+    font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink);
+  }
+  .lg-unit { color: var(--text-faint); letter-spacing: 0.04em; text-transform: none; font-weight: 400; }
+  .opt-grid-wide { grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr)); }
+  .opt span { line-height: 1.25; }
+  .cfg-note { font-size: var(--fs-xs); color: var(--text-faint); margin-top: var(--s-3); }
+
+  .cfg-price { padding: var(--s-4); background: var(--bone); border: 1px solid var(--rule); border-radius: var(--r-sm); }
+  .cfg-price-line { font-size: var(--fs-sm); color: var(--ink); font-weight: 500; }
+  .cfg-price-note { font-size: var(--fs-xs); color: var(--text-faint); margin-top: var(--s-2); }
+
+  .cfg-summary { margin-top: var(--s-5); padding-top: var(--s-5); border-top: 1px solid var(--rule); }
+  .cfg-sum-h { font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: var(--s-3); }
+  .cfg-summary dl { display: grid; gap: 0.3rem; margin: 0; }
+  .cfg-summary dl > div { display: grid; grid-template-columns: 40% 1fr; gap: var(--s-3); font-size: var(--fs-xs); }
+  .cfg-summary dt { color: var(--text-faint); }
+  .cfg-summary dd { margin: 0; color: var(--ink); }
+
+  .cfg-actions { display: grid; gap: var(--s-2); margin-top: var(--s-5); }
+  .cfg-assure { margin-top: var(--s-5); padding-top: var(--s-4); border-top: 1px solid var(--rule); display: grid; gap: 0.35rem; }
+  .cfg-assure li { font-size: var(--fs-xs); color: var(--text-faint); padding-left: 1.1rem; position: relative; }
+  .cfg-assure li::before {
+    content: ''; position: absolute; left: 0; top: 0.5em; width: 0.6rem; height: 0.3rem;
+    border-left: 1.5px solid var(--ox); border-bottom: 1.5px solid var(--ox); transform: rotate(-45deg);
+  }
+</style>
+
+<script>
+  // Mirror the configuration into a live summary, and carry it into the quote
+  // form on the same page so the buyer never retypes it.
+  document.querySelectorAll<HTMLFormElement>('[data-cfg]').forEach((form) => {
+    const box = form.querySelector<HTMLElement>('[data-cfg-summary]')
+    const list = form.querySelector<HTMLElement>('[data-cfg-list]')
+    const go = form.querySelector<HTMLAnchorElement>('[data-cfg-go]')
+
+    const read = () => {
+      const fd = new FormData(form)
+      return [
+        ['Size', fd.get('size')],
+        ['Material', fd.get('material')],
+        ['Printing', fd.get('printing')],
+        ['Finish', fd.get('finish')],
+        ['Quantity', fd.get('quantity')],
+      ].filter(([, v]) => v) as [string, string][]
+    }
+
+    const render = () => {
+      if (!box || !list) return
+      const rows = read()
+      list.innerHTML = ''
+      for (const [k, v] of rows) {
+        const d = document.createElement('div')
+        const dt = document.createElement('dt'); dt.textContent = k
+        const dd = document.createElement('dd')
+        dd.textContent = k === 'Quantity' ? Number(v).toLocaleString('en-US') + ' units' : v
+        d.append(dt, dd); list.appendChild(d)
+      }
+      box.hidden = rows.length === 0
+    }
+
+    form.addEventListener('change', render)
+    render()
+
+    go?.addEventListener('click', () => {
+      const rows = read()
+      const text = rows.map(([k, v]) => `${k}: ${v}`).join(' | ')
+      const target = document.querySelector<HTMLFormElement>('[data-quote-form]')
+      if (!target) return
+      const msg = target.querySelector<HTMLTextAreaElement>('textarea[name="message"]')
+      const prod = target.querySelector<HTMLInputElement>('input[name="product"]')
+      if (prod && !prod.value) prod.value = form.dataset.product ?? ''
+      if (msg && !msg.value.trim()) {
+        msg.value = `Specification from the product page — ${form.dataset.product}\n${text}\n\n`
+      }
+      const hidden = target.querySelector<HTMLInputElement>('input[name="configuration"]')
+        ?? Object.assign(document.createElement('input'), { type: 'hidden', name: 'configuration' })
+      hidden.value = text
+      if (!hidden.parentNode) target.appendChild(hidden)
+
+      const w = window as any
+      if (typeof w.gtag === 'function') w.gtag('event', 'quote_start', { form_source: 'configurator' })
+      else if (Array.isArray(w.dataLayer)) w.dataLayer.push({ event: 'quote_start', form_source: 'configurator' })
+    })
+  })
+</script>

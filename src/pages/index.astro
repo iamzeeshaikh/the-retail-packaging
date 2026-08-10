@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro'
-import BoxScene from '../components/BoxScene.astro'
 import CategoryCard from '../components/CategoryCard.astro'
 import ProductCard from '../components/ProductCard.astro'
 import QuoteForm from '../components/QuoteForm.astro'
@@ -13,485 +12,395 @@ import * as S from '../lib/schema'
 
 const path = '/'
 
-const featuredCats = categories
-  .map((c) => ({ c, list: productsIn(c.slug) }))
-  .sort((a, b) => b.list.length - a.list.length)
+const get = (s: string) => bySlug.get(s)
+const cat = (s: string) => {
+  const c = categories.find((x) => x.slug === s)!
+  return { c, list: productsIn(s) }
+}
+
+/* Hero: two large photo tiles, the noissue opening, using our own photography. */
+const heroA = cat('custom-mailers')
+const heroB = cat('custom-cosmetic-packaging')
+const heroImgA = heroA.list[0]?.images?.[0]
+const heroImgB = get('cosmetic-boxes')?.images?.[0] ?? heroB.list[0]?.images?.[0]
+
+const featured = ['custom-mailers', 'custom-food-packaging', 'custom-cosmetic-packaging',
+  'custom-bags', 'custom-pouches', 'custom-labels', 'custom-display-boxes', 'custom-printed-cups']
+  .map((s) => cat(s))
+
+const railSlugs = ['mailer-boxes', 'cosmetic-boxes', 'candle-boxes-with-window', 'kraft-paper-bags',
+  'stand-up-pouches', 'custom-die-cut-stickers', 'soap-display-boxes', 'rigid-boxes-with-inserts',
+  'coffee-cups', 'chocolate-boxes']
+const rail = railSlugs.map(get).filter(Boolean) as NonNullable<ReturnType<typeof get>>[]
+
+const lowMin = products
+  .filter((p) => ['sticker', 'label', 'rigid-box', 'mailer', 'tote-bag'].includes(p.form.id))
+  .filter((p) => p.images.length >= 4)
   .slice(0, 8)
 
-const showcaseSlugs = [
-  'mailer-boxes', 'cosmetic-boxes', 'candle-boxes-with-window', 'kraft-paper-bags',
-  'stand-up-pouches', 'custom-die-cut-stickers', 'soap-display-boxes', 'rigid-boxes-with-inserts',
-]
-const showcase = showcaseSlugs.map((s) => bySlug.get(s)).filter(Boolean) as NonNullable<ReturnType<typeof bySlug.get>>[]
-
-const heroProduct = bySlug.get('mailer-boxes') ?? products[0]
-const heroImg = heroProduct?.images?.[0]
-
-const industryCards = [
-  { i: INDUSTRIES.food, url: '/custom-food-packaging/', label: 'Food and beverage packaging' },
-  { i: INDUSTRIES.beauty, url: '/custom-cosmetic-packaging/', label: 'Cosmetic and personal care packaging' },
-  { i: INDUSTRIES.ecommerce, url: '/custom-mailers/', label: 'E-commerce mailers and shipping packaging' },
-  { i: INDUSTRIES.cannabis, url: '/custom-cbd-packaging/', label: 'CBD and wellness packaging' },
-  { i: INDUSTRIES.home, url: '/custom-candle-packaging/', label: 'Candle and home fragrance packaging' },
-  { i: INDUSTRIES.apparel, url: '/custom-apparel-packaging/', label: 'Apparel and accessory packaging' },
+const industryTiles = [
+  { i: INDUSTRIES.food, slug: 'custom-food-packaging', sample: 'burger-boxes' },
+  { i: INDUSTRIES.beauty, slug: 'custom-cosmetic-packaging', sample: 'lipstick-boxes' },
+  { i: INDUSTRIES.ecommerce, slug: 'custom-mailers', sample: 'bubble-mailers' },
+  { i: INDUSTRIES.home, slug: 'custom-candle-packaging', sample: 'candle-jar-boxes' },
 ]
 
 const faqs = [
-  {
-    q: 'What does The Retail Packaging actually make?',
-    a: `We manufacture custom retail packaging to order — ${totals.products} formats across ${totals.categories} categories, covering folding cartons, rigid boxes, corrugated mailers, paper bags, pouches, labels, sleeves, trays and retail displays. Everything is cut to your dimensions rather than pulled from a stock catalogue.`,
-  },
-  {
-    q: 'How much does custom packaging cost?',
-    a: `${SITE.priceLine} A small run of digitally printed cartons and a 50,000-unit flexo run sit at opposite ends of that range, which is why we quote each project rather than publishing a price list.`,
-  },
-  {
-    q: 'What is the minimum order quantity?',
-    a: 'It depends on the format and the printing route. Digital printing starts as low as 50 pieces for stickers and 100 for mailer boxes. Offset and flexo runs need larger quantities to absorb the plate cost, usually from 1,000 units. Tell us your quantity and we will quote the most efficient way to produce it.',
-  },
-  {
-    q: 'How long does production take?',
-    a: 'Most orders move through production in 8 to 15 business days once artwork is approved, with shipping on top of that. Hand-assembled rigid boxes and specialty finishes sit at the longer end. We confirm a firm date in writing with every quote.',
-  },
-  {
-    q: 'Can I get a sample before committing to a full run?',
-    a: 'Yes. We can produce a plain structural sample so you can check that your product actually fits, or a printed prototype so you can judge colour and finish. Sample costs are normally credited against the production order that follows.',
-  },
-  {
-    q: 'What artwork files do you need?',
-    a: 'A print-ready PDF or vector AI file works best, with fonts outlined, images at 300 dpi and CMYK colour. We send you a dieline template for your chosen size, and our prepress team checks every file before it goes to press.',
-  },
-  {
-    q: 'Do you help if I do not have artwork yet?',
-    a: 'Yes. Our design team can build packaging artwork from a logo and a brand direction, or adapt existing artwork onto a new dieline. Tell us what you have and we will tell you what is missing.',
-  },
-  {
-    q: 'Which materials can I choose from?',
-    a: 'Paperboard, kraft board, corrugated, rigid greyboard, laminated barrier films, recycled grades and certified compostable stocks. The right choice depends on the weight of your product, how it ships and any food-contact requirement.',
-  },
-  {
-    q: 'Do you ship across the United States?',
-    a: 'Yes, we ship nationwide. Delivery time varies by destination and consignment size, and we confirm the window when your order is approved for production.',
-  },
-  {
-    q: 'Can you produce recyclable or compostable packaging?',
-    a: 'Most of our formats can be produced on recycled board or with recyclable materials, and several can be made certified compostable. Recycled content, kerbside recyclability and compostability are three different claims, so tell us which one you need to support and we will specify a material that genuinely backs it.',
-  },
-  {
-    q: 'Do you print on the inside of boxes?',
-    a: 'Yes, interior printing is available on mailer boxes, folding cartons and rigid boxes. It is most worth the cost when the product does not fill the box, because that is when the customer actually sees the inside face at opening.',
-  },
-  {
-    q: 'How do I start an order?',
-    a: 'Send a quote request with your product dimensions, the quantity you need and your deadline. We reply with a specification, a lead time and a written price, usually within one business day.',
-  },
+  { q: 'What does The Retail Packaging actually make?', a: `We manufacture custom retail packaging to order — ${totals.products} formats across ${totals.categories} categories, covering folding cartons, rigid boxes, corrugated mailers, paper bags, pouches, labels, sleeves, trays and retail displays. Everything is cut to your dimensions rather than pulled from a stock catalogue.` },
+  { q: 'How much does custom packaging cost?', a: `${SITE.priceLine} A small run of digitally printed cartons and a 50,000-unit flexo run sit at opposite ends of that range, which is why we quote each project rather than publishing a price list.` },
+  { q: 'What is the minimum order quantity?', a: 'It depends on the format and the printing route. Digital printing starts as low as 50 pieces for stickers and 100 for mailer boxes. Offset and flexo runs need larger quantities to absorb the plate cost, usually from 1,000 units. Tell us your quantity and we will quote the most efficient way to produce it.' },
+  { q: 'How long does production take?', a: 'Most orders move through production in 8 to 15 business days once artwork is approved, with shipping on top. Hand-assembled rigid boxes and specialty finishes sit at the longer end. We confirm a firm date in writing with every quote.' },
+  { q: 'Can I get a sample before committing to a full run?', a: 'Yes. We can produce a plain structural sample so you can check that your product actually fits, or a printed prototype so you can judge colour and finish. Sample costs are normally credited against the production order that follows.' },
+  { q: 'What artwork files do you need?', a: 'A print-ready PDF or vector AI file works best, with fonts outlined, images at 300 dpi and CMYK colour. We send you a dieline template for your chosen size, and our prepress team checks every file before it goes to press.' },
+  { q: 'Do you help if I do not have artwork yet?', a: 'Yes. Our design team can build packaging artwork from a logo and a brand direction, or adapt existing artwork onto a new dieline. Tell us what you have and we will tell you what is missing.' },
+  { q: 'Which materials can I choose from?', a: 'Paperboard, kraft board, corrugated, rigid greyboard, laminated barrier films, recycled grades and certified compostable stocks. The right choice depends on the weight of your product, how it ships and any food-contact requirement.' },
+  { q: 'Do you ship across the United States?', a: 'Yes, we ship nationwide. Delivery time varies by destination and consignment size, and we confirm the window when your order is approved for production.' },
+  { q: 'Can you produce recyclable or compostable packaging?', a: 'Most of our formats can be produced on recycled board or with recyclable materials, and several can be made certified compostable. Recycled content, kerbside recyclability and compostability are three different claims, so tell us which one you need to support and we will specify a material that genuinely backs it.' },
+  { q: 'Do you print on the inside of boxes?', a: 'Yes, interior printing is available on mailer boxes, folding cartons and rigid boxes. It is most worth the cost when the product does not fill the box, because that is when the customer actually sees the inside face at opening.' },
+  { q: 'How do I start an order?', a: 'Send a quote request with your product dimensions, the quantity you need and your deadline. We reply with a specification, a lead time and a written price, usually within one business day.' },
 ]
 
 const title = 'Custom Retail Packaging Manufacturer | US Made to Order'
-const description =
-  'Custom retail packaging built to your dimensions — boxes, bags, pouches, labels and displays. Printing, finishing and US delivery from one supplier.'
+const description = 'Custom retail packaging built to your dimensions — boxes, bags, pouches, labels and displays. Printing, finishing and US delivery from one supplier.'
 
 const schema = S.graph([
-  S.organization(),
-  S.website(),
-  S.webPage({ path, title, description, image: heroImg ? `${heroImg.base}-1400.webp` : undefined }),
+  S.organization(), S.website(),
+  S.webPage({ path, title, description, image: heroImgA ? `${heroImgA.base}-1400.webp` : undefined }),
   S.breadcrumbs(path, [{ name: 'Home', url: '/' }]),
   S.faqPage(path, faqs),
 ])
 ---
 
 <Base
-  title={title}
-  description={description}
-  path={path}
-  image={heroImg ? `${heroImg.base}-1400.webp` : undefined}
+  title={title} description={description} path={path}
+  image={heroImgA ? `${heroImgA.base}-1400.webp` : undefined}
   imageAlt="Custom printed mailer boxes produced by The Retail Packaging"
   schema={schema}
-  preloadImage={heroImg ? {
-    href: `${heroImg.base}-800.webp`,
-    srcset: `${heroImg.base}-400.webp 400w, ${heroImg.base}-800.webp 800w, ${heroImg.base}-1400.webp 1400w`,
-    sizes: '(max-width: 900px) 78vw, 460px',
+  preloadImage={heroImgA ? {
+    href: `${heroImgA.base}-1400.webp`,
+    srcset: `${heroImgA.base}-800.webp 800w, ${heroImgA.base}-1400.webp 1400w`,
+    sizes: '(max-width: 900px) 96vw, 48vw',
   } : undefined}
 >
-  <!-- ================= HERO ================= -->
+  <!-- ============ HERO: two photo tiles ============ -->
   <section class="hero">
-    <div class="wrap hero-in">
-      <div class="hero-copy">
-        <p class="eyebrow">Custom packaging manufacturing</p>
-        <h1>Retail packaging built around your product, not a stock size</h1>
-        <p class="hero-lede">
-          We manufacture custom retail packaging for brands selling across the United States.
-          You give us the product, the quantity and the deadline. We cut a fresh dieline, print
-          your artwork and deliver a pack that fits.
+    <div class="wrap">
+      <div class="hero-lead">
+        <p class="eyebrow">Made to order · United States</p>
+        <h1>Packaging cut for one product only — yours</h1>
+        <p class="hero-sub">
+          {totals.categories} categories, {totals.products} formats, no stock sizes. Send the
+          dimensions and the quantity; we return a specification, a lead time and a written price.
         </p>
-        <div class="btn-row">
-          <a class="btn btn-primary btn-lg" href="/request-a-quote/">Request a Quote</a>
-          <a class="btn btn-outline btn-lg" href="/custom-packaging-tool/">Build a specification</a>
-        </div>
-        <dl class="hero-stats">
-          <div><dt>{totals.products}</dt><dd>packaging formats in production</dd></div>
-          <div><dt>{totals.categories}</dt><dd>packaging categories</dd></div>
-          <div><dt>From $0.30</dt><dd>per piece at volume</dd></div>
-        </dl>
       </div>
 
-      <div class="hero-visual">
-        <BoxScene
-          eager
-          face={heroImg ? {
-            src: `${heroImg.base}-800.webp`,
-            srcset: `${heroImg.base}-400.webp 400w, ${heroImg.base}-800.webp 800w, ${heroImg.base}-1400.webp 1400w`,
-            alt: 'Custom printed mailer box with full-colour exterior artwork',
-            width: heroImg.width,
-            height: heroImg.height,
-          } : undefined}
-        />
+      <div class="hero-tiles">
+        <a class="tile-photo hero-tile" href={heroA.c.url}>
+          {heroImgA && (
+            <img src={`${heroImgA.base}-1400.webp`}
+              srcset={`${heroImgA.base}-800.webp 800w, ${heroImgA.base}-1400.webp 1400w`}
+              sizes="(max-width: 900px) 96vw, 48vw"
+              width={heroImgA.width} height={heroImgA.height}
+              alt="Custom printed mailer boxes with full-colour exterior artwork"
+              fetchpriority="high" decoding="async" />
+          )}
+          <span class="tile-copy">
+            <span class="k">{heroA.list.length} formats</span>
+            <span class="tt">{heroA.c.name}</span>
+            <span class="sub">Roll-end tuck, interior print, tape-free assembly</span>
+          </span>
+        </a>
+
+        <a class="tile-photo hero-tile" href={heroB.c.url}>
+          {heroImgB && (
+            <img src={`${heroImgB.base}-1400.webp`}
+              srcset={`${heroImgB.base}-800.webp 800w, ${heroImgB.base}-1400.webp 1400w`}
+              sizes="(max-width: 900px) 96vw, 48vw"
+              width={heroImgB.width} height={heroImgB.height}
+              alt="Custom cosmetic cartons printed with brand artwork"
+              loading="eager" decoding="async" />
+          )}
+          <span class="tile-copy">
+            <span class="k">{heroB.list.length} formats</span>
+            <span class="tt">{heroB.c.name}</span>
+            <span class="sub">Fine detail print, ingredient panel space, foil and emboss</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-ink btn-lg" href="/request-a-quote/">Request a quote</a>
+        <a class="btn btn-outline btn-lg" href="/custom-packaging-tool/">Build a specification</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= TRUST STRIP ================= -->
-  <section class="section-tight trust">
+  <!-- ============ TRUST STRIP (only verifiable claims) ============ -->
+  <div class="trust">
     <div class="wrap trust-in">
-      {[
-        { t: 'Made to order', d: 'Every dieline is cut for your product. No stock sizes forced onto your packaging.' },
-        { t: 'One supplier end to end', d: 'Structure, print and finishing happen in the same run, so nothing ships between vendors.' },
-        { t: 'Written specifications', d: 'You get board grade, dimensions, print method and lead time in writing before you commit.' },
-        { t: 'US-wide delivery', d: 'We ship to all 50 states and confirm the delivery window with your order approval.' },
-      ].map((x, i) => (
-        <div class={`trust-item reveal reveal-d${i % 4}`}>
-          <h2 class="trust-t">{x.t}</h2>
-          <p>{x.d}</p>
+      <span>Made to order, never stock</span>
+      <span>{totals.products} formats in production</span>
+      <span>Written specification with every price</span>
+      <span>Delivery to all 50 states</span>
+      <span>From $0.30 per piece at volume</span>
+    </div>
+  </div>
+
+  <!-- ============ LOW MINIMUM RAIL ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Short runs</p>
+          <h2>Low minimum, quick turnaround</h2>
         </div>
-      ))}
+        <a class="sec-link" href="/sitemap/">All {totals.products} formats</a>
+      </div>
+      <div class="rail rail-bleed">
+        {lowMin.map((p, i) => <ProductCard product={p} loading={i < 4 ? 'eager' : 'lazy'} showCategory />)}
+      </div>
     </div>
   </section>
 
-  <!-- ================= CATEGORIES ================= -->
+  <!-- ============ CATEGORY TILES ============ -->
   <section class="section section-sunken">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Packaging categories</p>
-        <h2>Major custom packaging categories</h2>
-        <p class="lede">
-          Each category below is a manufacturing route rather than a product listing. Board-based
-          formats, flexible films, pressure-sensitive labels and sewn goods are all produced
-          differently, and the category you start in shapes the specification you end up with.
-        </p>
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Categories</p>
+          <h2>Eight ranges that carry most of the volume</h2>
+        </div>
+        <a class="sec-link" href="/sitemap/">All {totals.categories} categories</a>
       </div>
-      <div class="grid g-4">
-        {featuredCats.map(({ c, list }, i) => (
+      <div class="cat-grid">
+        {featured.map(({ c, list }, i) => (
           <div class={`reveal reveal-d${i % 4}`}>
             <CategoryCard category={c} count={list.length} sample={list[0]} />
           </div>
         ))}
       </div>
-      <p class="after-grid">
-        The complete range covers {totals.categories} categories — the
-        <a href="/sitemap/">full packaging category index</a> lists every one with its product count.
-      </p>
     </div>
   </section>
 
-  <!-- ================= SELECTED PRODUCTS ================= -->
+  <!-- ============ INDUSTRY ============ -->
   <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Frequently ordered</p>
-        <h2>Packaging formats buyers order most</h2>
-        <p class="lede">
-          These eight formats account for a large share of the quotes we receive. Each one is still
-          made to order, so the size and substrate shift with the product going inside.
-        </p>
-      </div>
-      <div class="grid g-4">
-        {showcase.map((p, i) => (
-          <div class={`reveal reveal-d${i % 4}`}>
-            <ProductCard product={p} showCategory />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= INDUSTRIES ================= -->
-  <section class="section section-ink">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">By industry</p>
-        <h2>Packaging shaped by what you sell</h2>
-        <p class="lede">
-          A candle, a supplement bottle and a folded t-shirt have almost nothing in common as
-          packaging problems. What follows is what actually drives the specification in each sector.
-        </p>
-      </div>
-      <div class="grid g-3">
-        {industryCards.map((x, i) => (
-          <a class={`ind-card tile tile-ink reveal reveal-d${i % 3}`} href={x.url}>
-            <h3>{x.i.name}</h3>
-            <p>{x.i.blurb}</p>
-            <span class="ind-link">{x.label}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= MATERIALS + PRINTING ================= -->
-  <section class="section">
-    <div class="wrap two-col">
-      <div>
-        <p class="eyebrow">Capabilities</p>
-        <h2>Materials and printing that match the run</h2>
-        <p class="lede">
-          The cheapest packaging is rarely the cheapest overall. A box that fails in transit costs
-          more than the board you saved, and a print method chosen for the wrong run length wastes
-          the setup you paid for.
-        </p>
-        <p class="muted">
-          For short runs, digital printing removes plate costs entirely and turns around in days.
-          Past roughly 2,500 units, offset lithography and flexography take over on unit cost. Our
-          <a href="/resources/printing-methods-guide/">comparison of packaging printing methods</a>
-          sets out where each one stops making sense.
-        </p>
-        <div class="btn-row">
-          <a class="btn btn-outline" href="/materials/">Material options</a>
-          <a class="btn btn-ghost" href="/printing-options/">Printing options</a>
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">By industry</p>
+          <h2>What you sell decides the specification</h2>
         </div>
       </div>
-      <div class="cap-grid">
-        {[
-          { h: 'Paperboard', d: '12pt to 18pt SBS and kraft board for folding cartons, sleeves and trays.' },
-          { h: 'Corrugated', d: 'E, B and BC double-wall flutes for mailers, shippers and retail displays.' },
-          { h: 'Rigid greyboard', d: '1.5 mm to 2 mm hand-wrapped construction for presentation packaging.' },
-          { h: 'Barrier films', d: 'Laminated and mono-material structures for pouches and flexible packs.' },
-          { h: 'Offset and flexo', d: 'Volume printing with tight colour control across long runs.' },
-          { h: 'Digital press', d: 'Short runs, versioning and prototypes without plate costs.' },
-        ].map((x, i) => (
-          <div class={`cap tile reveal reveal-d${i % 3}`}>
-            <h3>{x.h}</h3>
-            <p>{x.d}</p>
-          </div>
-        ))}
+      <p class="lede" style="margin-bottom:var(--s-10)">
+        A candle, a supplement bottle and a folded shirt have almost nothing in common as packaging
+        problems. These are the four sectors we quote most, and what actually drives each one.
+      </p>
+      <div class="ind-grid">
+        {industryTiles.map((x, i) => {
+          const c = categories.find((k) => k.slug === x.slug)!
+          const s = get(x.sample) ?? productsIn(x.slug)[0]
+          return (
+            <a class={`ind reveal reveal-d${i % 4}`} href={c.url}>
+              <div class="ind-media">
+                {s?.images?.[0] && (
+                  <img src={`${s.images[0].base}-400.webp`}
+                    srcset={`${s.images[0].base}-400.webp 400w, ${s.images[0].base}-800.webp 800w`}
+                    sizes="(max-width:620px) 92vw, 300px"
+                    width={s.images[0].width} height={s.images[0].height}
+                    loading="lazy" decoding="async"
+                    alt={`${s.name} produced for ${x.i.name.toLowerCase()} brands`} />
+                )}
+              </div>
+              <div class="ind-body">
+                <h3>{x.i.name}</h3>
+                <p>{x.i.blurb}</p>
+                <span class="ind-go">{c.name} — {productsIn(x.slug).length} formats</span>
+              </div>
+            </a>
+          )
+        })}
       </div>
     </div>
   </section>
 
-  <!-- ================= PROCESS ================= -->
+  <!-- ============ FREQUENTLY SPECIFIED RAIL ============ -->
   <section class="section section-sunken">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">How it works</p>
-        <h2>The custom packaging process, start to finish</h2>
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Frequently specified</p>
+          <h2>Formats buyers ask for most</h2>
+        </div>
       </div>
-      <div class="steps grid g-3">
-        {[
-          { h: 'Send your requirement', d: 'Product dimensions, quantity, deadline. If you only have the product in front of you, measure it and tell us what it weighs.' },
-          { h: 'We specify and quote', d: 'You get a board grade, a structure, a print method, a lead time and a written price. If a cheaper route exists, we say so.' },
-          { h: 'Dieline and artwork', d: 'We send a dieline template sized to your product. Our prepress team checks your file before anything goes to press.' },
-          { h: 'Proof approval', d: 'A digital proof, or a physical sample if you want to check fit and finish in the hand before production runs.' },
-          { h: 'Production', d: 'Printing, die-cutting, finishing and assembly. Most orders complete in 8 to 15 business days after approval.' },
-          { h: 'Delivery', d: 'Shipped flat or assembled depending on the format, to a single address or split across your fulfilment sites.' },
-        ].map((x, i) => (
-          <div class={`step reveal reveal-d${i % 3}`}>
-            <h3>{x.h}</h3>
-            <p class="muted">{x.d}</p>
-          </div>
-        ))}
-      </div>
-      <p class="after-grid">
-        The <a href="/how-it-works/">full breakdown of our packaging production process</a>
-        covers approvals, tooling and what happens if a proof needs changing.
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= TOOL PREVIEW ================= -->
-  <section class="section tool-strip">
-    <div class="wrap two-col reverse">
-      <div class="tool-visual">
-        <BoxScene size="md" label="Configure your box" />
-      </div>
-      <div>
-        <p class="eyebrow">Interactive</p>
-        <h2>Build your specification before you talk to us</h2>
-        <p class="lede">
-          The packaging design tool walks through category, box style, dimensions, material,
-          printing, colours, finish and add-ons, then sends the whole configuration with your quote
-          request so nothing gets lost in translation.
-        </p>
-        <ul class="tick-list">
-          <li>Live preview as you change material and finish</li>
-          <li>Saves your draft locally so you can come back to it</li>
-          <li>Submits the full spec with your artwork attached</li>
-          <li>Works on a phone as a step-by-step flow</li>
-        </ul>
-        <a class="btn btn-primary btn-lg" href="/custom-packaging-tool/">Open the packaging tool</a>
+      <div class="rail rail-bleed">
+        {rail.map((p) => <ProductCard product={p} showCategory />)}
       </div>
     </div>
   </section>
 
-  <!-- ================= SUSTAINABILITY ================= -->
-  <section class="section section-forest">
+  <!-- ============ PROCESS ============ -->
+  <section class="section">
     <div class="wrap two-col">
       <div>
-        <p class="eyebrow">Sustainable options</p>
-        <h2>Environmental claims you can actually defend</h2>
+        <p class="eyebrow">How it works</p>
+        <h2>Six stages, no surprises</h2>
         <p class="lede">
-          Recycled content, kerbside recyclability and certified compostability are three different
-          things, and brands get into trouble by treating them as one. We specify the material that
-          matches the claim you intend to print on the pack.
+          The only variable is how long each stage takes, and that depends almost entirely on how
+          complete the information is at the start.
         </p>
-        <p>
-          Uncoated kraft, recycled board, mono-material films and PLA-lined stocks each behave
-          differently on a filling line and at end of life. Our guide to
-          <a href="/resources/sustainable-packaging-guide/">choosing sustainable packaging materials</a>
-          compares them honestly, including where each one falls short.
-        </p>
-        <a class="btn btn-gold" href="/sustainability/">Our approach to sustainability</a>
+        <a class="btn btn-outline" href="/how-it-works/" style="margin-top:var(--s-8)">The full process</a>
       </div>
-      <div class="grid" style="gap:var(--s-4)">
+      <div class="steps">
         {[
-          { h: 'Recycled board', d: 'Post-consumer recycled content in folding cartons and corrugated, with a slightly warmer base tone.' },
-          { h: 'Mono-material film', d: 'Recyclable single-polymer pouches that avoid the mixed-laminate problem.' },
-          { h: 'Certified compostable', d: 'PLA and PBAT structures with the certification documentation to back the on-pack claim.' },
-          { h: 'Plastic-free finishes', d: 'Water-based coatings and paper-only constructions where a laminate would break recyclability.' },
-        ].map((x, i) => (
-          <div class={`tile tile-ink reveal reveal-d${i % 4}`}>
-            <h3 style="font-size:var(--fs-md)">{x.h}</h3>
-            <p style="margin-top:var(--s-2)">{x.d}</p>
+          { h: 'Requirement', d: 'Dimensions, weight, quantity, deadline, destination.' },
+          { h: 'Specification and quote', d: 'Board grade, structure, print method, lead time, written price.' },
+          { h: 'Dieline', d: 'A template cut to your product, not a stock rectangle.' },
+          { h: 'Prepress and proof', d: 'Bleed, resolution, fonts and cut lines checked before plate.' },
+          { h: 'Production', d: 'Print, die-cut, finish and assemble. 8 to 15 business days.' },
+          { h: 'Delivery', d: 'Flat or assembled, to one address or split across sites.' },
+        ].map((x) => (
+          <div class="step reveal">
+            <h3 class="step-h">{x.h}</h3>
+            <p class="muted small">{x.d}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ================= WHY US ================= -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Why buyers choose us</p>
-        <h2>What working with The Retail Packaging looks like</h2>
+  <!-- ============ SUSTAINABILITY ============ -->
+  <section class="section section-sand">
+    <div class="wrap two-col">
+      <div>
+        <p class="eyebrow">Materials</p>
+        <h2>Claims you can defend</h2>
+        <p class="lede">
+          Recycled content, kerbside recyclability and certified compostability are three separate
+          claims with three separate evidence requirements. Brands get into trouble by treating them
+          as one.
+        </p>
+        <p class="muted">
+          Tell us which claim you intend to print on the pack and we specify a material that supports
+          it — or say plainly that it does not exist at your price point. Our
+          {' '}<a href="/resources/sustainable-packaging-guide/">comparison of sustainable packaging materials</a>
+          {' '}sets out where each option falls short.
+        </p>
+        <a class="btn btn-outline" href="/sustainability/" style="margin-top:var(--s-8)">Our approach</a>
       </div>
-      <div class="grid g-3">
-        {[
-          { h: 'You get told when a cheaper option exists', d: 'If a lighter board or a shorter run would serve you better, we say so at quoting rather than after the invoice.' },
-          { h: 'Structural advice before you commit', d: 'We check that the pack survives the shipping route it will actually take, not just that it looks right on a screen.' },
-          { h: 'One point of contact', d: 'The same person handles your specification, proof and production, so you are not re-explaining the job.' },
-          { h: 'Prepress that catches problems', d: 'Bleed, trapping, resolution and cut-line issues are found before the plates, not after 5,000 units are printed.' },
-          { h: 'Honest lead times', d: 'The date on your quote is the date we work to. If something slips, you hear it from us first.' },
-          { h: 'Repeat orders stay consistent', d: 'Your dieline, board grade and colour targets are held on file, so the second run matches the first.' },
-        ].map((x, i) => (
-          <div class={`tile reveal reveal-d${i % 3}`}>
-            <h3 style="font-size:var(--fs-md)">{x.h}</h3>
-            <p class="muted" style="margin-top:var(--s-2);font-size:var(--fs-sm)">{x.d}</p>
-          </div>
-        ))}
+      <div>
+        <div class="table-scroll">
+          <table class="data">
+            <caption>Environmental options and what they really cost</caption>
+            <thead><tr><th scope="col">Option</th><th scope="col">Cost vs conventional</th><th scope="col">Recovery route</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Recycled paperboard</th><td>0–5% higher</td><td>Kerbside, widely accepted</td></tr>
+              <tr><th scope="row">Aqueous coating</th><td>Broadly neutral</td><td>Keeps paper recyclable</td></tr>
+              <tr><th scope="row">Mono-material film</th><td>10–20% higher</td><td>Store drop-off only</td></tr>
+              <tr><th scope="row">Certified compostable</th><td>20–40% higher</td><td>Industrial facilities only</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= QUOTE FORM ================= -->
+  <!-- ============ QUOTE ============ -->
   <section class="section section-sunken">
     <div class="wrap two-col">
       <div>
         <p class="eyebrow">Get a price</p>
-        <h2>Tell us what you need packaged</h2>
+        <h2>Tell us what you are packing</h2>
         <p class="lede">
           Most quotes go back the same working day. If your requirement needs a structural mock-up
-          first, we tell you that instead of guessing at a number.
+          first, we say so instead of guessing at a number.
         </p>
-        <p class="muted">{SITE.priceLine}</p>
-        <ul class="tick-list">
+        <ul class="tick-list" style="margin-top:var(--s-6)">
           <li>No obligation and no account required</li>
           <li>Written specification with every price</li>
-          <li>Artwork upload up to 5 files</li>
+          <li>Artwork upload up to five files</li>
         </ul>
+        <p class="muted small" style="margin-top:var(--s-6)">{SITE.priceLine}</p>
       </div>
       <QuoteForm id="home-quote" source="homepage" title="Request a quote" />
     </div>
   </section>
 
-  <Faqs faqs={faqs} title="Custom packaging questions, answered" intro="The questions buyers ask most before placing a first order." />
+  <Faqs faqs={faqs} title="Questions buyers ask first" />
 
   <CtaBand />
 </Base>
 
 <style>
   /* ---------- hero ---------- */
-  .hero {
-    background:
-      radial-gradient(1100px 520px at 88% -8%, rgba(29, 97, 68, 0.09), transparent 62%),
-      linear-gradient(180deg, var(--ivory) 0%, var(--ivory-deep) 100%);
-    border-bottom: 1px solid var(--border);
-    padding-block: clamp(2.5rem, 1.6rem + 4vw, 5.5rem);
-    overflow: hidden;
+  .hero { padding-block: clamp(2.25rem, 1.5rem + 3vw, 4.5rem) clamp(2rem, 1.5rem + 2vw, 3.5rem); }
+  .hero-lead { max-width: 30ch; margin-bottom: clamp(1.75rem, 1rem + 2.5vw, 3rem); }
+  .hero h1 { max-width: 15ch; }
+  .hero-sub { font-size: var(--fs-md); color: var(--text-muted); max-width: 52ch; margin-top: var(--s-6); }
+
+  .hero-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4); }
+  @media (max-width: 780px) { .hero-tiles { grid-template-columns: 1fr; } .hero-lead { max-width: none; } }
+  .hero-tile { aspect-ratio: 5 / 4; }
+  @media (max-width: 780px) { .hero-tile { aspect-ratio: 4 / 3; } }
+  .hero-tile img { width: 100%; height: 100%; object-fit: cover; }
+  .tile-copy .tt {
+    display: block; margin-top: var(--s-2);
+    font-family: var(--font-display); font-size: var(--fs-2xl);
+    line-height: 1.04; letter-spacing: -0.025em; color: #fff;
   }
-  .hero-in {
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    gap: clamp(2rem, 1rem + 4vw, 5rem);
-    align-items: center;
-  }
-  @media (max-width: 920px) {
-    .hero-in { grid-template-columns: 1fr; }
-    .hero-visual { order: -1; }
-  }
-  .hero h1 { max-width: 16ch; }
-  .hero-lede {
-    font-size: var(--fs-md);
-    color: var(--text-muted);
-    max-width: 52ch;
-    margin-block: var(--s-5) var(--s-8);
-  }
-  .hero-stats {
-    display: flex; flex-wrap: wrap; gap: var(--s-8);
-    margin-top: var(--s-10); padding-top: var(--s-6);
-    border-top: 1px solid var(--border-strong);
-  }
-  .hero-stats div { display: flex; flex-direction: column; }
-  .hero-stats dt { font-family: var(--font-display); font-size: var(--fs-2xl); color: var(--forest); line-height: 1; }
-  .hero-stats dd { margin: 0.35rem 0 0; font-size: var(--fs-xs); color: var(--text-faint); max-width: 15ch; }
+  .tile-copy .sub { display: block; margin-top: var(--s-2); font-size: var(--fs-sm); color: rgba(255,255,255,.8); }
+
+  .hero-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-top: var(--s-8); }
 
   /* ---------- trust ---------- */
-  .trust { background: var(--paper); border-bottom: 1px solid var(--border); }
-  .trust-in { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-8); }
-  @media (max-width: 1000px) { .trust-in { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-6); } }
-  @media (max-width: 540px) { .trust-in { grid-template-columns: 1fr; } }
-  .trust-t { font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 700; letter-spacing: 0.02em; margin-bottom: var(--s-2); }
-  .trust-item p { font-size: var(--fs-sm); color: var(--text-muted); }
+  .trust { background: var(--ink-deep); color: rgba(247,243,236,.72); }
+  .trust-in {
+    display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-8);
+    padding-block: var(--s-4);
+    font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+
+  /* ---------- section heads ---------- */
+  .sec-head {
+    display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between;
+    gap: var(--s-5); margin-bottom: var(--s-8);
+    border-top: 1px solid var(--ink); padding-top: var(--s-5);
+  }
+  .sec-head h2 { font-size: var(--fs-2xl); }
+  .sec-link {
+    font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 2px; white-space: nowrap;
+  }
+  .sec-link:hover { color: var(--ox); border-color: var(--ox); }
+
+  /* ---------- category grid ---------- */
+  .cat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-4); }
+  @media (max-width: 1024px) { .cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px)  { .cat-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- industry ---------- */
+  .ind-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-4); }
+  @media (max-width: 1024px) { .ind-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px)  { .ind-grid { grid-template-columns: 1fr; } }
+  .ind {
+    display: flex; flex-direction: column; text-decoration: none; color: inherit;
+    background: var(--paper); border: 1px solid var(--border); border-radius: var(--r-lg);
+    overflow: hidden; transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+  }
+  .ind:hover { border-color: var(--rule-strong); transform: translateY(-2px); color: inherit; }
+  .ind-media { aspect-ratio: 3 / 2; background: var(--bone-deep); overflow: hidden; }
+  .ind-media img { width: 100%; height: 100%; object-fit: cover; }
+  .ind-body { padding: var(--s-5); display: flex; flex-direction: column; gap: var(--s-2); flex: 1; }
+  .ind-body h3 { font-size: var(--fs-lg); }
+  .ind-body p { font-size: var(--fs-sm); color: var(--text-muted); }
+  .ind-go {
+    margin-top: auto; padding-top: var(--s-4);
+    font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ox);
+  }
 
   /* ---------- shared ---------- */
-  .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 1rem + 4vw, 4.5rem); align-items: center; }
-  @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } .two-col.reverse > *:first-child { order: 1; } }
-  .two-col h2 { margin-bottom: var(--s-4); }
-  .two-col .lede { margin-bottom: var(--s-4); }
-  .two-col .btn-row { margin-top: var(--s-6); }
-
-  .after-grid { margin-top: var(--s-8); font-size: var(--fs-sm); color: var(--text-muted); max-width: 62ch; }
-
-  .cap-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4); }
-  @media (max-width: 520px) { .cap-grid { grid-template-columns: 1fr; } }
-  .cap h3 { font-family: var(--font-body); font-size: var(--fs-sm); font-weight: 700; margin-bottom: var(--s-2); }
-  .cap p { font-size: var(--fs-sm); color: var(--text-muted); }
-
-  .ind-card { text-decoration: none; display: block; transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease); }
-  .ind-card:hover { border-color: rgba(255,255,255,.28); transform: translateY(-3px); }
-  .ind-card h3 { font-size: var(--fs-lg); margin-bottom: var(--s-3); }
-  .ind-card p { font-size: var(--fs-sm); }
-  .ind-link { display: block; margin-top: var(--s-4); font-size: var(--fs-xs); color: var(--champagne-soft); font-weight: 600; }
-
-  .tick-list { list-style: none; padding: 0; margin: var(--s-5) 0; display: grid; gap: var(--s-2); }
-  .tick-list li { position: relative; padding-left: 1.75rem; font-size: var(--fs-sm); color: var(--text-muted); }
-  .tick-list li::before {
-    content: ''; position: absolute; left: 0; top: 0.45em;
-    width: 0.95rem; height: 0.5rem;
-    border-left: 2px solid var(--forest-bright); border-bottom: 2px solid var(--forest-bright);
-    transform: rotate(-45deg);
-  }
-  .section-forest .tick-list li, .section-ink .tick-list li { color: rgba(246,243,237,.82); }
-  .section-forest .tick-list li::before, .section-ink .tick-list li::before { border-color: var(--champagne-soft); }
-
-  .tool-strip { background: linear-gradient(180deg, var(--paper), var(--ivory)); }
-  .tool-visual { display: grid; place-items: center; }
+  .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: start; }
+  @media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+  .two-col h2 { margin-bottom: var(--s-5); font-size: var(--fs-2xl); }
+  .step-h { font-family: var(--font-body); font-size: var(--fs-md); font-weight: 600; letter-spacing: 0; }
 </style>

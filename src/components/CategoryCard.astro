@@ -1,38 +1,33 @@
 ---
 import type { Category, Product } from '../lib/catalog'
-export interface Props { category: Category; count: number; sample?: Product; loading?: 'lazy' | 'eager' }
-const { category: c, count, sample, loading = 'lazy' } = Astro.props
+export interface Props { category: Category; count: number; sample?: Product; loading?: 'lazy' | 'eager'; tall?: boolean }
+const { category: c, count, sample, loading = 'lazy', tall = false } = Astro.props
 const img = sample?.images?.[0]
 ---
-<article class="card card-hover">
-  <a class="card-link" href={c.url}>
-    <div class="card-media">
-      {img ? (
-        <img
-          src={`${img.base}-400.webp`}
-          srcset={`${img.base}-400.webp 400w, ${img.base}-800.webp 800w`}
-          sizes="(max-width: 620px) 92vw, (max-width: 1024px) 45vw, 300px"
-          width={img.width} height={img.height}
-          loading={loading} decoding="async"
-          alt={`${sample?.name} representing the ${c.name.toLowerCase()} range`}
-        />
-      ) : <div class="ph" aria-hidden="true"></div>}
-      <span class="pill">{count} formats</span>
-    </div>
-    <div class="card-body">
-      <h3 class="card-title">{c.name}</h3>
-      <span class="card-foot">
-        See the range
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
-      </span>
-    </div>
-  </a>
-</article>
-
+<a class={`tile-photo cat-tile${tall ? ' is-tall' : ''}`} href={c.url}>
+  {img ? (
+    <img
+      src={`${img.base}-800.webp`}
+      srcset={`${img.base}-400.webp 400w, ${img.base}-800.webp 800w`}
+      sizes="(max-width: 620px) 92vw, (max-width: 1024px) 45vw, 420px"
+      width={img.width} height={img.height}
+      loading={loading} decoding="async"
+      alt={`${sample?.name} representing the ${c.name.toLowerCase()} range`}
+    />
+  ) : <div class="ph" aria-hidden="true"></div>}
+  <span class="tile-copy">
+    <span class="k">{count} formats</span>
+    <span class="t">{c.name}</span>
+  </span>
+</a>
 <style>
-  .card-media { aspect-ratio: 3 / 2; }
-  .pill { position: absolute; left: var(--s-3); top: var(--s-3); background: rgba(20,22,26,.78);
-    color: #fff; font-size: 0.6875rem; font-weight: 600; letter-spacing: .03em;
-    padding: .28rem .6rem; border-radius: var(--r-pill); backdrop-filter: blur(4px); }
-  .ph { height: 100%; background: var(--ivory-deep); }
+  .cat-tile { aspect-ratio: 4 / 3; }
+  .cat-tile.is-tall { aspect-ratio: 3 / 4; }
+  .cat-tile img { width:100%; height:100%; object-fit:cover; }
+  .ph { width:100%; height:100%; background:var(--bone-deep); }
+  .tile-copy .t {
+    display:block; margin-top:var(--s-2);
+    font-family:var(--font-display); font-size:var(--fs-xl);
+    line-height:1.1; letter-spacing:-0.02em; color:#fff;
+  }
 </style>
