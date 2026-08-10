@@ -1,6 +1,7 @@
 import type { Product } from './catalog'
 import { hash } from './catalog'
 import type { PSection, Trait } from './product-traits'
+import { factsFor } from '../data/products'
 
 /**
  * Section copy for a product page.
@@ -27,6 +28,8 @@ interface Ctx {
   t: Set<Trait>
   f: Product['form']
   cat: string
+  /** Per-product facts, where they have been written. */
+  k?: ReturnType<typeof factsFor>
 }
 
 const has = (c: Ctx, ...traits: Trait[]) => traits.some((x) => c.t.has(x))
@@ -34,7 +37,16 @@ const has = (c: Ctx, ...traits: Trait[]) => traits.some((x) => c.t.has(x))
 /* ------------------------------------------------------------------ overview */
 
 function overview(c: Ctx): Block {
-  const { p, f } = c
+  const { p, f, k } = c
+  if (k) {
+    return {
+      h: `What ${p.name.toLowerCase()} have to cope with`,
+      body: [
+        `${p.name} hold ${k.holds}. That is the starting point for the specification, because ${k.detail.charAt(0).toLowerCase()}${k.detail.slice(1)}`,
+        `In service they are used for ${k.context}.`,
+      ],
+    }
+  }
   const heads = [
     `What ${p.name} are, and where they work`,
     `How ${p.name} are built`,
@@ -84,7 +96,15 @@ function overview(c: Ctx): Block {
 /* ----------------------------------------------------------------- use cases */
 
 function useCases(c: Ctx): Block {
-  const { p, f } = c
+  const { p, f, k } = c
+  if (k) {
+    const items = [k.context.charAt(0).toUpperCase() + k.context.slice(1), ...f.applications.slice(0, 3)]
+    return {
+      h: `Where ${p.name.toLowerCase()} are actually used`,
+      body: [`${p.name} are specified for ${k.context}. ${k.detail}`],
+      list: { items },
+    }
+  }
   const items = f.applications.slice()
   if (has(c, 'foodContact')) items.unshift('Counter service and takeaway')
   if (has(c, 'shipping')) items.unshift('Direct-to-consumer despatch')
@@ -107,7 +127,13 @@ function useCases(c: Ctx): Block {
 /* ----------------------------------------------------------------- structure */
 
 function structure(c: Ctx): Block {
-  const { p, f } = c
+  const { p, f, k } = c
+  if (k) {
+    return {
+      h: `The build detail that decides ${p.name.toLowerCase()}`,
+      body: [k.detail, `${p.name} are ${f.construction}.`],
+    }
+  }
   const body = [`${p.name} are ${f.construction}.`]
   if (has(c, 'luxury'))
     body.push('Rigid construction is hand-assembled rather than machine-glued, which is why it costs more and takes longer than a folding carton. It also means the wrap, the corner finish and the interior lining are all separate decisions with separate costs.')
@@ -123,7 +149,14 @@ function structure(c: Ctx): Block {
 /* ----------------------------------------------------------------- materials */
 
 function materials(c: Ctx): Block {
-  const { p, f } = c
+  const { p, f, k } = c
+  if (k?.spec) {
+    return {
+      h: `The substrate for ${p.name.toLowerCase()}`,
+      body: [k.spec, `The options we would consider for this format are below; ${k.detail.charAt(0).toLowerCase()}${k.detail.slice(1)}`],
+      list: { items: f.materials },
+    }
+  }
   const lead = has(c, 'foodContact')
     ? `${f.materials.slice(0, 3).join(', ')} cover most food-service orders in this format. Where the pack touches food directly we specify a food-contact compliant board and ink set, which narrows the options but not by much.`
     : has(c, 'eco')
@@ -183,7 +216,13 @@ function materialTable(c: Ctx): Block {
 /* ------------------------------------------------------------------ printing */
 
 function printing(c: Ctx): Block {
-  const { p, f } = c
+  const { p, f, k } = c
+  if (k?.press) {
+    return {
+      h: `Printing ${p.name.toLowerCase()}`,
+      body: [k.press, `${f.printing.join(', ')} are all available for this format. Run length usually decides which is cheapest: digital removes the plate cost on short quantities, offset and flexo overtake it at volume.`],
+    }
+  }
   const lead = has(c, 'branded', 'cosmetic', 'luxury')
     ? `${f.printing.join(', ')} are all available, and on a presentation-led product the choice affects appearance as well as cost. Offset holds a spot colour tightly across a run; digital has a wider tolerance but removes the plate cost entirely.`
     : `${f.printing.join(', ')} are all available. Run length is usually the deciding factor: digital removes the plate cost on short quantities, while offset and flexographic printing become cheaper per unit once volumes climb.`
@@ -198,7 +237,14 @@ function printing(c: Ctx): Block {
 /* ------------------------------------------------------------------ finishes */
 
 function finishes(c: Ctx): Block {
-  const { p, f } = c
+  const { p, f, k } = c
+  if (k?.press) {
+    return {
+      h: `Finishing ${p.name.toLowerCase()}`,
+      body: [k.press, 'Each finish below is a separate pass on the press or the finishing line, which is why they are quoted individually rather than bundled.'],
+      list: { items: f.finishes },
+    }
+  }
   const lead = has(c, 'luxury')
     ? 'Each applied finish is a separate production pass, which is why a short high-finish run can take longer than a long plain one. We quote them line by line so you can see what each is costing.'
     : pick([
@@ -227,7 +273,16 @@ function inserts(c: Ctx): Block {
 /* -------------------------------------------------------------------- sizing */
 
 function sizing(c: Ctx): Block {
-  const { p, f } = c
+  const { p, f, k } = c
+  if (k) {
+    return {
+      h: `Sizing ${p.name.toLowerCase()}`,
+      body: [
+        k.sizeNote,
+        `Send the contents rather than a box size. ${k.buyerNote}`,
+      ],
+    }
+  }
   const body = [f.sizing]
   body.push(
     has(c, 'shipping')
@@ -246,6 +301,13 @@ function sizing(c: Ctx): Block {
 /* ---------------------------------------------------------------- protection */
 
 function protection(c: Ctx): Block {
+  const { p, k } = c
+  if (k) {
+    return {
+      h: `How ${p.name.toLowerCase()} fail, and what prevents it`,
+      body: [k.failure, k.detail],
+    }
+  }
   return {
     h: 'What actually causes damage',
     body: [
@@ -289,6 +351,16 @@ function shipping(c: Ctx): Block {
 /* ------------------------------------------------------------------- storage */
 
 function storage(c: Ctx): Block {
+  const { p, k } = c
+  if (k) {
+    return {
+      h: `Holding ${p.name.toLowerCase()} before service`,
+      body: [
+        k.failure,
+        'Paperboard also absorbs moisture from the air until it equalises with its surroundings. If stock sits more than about six weeks in unconditioned space, a moisture-resistant coating is worth its small premium.',
+      ],
+    }
+  }
   return {
     h: 'Storing stock before you use it',
     body: [
@@ -427,9 +499,12 @@ function mistakes(c: Ctx): Block {
             'Paying for a finish that only reads in the hand on a product seen from a metre away.',
             'Ordering a single large run before demand is proven.',
           ]
+  const { p, k } = c
   return {
-    h: 'Mistakes worth avoiding',
-    body: ['These come up often enough to be worth stating plainly.'],
+    h: k ? `What buyers get wrong with ${p.name.toLowerCase()}` : 'Mistakes worth avoiding',
+    body: k
+      ? [k.buyerNote, 'The rest of these come up often enough across the format to be worth stating plainly.']
+      : ['These come up often enough to be worth stating plainly.'],
     list: { items },
   }
 }
@@ -447,5 +522,5 @@ const BUILDERS: Record<PSection, ((c: Ctx) => Block) | null> = {
 export function buildSection(key: PSection, p: Product, t: Set<Trait>): Block | null {
   const fn = BUILDERS[key]
   if (!fn) return null
-  return fn({ p, t, f: p.form, cat: p.categorySlug })
+  return fn({ p, t, f: p.form, cat: p.categorySlug, k: factsFor(p.slug) })
 }

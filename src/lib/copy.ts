@@ -10,6 +10,7 @@
 import { pick, pickN, hash, type Product } from './catalog'
 import type { Category } from './catalog'
 import { INDUSTRIES, industriesFor } from './taxonomy'
+import { factsFor } from '../data/products'
 
 export const PRICE_LINE =
   'Prices start from $0.30 per piece for large-volume orders. Final pricing depends on size, material, printing, finishes, and quantity.'
@@ -86,27 +87,40 @@ export function productSummary(p: Product): string {
 }
 
 /** Why this product, expressed as concrete benefits tied to the format. */
+/**
+ * Four short tiles. Where per-product facts exist these summarise what is
+ * specific to the product; the generic fallback repeated whatever the
+ * materials, printing and finishes sections had already said on the same page.
+ */
 export function productBenefits(p: Product): { title: string; text: string }[] {
   const f = p.form
-  const out: { title: string; text: string }[] = [
+  const k = factsFor(p.slug)
+  if (k) {
+    return [
+      { title: 'Sized to the contents', text: k.sizeNote },
+      { title: 'The failure we design out', text: k.failure },
+      { title: 'Where it has to work', text: `Specified for ${k.context}.` },
+      { title: 'The detail that decides it', text: k.detail },
+    ]
+  }
+  return [
     {
       title: 'Built to your dimensions',
-      text: `${f.sizing} We cut a fresh dieline for your product rather than forcing it into a stock size.`,
+      text: 'We cut a fresh dieline for your product rather than forcing it into a stock size, so the fit is yours rather than an approximation.',
     },
     {
       title: 'Substrate matched to the job',
-      text: `You can specify ${f.materials.slice(0, 3).join(', ').toLowerCase()} or another stock we carry, based on the weight of the product and how far it travels.`,
+      text: `Stock is chosen from the weight of the product and how far it travels, not from a default. ${f.materials.length} options are available for this format.`,
     },
     {
-      title: 'Printing that suits the surface',
-      text: `${f.printing.join(', ')} are all available for this format, and we will point you to the one that fits your run length.`,
+      title: 'One production run',
+      text: 'Print and finishing happen in the same run, so stock is not shipped between vendors and handled twice.',
     },
     {
-      title: 'Finishing in the same run',
-      text: `${f.finishes.slice(0, 4).join(', ')} are applied in-line, so you are not shipping stock between vendors and paying twice.`,
+      title: 'A written specification',
+      text: 'Every quote states the board grade, the structure, the print method, the finishing and the lead time — not just a number.',
     },
   ]
-  return out
 }
 
 /* ------------------------------------------------------------------ */

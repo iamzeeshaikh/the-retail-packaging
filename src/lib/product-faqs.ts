@@ -2,6 +2,7 @@ import type { Product } from './catalog'
 import { hash } from './catalog'
 import type { Trait } from './product-traits'
 import { minQty, fmtQty } from './commerce'
+import { factsFor } from '../data/products'
 
 /**
  * Product FAQs, composed from what the product actually is.
@@ -155,7 +156,11 @@ export function productFaqsFor(p: Product, traits: Set<Trait>): Faq[] {
     if (!seen.has(k)) { seen.add(k); out.push(f) }
   }
 
-  // Most specific first: trait questions, ordered deterministically per product
+  // The product's own question leads, where one has been written for it.
+  const own = factsFor(p.slug)
+  if (own?.ask) push(own.ask)
+
+  // Then trait questions, ordered deterministically per product
   // so two products sharing traits still present them in a different sequence.
   const traitList = [...traits].sort(
     (a, b) => hash(p.slug + a) - hash(p.slug + b)
