@@ -60,13 +60,17 @@ const altFor = (i: number) => `${p.name} ${angles[i % angles.length]}`
               data-h={im.height}
               aria-label={`Show image ${i + 1} of ${imgs.length}`}
             >
+              {/* Described, not empty: the second and later frames appear in the
+                  markup only as thumbnails, so an empty alt left them with no
+                  crawlable description anywhere. The button's aria-label still
+                  wins as its accessible name, so nothing is announced twice. */}
               <img
                 src={`${im.base}-400.webp`}
                 width={im.width}
                 height={im.height}
                 loading="lazy"
                 decoding="async"
-                alt=""
+                alt={altFor(i)}
               />
             </button>
           </li>

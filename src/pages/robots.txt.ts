@@ -25,6 +25,7 @@ export const GET: APIRoute = () =>
       'Allow: /',
       '',
       `Sitemap: ${SITE.origin}/sitemap-index.xml`,
+      `Sitemap: ${SITE.origin}/image-sitemap.xml`,
       '',
     ].join('\n'),
     { headers: { 'Content-Type': 'text/plain; charset=utf-8' } }
