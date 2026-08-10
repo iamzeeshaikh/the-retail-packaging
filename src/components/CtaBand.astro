@@ -8,7 +8,7 @@ const {
   primaryHref = '/request-a-quote/',
 } = Astro.props
 ---
-<section class="section section-forest cta-band">
+<section class="section section-ink cta-band">
   <div class="wrap cta-in reveal">
     <div>
       <p class="eyebrow">Next step</p>
@@ -16,7 +16,7 @@ const {
       <p class="cta-text">{text}</p>
     </div>
     <div class="cta-actions">
-      <a class="btn btn-gold btn-lg" href={primaryHref}>{primary}</a>
+      <a class="btn btn-accent btn-lg" href={primaryHref}>{primary}</a>
       <a class="btn btn-invert-outline btn-lg" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" data-analytics="whatsapp-click">WhatsApp us</a>
       <a class="cta-phone" href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a>
     </div>

@@ -115,7 +115,7 @@ const toc = headings.filter((h) => h.depth === 2)
 </Base>
 
 <style>
-  .art-head { background: linear-gradient(180deg,var(--ivory),var(--ivory-deep)); border-bottom:1px solid var(--border);
+  .art-head { background: linear-gradient(180deg,var(--bone),var(--bone-deep)); border-bottom:1px solid var(--border);
     padding-block: clamp(1rem,.5rem + 2vw,2.5rem) clamp(2rem,1.5rem + 2vw,3rem); }
   .art-head h1 { font-size: var(--fs-3xl); }
   .art-head .lede { margin-top: var(--s-4); }
@@ -132,8 +132,8 @@ const toc = headings.filter((h) => h.depth === 2)
   .toc ol { list-style:none; padding:0; margin:0; display:grid; gap:.5rem; counter-reset:t; }
   .toc li { counter-increment:t; }
   .toc a { font-size:var(--fs-sm); color:var(--text-muted); text-decoration:none; display:block; padding-left:1.6rem; position:relative; }
-  .toc a::before { content:counter(t,decimal-leading-zero); position:absolute; left:0; color:var(--stone-300); font-size:.7rem; top:.15em; }
-  .toc a:hover { color:var(--forest); }
+  .toc a::before { content:counter(t,decimal-leading-zero); position:absolute; left:0; color:var(--ink-4); font-size:.7rem; top:.15em; }
+  .toc a:hover { color:var(--accent); }
   .art-prose { max-width: 74ch; }
   .art-prose :global(h2) { scroll-margin-top: 6rem; }
 </style>

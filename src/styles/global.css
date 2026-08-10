@@ -46,13 +46,20 @@ ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
   --ink-3:       #6e6e77;
   --ink-4:       #a1a1aa;
 
-  /* accent — deliberately achromatic. Ink is the accent; photography is the
-     only colour on the page. --ox is kept as a token name so nothing else
-     needs rewriting, but it now resolves to graphite. */
-  --ox:          #111113;
-  --ox-deep:     #08080a;
-  --ox-bright:   #2a2a30;
-  --ox-tint:     #ececee;
+  /* accent — one warm tone against the cool neutral ground. Sits beside the
+     zeepack.co CTA the client pointed to, and stays clear of the lipboxes
+     plum and the rejected forest/champagne pair. Used for CTAs, links,
+     numerals and small marks only; never for large fields. */
+  --accent:      #b8532b;   /* burnt sienna */
+  --accent-deep: #93401f;
+  --accent-soft: #e0a184;
+  --accent-tint: #fbf0ea;
+
+  /* legacy alias — several components still name the accent --ox */
+  --ox:          var(--accent);
+  --ox-deep:     var(--accent-deep);
+  --ox-bright:   var(--accent);
+  --ox-tint:     var(--accent-tint);
 
   /* rules and edges */
   --rule:        #dedee1;
@@ -192,7 +199,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
 .section-ink { background: var(--ink-deep); color: var(--text-invert); }
 .section-ink h1, .section-ink h2, .section-ink h3, .section-ink h4 { color: #fff; }
 .section-ink p { color: rgba(247, 243, 236, 0.78); }
-.section-ink a { color: #ffffff; }
+.section-ink a { color: var(--accent-soft); }
 .section-ink a:hover { color: #fff; }
 
 .grid { display: grid; gap: var(--s-6); }
@@ -212,10 +219,10 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
   font-weight: 500;
   letter-spacing: var(--track-caps);
   text-transform: uppercase;
-  color: var(--ox);
+  color: var(--accent);
   margin-bottom: var(--s-4);
 }
-.section-ink .eyebrow { color: #a1a1aa; }
+.section-ink .eyebrow { color: var(--accent-soft); }
 
 .lede { font-size: var(--fs-md); color: var(--text-muted); max-width: 60ch; line-height: 1.62; }
 .muted { color: var(--text-muted); }
@@ -266,8 +273,11 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
 }
 .btn:active { transform: translateY(1px); }
 
-.btn-primary { background: var(--ink); color: #ffffff; }
-.btn-primary:hover { background: var(--ink-deep); color: #ffffff; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-deep); color: #fff; }
+
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: var(--accent-deep); color: #fff; }
 
 .btn-ink { background: var(--ink); color: var(--bone); }
 .btn-ink:hover { background: var(--ink-deep); color: #fff; }
@@ -369,6 +379,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
   border: 1px solid var(--rule-strong);
 }
 .badge-ox { color: var(--ox); border-color: color-mix(in srgb, var(--ox) 30%, transparent); background: var(--ox-tint); }
+.badge-accent { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 32%, transparent); background: var(--accent-tint); }
 .badge-solid { background: var(--ink); color: var(--bone); border-color: var(--ink); }
 
 /* ---------- breadcrumbs ---------- */
@@ -620,7 +631,7 @@ table.data td.num { font-variant-numeric: tabular-nums; text-align: right; }
   font-family: var(--font-display); font-size: var(--fs-lg);
   color: var(--ox); letter-spacing: 0;
 }
-.section-ink .step::before { color: #a1a1aa; }
+.section-ink .step::before { color: var(--accent-soft); }
 
 .tick-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-2); }
 .tick-list li { position: relative; padding-left: 1.6rem; font-size: var(--fs-sm); color: var(--text-muted); }
@@ -631,7 +642,7 @@ table.data td.num { font-variant-numeric: tabular-nums; text-align: right; }
   transform: rotate(-45deg);
 }
 .section-ink .tick-list li { color: rgba(247, 243, 236, 0.8); }
-.section-ink .tick-list li::before { border-color: #ffffff; }
+.section-ink .tick-list li::before { border-color: var(--accent-soft); }
 
 /* ---------- scroll reveal ---------- */
 .reveal { opacity: 0; transform: translateY(14px); }

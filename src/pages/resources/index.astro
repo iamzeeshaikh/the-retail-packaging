@@ -52,7 +52,7 @@ const schema = S.graph([
       <div class="grid g-3">
         {docs.map((d) => (
           <a class="res-card tile reveal" href={`/resources/${d.id}/`}>
-            <span class="badge badge-neutral">{d.data.kind}</span>
+            <span class="badge badge">{d.data.kind}</span>
             <h2>{d.data.title}</h2>
             <p>{d.data.description}</p>
           </a>
@@ -65,12 +65,12 @@ const schema = S.graph([
   <CtaBand />
 </Base>
 <style>
-  .hub-hero { background:linear-gradient(180deg,var(--ivory),var(--ivory-deep)); border-bottom:1px solid var(--border);
+  .hub-hero { background:linear-gradient(180deg,var(--bone),var(--bone-deep)); border-bottom:1px solid var(--border);
     padding-block:clamp(1.5rem,1rem + 2vw,3rem) clamp(2.5rem,2rem + 3vw,4rem); }
   .hub-hero .lede { margin-top:var(--s-5); }
   .res-card { display:block; text-decoration:none; height:100%;
     transition:border-color var(--dur) var(--ease), transform var(--dur) var(--ease); }
-  .res-card:hover { border-color:var(--forest); transform:translateY(-3px); }
+  .res-card:hover { border-color:var(--accent); transform:translateY(-3px); }
   .res-card h2 { font-size:var(--fs-md); margin:var(--s-3) 0 var(--s-2); color:var(--ink); }
   .res-card p { font-size:var(--fs-sm); color:var(--text-muted); }
 </style>
