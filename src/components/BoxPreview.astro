@@ -1,0 +1,632 @@
+---
+/**
+ * Live box preview for the specification builder.
+ *
+ * The builder asks for style, dimensions, colour, material, print and finish
+ * and then showed nothing back, so a visitor had no way to sanity-check what
+ * they had described. This draws it: a CSS 3D box for the rigid formats and an
+ * SVG silhouette for the soft and flat ones.
+ *
+ * It is deliberately an approximation and says so. Proportions, colour family
+ * and finish character are real; it is not a colour proof and carries no
+ * artwork, only a placeholder lockup, so it can never be mistaken for one.
+ */
+export interface Props {
+  /** Shown on the placeholder panel. Falls back to a generic lockup. */
+  brandLine?: string
+}
+const { brandLine = '' } = Astro.props
+const [l1, l2] = brandLine ? brandLine.split(/\s+/).slice(0, 2) : ['YOUR', 'BRAND']
+---
+
+<figure class="pv" data-pv>
+  <div
+    class="pv-stage"
+    data-pv-stage
+    tabindex="0"
+    role="img"
+    aria-label="Preview of the packaging you have specified"
+    data-pv-label
+  >
+    <div class="pv-scene" data-pv-scene>
+      <div class="pv-shadow" aria-hidden="true"></div>
+
+      <div class="pv-box" data-pv-box>
+        <div class="pv-face pv-front" data-pv-face="front">
+          <span class="pv-art" data-pv-art>
+            <span class="pv-art-1">{l1}</span>
+            <span class="pv-art-2">{l2 ?? ''}</span>
+            <span class="pv-art-rule"></span>
+          </span>
+          <span class="pv-sheen" data-pv-sheen></span>
+          <span class="pv-uv" data-pv-uv></span>
+        </div>
+        <div class="pv-face pv-back" data-pv-face="back"></div>
+        <div class="pv-face pv-right" data-pv-face="right"><span class="pv-sheen" data-pv-sheen></span></div>
+        <div class="pv-face pv-left" data-pv-face="left"></div>
+        <div class="pv-face pv-top" data-pv-face="top"><span class="pv-sheen" data-pv-sheen></span></div>
+        <div class="pv-face pv-bottom" data-pv-face="bottom"></div>
+        <div class="pv-face pv-inner" data-pv-inner hidden></div>
+        <div class="pv-lid" data-pv-lid hidden></div>
+        <div class="pv-band" data-pv-band hidden></div>
+      </div>
+
+      <svg class="pv-flat is-off" data-pv-flat viewBox="0 0 240 220" aria-hidden="true">
+        <defs>
+          <linearGradient id="pvGloss" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fff" stop-opacity=".45" />
+            <stop offset="42%" stop-color="#fff" stop-opacity="0" />
+            <stop offset="70%" stop-color="#fff" stop-opacity=".16" />
+            <stop offset="100%" stop-color="#fff" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+
+        <g data-flat="bag" class="is-off">
+          <path d="M64 60h112v138a6 6 0 0 1-6 6H70a6 6 0 0 1-6-6z" data-pv-fill="base" />
+          <path d="M176 60l22-14v138l-22 20z" data-pv-fill="side" />
+          <path d="M64 60l22-14h112l-22 14z" data-pv-fill="topface" />
+          <path d="M95 60c0-18 10-27 25-27s25 9 25 27" fill="none" stroke="currentColor"
+            stroke-opacity=".5" stroke-width="4" stroke-linecap="round" />
+          <rect x="64" y="60" width="112" height="144" fill="url(#pvGloss)" data-pv-glossy />
+        </g>
+
+        <g data-flat="pouch" class="is-off">
+          <path d="M70 34h100a8 8 0 0 1 8 8v138c0 14-26 24-58 24s-58-10-58-24V42a8 8 0 0 1 8-8z"
+            data-pv-fill="base" />
+          <rect x="70" y="34" width="108" height="18" data-pv-fill="side" />
+          <path d="M62 180c0 14 26 24 58 24s58-10 58-24c0-9-26-15-58-15s-58 6-58 15z"
+            data-pv-fill="topface" opacity=".85" />
+          <circle cx="120" cy="43" r="5" fill="#fff" fill-opacity=".55" />
+          <path d="M70 52h108v128c0 12-24 20-54 20s-54-8-54-20z" fill="url(#pvGloss)" data-pv-glossy />
+        </g>
+
+        <g data-flat="label" class="is-off">
+          <rect x="42" y="62" width="156" height="100" rx="10" data-pv-fill="base" />
+          <path d="M198 62v100a34 34 0 0 0 12-24V80a26 26 0 0 0-12-18z" data-pv-fill="side" />
+          <rect x="42" y="62" width="156" height="100" rx="10" fill="url(#pvGloss)" data-pv-glossy />
+        </g>
+
+        <g data-flat="sticker" class="is-off">
+          <circle cx="120" cy="112" r="72" fill="#fff" fill-opacity=".9" />
+          <circle cx="120" cy="112" r="64" data-pv-fill="base" />
+          <circle cx="120" cy="112" r="64" fill="url(#pvGloss)" data-pv-glossy />
+        </g>
+
+        <text x="120" y="118" data-pv-flat-art text-anchor="middle">BRAND</text>
+      </svg>
+    </div>
+
+    <p class="pv-hint" data-pv-hint>Drag to rotate</p>
+  </div>
+
+  <figcaption class="pv-cap">
+    <span class="pv-dims" data-pv-dims></span>
+    <span class="pv-note">
+      Approximation only — proportions, colour family and finish character. Not a colour proof,
+      and the panel shown is a placeholder, not your artwork.
+    </span>
+  </figcaption>
+</figure>
+
+<style>
+  .pv { margin: var(--s-6) 0 0; }
+
+  .pv-stage {
+    position: relative;
+    /* Fixed ratio so the preview never shifts the page as it redraws. */
+    aspect-ratio: 5 / 4;
+    border: 1px solid var(--rule);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    cursor: grab;
+    touch-action: pan-y;
+    background:
+      radial-gradient(120% 90% at 50% 8%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 62%),
+      var(--bone);
+  }
+  .pv-stage:active { cursor: grabbing; }
+  .pv-stage:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  /* On the dark homepage band the paper panel would glare, so the stage
+     borrows the band's own surface instead. */
+  :global(.qs-band) .pv-stage {
+    border-color: rgba(255, 255, 255, 0.16);
+    background:
+      radial-gradient(120% 90% at 50% 8%, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 62%),
+      rgba(255, 255, 255, 0.04);
+  }
+
+  .pv-scene {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    perspective: 1100px;
+    perspective-origin: 50% 42%;
+  }
+
+  .pv-shadow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--pv-shadow-w, 150px);
+    height: 26px;
+    transform: translate(-50%, var(--pv-shadow-y, 90px)) scaleY(0.34);
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(20, 22, 26, 0.34), rgba(20, 22, 26, 0));
+    pointer-events: none;
+  }
+
+  .pv-box {
+    position: relative;
+    width: 0;
+    height: 0;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--rx, -16deg)) rotateY(var(--ry, -30deg));
+  }
+  .pv-box.is-eased { transition: transform 360ms var(--ease-out, cubic-bezier(0.2, 0.8, 0.2, 1)); }
+  @media (prefers-reduced-motion: reduce) {
+    .pv-box.is-eased { transition: none; }
+  }
+
+  .pv-face {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: var(--pv-c, #d9d4cb);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.09);
+  }
+  /* Panels stay visible from behind so an open box shows its inner walls, but
+     the printed lockup must not appear mirrored on the reverse. */
+  .pv-art { backface-visibility: hidden; }
+  .pv-inner { filter: brightness(0.66); }
+  /* One light source, top-left-ish: top face lifts, right face falls away. */
+  .pv-top { filter: brightness(1.1); }
+  .pv-right { filter: brightness(0.82); }
+  .pv-left { filter: brightness(0.86); }
+  .pv-back { filter: brightness(0.72); }
+  .pv-bottom { filter: brightness(0.6); }
+
+  .pv-art {
+    display: grid;
+    justify-items: center;
+    gap: 0.18em;
+    font-family: var(--font-display, inherit);
+    line-height: 1;
+    text-align: center;
+    color: var(--pv-ink, rgba(20, 22, 26, 0.62));
+    font-size: var(--pv-art-size, 13px);
+    letter-spacing: 0.14em;
+    /* A sleeve band or a spot-UV panel occupies the lower third, so the
+       lockup moves clear of it rather than printing over it. */
+    transform: translateY(var(--pv-art-shift, 0px));
+    opacity: var(--pv-art-on, 1);
+    pointer-events: none;
+    user-select: none;
+  }
+  .pv-art-1 { font-weight: 600; }
+  .pv-art-2 { font-weight: 400; opacity: 0.8; }
+  .pv-art-rule { width: 2.4em; height: 1px; background: currentColor; opacity: 0.5; margin-top: 0.25em; }
+
+  .pv-sheen,
+  .pv-uv {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .pv-uv {
+    inset: auto 26% 14% 26%;
+    height: 16%;
+    border-radius: 2px;
+  }
+
+  .pv-lid,
+  .pv-band {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: var(--pv-c, #d9d4cb);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.09);
+  }
+  .pv-lid { filter: brightness(0.9); }
+  .pv-band { filter: brightness(0.7); }
+
+  .pv-flat { width: min(78%, 320px); height: auto; overflow: visible; }
+  .pv-flat.is-off,
+  .pv-flat [data-flat].is-off { display: none; }
+  .pv-flat text {
+    font-family: var(--font-display, inherit);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    fill: var(--pv-ink, rgba(20, 22, 26, 0.62));
+  }
+
+  .pv-hint {
+    position: absolute;
+    right: 0.7rem;
+    bottom: 0.6rem;
+    margin: 0;
+    font-size: 0.625rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    pointer-events: none;
+    transition: opacity 240ms var(--ease, ease);
+  }
+  :global(.qs-band) .pv-hint { color: rgba(244, 244, 245, 0.5); }
+  .pv-stage.is-touched .pv-hint { opacity: 0; }
+
+  .pv-cap { display: grid; gap: var(--s-2); margin-top: var(--s-3); }
+  .pv-dims {
+    font-size: var(--fs-xs);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  :global(.qs-band) .pv-dims { color: rgba(244, 244, 245, 0.86); }
+  .pv-note { font-size: var(--fs-xs); color: var(--text-faint); max-width: 46ch; }
+  :global(.qs-band) .pv-note { color: rgba(244, 244, 245, 0.5); }
+</style>
+
+<script>
+  type Shape = 'carton' | 'mailer' | 'rigid' | 'shipper' | 'tray' | 'sleeve' | 'bag' | 'pouch' | 'label' | 'sticker'
+
+  /* Style chip -> shape. The chip list lives in QuickSpec; anything that is not
+     matched falls through to the category map below, then to a plain carton. */
+  const BY_STYLE: Record<string, Shape> = {
+    'folding carton': 'carton',
+    'mailer box': 'mailer',
+    'rigid box': 'rigid',
+    'shipping box': 'shipper',
+    'paper bag': 'bag',
+    'stand-up pouch': 'pouch',
+    label: 'label',
+    sticker: 'sticker',
+    tray: 'tray',
+    sleeve: 'sleeve',
+  }
+
+  /* Category chip -> shape, used while the style is still "Not sure yet" so a
+     product page opens on something recognisable rather than a generic box. */
+  const BY_CATEGORY: [RegExp, Shape][] = [
+    [/label/i, 'label'],
+    [/sticker/i, 'sticker'],
+    [/pouch/i, 'pouch'],
+    [/\bbags?\b/i, 'bag'],
+    [/mailer/i, 'mailer'],
+    [/tray|container|cup/i, 'tray'],
+    [/sleeve|band/i, 'sleeve'],
+    [/jewellery|jewelry|gift|display/i, 'rigid'],
+    [/insert|shipping/i, 'shipper'],
+  ]
+
+  const FLAT: Shape[] = ['bag', 'pouch', 'label', 'sticker']
+
+  /* Board colours used when nothing is printed. An unprinted kraft box is not
+     white, so honouring the colour chip there would be misleading. */
+  const BOARD: [RegExp, string][] = [
+    [/kraft/i, '#c3a479'],
+    [/corrugated/i, '#bb9769'],
+    [/recycled/i, '#c0b5a2'],
+    [/greyboard|rigid/i, '#a49e94'],
+    [/film/i, '#ccd1d4'],
+    [/paperboard/i, '#efece6'],
+  ]
+
+  const SWATCH_FALLBACK: [RegExp, string][] = [
+    [/kraft/i, '#c8a97e'],
+    [/white/i, '#f7f5f1'],
+    [/black/i, '#16161a'],
+    [/terracotta/i, '#b8532b'],
+    [/forest/i, '#1f4433'],
+    [/navy/i, '#1b2a44'],
+    [/blush/i, '#e6c7c0'],
+    [/sage/i, '#8a9a82'],
+    [/charcoal/i, '#22262b'],
+    [/burgundy/i, '#5c1f28'],
+    [/champagne/i, '#b08d46'],
+    [/green/i, '#14432f'],
+  ]
+
+  const GLOSS =
+    'linear-gradient(118deg, rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 38%, rgba(255,255,255,.2) 63%, rgba(255,255,255,0) 100%)'
+  const SATIN =
+    'linear-gradient(118deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,0) 46%, rgba(255,255,255,.06) 70%, rgba(255,255,255,0) 100%)'
+  const FOIL =
+    'linear-gradient(118deg, rgba(255,255,255,.1) 0%, rgba(255,226,150,.85) 30%, rgba(255,255,255,.95) 42%, rgba(198,152,52,.85) 56%, rgba(255,255,255,.1) 78%)'
+
+  const TEXTURE: [RegExp, string][] = [
+    [/kraft/i, 'repeating-linear-gradient(57deg, rgba(90,60,20,.07) 0 1px, rgba(0,0,0,0) 1px 4px)'],
+    [/recycled/i, 'repeating-linear-gradient(41deg, rgba(60,50,35,.08) 0 1px, rgba(0,0,0,0) 1px 3px)'],
+    [/corrugated/i, 'repeating-linear-gradient(90deg, rgba(0,0,0,.07) 0 2px, rgba(0,0,0,0) 2px 7px)'],
+  ]
+
+  const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n))
+  const num = (el: HTMLInputElement | null) => {
+    if (!el) return 0
+    const v = parseFloat(el.value)
+    if (Number.isFinite(v) && v > 0) return v
+    const p = parseFloat(el.placeholder)
+    return Number.isFinite(p) && p > 0 ? p : 0
+  }
+  const match = (table: [RegExp, string][], s: string, fallback: string) =>
+    table.find(([re]) => re.test(s))?.[1] ?? fallback
+
+  /** Perceived lightness, so the placeholder lockup stays legible on any board. */
+  const isDark = (hex: string) => {
+    const h = hex.replace('#', '')
+    const n = parseInt(h.length === 3 ? h.replace(/./g, (c) => c + c) : h, 16)
+    if (!Number.isFinite(n)) return false
+    const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255]
+    return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255 < 0.55
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-pv]').forEach((root) => {
+    // The preview lives beside the builder, not inside it, so walk up to the
+    // shared section and find the form from there.
+    const scope = root.closest('.qs') ?? document
+    const form = scope.querySelector<HTMLFormElement>('[data-qs]')
+    if (!form) return
+
+    const stage = root.querySelector<HTMLElement>('[data-pv-stage]')!
+    const box = root.querySelector<HTMLElement>('[data-pv-box]')!
+    const flat = root.querySelector<SVGSVGElement>('[data-pv-flat]')!
+    const lid = root.querySelector<HTMLElement>('[data-pv-lid]')!
+    const band = root.querySelector<HTMLElement>('[data-pv-band]')!
+    const dims = root.querySelector<HTMLElement>('[data-pv-dims]')!
+    const shadow = root.querySelector<HTMLElement>('.pv-shadow')!
+    const faces = Array.from(root.querySelectorAll<HTMLElement>('[data-pv-face]'))
+    const flatArt = root.querySelector<SVGTextElement>('[data-pv-flat-art]')!
+
+    const checked = (name: string) =>
+      form.querySelector<HTMLInputElement>(`input[name="${name}"]:checked`)
+
+    const shapeNow = (): Shape => {
+      const style = (checked('style')?.value ?? '').trim().toLowerCase()
+      if (BY_STYLE[style]) return BY_STYLE[style]
+      const cat = checked('category')?.value ?? ''
+      return BY_CATEGORY.find(([re]) => re.test(cat))?.[1] ?? 'carton'
+    }
+
+    const render = () => {
+      const shape = shapeNow()
+      const material = checked('material')?.value ?? ''
+      const printing = checked('printing')?.value ?? ''
+      const finish = checked('finish')?.value ?? ''
+      const swatchEl = checked('exterior')
+      const swatchName = swatchEl?.value ?? ''
+
+      const unprinted = /unprinted/i.test(printing)
+      const colour = unprinted
+        ? match(BOARD, material, '#e4dfd6')
+        : swatchEl?.dataset.hex || match(SWATCH_FALLBACK, swatchName, '#d9d4cb')
+
+      const ink = isDark(colour) ? 'rgba(255,255,255,.72)' : 'rgba(20,22,26,.62)'
+      const texture = match(TEXTURE, material, 'none')
+
+      root.style.setProperty('--pv-c', colour)
+      root.style.setProperty('--pv-ink', ink)
+
+      // Finish is a surface property, so it rides on every visible face.
+      const sheen =
+        /gloss/i.test(finish) ? GLOSS : /soft-touch|matte/i.test(finish) ? SATIN : 'none'
+      root.querySelectorAll<HTMLElement>('[data-pv-sheen]').forEach((s) => {
+        s.style.backgroundImage = sheen
+        s.style.opacity = sheen === 'none' ? '0' : '1'
+      })
+      const uv = root.querySelector<HTMLElement>('[data-pv-uv]')!
+      const isUv = /spot uv/i.test(finish)
+      const isFoil = /foil/i.test(finish)
+      uv.style.opacity = isUv || isFoil ? '1' : '0'
+      uv.style.backgroundImage = isFoil ? FOIL : isUv ? GLOSS : 'none'
+      uv.style.boxShadow = isUv || isFoil ? 'inset 0 0 0 1px rgba(255,255,255,.35)' : 'none'
+
+      const flutes = /corrugated/i.test(material)
+      faces.forEach((f) => {
+        const side = f.dataset.pvFace !== 'front' && f.dataset.pvFace !== 'back'
+        f.style.backgroundImage = flutes && !side ? 'none' : texture
+      })
+
+      // Proportions. Only the ratio matters, so the unit is a label, not maths.
+      const L = num(form.querySelector('input[name="length"]'))
+      const W = num(form.querySelector('input[name="width"]'))
+      const H = num(form.querySelector('input[name="height"]'))
+      const unit = (form.querySelector<HTMLSelectElement>('select[name="unit"]')?.value ?? 'in')
+      const max = Math.max(L, W, H, 1)
+      const span = Math.min(stage.clientWidth, stage.clientHeight) || 260
+      const cap = span * 0.46
+      // A 0.2 × 20 pack would otherwise render as an invisible sliver.
+      const px = (v: number) => clamp((v / max) * cap, cap * 0.1, cap)
+
+      let w = px(W)
+      let h = px(H)
+      let d = px(L)
+
+      // Shape-specific proportion floors, so a tray still reads as a tray even
+      // when the visitor has not typed any dimensions yet.
+      if (shape === 'tray') h = Math.min(h, Math.min(w, d) * 0.55)
+      if (shape === 'label' || shape === 'sticker') h = Math.max(h, cap * 0.2)
+
+      const isFlat = FLAT.includes(shape)
+      box.hidden = isFlat
+      flat.classList.toggle('is-off', !isFlat)
+
+      if (isFlat) {
+        flat.querySelectorAll<SVGGElement>('[data-flat]').forEach((g) => {
+          g.classList.toggle('is-off', g.dataset.flat !== shape)
+        })
+        flat.querySelectorAll<SVGElement>('[data-pv-fill]').forEach((el) => {
+          const role = el.getAttribute('data-pv-fill')
+          el.setAttribute('fill', colour)
+          el.style.filter =
+            role === 'side' ? 'brightness(.82)' : role === 'topface' ? 'brightness(1.08)' : ''
+        })
+        flat.querySelectorAll<SVGElement>('[data-pv-glossy]').forEach((el) => {
+          el.style.opacity = sheen === GLOSS ? '1' : sheen === SATIN ? '0.4' : '0'
+        })
+        flat.style.color = colour
+        flatArt.style.opacity = shape === 'sticker' || shape === 'label' ? '1' : '0.9'
+      } else {
+        const set = (sel: string, ww: number, hh: number, tf: string) => {
+          const el = root.querySelector<HTMLElement>(sel)!
+          el.style.width = `${ww}px`
+          el.style.height = `${hh}px`
+          el.style.marginLeft = `${-ww / 2}px`
+          el.style.marginTop = `${-hh / 2}px`
+          el.style.transform = tf
+        }
+        set('.pv-front', w, h, `translateZ(${d / 2}px)`)
+        set('.pv-back', w, h, `rotateY(180deg) translateZ(${d / 2}px)`)
+        set('.pv-right', d, h, `rotateY(90deg) translateZ(${w / 2}px)`)
+        set('.pv-left', d, h, `rotateY(-90deg) translateZ(${w / 2}px)`)
+        set('.pv-top', w, d, `rotateX(90deg) translateZ(${h / 2}px)`)
+        set('.pv-bottom', w, d, `rotateX(-90deg) translateZ(${h / 2}px)`)
+
+        // An open tray has no lid; a mailer has one standing up at the back.
+        root.querySelector<HTMLElement>('.pv-top')!.style.opacity =
+          shape === 'tray' || shape === 'mailer' ? '0' : '1'
+
+        const showLid = shape === 'mailer'
+        lid.hidden = !showLid
+        if (showLid) {
+          lid.style.width = `${w}px`
+          lid.style.height = `${d}px`
+          lid.style.marginLeft = `${-w / 2}px`
+          lid.style.marginTop = `${-d / 2}px`
+          lid.style.transformOrigin = '50% 0%'
+          // -90deg lays it flat behind the box; a little short of that reads as
+          // a lid that has just been opened.
+          lid.style.transform =
+            `translateY(${-h / 2 + d / 2}px) translateZ(${-d / 2}px) rotateX(-62deg)`
+        }
+
+        const open = shape === 'tray' || shape === 'mailer'
+        const inner = root.querySelector<HTMLElement>('[data-pv-inner]')!
+        inner.hidden = !open
+        if (open) {
+          const iw = Math.max(w - 4, w * 0.9)
+          const id = Math.max(d - 4, d * 0.9)
+          inner.style.width = `${iw}px`
+          inner.style.height = `${id}px`
+          inner.style.marginLeft = `${-iw / 2}px`
+          inner.style.marginTop = `${-id / 2}px`
+          inner.style.transform = `rotateX(90deg) translateZ(${-h / 2 + 2}px)`
+        }
+
+        const showBand = shape === 'sleeve'
+        band.hidden = !showBand
+        if (showBand) {
+          const bw = Math.max(10, h * 0.34)
+          band.style.width = `${w + 3}px`
+          band.style.height = `${bw}px`
+          band.style.marginLeft = `${-(w + 3) / 2}px`
+          band.style.marginTop = `${-bw / 2}px`
+          band.style.transform = `translateY(${h * 0.2}px) translateZ(${d / 2 + 1.5}px)`
+        }
+
+        // Rigid boxes read as heavier; corrugated shows a fluted edge.
+        const edge = shape === 'rigid' ? 2 : /corrugated/i.test(material) ? 1.6 : 1
+        faces.forEach((f) => {
+          f.style.boxShadow = `inset 0 0 0 ${edge}px rgba(0,0,0,${shape === 'rigid' ? 0.18 : 0.09})`
+        })
+
+        root.style.setProperty('--pv-art-size', `${clamp(w * 0.11, 8, 20)}px`)
+        const shift = showBand ? -h * 0.2 : isUv || isFoil ? -h * 0.14 : 0
+        root.style.setProperty('--pv-art-shift', `${shift}px`)
+        // Below roughly 46px of panel there is no room to letter anything, and
+        // a squashed lockup looks like a rendering fault rather than a choice.
+        root.style.setProperty('--pv-art-on', h < 46 || w < 56 ? '0' : '1')
+        shadow.style.setProperty('--pv-shadow-w', `${w * 1.5}px`)
+        shadow.style.setProperty('--pv-shadow-y', `${h / 2 + 14}px`)
+      }
+
+      const shown = [L, W, H].every((v) => v > 0)
+        ? `${L} × ${W} × ${H} ${unit}`
+        : 'Enter dimensions to set the proportions'
+      const styleName = checked('style')?.value ?? ''
+      dims.textContent = shown
+      stage.setAttribute(
+        'aria-label',
+        `Preview: ${styleName || 'packaging'}, ${colour === '#e4dfd6' ? 'natural board' : swatchName || 'natural board'}` +
+          `${finish && finish !== 'None' ? `, ${finish.toLowerCase()} finish` : ''}. ${shown}.`,
+      )
+    }
+
+    // --- rotation -----------------------------------------------------------
+    let rx = -16
+    let ry = -30
+    const apply = () => {
+      box.style.setProperty('--rx', `${rx}deg`)
+      box.style.setProperty('--ry', `${ry}deg`)
+    }
+    apply()
+
+    let dragging = false
+    let px0 = 0
+    let py0 = 0
+    stage.addEventListener('pointerdown', (e) => {
+      dragging = true
+      px0 = e.clientX
+      py0 = e.clientY
+      box.classList.remove('is-eased')
+      stage.classList.add('is-touched')
+      stage.setPointerCapture(e.pointerId)
+    })
+    stage.addEventListener('pointermove', (e) => {
+      if (!dragging) return
+      ry += (e.clientX - px0) * 0.5
+      rx = clamp(rx - (e.clientY - py0) * 0.4, -78, 78)
+      px0 = e.clientX
+      py0 = e.clientY
+      apply()
+    })
+    const stop = (e: PointerEvent) => {
+      if (!dragging) return
+      dragging = false
+      try {
+        stage.releasePointerCapture(e.pointerId)
+      } catch {}
+    }
+    stage.addEventListener('pointerup', stop)
+    stage.addEventListener('pointercancel', stop)
+
+    stage.addEventListener('keydown', (e) => {
+      const step = e.shiftKey ? 15 : 6
+      const moves: Record<string, () => void> = {
+        ArrowLeft: () => (ry -= step),
+        ArrowRight: () => (ry += step),
+        ArrowUp: () => (rx = clamp(rx - step, -78, 78)),
+        ArrowDown: () => (rx = clamp(rx + step, -78, 78)),
+        Home: () => {
+          rx = -16
+          ry = -30
+        },
+      }
+      const fn = moves[e.key]
+      if (!fn) return
+      e.preventDefault()
+      box.classList.add('is-eased')
+      stage.classList.add('is-touched')
+      fn()
+      apply()
+    })
+
+    form.addEventListener('change', render)
+    form.addEventListener('input', render)
+    render()
+
+    // The stage is sized in px from its own box, so a resize has to redraw.
+    if ('ResizeObserver' in window) {
+      let t = 0
+      new ResizeObserver(() => {
+        clearTimeout(t)
+        t = window.setTimeout(render, 120)
+      }).observe(stage)
+    }
+  })
+</script>

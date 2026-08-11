@@ -1,4 +1,5 @@
 ---
+import BoxPreview from './BoxPreview.astro'
 import { categories, productsIn, categoryHero } from '../lib/catalog'
 import { SITE } from '../lib/site'
 
@@ -61,6 +62,8 @@ const uid = `qs-${Math.random().toString(36).slice(2, 8)}`
         <li>Free dieline</li>
         <li>No obligation</li>
       </ul>
+
+      <BoxPreview brandLine={productName} />
     </header>
 
     <form class="qs-form" data-qs method="POST" action="/api/quote" enctype="multipart/form-data" novalidate>
@@ -136,7 +139,7 @@ const uid = `qs-${Math.random().toString(36).slice(2, 8)}`
         <div class="chips chips-sw" role="radiogroup" aria-label="Colour">
           {SWATCHES.map((s, i) => (
             <label class="chip chip-sw">
-              <input type="radio" name="exterior" value={s.n} checked={i === 0} />
+              <input type="radio" name="exterior" value={s.n} data-hex={s.v} checked={i === 0} />
               <span class="dot" style={`--c:${s.v}`} aria-hidden="true"></span>
               <span>{s.n}</span>
             </label>
@@ -302,18 +305,57 @@ const uid = `qs-${Math.random().toString(36).slice(2, 8)}`
       })
     }
 
+    const SPEC_KEYS = ['category', 'style', 'length', 'width', 'height', 'unit',
+      'quantity', 'exterior', 'material', 'printing', 'finish']
+    const STORE = 'trp_spec_v1'
+
+    /* Only the specification is remembered, never the contact fields — a shared
+       machine should not hand the next person someone's name and email. */
+    const restore = () => {
+      let saved: Record<string, string>
+      try {
+        saved = JSON.parse(localStorage.getItem(STORE) ?? '{}')
+      } catch {
+        return
+      }
+      for (const k of SPEC_KEYS) {
+        const v = saved[k]
+        if (!v) continue
+        const radio = form.querySelector<HTMLInputElement>(`input[name="${k}"][value="${CSS.escape(v)}"]`)
+        if (radio) { radio.checked = true; continue }
+        const field = form.querySelector<HTMLInputElement | HTMLSelectElement>(`[name="${k}"]:not([type="radio"])`)
+        if (field) field.value = v
+      }
+    }
+    const persist = () => {
+      const fd = new FormData(form)
+      const out: Record<string, string> = {}
+      for (const k of SPEC_KEYS) {
+        const v = String(fd.get(k) ?? '')
+        if (v) out[k] = v
+      }
+      try {
+        localStorage.setItem(STORE, JSON.stringify(out))
+      } catch {
+        /* private mode, quota — the form still works without it */
+      }
+    }
+
     const buildConfig = () => {
       const fd = new FormData(form)
-      const keys = ['category', 'style', 'length', 'width', 'height', 'unit',
-        'quantity', 'exterior', 'material', 'printing', 'finish']
+      const keys = SPEC_KEYS
       const parts = keys
         .map((k) => [k, String(fd.get(k) ?? '')] as [string, string])
         .filter(([, v]) => v)
         .map(([k, v]) => `${k}: ${v}`)
       if (cfg) cfg.value = parts.join(' | ')
     }
-    form.addEventListener('change', buildConfig)
+    restore()
+    form.addEventListener('change', () => { buildConfig(); persist() })
+    form.addEventListener('input', persist)
     buildConfig()
+    // The preview reads the restored values, so tell it they changed.
+    form.dispatchEvent(new Event('change', { bubbles: false }))
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault()
