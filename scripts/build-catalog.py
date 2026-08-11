@@ -9,12 +9,25 @@ silently patched.
 import os, json, re, sys
 from openpyxl import load_workbook
 
-ASSETS = "/Users/sajjadahmad/Documents/the-retail-packaging"
-XLSX = os.path.join(ASSETS, "categories-products-final.xlsx")
+# The original PNGs were deleted on 2026-08-11 to reclaim 1.7 GB; the site runs
+# entirely on the committed WebP renditions in public/images. Point ASSETS at a
+# restored copy of the source tree (env var wins) before running this or
+# process-images.mjs — neither can work without the originals.
+ASSETS = os.environ.get("TRP_ASSETS", "/Users/sajjadahmad/Documents/the-retail-packaging")
+# The spreadsheet itself is kept in the repo, so only the images need restoring.
+XLSX = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                    "src", "data", "source", "categories-products-final.xlsx")
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                    "src", "data", "catalog.json")
 REPORT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                       "reports", "image-validation.json")
+if not os.path.isdir(ASSETS):
+    sys.exit(
+        f"Source image tree not found at {ASSETS}.\n"
+        "The originals were removed on 2026-08-11. Restore them (or set TRP_ASSETS\n"
+        "to wherever they now live) before rebuilding the catalogue."
+    )
+
 SYSTEM = {".DS_Store", ".localized", "Thumbs.db"}
 IMG_EXT = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".avif"}
 
