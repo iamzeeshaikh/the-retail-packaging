@@ -72,7 +72,7 @@ export const infoPages: InfoPage[] = [
         h2: 'What we do not claim',
         body: [
           'We do not operate offices or plants in every city we ship to, and our location pages say so plainly. We do not publish client logos we have no permission to use, invented production statistics, or certifications we do not hold.',
-          'We also do not display customer ratings, because we have not yet collected verified reviews. When we do, they will appear on the page with the review text visible, not only inside structured data.',
+          'Where a job sits outside what we can do well — a format we do not produce, a deadline we cannot hold, a specification that will not survive the journey you describe — we say so at quoting rather than taking the order and managing the disappointment afterwards.',
         ],
       },
       {

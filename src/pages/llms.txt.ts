@@ -15,8 +15,8 @@ export const GET: APIRoute = () => {
 Pricing starts from $0.30 per piece at large volume. Final pricing depends on size, material,
 printing, finishes and quantity, so every project is quoted individually.
 
-We do not operate local offices in the cities we ship to, and we do not publish customer
-ratings, because verified review data has not been collected.
+We do not operate local offices in the cities we ship to. Every quote states the board grade,
+the structure, the print method, the finishing and the lead time rather than a price alone.
 
 ## Packaging categories
 ${cats}
