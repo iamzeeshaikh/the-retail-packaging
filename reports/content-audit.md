@@ -104,7 +104,7 @@
 | type | pages | pairs >20% similar | worst pair |
 |---|---|---|---|
 | location | 40 | 0 | — |
-| other | 412 | 15638 | /lingerie-boxes/ ↔ /wallet-boxes/ (0.627) |
+| other | 412 | 15997 | /lingerie-boxes/ ↔ /wallet-boxes/ (0.631) |
 | blog | 10 | 0 | — |
 | resource | 15 | 0 | — |
 
@@ -126,7 +126,7 @@ None.
 | route | words |
 |---|---|
 | /cookie-policy/ | 237 |
-| /accessibility-statement/ | 357 |
+| /accessibility-statement/ | 361 |
 | /request-a-quote/ | 424 |
 | /privacy-policy/ | 426 |
 | /custom-packaging-tool/ | 429 |
