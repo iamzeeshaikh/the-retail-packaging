@@ -3,10 +3,31 @@ title: How to Prepare Artwork for Custom Packaging
 description: File setup for packaging print — dielines, bleed, colour mode, resolution, fonts and the export settings that stop artwork bouncing at prepress.
 metaTitle: How to Prepare Artwork for Custom Packaging
 publishDate: 2026-07-10
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: prepare artwork for packaging
 heroProduct: custom-die-cut-stickers
 heroAlt: Custom die cut stickers showing precise cut lines around printed artwork
+faqs:
+  - q: What is the first thing I should ask for before designing?
+    a: The dieline. Designing on a rectangle and transferring afterwards is the most common structural error in packaging artwork, because a rectangle does not show you which panel faces front, where the glue lap hides content or where the creases fall.
+  - q: Can I prepare artwork myself or do I need a packaging designer?
+    a: You can, provided your tool can handle bleed, CMYK, a placed dieline and outlined fonts. Illustrator and InDesign can; Canva and PowerPoint cannot reliably, and artwork from them usually needs rebuilding.
+  - q: How do I stop text being cut off?
+    a: Keep it inside the safety margin, typically 4 mm from every trim and fold line. Cutting is never perfectly accurate, so content closer than that risks being trimmed or landing on a crease where it distorts.
+  - q: My logo looks fine on screen but blurry in the proof. Why?
+    a: It is almost certainly a raster file rather than a vector — often a PNG taken from a website. Screen resolution is far lower than print, so what looks sharp at 72 dpi has soft edges at print size that nothing recovers.
+  - q: What colour mode should I work in?
+    a: CMYK from the start. An RGB file gets converted, and the conversion shifts colour most in saturated blues, bright greens and vivid oranges. Working in CMYK means you have seen the shift rather than inheriting it at proof.
+  - q: How do I make sure my brand colour prints correctly?
+    a: Specify it as a named spot colour rather than a process build, and approve a press-printed sample on the actual substrate. A monitor is backlit and a carton is not, so screen approval is not a reliable basis for a colour that matters.
+  - q: What is bleed and how much do I need?
+    a: Artwork extended past the trim edge so cutting variance never exposes bare board. 3 mm is standard for folding cartons; corrugated needs more because cutting variance is greater.
+  - q: Where should the barcode go?
+    a: On a flat panel, never across a fold or a curve, at or above 80% of nominal size, dark bars on a light background with a clear quiet zone. Placement is a dieline decision made before artwork rather than a layout choice.
+  - q: How many proof rounds should I expect?
+    a: One or two if the file arrives correct. Most extra rounds come from mechanical issues — resolution, missing bleed, overprint settings — rather than design changes, which is why running a pre-flight list before sending is worth the ten minutes.
+  - q: What should I keep after the job runs?
+    a: The approved print file, the dieline, the board specification, the finish list and the colour targets, archived together. A reorder referencing them skips most of prepress. A reorder without them is effectively a new job.
 ---
 
 Packaging artwork is not print artwork with a different outline. It is a flat file that has to survive being folded, glued, cut and sometimes wrapped around a curve, and the setup requirements reflect that.

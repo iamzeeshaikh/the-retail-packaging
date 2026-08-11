@@ -20,6 +20,16 @@ faqs:
     a: The die crushes thin elements. Foil reproduces bold shapes cleanly and hairlines poorly, so a mark with fine strokes comes out soft or broken. Simplify the artwork for the foil version rather than stamping the standard logo and hoping.
   - q: How much does each finish add to the lead time?
     a: Every finish is a separate pass, so each one adds handling time rather than just cost. Die-based finishes — foil, emboss, deboss — also need the die made first. On a short run with three finishes, the finishing stages often take longer than the printing.
+  - q: Will lamination change my printed colours?
+    a: Yes, noticeably. Matte laminate mutes and slightly darkens a sheet; gloss deepens and saturates it. On a brand colour that matters, approve the proof laminated rather than bare, because the difference is visible side by side.
+  - q: Can I emboss any thickness of board?
+    a: Depth is limited by the board. A 14pt carton takes a shallow impression; rigid greyboard takes a much deeper one. Asking for a pronounced emboss on thin stock cracks the surface at the edges of the impression rather than producing relief.
+  - q: Is foil only available in gold and silver?
+    a: No — matte metallics, coloured foils and holographic effects are all standard. A matte foil on uncoated stock reads very differently from bright gold on gloss, so it is worth seeing samples before assuming foil means shine.
+  - q: Can foil and emboss be combined?
+    a: Yes, and it is a strong effect, but it is a more demanding setup because the foil has to register to the relief. Expect a longer proofing cycle and design the mark for both from the start rather than adding the emboss later.
+  - q: Where should a window go on the panel?
+    a: Over the product, not centred for visual balance. A window positioned for the layout frequently shows the side of the product or an empty gap above the fill line, which sells it less well than no window at all.
 ---
 
 Every finish is a separate production pass with its own cost. Understanding what each one actually does prevents specifications that layer three effects competing for attention.

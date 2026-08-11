@@ -15,7 +15,13 @@ const shared = {
 
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
-  schema: z.object({ ...shared, readingMinutes: z.number().optional() }),
+  schema: z.object({
+    ...shared,
+    readingMinutes: z.number().optional(),
+    /* Questions the article raises but does not answer inline. Rendered once,
+       and emitted as FAQPage schema by the article layout. */
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+  }),
 })
 
 const resources = defineCollection({

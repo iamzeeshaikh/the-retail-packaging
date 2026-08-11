@@ -3,10 +3,31 @@ title: Retail Packaging Materials Compared for Growing Brands
 description: How paperboard, corrugated, rigid greyboard, laminated film and moulded pulp actually differ on strength, print quality, cost and end of life.
 metaTitle: Retail Packaging Materials Compared for Brands
 publishDate: 2026-06-19
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: retail packaging materials
 heroProduct: kraft-paper-bags
 heroAlt: Kraft paper bags showing the natural uncoated surface texture of unbleached board
+faqs:
+  - q: How do I pick a board grade without over-specifying?
+    a: Weigh the product, establish how far and how roughly it travels, then take the lightest material that survives that journey with margin. Spend what is left on print and finish rather than on board the product does not need.
+  - q: Is recycled board a false economy?
+    a: No. It is usually within a few percent of virgin on price and performs close to it. The trade is a greyer base tone, marginally less rigidity at the same caliper and slightly more crease cracking — all manageable by stepping up one caliper.
+  - q: When should I move from folding carton board to corrugated?
+    a: Around 4 lb of contents, or when the panels get large enough to flex. Board past 18pt starts to be an expensive way to buy rigidity that E-flute provides more cheaply.
+  - q: Does material choice affect print quality much?
+    a: Considerably. SBS holds fine detail and accurate colour; kraft absorbs ink and shifts colour warmer; corrugated printed directly shows flute lines through solids. Choosing the substrate first and designing to it beats the reverse.
+  - q: What material should I use if my product ships and sits on a shelf?
+    a: Usually two — a retail carton for the shelf and a corrugated outer for the journey. Trying to make one material serve both means either an over-built retail pack or an under-protected shipper.
+  - q: How do I know if I need a moisture-resistant coating?
+    a: By how long stock sits and where. Anything held more than about six weeks in unconditioned space will lose rigidity, and a coating costs a small premium against replacing softened stock.
+  - q: Is kraft cheaper than white board?
+    a: Not reliably — the price difference is small and varies. Kraft is chosen for how it looks and what it signals, not to save money. If it is being specified purely on cost, that reasoning is probably wrong.
+  - q: What is the difference between board caliper and flute grade?
+    a: Caliper is the thickness of a single sheet of solid board. Flute is the corrugated wave between two liners, quoted as a letter. One describes solid board, the other describes corrugated construction — they are not comparable numbers.
+  - q: Can I change material on a reorder?
+    a: Usually yes, if the structure stays the same, though a substantial change in caliper can affect how the existing die performs. Colour will also shift on a different substrate, so budget for a proof rather than assuming the file transfers.
+  - q: Which material decisions are hardest to reverse?
+    a: Anything that drove the tooling. A structure cut for 14pt board behaves differently in 18pt, and a switch from carton to corrugated is a new die entirely. Material and structure should be settled together at the start.
 ---
 
 Material choice gets treated as a styling decision far more often than it deserves. In practice it is a structural and commercial one, and the brands that get it wrong usually do so by choosing a substrate that looks right in a mood board and behaves badly in a warehouse.

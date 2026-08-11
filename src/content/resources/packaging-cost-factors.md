@@ -20,6 +20,16 @@ faqs:
     a: Only if you know your damage rate. Cutting a grade across a large run saves a visible amount and costs far more if damage rises even slightly, because a failure costs the product, the replacement shipping and the customer. Establish the current rate before changing anything.
   - q: Why does adding one more colour cost so much?
     a: On offset and flexo, each colour is a separate plate and a separate press unit — so a fifth colour adds tooling, setup and running cost together. On digital the colour count barely matters at all, which is one of the biggest structural differences between the routes.
+  - q: Why does the unit price barely move between 10,000 and 12,000 units?
+    a: Because by that point the fixed setup cost is already spread thin. The steep part of the curve is at low volumes where plates, dies and makeready dominate. Past that, savings only come from material and press efficiency, which move slowly.
+  - q: Does ink coverage affect the price?
+    a: Modestly. Heavy coverage uses more ink and can slow drying, but ink is rarely a large share of the total. Colour count matters far more than coverage, because each colour is a plate and a press unit on plate-based printing.
+  - q: Is tooling a recurring cost?
+    a: It should not be. A die is a one-time cost reused on reorders — but ask explicitly whether a reorder incurs it again and who holds the die. It is one of the more common gaps in a first quote and it changes the comparison between suppliers.
+  - q: What does right-sizing actually save?
+    a: Material and freight together, which is why it is the only change that improves cost and environmental position at the same time. On a shipped product the recurring carrier saving usually dwarfs anything achievable on board grade.
+  - q: Why is freight so often underestimated?
+    a: Because inbound freight appears on an invoice and outbound does not. For a direct-to-consumer brand the dimensional weight charged on every parcel, forever, is far larger than the packaging cost — and it never shows on a packaging quote.
 ---
 
 Packaging quotes are opaque from the outside. Five cost blocks explain almost all of the variation, and they behave very differently as quantity changes.

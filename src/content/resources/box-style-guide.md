@@ -20,6 +20,16 @@ faqs:
     a: Rarely without compromise. Shelf wants face area and finish; shipping wants tight dimensions and crush resistance. A retail carton inside a plain shipper usually costs less overall than one box attempting both, and performs better in each role.
   - q: How do I know if I need a locking corner on a tray?
     a: If the tray carries any real weight. A folded corner splits under load where a glued or locked one holds, and two trays at the same board weight can perform very differently because of it. It rarely appears on a specification sheet, so it is worth asking about explicitly.
+  - q: What is a sleeve and tray, and when does it beat a printed carton?
+    a: A plain tray with a printed sleeve over it. It wins where you run several variants from one structure — you print a small sleeve per variant instead of a whole carton, so setup cost falls sharply as the range grows.
+  - q: Why do folding cartons ship flat but rigid boxes do not?
+    a: A folding carton is die-cut and glued along one seam, so it lies flat and pops open on a packing line. A rigid box is wrapped greyboard assembled by hand and cannot collapse. That difference in shipped volume is the hidden cost when comparing the two.
+  - q: What is a regular slotted container?
+    a: The standard shipping box — flaps on both ends meeting in the middle, sealed with tape. Cheapest corrugated structure per unit, no presentation value, and the right answer for bulk shipping where nothing is being displayed.
+  - q: Does the style affect how quickly staff can pack?
+    a: Considerably. A hand-assembled tuck end costs nothing to make and costs labour to erect. An auto-lock bottom that snaps open in one movement uses more board and pays for it in packing time within weeks at high throughput.
+  - q: Can I change style on a reorder without new tooling?
+    a: No. The die is cut for a specific structure, so changing style means new tooling even at the same finished dimensions. It is worth settling the structure before the first order rather than treating it as adjustable later.
 ---
 
 Box style is a structural decision made before material, size or print. Each style is manufactured differently, ships differently and has a natural range beyond which it stops making sense.

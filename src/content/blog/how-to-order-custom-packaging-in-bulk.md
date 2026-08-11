@@ -3,10 +3,31 @@ title: How to Order Custom Packaging in Bulk
 description: Running a bulk packaging order well — forecasting quantity, negotiating price breaks, staging deliveries, storing stock and keeping repeat runs consistent.
 metaTitle: How to Order Custom Packaging in Bulk
 publishDate: 2026-08-08
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: order custom packaging in bulk
 heroProduct: corrugated-shipping-boxes
 heroAlt: Corrugated shipping boxes stacked flat on a pallet ready for bulk despatch
+faqs:
+  - q: How do I decide how much to order?
+    a: From demand you can evidence, not from where the price breaks fall. Calculate consumption per month, decide how many months of cover you are comfortable holding, and order that. A better unit price on stock you never use is not a saving.
+  - q: What is the risk of ordering a year at once?
+    a: Storage degradation, obsolescence and cash tied up. Board absorbs moisture over months, artwork dates, ranges change and SKUs get discontinued. Two runs at a slightly worse unit price frequently work out cheaper once those are counted.
+  - q: How far ahead should I reorder?
+    a: Lead time multiplied by consumption, plus a margin. A realistic reorder lead time is four to six weeks once proofing and transit are included, so using 5,000 a month means triggering at around 7,500 remaining rather than 2,000.
+  - q: Can I agree a price for the year and call it off in stages?
+    a: It is worth asking. A committed annual volume with scheduled releases can secure volume pricing without you holding the whole quantity, which addresses both the price break and the storage problem at once.
+  - q: How should bulk stock be stored?
+    a: On pallets, off concrete, away from external walls and covered. Board absorbs ambient moisture and loses compression strength measurably. Rotate so older stock is used first, and specify heat-stable laminates upfront if the space gets warm.
+  - q: What documentation should I keep between orders?
+    a: The dieline, board specification, colour targets, finish list and approved print file. Ask the supplier to hold them and keep your own copies, so you are never dependent on a single relationship continuing.
+  - q: Will a repeat run match the previous one?
+    a: On offset and flexo, closely, because the ink formulation and plate specification are held. On digital the tolerance is wider. If runs sit side by side on a shelf, that argues for litho even at a quantity where digital would win on price.
+  - q: What should I check before signing a bulk order?
+    a: That the quote names board grade and caliper, structure, print method and colour count, every finishing pass, the tooling position, the quantity band, lead time and freight basis. A missing line is usually where two quotes actually differ.
+  - q: Can I split a bulk delivery across several sites?
+    a: Yes, but say so at quoting. Each drop is a separate freight leg and costing it afterwards changes the number. If storage is tight, phased delivery against a schedule is usually available too.
+  - q: Is there a minimum I have to order?
+    a: A flat 100 units on any format. That exists so a structure can be validated before a large commitment — which is exactly what you should do before placing a genuinely bulk order.
 ---
 
 Bulk packaging orders reward planning and punish guesswork. The unit price falls with volume, which makes ordering more feel obviously smart, right up until a design change strands forty thousand cartons in a warehouse.

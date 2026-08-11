@@ -20,6 +20,16 @@ faqs:
     a: You buy press sheet area, not boxes. The manufacturer fits as many flat dielines onto a sheet as will go, and the sheet cost divides between them. A small dimensional change that moves the layout from six-up to eight-up cuts material cost by a quarter.
   - q: Should I size the box or the insert first?
     a: The insert, wherever one is involved. The cavity layout sets the internal dimensions and the outer follows from it. Sizing the box first and fitting an insert into it almost always leaves wasted space you then pay to ship.
+  - q: What happens if I measure a bottle at its base?
+    a: The carton will not close, or the bottle will sit crooked. Most bottles are widest at the shoulder and most jars are widest at the lid, so a base measurement produces a carton that is too small at the point that matters.
+  - q: How do I size for a product that varies between batches?
+    a: Measure several units and size to the largest in a typical batch, not the average. Handmade soap, waffle cones and anything hand-cut vary enough that a carton sized to one sample will fail on a proportion of the run.
+  - q: Should packaging be sized to the product or to a standard size?
+    a: To the product. Standard sizes carry whatever compromise produced them, and for anything shipped the wasted volume is billed on every parcel. There are no stock sizes here — every run is cut to your dimensions.
+  - q: How do I know if my current box is too big?
+    a: Look at how much void fill goes in. Void fill is a direct measure of volume you are paying to ship and doing nothing with. If a typical parcel needs a substantial amount, the box is a size larger than it needs to be.
+  - q: Can I resize after the die has been made?
+    a: Only by making a new die. Tooling is cut for specific dimensions, which is why a plain structural sample before tooling is worth the small cost — a resize afterwards means paying for the die twice.
 ---
 
 Sizing errors are the most common reason a first packaging order does not work. Almost all of them come from measuring the wrong thing, or from measuring the product in a state it will never be packed in.

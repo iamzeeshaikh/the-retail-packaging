@@ -20,6 +20,16 @@ faqs:
     a: The structural and compliance sections, yes — a fit problem or a missing warning costs the same whether the run is 100 units or 100,000. The retail and logistics sections only apply if you are supplying a retailer or shipping at volume.
   - q: What should we keep after production finishes?
     a: The approved print file, the dieline, the board specification, the finish list and the colour targets, archived together. A reorder that references them is faster, cheaper and consistent with the previous run. A reorder that starts from scratch is a new job.
+  - q: How do I calculate a reorder trigger point?
+    a: Lead time multiplied by consumption rate, plus a safety margin. Using 5,000 a month against a six-week lead time means reordering at around 7,500 remaining. Getting this wrong is more expensive than over-ordering, because expedited freight erases any price break.
+  - q: What storage conditions actually matter?
+    a: Humidity and heat. Board absorbs moisture until it equalises with its surroundings and loses rigidity as it does, so stock held over six weeks unconditioned can fail a compression test it passed on delivery. Sustained heat softens laminating adhesives.
+  - q: Should I confirm receiving constraints before ordering?
+    a: Yes, and it is skipped constantly. A pack that is perfect and cannot be received has still failed. Check whether the address takes a pallet, whether there is a dock, what the delivery window is, and whether a 3PL has its own labelling rules.
+  - q: What does "clearance per side" mean?
+    a: Clearance is specified per side, not per dimension. Two millimetres of clearance on a 60 mm product gives a 64 mm internal dimension, not 62 mm. Confusing the two is the most common sizing error we see on a first order.
+  - q: Who should test the opening method?
+    a: Someone who has not seen the pack before. The person who designed it knows where it opens and will not find the point where a customer hesitates — and that hesitation is where packaging gets torn.
 ---
 
 Work through this before committing a packaging run. Most production problems are caught by one of these checks, and all of them are cheaper to resolve before tooling than after.

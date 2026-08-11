@@ -13,6 +13,6 @@ const { Content, headings } = await render(post)
 const wordCount = post.body?.split(/\s+/).filter(Boolean).length ?? 0
 const path = `/blog/${post.id}/`
 ---
-<ArticleLayout data={post.data} section="blog" sectionName="Packaging blog" path={path} wordCount={wordCount} headings={headings}>
+<ArticleLayout data={post.data} section="blog" sectionName="Packaging blog" path={path} wordCount={wordCount} headings={headings} faqs={post.data.faqs}>
   <Content />
 </ArticleLayout>

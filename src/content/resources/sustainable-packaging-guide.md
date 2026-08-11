@@ -20,6 +20,16 @@ faqs:
     a: Right-sizing. It removes board, reduces shipping volume and cuts freight emissions in one change, and it lowers cost rather than raising it. It is the only option in this guide that improves the environmental position and the budget at the same time.
   - q: Can you certify our recycled content?
     a: We can state the recycled content of the board we supply and provide the mill documentation behind it. We do not issue certifications ourselves. That distinction matters if you intend to print a percentage, because the evidence has to come from the material supply chain rather than from us.
+  - q: Does a recycled stock change how the pack folds?
+    a: It can. Shorter fibre cracks more readily at a crease, so a crease profile set for virgin board may need adjusting. It is a small change but it surfaces at assembly, usually mid-run, which is why it is worth raising before the first production order.
+  - q: Will switching to recycled board change my printed colours?
+    a: Yes. Recycled stocks have a greyer base and absorb more ink, so a colour approved on virgin coated board reads duller. Where a brand colour is fixed, budget for a press proof on the new stock rather than assuming the file transfers.
+  - q: What counts as evidence for a recycled content claim?
+    a: Mill documentation stating the percentage and whether the fibre is post-consumer or pre-consumer. Post-consumer has been used and recovered; pre-consumer is manufacturing offcuts. Stating which one you mean is part of making the claim defensible.
+  - q: Is a paper mailer better than a poly one?
+    a: For recyclability, yes — paper goes into kerbside collection where poly generally needs store drop-off. For weight and moisture resistance, poly wins. Which matters more depends on your product and on what your customers can realistically do with the pack.
+  - q: What is the most common unsupportable claim you see?
+    a: Printing "recyclable" on a pack with a film laminate or a plastic window. The board would be recyclable on its own; the finished pack is not, and most kerbside systems will reject it. The claim has to describe the pack as it ships, not the substrate it started as.
 ---
 
 Three distinct claims get treated as one, and that is where brands attract complaints. This guide separates them and sets out what each option genuinely delivers.

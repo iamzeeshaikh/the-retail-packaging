@@ -20,6 +20,16 @@ faqs:
     a: Marginally, at the same caliper. Shorter fibre means slightly less rigidity and slightly faster moisture uptake, and it cracks a little more readily at a crease. Stepping up one caliper restores the performance and usually costs less than people expect.
   - q: Why does the same colour look different on kraft?
     a: Because kraft is unbleached and absorbent. Ink sinks in and the brown substrate shows through, so colours read warmer and duller. White needs an opaque underbase to register at all. Design for kraft from the start rather than adapting a design made on white.
+  - q: When do I need double-wall corrugated?
+    a: When stack height goes past roughly five high, or contents exceed around 20 kg. Below that single-wall B or C flute handles most loads. Double-wall costs more and takes more space flat, so it is worth specifying only where the load genuinely demands it.
+  - q: What is greyboard and where is it used?
+    a: Thick rigid board used for boxes that do not collapse, wrapped in a printed paper. It is the substrate behind every rigid box, and its thickness is why a rigid box holds noticeably less than a folding carton at the same external size.
+  - q: Does a white-top liner matter on corrugated?
+    a: For print quality, yes — a white top gives far better colour reproduction than kraft liner. For strength it makes no difference. If the box is customer-facing it earns its cost; if it goes to a warehouse it usually does not.
+  - q: Can I mix materials in one pack?
+    a: You can, and it is often the right functional answer, but it affects recyclability. A carton that is entirely paper recycles cleanly; the same carton with a plastic window and a foil block does not. If a recyclability claim matters, design for a single stream.
+  - q: What material handles moisture best?
+    a: It depends where the moisture is. Ambient humidity needs a moisture-resistant coating; surface condensation needs an exterior barrier; leaking contents need a wet-strength board with a liner. They are three different problems and one specification does not cover all of them.
 ---
 
 Material is the first decision that constrains everything after it. Board grade sets what the pack can carry, print behaviour and, to a large extent, cost. This guide sets out what each substrate does and where it disappoints.

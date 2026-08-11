@@ -20,6 +20,16 @@ faqs:
     a: Plan for it rather than adding it late. A plain structural sample is quick; a printed prototype with applied finishes takes longer because each finish is a separate pass. Build sampling into the timeline at the start and it costs days rather than weeks.
   - q: What should I actually do with a sample when it arrives?
     a: Put the real product in it and use it the way a customer will. Fill it, close it, carry it, stack it, open it the way someone unfamiliar would. Inspecting a sample on a desk tells you very little that the drawing did not already.
+  - q: Can you sample a perforation?
+    a: Yes, and you should. A perforation is the single element that cannot be judged from a drawing — too weak and it opens in transit, too strong and store staff tear it badly. It has to be felt, which means a physical sample on any display or shelf-ready case.
+  - q: Does a sample tell me anything about long-run consistency?
+    a: No, and that is its main limitation. A prototype shows what one unit looks like. Colour consistency across a full run is a press question, and it is answered by the print route and a held ink formulation rather than by sampling.
+  - q: Should I sample a repeat order?
+    a: Usually not, if it references a held specification and nothing has changed. Sampling is for new structures, fitted cavities, perforations, unfamiliar finishes on a given substrate, and any tight fit. A straight repeat needs none of those checks.
+  - q: What is a production first-off?
+    a: The first unit off the actual press run, checked before the run continues. It is the only sample made on the real equipment with the real materials, which makes it the most accurate — and the latest possible point to catch anything.
+  - q: How do I test food packaging in a sample?
+    a: With the actual food, not a proxy. Fill it with the hottest, greasiest item on the menu, leave it for the length of a real delivery, then look at the base. Heat, grease and moisture interact with board in ways that only appear with real contents.
 ---
 
 Sampling is the cheapest insurance in a packaging project. A sample costs a fraction of a production run and catches the failures that are otherwise discovered several thousand units too late.

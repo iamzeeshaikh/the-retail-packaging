@@ -3,10 +3,31 @@ title: Digital Printing vs Offset Printing for Packaging
 description: Where digital printing beats offset lithography on packaging, where offset takes over, and how to find the crossover point for your own run.
 metaTitle: Digital vs Offset Printing for Packaging
 publishDate: 2026-07-17
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: digital printing vs offset printing
 heroProduct: custom-poly-mailers
 heroAlt: Custom printed poly mailers showing solid colour coverage across the film surface
+faqs:
+  - q: At what quantity should I switch from digital to offset?
+    a: Somewhere between 500 and 2,000 units for a simple job, but it is not a fixed number. A one-colour design crosses over early and a five-colour one much later. If your quantity sits in that band, ask for both prices rather than applying a rule.
+  - q: Is offset print quality actually better, or just different?
+    a: Better in specific ways — it holds fine type more crisply and lays down named spot inks directly rather than approximating them. For full-colour photographic work the gap is much smaller than people assume, and on a short run digital frequently looks equivalent.
+  - q: Will customers notice the difference between the two?
+    a: On a photographic design, almost never. On a solid brand colour seen next to previous stock, sometimes. The people who notice are usually the brand team comparing runs, not the customer holding one pack.
+  - q: Does digital limit what finishes I can apply?
+    a: Not meaningfully. Lamination, spot UV, foil and emboss all apply to digitally printed sheets the same way. The finishing stages are separate passes regardless of how the sheet was printed.
+  - q: Can I run several designs in one digital order?
+    a: Yes, and it is the main advantage. There are no plates to change, so ten variants of a carton print in one run at no extra setup. On offset each variant needs its own plate set, which usually removes it from consideration entirely.
+  - q: Why did my reprint not match the first run exactly?
+    a: If it was digital, the tolerance is simply wider — colour is built from process inks each time. Offset holds a named ink formulation, which is why it stays consistent. If matching reprints matters, that is an argument for litho at a quantity where digital would otherwise win.
+  - q: Does the substrate change which method I can use?
+    a: Considerably. Rotogravure is film only, flexography suits corrugated and film, offset needs a flat sheet, and screen handles thick and fabric stocks nothing else takes. In practice the substrate often narrows the choice before quantity does.
+  - q: Is digital more environmentally friendly?
+    a: Marginally, in that there are no plates to make and less makeready waste. The larger environmental factor by far is ordering the right quantity — a wasteful long run on any press beats a right-sized short run on none.
+  - q: How much faster is digital?
+    a: It removes plate-making from the schedule, which is typically a few days. On a fixed deadline that can be the difference between making it and not, which is sometimes reason enough to choose it regardless of unit price.
+  - q: What should I ask a supplier to compare the two properly?
+    a: The same specification quoted both ways, at your quantity and at the next band up. Four numbers show the shape of both curves. Ask what happens to each if you add a colour or a second variant, because that is what moves the crossover.
 ---
 
 The digital versus offset question has a clean answer, and it is arithmetic rather than opinion. One method carries a fixed setup cost and a low running cost. The other carries no setup cost and a higher running cost. Where the two lines cross depends on your quantity, your colour count and your finishing.

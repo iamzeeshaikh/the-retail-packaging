@@ -248,7 +248,11 @@ def main() -> None:
     R["missing_schema"] = [p.route for p in indexable if not p.schema_types]
 
     # ---- FAQ coverage
-    needs_faqs = [p for p in indexable if p.type in ("home", "location", "other")]
+    # Every page type the brief requires FAQs on. This previously listed only
+    # home, location and "other", which silently excluded all 15 resources and
+    # all 10 blog posts and reported a false all-clear on a hard requirement.
+    NEEDS_FAQS = ("home", "location", "location-hub", "other", "resource", "blog")
+    needs_faqs = [p for p in indexable if p.type in NEEDS_FAQS]
     R["pages_under_10_faqs"] = sorted(
         [
             {"route": p.route, "faqs": len(p.faqs), "type": p.type}

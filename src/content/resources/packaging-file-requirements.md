@@ -20,6 +20,16 @@ faqs:
     a: Almost always an overprint setting. A white object set to overprint knocks out nothing and prints nothing, so it disappears entirely. It looks correct on screen, which is why it survives to proof so often.
   - q: How do I tell you which parts are critical?
     a: Say so in a note with the file. Prepress checks a great many mechanical things but cannot know that one particular blue is your brand colour, that a panel is legally required, or that a logo must not scale. A three-line note prevents most proof cycles.
+  - q: Should I outline fonts or embed them?
+    a: Either works and outlining is safer, because an embedded font can fail to resolve on a different system while outlined type cannot. Keep an editable master, since outlined text can no longer be corrected without going back to the original.
+  - q: What is PDF/X and why does it matter?
+    a: A PDF subset designed for print exchange — it enforces embedded fonts, defined colour handling and no live transparency issues. PDF/X-4 or PDF/X-1a means the file behaves predictably in prepress rather than depending on which application opens it.
+  - q: Can I send a native Illustrator or InDesign file?
+    a: We can work with them, but a PDF/X export is preferable because it settles fonts, links and colour handling at your end rather than ours. If you do send native files, package them with fonts and links included.
+  - q: How large a file can I send?
+    a: Under 20 MB by email; anything larger via a download link. Very large files are usually a sign that images are placed at far higher resolution than needed, which is worth checking since it does not improve the print.
+  - q: What should I tell you when I send artwork?
+    a: What is critical. Prepress checks a great many mechanical things but cannot know that one blue is your brand colour, that a panel is legally required, or that a logo must not scale. A three-line note prevents most proof cycles.
 ---
 
 These are the technical requirements for artwork sent to production. Meeting them means a file passes prepress first time rather than returning with queries.

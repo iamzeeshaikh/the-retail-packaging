@@ -20,6 +20,16 @@ faqs:
     a: Board and moulded pulp both go into standard paper recycling. Foam generally does not. If recyclability is firm, moulded pulp is the closest thing to foam performance that still recycles — accepting somewhat less shock absorption.
   - q: Do I need an insert for soft goods?
     a: Rarely. A folded garment cushions itself and has no rigid parts to break. Right-sizing the outer is almost always the better answer for soft goods, and it reduces dimensional weight at the same time.
+  - q: How much clearance does a foam cavity need versus board?
+    a: Slightly less for foam, because it compresses where board does not. Board wants 1 to 2 mm around the product; foam can run tighter. What neither tolerates is zero clearance — manufacturing variance on both sides means an exact cavity will not accept the product.
+  - q: Why does my insert need a finger relief cut?
+    a: Because a cavity that grips well enough to protect in transit is one the customer cannot get the product out of. A relief cut is a small notch that lets a finger under the item. It costs nothing and it is the difference between a good pack and a frustrating one.
+  - q: Should heavy and light items share an insert?
+    a: They can, but say so when specifying. A heavy item shifting beside a light one is a common damage mode, and the cavity for the heavy item usually needs to be tighter and deeper than its size alone would suggest.
+  - q: Do I need to send the box dimensions as well as the product?
+    a: Yes. An insert is cut to the inside of the outer pack, not to the product alone, so both sets of dimensions are needed. Internal box dimensions specifically — most box specifications are quoted externally and board thickness makes the difference.
+  - q: How do I test whether an insert works?
+    a: Load it with the real product and drop it about a metre onto a hard floor on several faces. If the product shifts, tighten the cavity. If the insert deforms, step up the material. If the outer creases at a corner, the load is not distributing and the geometry needs work.
 ---
 
 Most transit damage happens because the product moved inside a box that survived. An insert stops that movement, and it is usually the cheapest reliability improvement in a specification.

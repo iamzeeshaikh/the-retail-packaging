@@ -3,10 +3,31 @@ title: How Custom Packaging Costs Are Calculated
 description: What actually drives the price of a custom packaging run, from board area and plate setup to finishing steps, tooling and freight.
 metaTitle: How Custom Packaging Costs Are Calculated
 publishDate: 2026-06-26
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: custom packaging costs
 heroProduct: rigid-boxes-with-inserts
 heroAlt: Rigid box with a fitted insert holding a product securely in position
+faqs:
+  - q: Why is my quote so much higher per unit than a competitor's bulk price?
+    a: Almost always quantity. Setup costs are fixed and divide by however many units you make, so a 250-unit run carries the same plate and makeready cost as a 25,000-unit one. It is arithmetic rather than a penalty for ordering small.
+  - q: What part of the quote can I actually negotiate?
+    a: Less than you would think on price, and more than you would think on specification. Removing a finishing pass, reducing colour count or adjusting a dimension so it nests better on the sheet all move the number more than asking for a discount.
+  - q: Is the cheapest quote usually the cheapest packaging?
+    a: Not over a year. A pack that fails in transit costs the product, the replacement shipping and the customer. And a quote that omits tooling or freight is not comparable with one that includes them — the gap is usually where the difference sits.
+  - q: How much does tooling cost and is it charged again?
+    a: It varies by structure, and it should be a one-time cost reused on reorders. Ask explicitly whether a reorder incurs it again and who holds the die. It is one of the most common gaps in a first quote.
+  - q: Why does one extra colour cost so much?
+    a: On offset and flexo each colour is a separate plate and press unit, so a fifth colour adds tooling, setup and running cost together. On digital the colour count barely registers. It is one of the biggest structural differences between the routes.
+  - q: What is the largest cost most brands overlook?
+    a: Outbound freight. Dimensional weight is charged on every parcel forever and never appears on a packaging invoice, so it goes unexamined — even though it usually dwarfs the difference between two board grades.
+  - q: Does ordering more always reduce the unit price?
+    a: The unit price, yes. The total cost, not necessarily. Stock that becomes obsolete, dates with seasonal artwork or degrades in storage was never a saving. Order against demand you can evidence.
+  - q: How do I compare two quotes fairly?
+    a: Check that both name the same board grade and caliper, the same corner construction, the same finishing passes, the same tooling position and the same freight basis. If either omits one, you are not comparing the same box.
+  - q: Why did the price barely change when I doubled the quantity?
+    a: Because you were already past the point where setup cost dominates. The steep part of the curve is at low volumes. Above a few thousand units, savings come only from material and press efficiency, which move slowly.
+  - q: Can a dimension change really reduce the price?
+    a: Sometimes substantially. You buy press sheet area, and a small change that fits an extra piece per sheet cuts material cost permanently. Ask before the die is cut — afterwards it means new tooling.
 ---
 
 Packaging quotes often look opaque from the outside. Two suppliers quote the same job at prices that differ by half, and neither explains why. Understanding the cost structure makes those quotes readable, and it tells you where your own specification is spending money.

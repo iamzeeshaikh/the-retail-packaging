@@ -3,10 +3,31 @@ title: Custom Retail Packaging Design Checklist
 description: The structural, regulatory and production checks worth completing before packaging artwork goes to press, ordered the way production actually needs them.
 metaTitle: Custom Retail Packaging Design Checklist
 publishDate: 2026-07-03
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: retail packaging design checklist
 heroProduct: cosmetic-boxes
 heroAlt: Custom cosmetic boxes showing printed front panels and regulated back panel space
+faqs:
+  - q: When in the process should I start designing?
+    a: After the structure is settled and the dieline exists, not before. Design decisions made against a rectangle routinely place content under a glue lap or across a fold, and discovering that at proof means redrawing rather than adjusting.
+  - q: Which panel matters most?
+    a: The one that faces the shopper, which is not always the largest. Packs frequently sit shoulder to shoulder, making a narrow side panel the face people actually see. Ask how the product will be merchandised before deciding where the brand goes.
+  - q: How do I stop the regulatory panel ruining the design?
+    a: Lay it out first, at final length and legal minimum size, then design the front into what is left. Fitting required copy around a finished design is what forces either an uncomfortable type size or a larger carton than the product needs.
+  - q: What is the most common design-stage mistake?
+    a: Approving colour from a screen. A monitor is backlit and a carton is not, and the substrate changes everything — the same file on coated board, uncoated and kraft produces three visibly different results.
+  - q: How small can text go on packaging?
+    a: Above 6pt for positive text and above 8pt for reversed as a working floor. Reversed type fills in more readily because ink spreads into the knocked-out area, and the effect is worse on absorbent and fluted substrates.
+  - q: Should I design the interior of the pack?
+    a: On anything that opens toward a customer, yes. Interior print is comparatively cheap, it is the surface people photograph on direct-to-consumer products, and it is left blank far more often than it should be.
+  - q: How do I check a design will work on shelf?
+    a: Print it at actual size, stand three feet away and look at it beside its competitors rather than on its own. Most designs that fail on shelf fail because they were only ever assessed at 200 mm on a screen.
+  - q: Do I need to design differently for a window?
+    a: Yes. Position the aperture over the product rather than centring it for visual balance, and frame it — an unframed window makes contents look sparse. It also removes panel strength, so it interacts with the structure.
+  - q: What should be finalised before artwork is released?
+    a: Substrate, print method and finishes, because all three change how the design reproduces. Foil, emboss and spot UV in particular need artwork prepared for them rather than applied to a finished flat design.
+  - q: Who should approve the final proof?
+    a: Someone authorised to commit the spend, checking against a written specification rather than from memory, with the approval recorded. Verbal sign-off from whoever is available is how the wrong version reaches press.
 ---
 
 Packaging artwork gets rejected at prepress for the same handful of reasons, year after year. Almost none of them are design failures. They are process failures — a step skipped, a measurement taken from the wrong place, a panel laid out before anyone checked what legally had to fit on it.

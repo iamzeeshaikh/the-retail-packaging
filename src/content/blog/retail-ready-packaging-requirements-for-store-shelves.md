@@ -3,10 +3,31 @@ title: Retail Ready Packaging Requirements for Store Shelves
 description: What retailers expect from shelf-ready packaging — footprint, opening, identification, stacking strength and the planogram checks to do before tooling.
 metaTitle: Retail Ready Packaging Requirements Explained
 publishDate: 2026-08-05
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: retail ready packaging
 heroProduct: soap-display-boxes
 heroAlt: Soap display boxes arranged as a retail-ready counter unit with a printed header
+faqs:
+  - q: What is retail-ready packaging actually required to do?
+    a: Survive distribution as a case, open along a designed line without tools, and become a display that looks deliberate. Those three jobs pull against each other, which is why the format is harder than it appears.
+  - q: Where do retailer requirements come from?
+    a: They are usually published by the retailer and are non-negotiable — case dimensions, pallet pattern, opening face and barcode placement. Get the document before designing anything and work inward from it.
+  - q: What happens if the case fails the retailer specification?
+    a: It gets rejected at the distribution centre, which means the stock does not reach shelf and the run has to be remade. It is the most expensive failure in this category and it is entirely avoidable by obtaining the specification first.
+  - q: How do I get the perforation right?
+    a: By testing a physical sample. Too weak and it opens in transit; too strong and staff tear it badly, leaving a display that looks damaged on day one. It cannot be judged from a drawing.
+  - q: Should I design for a full facing or a half-empty one?
+    a: Both, but pay attention to the half-empty state, because that is how the unit spends most of its selling life. Printing the rear and side panels that become visible as it empties costs little and changes how it reads.
+  - q: What stacking strength do I need?
+    a: Calculated against pallet load and how long stock stands in a distribution centre, not against the contents weight alone. Compression failure appears at the bottom of a pallet, long after the specification was approved.
+  - q: Can a shelf-ready case be reused or restocked?
+    a: Some formats are restocked in store. If that is expected, say so — surviving repeated refilling is a different structural requirement from a single fill, and it affects both the board and the opening design.
+  - q: Where does the barcode go on a retail-ready case?
+    a: Wherever the retailer specifies, and never across a crease or perforation. A barcode crossing either fails at the scanner, and that is discovered in a warehouse rather than in prepress.
+  - q: How far ahead should I plan a retail-ready launch?
+    a: Further than a standard pack, because it adds retailer approval and physical sampling to the usual proofing. Work backwards from the on-shelf date including both, rather than from production lead time alone.
+  - q: Do I need a separate primary pack and case?
+    a: Almost always. The case protects and displays; the primary pack sells the individual unit. Designing them together, with the case constraints leading, avoids the common problem of a primary pack that does not fit the pallet pattern cleanly.
 ---
 
 Retail-ready packaging, sometimes called shelf-ready packaging, is a case that arrives at a store, opens in one movement, and becomes the display without anything being unpacked. Retailers push for it because it cuts the labour of restocking. Brands benefit because it controls how the product looks on shelf rather than leaving that to whoever is filling the aisle.

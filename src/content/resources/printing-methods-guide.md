@@ -20,6 +20,16 @@ faqs:
     a: A paper sheet is printed offset and then bonded to corrugated board, giving offset print quality on a substrate that normally only takes flexo. It costs more and adds a production stage, so it is worth it when a corrugated pack is customer-facing and photographic quality genuinely matters.
   - q: Does the substrate change which method I can use?
     a: Considerably. Rotogravure is film only. Flexography suits corrugated, film and label stock. Offset needs a flat sheet. Screen handles fabric and thick rigid stocks that nothing else will take. In practice the substrate often narrows the choice before quantity does.
+  - q: Why does the same file look different on kraft than on white board?
+    a: Kraft is unbleached and absorbent, so ink sinks in and the brown substrate shows through. Colours read warmer and duller and white needs an opaque underbase. Design for the stock from the start rather than correcting a white-board design afterwards.
+  - q: What is washboarding and can it be avoided?
+    a: The corrugated flutes beneath the liner showing faintly through large solid areas. It is inherent to printing directly on corrugated rather than a fault, and it is more visible on coarser flutes. Litho-lamination avoids it by printing a paper sheet and bonding it on.
+  - q: Do I need a press proof or is a digital proof enough?
+    a: A digital proof catches layout and content. It cannot predict how a colour sits on your actual substrate, because a monitor is backlit and a carton is not. For any colour that is a brand asset, approve a press-printed sample on the real stock.
+  - q: How many colours can I print?
+    a: On digital, as many as the artwork contains, since everything builds from the same process set. On offset and flexo each colour is a plate and a press unit, so the practical ceiling is what the press has — and every additional one adds tooling and setup.
+  - q: Can two production runs be made to match exactly?
+    a: On offset and flexo, closely — we hold the ink formulation and plate specification, so run-to-run variation is tight. On digital the tolerance is wider. If products sit side by side on a shelf across several reorders, that difference becomes visible and points to litho.
 ---
 
 Print method is decided by arithmetic more often than by quality. One route carries a fixed setup cost and low running cost; another carries no setup and higher running cost. Where those curves cross depends on quantity, colour count and finishing.

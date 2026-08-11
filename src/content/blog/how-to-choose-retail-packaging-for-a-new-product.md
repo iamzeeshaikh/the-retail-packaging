@@ -3,10 +3,31 @@ title: How to Choose Retail Packaging for a New Product
 description: A practical order of decisions for choosing retail packaging, from measuring the product to picking a print method that suits your first production run.
 metaTitle: How to Choose Retail Packaging for a New Product
 publishDate: 2026-06-12
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: choose retail packaging
 heroProduct: mailer-boxes
 heroAlt: Custom printed mailer boxes in a range of sizes prepared for a retail launch
+faqs:
+  - q: Where do I start if I have never bought packaging before?
+    a: With the product dimensions, its weight, and how it will reach the customer. Those three answers narrow the format more than any amount of looking at options, and they are the first things any supplier will ask you for.
+  - q: Should I copy what competitors use?
+    a: As a starting point for what the category expects, yes. As a specification, no — their pack was sized to their product and their channel. Copying a format without checking it against your own contents is how first orders go wrong.
+  - q: How much should a first packaging order cost?
+    a: Less than instinct suggests you should spend. First runs are where forecasts are least reliable, so validating a structure at a small quantity is worth more than a better unit price on stock you may not use.
+  - q: Do I need custom packaging or will stock sizes do?
+    a: Stock sizes work if one genuinely fits. The cost of a near-fit is paid on every parcel in wasted volume, so for anything shipping regularly, a custom size usually pays back quickly. For a low-volume product, stock is often sensible.
+  - q: Retail shelf or direct shipping — does it change the pack?
+    a: Substantially. Shelf wants face area, finish and shelf presence. Shipping wants tight dimensions and crush resistance. One pack doing both is usually mediocre at each, and two formats sharing a visual system frequently costs less overall.
+  - q: How do I avoid tooling something I will regret?
+    a: Tool the structure around the container or product rather than the current artwork, and leave panel headroom for claims you have not written yet. A formulation or design change should need new print, not a new die.
+  - q: What should I ask a supplier for before committing?
+    a: A written specification naming board grade, structure, print method, finishes and lead time, plus a plain structural sample with your actual product in it. A number with no specification behind it is not comparable with anything.
+  - q: How long does a first order take?
+    a: Longer than a repeat, because it includes structural sampling and proofing. Production itself is 3 to 5 business days after approval. Build sampling and proof cycles into the plan at the start rather than discovering them at the end.
+  - q: Can I change the design later without new tooling?
+    a: Yes, if the structure stays the same — artwork changes need new print setup, not a new die. That is exactly why tooling the structure around something stable, and leaving the artwork free to move, is worth doing.
+  - q: What is the most common regret on a first order?
+    a: Quantity. Either too much of an unproven design, or exactly the count needed with no allowance for damage or a second wave. Ordering a modest overage inside the original run is far cheaper than a separate short run later.
 ---
 
 Most first-time packaging decisions get made backwards. A brand picks a look, finds a box that roughly fits, and then discovers at the packing bench that the product rattles, the barcode falls across a fold, or the shipping cost doubled because the carton is two inches too tall.

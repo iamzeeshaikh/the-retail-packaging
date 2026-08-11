@@ -20,6 +20,16 @@ faqs:
     a: Carriers bill on whichever is greater, actual weight or volumetric weight calculated from the box dimensions. A large light parcel is charged as though it were heavy, which is why right-sizing a box saves money even when nothing about the contents changes.
   - q: Who owns the tooling once it is made?
     a: Ask, and get it in writing. Tooling is a one-time cost reused on every reorder, and the practical question is whether a reorder incurs it again and whether the die can move if you change supplier. It is one of the more common gaps in a first quote.
+  - q: What is the difference between ECT and burst strength?
+    a: ECT measures compression strength on the board's edge, which is what determines stacking performance on a pallet. Burst strength measures resistance to puncture. ECT is the more relevant figure for shipping, and it has largely superseded burst for that purpose.
+  - q: What does grammage mean and when is it used?
+    a: Paper weight in grams per square metre. It is used for bags, wraps and papers, where caliper is not a useful measure. Board is quoted in points or millimetres of thickness instead, so seeing gsm tells you roughly what family of material you are looking at.
+  - q: What is migration in a packaging context?
+    a: The transfer of a substance from the packaging into the product — ink, adhesive components or fragrance oil moving through the material. It matters most for food contact and for fragranced products, and it is why a coated inner face gets specified.
+  - q: What is a price break?
+    a: A quantity threshold where the unit price steps down, because fixed setup cost spreads across more units. The practical caution is that ordering up to a break is only a saving if you will use the stock — obsolete inventory was never cheaper.
+  - q: What is the difference between a spot colour and a process build?
+    a: A spot colour is a named premixed ink laid down directly. A process build approximates that colour from the four process inks. Spot is more consistent run to run and costs an extra plate; process is included in what you are already printing.
 ---
 
 Packaging quotes use vocabulary that is rarely explained. These are the terms that appear most often, defined the way they are actually used.

@@ -20,6 +20,16 @@ faqs:
     a: Across a fold, across a curve, or over a perforation. Any of the three distorts the bars enough to fail at the scanner, and it is discovered in a warehouse rather than in prepress. It is a dieline decision made before artwork rather than a layout choice.
   - q: What does pre-flight actually check?
     a: That the file will reproduce as intended — image resolution at placed size, fonts embedded or outlined, bleed on every trim edge, the dieline on a non-printing layer, and total ink coverage within the press limit. It catches mechanical problems, not design ones.
+  - q: Which panel should carry the brand mark?
+    a: The one that faces the shopper on shelf, which is not always the largest face. Packs frequently sit shoulder to shoulder, making a narrow side panel the face people actually see. Ask how the product is merchandised before deciding.
+  - q: Why use rich black on solids but 100% K on small text?
+    a: A four-colour black on small type registers imperfectly and reads soft, because four plates cannot align perfectly at that scale. A single black plate stays crisp. On large solid areas the reverse applies — one plate looks washed out and a rich build looks dense.
+  - q: What is total ink coverage and why does it have a limit?
+    a: The sum of all four channels in the heaviest area. Past the substrate's limit the ink cannot absorb, causing set-off onto the next sheet and slow drying. Stacking heavy channels to make a darker black is the usual way it gets exceeded.
+  - q: What happens if I leave a white object set to overprint?
+    a: It disappears entirely. Overprint means print on top of what is beneath rather than knocking out, and white ink over colour reads as nothing. It looks perfect on screen, which is why it survives to proof so often.
+  - q: Should artwork be built on the dieline or transferred to it?
+    a: Built on it. A dieline shows which panel is front, where the glue lap hides artwork, where creases fall and where safe areas run. Designing on a rectangle and transferring is how content ends up under a lap or across a fold.
 ---
 
 This checklist is for the design stage specifically — the decisions made between receiving a dieline and releasing artwork to production.

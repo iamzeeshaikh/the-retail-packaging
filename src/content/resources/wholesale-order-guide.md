@@ -20,6 +20,16 @@ faqs:
     a: Sometimes on unit price, rarely once storage and obsolescence are counted. Board absorbs moisture over months in unconditioned space, seasonal artwork dates, and ranges change. Two runs at a slightly worse price frequently work out cheaper in total.
   - q: What should a complete quote include?
     a: Board grade and caliper, structure, print method and colour count, every finishing pass, the tooling position, the quantity band, lead time and the freight basis. If any of those is missing the number is not comparable with another quote, and the gap is usually where the price difference actually sits.
+  - q: What is sheet nesting and can I influence it?
+    a: You buy press sheet area, and the manufacturer fits as many dielines onto a sheet as will go. A small dimensional change that moves the layout from six-up to eight-up cuts material cost by a quarter. Ask before the die is cut — afterwards it means new tooling.
+  - q: Should I hold my own copies of the production files?
+    a: Yes. Ask the supplier to hold the dieline, board specification, colour targets and finish list, and keep your own archive too. A brand holding its own copies is never dependent on a supplier relationship continuing.
+  - q: How do I stop stock degrading in storage?
+    a: Keep it on pallets off concrete, away from external walls and covered. Board absorbs ambient moisture and loses compression strength measurably. Rotate so older stock goes first, and specify heat-stable laminates upfront if the space gets warm.
+  - q: Is a lower unit price always the better quote?
+    a: Not unless the specifications match. Check board grade and caliper, whether tray corners are glued or folded, whether tooling is included or charged again on reorder, and whether freight is quoted or excluded. The price gap usually sits in one of those four.
+  - q: What is a realistic reorder lead time?
+    a: Four to six weeks in practice — 3 to 5 business days production after approval, plus transit, plus proofing and internal sign-off. Planning against the production figure alone is what causes the mid-lead-time stockout.
 ---
 
 Volume lowers unit cost, and it also concentrates risk. A bulk order done well removes packaging from your operational worries for months. Done casually, it fills a warehouse with cartons you can no longer use.

@@ -20,6 +20,16 @@ faqs:
     a: Either works, and outlining is safer. Embedded fonts can fail to resolve on a different system; outlined type cannot. The trade is that outlined text can no longer be corrected without going back to the original file, so keep an editable master.
   - q: What file format should I export?
     a: PDF/X-4 or PDF/X-1a, with bleed included, trim marks outside the bleed area, and the dieline layer excluded from output. Name it with product, size and version — a file called final-v3 is how the wrong version reaches press.
+  - q: Can a graphic cross a fold line?
+    a: A background colour or a bold graphic device can. Type, barcodes and fine rules cannot — board compresses and stretches slightly at a crease, so anything that has to be read distorts. The working rule is that anything requiring legibility stays off the fold.
+  - q: What is trapping and do I need to worry about it?
+    a: A slight overlap between adjacent colours that hides registration variance, so a hairline of bare board never appears between them. Prepress normally handles it, but it is worth knowing about if you are supplying separated artwork.
+  - q: Why is my logo blurry when the file looked fine?
+    a: Almost always a raster logo rather than a vector one — commonly a PNG pulled from a website. It looks correct on screen and has soft edges at print size that no processing recovers. Logos should always be supplied as vector.
+  - q: What should I name the file?
+    a: Product, size and version — for example lipstick-carton-45x45x90-v2.pdf. A file called final-v3 is genuinely how the wrong version reaches press, and it is the most expensive prepress error because nothing about it is technically faulty.
+  - q: What is the safety margin for?
+    a: Holding critical content away from trim and fold lines, typically 4 mm. Cutting is never perfectly accurate, so content closer than that risks being trimmed off or landing on a crease. Backgrounds can run to bleed; text and barcodes cannot.
 ---
 
 A dieline is the flat blueprint of a pack. Every fold, cut, glue tab and panel is positioned on it, and artwork built anywhere else will not fit.

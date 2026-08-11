@@ -3,10 +3,31 @@ title: How Packaging Inserts Protect and Present Products
 description: Board, foam and moulded pulp inserts compared on protection, cost and presentation, with guidance on tolerances, cavity design and when an insert is unnecessary.
 metaTitle: How Packaging Inserts Protect and Present Products
 publishDate: 2026-07-31
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: packaging inserts
 heroProduct: rigid-boxes-with-inserts
 heroAlt: Rigid box with a fitted board insert holding several components in separate cavities
+faqs:
+  - q: How do I know whether I need an insert at all?
+    a: Look at what arrives damaged. Boxes crushed with contents intact means the board is too light. Boxes intact with contents damaged means the product moved inside, and that is what an insert fixes. The second case is far more common.
+  - q: Will an insert make my packaging more expensive overall?
+    a: Often not. Once the contents cannot move, the outer only has to resist crushing rather than absorb internal impact, so you can usually drop a board grade. The pair together can be close to cost-neutral against an over-specified box alone.
+  - q: What is the difference between a transit insert and a presentation insert?
+    a: A transit insert grips firmly and is often invisible. A presentation insert seats the product loosely and is part of what the recipient sees. Asking one component to do both usually compromises one, and the fix is a presentation layer inside a protective outer.
+  - q: Can I get an insert for a box I already buy?
+    a: Yes, and it is common. Send the internal dimensions of the existing box — internal, not the external size most specifications quote — along with the product, and we cut a cavity to fit inside what you already use.
+  - q: Do soft goods need inserts?
+    a: Rarely. A folded garment cushions itself and has nothing rigid to break. For soft goods, right-sizing the outer box is almost always the better answer and it reduces dimensional weight at the same time.
+  - q: How long does insert tooling take?
+    a: A cutting die for board or foam is quick. A mould for pulp is a larger cost and a longer lead time, which is why moulded pulp only makes commercial sense at volume even where it is technically the best fit.
+  - q: What is the most common insert mistake?
+    a: Cutting the cavity to the exact product dimensions. Manufacturing variance in both means an exact fit binds and the product will not go in. Board needs 1 to 2 mm around it; foam slightly less because it compresses.
+  - q: Should the insert be printed?
+    a: On a direct-to-consumer product, usually yes. The insert is what the customer sees immediately after the lid, and it is the surface people photograph. It costs comparatively little against the effect it has.
+  - q: Which insert material is best for fragile items?
+    a: Foam, for anything genuinely fragile like glass or unprotected screens, because it absorbs shock rather than just locating the item. Board immobilises well but absorbs poorly. Moulded pulp sits between the two and recycles cleanly.
+  - q: How should I test an insert before committing?
+    a: Load a plain sample with the real product and drop it about a metre onto a hard floor on several faces. Product shifting means tighten the cavity; insert deforming means step up the material; outer creasing at a corner means the geometry needs work.
 ---
 
 Most transit damage does not happen because the outer box failed. It happens because the product moved inside a box that survived perfectly well. An insert is the component that stops that movement, and it is routinely the cheapest reliability improvement available in a packaging specification.
