@@ -7,6 +7,8 @@ import { stickerFacts } from './stickers'
 import { cosmeticFacts } from './cosmetic'
 import { sleeveFacts } from './sleeves'
 import { cupFacts } from './cups'
+import { insertFacts } from './inserts'
+import { displayLabelFacts } from './display-labels'
 
 export type { ProductFacts } from './types'
 
@@ -27,6 +29,8 @@ const ALL: ProductFactsMap = {
   ...cosmeticFacts,
   ...sleeveFacts,
   ...cupFacts,
+  ...insertFacts,
+  ...displayLabelFacts,
 }
 
 export const factsFor = (slug: string): ProductFacts | undefined => ALL[slug]
