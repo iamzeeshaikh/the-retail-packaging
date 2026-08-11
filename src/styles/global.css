@@ -111,7 +111,13 @@ ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
   --s-1: 0.25rem;  --s-2: 0.5rem;   --s-3: 0.75rem;  --s-4: 1rem;
   --s-5: 1.25rem;  --s-6: 1.5rem;   --s-8: 2rem;     --s-10: 2.5rem;
   --s-12: 3rem;    --s-16: 4rem;    --s-20: 5rem;    --s-24: 6rem;  --s-32: 8rem;
-  --section-y: clamp(3.75rem, 2.5rem + 5vw, 7rem);
+  /* Measured on the California location page: at 1440px this resolved to its
+     7rem ceiling, giving every section 224px of vertical padding around
+     330-550px of content. Fourteen sections of that put roughly a third of the
+     page height into padding, which is what read as excessive empty space.
+     The ceiling comes down and the growth rate with it; the floor is unchanged
+     so narrow viewports keep their existing rhythm. */
+  --section-y: clamp(3.75rem, 2.5rem + 3.2vw, 5.25rem);
 
   /* layout */
   --wrap: 1580px;
@@ -246,6 +252,10 @@ hr { border: 0; border-top: 1px solid var(--border); margin: var(--s-10) 0; }
 .prose h2 { margin-top: var(--s-12); font-size: var(--fs-2xl); }
 .prose h3 { margin-top: var(--s-8); font-size: var(--fs-lg); }
 .prose p, .prose li { color: var(--text-muted); font-size: var(--fs-md); max-width: 76ch; }
+/* The single contextual link closing an info-page section. Set apart from the
+   body copy so it reads as a pointer onward rather than as another paragraph,
+   without becoming a decorative callout box. */
+.prose .sec-link { margin-top: var(--s-5); padding-left: var(--s-4); border-left: 2px solid var(--border); }
 .prose ul, .prose ol { padding-left: var(--s-6); }
 .prose li + li { margin-top: var(--s-2); }
 .prose li::marker { color: var(--ox); }
