@@ -66,7 +66,7 @@ const uid = `qs-${Math.random().toString(36).slice(2, 8)}`
       <BoxPreview brandLine={productName} />
     </header>
 
-    <form class="qs-form" data-qs method="POST" action="/api/quote" enctype="multipart/form-data" novalidate>
+    <form class="qs-form" data-qs method="POST" action="/api/quote/" enctype="multipart/form-data" novalidate>
       <div class="hp" aria-hidden="true">
         <label for={`${uid}-hp`}>Leave empty</label>
         <input id={`${uid}-hp`} type="text" name="company_url" tabindex="-1" autocomplete="off" />
@@ -383,7 +383,7 @@ const uid = `qs-${Math.random().toString(36).slice(2, 8)}`
       const label = submit?.querySelector('.btn-label')
       label && (label.textContent = 'Sending…')
       try {
-        const res = await fetch('/api/quote', { method: 'POST', body: new FormData(form) })
+        const res = await fetch('/api/quote/', { method: 'POST', body: new FormData(form) })
         const data = await res.json().catch(() => ({}))
         if (res.ok && data.ok) {
           const w = window as any
