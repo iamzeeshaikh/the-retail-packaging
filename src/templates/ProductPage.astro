@@ -64,7 +64,7 @@ const specs: [string, string][] = [
     ['Finishes', f.finishes.slice(0, 5).join(', ')],
     ['Minimum order', f.moq.replace(/^[^.]*?from /i, 'From ').split('.')[0] + '.'],
     ['Lead time', '3 to 5 business days after artwork approval'],
-    ['Shipping', 'Nationwide across the United States'],
+    ['Shipping', 'Across the US, UK, Canada and Australia'],
   ]),
 ]
 
@@ -113,7 +113,7 @@ const schema = S.graph([
           <div><dt>Minimum order</dt><dd>{fmtQty(minQty(p))} units</dd></div>
           <div><dt>Production</dt><dd>{leadTime(p)[0]}–{leadTime(p)[1]} business days</dd></div>
           <div><dt>Construction</dt><dd>{f.singular}</dd></div>
-          <div><dt>Delivery</dt><dd>All 50 states</dd></div>
+          <div><dt>Delivery</dt><dd>US, UK, Canada, Australia</dd></div>
         </dl>
 
         <Gallery product={p} />

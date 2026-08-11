@@ -22,7 +22,8 @@ const faqs = [
   { q: 'Can you ship straight to a third-party fulfilment centre?', a: 'Yes, and it is common. Send us the receiving requirements — most 3PLs have specific labelling, pallet height and booking rules that we need before dispatch.' },
   { q: 'Do regional regulations change the packaging specification?', a: 'Sometimes. California Proposition 65 warnings and state-level cannabis labelling rules are the two that come up most. Tell us where the product will be sold and we will leave panel space for what you need.' },
   { q: 'Does climate affect what you recommend?', a: 'It does. Sustained heat softens some adhesives, and humidity reduces the rigidity of uncoated board. For warm or humid storage we specify heat-stable laminates and moisture-resistant coatings.' },
-  { q: 'How do I start an order from my location?', a: `Send a quote request with your product dimensions, quantity and deadline, or call ${SITE.phone}. We reply with a specification, a lead time and a written price.` },
+  { q: 'How do I start an order from my location?', a: `Send a quote request with your product dimensions, quantity and deadline, or call ${SITE.phone} in the US or ${SITE.phoneUk} in the UK. We reply with a specification, a lead time and a written price.` },
+  { q: 'Do you supply outside the United States?', a: 'Yes. We also supply brands in the United Kingdom, Canada and Australia. These pages are US-specific because that is where the state and city detail differs; for the other three markets the specification process is identical and the freight leg is quoted per consignment.' },
 ]
 
 const schema = S.graph([
@@ -40,9 +41,10 @@ const schema = S.graph([
       <p class="eyebrow">United States</p>
       <h1>Custom packaging delivered across the US</h1>
       <p class="lede">
-        We manufacture to order and ship nationwide. The pages below cover the states and cities
-        where we see the most demand, with the sector mix, freight reality and one specification
-        note that genuinely applies to each place.
+        We manufacture to order and ship across the United States, and export to the United Kingdom,
+        Canada and Australia. The pages below cover the US states and cities where we see the most
+        demand, with the sector mix, freight reality and one specification note that genuinely
+        applies to each place.
       </p>
     </div>
   </section>

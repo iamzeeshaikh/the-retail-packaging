@@ -34,14 +34,23 @@ export function organization(): Json {
     image: { '@id': `${SITE.origin}/#logo` },
     email: SITE.email,
     telephone: SITE.phone,
-    areaServed: { '@type': 'Country', name: 'United States' },
+    areaServed: SITE.markets.map((name) => ({ '@type': 'Country', name })),
     contactPoint: [
       {
         '@type': 'ContactPoint',
         contactType: 'sales',
         telephone: SITE.phone,
         email: SITE.email,
-        areaServed: 'US',
+        areaServed: [...SITE.marketCodes],
+        availableLanguage: ['English'],
+      },
+      {
+        // Second line for callers outside North American business hours.
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        telephone: SITE.phoneUk,
+        email: SITE.email,
+        areaServed: ['GB', 'AU'],
         availableLanguage: ['English'],
       },
     ],
@@ -178,18 +187,35 @@ export function product(input: ProductSchemaInput): Json {
       itemCondition: 'https://schema.org/NewCondition',
       offerCount: 1,
       seller: { '@id': `${SITE.origin}/#organization` },
-      shippingDetails: {
-        '@type': 'OfferShippingDetails',
-        shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'US' },
-        deliveryTime: {
-          '@type': 'ShippingDeliveryTime',
-          handlingTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 5, unitCode: 'DAY' },
-          transitTime: { '@type': 'QuantitativeValue', minValue: 2, maxValue: 7, unitCode: 'DAY' },
+      /* Two entries. Handling time is production and is the same wherever the
+         run ships. Transit is only declared for the US, where the ground
+         network makes it predictable; export transit is quoted per consignment,
+         so no number is claimed for it. */
+      shippingDetails: [
+        {
+          '@type': 'OfferShippingDetails',
+          shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'US' },
+          deliveryTime: {
+            '@type': 'ShippingDeliveryTime',
+            handlingTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 5, unitCode: 'DAY' },
+            transitTime: { '@type': 'QuantitativeValue', minValue: 2, maxValue: 7, unitCode: 'DAY' },
+          },
         },
-      },
+        {
+          '@type': 'OfferShippingDetails',
+          shippingDestination: ['GB', 'CA', 'AU'].map((c) => ({
+            '@type': 'DefinedRegion',
+            addressCountry: c,
+          })),
+          deliveryTime: {
+            '@type': 'ShippingDeliveryTime',
+            handlingTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 5, unitCode: 'DAY' },
+          },
+        },
+      ],
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
-        applicableCountry: 'US',
+        applicableCountry: [...SITE.marketCodes],
         returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
         merchantReturnLink: canonical('/shipping-information'),
       },

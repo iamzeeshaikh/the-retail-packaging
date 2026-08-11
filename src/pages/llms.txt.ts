@@ -9,7 +9,7 @@ export const GET: APIRoute = () => {
 
   const body = `# The Retail Packaging
 
-> Custom retail packaging manufactured to order for brands selling in the United States.
+> Custom retail packaging manufactured to order for brands selling in the United States, the United Kingdom, Canada and Australia.
 > ${totals.products} formats across ${totals.categories} categories, all cut to the buyer's dimensions.
 
 Pricing starts from $0.30 per piece at large volume. Final pricing depends on size, material,
@@ -32,7 +32,8 @@ ${cats}
 - [Sitemap](${SITE.origin}/sitemap/)
 
 ## Contact
-Phone: ${SITE.phone}
+Phone (US): ${SITE.phone}
+Phone (UK): ${SITE.phoneUk}
 Email: ${SITE.email}
 `
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } })

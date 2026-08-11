@@ -12,14 +12,14 @@ const description = 'Reach us by phone, email or WhatsApp for custom packaging e
 const trail = [{ name: 'Home', url: '/' }, { name: 'Contact us', url: path }]
 
 const faqs = [
-  { q: 'What is the fastest way to reach you?', a: `Phone on ${SITE.phone}, or WhatsApp for a quick question. Email and the form are answered within one business day.` },
+  { q: 'What is the fastest way to reach you?', a: `Phone on ${SITE.phone} in the US or ${SITE.phoneUk} in the UK, or WhatsApp for a quick question. Email and the form are answered within one business day.` },
   { q: 'Who will I be speaking to?', a: 'A specifier who can discuss structure, material and print, not a call handler passing a message along. The same person then handles your quote, proof and production.' },
   { q: 'Can you help before I know what I need?', a: 'Yes, and that is a common starting point. Describe the product and how it sells, and we will suggest formats worth considering.' },
   { q: 'How do I check on an existing order?', a: 'Reply to your quote email or call with the reference number. We can tell you where the job is in production and whether the date is still firm.' },
   { q: 'Do you have a physical address for visits?', a: 'We do not run public facility visits. For large programmes we can arrange a production review with the relevant partner facility.' },
   { q: 'Can I send artwork by email?', a: 'Yes, for files under 20 MB. Anything larger is better sent as a download link, or uploaded through the quote form.' },
   { q: 'Do you work with agencies?', a: 'Yes. We can work directly with an agency on behalf of a client, including supplying dielines and technical specifications for design work.' },
-  { q: 'Do you handle international enquiries?', a: 'Our focus is the United States. We can discuss export requirements but our freight arrangements and lead times are built around US delivery.' },
+  { q: 'Do you handle enquiries from outside the US?', a: 'Yes. We supply brands in the United Kingdom, Canada and Australia as well as the United States. The specification process is identical; the freight leg is quoted per consignment once we know the weight, volume and destination.' },
   { q: 'How quickly will I hear back?', a: 'Within one business day for quotes and specification questions. If a requirement needs a structural mock-up before we can price it accurately, we tell you that rather than leaving you waiting on a number we cannot yet give.' },
   { q: 'How do I make a complaint?', a: 'Contact us directly with your order reference and what went wrong. If an order does not match the approved specification we will put it right.' },
 ]
@@ -43,10 +43,11 @@ const schema = S.graph([
           conversation starts the same way — what are you packing, and where does it have to survive.
         </p>
         <dl class="contact-list">
-          <div><dt>Phone</dt><dd><a href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a></dd></div>
+          <div><dt>Phone (US)</dt><dd><a href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a></dd></div>
+          <div><dt>Phone (UK)</dt><dd><a href={SITE.phoneUkHref} data-analytics="phone-click">{SITE.phoneUk}</a></dd></div>
           <div><dt>Email</dt><dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd></div>
           <div><dt>WhatsApp</dt><dd><a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" data-analytics="whatsapp-click">{SITE.whatsappDisplay}</a></dd></div>
-          <div><dt>Coverage</dt><dd>All 50 US states</dd></div>
+          <div><dt>Coverage</dt><dd>United States, United Kingdom, Canada, Australia</dd></div>
         </dl>
         <p class="muted small">
           We do not operate walk-in premises. For an update on an existing order, quote your

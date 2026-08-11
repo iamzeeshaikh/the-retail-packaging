@@ -81,9 +81,11 @@ const aboutLinks = [
 <header class="site-header" data-header>
   <div class="topbar">
     <div class="wrap topbar-in">
-      <p>Made-to-order packaging for US brands. Nationwide delivery.</p>
+      <p>Made-to-order packaging for brands in the US, UK, Canada and Australia.</p>
       <div class="topbar-links">
-        <a href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a>
+        <a href={SITE.phoneHref} data-analytics="phone-click">US {SITE.phone}</a>
+        <span aria-hidden="true">·</span>
+        <a href={SITE.phoneUkHref} data-analytics="phone-click">UK {SITE.phoneUk}</a>
         <span aria-hidden="true">·</span>
         <a href="/samples/">Order samples</a>
       </div>
@@ -267,7 +269,8 @@ const aboutLinks = [
       <a class="m-flat" href="/custom-packaging-tool/">Packaging design tool</a>
       <div class="mobile-cta">
         <a class="btn btn-primary btn-block" href="/request-a-quote/">Request a Quote</a>
-        <a class="btn btn-outline btn-block" href={SITE.phoneHref} data-analytics="phone-click">Call {SITE.phone}</a>
+        <a class="btn btn-outline btn-block" href={SITE.phoneHref} data-analytics="phone-click">Call US {SITE.phone}</a>
+        <a class="btn btn-outline btn-block" href={SITE.phoneUkHref} data-analytics="phone-click">Call UK {SITE.phoneUk}</a>
       </div>
     </div>
   </div>
@@ -291,6 +294,10 @@ const aboutLinks = [
   .topbar a { color: rgba(246, 243, 237, 0.9); text-decoration: none; }
   .topbar a:hover { color: var(--accent-soft); text-decoration: underline; }
   @media (max-width: 780px) { .topbar p { display: none; } .topbar-in { justify-content: center; } }
+  /* Two phone numbers plus the samples link do not fit on a narrow phone.
+     The numbers are the useful part of the topbar, so the samples link is the
+     one that goes — it still sits in the drawer and the footer. */
+  @media (max-width: 560px) { .topbar-links > :nth-last-child(-n + 2) { display: none; } }
 
   .bar { display: flex; align-items: center; gap: var(--s-6); min-height: var(--header-h); }
 

@@ -301,7 +301,7 @@ export function categoryIntro(c: Category, productCount: number): string[] {
   const inds = industriesFor(c.slug)
   if (!note) {
     return [
-      `We produce ${productCount} ${c.name.toLowerCase()} formats to order for brands selling into the US market.`,
+      `We produce ${productCount} ${c.name.toLowerCase()} formats to order for brands selling in the US, UK, Canada and Australia.`,
     ]
   }
   return [
@@ -364,7 +364,7 @@ export function productFaqs(p: Product): Faq[] {
     },
     {
       q: `How are ${l} delivered?`,
-      a: `${f.shipping} We ship across the United States and confirm the delivery window when your order is approved for production.`,
+      a: `${f.shipping} We ship across the United States and export to the United Kingdom, Canada and Australia, and we confirm the delivery window when your order is approved for production.`,
     },
     {
       q: `Can I see a sample before placing a full order?`,
@@ -452,8 +452,8 @@ export function categoryFaqs(c: Category, count: number): Faq[] {
       a: `Print-ready PDF or vector AI files work best, with fonts outlined and images at 300 dpi. We supply a dieline template for your chosen size, and our prepress team checks every file before production.`,
     },
     {
-      q: `Do you ship ${k} across the United States?`,
-      a: `Yes, we ship nationwide. Delivery time depends on the destination and the size of the consignment, and we confirm the window when your order is approved.`,
+      q: `Where do you ship ${k}?`,
+      a: `Across the United States, and by export freight to the United Kingdom, Canada and Australia. Delivery time depends on the destination and the size of the consignment, and we confirm the window when your order is approved.`,
     },
   ]
 }
@@ -481,10 +481,10 @@ export function productMeta(p: Product): { title: string; description: string } 
   const title = clampText(pick(titleOptions, p.slug + 't'), 60)
 
   const descOptions = [
-    `Custom ${lower(p.name)} made to your dimensions in ${f.materials[0].toLowerCase()}. Printing, finishing and US delivery from one supplier.`,
-    `Order ${lower(p.name)} built to your size and artwork. ${f.printing[0]} printing, ${f.finishes[0].toLowerCase()} finishing, nationwide US shipping.`,
+    `Custom ${lower(p.name)} made to your dimensions in ${f.materials[0].toLowerCase()}. Printing, finishing and delivery from one supplier.`,
+    `Order ${lower(p.name)} built to your size and artwork. ${f.printing[0]} printing, ${f.finishes[0].toLowerCase()} finishing, US and export shipping.`,
     `${p.name} manufactured to order. Choose your board, print and finish, then request a quote for your quantity.`,
-    `Made-to-order ${lower(p.name)} with your artwork. Custom dimensions, ${f.materials[0].toLowerCase()} and fast US delivery.`,
+    `Made-to-order ${lower(p.name)} with your artwork. Custom dimensions, ${f.materials[0].toLowerCase()} and fast delivery.`,
   ]
   const description = clampText(pick(descOptions, p.slug + 'd'), 132)
   return { title, description }

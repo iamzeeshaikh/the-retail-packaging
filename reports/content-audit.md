@@ -30,12 +30,12 @@
 | Missing canonical | 0 |
 | Missing schema | 0 |
 | Pages under 10 FAQs | 0 |
-| Thin pages (<600 words) | 9 |
-| Distinct duplicated paragraphs | 1193 |
-| Duplicated paragraph instances | 10105 |
+| Thin pages (<600 words) | 8 |
+| Distinct duplicated paragraphs | 1192 |
+| Duplicated paragraph instances | 10103 |
 | Distinct duplicated headings | 511 |
 | Duplicated FAQ questions | 92 |
-| Duplicated FAQ answers | 163 |
+| Duplicated FAQ answers | 162 |
 | Identical FAQ sets | 0 groups |
 | Identical heading sequences | 0 groups |
 | Identical internal-link sets | 7 groups |
@@ -88,7 +88,7 @@
 |---|---|
 | 289 | Can you match packaging we already use? |
 | 277 | Can I see a sample first? |
-| 273 | Do you deliver nationwide? |
+| 273 | Where do you deliver? |
 | 267 | Can you hold the specification for repeat orders? |
 | 262 | What happens after I approve the quote? |
 | 259 | Do you offer recycled or recyclable options? |
@@ -104,7 +104,7 @@
 | type | pages | pairs >20% similar | worst pair |
 |---|---|---|---|
 | location | 40 | 0 | — |
-| other | 412 | 15997 | /lingerie-boxes/ ↔ /wallet-boxes/ (0.631) |
+| other | 412 | 16371 | /lingerie-boxes/ ↔ /wallet-boxes/ (0.633) |
 | blog | 10 | 0 | — |
 | resource | 15 | 0 | — |
 
@@ -126,11 +126,10 @@ None.
 | route | words |
 |---|---|
 | /cookie-policy/ | 237 |
-| /accessibility-statement/ | 361 |
-| /request-a-quote/ | 424 |
-| /privacy-policy/ | 426 |
-| /custom-packaging-tool/ | 429 |
+| /accessibility-statement/ | 371 |
 | /terms-and-conditions/ | 429 |
-| /contact-us/ | 434 |
-| /blog/ | 438 |
-| /faqs/ | 596 |
+| /custom-packaging-tool/ | 434 |
+| /privacy-policy/ | 436 |
+| /request-a-quote/ | 439 |
+| /blog/ | 443 |
+| /contact-us/ | 469 |

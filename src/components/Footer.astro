@@ -47,12 +47,13 @@ const legal = [
       <div class="foot-brand">
         <span class="brand-name">The Retail Packaging</span>
         <p>
-          We manufacture custom retail packaging to order for brands selling across the United
-          States — boxes, bags, pouches, labels, sleeves and retail displays, all cut to your
-          dimensions and printed with your artwork.
+          We manufacture custom retail packaging to order for brands selling in the United States,
+          the United Kingdom, Canada and Australia — boxes, bags, pouches, labels, sleeves and
+          retail displays, all cut to your dimensions and printed with your artwork.
         </p>
         <div class="foot-contact">
-          <a href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a>
+          <a href={SITE.phoneHref} data-analytics="phone-click">US {SITE.phone}</a>
+          <a href={SITE.phoneUkHref} data-analytics="phone-click">UK {SITE.phoneUk}</a>
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
         </div>
         <a class="btn btn-accent" href="/request-a-quote/">Request a Quote</a>
