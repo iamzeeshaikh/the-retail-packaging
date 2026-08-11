@@ -11,6 +11,9 @@ import { insertFacts } from './inserts'
 import { displayLabelFacts } from './display-labels'
 import { apparelCandleFacts } from './apparel-candle'
 import { beverageGiftFacts } from './beverage-gift'
+import { electronicsJewelleryFacts } from './electronics-jewellery'
+import { wellnessPharmaFacts } from './wellness-pharma'
+import { promoSustainableFacts } from './promotional-sustainable'
 
 export type { ProductFacts } from './types'
 
@@ -35,6 +38,9 @@ const ALL: ProductFactsMap = {
   ...displayLabelFacts,
   ...apparelCandleFacts,
   ...beverageGiftFacts,
+  ...electronicsJewelleryFacts,
+  ...wellnessPharmaFacts,
+  ...promoSustainableFacts,
 }
 
 export const factsFor = (slug: string): ProductFacts | undefined => ALL[slug]
