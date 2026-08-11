@@ -255,7 +255,7 @@ export const categoriesA: CategoryMap = {
       { href: '/materials/', anchor: 'barrier films and what each one blocks', note: 'The technical comparison behind the choice.' },
     ],
     faqs: [
-      { q: 'Can I have a fully recyclable pouch with a full barrier?', a: 'Not currently, and we would rather say so. The best barriers are multi-layer laminates, which resist recycling for the same reason they resist oxygen. Mono-material films recycle through store drop-off but give a shorter shelf life.' },
+      { q: 'Can I have a fully recyclable pouch with a full barrier?', a: 'Not currently, and it is better to be straight about it. The best barriers are multi-layer laminates, which resist recycling for the same reason they resist oxygen. Mono-material films recycle through store drop-off but give a shorter shelf life.' },
       { q: 'How much shelf life do I lose with a mono-material film?', a: 'It depends on the specific film and product, but expect a meaningful reduction against a full laminate. If your product reaches customers quickly, the difference may not matter commercially at all.' },
       { q: 'Do I need a degassing valve?', a: 'Only if your product off-gasses — freshly roasted coffee is the main case. Without a valve the bag inflates. For anything that does not off-gas, a valve adds cost and does nothing.' },
       { q: 'Should I choose a stand-up or flat pouch?', a: 'Stand-up pouches present better on a shelf and hold more for their footprint; flat pouches are cheaper and post more easily. If the product is sold online rather than shelved, flat often wins.' },

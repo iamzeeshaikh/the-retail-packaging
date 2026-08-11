@@ -94,7 +94,7 @@ export const legalPages: LegalPage[] = [
         'Content that remains readable and usable with JavaScript disabled',
       ]},
       { h2: 'Known limitations', body: ['The 3D box preview in the packaging tool is decorative and conveys no information that is not also present in the written specification summary beside it. It is hidden from assistive technology rather than described.', 'Some product photography is supplied by manufacturers and its alt text describes the product rather than every visual detail of the image.', 'Complex specification tables scroll horizontally on narrow screens. They remain keyboard scrollable and are marked up with proper row and column headers.'] },
-      { h2: 'Testing', body: ['Components are tested with keyboard navigation and against automated accessibility checks during the build. We have not commissioned an independent third-party audit, and we would rather say so than imply certification we do not hold.'] },
+      { h2: 'Testing', body: ['Components are tested with keyboard navigation and against automated accessibility checks during the build. Testing is carried out during the build rather than certified by an outside body, so this statement describes what we check rather than an accreditation.'] },
       { h2: 'Reporting a problem', body: ['If any part of this site prevents you from doing something, tell us and we will fix it. Email info@theretailpackaging.com or call +1 503-358-0443 and describe what you were trying to do.', 'We aim to respond within 5 business days and will offer an alternative way to complete the task in the meantime.'] },
     ],
   },
