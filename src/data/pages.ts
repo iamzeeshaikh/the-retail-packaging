@@ -10,6 +10,18 @@ export interface Section {
   list?: { title?: string; items: string[] }
   table?: { caption?: string; head: string[]; rows: string[][] }
   steps?: { h: string; d: string }[]
+  /**
+   * One contextual link out of this section, and no more than one — the
+   * internal-linking rules cap a paragraph at a single link and ban generic
+   * anchors. `lead` is the sentence the anchor sits inside, so the link reads
+   * as a continuation of the section rather than a bolted-on "see also".
+   *
+   * These pages previously carried two links each, and the same two on all
+   * twelve, which is what put them in an identical-link-set group. The
+   * destination here has to be the page that answers the question this
+   * section raises.
+   */
+  link?: { lead: string; href: string; anchor: string; tail?: string }
 }
 
 export interface InfoPage {
@@ -42,6 +54,7 @@ export const infoPages: InfoPage[] = [
     sections: [
       {
         h2: 'What we do',
+        link: { lead: 'The largest of those ranges by some margin is ', href: '/custom-food-packaging/', anchor: 'our custom food packaging range', tail: ', which alone covers thirty-four formats.' },
         body: [
           'We manufacture custom packaging across 26 categories and 371 formats — folding cartons, rigid boxes, corrugated mailers, paper bags, flexible pouches, pressure-sensitive labels, sleeves, trays and retail displays. Nothing on the site is a stock item. Each order starts with your product dimensions and ends with packaging cut to fit them.',
           'The work splits into three parts: getting the structure right, choosing a material that survives the journey the pack will actually take, and printing it in whatever way makes commercial sense for the quantity. Most packaging problems we are asked to solve are failures in one of those three, usually the first.',
@@ -49,6 +62,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'How we work with buyers',
+        link: { lead: 'What actually moves a number on that specification is set out in ', href: '/resources/packaging-cost-factors/', anchor: 'our breakdown of packaging cost factors', tail: '.' },
         body: [
           'A quote from us states the board grade, the finished dimensions, the print method, the finishing operations and the lead time. A price without that specification is not comparable with anything, and we would rather give you something you can hold us to.',
           'If a cheaper route exists, we say so at quoting rather than after the invoice. A lighter board that still passes the shipping test, a shorter run that avoids stranded stock, a dimensional change that nests better on the press sheet — those conversations happen before you commit.',
@@ -63,6 +77,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'Who we work with',
+        link: { lead: 'Fulfilment buyers in particular tend to start with ', href: '/custom-mailers/', anchor: 'corrugated mailers and e-commerce boxes', tail: ', where a fraction of an inch changes the freight bill.' },
         body: [
           'Most of our volume comes from four groups: early-stage brands producing a first run, established retail brands reordering at scale, agencies specifying packaging on behalf of clients, and fulfilment operations buying mailers and inserts in quantity.',
           'The specification conversation differs a great deal between them. A startup usually needs the smallest viable run and honest advice about what to skip. A fulfilment buyer usually needs a fraction of an inch removed from a mailer, because dimensional weight costs more than the box.',
@@ -95,6 +110,7 @@ export const infoPages: InfoPage[] = [
     sections: [
       {
         h2: 'The six stages',
+        link: { lead: 'The proofing stage is the one worth understanding in detail before you reach it, which is covered in ', href: '/resources/dieline-and-artwork-guide/', anchor: 'our dieline and artwork guide', tail: '.' },
         body: ['Every order follows the same route. The only variable is how long each stage takes, and that depends almost entirely on how complete the information is at the start.'],
         steps: [
           { h: 'Requirement', d: 'You send product dimensions, weight, quantity, deadline and destination. If you have a material or finish in mind, say so. If not, say that too — a guess is less useful than an honest blank.' },
@@ -107,6 +123,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'Where projects lose time',
+        link: { lead: 'Most of that lost time is artwork coming back for rework, which ', href: '/artwork-guidelines/', anchor: 'the artwork guidelines set out to prevent', tail: '.' },
         body: [
           'Three things account for most delay, and none of them are production. The first is incomplete measurements, which stalls the dieline. The second is regulated panel content arriving after the layout is finished, which forces a redesign. The third is proof approval sitting with someone who is on leave.',
           'None of those are fixable at the press. Settling all three before artwork begins removes most of the schedule risk from a first order.',
@@ -114,6 +131,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'What a good brief contains',
+        link: { lead: 'If you are unsure what dimensions to quote, ', href: '/resources/custom-packaging-size-guide/', anchor: 'the packaging size guide explains how to measure', tail: ' a product for its pack.' },
         body: ['The information below produces an accurate quote first time.'],
         list: {
           items: [
@@ -154,6 +172,7 @@ export const infoPages: InfoPage[] = [
     sections: [
       {
         h2: 'Board and paper substrates',
+        link: { lead: 'Caliper, grade and how each behaves under load are compared in ', href: '/resources/packaging-material-guide/', anchor: 'the packaging material guide', tail: '.' },
         body: ['These cover the majority of retail packaging, from small cosmetic cartons to shelf-ready shipping cases.'],
         table: {
           caption: 'Board substrates and typical applications',
@@ -171,6 +190,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'Flexible films',
+        link: { lead: 'Barrier structures and where they stop being recyclable are covered on ', href: '/custom-pouches/', anchor: 'the flexible pouch range', tail: '.' },
         body: [
           'Pouches and flexible packs are laminated from several film layers, with each layer doing a job — print carrier, barrier, and food-safe sealant. They weigh a fraction of rigid alternatives and take almost no freight volume flat.',
           'Recyclable mono-material polyethylene structures are now viable for many dry goods. They behave differently on filling lines, so a brand switching a live product should trial before converting the whole SKU.',
@@ -188,6 +208,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'Protective and specialty materials',
+        link: { lead: 'Which cushioning suits which product is set out in ', href: '/resources/packaging-insert-guide/', anchor: 'our guide to packaging inserts', tail: '.' },
         body: ['Used inside a pack rather than as the pack itself, these decide whether a fragile product survives the carrier network.'],
         list: {
           items: [
@@ -225,6 +246,7 @@ export const infoPages: InfoPage[] = [
     sections: [
       {
         h2: 'Method by method',
+        link: { lead: 'How each method behaves on a real job is compared in ', href: '/resources/printing-methods-guide/', anchor: 'the printing methods guide', tail: '.' },
         body: ['Five routes cover almost all packaging work. The differences that matter commercially are setup cost and running cost, not resolution.'],
         table: {
           caption: 'Printing methods compared',
@@ -240,6 +262,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'Choosing between digital and plate-based printing',
+        link: { lead: 'Run length is the deciding factor, and ', href: '/resources/wholesale-order-guide/', anchor: 'the wholesale order guide shows where the crossover falls', tail: ' at each quantity band.' },
         body: [
           'Digital carries no plate cost, so its unit price is close to flat regardless of quantity. Plate-based printing carries a fixed setup that spreads across the run, so its unit price falls steeply as volume rises.',
           'The crossover usually sits between 1,000 and 3,000 units, earlier for one-colour work and later for six-colour designs with foil. Ask for the same job quoted at your quantity and one band up — two points reveal the shape of both curves.',
@@ -247,6 +270,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'Colour handling',
+        link: { lead: 'Colour behaves differently again on an unbleached stock, which is covered across ', href: '/sustainable-packaging/', anchor: 'the recycled and kraft range', tail: '.' },
         body: [
           'Offset and flexo reproduce spot colours directly from named inks, which is what you want if a brand depends on an exact Pantone. Digital simulates spot colours with a process build, which is close but not identical.',
           'On uncoated and kraft substrates all methods print duller and warmer than they do on coated white board. That is the material behaving normally rather than a printing fault, and a proof on the real substrate is the only reliable check.',
@@ -279,6 +303,7 @@ export const infoPages: InfoPage[] = [
     sections: [
       {
         h2: 'Surface finishes',
+        link: { lead: 'Each finish and what it costs as a separate pass is set out in ', href: '/resources/packaging-finishes-guide/', anchor: 'the packaging finishes guide', tail: '.' },
         body: ['These change how the pack looks and how it survives handling.'],
         table: {
           caption: 'Surface finish options',
@@ -297,6 +322,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'Structural add-ons',
+        link: { lead: 'Windows, handles and inserts are specified per format across ', href: '/resources/box-style-guide/', anchor: 'the box style guide', tail: '.' },
         body: ['These change how the pack functions rather than how it looks.'],
         list: {
           items: [
@@ -313,6 +339,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'Where finishing budgets go wrong',
+        link: { lead: 'Finishes read very differently in the hand than on screen, so ', href: '/samples/', anchor: 'a printed prototype is worth ordering first', tail: '.' },
         body: [
           'Spot UV on a gloss laminate is close to invisible, because there is no contrast between the varnish and the surface beneath. It only earns its cost over matte.',
           'Foil stamping reproduces bold shapes well and fine serif detail poorly, because the heated die crushes thin elements. Simplify the mark before stamping it rather than after seeing the result.',
@@ -346,6 +373,7 @@ export const infoPages: InfoPage[] = [
     sections: [
       {
         h2: 'Three claims, not one',
+        link: { lead: 'Which of the three you can actually defend is worked through in ', href: '/resources/sustainable-packaging-guide/', anchor: 'the sustainable packaging guide', tail: '.' },
         body: [
           'Recycled content describes what the packaging is made from. Recyclability describes whether local infrastructure will actually accept it. Compostability describes breakdown under specific conditions, almost always industrial rather than home.',
           'These get conflated constantly, and the resulting on-pack wording is where brands attract complaints. Decide which claim you are making before choosing a material, because the material follows the claim rather than the other way round.',
@@ -353,6 +381,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'What we can supply',
+        link: { lead: 'The formats built specifically around recycled and recyclable stocks sit in ', href: '/sustainable-packaging/', anchor: 'our sustainable packaging range', tail: '.' },
         body: ['Each option below is genuinely available and comes with the documentation to support it.'],
         list: {
           items: [
@@ -369,6 +398,7 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'The change that actually reduces material',
+        link: { lead: 'Right-sizing depends on measuring the product rather than the current box, which ', href: '/resources/custom-packaging-size-guide/', anchor: 'the size guide explains step by step', tail: '.' },
         body: [
           'Right-sizing does more than any substrate swap. A pack trimmed to fit removes board, reduces shipping volume and cuts freight emissions in one move — and it lowers cost rather than raising it.',
           'Eliminating a component does the same. A fitted insert replacing loose void fill, or a printed outer replacing an outer plus a sleeve, makes the pack simpler and lighter at the same time.',
@@ -407,9 +437,12 @@ export const infoPages: InfoPage[] = [
     lede: 'Design work that starts from the dieline and the product, not from a mood board applied to a stock box.',
     heroProduct: 'rigid-boxes-with-inserts',
     sections: [
-      { h2: 'Structural design', body: ['Structural work decides whether a pack survives its journey and whether the product actually fits. We build the dieline from your product dimensions and weight, choose a construction that suits how the pack will be handled, and specify inserts where the contents need holding still.', 'Where a product is unusual, we prototype before tooling. A cutting die is the expensive part of a packaging programme, so structural errors are far cheaper to find at sample stage.'] },
-      { h2: 'Print artwork', body: ['If you have a logo and a brand direction but no packaging artwork, we can build it. If you have existing artwork designed for a different size, we can adapt it onto a new dieline without the distortion that comes from scaling a flat design.', 'All artwork is produced on the production dieline with correct bleed, safety margins and colour setup, so it does not need reworking at prepress.'] },
-      { h2: 'What we need to start', body: ['Product dimensions and weight, the quantity you expect, any regulated panel content, and your brand assets in vector form. If a logo only exists as a low-resolution image, say so early — recovering or rebuilding it is straightforward but takes time.'] },
+      { h2: 'Structural design',
+        link: { lead: 'The construction options a dieline can be built from are set out in ', href: '/resources/box-style-guide/', anchor: 'the box style guide', tail: '.' }, body: ['Structural work decides whether a pack survives its journey and whether the product actually fits. We build the dieline from your product dimensions and weight, choose a construction that suits how the pack will be handled, and specify inserts where the contents need holding still.', 'Where a product is unusual, we prototype before tooling. A cutting die is the expensive part of a packaging programme, so structural errors are far cheaper to find at sample stage.'] },
+      { h2: 'Print artwork',
+        link: { lead: 'Artwork built on the production dieline avoids rework at prepress, and ', href: '/artwork-guidelines/', anchor: 'the artwork guidelines cover the setup', tail: ' in full.' }, body: ['If you have a logo and a brand direction but no packaging artwork, we can build it. If you have existing artwork designed for a different size, we can adapt it onto a new dieline without the distortion that comes from scaling a flat design.', 'All artwork is produced on the production dieline with correct bleed, safety margins and colour setup, so it does not need reworking at prepress.'] },
+      { h2: 'What we need to start',
+        link: { lead: 'If your brand assets are not print-ready, ', href: '/resources/packaging-file-requirements/', anchor: 'the file requirements page lists what we need', tail: '.' }, body: ['Product dimensions and weight, the quantity you expect, any regulated panel content, and your brand assets in vector form. If a logo only exists as a low-resolution image, say so early — recovering or rebuilding it is straightforward but takes time.'] },
     ],
     faqs: [
       { q: 'Do you charge separately for design?', a: 'Structural dieline development is included with a production order. Print artwork creation is quoted separately based on the number of panels and SKUs.' },
@@ -435,9 +468,11 @@ export const infoPages: InfoPage[] = [
     lede: 'We match the print method to the run rather than pushing every job down the same route.',
     heroProduct: 'printed-paper-cups',
     sections: [
-      { h2: 'The routes we run', body: ['Digital for short runs, prototypes and versioned designs where plate costs cannot be justified. Offset lithography for volume board work where colour accuracy matters and spot colours need to print directly. Flexography for corrugated, film and bag substrates at volume. Screen printing for fabric and heavy ink lay applications.', 'The crossover between digital and plate-based printing usually sits between 1,000 and 3,000 units, earlier for single-colour work and later for complex multi-colour designs with finishing.'] },
+      { h2: 'The routes we run',
+        link: { lead: 'Where each route stops being economic is set out in ', href: '/resources/printing-methods-guide/', anchor: 'the printing methods guide', tail: '.' }, body: ['Digital for short runs, prototypes and versioned designs where plate costs cannot be justified. Offset lithography for volume board work where colour accuracy matters and spot colours need to print directly. Flexography for corrugated, film and bag substrates at volume. Screen printing for fabric and heavy ink lay applications.', 'The crossover between digital and plate-based printing usually sits between 1,000 and 3,000 units, earlier for single-colour work and later for complex multi-colour designs with finishing.'] },
       { h2: 'Colour management', body: ['Spot colours print directly from named inks on offset and flexo. Digital produces the closest process build, which is very close but not identical on critical brand colours.', 'On uncoated and kraft substrates every method prints warmer and duller than on coated white board. That is the material behaving normally. Where colour is critical we recommend a proof on the actual substrate rather than a generic proof stock.'] },
-      { h2: 'Interior and specialty printing', body: ['Interior printing is available on mailers, folding cartons and rigid boxes. It earns its cost most clearly when the product does not fill the pack, because that is when the customer sees the inside face at opening.', 'White ink on kraft and clear substrates requires an opaque underbase so colours above it stay accurate. It adds a pass and a cost but is the only way to hold colour on a dark or transparent surface.'] },
+      { h2: 'Interior and specialty printing',
+        link: { lead: 'Interior print pays off most on formats the customer opens themselves, such as ', href: '/custom-mailers/', anchor: 'printed e-commerce mailers', tail: '.' }, body: ['Interior printing is available on mailers, folding cartons and rigid boxes. It earns its cost most clearly when the product does not fill the pack, because that is when the customer sees the inside face at opening.', 'White ink on kraft and clear substrates requires an opaque underbase so colours above it stay accurate. It adds a pass and a cost but is the only way to hold colour on a dark or transparent surface.'] },
     ],
     faqs: [
       { q: 'Which print method suits my run?', a: 'Under about 1,000 units, digital almost always. Above about 3,000, offset or flexo depending on substrate. Between the two, ask for both prices at your exact quantity.' },
@@ -463,10 +498,13 @@ export const infoPages: InfoPage[] = [
     lede: 'Meeting these requirements means your file passes prepress first time rather than returning with queries.',
     heroProduct: 'custom-die-cut-stickers',
     sections: [
-      { h2: 'Work on the supplied dieline', body: ['We send a dieline template sized to your product once dimensions are confirmed. Place it on a locked layer and build artwork beneath it. Never redraw it from measurements — small discrepancies produce misregistered folds that only appear after the run.', 'Set the dieline to a named non-printing spot colour so it is excluded from output.'] },
-      { h2: 'Bleed, safety and folds', body: ['Folding cartons need 3 mm bleed past every trim edge; rigid box wraps need 15 mm because the paper turns in around the board. Hold text and logos at least 4 mm inside trim and fold lines.', 'Nothing important should cross a fold. Barcodes must sit on a flat panel, never across a crease or a curve.'] },
+      { h2: 'Work on the supplied dieline',
+        link: { lead: 'How the dieline is produced and what the layers mean is covered in ', href: '/resources/dieline-and-artwork-guide/', anchor: 'the dieline and artwork guide', tail: '.' }, body: ['We send a dieline template sized to your product once dimensions are confirmed. Place it on a locked layer and build artwork beneath it. Never redraw it from measurements — small discrepancies produce misregistered folds that only appear after the run.', 'Set the dieline to a named non-printing spot colour so it is excluded from output.'] },
+      { h2: 'Bleed, safety and folds',
+        link: { lead: 'Bleed allowances differ by construction, which ', href: '/resources/box-style-guide/', anchor: 'the box style guide sets out per format', tail: '.' }, body: ['Folding cartons need 3 mm bleed past every trim edge; rigid box wraps need 15 mm because the paper turns in around the board. Hold text and logos at least 4 mm inside trim and fold lines.', 'Nothing important should cross a fold. Barcodes must sit on a flat panel, never across a crease or a curve.'] },
       { h2: 'Colour, images and fonts', body: ['Documents in CMYK, spot colours as named swatches used consistently, unused swatches deleted. Rich black build on large solids, 100% K on small text.', 'Raster images at 300 dpi at placed size, not original size. Fonts outlined or fully embedded. Positive text above 6pt, reversed text above 8pt.'] },
-      { h2: 'Export', body: ['PDF/X-4 or PDF/X-1a, bleed included, trim marks outside the bleed area, dieline layer excluded. Total ink coverage within roughly 300%.', 'Name files with product, size and version. Tell us in the covering email what is critical — an exact brand colour, a legally required panel, a fixed logo size.'] },
+      { h2: 'Export',
+        link: { lead: 'The full export checklist, including ink limits and file naming, is on ', href: '/resources/packaging-file-requirements/', anchor: 'the packaging file requirements page', tail: '.' }, body: ['PDF/X-4 or PDF/X-1a, bleed included, trim marks outside the bleed area, dieline layer excluded. Total ink coverage within roughly 300%.', 'Name files with product, size and version. Tell us in the covering email what is critical — an exact brand colour, a legally required panel, a fixed logo size.'] },
     ],
     faqs: [
       { q: 'What file format should I send?', a: 'Print-ready PDF, preferably PDF/X-4. Native AI or EPS files are also accepted with linked assets embedded.' },
@@ -492,10 +530,13 @@ export const infoPages: InfoPage[] = [
     lede: 'Production times, transit expectations and what we need to know about your delivery address.',
     heroProduct: 'corrugated-shipping-boxes',
     sections: [
-      { h2: 'Lead times', body: ['Most formats complete production in 3 to 5 business days after artwork approval. Hand-assembled rigid boxes and specialty finishes sit at the longer end. Transit is additional and depends on destination and consignment size.', 'For a first order, allow four to six weeks from enquiry to delivery. Specification, artwork and proofing account for most of that, not production.'] },
-      { h2: 'How orders arrive', body: ['Folding cartons, corrugated, mailers, bags and sleeves ship flat and knocked down, which keeps freight cost low. Rigid boxes ship pre-assembled and take more freight volume. Labels ship on cores or in sheets. Cups nest in sleeves inside cartons.', 'Larger orders ship palletised. Tell us if your address cannot receive a pallet.'] },
+      { h2: 'Lead times',
+        link: { lead: 'Proofing accounts for more of that window than production does, as ', href: '/how-it-works/', anchor: 'the six-stage order process shows', tail: '.' }, body: ['Most formats complete production in 3 to 5 business days after artwork approval. Hand-assembled rigid boxes and specialty finishes sit at the longer end. Transit is additional and depends on destination and consignment size.', 'For a first order, allow four to six weeks from enquiry to delivery. Specification, artwork and proofing account for most of that, not production.'] },
+      { h2: 'How orders arrive',
+        link: { lead: 'Rigid boxes are the exception because they ship assembled, which is explained across ', href: '/custom-gift-boxes/', anchor: 'the rigid and gift box range', tail: '.' }, body: ['Folding cartons, corrugated, mailers, bags and sleeves ship flat and knocked down, which keeps freight cost low. Rigid boxes ship pre-assembled and take more freight volume. Labels ship on cores or in sheets. Cups nest in sleeves inside cartons.', 'Larger orders ship palletised. Tell us if your address cannot receive a pallet.'] },
       { h2: 'Receiving requirements', body: ['Confirm dock access, forklift availability, pallet height limits and delivery windows before dispatch. A consignment that cannot be unloaded incurs redelivery charges.', 'Third-party fulfilment centres almost always have specific labelling, pallet height and booking rules. Send those to us with your order rather than after despatch.'] },
-      { h2: 'Freight and returns', body: ['Freight is quoted separately from the packaging and depends on weight, volume and destination. We can split a single production run across several delivery points.', 'Because every order is manufactured to your specification, custom packaging is not returnable once produced to an approved proof. If an order arrives damaged or does not match the approved specification, contact us immediately and we will resolve it.'] },
+      { h2: 'Freight and returns',
+        link: { lead: 'Because nothing here is a stock item, ', href: '/samples/', anchor: 'checking a sample before the run matters', tail: ' more than it would with catalogue packaging.' }, body: ['Freight is quoted separately from the packaging and depends on weight, volume and destination. We can split a single production run across several delivery points.', 'Because every order is manufactured to your specification, custom packaging is not returnable once produced to an approved proof. If an order arrives damaged or does not match the approved specification, contact us immediately and we will resolve it.'] },
     ],
     faqs: [
       { q: 'How long will my order take?', a: 'Production is 3 to 5 business days after artwork approval, plus transit. A first order typically takes four to six weeks end to end including specification and proofing.' },
@@ -521,9 +562,12 @@ export const infoPages: InfoPage[] = [
     lede: 'A sample costs a fraction of a production run and catches the failures that are otherwise found several thousand units too late.',
     heroProduct: 'candle-boxes-with-insert',
     sections: [
-      { h2: 'Three kinds of sample', body: ['A plain structural sample is unprinted, cut on your actual dieline in your actual board grade. It answers the only question that matters early: does the real product fit, and does the pack close properly with it inside.', 'A printed prototype is produced digitally on the intended substrate with your artwork applied. It answers colour and finish questions a screen cannot.', 'A production proof is the final check before the run — content, layout and position, not a colour standard.'] },
-      { h2: 'How to test a structural sample', body: ['Put the actual product inside. Close it, lift it, shake it gently. Rattling means an insert is needed. A straining lid means the dieline is tight. Flimsiness with the product inside means the board grade is too light.', 'For anything shipping through a carrier, load it and drop it from about a metre onto a hard floor on several faces and corners. Corners fail first.'] },
-      { h2: 'Cost and credit', body: ['Sample costs are normally credited against a production order that follows, which makes the real cost close to zero if you proceed. Tooling is the exception — if a sample needs a new cutting die, that cost carries forward to production rather than being duplicated.'] },
+      { h2: 'Three kinds of sample',
+        link: { lead: 'Which one answers your question depends on what you are unsure about, and ', href: '/resources/packaging-sampling-guide/', anchor: 'the sampling guide walks through each', tail: '.' }, body: ['A plain structural sample is unprinted, cut on your actual dieline in your actual board grade. It answers the only question that matters early: does the real product fit, and does the pack close properly with it inside.', 'A printed prototype is produced digitally on the intended substrate with your artwork applied. It answers colour and finish questions a screen cannot.', 'A production proof is the final check before the run — content, layout and position, not a colour standard.'] },
+      { h2: 'How to test a structural sample',
+        link: { lead: 'If the product moves inside, the answer is usually a fitted cavity rather than a heavier box — see ', href: '/custom-packaging-inserts/', anchor: 'the packaging insert range', tail: '.' }, body: ['Put the actual product inside. Close it, lift it, shake it gently. Rattling means an insert is needed. A straining lid means the dieline is tight. Flimsiness with the product inside means the board grade is too light.', 'For anything shipping through a carrier, load it and drop it from about a metre onto a hard floor on several faces and corners. Corners fail first.'] },
+      { h2: 'Cost and credit',
+        link: { lead: 'Tooling carries forward rather than being charged twice, which is covered in ', href: '/resources/packaging-cost-factors/', anchor: 'the cost factors breakdown', tail: '.' }, body: ['Sample costs are normally credited against a production order that follows, which makes the real cost close to zero if you proceed. Tooling is the exception — if a sample needs a new cutting die, that cost carries forward to production rather than being duplicated.'] },
     ],
     faqs: [
       { q: 'How do I order a sample?', a: 'Send a quote request describing the product and the format you are considering. We will tell you which kind of sample answers your question and what it costs.' },
@@ -549,7 +593,8 @@ export const infoPages: InfoPage[] = [
     lede: 'The questions we are asked most, answered directly. Category and product pages carry their own more specific answers.',
     heroProduct: 'mailer-boxes',
     sections: [
-      { h2: 'Where to find more detail', body: ['This page covers general questions. Every category page carries answers specific to that range, and every product page answers questions about that format — minimums, sizes, printing and lead times for that item specifically.', 'For technical specification questions, the resource hub holds reference guides on materials, box styles, printing methods, finishes, sizing and file requirements.'] },
+      { h2: 'Where to find more detail',
+        link: { lead: 'The reference guides are collected in ', href: '/resources/', anchor: 'the packaging resource hub', tail: '.' }, body: ['This page covers general questions. Every category page carries answers specific to that range, and every product page answers questions about that format — minimums, sizes, printing and lead times for that item specifically.', 'For technical specification questions, the resource hub holds reference guides on materials, box styles, printing methods, finishes, sizing and file requirements.'] },
     ],
     faqs: [
       { q: 'What is the minimum order quantity?', a: 'A flat 100 units on any format. Print method changes the unit price rather than the minimum — digital suits shorter runs, and offset or flexo take over on cost once volumes climb.' },
@@ -567,3 +612,94 @@ export const infoPages: InfoPage[] = [
     ],
   }),
 ]
+
+/**
+ * Closing bands, per page.
+ *
+ * The quote band, FAQ heading and CTA were fixed strings in the template, so
+ * four identical headings appeared on all twelve info pages. The quote process
+ * itself is unchanged on every page and stays worded as it is — what varies is
+ * only what the page has just finished explaining, and therefore what it is
+ * sensible to ask the reader for next.
+ */
+export interface InfoBands {
+  eyebrow: string
+  h2: string
+  lede: string
+  faqTitle: string
+}
+
+export const INFO_BANDS: Record<string, InfoBands> = {
+  'about-us': {
+    eyebrow: 'Start here',
+    h2: 'Tell us what you are packing',
+    lede: 'Send the product and the quantity. You get back a board grade, a structure, a print method and a written price — the same specification described above.',
+    faqTitle: 'Questions buyers ask before working with us',
+  },
+  'how-it-works': {
+    eyebrow: 'Stage one',
+    h2: 'Start the process with a specification',
+    lede: 'The six stages begin with your dimensions and quantity. Send those and we will come back with the specification that stage two prices.',
+    faqTitle: 'Questions about the ordering process',
+  },
+  materials: {
+    eyebrow: 'Material advice',
+    h2: 'Not sure which substrate you need?',
+    lede: 'Tell us the product weight and how far it travels. Material choice follows from those two answers more than from anything else.',
+    faqTitle: 'Questions about packaging materials',
+  },
+  'printing-options': {
+    eyebrow: 'Print advice',
+    h2: 'Find out which print route fits your run',
+    lede: 'Send the quantity and the number of colours. The crossover between digital and plate-based printing is the single biggest lever on your unit price.',
+    faqTitle: 'Questions about packaging print methods',
+  },
+  'finishes-and-add-ons': {
+    eyebrow: 'Finishing',
+    h2: 'Price the finishes separately before you commit',
+    lede: 'Each pass is quoted on its own, so you can see exactly what a soft-touch laminate or a foil block is costing you before deciding to keep it.',
+    faqTitle: 'Questions about finishes and add-ons',
+  },
+  sustainability: {
+    eyebrow: 'Environmental claims',
+    h2: 'Tell us which claim you intend to print',
+    lede: 'Recycled content, kerbside recyclability and certified compostability need different evidence. Say which one you are making and we will specify to it.',
+    faqTitle: 'Questions about sustainable packaging claims',
+  },
+  'packaging-design-services': {
+    eyebrow: 'Design',
+    h2: 'Send us what you have so far',
+    lede: 'A logo and a product is enough to start. We will tell you honestly whether the artwork you already hold can be adapted or needs rebuilding.',
+    faqTitle: 'Questions about packaging design work',
+  },
+  'custom-printing': {
+    eyebrow: 'Print',
+    h2: 'Get your print route quoted',
+    lede: 'Quantity, colours and substrate decide the method. Send those three and we will price the routes that genuinely apply rather than all of them.',
+    faqTitle: 'Questions about custom packaging printing',
+  },
+  'artwork-guidelines': {
+    eyebrow: 'Prepress',
+    h2: 'Send artwork for a prepress check',
+    lede: 'We check bleed, safe area, crease clearance and colour setup against the production dieline before any proof is issued. There is no charge for the check.',
+    faqTitle: 'Questions about preparing packaging artwork',
+  },
+  'shipping-information': {
+    eyebrow: 'Delivery',
+    h2: 'Tell us where it has to land',
+    lede: 'Destination, dock access and any fulfilment-centre rules change the freight quote more than the packaging does. Send them with your enquiry.',
+    faqTitle: 'Questions about lead times and delivery',
+  },
+  samples: {
+    eyebrow: 'Samples',
+    h2: 'Request a sample before you commit',
+    lede: 'A plain structural sample answers fit; a printed prototype answers colour. Sample costs are normally credited against the production order that follows.',
+    faqTitle: 'Questions about samples and prototypes',
+  },
+  faqs: {
+    eyebrow: 'Still unsure',
+    h2: 'Ask us the question directly',
+    lede: 'If your question is specific to a product or a deadline, a written answer against your actual specification will be more use than a general one.',
+    faqTitle: 'Common questions about custom packaging',
+  },
+}

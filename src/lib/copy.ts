@@ -11,6 +11,8 @@ import { pick, pickN, hash, type Product } from './catalog'
 import type { Category } from './catalog'
 import { INDUSTRIES, industriesFor } from './taxonomy'
 import { factsFor } from '../data/products'
+import { traitsOf } from './product-traits'
+import { benefitLabels } from './product-headings'
 
 export const PRICE_LINE =
   'Prices start from $0.30 per piece for large-volume orders. Final pricing depends on size, material, printing, finishes, and quantity.'
@@ -96,11 +98,12 @@ export function productBenefits(p: Product): { title: string; text: string }[] {
   const f = p.form
   const k = factsFor(p.slug)
   if (k) {
+    const [lSize, lFail, lWhere, lDetail] = benefitLabels(p, traitsOf(p))
     return [
-      { title: 'Sized to the contents', text: k.sizeNote },
-      { title: 'The failure we design out', text: k.failure },
-      { title: 'Where it has to work', text: `Specified for ${k.context}.` },
-      { title: 'The detail that decides it', text: k.detail },
+      { title: lSize, text: k.sizeNote },
+      { title: lFail, text: k.failure },
+      { title: lWhere, text: `Specified for ${k.context}.` },
+      { title: lDetail, text: k.detail },
     ]
   }
   return [

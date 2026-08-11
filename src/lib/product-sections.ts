@@ -241,7 +241,15 @@ function finishes(c: Ctx): Block {
   if (k?.press) {
     return {
       h: `Finishing ${p.name.toLowerCase()}`,
-      body: [k.press, 'Each finish below is a separate pass on the press or the finishing line, which is why they are quoted individually rather than bundled.'],
+      body: [
+        k.press,
+        pick([
+          'Each finish below is a separate pass on the press or the finishing line, which is why they are quoted individually rather than bundled.',
+          'Every finish listed here is its own pass through the line, so each one is priced on its own rather than folded into a single figure.',
+          'Finishes are costed one at a time because each is a separate operation — that way you can see which one is carrying the price.',
+          'The finishes below are quoted line by line. Each is an additional pass, so dropping one is a real saving rather than a rounding difference.',
+        ], p.slug + 'fin'),
+      ],
       list: { items: f.finishes },
     }
   }
@@ -399,12 +407,35 @@ function compliance(c: Ctx): Block {
 /* -------------------------------------------------------------------- artwork */
 
 function artwork(c: Ctx): Block {
-  const { f } = c
+  const { f, p } = c
+  // The file requirements below are identical on every product and stay that
+  // way — they are a business fact. Only the heading varies, and only toward
+  // the artwork problem this particular format actually has.
+  const heads = has(c, 'regulated', 'tamper')
+    ? ['Preparing artwork', 'Artwork and required copy', 'Laying out the panel']
+    : has(c, 'luxury', 'cosmetic', 'gifting')
+      ? ['Preparing artwork', 'Getting artwork press-ready', 'Artwork for a finished pack']
+      : has(c, 'eco')
+        ? ['Preparing artwork', 'Artwork on an uncoated stock', 'Getting artwork press-ready']
+        : ['Preparing artwork', 'Getting artwork press-ready', 'What we need from your files']
   return {
-    h: 'Preparing artwork',
+    h: pick(heads, p.slug + 'aw'),
     body: [
       f.artwork,
-      'Supply a print-ready PDF or vector file with fonts outlined and images at 300 dpi. Our prepress team checks every file before a proof is issued.',
+      // The requirement is fixed; what prepress is actually looking for on this
+      // format is not, so that is the part that varies.
+      'Supply a print-ready PDF or vector file with fonts outlined and images at 300 dpi. Our prepress team checks every file before a proof is issued. ' +
+        (p.form.id === 'label' || p.form.id === 'sticker'
+          ? 'On a die-cut face the check that matters most is clearance between live copy and the cut edge.'
+          : p.form.id === 'rigid-box'
+            ? 'On a wrapped box the check that matters most is that bleed carries around the turn-in, not just to the visible edge.'
+            : p.form.id === 'pouch'
+              ? 'On a pouch the check that matters most is that copy clears the seal areas, which are not printable.'
+              : has(c, 'window')
+                ? 'With a window in the panel, the check that matters most is registration between the print and the aperture.'
+                : has(c, 'regulated', 'tamper')
+                  ? 'On a regulated pack the check that matters most is that required copy still holds its minimum type size at final scale.'
+                  : 'The check that catches most files is type sitting too close to a crease, which is easier to move at layout than at proof.'),
     ],
   }
 }
@@ -413,8 +444,13 @@ function artwork(c: Ctx): Block {
 
 function sampling(c: Ctx): Block {
   const { p } = c
+  const heads = has(c, 'luxury', 'cosmetic', 'gifting')
+    ? ['Checking it before you commit', 'Seeing the finish first', 'Proofing before the run']
+    : has(c, 'protective', 'shipping')
+      ? ['Checking it before you commit', 'Testing the fit first', 'Proving it before the run']
+      : ['Checking it before you commit', 'Testing the fit first', 'Sampling before you order']
   return {
-    h: 'Checking it before you commit',
+    h: pick(heads, p.slug + 'sh'),
     body: [
       has(c, 'luxury', 'cosmetic')
         ? 'Foil, soft-touch and deboss all read differently in person than on a screen, so we recommend a printed prototype rather than a digital proof alone for anything finish-led.'

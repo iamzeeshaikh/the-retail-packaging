@@ -5,7 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro'
 import Faqs from '../components/Faqs.astro'
 import CtaBand from '../components/CtaBand.astro'
 import QuoteForm from '../components/QuoteForm.astro'
-import { infoPages, type InfoPage } from '../data/pages'
+import { infoPages, INFO_BANDS, type InfoPage } from '../data/pages'
 import { bySlug } from '../lib/catalog'
 import { clampText } from '../lib/copy'
 import * as S from '../lib/schema'
@@ -15,6 +15,12 @@ export const getStaticPaths = (() =>
 
 const { page } = Astro.props as { page: InfoPage }
 const path = `/${page.slug}/`
+const band = INFO_BANDS[page.slug] ?? {
+  eyebrow: 'Get a price',
+  h2: 'Talk to us about your packaging',
+  lede: 'Send the product details and quantity. We reply with a specification and a written price, usually within one business day.',
+  faqTitle: `${page.title} — Questions`,
+}
 const hero = page.heroProduct ? bySlug.get(page.heroProduct) : undefined
 const img = hero?.images?.[0]
 const title = clampText(page.metaTitle, 62)
@@ -91,6 +97,13 @@ const schema = S.graph([
               </table>
             </div>
           )}
+          {/* One contextual link out of the section, in its own paragraph so
+              the one-link-per-paragraph rule is satisfied structurally. */}
+          {s.link && (
+            <p class="sec-link">
+              {s.link.lead}<a href={s.link.href}>{s.link.anchor}</a>{s.link.tail}
+            </p>
+          )}
         </>
       ))}
     </div>
@@ -99,15 +112,15 @@ const schema = S.graph([
   <section class="section section-sunken">
     <div class="wrap two-col">
       <div>
-        <p class="eyebrow">Get a price</p>
-        <h2>Talk to us about your packaging</h2>
-        <p class="lede">Send the product details and quantity. We reply with a specification and a written price, usually within one business day.</p>
+        <p class="eyebrow">{band.eyebrow}</p>
+        <h2>{band.h2}</h2>
+        <p class="lede">{band.lede}</p>
       </div>
       <QuoteForm id="quote" source={`page:${page.slug}`} />
     </div>
   </section>
 
-  <Faqs faqs={page.faqs} title={`${page.title} — Questions`} />
+  <Faqs faqs={page.faqs} title={band.faqTitle} />
   <CtaBand />
 </Base>
 

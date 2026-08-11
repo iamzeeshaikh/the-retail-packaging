@@ -2,6 +2,7 @@ import raw from '../data/catalog.json'
 import imagesRaw from '../data/images.json'
 import catImagesRaw from '../data/category-images.json'
 import { classify, FORM_FACTORS, industriesFor, type FormFactor, type Industry } from './taxonomy'
+import { factsFor } from '../data/products'
 
 export interface RawProduct {
   name: string
@@ -106,24 +107,47 @@ export function pick<T>(list: T[], seed: string): T {
 }
 
 /**
- * Related products: same category first (closest by shared words), then the
- * same form factor from other categories so the row is never padded with
- * unrelated items.
+ * Related products.
+ *
+ * The authored `pairs` on a product's fact record lead, because those name the
+ * products genuinely ordered alongside it rather than the ones that happen to
+ * share a word in their name.
+ *
+ * The remainder is filled by score as before, but the tiebreak is a per-pair
+ * hash rather than alphabetical order. Alphabetical was the reason 35 groups of
+ * pages carried an identical set of outbound links: every product in a category
+ * scored its siblings the same way, so all of them surfaced the same four
+ * alphabetical leaders. Seeding the tiebreak on both slugs keeps the choice
+ * stable across builds while giving neighbours in a category different rows.
  */
 export function relatedProducts(p: Product, n = 6): Product[] {
+  const out: Product[] = []
+  const seen = new Set([p.slug])
+  const add = (o?: Product) => {
+    if (o && !seen.has(o.slug)) { seen.add(o.slug); out.push(o) }
+  }
+
+  for (const slug of factsFor(p.slug)?.pairs ?? []) {
+    if (out.length >= n) return out
+    add(bySlug.get(slug))
+  }
+
   const words = (s: string) => new Set(s.toLowerCase().split(/\W+/).filter((w) => w.length > 3))
   const mine = words(p.name)
   const score = (o: Product) => {
     const shared = [...words(o.name)].filter((w) => mine.has(w)).length
     return shared * 10 + (o.categorySlug === p.categorySlug ? 5 : 0) + (o.form.id === p.form.id ? 3 : 0)
   }
-  return products
-    .filter((o) => o.slug !== p.slug)
+  const rest = products
+    .filter((o) => !seen.has(o.slug))
     .map((o) => ({ o, s: score(o) }))
     .filter((x) => x.s > 0)
-    .sort((a, b) => b.s - a.s || a.o.name.localeCompare(b.o.name))
-    .slice(0, n)
-    .map((x) => x.o)
+    .sort((a, b) => b.s - a.s || hash(p.slug + a.o.slug) - hash(p.slug + b.o.slug))
+  for (const x of rest) {
+    if (out.length >= n) break
+    add(x.o)
+  }
+  return out
 }
 
 /** Categories that share industries with the given one. */

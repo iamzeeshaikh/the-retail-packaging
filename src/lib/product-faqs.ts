@@ -130,21 +130,113 @@ const FORM_FAQS: Record<string, (p: Product) => Faq[]> = {
   ],
 }
 
+/**
+ * Riders for the universal answers.
+ *
+ * These questions have one correct answer and it is the same on every product:
+ * the 100-unit minimum, the 3–5 day production window, the $0.30 floor, the
+ * file requirements, the proofing sequence. None of that is reworded here, and
+ * it should not be — the client was explicit that inventing per-page variants
+ * of a business fact is the wrong kind of uniqueness.
+ *
+ * What each answer gains instead is one further sentence that is only true of
+ * this product: what to look for on its sample, what makes its freight
+ * awkward, which part of its artwork prepress actually checks. The fact stays
+ * identical across the catalogue; the advice around it stops being generic.
+ */
+type Rider = 'sample' | 'match' | 'delivery' | 'repeat' | 'artwork' | 'cost'
+
+function rider(kind: Rider, p: Product, t: Set<Trait>): string {
+  const hasT = (...x: Trait[]) => x.some((v) => t.has(v))
+  const n = p.name.toLowerCase()
+  switch (kind) {
+    case 'sample':
+      if (hasT('protective', 'shipping'))
+        return `On ${n} the thing to check is whether the contents still sit tight once the pack is closed, because movement inside is what causes damage rather than the board grade.`
+      if (hasT('luxury', 'gifting', 'cosmetic'))
+        return 'Ask for the printed prototype rather than the plain sample if the question is finish — soft-touch, foil and deboss all read differently in the hand than on a screen.'
+      if (hasT('foodContact'))
+        return 'Worth running a few through your actual line rather than checking them by hand: fill speed and hot contents find fit problems that a desk check does not.'
+      if (hasT('regulated', 'tamper'))
+        return 'Use the plain sample to confirm the required copy physically fits at legal type size before any design work starts.'
+      if (hasT('display'))
+        return 'Load a sample to a full facing before approving it. A display that holds its shape empty can still bow under stock.'
+      return `A plain sample answers fit and structure; a printed one answers colour. On ${n} it is usually fit that is worth checking first.`
+    case 'match':
+      if (hasT('regulated', 'tamper'))
+        return 'Send the existing artwork as well as the sample — on a regulated pack it is usually the panel area given to required copy, not the dimensions, that differs between suppliers.'
+      if (hasT('foodContact'))
+        return 'Tell us the coating on the pack you are matching too. Grease and moisture resistance are not visible in a sample and they change which stocks we can quote.'
+      if (hasT('luxury', 'gifting'))
+        return 'Send the physical box rather than a photograph. Wrap stock, corner finish and interior lining are what make a rigid box feel the way it does, and none of them photograph.'
+      return 'A physical sample tells us more than a specification sheet — board caliper and coating are usually described loosely and measured exactly.'
+    case 'delivery':
+      if (hasT('large'))
+        return `${p.name} are bulky for their weight, so freight is usually decided by volume rather than mass. Palletised consignments work out considerably cheaper per unit than parcel carriage at this size.`
+      if (hasT('small'))
+        return 'Small formats consolidate well, so if you are ordering several at once they normally travel as a single consignment rather than being charged separately.'
+      if (hasT('shipping', 'subscription'))
+        return 'If you are shipping to a fulfilment centre rather than your own address, send their receiving requirements with the order — pallet height and labelling rules are usually fixed and refusals are expensive.'
+      if (p.form.id === 'label' || p.form.id === 'sticker')
+        return 'Roll-form work travels well and takes very little space, so freight is rarely the deciding cost on this format even at high quantities.'
+      if (p.form.id === 'rigid-box')
+        return 'Rigid boxes ship assembled rather than flat, so they take considerably more space in transit than a folding carton of the same finished size. It is worth factoring into the landed cost.'
+      if (p.form.id === 'pouch' || p.form.id === 'paper-cup')
+        return 'This format nests or lies flat, so a large quantity takes up far less freight volume than the finished pack suggests.'
+      if (hasT('foodContact'))
+        return 'If stock is going into a kitchen or a service counter rather than a warehouse, tell us — case sizes that a single person can lift and store matter more there than pallet efficiency.'
+      if (hasT('luxury', 'gifting'))
+        return 'Assembled and finished packs are worth protecting in transit with a plain outer carton, which we will quote alongside if you are shipping direct to customers.'
+      return 'Tell us at quoting if the delivery point cannot take a pallet, and we will break the consignment into cartons instead.'
+    case 'repeat':
+      if (hasT('regulated', 'tamper'))
+        return 'Artwork revisions are held against the same record, so a reorder runs the approved version rather than whatever file was most recently sent to us.'
+      if (hasT('branded', 'luxury', 'cosmetic'))
+        return 'That includes the ink formulation, which is what keeps a brand colour consistent between runs rather than drifting a shade each time.'
+      if (hasT('foodContact'))
+        return 'The board and coating are held together, so a reorder cannot quietly arrive on a stock with different grease resistance.'
+      return 'It also means a reorder can be priced against a larger quantity without re-opening the specification.'
+    case 'artwork':
+      if (p.form.id === 'label' || p.form.id === 'sticker')
+        return 'On a die-cut face, keep live copy clear of the cut edge — a small amount of movement on the die is normal and copy set to the edge will lose it on some of the run.'
+      if (p.form.id === 'rigid-box')
+        return 'A wrapped box needs bleed carried around the turn-in as well as the visible face, which is more artwork area than the outside dimensions suggest.'
+      if (hasT('window'))
+        return 'Supply the window aperture as a separate layer so prepress can check the registration between the print and the cut.'
+      if (hasT('regulated', 'tamper'))
+        return 'Send required copy as live text rather than flattened artwork, so we can confirm it holds its legal minimum type size after any scaling.'
+      if (hasT('eco'))
+        return 'If you are printing on an uncoated or kraft stock, approve a printed sample rather than a digital proof — the substrate pulls colour down noticeably.'
+      return 'The dieline we supply carries the crease positions, so keeping type clear of a crease is easier to solve at layout than at proof.'
+    case 'cost':
+      if (p.form.id === 'pouch')
+        return 'On this format the film structure and whether you need a zip or a valve move the price more than quantity does at small volumes.'
+      if (hasT('luxury', 'gifting'))
+        return 'Rigid construction is hand-assembled, so labour is a larger share of the unit cost here than it is on a machine-glued carton and quantity discounts flatten out sooner.'
+      if (hasT('protective', 'shipping'))
+        return 'An insert often lowers the total rather than raising it, because holding the contents still lets us drop a grade on the outer.'
+      if (hasT('regulated', 'tamper'))
+        return 'Certified closures and documented proofing are separate line items on a regulated pack, and we quote them separately so they are visible rather than absorbed.'
+      return 'Finishing passes are the lever buyers most often underestimate: each one is a separate run through the line.'
+  }
+}
+
 /** Questions every page needs, but with answers built from this product. */
-function universal(p: Product): Faq[] {
+function universal(p: Product, t: Set<Trait>): Faq[] {
   const q = fmtQty(minQty(p))
+  const r = (k: Rider) => rider(k, p, t)
   return [
     { q: `What is the minimum order for ${p.name.toLowerCase()}?`, a: `A flat 100 units on any format. Most ${p.form.noun} in this range are quoted from ${q} units upward because unit cost falls sharply above that, but the minimum exists so you can validate a structure first.` },
     { q: `How long do ${p.name.toLowerCase()} take to produce?`, a: `3 to 5 business days after artwork approval, plus freight. ${p.form.singular.charAt(0).toUpperCase() + p.form.singular.slice(1)} runs with applied finishes can take longer because each finish is a separate pass, and we confirm a firm date in writing with the quote.` },
-    { q: `What do ${p.name.toLowerCase()} cost?`, a: `Prices start from $0.30 per piece for large-volume orders. For this format the biggest levers are quantity, print route, board grade and how many finishing passes are involved. We quote each element separately so you can see where the money is going.` },
-    { q: 'Can I see a sample first?', a: `Yes. We can send a plain unprinted sample so you can check the fit and structure, or a printed prototype for colour and finish. Sample costs are normally credited against the production order.` },
-    { q: 'Can you match packaging we already use?', a: `Send the current specification or a physical sample and we will quote to match it rather than proposing an alternative you would then have to re-approve internally.` },
-    { q: 'Do you deliver nationwide?', a: 'Yes, to all 50 states. We hold no premises and no warehousing anywhere, so everything is manufactured to order and shipped directly to your address. Freight is quoted separately and depends on consignment size.' },
+    { q: `What do ${p.name.toLowerCase()} cost?`, a: `Prices start from $0.30 per piece for large-volume orders. For this format the biggest levers are quantity, print route, board grade and how many finishing passes are involved. We quote each element separately so you can see where the money is going. ${r('cost')}` },
+    { q: 'Can I see a sample first?', a: `Yes. We can send a plain unprinted sample so you can check the fit and structure, or a printed prototype for colour and finish. Sample costs are normally credited against the production order. ${r('sample')}` },
+    { q: 'Can you match packaging we already use?', a: `Send the current specification or a physical sample and we will quote to match it rather than proposing an alternative you would then have to re-approve internally. ${r('match')}` },
+    { q: 'Do you deliver nationwide?', a: `Yes, to all 50 states. We hold no premises and no warehousing anywhere, so everything is manufactured to order and shipped directly to your address. Freight is quoted separately and depends on consignment size. ${r('delivery')}` },
     { q: `Can I order ${p.name.toLowerCase()} in a custom size?`, a: `Every run is cut to your dimensions — there are no stock sizes here. Send the product measurements rather than a box size and we will build the ${p.form.singular} around them, then send a dieline template you can design onto.` },
     { q: 'What happens after I approve the quote?', a: `We issue a dieline template sized to your product, prepress checks your artwork against it, and a proof comes back for sign-off. Nothing runs until you approve that proof, and ${p.form.noun} then take 3 to 5 business days.` },
-    { q: 'Can you hold the specification for repeat orders?', a: `Yes. Once a first run is approved we hold the board, structure, dimensions, print method and finishes against your account, so a reorder references the same specification exactly rather than being re-derived.` },
+    { q: 'Can you hold the specification for repeat orders?', a: `Yes. Once a first run is approved we hold the board, structure, dimensions, print method and finishes against your account, so a reorder references the same specification exactly rather than being re-derived. ${r('repeat')}` },
     { q: 'Do you offer recycled or recyclable options?', a: `Recycled grades are available across most of the substrates we run for ${p.form.noun}. Recycled content, kerbside recyclability and certified compostability are three different claims though, so tell us which one you intend to print.` },
-    { q: 'What file format should I send artwork in?', a: 'A print-ready PDF or a vector file, with fonts outlined and any raster images at 300 dpi at final size. We supply the dieline to design onto, and prepress checks bleed, safe area and crease clearance before issuing a proof.' },
+    { q: 'What file format should I send artwork in?', a: `A print-ready PDF or a vector file, with fonts outlined and any raster images at 300 dpi at final size. We supply the dieline to design onto, and prepress checks bleed, safe area and crease clearance before issuing a proof. ${r('artwork')}` },
   ]
 }
 
@@ -170,7 +262,7 @@ export function productFaqsFor(p: Product, traits: Set<Trait>): Faq[] {
   for (const f of FORM_FAQS[p.form.id]?.(p) ?? []) push(f)
 
   // Universal questions fill to at least ten, rotated so the tail differs.
-  const uni = universal(p)
+  const uni = universal(p, traits)
   const start = Math.floor(hash(p.slug + 'u') * uni.length)
   for (let i = 0; i < uni.length; i++) push(uni[(start + i) % uni.length])
 

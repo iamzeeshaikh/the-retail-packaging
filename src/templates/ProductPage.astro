@@ -12,6 +12,10 @@ import { productMeta, productSummary, productBenefits, PRICE_LINE, CATEGORY_NOTE
 import { traitsOf, layoutFor, sectionsFor } from '../lib/product-traits'
 import { buildSection } from '../lib/product-sections'
 import { productFaqsFor } from '../lib/product-faqs'
+import {
+  quoteHeading, quoteIntro, benefitsHeading, benefitsEyebrow,
+  relatedHeading, faqHeading, ctaHeading, ctaText,
+} from '../lib/product-headings'
 import { specLine, minQty, leadTime, fmtQty } from '../lib/commerce'
 import { SITE } from '../lib/site'
 import * as S from '../lib/schema'
@@ -34,6 +38,9 @@ const blocks = sectionKeys
 const faqs = productFaqsFor(p, traits)
 const benefits = productBenefits(p)
 const related = relatedProducts(p, 4)
+/* Headings for the fixed bands. Derived from the same traits that chose the
+   layout, so the labels match what the page actually argues. */
+const hc = { p, t: traits, layout }
 const { title, description } = productMeta(p)
 const hero = p.images[0]
 
@@ -119,8 +126,8 @@ const schema = S.graph([
           productName={p.name}
           categoryName={cat.name}
           source={`product:${p.slug}`}
-          title="Get a price"
-          intro="Name, email, phone and what you are packing. Attach artwork if you have it. We reply with a specification and a written price, usually within one business day."
+          title={quoteHeading(hc)}
+          intro={quoteIntro(hc)}
         />
       </div>
     </div>
@@ -188,8 +195,8 @@ const schema = S.graph([
   <section class="section section-sunken">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">What you get</p>
-        <h2>Why buyers specify this format</h2>
+        <p class="eyebrow">{benefitsEyebrow(hc)}</p>
+        <h2>{benefitsHeading(hc)}</h2>
       </div>
       <div class="grid g-4">
         {benefits.map((b) => (
@@ -206,7 +213,7 @@ const schema = S.graph([
     </div>
   </section>
 
-  <Faqs faqs={faqs} title={`${p.name}: questions buyers ask`} intro={`Specification, minimums and lead times for ${p.name.toLowerCase()}.`} />
+  <Faqs faqs={faqs} title={faqHeading(hc)} intro={`Specification, minimums and lead times for ${p.name.toLowerCase()}.`} />
 
   <!-- ============ related ============ -->
   {related.length > 0 && (
@@ -214,7 +221,7 @@ const schema = S.graph([
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">Related formats</p>
-          <h2>Often specified alongside this</h2>
+          <h2>{relatedHeading(hc)}</h2>
         </div>
         <div class="grid g-4">
           {related.map((r) => (
@@ -225,10 +232,7 @@ const schema = S.graph([
     </section>
   )}
 
-  <CtaBand
-    title={`Get a Price for ${p.name}`}
-    text={`Send the dimensions and quantity you need. We reply with a full specification and a written price, usually within one business day.`}
-  />
+  <CtaBand title={ctaHeading(hc)} text={ctaText(hc)} />
 </Base>
 
 <style>
