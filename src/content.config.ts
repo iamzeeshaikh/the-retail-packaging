@@ -24,6 +24,9 @@ const resources = defineCollection({
     ...shared,
     kind: z.enum(['guide', 'howto', 'checklist', 'glossary']).default('guide'),
     order: z.number().default(50),
+    /* Questions the body deliberately does not answer inline. Rendered once,
+       and emitted as FAQPage schema by the article layout. */
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
   }),
 })
 

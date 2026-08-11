@@ -13,6 +13,6 @@ const { Content, headings } = await render(doc)
 const wordCount = doc.body?.split(/\s+/).filter(Boolean).length ?? 0
 const path = `/resources/${doc.id}/`
 ---
-<ArticleLayout data={doc.data} section="resources" sectionName="Packaging resources" path={path} wordCount={wordCount} headings={headings}>
+<ArticleLayout data={doc.data} section="resources" sectionName="Packaging resources" path={path} wordCount={wordCount} headings={headings} faqs={doc.data.faqs}>
   <Content />
 </ArticleLayout>

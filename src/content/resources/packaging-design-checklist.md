@@ -3,12 +3,23 @@ title: Packaging Design Checklist
 description: A design-stage checklist covering structure, hierarchy, regulated panels, shelf legibility, print constraints and pre-flight before artwork is released.
 metaTitle: Packaging Design Checklist | Before Artwork
 publishDate: 2026-06-25
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: packaging design checklist
 kind: checklist
 order: 150
 heroProduct: cosmetic-boxes
 heroAlt: Cosmetic boxes showing printed front panels and clear regulated back panel space
+faqs:
+  - q: What is the difference between this and the retail packaging checklist?
+    a: This one covers the design stage specifically — the decisions made between receiving a dieline and releasing artwork. The retail checklist is broader and covers structure, commercial terms and logistics as well. If you already have a dieline in hand, this is the relevant list.
+  - q: Why does the substrate need confirming before design starts?
+    a: Because it changes colour behaviour. Kraft and uncoated stocks absorb ink, so colours print duller and warmer than the same file on coated board, and white needs an opaque underbase. Designing on white and discovering the stock afterwards means reworking the palette.
+  - q: How small can text safely go?
+    a: Above 6pt for positive text and above 8pt for reversed, as a working floor. Reversed type fills in more readily because ink spreads into the knocked-out area, and the effect is worse on absorbent and fluted substrates than on coated board.
+  - q: Where should the barcode never go?
+    a: Across a fold, across a curve, or over a perforation. Any of the three distorts the bars enough to fail at the scanner, and it is discovered in a warehouse rather than in prepress. It is a dieline decision made before artwork rather than a layout choice.
+  - q: What does pre-flight actually check?
+    a: That the file will reproduce as intended — image resolution at placed size, fonts embedded or outlined, bleed on every trim edge, the dieline on a non-printing layer, and total ink coverage within the press limit. It catches mechanical problems, not design ones.
 ---
 
 This checklist is for the design stage specifically — the decisions made between receiving a dieline and releasing artwork to production.
@@ -77,5 +88,43 @@ This checklist is for the design stage specifically — the decisions made betwe
 - Physical sample reviewed where fit or colour is critical
 - Approval given by someone authorised to give it
 - Approved file archived with dieline, board spec and colour targets
+
+The technical export requirements behind several of these checks are set out in full in our [packaging file requirements reference](/resources/packaging-file-requirements/).
+
+## Designing on the dieline, not beside it
+
+The most common structural error in packaging artwork is designing on a rectangle and transferring to the dieline afterwards. It looks equivalent and it is not.
+
+A dieline carries information a rectangle does not: which panel is the front, where the glue lap sits, where the creases fall, which faces are hidden when the pack is assembled, and where the safety margins run. Artwork built without that information routinely places something important under a lap, across a fold or outside the safe area.
+
+Import the dieline as a locked non-printing layer and build on top of it. Every subsequent check in this list becomes visual rather than theoretical.
+
+## What the panels are actually for
+
+Not every face carries equal weight, and treating them equally wastes effort.
+
+**Front panel.** Seen from two to three feet on a shelf. One clear message, the brand mark, and the variant. Everything else is secondary by definition.
+
+**Back panel.** Read in the hand at close range. This is where regulated content lives, and where it should be laid out first at final length.
+
+**Side panels.** Frequently the face a customer actually sees, because packs sit shoulder to shoulder. Narrow, and worth designing rather than filling.
+
+**Top and base.** Base is generally covered or on a shelf. Top matters where products are displayed in a tray or a bin.
+
+**Interior.** Free real estate on any pack that opens toward the customer, and the surface people photograph on a direct-to-consumer product.
+
+## Colour that survives production
+
+Three practical constraints catch designs that were built without them.
+
+Rich black on large solids and 100% K on small text. A four-colour black on 8pt type registers imperfectly and reads soft; a single-plate black stays crisp.
+
+Total ink coverage within the press limit. Stacking four heavy channels on a dark area exceeds what the substrate can absorb, and the result is set-off and slow drying rather than a richer black.
+
+Spot colours named consistently. A swatch called "Brand Blue" in one file and "PMS 293" in another produces two plates for one colour, and the cost of that surfaces on the invoice.
+
+## Before you release
+
+The pre-flight list in this checklist is mechanical, and it is worth running it as a list rather than by eye. Missing bleed on one edge, an image placed at 180 dpi, or a stray unused swatch are all invisible on screen and all cost a proof cycle.
 
 The technical export requirements behind several of these checks are set out in full in our [packaging file requirements reference](/resources/packaging-file-requirements/).

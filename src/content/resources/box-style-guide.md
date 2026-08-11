@@ -3,12 +3,23 @@ title: Box Style Guide
 description: Folding cartons, mailers, rigid boxes, display units and trays compared on construction, assembly, shipping and where each style stops working.
 metaTitle: Box Style Guide | Packaging Structures Compared
 publishDate: 2026-05-08
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: box style guide
 kind: guide
 order: 20
 heroProduct: mailer-boxes
 heroAlt: Custom mailer boxes with roll-end tuck-front construction shown flat and assembled
+faqs:
+  - q: What is the difference between a tuck end and an auto-lock bottom?
+    a: A reverse tuck end folds closed at both ends and is assembled by hand — cheapest, fine for light contents. An auto-lock bottom snaps into a locked base as the carton is opened, so it takes real weight and assembles faster. The auto-lock costs more in board and tooling and pays for itself on anything heavy or high-volume.
+  - q: When should I use a rigid box instead of a folding carton?
+    a: When the feel of the pack is part of what the customer is paying for. Rigid is hand-assembled from wrapped greyboard and ships assembled, so both unit cost and freight are considerably higher. A folding carton with a good finish reads as premium for much less if the box is posted rather than handed over.
+  - q: What is a roll-end tuck front and why is it the standard e-commerce box?
+    a: It is a one-piece corrugated box with a hinged lid that tucks into the front. It needs no tape, assembles in one movement, protects well and opens cleanly — which is why it became the default for direct-to-consumer despatch where the unboxing matters.
+  - q: Can one structure work for both retail shelf and shipping?
+    a: Rarely without compromise. Shelf wants face area and finish; shipping wants tight dimensions and crush resistance. A retail carton inside a plain shipper usually costs less overall than one box attempting both, and performs better in each role.
+  - q: How do I know if I need a locking corner on a tray?
+    a: If the tray carries any real weight. A folded corner splits under load where a glued or locked one holds, and two trays at the same board weight can perform very differently because of it. It rarely appears on a specification sheet, so it is worth asking about explicitly.
 ---
 
 Box style is a structural decision made before material, size or print. Each style is manufactured differently, ships differently and has a natural range beyond which it stops making sense.
@@ -66,6 +77,50 @@ Open-top structures die-cut from grease-resistant board with locking corners. Sp
 | E-commerce shipping and unboxing | Roll-end tuck front |
 | Bulk shipping, no presentation | Regular slotted container |
 | Premium presentation | Rigid two-piece or hinged lid |
+| Several printed variants, one structure | Sleeve and tray |
+| Retail shelf placement | Display case with tear-away front |
+| Hot or greasy food | Locking-corner tray |
+
+Once the style is settled, the material question narrows considerably — our [comparison of board grades and flute types](/resources/packaging-material-guide/) covers what each structure should be produced on.
+
+## How structure drives cost
+
+Style is not only an aesthetic decision. Each structure has a different board consumption, a different assembly time and a different freight profile, and those three usually matter more than the price per sheet.
+
+**Board consumption.** An auto-lock bottom uses noticeably more board than a tuck end at the same finished size, because the locking base needs the extra material. On a large run that difference is real.
+
+**Assembly time.** A hand-assembled tuck end costs nothing to make and costs labour to erect. On high throughput, an auto-lock that snaps open in one movement pays for its extra board in packing time within weeks.
+
+**Freight.** Folding cartons ship flat. Rigid boxes ship assembled and occupy several times the volume, which is the hidden cost people miss when comparing the two on unit price alone.
+
+## Matching structure to journey
+
+| Journey | What the structure must survive | Suitable styles |
+|---|---|---|
+| Handed over at a counter | Being carried by hand | Tuck end, tray, sleeve |
+| Shelf then home | Facing, then a shopping bag | Tuck end, auto-lock, sleeve and tray |
+| Distribution then shelf | Pallet compression, then display | Display case, regular slotted container |
+| Carrier network to a doorstep | Crushing, dropping, handling | Roll-end tuck front, regular slotted container |
+| Gifted in person | Being opened deliberately | Rigid two-piece, hinged lid |
+
+The mismatch that causes most trouble is a shelf structure sent through a carrier network. A carton designed to face forward has no crush resistance and arrives looking handled.
+
+## Collapsible rigid
+
+Worth knowing about because it sits between the two main families. A collapsible rigid box ships flat and erects into something close to a wrapped rigid structure.
+
+It costs more than a folding carton and less than full rigid, and it feels closer to rigid than to carton. Where a premium pack has to be posted rather than handed over, it is frequently the right compromise and it is rarely offered unless asked for.
+
+## Choosing between styles
+
+| Requirement | Style |
+|---|---|
+| Light retail product, lowest cost | Reverse tuck end |
+| Weight in a folding carton | Auto-lock bottom |
+| E-commerce shipping and unboxing | Roll-end tuck front |
+| Bulk shipping, no presentation | Regular slotted container |
+| Premium presentation | Rigid two-piece or hinged lid |
+| Premium presentation that must post | Collapsible rigid |
 | Several printed variants, one structure | Sleeve and tray |
 | Retail shelf placement | Display case with tear-away front |
 | Hot or greasy food | Locking-corner tray |

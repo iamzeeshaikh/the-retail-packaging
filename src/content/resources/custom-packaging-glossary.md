@@ -3,12 +3,23 @@ title: Custom Packaging Glossary
 description: Plain definitions of the packaging terms that appear on quotes and specifications, from bleed and caliper to litho-lamination and dimensional weight.
 metaTitle: Custom Packaging Glossary | Terms Explained
 publishDate: 2026-06-08
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: packaging glossary
 kind: glossary
 order: 100
 heroProduct: mailer-boxes
 heroAlt: Custom mailer boxes shown flat to reveal score lines and panel structure
+faqs:
+  - q: What does MOQ actually depend on?
+    a: The format and the print method rather than a policy decision. Cup forming and pouch film both carry a fixed setup that does not scale down, which is why they have a higher practical floor than a flat-printed carton. Our minimum is 100 units on any format.
+  - q: What is the difference between caliper and flute?
+    a: Caliper is the thickness of a single sheet of paperboard, quoted in thousandths of an inch. Flute is the corrugated wave sandwiched between two liners, quoted as a letter grade. Caliper describes solid board; flute describes corrugated construction.
+  - q: What is makeready and why am I charged for it?
+    a: It is the press setup before a run — mounting plates, bringing colour to target, running waste sheets until the job is correct. It takes the same time whether the run is 500 or 50,000, which is why it dominates the unit price on short runs and disappears at volume.
+  - q: What does dimensional weight mean for my costs?
+    a: Carriers bill on whichever is greater, actual weight or volumetric weight calculated from the box dimensions. A large light parcel is charged as though it were heavy, which is why right-sizing a box saves money even when nothing about the contents changes.
+  - q: Who owns the tooling once it is made?
+    a: Ask, and get it in writing. Tooling is a one-time cost reused on every reorder, and the practical question is whether a reorder incurs it again and whether the die can move if you change supplier. It is one of the more common gaps in a first quote.
 ---
 
 Packaging quotes use vocabulary that is rarely explained. These are the terms that appear most often, defined the way they are actually used.
@@ -88,3 +99,43 @@ Packaging quotes use vocabulary that is rarely explained. These are the terms th
 **Knocked down flat** — supplied unassembled to reduce freight volume.
 
 Terms that appear on your own quote and are not listed here are worth asking about. A specification you cannot read is a specification you cannot compare, and our [breakdown of what drives packaging pricing](/resources/packaging-cost-factors/) explains how these terms translate into cost.
+
+## Quality and testing terms
+
+**ECT** — edge crush test. Measures the compression strength of corrugated board on its edge, which is what actually determines stacking performance on a pallet.
+
+**Burst strength** — resistance to a puncturing force. Historically the standard measure for corrugated, now largely superseded by ECT for stacking applications.
+
+**Compression test** — a loaded box compressed until it fails, used to predict how high a pallet can safely stack.
+
+**Grammage** — paper weight in grams per square metre. Used for bags, wraps and papers where caliper is not the useful measure.
+
+**Wet strength** — a board's ability to retain integrity when damp, which is a specified property rather than an inherent one.
+
+## Food and compliance terms
+
+**Food-contact compliant** — materials and inks approved for direct contact with food. Not the same as food-safe packaging generally, which may only contact a liner.
+
+**Grease resistance** — a coating property, not a thickness property. Untreated board of any caliper will eventually stain with hot oily contents.
+
+**Migration** — the transfer of a substance from packaging into the product. Relevant for inks, adhesives and fragrance oils.
+
+**Tamper-evident** — a structure that visibly shows interference. Used loosely; the specific mechanism should always be stated.
+
+## Terms that get confused
+
+**Recyclable vs recycled.** Recycled describes what the material is made from. Recyclable describes where it can go afterwards. A pack can be one without the other.
+
+**Kiss-cut vs die-cut.** Kiss-cut goes through the face material only, leaving items on a backing sheet. Die-cut goes through everything so each piece separates.
+
+**Emboss vs deboss.** Embossing raises the board toward the viewer; debossing presses it away. Both need a die and both need artwork designed for relief.
+
+**Rigid box vs folding carton.** A rigid box is hand-assembled from wrapped greyboard and ships assembled. A folding carton is die-cut, glued along one seam and ships flat. The freight difference is substantial.
+
+**Gusset.** On a bag, the depth when opened out — the third dimension after width and height. On a pouch, the fold at the base that lets it stand.
+
+## Reading a quote
+
+A complete quote names the board grade and caliper, the structure, the print method and colour count, every finishing pass, the tooling position, the quantity band, the lead time and the freight basis.
+
+If any of those is missing, the number is not comparable with another quote, and the gap is usually where the difference between two prices actually sits.

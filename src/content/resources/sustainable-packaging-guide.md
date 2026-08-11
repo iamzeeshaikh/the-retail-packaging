@@ -3,12 +3,23 @@ title: Sustainable Packaging Guide
 description: Recycled content, recyclability and compostability compared honestly, including cost premiums, performance trade-offs and defensible on-pack wording.
 metaTitle: Sustainable Packaging Guide | Claims Compared
 publishDate: 2026-06-01
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keyword: sustainable packaging guide
 kind: guide
 order: 80
 heroProduct: compostable-mailers
 heroAlt: Compostable mailers made from plant-based film with printed markings
+faqs:
+  - q: Is recycled board weaker than virgin board?
+    a: Slightly, at the same caliper. Recycled fibre is shorter, so the board is marginally less rigid and takes on moisture a little faster. Stepping up one caliper restores the performance while keeping the recycled claim intact, and the cost of that step is usually smaller than the premium people expect.
+  - q: Can I say my packaging is recyclable if it has a window?
+    a: Usually not without qualification. A PET film window means the pack is no longer straight paper, and most kerbside systems want the film separated first. Either drop the window, or state the instruction precisely — "remove window before recycling" is defensible where a bare "recyclable" is not.
+  - q: Is compostable packaging better than recyclable?
+    a: Rarely, in practice. Certified compostable material almost always needs industrial facilities that most consumers cannot access, and it contaminates recycling streams when it ends up there instead. Where kerbside recycling is realistic for your customers, a recyclable paper stock does more actual good.
+  - q: What is the cheapest way to reduce our packaging footprint?
+    a: Right-sizing. It removes board, reduces shipping volume and cuts freight emissions in one change, and it lowers cost rather than raising it. It is the only option in this guide that improves the environmental position and the budget at the same time.
+  - q: Can you certify our recycled content?
+    a: We can state the recycled content of the board we supply and provide the mill documentation behind it. We do not issue certifications ourselves. That distinction matters if you intend to print a percentage, because the evidence has to come from the material supply chain rather than from us.
 ---
 
 Three distinct claims get treated as one, and that is where brands attract complaints. This guide separates them and sets out what each option genuinely delivers.
@@ -56,3 +67,29 @@ Answer three questions before printing anything: what specifically is claimed, w
 "Recycle with paper" and "industrially compostable, not suitable for home composting" are defensible. A generic leaf symbol is not.
 
 Certification documentation and stated recycled percentages turn a marketing statement into a substantiated one, and the [material options behind each claim](/resources/packaging-material-guide/) set out what is actually achievable at each price point.
+
+## What the switch actually involves
+
+Changing material is rarely a drop-in substitution, and the cost of the change is not only the price difference on the board.
+
+A mono-material film needs the filling line retuned — seal temperature, dwell time and pressure all differ from a laminate, and running the old settings produces weak seals that fail in transit rather than on the line. Trial it on a single SKU before converting a range.
+
+Recycled board behaves differently at the crease. Shorter fibre cracks more readily on a fold, so a crease profile set for virgin stock may need adjusting. It is a small change but it is discovered at assembly, usually mid-run.
+
+Uncoated and recycled stocks also absorb more ink, so a colour approved on coated board reads duller. Where a brand colour is fixed, budget for a press proof on the new stock rather than assuming the file transfers.
+
+## Reading a supplier claim
+
+Three questions separate a substantiated claim from a marketing one.
+
+**What exactly is being claimed?** "Eco-friendly" and "green" mean nothing specific. "70% post-consumer recycled fibre" and "kerbside recyclable as paper" can both be checked.
+
+**What evidence exists?** Mill documentation for recycled content, a named certification scheme and number for compostability, and a material composition for recyclability. If a supplier cannot produce these, the claim is not yours to print.
+
+**What is the customer meant to do?** A claim that does not tell the customer how to dispose of the pack is decoration. "Recycle with paper" and "industrially compostable, not suitable for home composting" both give an instruction.
+
+## A note on the least sustainable choice
+
+The largest environmental cost in most packaging programmes is not the material. It is stock that is ordered, stored and never used — obsolete artwork, a discontinued SKU, a seasonal design that overran demand.
+
+Ordering against realistic consumption rather than a price break avoids that entirely, and it is the one change that needs no material substitution, no line trial and no new claim.
