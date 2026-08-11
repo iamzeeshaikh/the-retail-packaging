@@ -1,13 +1,16 @@
 {
   "name": "The Retail Packaging",
   "short_name": "Retail Packaging",
-  "description": "Custom retail packaging manufactured to order for US brands.",
+  "description": "Custom retail packaging manufactured to order for brands in the US, UK, Canada and Australia.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#faf8f4",
   "theme_color": "#14432f",
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/brand/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }

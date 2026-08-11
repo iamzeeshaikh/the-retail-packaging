@@ -71,6 +71,11 @@ const year = new Date().getFullYear()
 
     <link rel="preload" as="font" type="font/woff2" href="/fonts/jost.woff2" crossorigin />
 
+    <!-- Google's favicon crawler wants a raster icon at a multiple of 48px and
+         will not sniff past the declared type, so the .ico is a real multi-image
+         ICO (16/32/48/96/128) and is listed before the SVG. -->
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 96x96 128x128" />
+    <link rel="icon" href="/brand/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
