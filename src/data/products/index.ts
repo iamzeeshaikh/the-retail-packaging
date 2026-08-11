@@ -5,6 +5,8 @@ import { bagFacts } from './bags'
 import { pouchFacts } from './pouches'
 import { stickerFacts } from './stickers'
 import { cosmeticFacts } from './cosmetic'
+import { sleeveFacts } from './sleeves'
+import { cupFacts } from './cups'
 
 export type { ProductFacts } from './types'
 
@@ -23,6 +25,8 @@ const ALL: ProductFactsMap = {
   ...pouchFacts,
   ...stickerFacts,
   ...cosmeticFacts,
+  ...sleeveFacts,
+  ...cupFacts,
 }
 
 export const factsFor = (slug: string): ProductFacts | undefined => ALL[slug]
