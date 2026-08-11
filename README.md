@@ -134,7 +134,7 @@ The CSP allows Google Tag Manager and Analytics hosts so analytics works when an
 3. `QUOTE_TO_EMAIL` points at a monitored inbox
 4. Submit a test quote on the deployed URL and confirm delivery, attachment and reply-to
 5. Confirm `https://theretailpackaging.com/` resolves without `www` and with a trailing slash
-6. Submit `/sitemap-index.xml` in Search Console
+6. Submit `/sitemap.xml` in Search Console
 7. Set `PUBLIC_GSC_VERIFICATION` if verifying by meta tag
 8. Spot-check a category, a product, a location page and the packaging tool on a phone
 
