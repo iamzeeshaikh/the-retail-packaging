@@ -141,7 +141,7 @@ const tableHero = p.variant === 'demand-led' && !!p.demandTable
           <dl class="lp-stats">
             <div><dt>Minimum order</dt><dd>100 units</dd></div>
             <div><dt>Production</dt><dd>3–5 business days</dd></div>
-            <div><dt>Freight</dt><dd>{p.logistics.body[0].match(/\d+ to \d+ business days/)?.[0] ?? 'Quoted per consignment'}</dd></div>
+            <div><dt>Freight</dt><dd>{p.logistics.body[0].match(/\d+ to \d+ business days/)?.[0] ?? '2 to 7 business days'}</dd></div>
             <div><dt>Delivery</dt><dd>Direct to your address</dd></div>
           </dl>
         </aside>

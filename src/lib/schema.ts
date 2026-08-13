@@ -187,32 +187,21 @@ export function product(input: ProductSchemaInput): Json {
       itemCondition: 'https://schema.org/NewCondition',
       offerCount: 1,
       seller: { '@id': `${SITE.origin}/#organization` },
-      /* Two entries. Handling time is production and is the same wherever the
-         run ships. Transit is only declared for the US, where the ground
-         network makes it predictable; export transit is quoted per consignment,
-         so no number is claimed for it. */
-      shippingDetails: [
-        {
-          '@type': 'OfferShippingDetails',
-          shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'US' },
-          deliveryTime: {
-            '@type': 'ShippingDeliveryTime',
-            handlingTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 5, unitCode: 'DAY' },
-            transitTime: { '@type': 'QuantitativeValue', minValue: 2, maxValue: 7, unitCode: 'DAY' },
-          },
+      /* One node: the business confirms the same 3-5 day handling and 2-7 day
+         transit window for every market it serves, so splitting the US out from
+         the other three would imply a difference that does not exist. */
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: SITE.marketCodes.map((c) => ({
+          '@type': 'DefinedRegion',
+          addressCountry: c,
+        })),
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 5, unitCode: 'DAY' },
+          transitTime: { '@type': 'QuantitativeValue', minValue: 2, maxValue: 7, unitCode: 'DAY' },
         },
-        {
-          '@type': 'OfferShippingDetails',
-          shippingDestination: ['GB', 'CA', 'AU'].map((c) => ({
-            '@type': 'DefinedRegion',
-            addressCountry: c,
-          })),
-          deliveryTime: {
-            '@type': 'ShippingDeliveryTime',
-            handlingTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 5, unitCode: 'DAY' },
-          },
-        },
-      ],
+      },
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
         applicableCountry: [...SITE.marketCodes],
