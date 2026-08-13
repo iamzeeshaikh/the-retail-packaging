@@ -54,7 +54,7 @@ export const statesC: Place[] = [
     logistics: {
       h: 'Freight to the Pacific Northwest',
       body: [
-        'Ground freight into Washington typically takes 4 to 7 business days, which is at the longer end of our national range simply because of distance. Seattle and Tacoma both take palletised deliveries without difficulty.',
+        'Ground freight into Washington typically takes 5 to 7 business days, and the distance means the window has little slack in it. Seattle and Tacoma both take palletised deliveries without difficulty.',
         'The extra transit time is worth planning for rather than working around. If your reorder point is calculated on a national average lead time, it is probably a few days short for Washington.',
       ],
     },
@@ -89,7 +89,7 @@ export const statesC: Place[] = [
       { q: 'Will a moisture-resistant coating make my packaging non-recyclable?', a: 'Not necessarily. An aqueous coating generally keeps paper recyclable through kerbside collection; a plastic film laminate usually does not. If recyclability is the claim you intend to print, tell us and we will stay on the aqueous side.' },
       { q: 'Can you produce genuinely minimal packaging?', a: 'Yes, and it works best when the pack is sized tightly to the product first. Removing material from an oversized box raises damage rates. Reduce the gap, then reduce the material.' },
       { q: 'Do you have a facility in Washington?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Washington. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How long does delivery to Seattle take?', a: 'Ground freight is typically 4 to 7 business days after the 3 to 5 business days of production. It is at the longer end of our range, so build that into your reorder point.' },
+      { q: 'How long does delivery to Seattle take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. There is little slack in that window at this distance, so build your reorder point against the top of it.' },
       { q: 'Can you supply barrier packaging for coffee?', a: 'Yes. Coffee needs an oxygen and moisture barrier to hold freshness, which constrains the material set considerably. We will be straightforward about where a barrier requirement and a recyclability claim conflict.' },
       { q: 'What is the minimum order for a Washington delivery?', a: 'A flat 100 units on any format. That is enough to run a recycled specification through a wet season as a storage test before committing.' },
       { q: 'Can you certify recycled content?', a: 'We can state the recycled content of the board we supply and provide the mill documentation behind it. We do not issue certifications ourselves, and we would rather give you the underlying evidence than a claim you cannot substantiate.' },
@@ -155,7 +155,7 @@ export const statesC: Place[] = [
     logistics: {
       h: 'Freight into Arizona',
       body: [
-        'Ground delivery into Arizona typically takes 3 to 6 business days. Phoenix takes palletised freight easily; Tucson and the smaller markets can add a day.',
+        'Ground delivery into Arizona typically takes 5 to 7 business days. Phoenix takes palletised freight easily; Tucson and the smaller markets can add a day.',
         'Summer delivery timing is worth a thought. A trailer sitting in a Phoenix yard in July gets very hot, so if you are receiving laminated stock in high summer, arranging a morning delivery slot is a small thing that helps.',
       ],
     },
@@ -190,7 +190,7 @@ export const statesC: Place[] = [
       { q: 'Does Arizona heat affect laminated packaging?', a: 'Yes, the same way it does in Texas. Above roughly 100°F some laminating adhesives soften and stacked cartons can bond where the film touches. A heat-stable adhesive or an aqueous coating avoids it.' },
       { q: 'Do I need both the heat and the dryness adjustment?', a: 'If the stock sits in unconditioned space, usually yes — the two conditions arrive together here, and fixing one leaves the other. In conditioned storage neither is necessary and we will not specify them.' },
       { q: 'Do you have a facility in Arizona?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Arizona address.' },
-      { q: 'How long does delivery to Phoenix take?', a: 'Ground freight is typically 3 to 6 business days after production. Phoenix takes palletised deliveries easily; Tucson and smaller markets can add a day.' },
+      { q: 'How long does delivery to Phoenix take?', a: 'Ground freight is typically 5 to 7 business days after production. Phoenix takes palletised deliveries easily; Tucson and smaller markets can add a day.' },
       { q: 'Does hand assembly change the specification?', a: 'It changes how much crease cracking costs you. On an automatic erector a marginal crease produces a scrap rate; by hand it produces a slow, frustrating afternoon. We specify more conservatively for hand assembly.' },
       { q: 'What is the minimum order for an Arizona delivery?', a: 'A flat 100 units on any format, which is a sensible quantity for testing a crease profile before committing to a full run.' },
       { q: 'Can you supply packaging with electrostatic protection?', a: 'We can specify board and liners appropriate for electronics handling. Tell us the exact requirement your process operates under, since it varies considerably between component types.' },
@@ -260,7 +260,7 @@ export const statesC: Place[] = [
     logistics: {
       h: 'Delivering into Greater Boston',
       body: [
-        'Ground freight into Massachusetts typically takes 2 to 4 business days. Most of the state takes palletised delivery without difficulty.',
+        'Ground freight into Massachusetts typically takes 5 to 7 business days. Most of the state takes palletised delivery without difficulty.',
         'Boston and Cambridge receiving is the exception worth flagging. University and lab buildings frequently have restricted access, central receiving departments and delivery windows. Tell us the receiving arrangement at quoting and we will size the consignment to fit it.',
       ],
     },
@@ -299,7 +299,7 @@ export const statesC: Place[] = [
       { q: 'What is the minimum order in Massachusetts?', a: 'A flat 100 units on any format, which suits the short-run pattern here better than most states.' },
       { q: 'Should the insert hold the item or just present it?', a: 'It is worth deciding explicitly, because the answers differ. A transit insert grips the item firmly and may be invisible; a presentation insert seats it loosely and is part of what the recipient sees. Trying to do both usually compromises one.' },
       { q: 'Can you document a specification for reordering later?', a: 'Yes. We hold board, structure, insert geometry, print method and dimensions against your account so a later reorder references the same specification rather than being re-derived.' },
-      { q: 'How long does a short technical run take?', a: 'Production is 3 to 5 business days after artwork approval, plus 2 to 4 days freight. Custom-cut inserts can add a stage, and we will tell you if they do.' },
+      { q: 'How long does a short technical run take?', a: 'Production is 3 to 5 business days after artwork approval, plus 5 to 7 days freight. Custom-cut inserts can add a stage, and we will tell you if they do.' },
       { q: 'How much does short-run technical packaging cost?', a: 'Prices start from $0.30 per piece at large volumes, but a 300-unit technical run sits well above that. The insert and any tooling drive the figure far more than the board does.' },
     ],
     cta: {
@@ -389,7 +389,7 @@ export const statesC: Place[] = [
       { q: 'Does air freight really change the specification?', a: 'Yes, substantially. Air freight bills on actual or volumetric weight, whichever is greater, on every parcel. A heavier board that is sensible insurance on the road becomes a recurring cost in the air.' },
       { q: 'What if I ship by both road and air?', a: 'Tell us the split. It is usually better to optimise for whichever channel carries the majority and accept a small inefficiency on the other than to compromise both with a middle specification.' },
       { q: 'Do you have a facility in Memphis or Nashville?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Tennessee. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How quickly can packaging reach Nashville?', a: 'Ground freight is typically 2 to 4 business days after the 3 to 5 business days of production. Both Nashville and Memphis take palletised freight easily.' },
+      { q: 'How quickly can packaging reach Nashville?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Both Nashville and Memphis take palletised freight easily.' },
       { q: 'Can you produce merchandise packaging for a tour date?', a: 'Yes. Give us the date rather than asking for a lead time and we will tell you the latest artwork approval that still lands in time.' },
       { q: 'What is the minimum order in Tennessee?', a: 'A flat 100 units on any format, which suits short merchandise runs tied to a single event.' },
       { q: 'Is void fill a problem for air freight?', a: 'It is, twice over. It adds weight and it usually means the box is larger than it needs to be, which raises the volumetric charge. A correctly sized box with an insert is almost always cheaper to fly.' },
@@ -458,7 +458,7 @@ export const statesC: Place[] = [
     logistics: {
       h: 'Central corridors, straightforward freight',
       body: [
-        'Ground freight into Indiana typically takes 2 to 4 business days. The state sits on major national corridors and Indianapolis in particular is an easy destination for palletised consignments.',
+        'Ground freight into Indiana typically takes 5 to 7 business days. The state sits on major national corridors and Indianapolis in particular is an easy destination for palletised consignments.',
         'For heavy-duty corrugated the constraint is more often storage than transit. Flat-packed heavy board takes considerable space, so tell us your capacity and we can schedule phased deliveries.',
       ],
     },
@@ -493,7 +493,7 @@ export const statesC: Place[] = [
       { q: 'Can you package large, irregular components?', a: 'Yes. Irregular items are an insert and edge-protection problem rather than a box problem. Send drawings, weight and the vulnerable points and we will specify around the geometry.' },
       { q: 'Can you supply pharmaceutical packaging with an audit trail?', a: 'Yes. We issue dated proofs against a revision number and retain the approval record where your quality system requires it. Tell us at quoting so the documentation is generated alongside the job.' },
       { q: 'Do you have a plant in Indiana?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Indiana address.' },
-      { q: 'How long does delivery to Indianapolis take?', a: 'Ground freight is typically 2 to 4 business days after the 3 to 5 business days of production. Indianapolis is an easy destination for palletised freight.' },
+      { q: 'How long does delivery to Indianapolis take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Indianapolis is an easy destination for palletised freight.' },
       { q: 'What board grade do I need for heavy parts?', a: 'It depends on weight, stack height and how long stock sits. Send those three numbers rather than asking for a flute grade — the same flute can be right or badly wrong depending on the load above it.' },
       { q: 'What is the minimum order in Indiana?', a: 'A flat 100 units on any format. For protective work that is usually enough to trial a structure against your actual handling process before committing.' },
       { q: 'Can you phase deliveries of bulky corrugated?', a: 'Yes. Heavy-duty corrugated takes considerable space even flat-packed, and buyers routinely underestimate it. Tell us your storage capacity and we will schedule drops around it.' },

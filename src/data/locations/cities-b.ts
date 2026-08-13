@@ -49,7 +49,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Delivery into the city',
       body: [
-        'Ground freight reaches Philadelphia in 2 to 4 business days. The city sits on major East Coast corridors and most addresses take delivery without difficulty.',
+        'Ground freight reaches Philadelphia in 5 to 7 business days. The city sits on major East Coast corridors and most addresses take delivery without difficulty.',
         'For small producers the practical question is usually storage rather than transit. We can split a run into scheduled drops if a few hundred boxes is more than your space allows.',
       ],
     },
@@ -85,7 +85,7 @@ export const citiesB: Place[] = [
       { q: 'Can one label design cover several products?', a: 'Yes, and it is worth designing for from the start. A common layout with a variable product name and colour lets you add lines without redesigning. Ranges grow faster than most producers expect.' },
       { q: 'Do you have a shop in Philadelphia?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Philadelphia or anywhere else. We post physical samples so you can assess the material directly.' },
       { q: 'Can you supply coffee bags with degassing valves?', a: 'Yes. Freshly roasted coffee off-gasses, and without a one-way valve the bag inflates. It is a standard option on our pouch formats.' },
-      { q: 'How long will a small order take?', a: 'Production is 3 to 5 business days after artwork approval, plus 2 to 4 days freight into Philadelphia.' },
+      { q: 'How long will a small order take?', a: 'Production is 3 to 5 business days after artwork approval, plus 5 to 7 days freight into Philadelphia.' },
       { q: 'Can you deliver in stages if I have no storage?', a: 'Yes. We can produce the run and schedule drops against your space rather than delivering everything at once.' },
       { q: 'I do not have professional artwork. Can you still help?', a: 'We can work from what you have and tell you honestly whether it will reproduce well. We do not offer full design services, but we will flag resolution, colour and bleed problems before anything goes to print.' },
       { q: 'Will my packaging survive being shipped?', a: 'Only if it is specified for it. A retail pack designed for a shopping bag is not built for a carrier network. If you ship as well as sell in person, tell us and we will specify accordingly or recommend a protective outer.' },
@@ -114,7 +114,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'A corridor position with a border behind it',
       body: [
-        'San Antonio sits at the southern end of the I-35 corridor, with Austin, Fort Worth and Dallas strung along it northward and the Mexican border a short run south. Ground freight from our partners typically arrives in 2 to 5 business days.',
+        'San Antonio sits at the southern end of the I-35 corridor, with Austin, Fort Worth and Dallas strung along it northward and the Mexican border a short run south. Ground freight from our partners typically arrives in 5 to 7 business days.',
         'For packaging that will continue across the border, the relevant question is what happens to it after our delivery. If it will be filled here and shipped south, or filled south and returned north, tell us — extra handling stages change the board grade we recommend.',
       ],
     },
@@ -167,7 +167,7 @@ export const citiesB: Place[] = [
       { q: 'Does extra handling change the board I need?', a: 'Yes. Each handling stage is another opportunity for corner and edge damage. Count the stages honestly — dock, consolidation, customs, second trailer — and we will specify against that count rather than against distance.' },
       { q: 'Can you supply packaging that will cross the border?', a: 'We supply the packaging; we do not handle customs or export documentation. What we can do is specify a board that survives the extra handling those journeys involve.' },
       { q: 'Do you have a facility in San Antonio?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in San Antonio or anywhere in Texas. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How long does delivery to San Antonio take?', a: 'Ground freight is typically 2 to 5 business days after the 3 to 5 business days of production.' },
+      { q: 'How long does delivery to San Antonio take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'Can you phase deliveries against a consolidation schedule?', a: 'Yes. Rather than delivering a full run at once we can schedule drops to match how you consolidate, which reduces storage pressure.' },
       { q: 'What is the minimum order in San Antonio?', a: 'A flat 100 units on any format.' },
       { q: 'Does Texas heat affect packaging stored here?', a: 'It affects laminated cartons, where adhesives soften above roughly 100°F. Plain corrugated is largely unaffected. If your stock is laminated and stored unconditioned, ask for a heat-stable adhesive.' },
@@ -228,7 +228,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Freight into San Diego',
       body: [
-        'Ground delivery typically takes 3 to 6 business days. The metropolitan area takes palletised freight without difficulty.',
+        'Ground delivery typically takes 5 to 7 business days. The metropolitan area takes palletised freight without difficulty.',
         'Many local breweries and labs receive at premises without a dock. Tell us the address type and we will ship cartons rather than a pallet where that is easier.',
       ],
     },
@@ -263,7 +263,7 @@ export const citiesB: Place[] = [
       { q: 'What is a setup charge and why does it matter so much?', a: 'It covers preparing the press for your specific job — plates on offset, or file and colour setup on digital. It is charged per design, so a brand running eight designs a year pays it eight times regardless of quantity.' },
       { q: 'Can you package laboratory instruments?', a: 'Yes. The fitted insert is the real design work; send drawings or a sample and we will specify the cavity around the geometry, then choose an outer to suit.' },
       { q: 'Do you have a facility in San Diego?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in San Diego. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How long does delivery to San Diego take?', a: 'Ground freight is typically 3 to 6 business days after the 3 to 5 business days of production.' },
+      { q: 'How long does delivery to San Diego take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'Can you deliver to a brewery without a loading dock?', a: 'Yes. Tell us at quoting and we will ship cartons rather than a pallet, which most premises can receive normally.' },
       { q: 'What is the minimum order in San Diego?', a: 'A flat 100 units on any format, which suits both a limited beer release and a small instrument batch.' },
       { q: 'Do I need a Prop 65 panel on supplement packaging?', a: 'It depends on your product and is a legal question for you. What we can do is reserve the panel area on the dieline so adding it later does not force a redesign.' },
@@ -335,7 +335,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Freight in and out of DFW',
       body: [
-        'Ground freight into Dallas runs 2 to 5 business days, and the metropolitan area has enough carrier capacity that inbound scheduling is straightforward.',
+        'Ground freight into Dallas runs 5 to 7 business days, and the metropolitan area has enough carrier capacity that inbound scheduling is straightforward.',
         'Outbound is where the position pays. From Dallas most of the country is reachable quickly, which is why so much distribution capacity sits here.',
       ],
     },
@@ -370,7 +370,7 @@ export const citiesB: Place[] = [
       { q: 'Can soft goods ship in something flatter than a box?', a: 'Very often, yes. Apparel and other soft goods frequently move in cartons out of habit. A flat mailer removes both volume and weight, and for non-fragile items the protection is usually sufficient.' },
       { q: 'Do you have a warehouse in Dallas?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Dallas. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'Should I print my shipping mailers?', a: 'It is a brand decision, not a cost one — print does not change freight or protection. If the unboxing matters to your customers it can be worth it; for business deliveries it usually is not.' },
-      { q: 'How long does delivery to Dallas take?', a: 'Ground freight is typically 2 to 5 business days after the 3 to 5 business days of production.' },
+      { q: 'How long does delivery to Dallas take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'How many box sizes should I stock?', a: 'Usually fewer than you do. Each extra size adds purchasing, storage and pick complexity. Send us your product range and we will say honestly whether it can consolidate.' },
       { q: 'What is the minimum order in Dallas?', a: 'A flat 100 units on any format, which is enough to trial a smaller mailer against real shipments before switching a line.' },
       { q: 'Will a lighter box increase my damage rate?', a: 'Only if crushing is what is damaging your product. If damage comes from movement inside the box, a fitted insert lets you go lighter without any increase. Check which failure you actually have first.' },
@@ -430,7 +430,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Delivery into Austin',
       body: [
-        'Ground freight reaches Austin in 2 to 5 business days. The city sits on the I-35 corridor with good carrier capacity.',
+        'Ground freight reaches Austin in 5 to 7 business days. The city sits on the I-35 corridor with good carrier capacity.',
         'Small producers here often receive at studios or shared units without a dock, so tell us the address type and we will ship in cartons rather than on a pallet.',
       ],
     },
@@ -467,7 +467,7 @@ export const citiesB: Place[] = [
       { q: 'Do you have a facility in Austin?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Austin. We post physical samples so you can assess material and print directly.' },
       { q: 'How do I keep costs down across several product variants?', a: 'Keep one structure and vary a printed sleeve or a label. Each variant then carries a small setup rather than a full one, which matters far more than unit price when the range is growing.' },
       { q: 'Can you deliver to a studio without a loading dock?', a: 'Yes. Tell us at quoting and we will ship cartons rather than a pallet.' },
-      { q: 'How long does an Austin order take?', a: 'Production is 3 to 5 business days after artwork approval, plus 2 to 5 days freight.' },
+      { q: 'How long does an Austin order take?', a: 'Production is 3 to 5 business days after artwork approval, plus 5 to 7 days freight.' },
       { q: 'We have never ordered packaging before. Where do we start?', a: 'With the product dimensions and how it will be sold or shipped. From those two facts we can propose a structure and tell you what it costs, which is usually enough to make the next decision.' },
       { q: 'Is uncoated stock cheaper than coated?', a: 'Not always, but it often looks more expensive than it is. What matters more is matching the stock to the ink and the brand — a saturated colour on uncoated board reads very differently to the same colour on gloss.' },
       { q: 'How much does a distinctive small run cost?', a: 'From $0.30 per piece at large volumes, and a short run sits above that. We quote each element separately — structure, print, finish — so you can see which parts are worth keeping.' },
@@ -495,7 +495,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Fast turn, low storage',
       body: [
-        'Ground delivery into Jacksonville typically takes 3 to 5 business days, quicker than most Florida destinations because the city sits at the top of the peninsula rather than down it.',
+        'Ground delivery into Jacksonville typically takes 5 to 7 business days, and the city sits at the top of the peninsula rather than down it, which keeps it clear of the lane closures that hit South Florida in storm season.',
         'Distribution operations generally want packaging to arrive close to when it is needed rather than sitting in stock. That works in Florida’s favour — packaging that turns over quickly never has time to absorb the humidity that damages long-stored board.',
       ],
     },
@@ -547,7 +547,7 @@ export const citiesB: Place[] = [
     faqs: [
       { q: 'Do I need moisture-resistant board in Jacksonville?', a: 'Only if the stock sits. Florida humidity damages board over months, not days. If your packaging is consumed within a few weeks of delivery, you may be paying for a barrier you never benefit from — and we will tell you so.' },
       { q: 'Can you schedule deliveries against consumption?', a: 'Yes. For continuous operations we can phase production and delivery to match how quickly you use stock, rather than delivering one large run you then have to store.' },
-      { q: 'How long does delivery to Jacksonville take?', a: 'Ground freight is typically 3 to 5 business days after the 3 to 5 business days of production — quicker than South Florida because of the position at the top of the peninsula.' },
+      { q: 'How long does delivery to Jacksonville take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Sitting at the top of the peninsula, it is less exposed to the storm-season lane closures that affect South Florida.' },
       { q: 'Do you have a facility in Jacksonville?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Jacksonville or anywhere in Florida. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'Do you supply plain unprinted shippers?', a: 'Yes, and for third-party fulfilment it is usually the sensible choice, since one plain stock serves every client.' },
       { q: 'What is the minimum order in Jacksonville?', a: 'A flat 100 units on any format, though distribution quantities here are typically far above it.' },
@@ -579,7 +579,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Volume in, volume out',
       body: [
-        'Ground freight into Fort Worth runs 2 to 5 business days, and the area has substantial distribution infrastructure that makes palletised delivery routine at almost any scale.',
+        'Ground freight into Fort Worth runs 5 to 7 business days, and the area has substantial distribution infrastructure that makes palletised delivery routine at almost any scale.',
         'At bulk quantities the constraint moves from freight to storage. A large run occupies real warehouse space even flat-packed, so we frequently phase deliveries across weeks rather than sending everything at once.',
       ],
     },
@@ -646,7 +646,7 @@ export const citiesB: Place[] = [
       { q: 'Can you phase delivery of a bulk run?', a: 'Yes, and at these quantities it is normal. We produce the run and schedule drops against your storage capacity across weeks or months.' },
       { q: 'Do you have a warehouse in Fort Worth?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Fort Worth. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'Is it safe to reduce board grade at volume?', a: 'Only if you know your damage rate. Cutting a grade across fifty thousand units saves a lot and costs far more if damage rises even slightly. Establish the current rate before changing anything.' },
-      { q: 'How long does delivery to Fort Worth take?', a: 'Ground freight is typically 2 to 5 business days after production, which is 3 to 5 business days from artwork approval.' },
+      { q: 'How long does delivery to Fort Worth take?', a: 'Ground freight is typically 5 to 7 business days after production, which is 3 to 5 business days from artwork approval.' },
       { q: 'What print route is right for a large run?', a: 'Almost always offset or flexo. Above a few thousand units plate costs spread far enough that digital stops competing, and the gap widens as volume grows.' },
       { q: 'What is the minimum order in Fort Worth?', a: 'A flat 100 units on any format, though bulk buyers here are typically ordering several orders of magnitude above it.' },
       { q: 'Does summer heat affect bulk stored packaging?', a: 'It affects laminated cartons, where adhesives soften above roughly 100°F and stacked pieces can bond. Plain corrugated is largely unaffected. If your stock is laminated and stored unconditioned, ask for a heat-stable adhesive.' },
@@ -716,7 +716,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Inbound speed and replenishment',
       body: [
-        'Ground freight into Columbus takes 2 to 4 business days and the area handles palletised delivery routinely.',
+        'Ground freight into Columbus takes 5 to 7 business days and the area handles palletised delivery routinely.',
         'For continuous operations we schedule repeat deliveries against consumption. That matters more than raw speed — a predictable weekly drop is more useful to a fulfilment centre than an occasional fast one.',
       ],
     },
@@ -751,7 +751,7 @@ export const citiesB: Place[] = [
       { q: 'How do I know whether to change board grade or add an insert?', a: 'Look at what arrives damaged. Crushed boxes mean the grade is too light. Intact boxes with damaged contents mean the product is moving inside, and an insert fixes that at lower cost than heavier board.' },
       { q: 'How many box sizes should a fulfilment operation run?', a: 'Usually fewer than it does. Each extra size adds purchasing, storage and pick complexity. Send your SKU dimensions and we will propose a consolidated set.' },
       { q: 'Do you have a warehouse in Columbus?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Columbus. Production runs through our manufacturing partners and ships directly to you.' },
-      { q: 'How long does delivery to Columbus take?', a: 'Ground freight is typically 2 to 4 business days after the 3 to 5 business days of production.' },
+      { q: 'How long does delivery to Columbus take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'Will right-sizing really save enough to justify new tooling?', a: 'At fulfilment volumes, usually within months. The saving applies to every parcel, so the payback depends on your volume rather than on the size of the saving per parcel.' },
       { q: 'What is the minimum order in Columbus?', a: 'A flat 100 units on any format, which lets you trial a new box against real shipments before switching a line.' },
       { q: 'Do you supply plain stock for third-party operations?', a: 'Yes. Plain corrugated serves every client from one stock, which is usually the right answer for a 3PL.' },
@@ -811,7 +811,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Freight into Charlotte',
       body: [
-        'Ground delivery typically takes 2 to 5 business days, and Charlotte takes palletised freight without difficulty.',
+        'Ground delivery typically takes 5 to 7 business days, and Charlotte takes palletised freight without difficulty.',
         'Growing brands often outgrow their storage before they outgrow their volume. If space is tight, we can phase deliveries rather than sending a full run at once.',
       ],
     },
@@ -846,7 +846,7 @@ export const citiesB: Place[] = [
       { q: 'How do I design packaging for products I have not launched yet?', a: 'Fix the system rather than the artwork — panel layout, colour logic, structural family — and leave the variable elements clearly defined. A new product then slots in without a redesign.' },
       { q: 'Can you quote a whole range at once?', a: 'Yes, and it is usually cheaper than quoting products one at a time. Shared structures and combined runs both reduce cost, and neither is available if each product is treated separately.' },
       { q: 'Do you have a facility in Charlotte?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Charlotte. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How long does delivery to Charlotte take?', a: 'Ground freight is typically 2 to 5 business days after the 3 to 5 business days of production.' },
+      { q: 'How long does delivery to Charlotte take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'What is the minimum order in Charlotte?', a: 'A flat 100 units on any format, which makes it practical to launch a new range member in small quantity first.' },
       { q: 'Can you phase deliveries if storage is tight?', a: 'Yes. Growing brands frequently outgrow their storage before their volume. We can schedule drops rather than delivering everything at once.' },
       { q: 'How do I keep variants distinct without confusing the range?', a: 'Change one element consistently — usually colour or a single band — and hold everything else constant. Variants that differ in several ways at once stop reading as a family.' },
@@ -876,7 +876,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Weight is billed, every time',
       body: [
-        'Ground freight into Indianapolis takes 2 to 4 business days and the city is straightforward for palletised delivery. What makes it distinctive is what happens next: a substantial share of what is packed here leaves by air.',
+        'Ground freight into Indianapolis takes 5 to 7 business days and the city is straightforward for palletised delivery. What makes it distinctive is what happens next: a substantial share of what is packed here leaves by air.',
         'Air billing charges on actual or volumetric weight, whichever is greater, on every parcel. That makes both the weight and the dimensions of a pack recurring costs rather than one-off design choices.',
       ],
     },
@@ -940,7 +940,7 @@ export const citiesB: Place[] = [
       { q: 'How do I reduce air freight cost through packaging?', a: 'Reduce both weight and volume. Air bills on actual or volumetric weight, whichever is greater, so a smaller box can save even if the mass is unchanged. A fitted insert lets you lighten the outer without raising damage.' },
       { q: 'Is dropping board grade a good way to cut weight?', a: 'On its own, usually not — damage tends to rise by more than the freight saving. It works when paired with a fitted insert that stops the product moving, because then the outer no longer has to absorb that movement.' },
       { q: 'Do you have a facility in Indianapolis?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Indianapolis. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How long does delivery to Indianapolis take?', a: 'Ground freight is typically 2 to 4 business days after the 3 to 5 business days of production.' },
+      { q: 'How long does delivery to Indianapolis take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'What if I ship by both air and road?', a: 'Tell us the split. Optimising for the majority channel and accepting a small inefficiency on the other usually beats a compromise specification that suits neither.' },
       { q: 'Does void fill hurt on air parcels?', a: 'Twice over. It adds mass and it usually indicates the box is larger than necessary, which raises the volumetric charge. A right-sized box with an insert is nearly always cheaper to fly.' },
       { q: 'What is the minimum order in Indianapolis?', a: 'A flat 100 units on any format, enough to trial a lighter specification against real shipments.' },
@@ -1012,7 +1012,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Freight to the Northwest',
       body: [
-        'Ground delivery into Seattle typically takes 4 to 7 business days, at the longer end of our range because of distance. The metropolitan area takes palletised freight without difficulty.',
+        'Ground delivery into Seattle typically takes 5 to 7 business days, and the distance means there is less slack in that window than there is on a short eastern run. The metropolitan area takes palletised freight without difficulty.',
         'If your reorder point is set on a national average lead time, it is probably a few days short for Seattle. Worth adjusting rather than discovering during a busy season.',
       ],
     },
@@ -1048,7 +1048,7 @@ export const citiesB: Place[] = [
       { q: 'Do I need a degassing valve?', a: 'For freshly roasted beans, almost always. Coffee off-gasses CO₂ for days after roasting and a sealed bag without a valve will inflate. It is a standard option.' },
       { q: 'Does whole bean or ground change the material choice?', a: 'Yes, considerably. Ground coffee has vastly more surface area and stales much faster, so it needs a better barrier for the same perceived freshness.' },
       { q: 'Do you have a facility in Seattle?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Seattle. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How long does delivery to Seattle take?', a: 'Ground freight is typically 4 to 7 business days after the 3 to 5 business days of production. It is at the longer end of our range, so allow for it in your reorder point.' },
+      { q: 'How long does delivery to Seattle take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. The distance leaves little slack in that window, so set your reorder point against the top of it rather than the bottom.' },
       { q: 'Is compostable packaging a good option for coffee?', a: 'Only if your customers can actually compost it, which usually means industrial facilities rather than a home heap. It also gives the shortest shelf life of the options. For many roasters a recyclable film does more real good.' },
       { q: 'What is the minimum order in Seattle?', a: 'A flat 100 units on any format, which suits single-origin runs well.' },
       { q: 'Can I change the design per single origin without a new bag run?', a: 'Yes. Print a common base bag and apply a variable label per origin. It is much cheaper than a separate print run for each release.' },
@@ -1107,7 +1107,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Delivery into the Front Range',
       body: [
-        'Ground freight into Denver typically takes 3 to 6 business days, and the Front Range corridor takes palletised deliveries without difficulty.',
+        'Ground freight into Denver typically takes 5 to 7 business days, and the Front Range corridor takes palletised deliveries without difficulty.',
         'Many small producers here receive at breweries, kitchens or shared units without a dock. Tell us and we will ship cartons rather than a pallet.',
       ],
     },
@@ -1142,7 +1142,7 @@ export const citiesB: Place[] = [
       { q: 'Where should a small finish budget go?', a: 'On the element the customer touches and sees closest — usually the front panel or the closure. Finishes that only read at arm’s length rarely justify their cost at small quantities.' },
       { q: 'Does altitude affect my pouches?', a: 'Yes, if they are sealed. A pack filled near sea level expands on the way to Denver; one filled here can look slack at sea level. Neither is a defect but both generate complaints, so headspace should be calibrated to your main market.' },
       { q: 'Do you have a facility in Denver?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Denver. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How long does delivery to Denver take?', a: 'Ground freight is typically 3 to 6 business days after the 3 to 5 business days of production.' },
+      { q: 'How long does delivery to Denver take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'What is the minimum order in Denver?', a: 'A flat 100 units on any format, which suits a limited release or a first production run.' },
       { q: 'How do I keep costs down as my range grows?', a: 'Hold one structure constant and vary a label or sleeve per product. Each new line then carries a small setup rather than new tooling, which is where a growing range usually leaks money.' },
       { q: 'Can you deliver to a brewery without a dock?', a: 'Yes. Tell us at quoting and we will ship cartons rather than a pallet.' },
@@ -1213,7 +1213,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Delivering into Boston',
       body: [
-        'Ground freight reaches Boston in 2 to 4 business days. Delivery into the city itself can be awkward — narrow streets, restricted hours and limited kerbside access are all common.',
+        'Ground freight reaches Boston in 5 to 7 business days. Delivery into the city itself can be awkward — narrow streets, restricted hours and limited kerbside access are all common.',
         'For most food businesses a few cartons rather than a pallet solves it. Tell us the premises type and we will pack the consignment to suit.',
       ],
     },
@@ -1249,7 +1249,7 @@ export const citiesB: Place[] = [
       { q: 'Can you deliver in stages? We have no storage.', a: 'Yes. We produce the run and schedule drops against your capacity, which is standard for Boston food businesses.' },
       { q: 'Do you have a facility in Boston?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Boston. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'How do deliveries work on a narrow city street?', a: 'For most food businesses we ship cartons rather than a pallet, which can be received normally. Tell us the premises type at quoting.' },
-      { q: 'How long does delivery to Boston take?', a: 'Ground freight is typically 2 to 4 business days after the 3 to 5 business days of production.' },
+      { q: 'How long does delivery to Boston take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'What is the minimum order for a Boston restaurant?', a: 'A flat 100 units on any format, enough to test a container through real deliveries before committing.' },
       { q: 'Can you supply leak-resistant packaging for seafood?', a: 'Yes. Leakage needs a wet-strength board with a barrier rather than a surface coating alone, which handles condensation but not bulk liquid.' },
       { q: 'Can we change the print for a seasonal menu?', a: 'Yes, and it is much cheaper than a new structure. Keep the container and change the artwork, or use a plain base with a printed sleeve for frequent changes.' },
@@ -1319,7 +1319,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Freight through Atlanta',
       body: [
-        'Ground freight arrives in 2 to 4 business days, and Atlanta is one of the better-connected destinations in the country.',
+        'Ground freight arrives in 5 to 7 business days, and Atlanta is one of the better-connected destinations in the country.',
         'If you distribute across the Southeast, consolidating into Atlanta and redistributing from there is frequently cheaper than separate freight legs. Tell us the onward split and we will pack the consignment to break down easily.',
       ],
     },
@@ -1354,7 +1354,7 @@ export const citiesB: Place[] = [
       { q: 'Should I send a bottle or a drawing?', a: 'A bottle, if at all possible. Drawings miss flex, applied label thickness and cap tolerance — all of which affect whether a carton closes cleanly.' },
       { q: 'Is a sleeve cheaper than a printed carton?', a: 'Usually, especially across several variants. You print one small element per variant instead of a whole carton, so setup costs fall sharply as the range grows.' },
       { q: 'Do you have a facility in Atlanta?', a: 'We manufacture through our production partners and ship direct — there is no office, plant or warehouse in Atlanta. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How long does delivery to Atlanta take?', a: 'Ground freight is typically 2 to 4 business days after the 3 to 5 business days of production. Atlanta is one of the better-connected freight destinations in the country.' },
+      { q: 'How long does delivery to Atlanta take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Atlanta is one of the better-connected freight destinations in the country.' },
       { q: 'Can I consolidate a Southeast distribution through Atlanta?', a: 'Yes, and it is often cheaper than separate freight legs into each state. Tell us the onward split so we pack the consignment to break down easily.' },
       { q: 'What is the minimum order in Atlanta?', a: 'A flat 100 units on any format, which suits both a launch test and a press send.' },
       { q: 'How much panel space do beauty regulatory requirements need?', a: 'More than most brands allow for. Ingredient lists and any warnings compete directly with brand design. We will block the area on the dieline before you commit design time.' },
@@ -1425,7 +1425,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Freight into South Florida',
       body: [
-        'Ground deliveries into Miami usually take 4 to 6 business days, the longest of our Florida destinations because of the distance down the peninsula.',
+        'Ground deliveries into Miami usually take 5 to 7 business days, and the length of the run down the peninsula means a delay anywhere on it shows up at your door.',
         'Hurricane season between June and November can close lanes for days at a time. If your date is fixed, tell us and we will build slack into the schedule.',
       ],
     },
@@ -1460,7 +1460,7 @@ export const citiesB: Place[] = [
       { q: 'Is that the same problem as humid storage?', a: 'No, and they need different specifications. Storage humidity acts slowly on the whole pack; condensation acts quickly on the outside face. A pack can be specified for one and fail at the other.' },
       { q: 'Do I need bilingual panels?', a: 'Many Miami brands do, and it is worth deciding before layout. Two languages need considerably more panel area than one, and adding the second later usually forces a redesign rather than an edit.' },
       { q: 'Do you have a facility in Miami?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Miami or anywhere in Florida. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How long does delivery to Miami take?', a: 'Ground freight is typically 4 to 6 business days after the 3 to 5 business days of production — the longest of our Florida destinations.' },
+      { q: 'How long does delivery to Miami take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. The run down the peninsula is long enough that a delay anywhere along it reaches you, so plan against the top of the window.' },
       { q: 'Can hurricane season affect my order?', a: 'It can. A named storm closes freight lanes for days at a time. If your deadline is fixed, tell us and we will build slack into the schedule rather than quoting the tightest timeline.' },
       { q: 'What is the minimum order in Miami?', a: 'A flat 100 units on any format, enough to trial a coating through real outdoor service before committing to a season.' },
       { q: 'Will packaging fade in direct sun?', a: 'Some inks are more light-stable than others. If packs sit outdoors for extended periods, tell us and we will specify inks and coatings with better light-fastness.' },

@@ -364,7 +364,7 @@ export function productFaqs(p: Product): Faq[] {
     },
     {
       q: `How are ${l} delivered?`,
-      a: `${f.shipping} We ship to the United States, the United Kingdom, Canada and Australia, allowing 3 to 5 business days of production and 2 to 7 in transit, and we confirm the date when your order is approved for production.`,
+      a: `${f.shipping} We ship to the United States, the United Kingdom, Canada and Australia, allowing 3 to 5 business days of production and 5 to 7 in transit, and we confirm the date when your order is approved for production.`,
     },
     {
       q: `Can I see a sample before placing a full order?`,
@@ -453,7 +453,7 @@ export function categoryFaqs(c: Category, count: number): Faq[] {
     },
     {
       q: `Where do you ship ${k}?`,
-      a: `To the United States, the United Kingdom, Canada and Australia. Reckon on 3 to 5 business days in production once artwork is approved and 2 to 7 in transit, wherever the consignment is going, and we confirm the date on the quote.`,
+      a: `To the United States, the United Kingdom, Canada and Australia. Reckon on 3 to 5 business days in production once artwork is approved and 5 to 7 in transit, wherever the consignment is going, and we confirm the date on the quote.`,
     },
   ]
 }

@@ -31,11 +31,11 @@
 | Missing schema | 0 |
 | Pages under 10 FAQs | 0 |
 | Thin pages (<600 words) | 8 |
-| Distinct duplicated paragraphs | 1192 |
+| Distinct duplicated paragraphs | 1190 |
 | Duplicated paragraph instances | 10103 |
 | Distinct duplicated headings | 511 |
 | Duplicated FAQ questions | 92 |
-| Duplicated FAQ answers | 162 |
+| Duplicated FAQ answers | 160 |
 | Identical FAQ sets | 0 groups |
 | Identical heading sequences | 0 groups |
 | Identical internal-link sets | 7 groups |
@@ -104,7 +104,7 @@
 | type | pages | pairs >20% similar | worst pair |
 |---|---|---|---|
 | location | 40 | 0 | — |
-| other | 412 | 16740 | /lingerie-boxes/ ↔ /wallet-boxes/ (0.639) |
+| other | 412 | 16506 | /lingerie-boxes/ ↔ /wallet-boxes/ (0.639) |
 | blog | 10 | 0 | — |
 | resource | 15 | 0 | — |
 

@@ -17,7 +17,7 @@ export const statesB: Place[] = [
     logistics: {
       h: 'Chicago is the easiest freight destination we ship to',
       body: [
-        'Very little in American freight moves without passing through Chicago, and that works in your favour. Palletised consignments into the metropolitan area typically arrive in 2 to 4 business days, and the density of carriers means capacity is rarely the constraint it can be in more remote markets.',
+        'Very little in American freight moves without passing through Chicago, and that works in your favour. Palletised consignments into the metropolitan area typically arrive in 5 to 7 business days, and the density of carriers means capacity is rarely the constraint it can be in more remote markets.',
         'The practical benefit is scheduling rather than speed. If a delivery date slips at your end, rebooking freight into Chicago is usually possible within a day or two, which is not true everywhere.',
       ],
     },
@@ -87,7 +87,7 @@ export const statesB: Place[] = [
     faqs: [
       { q: 'Can you build packaging to a grocery retailer’s case specification?', a: 'Yes. Send the published requirement and we will design the case and the primary pack together so the pallet pattern works out. Retailer specifications are usually non-negotiable, so we treat them as the fixed constraint and design inward from there.' },
       { q: 'What is shelf-ready packaging?', a: 'A case that arrives at the store, is opened along a designed perforation, and becomes the display itself without anyone unpacking individual units. It has to survive distribution as a case and look deliberate as a display, which is a genuine structural tension.' },
-      { q: 'How quickly does freight reach Chicago?', a: 'Typically 2 to 4 business days after production, which takes 3 to 5 business days from artwork approval. Chicago is among the easiest destinations in the country for palletised freight.' },
+      { q: 'How quickly does freight reach Chicago?', a: 'Typically 5 to 7 business days after production, which takes 3 to 5 business days from artwork approval. Chicago is among the easiest destinations in the country for palletised freight.' },
       { q: 'Do you have a warehouse in Illinois?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Illinois. Everything is made to order and shipped directly to your address.' },
       { q: 'Can you match the case dimensions we already use?', a: 'Yes. Send the current case specification or a physical sample and we will quote to match it exactly, rather than proposing an alternative you would then have to re-clear with the retailer.' },
       { q: 'What stacking strength do I need for grocery distribution?', a: 'It depends on pallet height and how long stock sits in a distribution centre. Tell us the stack height and the contents weight and we will specify a board grade that holds, rather than guessing at a flute.' },
@@ -148,7 +148,7 @@ export const statesB: Place[] = [
     logistics: {
       h: 'A central position, used twice',
       body: [
-        'Ground freight into Ohio typically arrives in 2 to 4 business days. The state’s position means most of the country is reachable within a day or two by road from here, which is exactly why so much fulfilment capacity sits in the state.',
+        'Ground freight into Ohio typically arrives in 5 to 7 business days. The state’s position means most of the country is reachable within a day or two by road from here, which is exactly why so much fulfilment capacity sits in the state.',
         'For operations that reship, that matters more than inbound speed. Packaging arriving in Columbus can be on a customer’s doorstep almost anywhere east of the Rockies inside two days.',
       ],
     },
@@ -192,7 +192,7 @@ export const statesB: Place[] = [
     faqs: [
       { q: 'How do I reduce dimensional weight charges on my shipments?', a: 'Size the box around the product rather than around a box you inherited. Most fulfilment operations we quote are using a pack at least one size larger than needed, with void fill compensating. Cutting a die to the right size pays back quickly at volume.' },
       { q: 'Should I spend on a heavier board or on a fitted insert?', a: 'Usually the insert, if your damage is products moving inside the box rather than boxes being crushed. A fitted insert holds the product still and often lets you drop a board grade on the outer, so the two changes together can be cost-neutral.' },
-      { q: 'How fast is freight into Ohio?', a: 'Typically 2 to 4 business days after the 3 to 5 business days of production. Columbus, Cleveland and Cincinnati all take palletised freight without special arrangement.' },
+      { q: 'How fast is freight into Ohio?', a: 'Typically 5 to 7 business days after the 3 to 5 business days of production. Columbus, Cleveland and Cincinnati all take palletised freight without special arrangement.' },
       { q: 'Do you operate a facility in Ohio?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Ohio. Production runs through our manufacturing partners and ships directly to your address.' },
       { q: 'Can you produce packaging for automotive components?', a: 'Yes. Parts packaging is usually an insert problem rather than a box problem — the geometry of the component dictates the design. Send drawings or a sample part and we will specify around it.' },
       { q: 'Can you hold a specification for repeat ordering?', a: 'Yes. Once a first run is approved we hold the board, structure, print method, finishes and dimensions against your account so repeats reference the same specification exactly.' },
@@ -220,9 +220,9 @@ export const statesB: Place[] = [
     metaDescription: 'Custom packaging shipped into Georgia and across the Southeast. Fast Atlanta freight, beauty and haircare cartons, food-service and promotional formats.',
     sectors: ['Beauty and haircare', 'Film and entertainment', 'Food and poultry', 'Logistics and distribution'],
     logistics: {
-      h: 'Why Georgia deliveries are quick',
+      h: 'Why Georgia deliveries are straightforward',
       body: [
-        'Atlanta functions as a national freight junction, and the density of carrier capacity through it means ground deliveries typically arrive in 2 to 4 business days. For most of the Southeast, routing a consignment through Georgia is faster than shipping direct.',
+        'Atlanta functions as a national freight junction, and the density of carrier capacity through it means ground deliveries typically arrive in 5 to 7 business days. For most of the Southeast, routing a consignment through Georgia gives you more carrier options than shipping direct.',
         'That has a practical consequence for multi-state brands: if you are supplying accounts across several southeastern states, consolidating one delivery into Georgia and redistributing from there is often cheaper than several separate freight legs. Tell us at quoting if that is your model.',
       ],
     },
@@ -283,7 +283,7 @@ export const statesB: Place[] = [
       { slug: 'north-carolina', why: 'The other major Southeast manufacturing market we ship to.' },
     ],
     faqs: [
-      { q: 'How quickly can packaging reach Atlanta?', a: 'Typically 2 to 4 business days after production. Atlanta is one of the better-connected freight destinations in the country, so capacity is rarely a constraint even at short notice.' },
+      { q: 'How quickly can packaging reach Atlanta?', a: 'Typically 5 to 7 business days after production. Atlanta is one of the better-connected freight destinations in the country, so capacity is rarely a constraint even at short notice.' },
       { q: 'Should I order spare units for a press send?', a: 'Yes, and it is one of the few pieces of advice we give unprompted. Press sends go out in a single wave with no second run behind them, and producing overage inside the original run costs a fraction of a separate short run later.' },
       { q: 'Can you deliver into Georgia and let us redistribute across the Southeast?', a: 'Yes, and it is often cheaper than separate freight legs into each state. Tell us the onward split at quoting and we will pack the consignment so it breaks down easily.' },
       { q: 'Do you have a facility in Atlanta?', a: 'We manufacture through our production partners and ship direct — there is no office, plant or warehouse in Georgia. Production runs through our manufacturing partners and ships to your address.' },
@@ -345,7 +345,7 @@ export const statesB: Place[] = [
     logistics: {
       h: 'Freight into the Carolinas',
       body: [
-        'Ground delivery into North Carolina typically takes 2 to 5 business days. The Charlotte and Raleigh-Durham areas both take palletised freight without special arrangement.',
+        'Ground delivery into North Carolina typically takes 5 to 7 business days. The Charlotte and Raleigh-Durham areas both take palletised freight without special arrangement.',
         'For furniture and home-goods buyers the constraint is usually consignment size rather than transit time. Heavy-duty corrugated is bulky before it is assembled, so tell us your storage capacity and we can phase deliveries rather than sending everything at once.',
       ],
     },
@@ -380,7 +380,7 @@ export const statesB: Place[] = [
       { q: 'Can you package furniture or other heavy items?', a: 'Yes. Heavy and awkward contents are a structural problem: edge protection, corner reinforcement and stacking strength decide the specification. Send the weight, dimensions and how high the packs will be stacked.' },
       { q: 'Can you supply packaging for laboratory instruments?', a: 'Yes. This is usually an insert problem — the item geometry dictates the fitted protection, and the outer follows from it. Send drawings or a sample and we will specify around the shape.' },
       { q: 'Do you have a plant in North Carolina?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your North Carolina address.' },
-      { q: 'How long does delivery to Charlotte or Raleigh take?', a: 'Ground freight is typically 2 to 5 business days after the 3 to 5 business days of production. Both areas accept palletised deliveries without special arrangement.' },
+      { q: 'How long does delivery to Charlotte or Raleigh take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Both areas accept palletised deliveries without special arrangement.' },
       { q: 'Can you phase deliveries if we lack storage space?', a: 'Yes. Corrugated in particular is bulky flat, and buyers frequently underestimate the space a full run occupies. Tell us your capacity and we can split the delivery into scheduled drops.' },
       { q: 'What is the minimum order in North Carolina?', a: 'A flat 100 units on any format. For a brewery testing a limited release, that is usually enough to validate the pack before a larger commitment.' },
       { q: 'Do labels or printed sleeves work better for variants?', a: 'Labels are cheaper per change and better for small runs. Printed sleeves cover more of the pack and give a stronger visual difference. Which one wins depends on how different you need the releases to look.' },
@@ -446,7 +446,7 @@ export const statesB: Place[] = [
     logistics: {
       h: 'Winter freight and delivery dates',
       body: [
-        'Ground freight into Michigan typically takes 2 to 4 business days. Detroit and Grand Rapids both take palletised deliveries without difficulty.',
+        'Ground freight into Michigan typically takes 5 to 7 business days. Detroit and Grand Rapids both take palletised deliveries without difficulty.',
         'Winter weather does occasionally close lanes across the Great Lakes region at short notice. If your date is fixed, tell us and we will build slack in rather than quoting the tightest possible schedule.',
       ],
     },
@@ -493,7 +493,7 @@ export const statesB: Place[] = [
       { q: 'Do I need a cold-weather specification for all my stock?', a: 'Almost certainly not, and specifying it everywhere wastes money. It only matters where the pack sees genuinely unheated space — an unheated warehouse, an overnight trailer, a yard. Heated storage needs no adjustment.' },
       { q: 'Do you have a facility in Michigan?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Michigan. Production runs through our manufacturing partners and ships directly to your address.' },
       { q: 'Can labels be applied to cold surfaces?', a: 'Only with the right adhesive. General-purpose label adhesive does not key properly to a cold surface and will lift at the edges. If application happens below room temperature, tell us and we will specify a cold-apply adhesive.' },
-      { q: 'How long does freight into Michigan take?', a: 'Typically 2 to 4 business days after production. Winter weather occasionally closes lanes across the Great Lakes at short notice, so if your date is fixed we will build slack into the schedule.' },
+      { q: 'How long does freight into Michigan take?', a: 'Typically 5 to 7 business days after production. Winter weather occasionally closes lanes across the Great Lakes at short notice, so if your date is fixed we will build slack into the schedule.' },
       { q: 'What is the minimum order for a Michigan delivery?', a: 'A flat 100 units on any format, which is a practical quantity for trialling a cold-tolerant specification through one winter before committing a whole line.' },
       { q: 'Can you package automotive components?', a: 'Yes. Component packaging is usually driven by part geometry, so the fitted insert is the real design work and the outer follows. Send drawings or a sample part.' },
       { q: 'Can you hold a qualified specification for repeat orders?', a: 'Yes, and it matters most for industrial buyers whose pack has been qualified against a handling process. We hold board, structure, adhesive, print method and dimensions so repeats match exactly.' },

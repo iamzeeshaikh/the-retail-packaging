@@ -17,7 +17,7 @@ export const statesD: Place[] = [
     logistics: {
       h: 'The warehouse behind the metropolitan market',
       body: [
-        'New Jersey holds an unusual concentration of warehousing for its size, largely because it serves the New York metropolitan market without New York’s receiving constraints. Ground freight arrives in 2 to 4 business days and almost every destination takes palletised delivery without special arrangement.',
+        'New Jersey holds an unusual concentration of warehousing for its size, largely because it serves the New York metropolitan market without New York’s receiving constraints. Ground freight arrives in 5 to 7 business days and almost every destination takes palletised delivery without special arrangement.',
         'For brands selling into New York, that is worth exploiting. Delivering a full pallet to a New Jersey facility and moving smaller quantities across the river as needed avoids the lift-gate arrangements, restricted hours and redelivery charges that Manhattan addresses attract.',
       ],
     },
@@ -80,7 +80,7 @@ export const statesD: Place[] = [
     faqs: [
       { q: 'Should I deliver to New Jersey instead of Manhattan?', a: 'If you have the option, often yes. New Jersey facilities take palletised freight without the lift-gate arrangements, restricted hours and redelivery charges that Manhattan addresses attract. Moving smaller quantities across the river as needed usually costs less overall.' },
       { q: 'Can one die serve several brands’ artwork?', a: 'Yes, and for contract manufacturers it is the main saving available. The structure is tooled once and each brand pays only its own print setup. Tell us the shared structure before the first client run.' },
-      { q: 'How fast is freight into New Jersey?', a: 'Typically 2 to 4 business days after the 3 to 5 business days of production. Almost every destination in the state accepts palletised delivery without special arrangement.' },
+      { q: 'How fast is freight into New Jersey?', a: 'Typically 5 to 7 business days after the 3 to 5 business days of production. Almost every destination in the state accepts palletised delivery without special arrangement.' },
       { q: 'Do you have a warehouse in New Jersey?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships directly to your address.' },
       { q: 'Can you supply food-contact compliant repack materials?', a: 'Yes. Tell us whether contact is direct or through a liner, since it changes which stocks are available and what documentation we can provide.' },
       { q: 'Can you provide versioned proofs for pharmaceutical work?', a: 'Yes. Dated proofs against a revision number with a retained approval record, where your quality system requires it. Ask at quoting so the documentation is built alongside the job.' },
@@ -147,7 +147,7 @@ export const statesD: Place[] = [
     logistics: {
       h: 'Freight across Virginia',
       body: [
-        'Ground delivery into Virginia typically takes 2 to 4 business days. Northern Virginia and the Richmond area both take palletised freight easily; rural destinations in the west of the state can add a day.',
+        'Ground delivery into Virginia typically takes 5 to 7 business days. Northern Virginia and the Richmond area both take palletised freight easily; rural destinations in the west of the state can add a day.',
         'For seasonal retail, timing matters more than speed. Tell us the date your season starts and we will work backwards rather than quoting a lead time from approval.',
       ],
     },
@@ -182,7 +182,7 @@ export const statesD: Place[] = [
       { q: 'Do I need shipping-grade packaging for retail gift sales?', a: 'Usually not. A pack sold over the counter and carried home has different requirements to one that goes through a carrier network. Rigid construction and a good closure matter; burst strength largely does not.' },
       { q: 'Do you have premises in Virginia?', a: 'We manufacture through our production partners and ship direct — there is no office, plant or warehouse in Virginia. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'Can you produce wine presentation boxes?', a: 'Yes. Bottle packaging needs interior dimensions taken at the widest point including the neck and any capsule, and we normally recommend a structural sample first because a bottle that does not seat properly ruins the effect.' },
-      { q: 'How long does delivery into Northern Virginia take?', a: 'Ground freight is typically 2 to 4 business days after the 3 to 5 business days of production. Rural western destinations can add a day.' },
+      { q: 'How long does delivery into Northern Virginia take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Rural western destinations can add a day.' },
       { q: 'What is the minimum order in Virginia?', a: 'A flat 100 units on any format, which suits the small-run specialty retail pattern here.' },
       { q: 'Can you supply documentation for an institutional purchase?', a: 'Yes. We can supply a formal written specification with line-item pricing suited to a procurement workflow rather than an informal quote.' },
       { q: 'How do I decide how much finish to pay for?', a: 'Work back from the retail price point. On a $15 product an applied foil rarely returns its cost; on a $75 gift item it often does. Tell us the price point and we will say plainly where we think the line falls.' },
@@ -251,7 +251,7 @@ export const statesD: Place[] = [
     logistics: {
       h: 'Freight in the Washington corridor',
       body: [
-        'Ground delivery into Maryland typically takes 2 to 4 business days. Baltimore and the Washington suburbs both take palletised freight without difficulty.',
+        'Ground delivery into Maryland typically takes 5 to 7 business days. Baltimore and the Washington suburbs both take palletised freight without difficulty.',
         'For cold-chain buyers, inbound freight speed for empty packaging is rarely the constraint. Scheduling is: if your shipping runs to a fixed weekly cycle, tell us and we will phase deliveries to match rather than sending everything at once.',
       ],
     },
@@ -288,7 +288,7 @@ export const statesD: Place[] = [
       { q: 'Do you have a facility in Maryland?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Maryland address.' },
       { q: 'Can you supply packaging to a federal procurement specification?', a: 'We quote against a written specification as issued, line by line. If a clause is impossible or contradicts another we will flag it specifically rather than substituting our own approach.' },
       { q: 'How do I stop specimens moving inside a shipper?', a: 'A fitted insert, cut to the geometry of what you are shipping. Most transport damage in specimen packaging comes from movement inside an otherwise intact box, and void fill is a poor substitute for a fitted cavity.' },
-      { q: 'How long does delivery to Baltimore take?', a: 'Ground freight is typically 2 to 4 business days after the 3 to 5 business days of production.' },
+      { q: 'How long does delivery to Baltimore take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'What is the minimum order in Maryland?', a: 'A flat 100 units on any format, which is a practical quantity for validating a cold-chain outer through a real shipping cycle first.' },
       { q: 'Can you phase deliveries to match a weekly shipping cycle?', a: 'Yes. If your outbound shipping runs to a fixed cycle we can schedule packaging deliveries against it rather than sending a full run that you then have to store.' },
       { q: 'How much does cold-chain packaging cost?', a: 'From $0.30 per piece at large volumes for standard formats. Coated liners and wet-strength boards carry a premium, and fitted inserts are priced by geometry rather than by area.' },
@@ -363,7 +363,7 @@ export const statesD: Place[] = [
     logistics: {
       h: 'Freight over the mountains',
       body: [
-        'Ground delivery into Colorado typically takes 3 to 6 business days. The Front Range corridor from Fort Collins through Denver to Colorado Springs takes palletised freight without difficulty.',
+        'Ground delivery into Colorado typically takes 5 to 7 business days. The Front Range corridor from Fort Collins through Denver to Colorado Springs takes palletised freight without difficulty.',
         'Mountain destinations west of the Front Range are a different matter, particularly in winter. If your delivery address is in the high country, tell us and we will plan the consignment size around access rather than assuming a standard pallet delivery.',
       ],
     },
@@ -399,7 +399,7 @@ export const statesD: Place[] = [
       { q: 'Should I use a degassing valve?', a: 'For products that off-gas, such as freshly roasted coffee, a one-way valve prevents the pack inflating. It is not a fix for altitude expansion in a non-gassing product, where headspace is the right lever.' },
       { q: 'Do you have a facility in Colorado?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Colorado address.' },
       { q: 'Can you produce child-resistant cannabis packaging?', a: 'We can produce child-resistant carton structures and rigid boxes with certified closures. Send the specific requirement your licence operates under, since compliance is verified against the regulations in force when the order runs.' },
-      { q: 'How long does delivery to Denver take?', a: 'Ground freight is typically 3 to 6 business days after the 3 to 5 business days of production. The Front Range corridor takes palletised freight easily.' },
+      { q: 'How long does delivery to Denver take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. The Front Range corridor takes palletised freight easily.' },
       { q: 'Can you deliver to a mountain address?', a: 'Usually, but tell us in advance. High-country access, particularly in winter, often rules out a standard pallet delivery, and we will size the consignment around it rather than discovering the problem on the day.' },
       { q: 'What is the minimum order in Colorado?', a: 'A flat 100 units on any format. For sealed formats that is enough to run a fill trial and check how the pack presents at your target altitude.' },
       { q: 'Are recycled stocks available for outdoor brands?', a: 'Yes. Recycled paperboard, recyclable coated stock and certified compostable options are all available. They are three different claims with three different evidence requirements, so tell us which one you intend to print.' },
@@ -457,7 +457,7 @@ export const statesD: Place[] = [
     logistics: {
       h: 'Two metropolitan markets, one state',
       body: [
-        'Ground freight into Missouri typically takes 2 to 5 business days. Kansas City and St Louis both take palletised deliveries without difficulty and both sit on major national corridors.',
+        'Ground freight into Missouri typically takes 5 to 7 business days. Kansas City and St Louis both take palletised deliveries without difficulty and both sit on major national corridors.',
         'The two cities are far enough apart that a state-wide order delivered to both is two freight legs rather than one. Tell us the split at quoting so it is costed correctly.',
       ],
     },
@@ -492,7 +492,7 @@ export const statesD: Place[] = [
       { q: 'I have six product variants. Which print route should I use?', a: 'Very likely digital, whatever the total quantity. Each variant needs its own plate set on offset, so six variants means six setups. Digital carries no plate cost, which usually wins outright when variants multiply.' },
       { q: 'Will you quote both print routes?', a: 'Yes. When a job sits close to the crossover we supply both without being asked. It costs us nothing and it means you choose on the actual numbers.' },
       { q: 'Do you have a facility in Missouri?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Missouri address.' },
-      { q: 'How long does delivery to Kansas City or St Louis take?', a: 'Ground freight is typically 2 to 5 business days after the 3 to 5 business days of production. Both take palletised freight without special arrangement.' },
+      { q: 'How long does delivery to Kansas City or St Louis take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Both take palletised freight without special arrangement.' },
       { q: 'Can you deliver to both Missouri cities on one order?', a: 'Yes, but they are far enough apart to be two freight legs. Give us the split at quoting rather than after, so the freight is costed properly.' },
       { q: 'What is the minimum order in Missouri?', a: 'A flat 100 units on any format. At that quantity digital is always the right route, since no plate cost can be justified.' },
       { q: 'Does colour count really change the price that much?', a: 'On offset, yes — each colour is a separate plate and a separate press unit. On digital the colour count barely matters. It is one of the biggest differences between the two routes and it surprises most buyers.' },

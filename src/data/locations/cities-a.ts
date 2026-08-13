@@ -52,7 +52,7 @@ export const citiesA: Place[] = [
     logistics: {
       h: 'Getting a delivery into the boroughs',
       body: [
-        'Ground freight reaches the city in 2 to 5 business days. The complication is receiving, not transit. Street-level shops with no dock, walk-up buildings and narrow delivery windows are all normal here.',
+        'Ground freight reaches the city in 5 to 7 business days. The complication is receiving, not transit. Street-level shops with no dock, walk-up buildings and narrow delivery windows are all normal here.',
         'For a small run this is usually straightforward — a few cartons rather than a pallet can be hand-delivered without special arrangement. Tell us the address type and we will ship it in a form that can actually get through the door.',
       ],
     },
@@ -88,7 +88,7 @@ export const citiesA: Place[] = [
       { q: 'Can you deliver to a shop with no loading dock?', a: 'Yes. For small runs we ship cartons rather than a pallet, which can be hand-delivered normally. Tell us the address type at quoting so we pack it accordingly.' },
       { q: 'Do you have a shop or office in New York City?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the city or anywhere else in New York. We can post physical samples so you can assess the board and print in your own hands.' },
       { q: 'How do I run seasonal packaging without four separate orders?', a: 'Keep one base pack constant and change a printed sleeve or a label for each season. You get a visibly different pack four times a year and pay a setup cost only on the small variable element.' },
-      { q: 'How long will a small run take to arrive?', a: 'Production is 3 to 5 business days after artwork approval, plus 2 to 5 days freight into the city. If you have a fixed opening or launch date, give us the date and we will work backwards.' },
+      { q: 'How long will a small run take to arrive?', a: 'Production is 3 to 5 business days after artwork approval, plus 5 to 7 days freight into the city. If you have a fixed opening or launch date, give us the date and we will work backwards.' },
       { q: 'Can you produce grease-resistant takeaway packaging?', a: 'Yes. Greaseproof papers and grease-resistant coatings are standard across our food formats. For delivery work also tell us whether packs are stacked in a courier bag, because that changes the structural requirement.' },
       { q: 'Is it cheaper to order unprinted boxes and add stickers?', a: 'Often, for very small quantities or frequent changes. You lose full-surface print, but you gain the ability to change the design whenever you like without a new run. We will price both so you can compare.' },
       { q: 'Can I see the board before ordering?', a: 'Yes. We will send physical samples of the stocks under consideration. Board weight and surface are difficult to judge on a screen and the difference matters at the counter.' },
@@ -159,7 +159,7 @@ export const citiesA: Place[] = [
     logistics: {
       h: 'Delivery into the LA basin',
       body: [
-        'Ground freight into Los Angeles typically lands in 3 to 6 business days, and the basin is one of the easier destinations in the state for palletised consignments.',
+        'Ground freight into Los Angeles typically lands in 5 to 7 business days, and the basin is one of the easier destinations in the state for palletised consignments.',
         'Where deliveries go wrong here is address type. A great many LA beauty brands operate from shared industrial units or co-working studios with no forklift. Tell us which you have and we will break the consignment down accordingly.',
       ],
     },
@@ -265,7 +265,7 @@ export const citiesA: Place[] = [
     logistics: {
       h: 'Supply into a working kitchen',
       body: [
-        'Ground freight reaches Chicago in 2 to 4 business days, and the city is one of the easiest destinations in the country for palletised consignments.',
+        'Ground freight reaches Chicago in 5 to 7 business days, and the city is one of the easiest destinations in the country for palletised consignments.',
         'Kitchen storage is the real constraint. Restaurants rarely have room for a pallet of packaging, so we frequently split a run into scheduled drops. Tell us your storage capacity and delivery frequency and we will schedule around it.',
       ],
     },
@@ -301,7 +301,7 @@ export const citiesA: Place[] = [
       { q: 'Why does food arrive soggy even in a good box?', a: 'Trapped steam condensing on the inside. A vented structure lets it escape; a moisture-resistant board stops the base softening. Which one is right depends on whether venting would let the food go cold.' },
       { q: 'Do you have a warehouse in Chicago?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Chicago. Production runs through our manufacturing partners and ships directly to your address.' },
       { q: 'Can you deliver in batches so we do not fill the kitchen?', a: 'Yes, and it is common for restaurant work. We produce the run and schedule drops against your storage capacity rather than sending everything at once.' },
-      { q: 'How fast can we get packaging in Chicago?', a: 'Production is 3 to 5 business days after artwork approval, then 2 to 4 days freight. Chicago is among the quickest destinations we ship to.' },
+      { q: 'How fast can we get packaging in Chicago?', a: 'Production is 3 to 5 business days after artwork approval, then 5 to 7 days freight. Chicago is one of the easiest destinations to schedule into, because carrier capacity into the city is rarely the constraint.' },
       { q: 'What is the minimum order for a restaurant?', a: 'A flat 100 units on any format, which is enough to test a pack through real deliveries before committing to a season’s supply.' },
       { q: 'Can I change the print for a seasonal menu?', a: 'Yes, and it is much cheaper than a new structure. Keep the same box and change the printed artwork, or use a plain base with a printed sleeve for very frequent changes.' },
       { q: 'Do you supply food-contact compliant materials?', a: 'Yes. Tell us whether the food touches the board directly or sits on a liner, because it changes which stocks are available to you.' },
@@ -361,7 +361,7 @@ export const citiesA: Place[] = [
     logistics: {
       h: 'Freight and heat in Houston',
       body: [
-        'Ground freight into Houston runs 2 to 5 business days and the city takes palletised deliveries without difficulty.',
+        'Ground freight into Houston runs 5 to 7 business days and the city takes palletised deliveries without difficulty.',
         'Storage temperature matters as much here as anywhere in Texas. If stock sits in an unconditioned warehouse through summer, a heat-stable coating on laminated work avoids cartons bonding in the stack.',
       ],
     },
@@ -396,7 +396,7 @@ export const citiesA: Place[] = [
       { q: 'How do I stop cartons sticking together in a hot warehouse?', a: 'Specify a heat-stable laminating adhesive, or an aqueous coating instead of a film laminate. Above roughly 100°F standard adhesives soften and stacked cartons bond where the film touches.' },
       { q: 'Do you have a facility in Houston?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Houston. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'Can you phase deliveries for a restaurant with limited storage?', a: 'Yes. We produce the run and schedule drops against your capacity, which is standard for high-frequency food-service supply.' },
-      { q: 'How long does delivery to Houston take?', a: 'Ground freight is typically 2 to 5 business days after the 3 to 5 business days of production. Houston takes palletised deliveries without special arrangement.' },
+      { q: 'How long does delivery to Houston take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Houston takes palletised deliveries without special arrangement.' },
       { q: 'Can you package heavy industrial components?', a: 'Yes. Send the weight, geometry and the vulnerable points. Heavy items are an insert and edge-protection problem more than a box problem.' },
       { q: 'What is the minimum order in Houston?', a: 'A flat 100 units on any format, whichever market you are in.' },
       { q: 'Can you supply food-contact compliant packaging?', a: 'Yes. Tell us whether contact is direct or through a liner, since it changes which boards and inks are available.' },
@@ -468,7 +468,7 @@ export const citiesA: Place[] = [
     logistics: {
       h: 'Inbound freight and summer storage',
       body: [
-        'Ground delivery into Phoenix typically takes 3 to 6 business days and the metropolitan area takes palletised freight easily.',
+        'Ground delivery into Phoenix typically takes 5 to 7 business days and the metropolitan area takes palletised freight easily.',
         'Summer storage is worth a thought for laminated stock, though most fulfilment packaging is plain corrugated, which is unaffected by heat in a way that laminated cartons are not.',
       ],
     },
@@ -504,7 +504,7 @@ export const citiesA: Place[] = [
       { q: 'Should I reduce board grade to save money?', a: 'Only if your damage is not coming from crushing. Dropping a grade on a box that is already at its limit raises damage and costs far more than it saves. Look at where the damage actually happens first.' },
       { q: 'Do you have a warehouse in Phoenix?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Phoenix. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'How many box sizes should we run?', a: 'Fewer than most operations do. Every extra size adds purchasing, storage and pick complexity. We will look at your product range and tell you honestly whether it can consolidate.' },
-      { q: 'How long does delivery to Phoenix take?', a: 'Ground freight is typically 3 to 6 business days after the 3 to 5 business days of production.' },
+      { q: 'How long does delivery to Phoenix take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'What is the minimum order in Phoenix?', a: 'A flat 100 units on any format, which is enough to trial a right-sized box against your real damage rate before switching a line.' },
       { q: 'Does Arizona heat affect corrugated shippers?', a: 'Not meaningfully. Heat affects laminated cartons, where adhesives soften. Plain corrugated, which is most fulfilment packaging, is unaffected.' },
       { q: 'Should we print our shipping boxes?', a: 'That is a brand decision rather than a cost one. Printing does not change shipping cost or protection. If the unboxing matters to your customers it can be worth it; if parcels go to a business address, usually not.' },
