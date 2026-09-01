@@ -10,12 +10,12 @@ export const SITE = {
   /* Two lines. The US number is the primary; the UK line also covers callers
      in Canada and Australia, where the time difference makes it the easier
      one to reach. Both ring the same team. */
-  phone: '+1 503-358-0443',
-  phoneHref: 'tel:+15033580443',
+  phone: '+1 503-461-4788',
+  phoneHref: 'tel:+15034614788',
   phoneUk: '+44 7458 651107',
   phoneUkHref: 'tel:+447458651107',
-  whatsapp: '15033580443',
-  whatsappDisplay: '+1 503-358-0443',
+  whatsapp: '15034614788',
+  whatsappDisplay: '+1 503-461-4788',
   // Same opening line as the rest of the portfolio: greeting, brand, site URL.
   whatsappMessage:
     'Hi The Retail Packaging! I need more info about The Retail Packaging https://theretailpackaging.com/',
