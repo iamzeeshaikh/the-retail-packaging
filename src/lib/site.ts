@@ -14,14 +14,12 @@ export const SITE = {
   phoneHref: 'tel:+15034614788',
   phoneUk: '+44 7458 651107',
   phoneUkHref: 'tel:+447458651107',
-  // WhatsApp is deliberately on the OLD company number, not the new one on
-  // the phone line above. WhatsApp has to be registered on a number with
-  // Meta before wa.me will open a chat, and +1 503-461-4788 has not been
-  // through that yet — a link to it shows the customer "This phone number
-  // isn't on WhatsApp", which is what it did on this site until 2026-09-02.
-  // Change these two lines the day the new number is a registered sender.
-  whatsapp: '15033580443',
-  whatsappDisplay: '+1 503-358-0443',
+  // Same number as the phone line above. It sat on the old company number for
+  // a few hours on 2026-09-02, because +1 503-461-4788 had no WhatsApp
+  // registered against it and the button told every customer so. It was
+  // registered as a WhatsApp sender that afternoon, so the two agree again.
+  whatsapp: '15034614788',
+  whatsappDisplay: '+1 503-461-4788',
   // Same opening line as the rest of the portfolio: greeting, brand, site URL.
   whatsappMessage:
     'Hi The Retail Packaging! I need more info about The Retail Packaging https://theretailpackaging.com/',
