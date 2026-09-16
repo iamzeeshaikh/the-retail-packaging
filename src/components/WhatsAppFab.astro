@@ -50,14 +50,4 @@ const href = whatsappUrl()
   @media print { .wa-fab { display: none; } }
 </style>
 
-<script>
-  // Fire an analytics event only if a real analytics layer is present.
-  document.querySelectorAll('[data-analytics]').forEach((el) => {
-    el.addEventListener('click', () => {
-      const name = el.getAttribute('data-analytics')!
-      const w = window as any
-      if (typeof w.gtag === 'function') w.gtag('event', name.replace(/-/g, '_'))
-      else if (Array.isArray(w.dataLayer)) w.dataLayer.push({ event: name })
-    })
-  })
-</script>
+<!-- Click tracking for WhatsApp/phone/email links is handled by /ga4-events.js (loaded in Analytics.astro). -->
