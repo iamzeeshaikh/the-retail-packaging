@@ -6,7 +6,7 @@
  * so the shipped site carries no third-party script by default and no fake IDs
  * exist anywhere in the repository.
  */
-const GA4 = import.meta.env.PUBLIC_GA4_ID
+const GA4 = import.meta.env.PUBLIC_GA4_ID || 'G-BWD09PFWQE'
 const GTM = import.meta.env.PUBLIC_GTM_ID
 const GSC = import.meta.env.PUBLIC_GSC_VERIFICATION
 ---
@@ -14,7 +14,7 @@ const GSC = import.meta.env.PUBLIC_GSC_VERIFICATION
 
 {GA4 && (
   <>
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4}`}></script>
+    <script async is:inline src={`https://www.googletagmanager.com/gtag/js?id=${GA4}`}></script>
     <script is:inline define:vars={{ GA4 }}>
       window.dataLayer = window.dataLayer || []
       function gtag() { dataLayer.push(arguments) }
