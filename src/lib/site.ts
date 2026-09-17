@@ -1,3 +1,11 @@
+/**
+ * The published volume floor, in USD per piece. Single source of truth: the
+ * visible price line below and the `price` on the Product Offer in the JSON-LD
+ * both read this, so structured data can never quote a figure the page itself
+ * does not show.
+ */
+export const UNIT_PRICE_FROM = '0.30'
+
 export const SITE = {
   name: 'The Retail Packaging',
   legalName: 'The Retail Packaging',
@@ -28,8 +36,7 @@ export const SITE = {
   markets: ['United States', 'United Kingdom', 'Canada', 'Australia'] as const,
   marketCodes: ['US', 'GB', 'CA', 'AU'] as const,
   social: [] as string[], // no invented profiles
-  priceLine:
-    'Prices start from $0.30 per piece for large-volume orders. Final pricing depends on size, material, printing, finishes, and quantity.',
+  priceLine: `Prices start from $${UNIT_PRICE_FROM} per piece for large-volume orders. Final pricing depends on size, material, printing, finishes, and quantity.`,
 } as const
 
 export function abs(path: string): string {

@@ -5,7 +5,17 @@
  * the page. `aggregateRating` and `review` are supported but deliberately
  * withheld until verified review data exists — see `RATINGS_ENABLED`.
  */
-import { SITE, abs, canonical } from './site'
+import { SITE, UNIT_PRICE_FROM, abs, canonical } from './site'
+
+/**
+ * Offer validity: one year from the build date, computed rather than pinned to
+ * a literal so it can never go stale between deploys.
+ */
+function priceValidUntil(): string {
+  const d = new Date()
+  d.setUTCFullYear(d.getUTCFullYear() + 1)
+  return d.toISOString().slice(0, 10)
+}
 
 /**
  * Flip to true only when genuine, visible review data is wired in. Until then
@@ -176,32 +186,26 @@ export function product(input: ProductSchemaInput): Json {
     brand: { '@type': 'Brand', name: SITE.name },
     manufacturer: { '@id': `${SITE.origin}/#organization` },
     image: input.images.map((i) => abs(i)),
+    /* A single Offer, not an AggregateOffer. Google does not treat a price
+       range as eligible for a merchant listing, so every product page failed
+       that check. The price is the published $0.30 volume floor — the same
+       UNIT_PRICE_FROM constant the visible price line on the page is built
+       from, so the two cannot drift.
+
+       No `shippingDetails`: freight here is quoted per consignment and the
+       business publishes no rate, so there is nothing honest to put in it. */
     offers: {
-      '@type': 'AggregateOffer',
+      '@type': 'Offer',
       '@id': `${url}#offer`,
       url,
       priceCurrency: 'USD',
-      lowPrice: '0.30',
-      priceValidUntil: `${new Date().getFullYear() + 1}-12-31`,
+      price: UNIT_PRICE_FROM,
+      priceValidUntil: priceValidUntil(),
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
-      offerCount: 1,
       seller: { '@id': `${SITE.origin}/#organization` },
-      /* One node: the business confirms the same 3-5 day handling and 5-7 day
-         transit window for every market it serves, so splitting the US out from
-         the other three would imply a difference that does not exist. */
-      shippingDetails: {
-        '@type': 'OfferShippingDetails',
-        shippingDestination: SITE.marketCodes.map((c) => ({
-          '@type': 'DefinedRegion',
-          addressCountry: c,
-        })),
-        deliveryTime: {
-          '@type': 'ShippingDeliveryTime',
-          handlingTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 5, unitCode: 'DAY' },
-          transitTime: { '@type': 'QuantitativeValue', minValue: 5, maxValue: 7, unitCode: 'DAY' },
-        },
-      },
+      /* Real policy, quoted from /shipping-information/: packaging made to an
+         approved proof cannot be resold, so it is not returnable. */
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
         applicableCountry: [...SITE.marketCodes],

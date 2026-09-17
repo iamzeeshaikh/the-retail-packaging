@@ -7,6 +7,7 @@
  * underlying facts differ; sentence frames vary by a stable hash so identical
  * form factors do not produce identical paragraphs either.
  */
+import { SITE } from './site'
 import { pick, pickN, hash, type Product } from './catalog'
 import type { Category } from './catalog'
 import { INDUSTRIES, industriesFor } from './taxonomy'
@@ -14,8 +15,10 @@ import { factsFor } from '../data/products'
 import { traitsOf } from './product-traits'
 import { benefitLabels } from './product-headings'
 
-export const PRICE_LINE =
-  'Prices start from $0.30 per piece for large-volume orders. Final pricing depends on size, material, printing, finishes, and quantity.'
+/* Same line as SITE.priceLine, which is built from the UNIT_PRICE_FROM floor
+   the Product Offer quotes. One constant, so page text and schema cannot
+   drift apart. */
+export const PRICE_LINE = SITE.priceLine
 
 /** Strip a leading "Custom " so sentences do not read "custom Custom Bags". */
 function bare(name: string): string {
