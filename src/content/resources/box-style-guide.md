@@ -13,7 +13,7 @@ faqs:
   - q: What is the difference between a tuck end and an auto-lock bottom?
     a: A reverse tuck end folds closed at both ends and is assembled by hand — cheapest, fine for light contents. An auto-lock bottom snaps into a locked base as the carton is opened, so it takes real weight and assembles faster. The auto-lock costs more in board and tooling and pays for itself on anything heavy or high-volume.
   - q: When should I use a rigid box instead of a folding carton?
-    a: When the feel of the pack is part of what the customer is paying for. Rigid is hand-assembled from wrapped greyboard and ships assembled, so both unit cost and freight are considerably higher. A folding carton with a good finish reads as premium for much less if the box is posted rather than handed over.
+    a: When the feel of the pack is part of what the customer is paying for. Rigid is hand-assembled from wrapped grayboard and ships assembled, so both unit cost and freight are considerably higher. A folding carton with a good finish reads as premium for much less if the box is posted rather than handed over.
   - q: What is a roll-end tuck front and why is it the standard e-commerce box?
     a: It is a one-piece corrugated box with a hinged lid that tucks into the front. It needs no tape, assembles in one movement, protects well and opens cleanly — which is why it became the default for direct-to-consumer despatch where the unboxing matters.
   - q: Can one structure work for both retail shelf and shipping?
@@ -23,11 +23,11 @@ faqs:
   - q: What is a sleeve and tray, and when does it beat a printed carton?
     a: A plain tray with a printed sleeve over it. It wins where you run several variants from one structure — you print a small sleeve per variant instead of a whole carton, so setup cost falls sharply as the range grows.
   - q: Why do folding cartons ship flat but rigid boxes do not?
-    a: A folding carton is die-cut and glued along one seam, so it lies flat and pops open on a packing line. A rigid box is wrapped greyboard assembled by hand and cannot collapse. That difference in shipped volume is the hidden cost when comparing the two.
+    a: A folding carton is die-cut and glued along one seam, so it lies flat and pops open on a packing line. A rigid box is wrapped grayboard assembled by hand and cannot collapse. That difference in shipped volume is the hidden cost when comparing the two.
   - q: What is a regular slotted container?
     a: The standard shipping box — flaps on both ends meeting in the middle, sealed with tape. Cheapest corrugated structure per unit, no presentation value, and the right answer for bulk shipping where nothing is being displayed.
   - q: Does the style affect how quickly staff can pack?
-    a: Considerably. A hand-assembled tuck end costs nothing to make and costs labour to erect. An auto-lock bottom that snaps open in one movement uses more board and pays for it in packing time within weeks at high throughput.
+    a: Considerably. A hand-assembled tuck end costs nothing to make and costs labor to erect. An auto-lock bottom that snaps open in one movement uses more board and pays for it in packing time within weeks at high throughput.
   - q: Can I change style on a reorder without new tooling?
     a: No. The die is cut for a specific structure, so changing style means new tooling even at the same finished dimensions. It is worth settling the structure before the first order rather than treating it as adjustable later.
 ---
@@ -46,7 +46,7 @@ Best for light retail products up to about three pounds. Both are inexpensive an
 
 Where a tuck-end carton would not hold the weight, a locking base does. Snap-lock bottoms are assembled by folding tabs into place. Auto-lock bottoms spring open when squeezed, which is much faster on a packing line.
 
-Auto-lock costs more per unit but pays back in labour where volumes are high.
+Auto-lock costs more per unit but pays back in labor where volumes are high.
 
 ## Roll-end tuck front (mailer box)
 
@@ -56,13 +56,13 @@ Ships flat and score-folded, assembles in seconds by hand, and the interior face
 
 ## Regular slotted container
 
-The classic shipping box, with flaps meeting at the centre on top and bottom. Cheapest corrugated construction per unit because it wastes almost no board. Requires tape to close, so it is a shipper rather than a presentation pack.
+The classic shipping box, with flaps meeting at the center on top and bottom. Cheapest corrugated construction per unit because it wastes almost no board. Requires tape to close, so it is a shipper rather than a presentation pack.
 
 ## Rigid two-piece and hinged lid
 
-Base and lid built separately from wrapped greyboard, or a single hinged construction. Does not fold flat and is assembled by hand.
+Base and lid built separately from wrapped grayboard, or a single hinged construction. Does not fold flat and is assembled by hand.
 
-Best where perceived value carries the purchase — jewellery, watches, premium electronics, limited editions. Plan for longer lead times and higher freight volume.
+Best where perceived value carries the purchase — jewelry, watches, premium electronics, limited editions. Plan for longer lead times and higher freight volume.
 
 ## Sleeve and tray
 
@@ -99,7 +99,7 @@ Style is not only an aesthetic decision. Each structure has a different board co
 
 **Board consumption.** An auto-lock bottom uses noticeably more board than a tuck end at the same finished size, because the locking base needs the extra material. On a large run that difference is real.
 
-**Assembly time.** A hand-assembled tuck end costs nothing to make and costs labour to erect. On high throughput, an auto-lock that snaps open in one movement pays for its extra board in packing time within weeks.
+**Assembly time.** A hand-assembled tuck end costs nothing to make and costs labor to erect. On high throughput, an auto-lock that snaps open in one movement pays for its extra board in packing time within weeks.
 
 **Freight.** Folding cartons ship flat. Rigid boxes ship assembled and occupy several times the volume, which is the hidden cost people miss when comparing the two on unit price alone.
 

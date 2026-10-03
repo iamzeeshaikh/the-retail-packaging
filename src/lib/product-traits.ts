@@ -41,7 +41,7 @@ const RULES: [Trait, RegExp][] = [
   ['electronics', /phone|charger|earbud|headphone|speaker|watch|electronic|cable|device|bulb|smart/i],
   ['subscription', /subscription|monthly|\bpr box|influencer|press\b/i],
   ['branded', /branded|printed|logo|custom printed|monogram/i],
-  ['gifting', /gift|present|hamper|favour|favor/i],
+  ['gifting', /gift|present|hamper|favor|favor/i],
   ['barrier', /barrier|foil|laminat|resealable|zip|valve|moisture|grease/i],
   ['stackable', /stack|nest|tray|container|crate/i],
 ]
@@ -167,7 +167,7 @@ const BASE: Record<LayoutId, PSection[]> = {
  */
 /**
  * Sections a category genuinely needs, beyond what the form and traits imply.
- * A jewellery box page should discuss the interior fit; a cup page should not.
+ * A jewelry box page should discuss the interior fit; a cup page should not.
  */
 const CATEGORY_SECTIONS: Record<string, [PSection, PSection][]> = {
   // [section to add, section to place it after]

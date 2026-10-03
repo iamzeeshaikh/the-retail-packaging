@@ -102,7 +102,7 @@ const schema = S.graph([S.organization(), S.website(), S.breadcrumbs(path, trail
       window.clearTimeout(t)
       t = window.setTimeout(() => run(input.value), 140)
     })
-    // Honour ?q= arriving from the header search without creating an indexable page.
+    // Honor ?q= arriving from the header search without creating an indexable page.
     const initial = new URLSearchParams(location.search).get('q')
     if (initial) { input.value = initial; run(initial) }
     input.focus()

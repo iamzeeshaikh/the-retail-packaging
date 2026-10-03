@@ -17,7 +17,7 @@ export const statesD: Place[] = [
     logistics: {
       h: 'The warehouse behind the metropolitan market',
       body: [
-        'New Jersey holds an unusual concentration of warehousing for its size, largely because it serves the New York metropolitan market without New York’s receiving constraints. Ground freight arrives in 5 to 7 business days and almost every destination takes palletised delivery without special arrangement.',
+        'New Jersey holds an unusual concentration of warehousing for its size, largely because it serves the New York metropolitan market without New York’s receiving constraints. Ground freight arrives in 5 to 7 business days and almost every destination takes palletized delivery without special arrangement.',
         'For brands selling into New York, that is worth exploiting. Delivering a full pallet to a New Jersey facility and moving smaller quantities across the river as needed avoids the lift-gate arrangements, restricted hours and redelivery charges that Manhattan addresses attract.',
       ],
     },
@@ -78,13 +78,13 @@ export const statesD: Place[] = [
       { slug: 'pennsylvania', why: 'The adjacent state on the same freight corridors.' },
     ],
     faqs: [
-      { q: 'Should I deliver to New Jersey instead of Manhattan?', a: 'If you have the option, often yes. New Jersey facilities take palletised freight without the lift-gate arrangements, restricted hours and redelivery charges that Manhattan addresses attract. Moving smaller quantities across the river as needed usually costs less overall.' },
+      { q: 'Should I deliver to New Jersey instead of Manhattan?', a: 'If you have the option, often yes. New Jersey facilities take palletized freight without the lift-gate arrangements, restricted hours and redelivery charges that Manhattan addresses attract. Moving smaller quantities across the river as needed usually costs less overall.' },
       { q: 'Can one die serve several brands’ artwork?', a: 'Yes, and for contract manufacturers it is the main saving available. The structure is tooled once and each brand pays only its own print setup. Tell us the shared structure before the first client run.' },
-      { q: 'How fast is freight into New Jersey?', a: 'Typically 5 to 7 business days after the 3 to 5 business days of production. Almost every destination in the state accepts palletised delivery without special arrangement.' },
+      { q: 'How fast is freight into New Jersey?', a: 'Typically 5 to 7 business days after the 3 to 5 business days of production. Almost every destination in the state accepts palletized delivery without special arrangement.' },
       { q: 'Do you have a warehouse in New Jersey?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships directly to your address.' },
       { q: 'Can you supply food-contact compliant repack materials?', a: 'Yes. Tell us whether contact is direct or through a liner, since it changes which stocks are available and what documentation we can provide.' },
       { q: 'Can you provide versioned proofs for pharmaceutical work?', a: 'Yes. Dated proofs against a revision number with a retained approval record, where your quality system requires it. Ask at quoting so the documentation is built alongside the job.' },
-      { q: 'What is the minimum order for a New Jersey delivery?', a: 'A flat 100 units on any format. Most fulfilment enquiries here are far above it, but it lets you trial a smaller mailer before switching a line over.' },
+      { q: 'What is the minimum order for a New Jersey delivery?', a: 'A flat 100 units on any format. Most fulfilment inquiries here are far above it, but it lets you trial a smaller mailer before switching a line over.' },
       { q: 'How do I cut dimensional weight on fulfilment packaging?', a: 'Size the box to the product rather than to the box you inherited. Most operations we quote are running at least one size too large with void fill compensating, and the carrier saving compounds on every parcel.' },
       { q: 'Can you hold stock for us?', a: 'We manufacture to order rather than warehousing finished goods. For a scheduled requirement we phase production and delivery against your consumption instead, which achieves the same thing without you paying to store it.' },
       { q: 'How much does custom packaging cost in New Jersey?', a: 'From $0.30 per piece at large volumes. For fulfilment buyers the recurring carrier saving from a tighter pack usually outweighs the difference between board grades.' },
@@ -106,7 +106,7 @@ export const statesD: Place[] = [
     lede: 'Virginia sends us two kinds of brief that rarely appear together elsewhere: boutique specialty retail, and suppliers working to a procurement specification.',
     metaTitle: 'Custom Packaging Virginia | Specialty Retail & Supply',
     metaDescription: 'Custom packaging for Virginia specialty food, wine, government suppliers and data-centre hardware. Made to order from 100 units with written specifications.',
-    sectors: ['Specialty food and wine', 'Government and defence supply', 'Data centre and hardware', 'Tourism and heritage retail'],
+    sectors: ['Specialty food and wine', 'Government and defence supply', 'Data center and hardware', 'Tourism and heritage retail'],
     retail: {
       h: 'Heritage retail and the gift trade',
       body: [
@@ -122,7 +122,7 @@ export const statesD: Place[] = [
       items: [
         { name: 'Specialty food and wine', detail: 'Vineyard and producer packaging, usually short runs with a traditional aesthetic and gift positioning.' },
         { name: 'Government and defence supply', detail: 'Suppliers working to a written procurement specification, where matching the stated requirement exactly matters more than proposing something better.' },
-        { name: 'Data centre and hardware', detail: 'Northern Virginia’s data-centre concentration generates component and equipment packaging with protective requirements.' },
+        { name: 'Data center and hardware', detail: 'Northern Virginia’s data-centre concentration generates component and equipment packaging with protective requirements.' },
         { name: 'Tourism and heritage retail', detail: 'Gift and souvenir packaging bought in small quantities against a seasonal visitor calendar.' },
       ],
     },
@@ -140,14 +140,14 @@ export const statesD: Place[] = [
       rows: [
         ['Vineyard or specialty retail', 'Look, closure, gift feel', 'Carrier-network durability'],
         ['Procurement supplier', 'Exact match to the written spec', 'Design improvements'],
-        ['Data centre hardware', 'Protection and handling', 'Retail presentation'],
+        ['Data center hardware', 'Protection and handling', 'Retail presentation'],
         ['Heritage gift retail', 'Short runs, seasonal timing', 'Volume economics'],
       ],
     },
     logistics: {
       h: 'Freight across Virginia',
       body: [
-        'Ground delivery into Virginia typically takes 5 to 7 business days. Northern Virginia and the Richmond area both take palletised freight easily; rural destinations in the west of the state can add a day.',
+        'Ground delivery into Virginia typically takes 5 to 7 business days. Northern Virginia and the Richmond area both take palletized freight easily; rural destinations in the west of the state can add a day.',
         'For seasonal retail, timing matters more than speed. Tell us the date your season starts and we will work backwards rather than quoting a lead time from approval.',
       ],
     },
@@ -251,7 +251,7 @@ export const statesD: Place[] = [
     logistics: {
       h: 'Freight in the Washington corridor',
       body: [
-        'Ground delivery into Maryland typically takes 5 to 7 business days. Baltimore and the Washington suburbs both take palletised freight without difficulty.',
+        'Ground delivery into Maryland typically takes 5 to 7 business days. Baltimore and the Washington suburbs both take palletized freight without difficulty.',
         'For cold-chain buyers, inbound freight speed for empty packaging is rarely the constraint. Scheduling is: if your shipping runs to a fixed weekly cycle, tell us and we will phase deliveries to match rather than sending everything at once.',
       ],
     },
@@ -321,7 +321,7 @@ export const statesD: Place[] = [
     industries: {
       h: 'Colorado’s packaging demand',
       body: [
-        'An outdoor industry cluster, a mature cannabis market and a dense natural-foods sector account for most enquiries.',
+        'An outdoor industry cluster, a mature cannabis market and a dense natural-foods sector account for most inquiries.',
       ],
       items: [
         { name: 'Outdoor and recreation', detail: 'Equipment and apparel packaging for a market that expects minimal, recyclable presentation and still needs carrier durability.' },
@@ -363,7 +363,7 @@ export const statesD: Place[] = [
     logistics: {
       h: 'Freight over the mountains',
       body: [
-        'Ground delivery into Colorado typically takes 5 to 7 business days. The Front Range corridor from Fort Collins through Denver to Colorado Springs takes palletised freight without difficulty.',
+        'Ground delivery into Colorado typically takes 5 to 7 business days. The Front Range corridor from Fort Collins through Denver to Colorado Springs takes palletized freight without difficulty.',
         'Mountain destinations west of the Front Range are a different matter, particularly in winter. If your delivery address is in the high country, tell us and we will plan the consignment size around access rather than assuming a standard pallet delivery.',
       ],
     },
@@ -371,7 +371,7 @@ export const statesD: Place[] = [
       h: 'Quoting a Colorado run',
       body: [
         'Tell us where the product is filled and where the majority of it is sold. For sealed formats those two answers decide the headspace.',
-        'For cannabis work, send the current compliance requirement your licence operates under rather than a general description, since it constrains the structure before aesthetics do.',
+        'For cannabis work, send the current compliance requirement your license operates under rather than a general description, since it constrains the structure before aesthetics do.',
       ],
     },
     formats: {
@@ -398,8 +398,8 @@ export const statesD: Place[] = [
       { q: 'Why do my cartons crack when folded here?', a: 'Low humidity dries the board and reduces its pliability, so a crease profiled for normal conditions cracks instead of bending. A deeper crease and a board with higher residual moisture both resolve it.' },
       { q: 'Should I use a degassing valve?', a: 'For products that off-gas, such as freshly roasted coffee, a one-way valve prevents the pack inflating. It is not a fix for altitude expansion in a non-gassing product, where headspace is the right lever.' },
       { q: 'Do you have a facility in Colorado?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Colorado address.' },
-      { q: 'Can you produce child-resistant cannabis packaging?', a: 'We can produce child-resistant carton structures and rigid boxes with certified closures. Send the specific requirement your licence operates under, since compliance is verified against the regulations in force when the order runs.' },
-      { q: 'How long does delivery to Denver take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. The Front Range corridor takes palletised freight easily.' },
+      { q: 'Can you produce child-resistant cannabis packaging?', a: 'We can produce child-resistant carton structures and rigid boxes with certified closures. Send the specific requirement your license operates under, since compliance is verified against the regulations in force when the order runs.' },
+      { q: 'How long does delivery to Denver take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. The Front Range corridor takes palletized freight easily.' },
       { q: 'Can you deliver to a mountain address?', a: 'Usually, but tell us in advance. High-country access, particularly in winter, often rules out a standard pallet delivery, and we will size the consignment around it rather than discovering the problem on the day.' },
       { q: 'What is the minimum order in Colorado?', a: 'A flat 100 units on any format. For sealed formats that is enough to run a fill trial and check how the pack presents at your target altitude.' },
       { q: 'Are recycled stocks available for outdoor brands?', a: 'Yes. Recycled paperboard, recyclable coated stock and certified compostable options are all available. They are three different claims with three different evidence requirements, so tell us which one you intend to print.' },
@@ -429,7 +429,7 @@ export const statesD: Place[] = [
       head: ['Quantity', 'Usually cheaper', 'Why'],
       rows: [
         ['Under 500', 'Digital', 'No plate cost to amortise'],
-        ['500 – 2,000', 'Depends on colours', 'The genuine crossover band'],
+        ['500 – 2,000', 'Depends on colors', 'The genuine crossover band'],
         ['2,000 – 10,000', 'Offset or flexo', 'Plate cost spreads far enough'],
         ['Over 10,000', 'Offset or flexo', 'Unit cost drops sharply'],
         ['Any, with many variants', 'Digital', 'Each variant would need its own plate'],
@@ -438,7 +438,7 @@ export const statesD: Place[] = [
     overview: {
       h: 'The crossover is not a fixed number',
       body: [
-        'The point where offset overtakes digital depends on how many colours you are running, whether the artwork changes between variants, and how much finishing is involved. A single-colour job crosses over much earlier than a five-colour one, and a range with six variants may never cross over at all because each variant carries its own plate set.',
+        'The point where offset overtakes digital depends on how many colors you are running, whether the artwork changes between variants, and how much finishing is involved. A single-colour job crosses over much earlier than a five-colour one, and a range with six variants may never cross over at all because each variant carries its own plate set.',
         'Because so many Missouri orders land in the ambiguous band, we quote both routes when a job is close to the line. It costs us nothing and it means you are choosing on numbers rather than on a rule of thumb.',
       ],
     },
@@ -449,22 +449,22 @@ export const statesD: Place[] = [
       ],
       items: [
         { name: 'Food and agriculture', detail: 'Producers and processors running repeat specifications at mid volumes, often with several product variants off one structure.' },
-        { name: 'Brewing and beverage', detail: 'An established brewing sector buying carriers, sleeves and labels, with frequent seasonal changeovers that favour digital.' },
-        { name: 'Distribution and logistics', detail: 'Kansas City and St Louis both function as regional distribution centres, buying shippers and mailers at volume.' },
+        { name: 'Brewing and beverage', detail: 'An established brewing sector buying carriers, sleeves and labels, with frequent seasonal changeovers that favor digital.' },
+        { name: 'Distribution and logistics', detail: 'Kansas City and St Louis both function as regional distribution centers, buying shippers and mailers at volume.' },
         { name: 'Healthcare supply', detail: 'Suppliers needing documented specifications and consistent repeat runs.' },
       ],
     },
     logistics: {
       h: 'Two metropolitan markets, one state',
       body: [
-        'Ground freight into Missouri typically takes 5 to 7 business days. Kansas City and St Louis both take palletised deliveries without difficulty and both sit on major national corridors.',
+        'Ground freight into Missouri typically takes 5 to 7 business days. Kansas City and St Louis both take palletized deliveries without difficulty and both sit on major national corridors.',
         'The two cities are far enough apart that a state-wide order delivered to both is two freight legs rather than one. Tell us the split at quoting so it is costed correctly.',
       ],
     },
     ordering: {
       h: 'Getting both routes priced',
       body: [
-        'Send the quantity, the number of colours, and how many artwork variants you need. Those three answers determine which print route wins, and none of them can be guessed reliably.',
+        'Send the quantity, the number of colors, and how many artwork variants you need. Those three answers determine which print route wins, and none of them can be guessed reliably.',
         'If your quantity sits between 500 and 2,000 units, ask us for both prices. We will supply them without being asked when the job is close to the line, but it is worth knowing you can request the comparison.',
       ],
     },
@@ -480,7 +480,7 @@ export const statesD: Place[] = [
     },
     resources: [
       { href: '/printing-options/', anchor: 'how plate costs behave as quantity rises', note: 'The arithmetic behind the crossover band.' },
-      { href: '/resources/packaging-cost-factors/', anchor: 'what actually moves a mid-volume quote', note: 'Colours and variants matter more than most buyers expect.' },
+      { href: '/resources/packaging-cost-factors/', anchor: 'what actually moves a mid-volume quote', note: 'Colors and variants matter more than most buyers expect.' },
     ],
     nearby: [
       { slug: 'illinois', why: 'The adjacent distribution hub across the Mississippi.' },
@@ -492,16 +492,16 @@ export const statesD: Place[] = [
       { q: 'I have six product variants. Which print route should I use?', a: 'Very likely digital, whatever the total quantity. Each variant needs its own plate set on offset, so six variants means six setups. Digital carries no plate cost, which usually wins outright when variants multiply.' },
       { q: 'Will you quote both print routes?', a: 'Yes. When a job sits close to the crossover we supply both without being asked. It costs us nothing and it means you choose on the actual numbers.' },
       { q: 'Do you have a facility in Missouri?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Missouri address.' },
-      { q: 'How long does delivery to Kansas City or St Louis take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Both take palletised freight without special arrangement.' },
+      { q: 'How long does delivery to Kansas City or St Louis take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Both take palletized freight without special arrangement.' },
       { q: 'Can you deliver to both Missouri cities on one order?', a: 'Yes, but they are far enough apart to be two freight legs. Give us the split at quoting rather than after, so the freight is costed properly.' },
       { q: 'What is the minimum order in Missouri?', a: 'A flat 100 units on any format. At that quantity digital is always the right route, since no plate cost can be justified.' },
-      { q: 'Does colour count really change the price that much?', a: 'On offset, yes — each colour is a separate plate and a separate press unit. On digital the colour count barely matters. It is one of the biggest differences between the two routes and it surprises most buyers.' },
-      { q: 'Can I start digital and move to offset later?', a: 'Yes, and it is a sensible path. Run digitally while volumes are uncertain, then move to offset once the quantity justifies the plates. Expect a small colour shift between the routes, which we will show you on a proof first.' },
+      { q: 'Does color count really change the price that much?', a: 'On offset, yes — each color is a separate plate and a separate press unit. On digital the color count barely matters. It is one of the biggest differences between the two routes and it surprises most buyers.' },
+      { q: 'Can I start digital and move to offset later?', a: 'Yes, and it is a sensible path. Run digitally while volumes are uncertain, then move to offset once the quantity justifies the plates. Expect a small color shift between the routes, which we will show you on a proof first.' },
       { q: 'How much does custom packaging cost in Missouri?', a: 'From $0.30 per piece at large volumes. In the mid-range band the print route often makes more difference to your unit price than the board grade does.' },
     ],
     cta: {
       h: 'Compare both print routes',
-      body: 'Send the quantity, colour count and number of variants. We will price digital and offset side by side.',
+      body: 'Send the quantity, color count and number of variants. We will price digital and offset side by side.',
     },
   }),
 ]

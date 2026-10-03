@@ -1,6 +1,6 @@
 ---
 title: How Packaging Inserts Protect and Present Products
-description: Board, foam and moulded pulp inserts compared on protection, cost and presentation, with guidance on tolerances, cavity design and when an insert is unnecessary.
+description: Board, foam and molded pulp inserts compared on protection, cost and presentation, with guidance on tolerances, cavity design and when an insert is unnecessary.
 metaTitle: How Packaging Inserts Protect and Present Products
 publishDate: 2026-07-31
 updatedDate: 2026-08-11
@@ -19,20 +19,20 @@ faqs:
   - q: Do soft goods need inserts?
     a: Rarely. A folded garment cushions itself and has nothing rigid to break. For soft goods, right-sizing the outer box is almost always the better answer and it reduces dimensional weight at the same time.
   - q: How long does insert tooling take?
-    a: A cutting die for board or foam is quick. A mould for pulp is a larger cost and a longer lead time, which is why moulded pulp only makes commercial sense at volume even where it is technically the best fit.
+    a: A cutting die for board or foam is quick. A mold for pulp is a larger cost and a longer lead time, which is why molded pulp only makes commercial sense at volume even where it is technically the best fit.
   - q: What is the most common insert mistake?
     a: Cutting the cavity to the exact product dimensions. Manufacturing variance in both means an exact fit binds and the product will not go in. Board needs 1 to 2 mm around it; foam slightly less because it compresses.
   - q: Should the insert be printed?
     a: On a direct-to-consumer product, usually yes. The insert is what the customer sees immediately after the lid, and it is the surface people photograph. It costs comparatively little against the effect it has.
   - q: Which insert material is best for fragile items?
-    a: Foam, for anything genuinely fragile like glass or unprotected screens, because it absorbs shock rather than just locating the item. Board immobilises well but absorbs poorly. Moulded pulp sits between the two and recycles cleanly.
+    a: Foam, for anything genuinely fragile like glass or unprotected screens, because it absorbs shock rather than just locating the item. Board immobilises well but absorbs poorly. Molded pulp sits between the two and recycles cleanly.
   - q: How should I test an insert before committing?
-    a: Load a plain sample with the real product and drop it about a metre onto a hard floor on several faces. Product shifting means tighten the cavity; insert deforming means step up the material; outer creasing at a corner means the geometry needs work.
+    a: Load a plain sample with the real product and drop it about a meter onto a hard floor on several faces. Product shifting means tighten the cavity; insert deforming means step up the material; outer creasing at a corner means the geometry needs work.
 ---
 
 Most transit damage does not happen because the outer box failed. It happens because the product moved inside a box that survived perfectly well. An insert is the component that stops that movement, and it is routinely the cheapest reliability improvement available in a packaging specification.
 
-It also does a second job that has nothing to do with protection. An insert decides what the customer sees at the moment of opening, and whether a multi-piece product looks organised or looks tipped into a box.
+It also does a second job that has nothing to do with protection. An insert decides what the customer sees at the moment of opening, and whether a multi-piece product looks organized or looks tipped into a box.
 
 ## What an insert is actually doing
 
@@ -60,15 +60,15 @@ Polyurethane foam is soft and highly absorbent, suited to delicate items. Polyet
 
 Foam is routed or die-cut to the product profile, which produces a snug cavity that holds the item precisely. It also looks and feels expensive, which is why it appears in electronics, instruments and high-value tool sets.
 
-The trade-offs are cost, bulk and recyclability. Foam costs more than board, takes more space in the outer pack, and is not accepted in standard kerbside recycling.
+The trade-offs are cost, bulk and recyclability. Foam costs more than board, takes more space in the outer pack, and is not accepted in standard curbside recycling.
 
-## Moulded pulp
+## Molded pulp
 
-Moulded pulp sits between the two. It is formed from recycled paper slurry pressed into a shape, so it absorbs impact better than flat board and recycles cleanly, unlike foam.
+Molded pulp sits between the two. It is formed from recycled paper slurry pressed into a shape, so it absorbs impact better than flat board and recycles cleanly, unlike foam.
 
-Its limitations are tolerance and finish. Moulded pulp holds looser dimensional tolerances than die-cut board or routed foam, and its surface is rough and unprintable in any detailed way. As a hidden protective layer it is excellent. As a visible presentation layer it usually is not.
+Its limitations are tolerance and finish. Molded pulp holds looser dimensional tolerances than die-cut board or routed foam, and its surface is rough and unprintable in any detailed way. As a hidden protective layer it is excellent. As a visible presentation layer it usually is not.
 
-Tooling for moulded pulp is also more expensive than a cutting die, so it makes sense at volume rather than for short runs.
+Tooling for molded pulp is also more expensive than a cutting die, so it makes sense at volume rather than for short runs.
 
 ## Getting the tolerance right
 
@@ -100,7 +100,7 @@ Single hard-wearing items — a candle tin, a bar of soap, a hardback book — u
 
 ## Getting the specification right first time
 
-An insert is cut to the inside of the outer pack, not to the product alone, so a supplier needs both sets of dimensions. Sending only the product measurements means the insert has to be re-cut once the outer is finalised.
+An insert is cut to the inside of the outer pack, not to the product alone, so a supplier needs both sets of dimensions. Sending only the product measurements means the insert has to be re-cut once the outer is finalized.
 
 Send the exact dimensions of every item that needs a cavity, the weight of each, and a note on which are fragile. If the pack contains items of very different weights, say so, because a heavy item shifting next to a light one is a common damage mode.
 
@@ -108,7 +108,7 @@ For brands specifying protection and outer pack together, the [range of packagin
 
 ## Testing before committing
 
-Order a plain sample of the insert and the outer together, load it with the real product, and drop it from about a metre onto a hard floor several times on different faces.
+Order a plain sample of the insert and the outer together, load it with the real product, and drop it from about a meter onto a hard floor several times on different faces.
 
 That is not a formal test protocol, but it identifies the obvious failures immediately. If the product shifts, tighten the cavity. If the insert deforms, step up the material. If the outer creases at a corner, the load is not being distributed and the insert geometry needs work.
 

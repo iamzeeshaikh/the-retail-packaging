@@ -1,6 +1,6 @@
 ---
 title: Dieline and Artwork Guide
-description: How to work on a packaging dieline, set bleed and safety margins, handle colour and fonts, and export a print-ready file that passes prepress first time.
+description: How to work on a packaging dieline, set bleed and safety margins, handle color and fonts, and export a print-ready file that passes prepress first time.
 metaTitle: Dieline and Artwork Guide | Packaging Files
 publishDate: 2026-05-24
 updatedDate: 2026-08-11
@@ -21,9 +21,9 @@ faqs:
   - q: What file format should I export?
     a: PDF/X-4 or PDF/X-1a, with bleed included, trim marks outside the bleed area, and the dieline layer excluded from output. Name it with product, size and version — a file called final-v3 is how the wrong version reaches press.
   - q: Can a graphic cross a fold line?
-    a: A background colour or a bold graphic device can. Type, barcodes and fine rules cannot — board compresses and stretches slightly at a crease, so anything that has to be read distorts. The working rule is that anything requiring legibility stays off the fold.
+    a: A background color or a bold graphic device can. Type, barcodes and fine rules cannot — board compresses and stretches slightly at a crease, so anything that has to be read distorts. The working rule is that anything requiring legibility stays off the fold.
   - q: What is trapping and do I need to worry about it?
-    a: A slight overlap between adjacent colours that hides registration variance, so a hairline of bare board never appears between them. Prepress normally handles it, but it is worth knowing about if you are supplying separated artwork.
+    a: A slight overlap between adjacent colors that hides registration variance, so a hairline of bare board never appears between them. Prepress normally handles it, but it is worth knowing about if you are supplying separated artwork.
   - q: Why is my logo blurry when the file looked fine?
     a: Almost always a raster logo rather than a vector one — commonly a PNG pulled from a website. It looks correct on screen and has soft edges at print size that no processing recovers. Logos should always be supplied as vector.
   - q: What should I name the file?
@@ -40,7 +40,7 @@ Request the dieline before designing. Place it on its own locked layer and build
 
 Never rebuild it from measurements. Small discrepancies between your version and the production die produce misregistered folds, and the error is only visible after the run.
 
-Set the dieline to a named spot colour such as "Dieline" or "CutContour" and mark it non-printing at export.
+Set the dieline to a named spot color such as "Dieline" or "CutContour" and mark it non-printing at export.
 
 ## Bleed and safety
 
@@ -52,13 +52,13 @@ Set the dieline to a named spot colour such as "Dieline" or "CutContour" and mar
 | Pouch | 3 – 5 mm including gussets | 5 mm from seals |
 | Sticker | 3 mm outside cut line | 2 mm inside |
 
-Extend the actual background artwork into the bleed rather than adding a coloured block behind it, or a visible seam appears where the two meet.
+Extend the actual background artwork into the bleed rather than adding a colored block behind it, or a visible seam appears where the two meet.
 
-## Colour setup
+## Color setup
 
-Convert to CMYK. Define spot colours as named swatches used consistently — two similarly named swatches separate as two plates and are charged as two.
+Convert to CMYK. Define spot colors as named swatches used consistently — two similarly named swatches separate as two plates and are charged as two.
 
-Use a rich black build for large solid areas rather than 100% K alone, which prints as flat grey across a wide panel. Keep small text and thin rules 100% K only, because four-colour small type shows registration fringing.
+Use a rich black build for large solid areas rather than 100% K alone, which prints as flat gray across a wide panel. Keep small text and thin rules 100% K only, because four-colour small type shows registration fringing.
 
 Check total ink coverage stays within the press limit, usually around 300%.
 
@@ -91,7 +91,7 @@ Name the file with product, size and version. A file called "final-v3" is how th
 - Overprint settings checked, especially on white objects
 - Total ink coverage within limit
 
-Once approved, archive the print file alongside the dieline, board specification and colour targets. Reorders that reuse an approved file skip most of prepress, which is set out further in our [file requirements reference](/resources/packaging-file-requirements/).
+Once approved, archive the print file alongside the dieline, board specification and color targets. Reorders that reuse an approved file skip most of prepress, which is set out further in our [file requirements reference](/resources/packaging-file-requirements/).
 
 ## What prepress actually checks
 
@@ -99,9 +99,9 @@ Sending a file is not the end of the process. Prepress runs it against a fixed s
 
 **Resolution at placed size.** A 300 dpi image scaled up to 200% is a 150 dpi image. The check is on the effective resolution, not the original file.
 
-**Colour space.** RGB artwork has to be converted, and the conversion shifts colour. Supplying CMYK means you have seen the shift rather than inheriting it.
+**Color space.** RGB artwork has to be converted, and the conversion shifts color. Supplying CMYK means you have seen the shift rather than inheriting it.
 
-**Spot colour tidiness.** Two swatches with different names for the same colour produce two plates. Unused swatches left in a document cause the same confusion.
+**Spot color tidiness.** Two swatches with different names for the same color produce two plates. Unused swatches left in a document cause the same confusion.
 
 **Overprint settings.** White objects set to overprint disappear entirely on press. It is one of the few errors that looks perfect on screen and produces a blank area in production.
 
@@ -111,13 +111,13 @@ Sending a file is not the end of the process. Prepress runs it against a fixed s
 
 Creases are not neutral lines on a flat drawing. Board compresses and stretches slightly at a fold, and anything crossing it distorts.
 
-Type crossing a crease breaks. A barcode crossing a crease fails at the scanner. A fine rule crossing a crease appears to step. Continuous background colour crossing a crease is fine, and a deliberate graphic device crossing one can work if it is bold.
+Type crossing a crease breaks. A barcode crossing a crease fails at the scanner. A fine rule crossing a crease appears to step. Continuous background color crossing a crease is fine, and a deliberate graphic device crossing one can work if it is bold.
 
 The practical rule is that anything that has to be read stays off the fold entirely.
 
 ## Panels people forget
 
-The glue lap is covered when the pack is assembled, so artwork placed there disappears. It happens most often when a design is centred on a flat drawing rather than on the assembled panel.
+The glue lap is covered when the pack is assembled, so artwork placed there disappears. It happens most often when a design is centered on a flat drawing rather than on the assembled panel.
 
 Dust flaps and tuck flaps are visible when the pack is open and hidden when it is closed. Interior faces are free print area on any pack that opens toward the customer.
 
@@ -133,4 +133,4 @@ Name files with product, size and version. Keep one master and archive supersede
 
 Place on a flat panel, never across a fold or a curve. Keep at or above 80% of nominal size. Print dark on light with a clear quiet zone. Red on white does not scan reliably; light bars on dark do not scan at all.
 
-Once approved, archive the print file alongside the dieline, board specification and colour targets. Reorders that reuse an approved file skip most of prepress, which is set out further in our [file requirements reference](/resources/packaging-file-requirements/).
+Once approved, archive the print file alongside the dieline, board specification and color targets. Reorders that reuse an approved file skip most of prepress, which is set out further in our [file requirements reference](/resources/packaging-file-requirements/).

@@ -11,7 +11,7 @@ const path = '/sitemap/'
 const blog = (await getCollection('blog')).sort((a, b) => a.data.title.localeCompare(b.data.title))
 const resources = (await getCollection('resources')).sort((a, b) => a.data.order - b.data.order)
 const title = 'Sitemap | Every Page on The Retail Packaging'
-const description = 'A complete index of packaging categories, products, guides, articles, locations and company pages.'
+const description = 'A complete index of packaging categories, products, guides, articles, locations and company pages on The Retail Packaging, in one list you can scan.'
 const trail = [{ name: 'Home', url: '/' }, { name: 'Sitemap', url: path }]
 const cats = categories.map((c) => ({ c, list: productsIn(c.slug) }))
 const schema = S.graph([S.organization(), S.website(), S.webPage({ path, title, description }), S.breadcrumbs(path, trail)])

@@ -1,6 +1,6 @@
 ---
 /**
- * Root-level catalogue route.
+ * Root-level catalog route.
  *
  * Category URLs (/custom-bags/) and product URLs (/bakery-bags/) both sit at the
  * root, so a single dynamic segment serves both and delegates to the right
@@ -31,7 +31,7 @@ export const getStaticPaths = (() => {
     if (seen.has(s)) dupes.push(s)
     seen.add(s)
   }
-  if (dupes.length) throw new Error(`Duplicate catalogue slugs: ${dupes.join(', ')}`)
+  if (dupes.length) throw new Error(`Duplicate catalog slugs: ${dupes.join(', ')}`)
 
   return [
     ...categories.map((c) => ({ params: { slug: c.slug }, props: { kind: 'category' as const, category: c } })),

@@ -10,7 +10,7 @@
  * choice difficult, not rotated.
  */
 export type CategoryVariant =
-  | 'range-led'       // large catalogue — the job is navigating it
+  | 'range-led'       // large catalog — the job is navigating it
   | 'guidance-led'    // the choice itself is hard and needs explaining
   | 'material-led'    // substrate is the governing decision
   | 'application-led' // the use case decides the format

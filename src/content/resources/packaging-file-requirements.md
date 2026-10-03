@@ -1,6 +1,6 @@
 ---
 title: Packaging File Requirements
-description: Accepted file formats, colour and resolution requirements, export presets and the pre-flight checks that stop artwork bouncing at prepress.
+description: Accepted file formats, color and resolution requirements, export presets and the pre-flight checks that stop artwork bouncing at prepress.
 metaTitle: Packaging File Requirements | Print-Ready Specs
 publishDate: 2026-06-11
 updatedDate: 2026-08-11
@@ -11,7 +11,7 @@ heroProduct: custom-die-cut-stickers
 heroAlt: Die cut stickers demonstrating precise registration between print and cut path
 faqs:
   - q: What happens if I send an RGB file?
-    a: It gets converted to CMYK, and the conversion shifts colour — saturated blues and bright greens move most, because they sit outside the printable gamut. Supplying CMYK means you have seen and approved that shift rather than discovering it on a proof.
+    a: It gets converted to CMYK, and the conversion shifts color — saturated blues and bright greens move most, because they sit outside the printable gamut. Supplying CMYK means you have seen and approved that shift rather than discovering it on a proof.
   - q: Can I send a Canva or PowerPoint file?
     a: We can usually work with them, but expect a conversation. Those tools generally cannot embed a dieline, set bleed reliably, produce CMYK or outline fonts, so the file needs rebuilding before it can go to press. Tell us upfront and we will say what is achievable.
   - q: My image is 300 dpi — why is it flagged as low resolution?
@@ -19,17 +19,17 @@ faqs:
   - q: Why did a white element vanish from the proof?
     a: Almost always an overprint setting. A white object set to overprint knocks out nothing and prints nothing, so it disappears entirely. It looks correct on screen, which is why it survives to proof so often.
   - q: How do I tell you which parts are critical?
-    a: Say so in a note with the file. Prepress checks a great many mechanical things but cannot know that one particular blue is your brand colour, that a panel is legally required, or that a logo must not scale. A three-line note prevents most proof cycles.
+    a: Say so in a note with the file. Prepress checks a great many mechanical things but cannot know that one particular blue is your brand color, that a panel is legally required, or that a logo must not scale. A three-line note prevents most proof cycles.
   - q: Should I outline fonts or embed them?
     a: Either works and outlining is safer, because an embedded font can fail to resolve on a different system while outlined type cannot. Keep an editable master, since outlined text can no longer be corrected without going back to the original.
   - q: What is PDF/X and why does it matter?
-    a: A PDF subset designed for print exchange — it enforces embedded fonts, defined colour handling and no live transparency issues. PDF/X-4 or PDF/X-1a means the file behaves predictably in prepress rather than depending on which application opens it.
+    a: A PDF subset designed for print exchange — it enforces embedded fonts, defined color handling and no live transparency issues. PDF/X-4 or PDF/X-1a means the file behaves predictably in prepress rather than depending on which application opens it.
   - q: Can I send a native Illustrator or InDesign file?
-    a: We can work with them, but a PDF/X export is preferable because it settles fonts, links and colour handling at your end rather than ours. If you do send native files, package them with fonts and links included.
+    a: We can work with them, but a PDF/X export is preferable because it settles fonts, links and color handling at your end rather than ours. If you do send native files, package them with fonts and links included.
   - q: How large a file can I send?
     a: Under 20 MB by email; anything larger via a download link. Very large files are usually a sign that images are placed at far higher resolution than needed, which is worth checking since it does not improve the print.
   - q: What should I tell you when I send artwork?
-    a: What is critical. Prepress checks a great many mechanical things but cannot know that one blue is your brand colour, that a panel is legally required, or that a logo must not scale. A three-line note prevents most proof cycles.
+    a: What is critical. Prepress checks a great many mechanical things but cannot know that one blue is your brand color, that a panel is legally required, or that a logo must not scale. A three-line note prevents most proof cycles.
 ---
 
 These are the technical requirements for artwork sent to production. Meeting them means a file passes prepress first time rather than returning with queries.
@@ -45,13 +45,13 @@ These are the technical requirements for artwork sent to production. Meeting the
 | SVG | Cut paths and simple vector | Not suitable for full artwork |
 | TIFF / PSD | Raster elements only | 300 dpi at placed size, CMYK |
 
-Do not send Word, PowerPoint, Canva exports at screen resolution, or JPEGs saved from a website. None of these carry the colour, resolution or vector data print requires.
+Do not send Word, PowerPoint, Canva exports at screen resolution, or JPEGs saved from a website. None of these carry the color, resolution or vector data print requires.
 
-## Colour
+## Color
 
 Documents must be CMYK. RGB converted automatically at press produces shifts nobody intended.
 
-Spot colours defined as named swatches, used consistently, with unused swatches deleted. Two similarly named swatches separate as two plates.
+Spot colors defined as named swatches, used consistently, with unused swatches deleted. Two similarly named swatches separate as two plates.
 
 Rich black on large solids, 100% K on small text and thin rules. Total ink coverage within the press limit, generally around 300%.
 
@@ -71,7 +71,7 @@ Minimum sizes: 6pt positive, 8pt reversed out. Below that, ink spread fills in c
 
 ## Dieline handling
 
-Artwork built on the supplied template, dieline on its own layer, set to a named non-printing spot colour, excluded from the exported output.
+Artwork built on the supplied template, dieline on its own layer, set to a named non-printing spot color, excluded from the exported output.
 
 Bleed applied to every trim edge at the distance appropriate to the format. Critical content held inside safety margins. Nothing important crossing a fold.
 
@@ -81,18 +81,18 @@ Bleed applied to every trim edge at the distance appropriate to the format. Crit
 - Bleed included
 - Trim marks outside the bleed area
 - No registration marks inside the artwork area
-- Colour conversion off, or set to the supplied profile
+- Color conversion off, or set to the supplied profile
 - Layers flattened unless separations are requested
 
 ## Naming and delivery
 
 Name files with product, size and version — for example `lipstick-carton-45x45x90-v2.pdf`. Vague names are how the wrong version reaches press.
 
-Send files under 20 MB by email; anything larger via a download link. Include a note stating what is critical: an exact brand colour, a legally required panel, a fixed logo size. Prepress checks a great many things but cannot know which you care about most.
+Send files under 20 MB by email; anything larger via a download link. Include a note stating what is critical: an exact brand color, a legally required panel, a fixed logo size. Prepress checks a great many things but cannot know which you care about most.
 
 ## Pre-flight checklist
 
-- CMYK, spot colours named and tidy
+- CMYK, spot colors named and tidy
 - 300 dpi at placed size
 - Fonts outlined or embedded
 - Bleed on every trim edge
@@ -108,7 +108,7 @@ Full setup guidance including bleed distances by format is in our [dieline and a
 
 Not every design tool produces a press-ready file, and knowing where yours sits saves a round trip.
 
-**Illustrator and InDesign** handle everything required — dielines as layers, bleed, CMYK, spot colours, outlining. These are the straightforward cases.
+**Illustrator and InDesign** handle everything required — dielines as layers, bleed, CMYK, spot colors, outlining. These are the straightforward cases.
 
 **Photoshop** is raster only. It can produce acceptable artwork for full-coverage designs, but type set in Photoshop is pixels rather than vectors and will not print as crisply as it looks. Small text in particular suffers.
 
@@ -128,11 +128,11 @@ Not every design tool produces a press-ready file, and knowing where yours sits 
 
 The recurring one is a logo supplied as a web PNG. On screen it looks fine; at print size it has soft edges that no amount of processing recovers.
 
-## Colour, concretely
+## Color, concretely
 
 A file in RGB will be converted. The shift is largest in saturated blues, bright greens and vivid oranges, because those sit outside what four process inks can reproduce.
 
-If a colour is a brand asset, name it as a spot colour rather than building it from process. That is the only way to hold it consistently across production runs.
+If a color is a brand asset, name it as a spot color rather than building it from process. That is the only way to hold it consistently across production runs.
 
 For anything critical, ask for a press-printed sample on the actual substrate rather than approving from a digital proof. Coated board, uncoated board and kraft all reproduce the same file differently.
 
@@ -140,6 +140,6 @@ For anything critical, ask for a press-printed sample on the actual substrate ra
 
 Name files with product, size and version — for example `lipstick-carton-45x45x90-v2.pdf`. Vague names are how the wrong version reaches press.
 
-Send files under 20 MB by email; anything larger via a download link. Include a note stating what is critical: an exact brand colour, a legally required panel, a fixed logo size. Prepress checks a great many things but cannot know which you care about most.
+Send files under 20 MB by email; anything larger via a download link. Include a note stating what is critical: an exact brand color, a legally required panel, a fixed logo size. Prepress checks a great many things but cannot know which you care about most.
 
 Full setup guidance including bleed distances by format is in our [dieline and artwork preparation guide](/resources/dieline-and-artwork-guide/).

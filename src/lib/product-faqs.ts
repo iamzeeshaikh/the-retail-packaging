@@ -19,7 +19,7 @@ export interface Faq { q: string; a: string }
 const TRAIT_FAQS: Partial<Record<Trait, (p: Product) => Faq[]>> = {
   window: (p) => [
     { q: 'How large can the window be?', a: `As large as the panel can afford to lose. Every square inch of aperture removes stiffness from that face, so on ${p.name.toLowerCase()} we usually step the board up a grade once the window passes roughly a third of the panel. We will tell you where that line falls for your dimensions.` },
-    { q: 'Does the window film affect recyclability?', a: 'Yes. A PET film window means the pack is no longer straight paper, and most kerbside systems want the film separated first. If a clean recyclability claim matters more than visibility, a die-cut aperture with no film is an option worth discussing.' },
+    { q: 'Does the window film affect recyclability?', a: 'Yes. A PET film window means the pack is no longer straight paper, and most curbside systems want the film separated first. If a clean recyclability claim matters more than visibility, a die-cut aperture with no film is an option worth discussing.' },
   ],
   handle: (p) => [
     { q: 'Which handle type should I choose?', a: 'It depends on the load, not the look. Twisted paper handles suit light contents; flat paper is stronger for the same cost; cotton rope carries the most and reads as the most premium. Above a few kilos the failure point is usually the bag tearing at the handle, so a reinforced top edge matters as much as the handle itself.' },
@@ -34,11 +34,11 @@ const TRAIT_FAQS: Partial<Record<Trait, (p: Product) => Faq[]>> = {
     { q: 'Which finishes are worth the money at low quantity?', a: 'Ones that read from arm’s length. Soft-touch lamination and deboss change how the whole pack reads; a small foil detail often does not survive the distance between shelf and eye. We quote each pass separately so you can judge.' },
   ],
   eco: () => [
-    { q: 'Is recycled board weaker than virgin board?', a: 'Slightly, at the same caliper — recycled fibres are shorter, so the board is a little less stiff and takes on moisture a little faster. Stepping up one caliper generally restores the performance while keeping the recycled claim intact.' },
+    { q: 'Is recycled board weaker than virgin board?', a: 'Slightly, at the same caliper — recycled fibers are shorter, so the board is a little less stiff and takes on moisture a little faster. Stepping up one caliper generally restores the performance while keeping the recycled claim intact.' },
     { q: 'Can you certify the recycled content?', a: 'We can state the recycled content of the board and supply the mill documentation behind it. We do not issue certifications ourselves, and we would rather give you the underlying evidence than a claim you cannot substantiate.' },
   ],
   poly: () => [
-    { q: 'Are poly formats recyclable?', a: 'Through store drop-off in many areas rather than kerbside collection. Mono-material polyethylene is the more recyclable option; mixed-material films generally are not. If recyclability is a stated claim, tell us and we will keep to a mono-material construction.' },
+    { q: 'Are poly formats recyclable?', a: 'Through store drop-off in many areas rather than curbside collection. Mono-material polyethylene is the more recyclable option; mixed-material films generally are not. If recyclability is a stated claim, tell us and we will keep to a mono-material construction.' },
   ],
   protective: (p) => [
     { q: 'Will a heavier board reduce my damage rate?', a: 'Only if boxes are arriving crushed. If they arrive intact with damaged contents, the product is moving inside and a heavier outer changes nothing. A fitted insert solves that case, usually at lower cost.' },
@@ -65,7 +65,7 @@ const TRAIT_FAQS: Partial<Record<Trait, (p: Product) => Faq[]>> = {
   ],
   regulated: () => [
     { q: 'Can you supply versioned proofs with sign-off records?', a: 'Yes. Where your quality system requires it we issue dated proofs against a revision number and retain the approval record. Ask at quoting so the documentation is built alongside the job rather than reconstructed later.' },
-    { q: 'Can you produce child-resistant closures?', a: 'We can produce child-resistant structures with certified closures. Compliance is verified against the regulations in force when your order runs, so send the specific requirement your licence operates under rather than a general description.' },
+    { q: 'Can you produce child-resistant closures?', a: 'We can produce child-resistant structures with certified closures. Compliance is verified against the regulations in force when your order runs, so send the specific requirement your license operates under rather than a general description.' },
   ],
   tamper: () => [
     { q: 'What tamper-evident options are available?', a: 'Tear strips, tuck locks with a frangible tab, and applied security seals each give a different level of evidence. Tell us what standard you are working to, since "tamper-evident" is used loosely and the structures differ considerably.' },
@@ -96,7 +96,7 @@ const TRAIT_FAQS: Partial<Record<Trait, (p: Product) => Faq[]>> = {
     { q: 'Can you produce a small press or seeding run?', a: 'Yes. Minimum is 100 units on any format, which suits a seeding wave well. Give us the send date rather than asking for a lead time and we will work backwards to the latest artwork approval that still lands.' },
   ],
   branded: () => [
-    { q: 'How exactly can you match our brand colour?', a: 'On offset and flexo we hold the ink formulation, which gives a tight match run to run. Digital has a wider tolerance. If exact consistency across repeat runs matters more than short-run economics, we will quote the litho route.' },
+    { q: 'How exactly can you match our brand color?', a: 'On offset and flexo we hold the ink formulation, which gives a tight match run to run. Digital has a wider tolerance. If exact consistency across repeat runs matters more than short-run economics, we will quote the litho route.' },
   ],
 }
 
@@ -126,7 +126,7 @@ const FORM_FAQS: Record<string, (p: Product) => Faq[]> = {
     { q: 'Can the display hold its shape when full?', a: 'That is a structural calculation rather than a hope. Send the weight of a full facing and we will grade the board and add reinforcement where the load actually sits, which is usually the base and the front lip.' },
   ],
   insert: () => [
-    { q: 'Which insert material should I choose?', a: 'Board is cheapest and suits light or regular shapes. Foam holds irregular and fragile items better and absorbs shock. Moulded pulp sits between them and is the more recyclable of the cushioning options. Send the item and we will recommend.' },
+    { q: 'Which insert material should I choose?', a: 'Board is cheapest and suits light or regular shapes. Foam holds irregular and fragile items better and absorbs shock. Molded pulp sits between them and is the more recyclable of the cushioning options. Send the item and we will recommend.' },
   ],
 }
 
@@ -142,7 +142,7 @@ const FORM_FAQS: Record<string, (p: Product) => Faq[]> = {
  * What each answer gains instead is one further sentence that is only true of
  * this product: what to look for on its sample, what makes its freight
  * awkward, which part of its artwork prepress actually checks. The fact stays
- * identical across the catalogue; the advice around it stops being generic.
+ * identical across the catalog; the advice around it stops being generic.
  */
 type Rider = 'sample' | 'match' | 'delivery' | 'repeat' | 'artwork' | 'cost'
 
@@ -161,7 +161,7 @@ function rider(kind: Rider, p: Product, t: Set<Trait>): string {
         return 'Use the plain sample to confirm the required copy physically fits at legal type size before any design work starts.'
       if (hasT('display'))
         return 'Load a sample to a full facing before approving it. A display that holds its shape empty can still bow under stock.'
-      return `A plain sample answers fit and structure; a printed one answers colour. On ${n} it is usually fit that is worth checking first.`
+      return `A plain sample answers fit and structure; a printed one answers color. On ${n} it is usually fit that is worth checking first.`
     case 'match':
       if (hasT('regulated', 'tamper'))
         return 'Send the existing artwork as well as the sample — on a regulated pack it is usually the panel area given to required copy, not the dimensions, that differs between suppliers.'
@@ -172,11 +172,11 @@ function rider(kind: Rider, p: Product, t: Set<Trait>): string {
       return 'A physical sample tells us more than a specification sheet — board caliper and coating are usually described loosely and measured exactly.'
     case 'delivery':
       if (hasT('large'))
-        return `${p.name} are bulky for their weight, so freight is usually decided by volume rather than mass. Palletised consignments work out considerably cheaper per unit than parcel carriage at this size.`
+        return `${p.name} are bulky for their weight, so freight is usually decided by volume rather than mass. Palletized consignments work out considerably cheaper per unit than parcel carriage at this size.`
       if (hasT('small'))
         return 'Small formats consolidate well, so if you are ordering several at once they normally travel as a single consignment rather than being charged separately.'
       if (hasT('shipping', 'subscription'))
-        return 'If you are shipping to a fulfilment centre rather than your own address, send their receiving requirements with the order — pallet height and labelling rules are usually fixed and refusals are expensive.'
+        return 'If you are shipping to a fulfilment center rather than your own address, send their receiving requirements with the order — pallet height and labeling rules are usually fixed and refusals are expensive.'
       if (p.form.id === 'label' || p.form.id === 'sticker')
         return 'Roll-form work travels well and takes very little space, so freight is rarely the deciding cost on this format even at high quantities.'
       if (p.form.id === 'rigid-box')
@@ -192,7 +192,7 @@ function rider(kind: Rider, p: Product, t: Set<Trait>): string {
       if (hasT('regulated', 'tamper'))
         return 'Artwork revisions are held against the same record, so a reorder runs the approved version rather than whatever file was most recently sent to us.'
       if (hasT('branded', 'luxury', 'cosmetic'))
-        return 'That includes the ink formulation, which is what keeps a brand colour consistent between runs rather than drifting a shade each time.'
+        return 'That includes the ink formulation, which is what keeps a brand color consistent between runs rather than drifting a shade each time.'
       if (hasT('foodContact'))
         return 'The board and coating are held together, so a reorder cannot quietly arrive on a stock with different grease resistance.'
       return 'It also means a reorder can be priced against a larger quantity without re-opening the specification.'
@@ -206,13 +206,13 @@ function rider(kind: Rider, p: Product, t: Set<Trait>): string {
       if (hasT('regulated', 'tamper'))
         return 'Send required copy as live text rather than flattened artwork, so we can confirm it holds its legal minimum type size after any scaling.'
       if (hasT('eco'))
-        return 'If you are printing on an uncoated or kraft stock, approve a printed sample rather than a digital proof — the substrate pulls colour down noticeably.'
+        return 'If you are printing on an uncoated or kraft stock, approve a printed sample rather than a digital proof — the substrate pulls color down noticeably.'
       return 'The dieline we supply carries the crease positions, so keeping type clear of a crease is easier to solve at layout than at proof.'
     case 'cost':
       if (p.form.id === 'pouch')
         return 'On this format the film structure and whether you need a zip or a valve move the price more than quantity does at small volumes.'
       if (hasT('luxury', 'gifting'))
-        return 'Rigid construction is hand-assembled, so labour is a larger share of the unit cost here than it is on a machine-glued carton and quantity discounts flatten out sooner.'
+        return 'Rigid construction is hand-assembled, so labor is a larger share of the unit cost here than it is on a machine-glued carton and quantity discounts flatten out sooner.'
       if (hasT('protective', 'shipping'))
         return 'An insert often lowers the total rather than raising it, because holding the contents still lets us drop a grade on the outer.'
       if (hasT('regulated', 'tamper'))
@@ -229,28 +229,56 @@ function universal(p: Product, t: Set<Trait>): Faq[] {
     { q: `What is the minimum order for ${p.name.toLowerCase()}?`, a: `A flat 100 units on any format. Most ${p.form.noun} in this range are quoted from ${q} units upward because unit cost falls sharply above that, but the minimum exists so you can validate a structure first.` },
     { q: `How long do ${p.name.toLowerCase()} take to produce?`, a: `3 to 5 business days after artwork approval, plus freight. ${p.form.singular.charAt(0).toUpperCase() + p.form.singular.slice(1)} runs with applied finishes can take longer because each finish is a separate pass, and we confirm a firm date in writing with the quote.` },
     { q: `What do ${p.name.toLowerCase()} cost?`, a: `Prices start from $0.30 per piece for large-volume orders. For this format the biggest levers are quantity, print route, board grade and how many finishing passes are involved. We quote each element separately so you can see where the money is going. ${r('cost')}` },
-    { q: 'Can I see a sample first?', a: `Yes. We can send a plain unprinted sample so you can check the fit and structure, or a printed prototype for colour and finish. Sample costs are normally credited against the production order. ${r('sample')}` },
-    { q: 'Can you match packaging we already use?', a: `Send the current specification or a physical sample and we will quote to match it rather than proposing an alternative you would then have to re-approve internally. ${r('match')}` },
-    { q: 'Where do you deliver?', a: `All 50 US states, the United Kingdom, Canada and Australia, on the same timeline everywhere: 3 to 5 business days of production after artwork approval, then 5 to 7 business days in transit. Every run is made to order and shipped directly to your address rather than pulled from stock, so you receive current production rather than whatever has been sitting in a warehouse. Freight is costed separately by weight, volume and destination. ${r('delivery')}` },
+    { q: `Can I see a sample of ${p.name.toLowerCase()} first?`, a: `Yes. We can send a plain unprinted sample so you can check the fit and structure, or a printed prototype for color and finish. Sample costs are normally credited against the production order. ${r('sample')}` },
+    { q: `Can you match the ${p.name.toLowerCase()} we already use?`, a: `Send the current specification or a physical sample and we will quote to match it rather than proposing an alternative you would then have to re-approve internally. ${r('match')}` },
+    { q: `Where do you deliver ${p.name.toLowerCase()}?`, a: `All 50 US states, the United Kingdom, Canada and Australia, on the same timeline everywhere: 3 to 5 business days of production after artwork approval, then 5 to 7 business days in transit. Every run is made to order and shipped directly to your address rather than pulled from stock, so you receive current production rather than whatever has been sitting in a warehouse. Freight is costed separately by weight, volume and destination. ${r('delivery')}` },
     { q: `Can I order ${p.name.toLowerCase()} in a custom size?`, a: `Every run is cut to your dimensions — there are no stock sizes here. Send the product measurements rather than a box size and we will build the ${p.form.singular} around them, then send a dieline template you can design onto.` },
-    { q: 'What happens after I approve the quote?', a: `We issue a dieline template sized to your product, prepress checks your artwork against it, and a proof comes back for sign-off. Nothing runs until you approve that proof, and ${p.form.noun} then take 3 to 5 business days.` },
-    { q: 'Can you hold the specification for repeat orders?', a: `Yes. Once a first run is approved we hold the board, structure, dimensions, print method and finishes against your account, so a reorder references the same specification exactly rather than being re-derived. ${r('repeat')}` },
-    { q: 'Do you offer recycled or recyclable options?', a: `Recycled grades are available across most of the substrates we run for ${p.form.noun}. Recycled content, kerbside recyclability and certified compostability are three different claims though, so tell us which one you intend to print.` },
-    { q: 'What file format should I send artwork in?', a: `A print-ready PDF or a vector file, with fonts outlined and any raster images at 300 dpi at final size. We supply the dieline to design onto, and prepress checks bleed, safe area and crease clearance before issuing a proof. ${r('artwork')}` },
+    { q: `What happens after I approve a quote for ${p.name.toLowerCase()}?`, a: `We issue a dieline template sized to your product, prepress checks your artwork against it, and a proof comes back for sign-off. Nothing runs until you approve that proof, and ${p.form.noun} then take 3 to 5 business days.` },
+    { q: `Can you hold our ${p.name.toLowerCase()} specification for repeat orders?`, a: `Yes. Once a first run is approved we hold the board, structure, dimensions, print method and finishes against your account, so a reorder references the same specification exactly rather than being re-derived. ${r('repeat')}` },
+    { q: `Are recycled or recyclable ${p.name.toLowerCase()} available?`, a: `Recycled grades are available across most of the substrates we run for ${p.form.noun}. Recycled content, curbside recyclability and certified compostability are three different claims though, so tell us which one you intend to print.` },
+    { q: `What file format should ${p.name.toLowerCase()} artwork be in?`, a: `A print-ready PDF or a vector file, with fonts outlined and any raster images at 300 dpi at final size. We supply the dieline to design onto, and prepress checks bleed, safe area and crease clearance before issuing a proof. ${r('artwork')}` },
   ]
+}
+
+
+/**
+ * Trait and form questions are written once for every product that shares the
+ * concern, so on their own the same wording appeared on up to 110 pages. The
+ * answers already carry the product; this puts it in the question too, so each
+ * page asks about its own pack. Questions that already name the product, or
+ * that compare whole formats (rigid boxes vs folding cartons), are left alone.
+ */
+function scope(q: string, p: Product): string {
+  const n = p.name.toLowerCase()
+  if (q.toLowerCase().includes(n)) return q
+  const subject: [RegExp, string][] = [
+    [/^Are poly formats /, `Are ${n} `],
+    [/^Why do rigid boxes /, `Why do ${n} `],
+    [/^Do rigid boxes /, `Do ${n} `],
+    [/^Do large formats /, `Do ${n} `],
+    [/^Could soft goods /, `Could soft goods packed in ${n} `],
+  ]
+  for (const [re, to] of subject) if (re.test(q)) return q.replace(re, to)
+  if (/\bthese\b/.test(q)) return q.replace(/\bthese\b/, n)
+  if (/\bthe labels\b/.test(q)) return q.replace(/\bthe labels\b/, n)
+  if (/\bthe display\b/.test(q)) return q.replace(/\bthe display\b/, `the ${n}`)
+  if (/^Will this /.test(q)) return q.replace(/^Will this /, `Will ${n} `)
+  if (/\bthey\b/.test(q)) return q.replace(/\bthey\b/, n)
+  return q.replace(/\?$/, ` for ${n}?`)
 }
 
 export function productFaqsFor(p: Product, traits: Set<Trait>): Faq[] {
   const out: Faq[] = []
   const seen = new Set<string>()
-  const push = (f: Faq) => {
+  const push = (f: Faq, scoped = true) => {
+    if (scoped) f = { ...f, q: scope(f.q, p) }
     const k = f.q.toLowerCase()
     if (!seen.has(k)) { seen.add(k); out.push(f) }
   }
 
   // The product's own question leads, where one has been written for it.
   const own = factsFor(p.slug)
-  if (own?.ask) push(own.ask)
+  if (own?.ask) push(own.ask, false)
 
   // Then trait questions, ordered deterministically per product
   // so two products sharing traits still present them in a different sequence.

@@ -2,13 +2,13 @@
 /**
  * Live box preview for the specification builder.
  *
- * The builder asks for style, dimensions, colour, material, print and finish
+ * The builder asks for style, dimensions, color, material, print and finish
  * and then showed nothing back, so a visitor had no way to sanity-check what
  * they had described. This draws it: a CSS 3D box for the rigid formats and an
  * SVG silhouette for the soft and flat ones.
  *
- * It is deliberately an approximation and says so. Proportions, colour family
- * and finish character are real; it is not a colour proof and carries no
+ * It is deliberately an approximation and says so. Proportions, color family
+ * and finish character are real; it is not a color proof and carries no
  * artwork, only a placeholder lockup, so it can never be mistaken for one.
  */
 export interface Props {
@@ -102,7 +102,7 @@ const [l1, l2] = brandLine ? brandLine.split(/\s+/).slice(0, 2) : ['YOUR', 'BRAN
   <figcaption class="pv-cap">
     <span class="pv-dims" data-pv-dims></span>
     <span class="pv-note">
-      Approximation only — proportions, colour family and finish character. Not a colour proof,
+      Approximation only — proportions, color family and finish character. Not a color proof,
       and the panel shown is a placeholder, not your artwork.
     </span>
   </figcaption>
@@ -292,7 +292,7 @@ const [l1, l2] = brandLine ? brandLine.split(/\s+/).slice(0, 2) : ['YOUR', 'BRAN
   }
 
   /* Category chip -> shape, used while the style is still "Not sure yet" so a
-     product page opens on something recognisable rather than a generic box. */
+     product page opens on something recognizable rather than a generic box. */
   const BY_CATEGORY: [RegExp, Shape][] = [
     [/label/i, 'label'],
     [/sticker/i, 'sticker'],
@@ -307,8 +307,8 @@ const [l1, l2] = brandLine ? brandLine.split(/\s+/).slice(0, 2) : ['YOUR', 'BRAN
 
   const FLAT: Shape[] = ['bag', 'pouch', 'label', 'sticker']
 
-  /* Board colours used when nothing is printed. An unprinted kraft box is not
-     white, so honouring the colour chip there would be misleading. */
+  /* Board colors used when nothing is printed. An unprinted kraft box is not
+     white, so honouring the color chip there would be misleading. */
   const BOARD: [RegExp, string][] = [
     [/kraft/i, '#c3a479'],
     [/corrugated/i, '#bb9769'],
@@ -402,14 +402,14 @@ const [l1, l2] = brandLine ? brandLine.split(/\s+/).slice(0, 2) : ['YOUR', 'BRAN
       const swatchName = swatchEl?.value ?? ''
 
       const unprinted = /unprinted/i.test(printing)
-      const colour = unprinted
+      const color = unprinted
         ? match(BOARD, material, '#e4dfd6')
         : swatchEl?.dataset.hex || match(SWATCH_FALLBACK, swatchName, '#d9d4cb')
 
-      const ink = isDark(colour) ? 'rgba(255,255,255,.72)' : 'rgba(20,22,26,.62)'
+      const ink = isDark(color) ? 'rgba(255,255,255,.72)' : 'rgba(20,22,26,.62)'
       const texture = match(TEXTURE, material, 'none')
 
-      root.style.setProperty('--pv-c', colour)
+      root.style.setProperty('--pv-c', color)
       root.style.setProperty('--pv-ink', ink)
 
       // Finish is a surface property, so it rides on every visible face.
@@ -462,14 +462,14 @@ const [l1, l2] = brandLine ? brandLine.split(/\s+/).slice(0, 2) : ['YOUR', 'BRAN
         })
         flat.querySelectorAll<SVGElement>('[data-pv-fill]').forEach((el) => {
           const role = el.getAttribute('data-pv-fill')
-          el.setAttribute('fill', colour)
+          el.setAttribute('fill', color)
           el.style.filter =
             role === 'side' ? 'brightness(.82)' : role === 'topface' ? 'brightness(1.08)' : ''
         })
         flat.querySelectorAll<SVGElement>('[data-pv-glossy]').forEach((el) => {
           el.style.opacity = sheen === GLOSS ? '1' : sheen === SATIN ? '0.4' : '0'
         })
-        flat.style.color = colour
+        flat.style.color = color
         flatArt.style.opacity = shape === 'sticker' || shape === 'label' ? '1' : '0.9'
       } else {
         const set = (sel: string, ww: number, hh: number, tf: string) => {
@@ -552,7 +552,7 @@ const [l1, l2] = brandLine ? brandLine.split(/\s+/).slice(0, 2) : ['YOUR', 'BRAN
       dims.textContent = shown
       stage.setAttribute(
         'aria-label',
-        `Preview: ${styleName || 'packaging'}, ${colour === '#e4dfd6' ? 'natural board' : swatchName || 'natural board'}` +
+        `Preview: ${styleName || 'packaging'}, ${color === '#e4dfd6' ? 'natural board' : swatchName || 'natural board'}` +
           `${finish && finish !== 'None' ? `, ${finish.toLowerCase()} finish` : ''}. ${shown}.`,
       )
     }

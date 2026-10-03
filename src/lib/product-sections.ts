@@ -10,7 +10,7 @@ import { factsFor } from '../data/products'
  * traits, category, image count — rather than from one shared paragraph with
  * the name swapped. Where several phrasings are genuinely applicable, one is
  * chosen deterministically from the slug so a page is stable across builds
- * but neighbouring products do not read alike.
+ * but neighboring products do not read alike.
  */
 
 export interface Block {
@@ -78,7 +78,7 @@ function overview(c: Ctx): Block {
   if (has(c, 'handle'))
     second.push('Handle type is the decision most people underestimate. Twisted paper is fine for light contents; anything heavy needs a reinforced top edge as well as a stronger handle, because the failure is usually the bag tearing, not the handle breaking.')
   if (has(c, 'eco'))
-    second.push('Recycled content, kerbside recyclability and certified compostability are three separate claims with three separate evidence requirements. Tell us which one you intend to print and we will specify a material that supports it.')
+    second.push('Recycled content, curbside recyclability and certified compostability are three separate claims with three separate evidence requirements. Tell us which one you intend to print and we will specify a material that supports it.')
   if (has(c, 'cold'))
     second.push('Cold and condensation are different problems. Cold makes standard adhesive brittle; condensation softens uncoated board from the outside. If your product meets both, the specification has to address both.')
   if (has(c, 'small'))
@@ -112,7 +112,7 @@ function useCases(c: Ctx): Block {
   if (has(c, 'display')) items.unshift('Point-of-purchase display')
 
   const body = has(c, 'foodContact')
-    ? [`Most ${p.name.toLowerCase()} we quote go into food service, where the constraint is rarely appearance. Grease resistance, behaviour under a hot load and how the pack stacks in a courier bag decide whether it works.`]
+    ? [`Most ${p.name.toLowerCase()} we quote go into food service, where the constraint is rarely appearance. Grease resistance, behavior under a hot load and how the pack stacks in a courier bag decide whether it works.`]
     : has(c, 'shipping')
       ? [`${p.name} are usually bought by operations shipping at volume, where a small change compounds. Sizing tightly to the product is almost always the largest saving available, and it is larger than anything achievable on board price.`]
       : [`${p.name} are specified across several contexts, and the right build differs between them. Tell us which of these is yours and we will size and grade the pack for it rather than for an average.`]
@@ -160,7 +160,7 @@ function materials(c: Ctx): Block {
   const lead = has(c, 'foodContact')
     ? `${f.materials.slice(0, 3).join(', ')} cover most food-service orders in this format. Where the pack touches food directly we specify a food-contact compliant board and ink set, which narrows the options but not by much.`
     : has(c, 'eco')
-      ? `${f.materials.slice(0, 3).join(', ')} are the usual starting points, and recycled grades are available across all of them. Recycled fibre is slightly less stiff at the same caliper, so we sometimes step up a grade to hold the same performance.`
+      ? `${f.materials.slice(0, 3).join(', ')} are the usual starting points, and recycled grades are available across all of them. Recycled fiber is slightly less stiff at the same caliper, so we sometimes step up a grade to hold the same performance.`
       : has(c, 'protective')
         ? `${f.materials.slice(0, 3).join(', ')} are specified by what they have to carry rather than how they print. Weight of contents and stack height decide the grade; print quality is a secondary consideration on a protective outer.`
         : `${f.materials.slice(0, 3).join(', ')} cover most orders for this format. Heavier stocks add rigidity and cost; lighter stocks reduce both.`
@@ -183,14 +183,14 @@ function materialTable(c: Ctx): Block {
     ? [
         ['Uncoated kraft', 'None', 'Dry goods, short shelf life'],
         ['Aqueous coated', 'Light moisture', 'Keeps paper recyclable'],
-        ['Foil laminate', 'Oxygen and moisture', 'Longest shelf life, not kerbside recyclable'],
+        ['Foil laminate', 'Oxygen and moisture', 'Longest shelf life, not curbside recyclable'],
         ['Mono-material film', 'Good, shorter life', 'Store drop-off recycling'],
       ]
     : has(c, 'eco')
       ? [
-          ['Recycled CCNB', '0–5% higher', 'Kerbside, widely accepted'],
-          ['Virgin SBS', 'Baseline', 'Kerbside, best print surface'],
-          ['Kraft board', 'Baseline', 'Kerbside, natural finish'],
+          ['Recycled CCNB', '0–5% higher', 'Curbside, widely accepted'],
+          ['Virgin SBS', 'Baseline', 'Curbside, best print surface'],
+          ['Kraft board', 'Baseline', 'Curbside, natural finish'],
           ['Certified compostable', '20–40% higher', 'Industrial facilities only'],
         ]
       : [
@@ -224,7 +224,7 @@ function printing(c: Ctx): Block {
     }
   }
   const lead = has(c, 'branded', 'cosmetic', 'luxury')
-    ? `${f.printing.join(', ')} are all available, and on a presentation-led product the choice affects appearance as well as cost. Offset holds a spot colour tightly across a run; digital has a wider tolerance but removes the plate cost entirely.`
+    ? `${f.printing.join(', ')} are all available, and on a presentation-led product the choice affects appearance as well as cost. Offset holds a spot color tightly across a run; digital has a wider tolerance but removes the plate cost entirely.`
     : `${f.printing.join(', ')} are all available. Run length is usually the deciding factor: digital removes the plate cost on short quantities, while offset and flexographic printing become cheaper per unit once volumes climb.`
   const second = has(c, 'seasonal')
     ? 'For a seasonal edition that will not repeat, digital almost always wins. There is no second run for the plate cost to amortise across.'
@@ -386,7 +386,7 @@ function sustainability(c: Ctx): Block {
   return {
     h: 'The environmental claim you can defend',
     body: [
-      'Recycled content, kerbside recyclability and certified compostability are three different claims requiring three different kinds of evidence. Brands get into trouble by treating them as one.',
+      'Recycled content, curbside recyclability and certified compostability are three different claims requiring three different kinds of evidence. Brands get into trouble by treating them as one.',
       'Tell us which claim you intend to print on the pack and we will specify a material that supports it, or say plainly that it does not exist at your price point.',
     ],
   }
@@ -457,7 +457,7 @@ function sampling(c: Ctx): Block {
         : pick([
             `We can produce a plain unprinted sample so you can check the fit and structure of ${p.name.toLowerCase()} before committing.`,
             `A plain structural sample is the cheapest way to find a fit problem — far cheaper than finding it across a full run.`,
-            `Ask for an unprinted sample if the question is fit, or a printed prototype if the question is colour. They answer different things.`,
+            `Ask for an unprinted sample if the question is fit, or a printed prototype if the question is color. They answer different things.`,
           ], p.slug + 'sm'),
       'Sample costs are normally credited against the production order.',
     ],
@@ -471,7 +471,7 @@ function ordering(c: Ctx): Block {
   const heads = [
     `Ordering ${p.name.toLowerCase()}`,
     `How an order runs`,
-    `From enquiry to delivery`,
+    `From inquiry to delivery`,
     `What we need from you`,
   ]
   const first = [
@@ -532,7 +532,7 @@ function mistakes(c: Ctx): Block {
         : [
             'Sizing to the box currently in use rather than to the product.',
             'Committing to tooling before the range has settled.',
-            'Paying for a finish that only reads in the hand on a product seen from a metre away.',
+            'Paying for a finish that only reads in the hand on a product seen from a meter away.',
             'Ordering a single large run before demand is proven.',
           ]
   const { p, k } = c
@@ -552,7 +552,7 @@ const BUILDERS: Record<PSection, ((c: Ctx) => Block) | null> = {
   inserts, sizing, protection, shelf, shipping, storage, sustainability,
   artwork, sampling, ordering, cost, mistakes, compliance,
   specTable: null, // rendered from real spec data by the template
-  related: null,   // rendered from the catalogue by the template
+  related: null,   // rendered from the catalog by the template
 }
 
 export function buildSection(key: PSection, p: Product, t: Set<Trait>): Block | null {

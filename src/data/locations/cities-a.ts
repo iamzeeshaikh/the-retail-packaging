@@ -35,7 +35,7 @@ export const citiesA: Place[] = [
         { name: 'Independent food and bakery', detail: 'Pastry boxes, takeaway cartons and printed sleeves in short runs, usually with seasonal artwork changes.' },
         { name: 'Boutique retail', detail: 'Bags, tissue and small rigid boxes bought as a set, where the whole presentation has to feel coherent.' },
         { name: 'Studio and craft brands', detail: 'Makers producing in small batches who need packaging that reads as considered without a large brand budget behind it.' },
-        { name: 'Restaurants and takeaway', detail: 'Delivery packaging where grease resistance and stacking behaviour in a courier bag decide the specification.' },
+        { name: 'Restaurants and takeaway', detail: 'Delivery packaging where grease resistance and stacking behavior in a courier bag decide the specification.' },
       ],
     },
     checklist: {
@@ -140,7 +140,7 @@ export const citiesA: Place[] = [
       rows: [
         ['Container dimensions', 'Rarely', 'Tool the structure around this'],
         ['Ingredient panel', 'Frequently', 'Leave headroom from the start'],
-        ['Brand artwork', 'Every season or two', 'Favour a print route with cheap changeover'],
+        ['Brand artwork', 'Every season or two', 'Favor a print route with cheap changeover'],
         ['Claims and certifications', 'Unpredictably', 'Reserve panel area early'],
         ['Range size', 'Grows', 'Pick a structure that scales to variants'],
       ],
@@ -159,7 +159,7 @@ export const citiesA: Place[] = [
     logistics: {
       h: 'Delivery into the LA basin',
       body: [
-        'Ground freight into Los Angeles typically lands in 5 to 7 business days, and the basin is one of the easier destinations in the state for palletised consignments.',
+        'Ground freight into Los Angeles typically lands in 5 to 7 business days, and the basin is one of the easier destinations in the state for palletized consignments.',
         'Where deliveries go wrong here is address type. A great many LA beauty brands operate from shared industrial units or co-working studios with no forklift. Tell us which you have and we will break the consignment down accordingly.',
       ],
     },
@@ -191,7 +191,7 @@ export const citiesA: Place[] = [
     ],
     faqs: [
       { q: 'How do I avoid re-tooling every time my formula changes?', a: 'Tool the structure around the container rather than the current artwork, and leave panel headroom for claims that do not exist yet. A formulation change should only need new print, not a new die.' },
-      { q: 'Which print route is best for a brand that iterates quickly?', a: 'Usually digital while the range is still moving. There are no plates to remake when the artwork changes, so a revision costs almost nothing. Once volumes stabilise, offset becomes cheaper per unit.' },
+      { q: 'Which print route is best for a brand that iterates quickly?', a: 'Usually digital while the range is still moving. There are no plates to remake when the artwork changes, so a revision costs almost nothing. Once volumes stabilize, offset becomes cheaper per unit.' },
       { q: 'Can you deliver to a shared industrial unit with no forklift?', a: 'Yes. Tell us at quoting and we will ship cartons rather than a pallet, or arrange a lift-gate delivery. Discovering it at the door usually means a redelivery charge.' },
       { q: 'Do you have a facility in Los Angeles?', a: 'We manufacture through our production partners and ship direct — there is no office, plant or warehouse in Los Angeles. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'How much panel space should I reserve for a Prop 65 warning?', a: 'Enough that adding it later does not force a reflow. We will block the area on the dieline template before you commit design time, which is much cheaper than rearranging finished artwork.' },
@@ -265,7 +265,7 @@ export const citiesA: Place[] = [
     logistics: {
       h: 'Supply into a working kitchen',
       body: [
-        'Ground freight reaches Chicago in 5 to 7 business days, and the city is one of the easiest destinations in the country for palletised consignments.',
+        'Ground freight reaches Chicago in 5 to 7 business days, and the city is one of the easiest destinations in the country for palletized consignments.',
         'Kitchen storage is the real constraint. Restaurants rarely have room for a pallet of packaging, so we frequently split a run into scheduled drops. Tell us your storage capacity and delivery frequency and we will schedule around it.',
       ],
     },
@@ -330,7 +330,7 @@ export const citiesA: Place[] = [
     industries: {
       h: 'Two markets, one city',
       body: [
-        'Houston enquiries split cleanly between industrial supply and food service, and the specifications rarely overlap.',
+        'Houston inquiries split cleanly between industrial supply and food service, and the specifications rarely overlap.',
       ],
       items: [
         { name: 'Industrial and energy supply', detail: 'Parts, consumables and equipment where protection and handling weight decide everything and print is often unnecessary.' },
@@ -361,7 +361,7 @@ export const citiesA: Place[] = [
     logistics: {
       h: 'Freight and heat in Houston',
       body: [
-        'Ground freight into Houston runs 5 to 7 business days and the city takes palletised deliveries without difficulty.',
+        'Ground freight into Houston runs 5 to 7 business days and the city takes palletized deliveries without difficulty.',
         'Storage temperature matters as much here as anywhere in Texas. If stock sits in an unconditioned warehouse through summer, a heat-stable coating on laminated work avoids cartons bonding in the stack.',
       ],
     },
@@ -396,7 +396,7 @@ export const citiesA: Place[] = [
       { q: 'How do I stop cartons sticking together in a hot warehouse?', a: 'Specify a heat-stable laminating adhesive, or an aqueous coating instead of a film laminate. Above roughly 100°F standard adhesives soften and stacked cartons bond where the film touches.' },
       { q: 'Do you have a facility in Houston?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Houston. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'Can you phase deliveries for a restaurant with limited storage?', a: 'Yes. We produce the run and schedule drops against your capacity, which is standard for high-frequency food-service supply.' },
-      { q: 'How long does delivery to Houston take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Houston takes palletised deliveries without special arrangement.' },
+      { q: 'How long does delivery to Houston take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Houston takes palletized deliveries without special arrangement.' },
       { q: 'Can you package heavy industrial components?', a: 'Yes. Send the weight, geometry and the vulnerable points. Heavy items are an insert and edge-protection problem more than a box problem.' },
       { q: 'What is the minimum order in Houston?', a: 'A flat 100 units on any format, whichever market you are in.' },
       { q: 'Can you supply food-contact compliant packaging?', a: 'Yes. Tell us whether contact is direct or through a liner, since it changes which boards and inks are available.' },
@@ -468,7 +468,7 @@ export const citiesA: Place[] = [
     logistics: {
       h: 'Inbound freight and summer storage',
       body: [
-        'Ground delivery into Phoenix typically takes 5 to 7 business days and the metropolitan area takes palletised freight easily.',
+        'Ground delivery into Phoenix typically takes 5 to 7 business days and the metropolitan area takes palletized freight easily.',
         'Summer storage is worth a thought for laminated stock, though most fulfilment packaging is plain corrugated, which is unaffected by heat in a way that laminated cartons are not.',
       ],
     },

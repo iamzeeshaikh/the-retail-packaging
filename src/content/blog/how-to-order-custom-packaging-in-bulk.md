@@ -19,11 +19,11 @@ faqs:
   - q: How should bulk stock be stored?
     a: On pallets, off concrete, away from external walls and covered. Board absorbs ambient moisture and loses compression strength measurably. Rotate so older stock is used first, and specify heat-stable laminates upfront if the space gets warm.
   - q: What documentation should I keep between orders?
-    a: The dieline, board specification, colour targets, finish list and approved print file. Ask the supplier to hold them and keep your own copies, so you are never dependent on a single relationship continuing.
+    a: The dieline, board specification, color targets, finish list and approved print file. Ask the supplier to hold them and keep your own copies, so you are never dependent on a single relationship continuing.
   - q: Will a repeat run match the previous one?
     a: On offset and flexo, closely, because the ink formulation and plate specification are held. On digital the tolerance is wider. If runs sit side by side on a shelf, that argues for litho even at a quantity where digital would win on price.
   - q: What should I check before signing a bulk order?
-    a: That the quote names board grade and caliper, structure, print method and colour count, every finishing pass, the tooling position, the quantity band, lead time and freight basis. A missing line is usually where two quotes actually differ.
+    a: That the quote names board grade and caliper, structure, print method and color count, every finishing pass, the tooling position, the quantity band, lead time and freight basis. A missing line is usually where two quotes actually differ.
   - q: Can I split a bulk delivery across several sites?
     a: Yes, but say so at quoting. Each drop is a separate freight leg and costing it afterwards changes the number. If storage is tight, phased delivery against a schedule is usually available too.
   - q: Is there a minimum I have to order?
@@ -86,9 +86,9 @@ Rotate stock so older material is used first, particularly where any printed con
 
 Consistency between batches is something retail buyers notice and brands often overlook.
 
-Ask your supplier to hold your dieline, board specification, colour targets and finish list on file. A reorder that reuses an approved file skips most of prepress, which shortens lead time and removes a category of risk.
+Ask your supplier to hold your dieline, board specification, color targets and finish list on file. A reorder that reuses an approved file skips most of prepress, which shortens lead time and removes a category of risk.
 
-Where colour matters, agree a colour standard rather than relying on a proof from the previous run. A printed reference retained by both parties is more reliable than memory.
+Where color matters, agree a color standard rather than relying on a proof from the previous run. A printed reference retained by both parties is more reliable than memory.
 
 Keep your own archive too — the approved print file, the dieline and the specification sheet. A brand that holds its own copies is never dependent on a supplier relationship continuing.
 
@@ -112,7 +112,7 @@ Those questions often produce more saving than a straight price negotiation, and
 
 ## Before you place the order
 
-Confirm the finished specification in writing — board grade, dimensions, print method, colour references, finishing, quantity, tooling position, delivery schedule and price. Check that the artwork version referenced is the one you approved. Confirm the reorder terms and where tooling is held.
+Confirm the finished specification in writing — board grade, dimensions, print method, color references, finishing, quantity, tooling position, delivery schedule and price. Check that the artwork version referenced is the one you approved. Confirm the reorder terms and where tooling is held.
 
 A bulk order done properly lowers your unit cost substantially and removes packaging from your list of operational worries for months. Done casually, it converts a cash saving into a warehouse full of cartons you can no longer use.
 

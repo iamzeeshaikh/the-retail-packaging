@@ -13,7 +13,7 @@ faqs:
   - q: What is the difference between this and the retail packaging checklist?
     a: This one covers the design stage specifically — the decisions made between receiving a dieline and releasing artwork. The retail checklist is broader and covers structure, commercial terms and logistics as well. If you already have a dieline in hand, this is the relevant list.
   - q: Why does the substrate need confirming before design starts?
-    a: Because it changes colour behaviour. Kraft and uncoated stocks absorb ink, so colours print duller and warmer than the same file on coated board, and white needs an opaque underbase. Designing on white and discovering the stock afterwards means reworking the palette.
+    a: Because it changes color behavior. Kraft and uncoated stocks absorb ink, so colors print duller and warmer than the same file on coated board, and white needs an opaque underbase. Designing on white and discovering the stock afterwards means reworking the palette.
   - q: How small can text safely go?
     a: Above 6pt for positive text and above 8pt for reversed, as a working floor. Reversed type fills in more readily because ink spreads into the knocked-out area, and the effect is worse on absorbent and fluted substrates than on coated board.
   - q: Where should the barcode never go?
@@ -27,7 +27,7 @@ faqs:
   - q: What is total ink coverage and why does it have a limit?
     a: The sum of all four channels in the heaviest area. Past the substrate's limit the ink cannot absorb, causing set-off onto the next sheet and slow drying. Stacking heavy channels to make a darker black is the usual way it gets exceeded.
   - q: What happens if I leave a white object set to overprint?
-    a: It disappears entirely. Overprint means print on top of what is beneath rather than knocking out, and white ink over colour reads as nothing. It looks perfect on screen, which is why it survives to proof so often.
+    a: It disappears entirely. Overprint means print on top of what is beneath rather than knocking out, and white ink over color reads as nothing. It looks perfect on screen, which is why it survives to proof so often.
   - q: Should artwork be built on the dieline or transferred to it?
     a: Built on it. A dieline shows which panel is front, where the glue lap hides artwork, where creases fall and where safe areas run. Designing on a rectangle and transferring is how content ends up under a lap or across a fold.
 ---
@@ -39,7 +39,7 @@ This checklist is for the design stage specifically — the decisions made betwe
 - Dieline received from the supplier for the confirmed size
 - Panel orientation understood: which face is front, which is hidden under the glue lap
 - Regulated content collected at final length, not as placeholder text
-- Substrate confirmed, since kraft and uncoated stocks change colour behaviour
+- Substrate confirmed, since kraft and uncoated stocks change color behavior
 - Print method confirmed, since flexo and offset have different detail limits
 - Finish decisions made, since spot UV and emboss need artwork designed for them
 
@@ -47,7 +47,7 @@ This checklist is for the design stage specifically — the decisions made betwe
 
 - One clear primary message readable from three feet
 - Brand mark positioned on the panel that faces the shopper on shelf
-- Variant or flavour distinguishable at a glance from neighbouring SKUs
+- Variant or flavor distinguishable at a glance from neighboring SKUs
 - Product name legible at the smallest size the pack will appear
 - Secondary information genuinely secondary, not competing
 
@@ -69,7 +69,7 @@ This checklist is for the design stage specifically — the decisions made betwe
 
 ## Print constraints
 
-- Colour mode CMYK, spot colours named consistently
+- Color mode CMYK, spot colors named consistently
 - Rich black on large solids, 100% K on small text
 - Positive text above 6pt, reversed text above 8pt
 - Fine detail simplified where foil or emboss is applied
@@ -95,9 +95,9 @@ This checklist is for the design stage specifically — the decisions made betwe
 ## After the proof
 
 - Proof checked against a written specification, not memory
-- Physical sample reviewed where fit or colour is critical
-- Approval given by someone authorised to give it
-- Approved file archived with dieline, board spec and colour targets
+- Physical sample reviewed where fit or color is critical
+- Approval given by someone authorized to give it
+- Approved file archived with dieline, board spec and color targets
 
 The technical export requirements behind several of these checks are set out in full in our [packaging file requirements reference](/resources/packaging-file-requirements/).
 
@@ -123,7 +123,7 @@ Not every face carries equal weight, and treating them equally wastes effort.
 
 **Interior.** Free real estate on any pack that opens toward the customer, and the surface people photograph on a direct-to-consumer product.
 
-## Colour that survives production
+## Color that survives production
 
 Three practical constraints catch designs that were built without them.
 
@@ -131,7 +131,7 @@ Rich black on large solids and 100% K on small text. A four-colour black on 8pt 
 
 Total ink coverage within the press limit. Stacking four heavy channels on a dark area exceeds what the substrate can absorb, and the result is set-off and slow drying rather than a richer black.
 
-Spot colours named consistently. A swatch called "Brand Blue" in one file and "PMS 293" in another produces two plates for one colour, and the cost of that surfaces on the invoice.
+Spot colors named consistently. A swatch called "Brand Blue" in one file and "PMS 293" in another produces two plates for one color, and the cost of that surfaces on the invoice.
 
 ## Before you release
 

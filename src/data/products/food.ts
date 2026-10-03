@@ -4,7 +4,7 @@ import type { ProductFactsMap } from './types'
  * Custom Food Packaging and Custom Food Trays.
  *
  * Every entry describes what this product actually carries and how it
- * actually fails. Nothing here should be true of the neighbouring product.
+ * actually fails. Nothing here should be true of the neighboring product.
  */
 export const foodFacts: ProductFactsMap = {
   'burger-boxes': {
@@ -20,7 +20,7 @@ export const foodFacts: ProductFactsMap = {
   'cake-boxes': {
     holds: 'a whole iced cake that must not touch any wall or lid on the way out of the shop',
     sizeNote: '6, 8, 10 and 12 in square are the standard footprints, with 4 to 6 in of height depending on tiers.',
-    failure: 'The lid bows down in the middle under its own span and touches the icing, which is why a large cake box needs a centre support or a deeper wall.',
+    failure: 'The lid bows down in the middle under its own span and touches the icing, which is why a large cake box needs a center support or a deeper wall.',
     buyerNote: 'The common error is ordering by cake diameter rather than cake diameter plus board — a 10 in cake on a 10 in drum needs an 11 in box.',
     context: 'bakery counters where the box is carried flat by a customer, often on a car seat',
     detail: 'Lid span is the structural problem. Past 10 in square the lid needs a heavier caliper than the base or it will sag onto the decoration.',
@@ -59,8 +59,8 @@ export const foodFacts: ProductFactsMap = {
     holds: 'a sealed inner bag of dry cereal, so the carton is a billboard and a stacking unit rather than a barrier',
     sizeNote: 'Tall and thin for shelf facing: roughly 8 × 2½ × 11 in through 12 × 3 × 14 in.',
     failure: 'The carton bows on the shelf as the inner bag settles, so the facing looks slumped by the end of the day.',
-    buyerNote: 'Brands optimise the front panel and forget the box will be seen edge-on in a crowded aisle, where the narrow side is doing the work.',
-    context: 'grocery shelves where the pack sits face-out among competitors and is judged from two metres',
+    buyerNote: 'Brands optimize the front panel and forget the box will be seen edge-on in a crowded aisle, where the narrow side is doing the work.',
+    context: 'grocery shelves where the pack sits face-out among competitors and is judged from two meters',
     detail: 'Because the barrier is the inner bag, the carton can be a lighter board than instinct suggests — the caliper is for shelf rigidity, not protection.',
     pairs: ['snack-boxes', 'frozen-food-boxes', 'tea-boxes'],
   },
@@ -187,12 +187,12 @@ export const foodFacts: ProductFactsMap = {
     ask: { q: 'Why does my ice cream packaging go soggy on the outside?', a: 'Surface condensation. Humid air condenses on a frozen pack the instant it leaves the cabinet, and uncoated board absorbs it in under a minute. An exterior barrier coating fixes it — an interior liner does not.' },
   },
   'kraft-lunch-boxes': {
-    holds: 'a packed cold meal — sandwich, side and a piece of fruit — with compartments implied rather than moulded',
+    holds: 'a packed cold meal — sandwich, side and a piece of fruit — with compartments implied rather than molded',
     sizeNote: 'Around 8 × 6 × 2½ in, sized to hold a sandwich flat with room beside it.',
     failure: 'Contents mix in transit because there is nothing dividing them, so the sandwich arrives with crisps embedded in it.',
     buyerNote: 'Buyers choose kraft for the look and then ask for a moisture barrier, which is exactly what changes the look.',
     context: 'conference catering and grab-and-go retail, packed hours before it is eaten',
-    detail: 'A simple board divider is cheaper than a moulded tray and solves the mixing. Kraft with an internal coating keeps the appearance and the barrier.',
+    detail: 'A simple board divider is cheaper than a molded tray and solves the mixing. Kraft with an internal coating keeps the appearance and the barrier.',
     pairs: ['sandwich-boxes', 'kraft-meal-boxes', 'salad-boxes'],
   },
   'kraft-meal-boxes': {
@@ -201,13 +201,13 @@ export const foodFacts: ProductFactsMap = {
     failure: 'A wet element migrates into the dry one, so the whole meal arrives at one texture.',
     buyerNote: 'Operators add a divider that stops at the food line rather than the lid, and sauce simply goes over the top of it.',
     context: 'meal-prep services and delivery kitchens where the box holds a full plated meal',
-    detail: 'A divider only works if it reaches the lid. A half-height divider looks organised and stops nothing.',
+    detail: 'A divider only works if it reaches the lid. A half-height divider looks organized and stops nothing.',
     pairs: ['salad-boxes', 'kraft-lunch-boxes', 'catering-boxes'],
   },
   'macaron-boxes': {
     holds: 'macarons, which crack if they touch each other and bruise if they touch a wall',
     sizeNote: 'Small and precise: a 6-piece row around 7 × 2 × 2 in, a 12-piece grid around 7 × 5 × 2 in.',
-    failure: 'A shell cracks against a neighbouring shell in transit — the most fragile contents we package in this range.',
+    failure: 'A shell cracks against a neighboring shell in transit — the most fragile contents we package in this range.',
     buyerNote: 'Buyers specify a fitted insert and then order it a millimetre generous "for tolerance", which is exactly the movement that cracks shells.',
     context: 'patisserie counters and gifting, where the box is often posted as well as carried',
     detail: 'The cavity tolerance is the entire specification. Too tight breaks on insertion; too loose breaks in transit, and the window between them is small.',
@@ -340,7 +340,7 @@ export const foodFacts: ProductFactsMap = {
     failure: 'The base absorbs grease and moisture from below and the tray becomes limp before the meal is finished.',
     buyerNote: 'Dine-in trays are specified more cheaply than takeaway boxes, which is backwards — a dine-in tray sits under hot food for longer.',
     context: 'table service in casual dining and food halls, where the tray is on the table for the whole meal',
-    detail: 'Base coating matters more than wall height. Nothing is travelling; the tray just has to survive twenty minutes of hot contact.',
+    detail: 'Base coating matters more than wall height. Nothing is traveling; the tray just has to survive twenty minutes of hot contact.',
     pairs: ['food-trays', 'burger-boxes', 'nacho-trays'],
   },
   'cardboard-catering-trays': {
@@ -354,7 +354,7 @@ export const foodFacts: ProductFactsMap = {
   },
   'cardboard-lunch-trays': {
     holds: 'a compartmented meal where the elements must stay separate',
-    sizeNote: 'Commonly 9 × 7 in with two to four moulded or formed compartments.',
+    sizeNote: 'Commonly 9 × 7 in with two to four molded or formed compartments.',
     failure: 'Liquid crosses between compartments over a shallow divider, defeating the point of the format.',
     buyerNote: 'Compartment count is chosen for the menu, not for the wettest item on it, which is what determines divider height.',
     context: 'school, canteen and institutional catering served in volume',
@@ -443,13 +443,13 @@ const foodSpecs: Record<string, { spec: string; press: string }> = {
   'burger-boxes': { spec: 'A 16pt grease-resistant board holds a single burger; anything with a double patty or a side wants an E-flute for the extra crush resistance in a stacked bag.', press: 'Print the lid face and leave the base plain — the base is the panel that gets greasy, and ink there scuffs.' },
   'cake-boxes': { spec: 'Base and lid are often specified differently: 18pt or heavier on the lid to stop it sagging, and a lighter base since nothing is pressing on it.', press: 'Full-coverage dark ink on a lid shows every handling mark. On cake boxes a lighter ground with a printed border ages far better on a shelf.' },
   'candy-boxes': { spec: '12pt to 14pt SBS is enough — the contents are light and nothing structural is being asked of the board.', press: 'Small formats lose fine detail at the crease. Keep type and rules 4 mm clear of every fold on a box this size.' },
-  'cardboard-snack-boxes': { spec: 'A 16pt board with a rolled or doubled top edge, because all the stress is at the rim rather than in the walls.', press: 'The top two inches are what a customer sees while eating. Put the brand there rather than centred on the panel.' },
+  'cardboard-snack-boxes': { spec: 'A 16pt board with a rolled or doubled top edge, because all the stress is at the rim rather than in the walls.', press: 'The top two inches are what a customer sees while eating. Put the brand there rather than centered on the panel.' },
   'catering-boxes': { spec: 'B-flute corrugated or a laminated base. A folding carton grade will not hold an 18 in span under a full platter.', press: 'Flexo on corrugated rather than offset — at this size and quantity, litho lamination rarely earns its cost.' },
-  'cereal-boxes': { spec: 'Recycled CCNB is the standard here and is entirely adequate, because the inner bag carries the barrier and the carton only needs shelf rigidity.', press: 'Offset with a clay-coated face. CCNB has a grey back, which is invisible in use and saves meaningfully at volume.' },
+  'cereal-boxes': { spec: 'Recycled CCNB is the standard here and is entirely adequate, because the inner bag carries the barrier and the carton only needs shelf rigidity.', press: 'Offset with a clay-coated face. CCNB has a gray back, which is invisible in use and saves meaningfully at volume.' },
   'chicken-boxes': { spec: 'Grease-resistant coated board throughout, not just on the base — sauce reaches the walls in a way it does not with dry fried food.', press: 'Matte coatings mark less than gloss under greasy handling, which matters more here than print sharpness.' },
   'chinese-takeout-boxes': { spec: 'A poly or PLA-lined board is what makes the folded base leak-resistant. Uncoated stock wicks sauce through the seam regardless of caliper.', press: 'The pail is printed flat and then formed, so artwork has to survive folding through the base — keep critical detail off the fold lines.' },
   'chocolate-boxes': { spec: 'A rigid or heavy folding carton outer with a separate cavity insert. The insert can be a lighter board since it carries no load.', press: 'Soft-touch lamination is the finish that changes how a chocolate box reads in the hand, and it survives handling better than foil at this size.' },
-  'coffee-boxes': { spec: '16pt SBS with a good print face. No barrier is needed on the carton because the inner bag provides it.', press: 'Offset with a spot colour, since roasters usually hold a precise brand colour across a range of origins.' },
+  'coffee-boxes': { spec: '16pt SBS with a good print face. No barrier is needed on the carton because the inner bag provides it.', press: 'Offset with a spot color, since roasters usually hold a precise brand color across a range of origins.' },
   'cone-sleeves': { spec: 'A greaseproof-lined board — the whole inner surface is in contact with hot, oily food.', press: 'The seam overlap needs an ink-free strip so the adhesive keys to board rather than to print.' },
   'cookie-boxes': { spec: '14pt to 16pt SBS with a grease-resistant base, since butter migrates from the bottom layer downward.', press: 'If a window is specified, print a frame around it — an unframed aperture makes the contents look sparse.' },
   'cupcake-boxes': { spec: 'A 16pt board with a separate die-cut cavity insert. The insert grips the case; the outer only needs to hold shape.', press: 'A window in the lid sells the product, but it must sit above swirl height or it shows the side of the icing rather than the top.' },
@@ -463,8 +463,8 @@ const foodSpecs: Record<string, { spec: string; press: string }> = {
   'kraft-meal-boxes': { spec: 'Coated kraft with a full-height divider where the meal has separate wet and dry elements.', press: 'Keep print off the divider — it gets wet first and ink transfer onto food is the complaint that follows.' },
   'macaron-boxes': { spec: 'A rigid or heavy carton outer with a precisely cut cavity insert. Insert tolerance matters more than any other dimension on this product.', press: 'Pastel grounds are standard in this category and show ink density variation badly. Offset holds them more evenly than digital.' },
   'noodle-boxes': { spec: 'A poly-lined board heavy enough to stay rigid when hot and damp, because the box is eaten from directly.', press: 'The upper third of the wall is what the customer looks at while eating. Keep the brand above the fill line.' },
-  'pastry-boxes': { spec: 'Grease-resistant board or an uncoated kraft with a greaseproof liner — butter will show through anything untreated.', press: 'A window is common here and works, but it must be positioned over the product rather than centred on the lid.' },
-  'pie-boxes': { spec: 'A heavier base than an equivalent cake box: a filled pie is far denser per square inch.', press: 'Print is secondary to structure on this format. Most pie boxes we quote are one or two colours on kraft.' },
+  'pastry-boxes': { spec: 'Grease-resistant board or an uncoated kraft with a greaseproof liner — butter will show through anything untreated.', press: 'A window is common here and works, but it must be positioned over the product rather than centered on the lid.' },
+  'pie-boxes': { spec: 'A heavier base than an equivalent cake box: a filled pie is far denser per square inch.', press: 'Print is secondary to structure on this format. Most pie boxes we quote are one or two colors on kraft.' },
   'pizza-boxes': { spec: 'E-flute or B-flute corrugated with the flutes running across the span, so the corners carry the stack rather than the lid.', press: 'Flexo directly on the liner. Litho lamination looks better but adds a layer that traps steam against the lid.' },
   'popcorn-boxes': { spec: 'A light 14pt board is plenty for the weight, but the rim needs to be doubled or rolled to survive one-handed carrying.', press: 'Popcorn packaging is seen at a distance in low light. High contrast beats fine detail in a cinema foyer.' },
   'salad-boxes': { spec: 'A moisture-tolerant base with slight ventilation. A fully sealed box wilts leaves faster than an open one.', press: 'A window sells freshness on a chiller shelf, and here it genuinely reflects the product rather than hiding it.' },
@@ -478,9 +478,9 @@ const foodSpecs: Record<string, { spec: string; press: string }> = {
   'burger-trays': { spec: 'A coated base, since the tray sits under hot food for the length of a meal rather than a delivery.', press: 'One-colour print on the visible rim is usually all a dine-in tray needs.' },
   'cardboard-catering-trays': { spec: 'Corrugated or a laminated base — mid-span flex is the failure mode at this footprint.', press: 'Litho-laminated corrugated where the tray is customer-facing, plain flexo where it is back-of-house.' },
   'cardboard-lunch-trays': { spec: 'A formed tray with divider height set by the wettest element on the menu, not the driest.', press: 'Print rarely justifies itself on institutional trays; the budget is better spent on divider height.' },
-  'custom-printed-food-trays': { spec: 'Board and coating chosen together with the ink, because a grease-resistant surface changes how ink keys.', press: 'Ask for a printed sample on the coated stock. Colour shifts noticeably between coated and uncoated trays.' },
+  'custom-printed-food-trays': { spec: 'Board and coating chosen together with the ink, because a grease-resistant surface changes how ink keys.', press: 'Ask for a printed sample on the coated stock. Color shifts noticeably between coated and uncoated trays.' },
   'hot-dog-trays': { spec: 'A shallow coated tray slightly longer than the sausage, so toppings that fall stay on the tray.', press: 'The narrow visible strip either side of the food is the whole print area. Design for it rather than for the footprint.' },
-  'kraft-trays': { spec: 'Kraft with an internal coating only — the natural exterior is the reason the material was chosen.', press: 'One or two flexo colours. Heavy coverage on kraft looks muddy and undoes the material choice.' },
+  'kraft-trays': { spec: 'Kraft with an internal coating only — the natural exterior is the reason the material was chosen.', press: 'One or two flexo colors. Heavy coverage on kraft looks muddy and undoes the material choice.' },
   'nacho-trays': { spec: 'A formed tray with a dip well deep enough for the portion in motion, not at rest.', press: 'Print around the well rather than inside it. Ink in a dip well is covered instantly and can transfer to hot cheese.' },
   'paper-food-trays': { spec: 'The lightest board that still holds a full portion when picked up by one edge. We will tell you where that floor is.', press: 'Single-colour flexo. At these volumes and margins, anything more rarely returns its cost.' },
   'paperboard-food-trays': { spec: 'Glued rather than folded corners for anything carrying weight — corner construction matters as much as caliper.', press: 'Offset where the tray is customer-facing; the flat printing surface takes fine detail well before forming.' },

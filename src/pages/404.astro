@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro'
 import { categories, productsIn } from '../lib/catalog'
 const top = categories.map((c) => ({ ...c, n: productsIn(c.slug).length })).sort((a, b) => b.n - a.n).slice(0, 8)
 ---
-<Base title="Page Not Found | The Retail Packaging" description="That page does not exist. Browse packaging categories or search the catalogue." path="/404/" noindex>
+<Base title="Page Not Found | The Retail Packaging" description="That page does not exist. Browse packaging categories or search the catalog." path="/404/" noindex>
   <section class="section">
     <div class="wrap wrap-narrow">
       <p class="eyebrow">404</p>
@@ -11,7 +11,7 @@ const top = categories.map((c) => ({ ...c, n: productsIn(c.slug).length })).sort
       <p class="lede">The link may be out of date, or the address may have a typo. These are the most useful places to go next.</p>
       <div class="btn-row" style="margin-top:var(--s-8)">
         <a class="btn btn-primary btn-lg" href="/">Back to the homepage</a>
-        <a class="btn btn-outline btn-lg" href="/search/">Search the catalogue</a>
+        <a class="btn btn-outline btn-lg" href="/search/">Search the catalog</a>
       </div>
       <h2 style="margin-top:var(--s-16)">Packaging categories</h2>
       <ul class="nf-list" role="list">

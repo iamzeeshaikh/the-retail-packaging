@@ -11,9 +11,9 @@ faqs:
   - q: What is the single most effective sustainability change?
     a: Right-sizing the pack. It removes material, reduces shipping volume and cuts freight emissions in one change, and it lowers cost rather than raising it. Nothing else in this area improves both the environmental position and the budget.
   - q: Can I call my packaging recyclable?
-    a: Only if the finished pack is, not just the board it started as. A film window, a plastic laminate or a foil block each move an otherwise clean paperboard pack out of the kerbside stream. The claim has to describe the pack as it ships.
+    a: Only if the finished pack is, not just the board it started as. A film window, a plastic laminate or a foil block each move an otherwise clean paperboard pack out of the curbside stream. The claim has to describe the pack as it ships.
   - q: Is compostable packaging realistic for US consumers?
-    a: Frequently not. Certified compostable material almost always needs industrial facilities that most people cannot access, and it contaminates recycling when it ends up there instead. Where kerbside recycling is realistic, a recyclable stock does more good.
+    a: Frequently not. Certified compostable material almost always needs industrial facilities that most people cannot access, and it contaminates recycling when it ends up there instead. Where curbside recycling is realistic, a recyclable stock does more good.
   - q: How much more does sustainable packaging cost?
     a: Recycled paperboard is usually within a few percent of conventional and recycled corrugated is often standard. Certified compostable runs materially higher. The premium people expect is usually larger than the premium that exists.
   - q: What evidence do I need before printing a claim?
@@ -23,7 +23,7 @@ faqs:
   - q: Will switching materials disrupt my filling line?
     a: A mono-material film will. Seal temperature, dwell time and pressure all differ from a laminate, and running old settings produces weak seals that fail in transit rather than on the line. Trial one SKU before converting a range.
   - q: Is a paper mailer better than a poly one?
-    a: For recyclability yes, because paper goes into kerbside collection where poly generally needs store drop-off. For weight and moisture resistance poly wins. The right answer depends on what your customers can realistically do with it.
+    a: For recyclability yes, because paper goes into curbside collection where poly generally needs store drop-off. For weight and moisture resistance poly wins. The right answer depends on what your customers can realistically do with it.
   - q: What should I avoid claiming?
     a: Anything unqualified. "Eco-friendly" and a generic leaf symbol mean nothing specific and attract complaints. "Recycle with paper" and "industrially compostable, not suitable for home composting" both give the customer an instruction and can be substantiated.
   - q: What is the least sustainable thing most brands do?
@@ -36,9 +36,9 @@ A brand that prints the wrong one invites a complaint it cannot defend. Getting 
 
 ## The three claims and what they mean
 
-**Recycled content** describes what the packaging is made from. Post-consumer recycled fibre has been used and recovered; pre-consumer content is manufacturing offcuts. Both are legitimate, but post-consumer carries more weight and should be stated as a percentage.
+**Recycled content** describes what the packaging is made from. Post-consumer recycled fiber has been used and recovered; pre-consumer content is manufacturing offcuts. Both are legitimate, but post-consumer carries more weight and should be stated as a percentage.
 
-**Recyclability** describes what happens after use, and it depends entirely on local infrastructure. A material is only recyclable in practice if the customer's kerbside programme accepts it. Plain corrugated and uncoated paperboard are accepted almost everywhere. Multi-layer laminated film is accepted almost nowhere.
+**Recyclability** describes what happens after use, and it depends entirely on local infrastructure. A material is only recyclable in practice if the customer's curbside program accepts it. Plain corrugated and uncoated paperboard are accepted almost everywhere. Multi-layer laminated film is accepted almost nowhere.
 
 **Compostability** describes breakdown under specific conditions. Almost all certified compostable packaging requires industrial composting at sustained high temperatures. It will not break down in a home compost bin unless it carries a separate home-compostable certification, which is much rarer.
 
@@ -48,11 +48,11 @@ Printing "compostable" on a pack that needs an industrial facility, in a country
 
 This is the least complicated option and usually the cheapest to adopt.
 
-Recycled paperboard grades are widely available and behave much like virgin board structurally. Corrugated is already made with high recycled content as standard, often above 70%, which many brands do not realise they can already claim.
+Recycled paperboard grades are widely available and behave much like virgin board structurally. Corrugated is already made with high recycled content as standard, often above 70%, which many brands do not realize they can already claim.
 
-The trade-offs are cosmetic. Recycled board has a warmer, greyer base tone than bleached virgin board, and print colours sit slightly differently on it. Fibre length is shorter after recycling, so very high recycled grades can be marginally less rigid at the same thickness.
+The trade-offs are cosmetic. Recycled board has a warmer, greyer base tone than bleached virgin board, and print colors sit slightly differently on it. Fiber length is shorter after recycling, so very high recycled grades can be marginally less rigid at the same thickness.
 
-For most retail packaging, none of that matters. If your brand requires a pure white base or precise colour reproduction, it might.
+For most retail packaging, none of that matters. If your brand requires a pure white base or precise color reproduction, it might.
 
 ## Uncoated and plastic-free constructions
 
@@ -66,9 +66,9 @@ For grease-resistant food packaging, PE-free barrier coatings now exist and work
 
 Flexible packaging has historically been difficult to recycle because a laminated pouch combines several polymers that cannot be separated.
 
-Mono-material polyethylene structures solve that by building the whole pouch from one polymer family, which makes it recyclable through store drop-off programmes where those exist. Barrier performance has improved to the point where mono-PE is viable for many dry goods.
+Mono-material polyethylene structures solve that by building the whole pouch from one polymer family, which makes it recyclable through store drop-off programs where those exist. Barrier performance has improved to the point where mono-PE is viable for many dry goods.
 
-Two honest caveats. Mono-material films behave differently on filling and sealing lines — seal temperatures and dwell times usually need adjusting, so a brand switching a live product should run a trial rather than changing the whole SKU at once. And store drop-off is a much weaker recovery route than kerbside collection, so real-world recycling rates remain low.
+Two honest caveats. Mono-material films behave differently on filling and sealing lines — seal temperatures and dwell times usually need adjusting, so a brand switching a live product should run a trial rather than changing the whole SKU at once. And store drop-off is a much weaker recovery route than curbside collection, so real-world recycling rates remain low.
 
 ## Certified compostable materials
 
@@ -78,9 +78,9 @@ They suit closed-loop settings well — a café where cups go into a commercial 
 
 In general retail, the picture is weaker. Industrial composting access is limited across most of the US, compostable items entering recycling streams contaminate them, and consumers routinely misunderstand the requirement. If you use compostable packaging, the on-pack wording needs to be specific about what the customer should actually do with it.
 
-## Moulded pulp
+## Molded pulp
 
-Moulded pulp made from recycled paper is one of the better protective options. It is genuinely recyclable, often high in post-consumer content, and it replaces expanded polystyrene in most protective applications.
+Molded pulp made from recycled paper is one of the better protective options. It is genuinely recyclable, often high in post-consumer content, and it replaces expanded polystyrene in most protective applications.
 
 Its limits are dimensional tolerance and appearance. It has a rough surface and cannot hold fine detail, so it works as an internal protective layer rather than a visible presentation one.
 

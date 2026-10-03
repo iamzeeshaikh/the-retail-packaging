@@ -26,9 +26,12 @@ function bare(name: string): string {
 }
 
 function lower(name: string): string {
-  const b = bare(name)
-  // Keep genuine acronyms and size codes upper-cased.
-  return /^[0-9]|^(CBD|PR|CD|UV)\b/.test(b) ? b : b.charAt(0).toLowerCase() + b.slice(1)
+  // Lower-case every word for use mid-sentence ("french fry sleeves", not
+  // "french Fry Sleeves"), keeping genuine acronyms and size codes as written.
+  return bare(name)
+    .split(' ')
+    .map((w) => (/^[0-9]|^[A-Z]{2,}\b|^(CBD|PR|CD|UV|PET|PVC|EVA|LDPE|HDPE)\b/.test(w) ? w : w.toLowerCase()))
+    .join(' ')
 }
 
 /* ------------------------------------------------------------------ */
@@ -46,7 +49,7 @@ export function productIntro(p: Product): string[] {
   const opener = pick(
     [
       `${n} are ${f.construction}. We produce them to your dimensions, in your material, printed with your artwork.`,
-      `Every run of ${l} we produce is ${f.construction}. Nothing is pulled from a stock catalogue.`,
+      `Every run of ${l} we produce is ${f.construction}. Nothing is pulled from a stock catalog.`,
       `${n} are made to order. The format is ${f.construction}, and the specification is yours to set.`,
       `We manufacture ${l} to order rather than holding stock, so the size, board and print all match what you are packing.`,
     ],
@@ -93,7 +96,7 @@ export function productSummary(p: Product): string {
 
 /** Why this product, expressed as concrete benefits tied to the format. */
 /**
- * Four short tiles. Where per-product facts exist these summarise what is
+ * Four short tiles. Where per-product facts exist these summarize what is
  * specific to the product; the generic fallback repeated whatever the
  * materials, printing and finishes sections had already said on the same page.
  */
@@ -174,7 +177,7 @@ export const CATEGORY_NOTES: Record<
   'custom-cosmetic-packaging': {
     angle: 'Small, high-margin retail packaging where finish quality is visible at arm’s length.',
     decides: 'Most cosmetic cartons are small and light, so board choice is about rigidity and print quality rather than strength.',
-    watchOut: 'Ingredient panels are legally required and eat more space than brands expect. Lay out the back panel before you finalise the carton size.',
+    watchOut: 'Ingredient panels are legally required and eat more space than brands expect. Lay out the back panel before you finalize the carton size.',
     keyword: 'custom cosmetic packaging',
   },
   'custom-printed-cups': {
@@ -235,7 +238,7 @@ export const CATEGORY_NOTES: Record<
     angle: 'Small rigid presentation packaging where material feel carries the price signal.',
     decides: 'The wrap paper and the insert do the work. A well-fitted pad matters more than the box print.',
     watchOut: 'Metal tarnishes against untreated board. Ask for a tarnish-resistant lining if you pack silver.',
-    keyword: 'custom jewellery boxes',
+    keyword: 'custom jewelry boxes',
   },
   'custom-apparel-packaging': {
     angle: 'Low-cost protection for soft goods with room for brand storytelling.',
@@ -293,7 +296,7 @@ export const CATEGORY_NOTES: Record<
   },
   'sustainable-packaging': {
     angle: 'Recycled, recyclable and compostable formats for brands with a stated environmental position.',
-    decides: 'Which claim you can actually support. Recycled content, kerbside recyclability and certified compostability are three different things.',
+    decides: 'Which claim you can actually support. Recycled content, curbside recyclability and certified compostability are three different things.',
     watchOut: 'Compostable does not mean it breaks down in a home bin. Be specific in your on-pack wording or you invite a complaint.',
     keyword: 'sustainable packaging',
   },
@@ -440,7 +443,7 @@ export function categoryFaqs(c: Category, count: number): Faq[] {
     },
     {
       q: `Can I order samples of ${k} before a full run?`,
-      a: `Yes. We can send a plain structural sample so you can test the fit, or produce a printed prototype so you can check colour and finish. Sample costs are normally credited against the production order.`,
+      a: `Yes. We can send a plain structural sample so you can test the fit, or produce a printed prototype so you can check color and finish. Sample costs are normally credited against the production order.`,
     },
     {
       q: `Do you offer recycled or recyclable options in this range?`,

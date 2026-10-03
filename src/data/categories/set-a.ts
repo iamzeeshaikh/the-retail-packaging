@@ -1,6 +1,6 @@
 import type { CategoryMap } from './types'
 
-/** The largest ranges, where navigating the catalogue is the main job. */
+/** The largest ranges, where navigating the catalog is the main job. */
 export const categoriesA: CategoryMap = {
   'custom-food-packaging': {
     slug: 'custom-food-packaging',
@@ -9,7 +9,7 @@ export const categoriesA: CategoryMap = {
     keyword: 'custom food packaging',
     h1: 'Food packaging chosen by what goes inside it',
     eyebrow: '34 made-to-order formats',
-    lede: 'Hot, greasy, wet and cold each break packaging in a different way. This range is organised by the problem rather than by the shape of the box.',
+    lede: 'Hot, greasy, wet and cold each break packaging in a different way. This range is organized by the problem rather than by the shape of the box.',
     metaTitle: 'Custom Food Packaging | Takeaway, Bakery & Delivery',
     metaDescription: 'Custom food packaging made to order — burger, pizza, bakery, takeaway and delivery formats. Grease-resistant, vented and moisture-tolerant builds from 100 units.',
     intro: {
@@ -61,7 +61,7 @@ export const categoriesA: CategoryMap = {
       { q: 'What stops grease showing through the box?', a: 'A grease-resistant coating or a greaseproof liner. Untreated board will always strike through eventually with hot oily food — it is a property of the material rather than a quality fault, and it is inexpensive to design out.' },
       { q: 'Should takeaway packaging be vented or sealed?', a: 'It depends on the dish. Fried and crisp food needs venting or it steams itself soft. Soups and wet dishes are better sealed. Getting this the wrong way round is the single most common specification error in the category.' },
       { q: 'Can you make packaging that keeps food hot?', a: 'Board contributes very little insulation. What actually helps is reducing trapped air, a well-fitting lid and venting only where the dish needs it. We would rather tell you that than sell you a heavier board that does not do the job.' },
-      { q: 'Do you supply compostable food packaging?', a: 'Yes, though certified compostable stock generally needs industrial facilities rather than a home heap. If kerbside recycling is the realistic route for your customers, a recyclable coated board usually does more good. We will be straight about the trade-off.' },
+      { q: 'Do you supply compostable food packaging?', a: 'Yes, though certified compostable stock generally needs industrial facilities rather than a home heap. If curbside recycling is the realistic route for your customers, a recyclable coated board usually does more good. We will be straight about the trade-off.' },
       { q: 'What is the minimum order for food packaging?', a: 'A flat 100 units on any format. For a restaurant that is enough to test a pack through real deliveries before committing to a season of stock.' },
       { q: 'Can you deliver in batches so it does not fill our kitchen?', a: 'Yes, and it is common for food-service work. We produce the run and schedule drops against your storage capacity rather than sending everything at once.' },
       { q: 'Can we change the print for a seasonal menu?', a: 'Yes, and it is far cheaper than a new structure. Keep the same box and change the artwork, or run a plain base with a printed sleeve if the menu changes frequently.' },
@@ -109,7 +109,7 @@ export const categoriesA: CategoryMap = {
       ],
     },
     mistakes: {
-      h: 'Where money leaks on a mailer programme',
+      h: 'Where money leaks on a mailer program',
       intro: 'Five things we find on almost every audit.',
       items: [
         'Using void fill to compensate for a box that is simply one size too large.',
@@ -129,14 +129,14 @@ export const categoriesA: CategoryMap = {
       { q: 'Will a lighter box increase my damage rate?', a: 'Only if crushing is what damages your product. If damage comes from movement inside the box, a fitted insert lets you go lighter with no increase. Establish which failure you have before changing board.' },
       { q: 'Should I print my mailers?', a: 'It is a brand decision rather than a cost or protection one — print changes neither freight nor damage. For direct-to-consumer parcels it can be worth it; for business deliveries it usually is not.' },
       { q: 'How many mailer sizes should we stock?', a: 'Usually fewer than you do. Every extra size adds purchasing, storage and pick complexity. Send us your product dimensions and we will propose a consolidated set.' },
-      { q: 'Are poly mailers recyclable?', a: 'Through store drop-off in many areas rather than kerbside. Mono-material polyethylene is the more recyclable option; mixed-material films generally are not. If recyclability is a stated claim, we will keep to mono-material.' },
+      { q: 'Are poly mailers recyclable?', a: 'Through store drop-off in many areas rather than curbside. Mono-material polyethylene is the more recyclable option; mixed-material films generally are not. If recyclability is a stated claim, we will keep to mono-material.' },
       { q: 'Can you match a mailer we already use?', a: 'Yes — send the dimensions or a sample. But it is worth asking whether the existing box is right before we reproduce it, because most are inherited rather than chosen.' },
       { q: 'What is the minimum order for mailers?', a: 'A flat 100 units on any format, which is enough to trial a smaller size against real shipments before switching a line over.' },
       { q: 'Do you supply plain unprinted mailers?', a: 'Yes, and for third-party fulfilment or wholesale despatch it is usually the sensible choice — one plain stock serves every client.' },
       { q: 'How much do custom mailers cost?', a: 'From $0.30 per piece at large volumes. For a shipper the more useful figure is total cost per parcel including freight and damage, which we are happy to work through with you.' },
     ],
     cta: {
-      h: 'Audit a mailer programme',
+      h: 'Audit a mailer program',
       body: 'Send your product dimensions and your damage rate. We will tell you whether the box can shrink and what that saves per parcel.',
     },
   },
@@ -196,7 +196,7 @@ export const categoriesA: CategoryMap = {
       { q: 'How much weight will a paper bag carry?', a: 'That is set by paper weight and top-edge reinforcement together. Tell us the heaviest thing you will put in it and we will specify to that rather than to a category average.' },
       { q: 'Can you produce fabric and tote bags as well as paper?', a: 'Yes. Cotton, canvas and jute totes are all available, and they are a different product commercially — reusable, heavier, and usually bought as a brand item rather than a carrier.' },
       { q: 'Will kraft bags cope with damp or greasy contents?', a: 'Not uncoated. An internal coating keeps the natural kraft appearance outside while stopping strike-through, which is usually what you want if the bag was chosen for its look.' },
-      { q: 'Can I print full colour on a kraft bag?', a: 'You can, but heavy coverage on unbleached stock reads muddy. One or two colours generally look better and cost less, and they keep the material doing the work it was chosen for.' },
+      { q: 'Can I print full color on a kraft bag?', a: 'You can, but heavy coverage on unbleached stock reads muddy. One or two colors generally look better and cost less, and they keep the material doing the work it was chosen for.' },
       { q: 'What is the minimum order for custom bags?', a: 'A flat 100 units on any format, which is a practical quantity for trialling a size before committing to a season.' },
       { q: 'Do bags ship flat?', a: 'Paper bags ship flat and folded, which keeps freight low. Fabric totes ship folded but take more volume, so allow for that if storage is tight.' },
       { q: 'Can you match an existing bag?', a: 'Yes. Send a physical sample if you can — paper weight and handle construction are hard to judge from a photograph, and both affect the quote.' },
@@ -237,7 +237,7 @@ export const categoriesA: CategoryMap = {
       intro: 'What each material actually gives you.',
       head: ['Material', 'Barrier performance', 'Recovery route'],
       rows: [
-        ['Multi-layer laminate', 'Highest — longest shelf life', 'Not kerbside recyclable'],
+        ['Multi-layer laminate', 'Highest — longest shelf life', 'Not curbside recyclable'],
         ['Mono-material film', 'Good, shorter shelf life', 'Store drop-off in many areas'],
         ['Kraft with liner', 'Moderate, depends on the liner', 'Depends entirely on the liner'],
         ['Certified compostable', 'Lowest, shortest shelf life', 'Industrial facilities only'],
@@ -312,7 +312,7 @@ export const categoriesA: CategoryMap = {
       intro: 'The contexts that come up most, each with a different stock behind it.',
       items: [
         'Packaging seals and tamper marks on cartons and mailers',
-        'Product labelling on jars, bottles and tubs',
+        'Product labeling on jars, bottles and tubs',
         'Promotional and merchandise sheets given away at events',
         'Window and door graphics for retail frontage',
         'Equipment and asset marking that has to survive handling',
@@ -381,7 +381,7 @@ export const categoriesA: CategoryMap = {
       items: [
         'Tooling a carton around the current formulation, then re-tooling when the ingredient panel changes.',
         'Measuring a bottle at the base rather than at its widest point, so the carton rattles or will not close.',
-        'Specifying full-coverage foil on a short run, where the per-unit finishing labour dominates.',
+        'Specifying full-coverage foil on a short run, where the per-unit finishing labor dominates.',
         'Designing one carton per variant when a shared structure with a variable sleeve would do.',
       ],
     },
@@ -421,7 +421,7 @@ export const categoriesA: CategoryMap = {
       h: 'Why a sleeve often beats a printed pack',
       body: [
         'If you run several product variants, printing each pack in full means paying a setup cost per variant. A common plain base with a printed sleeve moves that cost onto a much smaller piece of material, and the visual difference between variants is just as clear.',
-        'It also decouples the structure from the artwork. You can change a season, a flavour or a promotion without touching the pack itself, which matters if the pack is tooled and the artwork is not settled.',
+        'It also decouples the structure from the artwork. You can change a season, a flavor or a promotion without touching the pack itself, which matters if the pack is tooled and the artwork is not settled.',
       ],
     },
     guidance: {
@@ -446,11 +446,11 @@ export const categoriesA: CategoryMap = {
       h: 'Where sleeves earn their place',
       intro: 'The situations where a sleeve is genuinely the better answer.',
       items: [
-        'A product range where only the flavour or variant changes',
+        'A product range where only the flavor or variant changes',
         'Seasonal editions on a pack that is already tooled',
         'Meal-prep and ready-meal trays that ship plain and brand late',
         'Hot drink cups where insulation and branding come together',
-        'Gift and subscription boxes needing a personalised outer element',
+        'Gift and subscription boxes needing a personalized outer element',
       ],
     },
     resources: [
@@ -533,7 +533,7 @@ export const categoriesA: CategoryMap = {
       { q: 'Where should print stop near the rim?', a: 'Below the lid line, or the artwork disappears once a lid goes on. We mark the lid line on the template so this is decided before design rather than after.' },
       { q: 'Can you print inside the cup?', a: 'On some constructions, yes, though the lining limits ink options. It is an unusual request and worth discussing before you design around it.' },
       { q: 'What is the minimum order for printed cups?', a: 'A flat 100 units on any format, though cup economics improve sharply with volume because the forming setup is the same regardless of quantity.' },
-      { q: 'Can you match our brand colour on a cup?', a: 'Flexo on a cup holds a spot colour well. Bear in mind the substrate is slightly absorbent, so a colour will read marginally softer than the same ink on a coated carton.' },
+      { q: 'Can you match our brand color on a cup?', a: 'Flexo on a cup holds a spot color well. Bear in mind the substrate is slightly absorbent, so a color will read marginally softer than the same ink on a coated carton.' },
       { q: 'How much do custom printed cups cost?', a: 'From $0.30 per piece at large volumes. Wall construction is the biggest lever — ripple and double-wall sit well above single-wall — with print a secondary factor.' },
     ],
     cta: {
@@ -550,8 +550,8 @@ export const categoriesA: CategoryMap = {
     h1: 'Inserts stop the movement that causes most damage',
     eyebrow: '21 made-to-order formats',
     lede: 'Most transit damage happens inside an otherwise intact box. A fitted insert usually fixes it at lower cost than a heavier outer — and often lets you drop a board grade.',
-    metaTitle: 'Custom Packaging Inserts | Foam, Board & Moulded',
-    metaDescription: 'Custom packaging inserts made to order in board, foam and moulded pulp. Cut to your product geometry to stop movement and reduce damage. From 100 units.',
+    metaTitle: 'Custom Packaging Inserts | Foam, Board & Molded',
+    metaDescription: 'Custom packaging inserts made to order in board, foam and molded pulp. Cut to your product geometry to stop movement and reduce damage. From 100 units.',
     guidance: {
       h: 'Diagnose before you spend',
       body: [
@@ -573,7 +573,7 @@ export const categoriesA: CategoryMap = {
       rows: [
         ['Board / paperboard', 'Light and regular shapes, presentation', 'Little shock absorption'],
         ['Foam', 'Fragile, irregular, high-value items', 'Bulkier, harder to recycle'],
-        ['Moulded pulp', 'Repeatable shapes, recyclable requirement', 'Tooling cost, less precise than foam'],
+        ['Molded pulp', 'Repeatable shapes, recyclable requirement', 'Tooling cost, less precise than foam'],
         ['Corrugated dividers', 'Multiple units in one carton', 'Only works for regular grids'],
       ],
     },
@@ -594,15 +594,15 @@ export const categoriesA: CategoryMap = {
     ],
     faqs: [
       { q: 'Do I need a heavier box or an insert?', a: 'Look at what arrives damaged. Crushed boxes mean the board is too light. Intact boxes with damaged contents mean the product moved inside, and an insert is the fix — usually at lower cost than upgrading the outer.' },
-      { q: 'Which insert material should I choose?', a: 'Board is cheapest and suits light or regular shapes. Foam holds fragile and irregular items and absorbs shock. Moulded pulp sits between them and is the more recyclable cushioning option. Send the item and we will recommend.' },
+      { q: 'Which insert material should I choose?', a: 'Board is cheapest and suits light or regular shapes. Foam holds fragile and irregular items and absorbs shock. Molded pulp sits between them and is the more recyclable cushioning option. Send the item and we will recommend.' },
       { q: 'Can an insert let me use a lighter outer box?', a: 'Frequently, yes. Once the contents cannot move, the outer only has to resist crushing rather than absorb internal impact. The two changes together can be close to cost-neutral.' },
       { q: 'How do you make an insert for an irregular shape?', a: 'From the item itself where possible, or from drawings. Send a sample if you can — irregular geometry is difficult to capture accurately from a technical drawing alone.' },
       { q: 'Should the insert grip the product or present it?', a: 'Decide explicitly, because the answers differ. A transit insert grips firmly and is often invisible; a presentation insert seats loosely and is part of the reveal. One insert doing both usually compromises one.' },
-      { q: 'Are foam inserts recyclable?', a: 'Generally not through kerbside collection. If a recyclable requirement is firm, moulded pulp or a board structure is the honest route, accepting slightly less shock absorption.' },
-      { q: 'Is there tooling cost for an insert?', a: 'For die-cut board and foam, a cutting die is needed and it is a one-off. Moulded pulp needs a mould, which is a larger up-front cost and only pays back at volume.' },
+      { q: 'Are foam inserts recyclable?', a: 'Generally not through curbside collection. If a recyclable requirement is firm, molded pulp or a board structure is the honest route, accepting slightly less shock absorption.' },
+      { q: 'Is there tooling cost for an insert?', a: 'For die-cut board and foam, a cutting die is needed and it is a one-off. Molded pulp needs a mold, which is a larger up-front cost and only pays back at volume.' },
       { q: 'What is the minimum order for inserts?', a: 'A flat 100 units on any format, which is enough to validate a cavity against your real handling process before committing.' },
       { q: 'Can you supply inserts for boxes we already have?', a: 'Yes. Send the box dimensions and the item, and we will cut an insert to fit inside what you are already using.' },
-      { q: 'How much do custom inserts cost?', a: 'From $0.30 per piece at large volumes for simple board inserts. Foam and moulded pulp sit above that, and the right comparison is against the value of what they protect.' },
+      { q: 'How much do custom inserts cost?', a: 'From $0.30 per piece at large volumes for simple board inserts. Foam and molded pulp sit above that, and the right comparison is against the value of what they protect.' },
     ],
     cta: {
       h: 'Send us the item',

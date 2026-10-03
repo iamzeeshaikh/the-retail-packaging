@@ -5,6 +5,10 @@ import CtaBand from '../../components/CtaBand.astro'
 import { getCollection } from 'astro:content'
 import { bySlug } from '../../lib/catalog'
 import * as S from '../../lib/schema'
+import Faqs from '../../components/Faqs.astro'
+import pageFaqs from '../../data/page-faqs.json'
+
+const faqs = (pageFaqs as Record<string, { q: string; a: string }[]>).blog
 
 const path = '/blog/'
 const posts = (await getCollection('blog')).sort(
@@ -20,6 +24,7 @@ const schema = S.graph([
   S.webPage({ path, title, description, type: 'CollectionPage' }),
   S.breadcrumbs(path, trail),
   S.itemList(path, posts.map((p) => ({ name: p.data.title, url: `/blog/${p.id}/` }))),
+  S.faqPage(path, faqs),
 ])
 ---
 <Base title={title} description={description} path={path} schema={schema}>
@@ -69,6 +74,7 @@ const schema = S.graph([
       </div>
     </div>
   </section>
+  <Faqs faqs={faqs} title="Questions about the blog" />
   <CtaBand />
 </Base>
 <style>

@@ -13,13 +13,13 @@ faqs:
   - q: Where do retailer requirements come from?
     a: They are usually published by the retailer and are non-negotiable — case dimensions, pallet pattern, opening face and barcode placement. Get the document before designing anything and work inward from it.
   - q: What happens if the case fails the retailer specification?
-    a: It gets rejected at the distribution centre, which means the stock does not reach shelf and the run has to be remade. It is the most expensive failure in this category and it is entirely avoidable by obtaining the specification first.
+    a: It gets rejected at the distribution center, which means the stock does not reach shelf and the run has to be remade. It is the most expensive failure in this category and it is entirely avoidable by obtaining the specification first.
   - q: How do I get the perforation right?
     a: By testing a physical sample. Too weak and it opens in transit; too strong and staff tear it badly, leaving a display that looks damaged on day one. It cannot be judged from a drawing.
   - q: Should I design for a full facing or a half-empty one?
     a: Both, but pay attention to the half-empty state, because that is how the unit spends most of its selling life. Printing the rear and side panels that become visible as it empties costs little and changes how it reads.
   - q: What stacking strength do I need?
-    a: Calculated against pallet load and how long stock stands in a distribution centre, not against the contents weight alone. Compression failure appears at the bottom of a pallet, long after the specification was approved.
+    a: Calculated against pallet load and how long stock stands in a distribution center, not against the contents weight alone. Compression failure appears at the bottom of a pallet, long after the specification was approved.
   - q: Can a shelf-ready case be reused or restocked?
     a: Some formats are restocked in store. If that is expected, say so — surviving repeated refilling is a different structural requirement from a single fill, and it affects both the board and the opening design.
   - q: Where does the barcode go on a retail-ready case?
@@ -30,7 +30,7 @@ faqs:
     a: Almost always. The case protects and displays; the primary pack sells the individual unit. Designing them together, with the case constraints leading, avoids the common problem of a primary pack that does not fit the pallet pattern cleanly.
 ---
 
-Retail-ready packaging, sometimes called shelf-ready packaging, is a case that arrives at a store, opens in one movement, and becomes the display without anything being unpacked. Retailers push for it because it cuts the labour of restocking. Brands benefit because it controls how the product looks on shelf rather than leaving that to whoever is filling the aisle.
+Retail-ready packaging, sometimes called shelf-ready packaging, is a case that arrives at a store, opens in one movement, and becomes the display without anything being unpacked. Retailers push for it because it cuts the labor of restocking. Brands benefit because it controls how the product looks on shelf rather than leaving that to whoever is filling the aisle.
 
 The requirements are specific, and most of them have to be settled before a structural die is cut.
 
@@ -38,7 +38,7 @@ The requirements are specific, and most of them have to be settled before a stru
 
 Retailer specifications vary, but they assess the same five properties almost universally.
 
-**Easy identification** — staff should recognise the product and its facing from the case without reading small print. **Easy opening** — one clean action with no knife where possible, and no loose fragments. **Easy shelf placement** — the opened case fits the shelf without adjustment. **Easy shopping** — the customer can see and reach the product. **Easy disposal** — the remaining tray flat-packs or collapses cleanly.
+**Easy identification** — staff should recognize the product and its facing from the case without reading small print. **Easy opening** — one clean action with no knife where possible, and no loose fragments. **Easy shelf placement** — the opened case fits the shelf without adjustment. **Easy shopping** — the customer can see and reach the product. **Easy disposal** — the remaining tray flat-packs or collapses cleanly.
 
 A design that satisfies four of these and fails one usually gets rejected, because the failing one creates work in the aisle.
 
@@ -100,11 +100,11 @@ Brands producing point-of-sale units alongside shelf cases will find the structu
 
 ## Test before tooling
 
-Build a prototype and put it through the actual sequence. Fill it with real product. Stack it as it will be palletised. Open it the way a store colleague will open it — quickly, one-handed, without reading instructions.
+Build a prototype and put it through the actual sequence. Fill it with real product. Stack it as it will be palletized. Open it the way a store colleague will open it — quickly, one-handed, without reading instructions.
 
 Then look at the tray with half the product removed. That is the state a shopper sees most often, and it is the state most designs are never checked in.
 
-Structural dies are the expensive part of a retail-ready programme, so the prototype stage is where errors are cheap to fix. After tooling, every change costs a new die.
+Structural dies are the expensive part of a retail-ready program, so the prototype stage is where errors are cheap to fix. After tooling, every change costs a new die.
 
 ## Getting retailer sign-off
 

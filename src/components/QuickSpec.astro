@@ -36,7 +36,7 @@ const catList = categories
 
 const STYLES = ['Folding carton', 'Mailer box', 'Rigid box', 'Shipping box', 'Paper bag',
   'Stand-up pouch', 'Label', 'Sticker', 'Tray', 'Sleeve', 'Not sure yet']
-const MATERIALS = ['Paperboard', 'Kraft board', 'Corrugated', 'Rigid greyboard',
+const MATERIALS = ['Paperboard', 'Kraft board', 'Corrugated', 'Rigid grayboard',
   'Barrier film', 'Recycled board', 'Advise me']
 const PRINTS = ['Digital', 'Offset', 'Flexo', 'Unprinted', 'Advise me']
 const FINISHES = ['Matte', 'Gloss', 'Soft-touch', 'Spot UV', 'Foil', 'None']
@@ -135,8 +135,8 @@ const uid = `qs-${Math.random().toString(36).slice(2, 8)}`
       </div>
 
       <div class="qs-row">
-        <span class="qs-lab">Colour</span>
-        <div class="chips chips-sw" role="radiogroup" aria-label="Colour">
+        <span class="qs-lab">Color</span>
+        <div class="chips chips-sw" role="radiogroup" aria-label="Color">
           {SWATCHES.map((s, i) => (
             <label class="chip chip-sw">
               <input type="radio" name="exterior" value={s.n} data-hex={s.v} checked={i === 0} />

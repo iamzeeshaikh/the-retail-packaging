@@ -1,4 +1,5 @@
 ---
+import { withOverride } from '../lib/meta-overrides'
 import Base from '../layouts/Base.astro'
 import Breadcrumbs from '../components/Breadcrumbs.astro'
 import ProductCard from '../components/ProductCard.astro'
@@ -28,11 +29,13 @@ const intro = categoryIntro(category, list.length)
 const faqs = c ? c.faqs : categoryFaqs(category, list.length)
 const related = relatedCategories(category.slug, 4)
 const gen = categoryMeta(category, list.length)
-const title = c ? c.metaTitle : gen.title
-const description = c ? c.metaDescription : gen.description
+const { title, description } = withOverride(category.url, {
+  title: c ? c.metaTitle : gen.title,
+  description: c ? c.metaDescription : gen.description,
+})
 const short = category.name.replace(/^Custom /, '')
 
-/* The catalogue grid, spec panel and gallery are fixed markup, so the declared
+/* The catalog grid, spec panel and gallery are fixed markup, so the declared
    section order is split around wherever the category places 'range'. */
 const declared = c ? c.sections.filter((k) => k !== 'gallery') : []
 const rangeAt = declared.indexOf('range')

@@ -15,7 +15,7 @@ faqs:
   - q: What is the difference between caliper and flute?
     a: Caliper is the thickness of a single sheet of paperboard, quoted in thousandths of an inch. Flute is the corrugated wave sandwiched between two liners, quoted as a letter grade. Caliper describes solid board; flute describes corrugated construction.
   - q: What is makeready and why am I charged for it?
-    a: It is the press setup before a run — mounting plates, bringing colour to target, running waste sheets until the job is correct. It takes the same time whether the run is 500 or 50,000, which is why it dominates the unit price on short runs and disappears at volume.
+    a: It is the press setup before a run — mounting plates, bringing color to target, running waste sheets until the job is correct. It takes the same time whether the run is 500 or 50,000, which is why it dominates the unit price on short runs and disappears at volume.
   - q: What does dimensional weight mean for my costs?
     a: Carriers bill on whichever is greater, actual weight or volumetric weight calculated from the box dimensions. A large light parcel is charged as though it were heavy, which is why right-sizing a box saves money even when nothing about the contents changes.
   - q: Who owns the tooling once it is made?
@@ -23,13 +23,13 @@ faqs:
   - q: What is the difference between ECT and burst strength?
     a: ECT measures compression strength on the board's edge, which is what determines stacking performance on a pallet. Burst strength measures resistance to puncture. ECT is the more relevant figure for shipping, and it has largely superseded burst for that purpose.
   - q: What does grammage mean and when is it used?
-    a: Paper weight in grams per square metre. It is used for bags, wraps and papers, where caliper is not a useful measure. Board is quoted in points or millimetres of thickness instead, so seeing gsm tells you roughly what family of material you are looking at.
+    a: Paper weight in grams per square meter. It is used for bags, wraps and papers, where caliper is not a useful measure. Board is quoted in points or millimetres of thickness instead, so seeing gsm tells you roughly what family of material you are looking at.
   - q: What is migration in a packaging context?
     a: The transfer of a substance from the packaging into the product — ink, adhesive components or fragrance oil moving through the material. It matters most for food contact and for fragranced products, and it is why a coated inner face gets specified.
   - q: What is a price break?
     a: A quantity threshold where the unit price steps down, because fixed setup cost spreads across more units. The practical caution is that ordering up to a break is only a saving if you will use the stock — obsolete inventory was never cheaper.
-  - q: What is the difference between a spot colour and a process build?
-    a: A spot colour is a named premixed ink laid down directly. A process build approximates that colour from the four process inks. Spot is more consistent run to run and costs an extra plate; process is included in what you are already printing.
+  - q: What is the difference between a spot color and a process build?
+    a: A spot color is a named premixed ink laid down directly. A process build approximates that color from the four process inks. Spot is more consistent run to run and costs an extra plate; process is included in what you are already printing.
 ---
 
 Packaging quotes use vocabulary that is rarely explained. These are the terms that appear most often, defined the way they are actually used.
@@ -42,13 +42,13 @@ Packaging quotes use vocabulary that is rarely explained. These are the terms th
 
 **SBS** — solid bleached sulphate. White coated virgin paperboard with the best print surface.
 
-**CCNB** — clay-coated news back. Recycled paperboard with a coated printing surface and grey reverse.
+**CCNB** — clay-coated news back. Recycled paperboard with a coated printing surface and gray reverse.
 
-**Greyboard** — thick rigid board used for non-collapsing boxes, wrapped in printed paper.
+**Grayboard** — thick rigid board used for non-collapsing boxes, wrapped in printed paper.
 
-**Kraft** — unbleached paper or board. Brown, absorbs moisture, shifts printed colour warmer.
+**Kraft** — unbleached paper or board. Brown, absorbs moisture, shifts printed color warmer.
 
-**Moulded pulp** — recycled paper slurry pressed into a shape, used for protective components.
+**Molded pulp** — recycled paper slurry pressed into a shape, used for protective components.
 
 **Mono-material** — packaging built from a single polymer family so it can be recycled as one stream.
 
@@ -62,15 +62,15 @@ Packaging quotes use vocabulary that is rarely explained. These are the terms th
 
 **Score** — a pressed crease that lets board fold cleanly without cracking.
 
-**Trapping** — slight overlap between adjacent colours to hide registration variance.
+**Trapping** — slight overlap between adjacent colors to hide registration variance.
 
 **Rich black** — a black built from multiple inks rather than 100% K alone, used on large solids.
 
-**Registration** — the alignment of separate colour plates or finishing passes.
+**Registration** — the alignment of separate color plates or finishing passes.
 
 ## Printing
 
-**Offset lithography** — plate-based printing via a rubber blanket. Best colour accuracy on flat board.
+**Offset lithography** — plate-based printing via a rubber blanket. Best color accuracy on flat board.
 
 **Flexography** — plate-based printing used on corrugated, film and bags.
 
@@ -80,7 +80,7 @@ Packaging quotes use vocabulary that is rarely explained. These are the terms th
 
 **Makeready** — press setup before a run begins. A fixed cost regardless of quantity.
 
-**Spot colour** — a named premixed ink rather than a four-colour build.
+**Spot color** — a named premixed ink rather than a four-colour build.
 
 ## Finishing
 
@@ -118,7 +118,7 @@ Terms that appear on your own quote and are not listed here are worth asking abo
 
 **Compression test** — a loaded box compressed until it fails, used to predict how high a pallet can safely stack.
 
-**Grammage** — paper weight in grams per square metre. Used for bags, wraps and papers where caliper is not the useful measure.
+**Grammage** — paper weight in grams per square meter. Used for bags, wraps and papers where caliper is not the useful measure.
 
 **Wet strength** — a board's ability to retain integrity when damp, which is a specified property rather than an inherent one.
 
@@ -140,12 +140,12 @@ Terms that appear on your own quote and are not listed here are worth asking abo
 
 **Emboss vs deboss.** Embossing raises the board toward the viewer; debossing presses it away. Both need a die and both need artwork designed for relief.
 
-**Rigid box vs folding carton.** A rigid box is hand-assembled from wrapped greyboard and ships assembled. A folding carton is die-cut, glued along one seam and ships flat. The freight difference is substantial.
+**Rigid box vs folding carton.** A rigid box is hand-assembled from wrapped grayboard and ships assembled. A folding carton is die-cut, glued along one seam and ships flat. The freight difference is substantial.
 
 **Gusset.** On a bag, the depth when opened out — the third dimension after width and height. On a pouch, the fold at the base that lets it stand.
 
 ## Reading a quote
 
-A complete quote names the board grade and caliper, the structure, the print method and colour count, every finishing pass, the tooling position, the quantity band, the lead time and the freight basis.
+A complete quote names the board grade and caliper, the structure, the print method and color count, every finishing pass, the tooling position, the quantity band, the lead time and the freight basis.
 
 If any of those is missing, the number is not comparable with another quote, and the gap is usually where the difference between two prices actually sits.

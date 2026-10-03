@@ -3,7 +3,7 @@ import type { ProductFactsMap } from './types'
 /**
  * Custom Stickers.
  *
- * The category splits three ways — packaging seals, product labelling and
+ * The category splits three ways — packaging seals, product labeling and
  * merchandise — and each wants a different stock, adhesive and finish. What
  * separates one sticker from another is almost always the surface it lands
  * on and how long it has to stay there.
@@ -29,7 +29,7 @@ export const stickerFacts: ProductFactsMap = {
     context: 'vehicles, equipment, outdoor signage and anything that has to survive weather',
     detail: 'On curved surfaces, rounded corners and a smaller footprint hold far better than a large square shape.',
     spec: 'Cast or calendered vinyl with a UV laminate. Cast conforms to curves better; calendered costs less and suits flat surfaces.',
-    press: 'UV laminate is what stops fading. Without it a vinyl sticker outdoors loses colour within a season.',
+    press: 'UV laminate is what stops fading. Without it a vinyl sticker outdoors loses color within a season.',
     pairs: ['custom-die-cut-stickers', 'helmet-stickers', 'boat-registration-number-stickers'],
     ask: { q: 'Why do my vinyl stickers lift at the corners?', a: 'Usually a stiff film on a curved surface. Cast vinyl conforms far better than calendered, and rounding the corners removes the point where lifting always starts.' },
   },
@@ -48,14 +48,14 @@ export const stickerFacts: ProductFactsMap = {
   'clear-stickers': {
     holds: 'artwork intended to appear as if printed directly onto the surface beneath',
     sizeNote: 'Any size, though the illusion works best when the sticker is small enough that edges are not obvious.',
-    failure: 'Colours look washed out because there is no white behind them, so the surface colour shows through the ink.',
-    buyerNote: 'Artwork is approved on a white screen and then printed on clear film, where every colour becomes semi-transparent.',
+    failure: 'Colors look washed out because there is no white behind them, so the surface color shows through the ink.',
+    buyerNote: 'Artwork is approved on a white screen and then printed on clear film, where every color becomes semi-transparent.',
     context: 'glass, packaging windows and surfaces where a visible sticker edge would spoil the effect',
-    detail: 'A white underbase behind the artwork restores colour accuracy but also makes the sticker visible. You are choosing between them.',
-    spec: 'Clear polyester or vinyl, with a selective white underbase only where colour accuracy matters.',
-    press: 'Selective underbase is the technique — opaque where you need colour, clear where you want the surface to show.',
+    detail: 'A white underbase behind the artwork restores color accuracy but also makes the sticker visible. You are choosing between them.',
+    spec: 'Clear polyester or vinyl, with a selective white underbase only where color accuracy matters.',
+    press: 'Selective underbase is the technique — opaque where you need color, clear where you want the surface to show.',
     pairs: ['crystal-stickers', 'custom-die-cut-stickers', 'box-seal-stickers'],
-    ask: { q: 'Why do clear stickers look faded?', a: 'Because there is no white behind the ink, so the surface colour shows through. A white underbase fixes the colour but makes the sticker edge visible. We can apply it selectively — opaque where colour matters, clear elsewhere.' },
+    ask: { q: 'Why do clear stickers look faded?', a: 'Because there is no white behind the ink, so the surface color shows through. A white underbase fixes the color but makes the sticker edge visible. We can apply it selectively — opaque where color matters, clear elsewhere.' },
   },
   'crystal-stickers': {
     holds: 'artwork under a raised domed resin layer, giving depth and a tactile finish',
@@ -87,7 +87,7 @@ export const stickerFacts: ProductFactsMap = {
     context: 'window graphics, vehicle lettering and any multi-element design that must align precisely',
     detail: 'Application is a genuine skill with this format. Supply instructions, and for large graphics recommend professional fitting.',
     spec: 'Cut vinyl lettering or shapes with an application tape over the top and a backing beneath.',
-    press: 'Usually cut from coloured vinyl rather than printed, which gives cleaner edges and better longevity than printing and cutting.',
+    press: 'Usually cut from colored vinyl rather than printed, which gives cleaner edges and better longevity than printing and cutting.',
     pairs: ['die-cut-vinyl-stickers', 'boat-registration-number-stickers', 'custom-graffiti-stickers'],
     ask: { q: 'Are transfer stickers hard to apply?', a: 'Harder than a normal sticker, yes. The whole design lifts on an application tape and has to be positioned in one go. For anything large or on a vehicle, professional fitting is worth the cost.' },
   },
@@ -139,18 +139,18 @@ export const stickerFacts: ProductFactsMap = {
     ask: { q: 'Can I order stickers and labels together?', a: 'Yes, and on digital it costs little more than one design because there is no plate charge per artwork. But each item still needs its own stock and adhesive — combining the order saves setup, not specification.' },
   },
   'custom-ink-stickers': {
-    holds: 'artwork where ink coverage and colour fidelity matter more than any special finish',
+    holds: 'artwork where ink coverage and color fidelity matter more than any special finish',
     sizeNote: 'Any format; the print quality rather than the shape defines this.',
-    failure: 'Colour shift between the proof and the production run, particularly on saturated brand colours.',
-    buyerNote: 'Colour is approved on a screen or an inkjet proof, neither of which predicts how a press will reproduce it.',
-    context: 'brand-critical applications where the sticker carries a recognisable colour',
-    detail: 'For a critical brand colour, approve a press-printed sample rather than a digital proof. They are not the same thing.',
-    spec: 'Coated paper or vinyl chosen for ink holdout, which affects colour density more than the ink itself does.',
-    press: 'Offset or a spot ink for exact colour matching; digital where the design changes often and tolerance is acceptable.',
+    failure: 'Color shift between the proof and the production run, particularly on saturated brand colors.',
+    buyerNote: 'Color is approved on a screen or an inkjet proof, neither of which predicts how a press will reproduce it.',
+    context: 'brand-critical applications where the sticker carries a recognizable color',
+    detail: 'For a critical brand color, approve a press-printed sample rather than a digital proof. They are not the same thing.',
+    spec: 'Coated paper or vinyl chosen for ink holdout, which affects color density more than the ink itself does.',
+    press: 'Offset or a spot ink for exact color matching; digital where the design changes often and tolerance is acceptable.',
     pairs: ['stickers-and-labels', 'custom-die-cut-stickers', 'thank-you-stickers'],
   },
   'bakery-stickers': {
-    holds: 'labelling on bakery packaging — bags, boxes and wraps, often applied to warm packs',
+    holds: 'labeling on bakery packaging — bags, boxes and wraps, often applied to warm packs',
     sizeNote: 'Small round or rectangular, typically 1.5 to 3 in.',
     failure: 'The adhesive fails on a warm greasy bag surface, and stickers are found loose in the delivery box.',
     buyerNote: 'Stickers are specified for a paper surface without accounting for grease and warmth, which defeat a standard adhesive.',
@@ -162,7 +162,7 @@ export const stickerFacts: ProductFactsMap = {
     ask: { q: 'Why do stickers fall off my bakery bags?', a: 'Warmth and grease. A standard adhesive does not key to a warm greaseproof surface. It needs an adhesive rated for it, and applying after the pack has cooled slightly also helps.' },
   },
   'food-stickers': {
-    holds: 'labelling on food packaging, often carrying required information as well as branding',
+    holds: 'labeling on food packaging, often carrying required information as well as branding',
     sizeNote: 'Sized to the information required rather than to the design, which is usually the constraint.',
     failure: 'Required allergen and date information is set too small to be legible, because the design was laid out first.',
     buyerNote: 'The brand mark is placed first and the required copy squeezed around it, which frequently breaks legibility rules.',
@@ -173,7 +173,7 @@ export const stickerFacts: ProductFactsMap = {
     pairs: ['bakery-stickers', 'cake-stickers', 'box-seal-stickers'],
   },
   'cake-stickers': {
-    holds: 'decoration or labelling on cake boxes and boards, often applied to a coated surface',
+    holds: 'decoration or labeling on cake boxes and boards, often applied to a coated surface',
     sizeNote: 'Usually 2 to 3 in, sized to a box lid or a board edge.',
     failure: 'The adhesive will not key to a laminated cake box lid, so the sticker lifts at the edges within hours.',
     buyerNote: 'A standard paper sticker is used on a glossy laminated box, which is one of the harder surfaces to adhere to.',
@@ -184,7 +184,7 @@ export const stickerFacts: ProductFactsMap = {
     pairs: ['bakery-stickers', 'christmas-cookie-stickers', 'food-stickers'],
   },
   'christmas-cookie-stickers': {
-    holds: 'seasonal labelling on baked goods packaging during a short, intense selling period',
+    holds: 'seasonal labeling on baked goods packaging during a short, intense selling period',
     sizeNote: 'Small, typically 1.5 to 2.5 in, applied to bags and boxes by hand at volume.',
     failure: 'Hand application slows down at exactly the busiest time of year, because the stickers are supplied on sheets.',
     buyerNote: 'Sheets are ordered for a small quantity and then used through a peak where rolls would be far faster.',
@@ -220,8 +220,8 @@ export const stickerFacts: ProductFactsMap = {
   'motivational-stickers-sheets': {
     holds: 'a set of related designs on one sheet, sold or used together',
     sizeNote: 'A4 or A5 sheets holding anywhere from six to thirty individual stickers.',
-    failure: 'Stickers are packed too close together on the sheet and cannot be lifted without catching the neighbouring one.',
-    buyerNote: 'Sheet layout is designed to maximise the number of stickers, which makes them impractical to peel.',
+    failure: 'Stickers are packed too close together on the sheet and cannot be lifted without catching the neighboring one.',
+    buyerNote: 'Sheet layout is designed to maximize the number of stickers, which makes them impractical to peel.',
     context: 'stationery and planner retail where the sheet is bought as a set',
     detail: 'Leave enough gap between kiss-cut stickers for a fingernail. Packing them tightly makes the set frustrating to use.',
     spec: 'Kiss-cut on a shared backing so the set stays intact until used.',
@@ -237,7 +237,7 @@ export const stickerFacts: ProductFactsMap = {
     context: 'merchandise and personal decoration on bottles that are handled and washed constantly',
     detail: 'Curved surfaces plus moisture is the hardest combination for a sticker. Cast vinyl and rounded corners are both necessary.',
     spec: 'Cast vinyl with a waterproof laminate and a high-tack adhesive rated for repeated moisture exposure.',
-    press: 'Colours must be UV-stable — these live in daylight and fade quickly on an unlaminated stock.',
+    press: 'Colors must be UV-stable — these live in daylight and fade quickly on an unlaminated stock.',
     pairs: ['die-cut-vinyl-stickers', 'helmet-stickers', 'custom-die-cut-stickers'],
     ask: { q: 'Will stickers survive on a water bottle?', a: 'With cast vinyl, a waterproof laminate and rounded corners, yes. Standard calendered vinyl on a compound curve lifts within days, and condensation from a cold bottle accelerates it.' },
   },
@@ -261,7 +261,7 @@ export const stickerFacts: ProductFactsMap = {
     context: 'vessel registration where the marking is a legal requirement checked by an authority',
     detail: 'Confirm the required character height and spacing for your jurisdiction before we cut. It is not a design decision.',
     spec: 'Marine-grade cast vinyl with a UV laminate, rated for constant water and salt exposure.',
-    press: 'Usually cut from coloured vinyl rather than printed, which lasts considerably longer in a marine environment.',
+    press: 'Usually cut from colored vinyl rather than printed, which lasts considerably longer in a marine environment.',
     pairs: ['transfer-stickers', 'die-cut-vinyl-stickers', 'custom-oil-change-stickers'],
     ask: { q: 'What size do boat registration numbers need to be?', a: 'It is set by your jurisdiction, not by us — usually a minimum character height with specified spacing. Confirm the requirement before ordering, because a set that fails inspection has to be redone entirely.' },
   },
@@ -270,7 +270,7 @@ export const stickerFacts: ProductFactsMap = {
     sizeNote: 'Small, typically 2 × 2 in, sized to a windscreen corner without obstructing vision.',
     failure: 'The surface will not take pen, so the service details smudge or never write cleanly in the first place.',
     buyerNote: 'A glossy laminate is specified for durability, and then nobody can write on it.',
-    context: 'garages and service centres recording the next service date inside a customer vehicle',
+    context: 'garages and service centers recording the next service date inside a customer vehicle',
     detail: 'This is one of the few stickers that must accept handwriting. A writable matt topcoat is the specification.',
     spec: 'A static-cling or low-tack vinyl with a matt writable surface, so it removes cleanly at the next service.',
     press: 'Leave clear ruled areas for the written fields. A design covering the whole face defeats the purpose.',

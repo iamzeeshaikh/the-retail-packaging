@@ -15,7 +15,7 @@ faqs:
   - q: How do I stop the regulatory panel ruining the design?
     a: Lay it out first, at final length and legal minimum size, then design the front into what is left. Fitting required copy around a finished design is what forces either an uncomfortable type size or a larger carton than the product needs.
   - q: What is the most common design-stage mistake?
-    a: Approving colour from a screen. A monitor is backlit and a carton is not, and the substrate changes everything — the same file on coated board, uncoated and kraft produces three visibly different results.
+    a: Approving color from a screen. A monitor is backlit and a carton is not, and the substrate changes everything — the same file on coated board, uncoated and kraft produces three visibly different results.
   - q: How small can text go on packaging?
     a: Above 6pt for positive text and above 8pt for reversed as a working floor. Reversed type fills in more readily because ink spreads into the knocked-out area, and the effect is worse on absorbent and fluted substrates.
   - q: Should I design the interior of the pack?
@@ -23,11 +23,11 @@ faqs:
   - q: How do I check a design will work on shelf?
     a: Print it at actual size, stand three feet away and look at it beside its competitors rather than on its own. Most designs that fail on shelf fail because they were only ever assessed at 200 mm on a screen.
   - q: Do I need to design differently for a window?
-    a: Yes. Position the aperture over the product rather than centring it for visual balance, and frame it — an unframed window makes contents look sparse. It also removes panel strength, so it interacts with the structure.
-  - q: What should be finalised before artwork is released?
+    a: Yes. Position the aperture over the product rather than centering it for visual balance, and frame it — an unframed window makes contents look sparse. It also removes panel strength, so it interacts with the structure.
+  - q: What should be finalized before artwork is released?
     a: Substrate, print method and finishes, because all three change how the design reproduces. Foil, emboss and spot UV in particular need artwork prepared for them rather than applied to a finished flat design.
   - q: Who should approve the final proof?
-    a: Someone authorised to commit the spend, checking against a written specification rather than from memory, with the approval recorded. Verbal sign-off from whoever is available is how the wrong version reaches press.
+    a: Someone authorized to commit the spend, checking against a written specification rather than from memory, with the approval recorded. Verbal sign-off from whoever is available is how the wrong version reaches press.
 ---
 
 Packaging artwork gets rejected at prepress for the same handful of reasons, year after year. Almost none of them are design failures. They are process failures — a step skipped, a measurement taken from the wrong place, a panel laid out before anyone checked what legally had to fit on it.
@@ -36,7 +36,7 @@ This checklist follows the order production actually needs, which is not the ord
 
 ## Confirm the structure before opening a design file
 
-Nothing in artwork can be finalised until the dieline exists, because the dieline defines where every panel edge, fold and glue tab sits.
+Nothing in artwork can be finalized until the dieline exists, because the dieline defines where every panel edge, fold and glue tab sits.
 
 Check that the product has been measured at its widest point in all three dimensions, and measured in the state it will be packed in. Confirm the weight, because that determines board grade, and board grade slightly changes the internal dimensions of a folded carton.
 
@@ -48,7 +48,7 @@ Design directly on the dieline template your supplier provides. Import it as a l
 
 The dieline carries information a plain rectangle does not: fold lines, glue tabs, tuck flaps, the direction each panel faces when assembled, and which areas are hidden after gluing. Artwork built on a guessed rectangle almost always places something important across a crease or under a glue lap.
 
-Keep the dieline layer out of the printed output. It should be visible for positioning and excluded from the exported print file, usually by setting it to a non-printing spot colour.
+Keep the dieline layer out of the printed output. It should be visible for positioning and excluded from the exported print file, usually by setting it to a non-printing spot color.
 
 ## Set up bleed, safety and trim correctly
 
@@ -68,13 +68,13 @@ Work out exactly what the law requires on your pack before you position anything
 
 Set that content at its real, final length and at the minimum legible size, then design around what remains. Designing first and squeezing the panel in afterwards produces packs where the ingredient text is unreadably small, which is both a compliance risk and a bad customer experience.
 
-## Check colour is defined the way it will print
+## Check color is defined the way it will print
 
-Convert everything to CMYK unless you are printing spot colours, in which case define those as named spot swatches rather than CMYK approximations.
+Convert everything to CMYK unless you are printing spot colors, in which case define those as named spot swatches rather than CMYK approximations.
 
-Rich blacks need a build, not 100% K alone, which prints as a washed grey on large areas. A common build is 60C 40M 40Y 100K, though your printer may specify their own. Small text should stay 100% K only, because a four-colour build on small type shows registration fringing.
+Rich blacks need a build, not 100% K alone, which prints as a washed gray on large areas. A common build is 60C 40M 40Y 100K, though your printer may specify their own. Small text should stay 100% K only, because a four-colour build on small type shows registration fringing.
 
-Be realistic about colour on uncoated stock. If you are printing on kraft or uncoated board, colours will appear duller and warmer than they do on screen or on a coated proof. Ask for a proof on the actual substrate if colour accuracy matters.
+Be realistic about color on uncoated stock. If you are printing on kraft or uncoated board, colors will appear duller and warmer than they do on screen or on a coated proof. Ask for a proof on the actual substrate if color accuracy matters.
 
 ## Verify image resolution and linked assets
 
@@ -88,7 +88,7 @@ Vector artwork should stay vector. Logos rasterised at some point in their histo
 
 Barcodes fail more often than people expect, usually for three reasons.
 
-The barcode is placed across a fold or a curved surface, so the scanner cannot read it in one plane. It is scaled below the minimum size for its symbology. Or it is printed in a colour combination with insufficient contrast — red on white does not scan reliably, and light bars on a dark background do not scan at all without inversion support.
+The barcode is placed across a fold or a curved surface, so the scanner cannot read it in one plane. It is scaled below the minimum size for its symbology. Or it is printed in a color combination with insufficient contrast — red on white does not scan reliably, and light bars on a dark background do not scan at all without inversion support.
 
 Place barcodes on a flat panel, keep them at or above 80% of nominal size, and print them dark on light with a clear quiet zone around them.
 
@@ -101,22 +101,22 @@ Before sending, work through these:
 - Bleed applied on every trim edge
 - Critical content inside the safety margin
 - Dieline on a separate non-printing layer
-- Spot colours named consistently, no stray unused swatches
+- Spot colors named consistently, no stray unused swatches
 - Overprint settings checked, especially on white objects
 - File exported as a print-ready PDF with the correct preset
 - Total ink coverage within the printer's limit, usually around 300%
 
 ## Approve a proof against the real thing
 
-A digital proof confirms content and layout. It does not reliably confirm colour, because your screen and the press are different devices.
+A digital proof confirms content and layout. It does not reliably confirm color, because your screen and the press are different devices.
 
-If colour is critical, ask for a hard proof on the actual substrate. If structure is critical, ask for a plain unprinted sample and put the real product inside it. Do both if the run is large enough to justify it — the cost of a sample is trivial against the cost of reprinting several thousand units.
+If color is critical, ask for a hard proof on the actual substrate. If structure is critical, ask for a plain unprinted sample and put the real product inside it. Do both if the run is large enough to justify it — the cost of a sample is trivial against the cost of reprinting several thousand units.
 
 Check the proof against a printed list of what you asked for, not against your memory of it. Approvals given from memory are how the wrong version of a panel reaches production.
 
 ## Keep the files for reorders
 
-Once a run completes, archive the approved print file, the dieline, the board specification, the finish list and the colour targets together.
+Once a run completes, archive the approved print file, the dieline, the board specification, the finish list and the color targets together.
 
 Reorders are far cheaper and faster when nothing has to be rebuilt, and consistency between batches is one of the things retail buyers notice. Suppliers should hold this on file as well, but a brand that keeps its own copy is never dependent on that.
 

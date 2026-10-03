@@ -83,7 +83,7 @@ export const wellnessPharmaFacts: ProductFactsMap = {
     failure: 'The sterile barrier is compromised in transit and there is no visible external damage to explain it, which means the whole consignment is suspect.',
     buyerNote: 'Sterile and non-sterile devices are briefed the same way. They are entirely different packaging problems and only one of them is a normal carton job.',
     context: 'clinical supply and medical distribution, where a pack that cannot be shown to be intact cannot be used',
-    detail: 'If the device is supplied sterile, the barrier system falls under ISO 11607 and needs validated materials and a validated sealing process. Say so at the enquiry — it changes who should make it, not just how.',
+    detail: 'If the device is supplied sterile, the barrier system falls under ISO 11607 and needs validated materials and a validated sealing process. Say so at the inquiry — it changes who should make it, not just how.',
     spec: 'For non-sterile devices, folding carton or E flute cut to the tray. For sterile barrier systems we will tell you honestly if the work belongs with a validated medical converter instead.',
     press: 'UDI marking, lot and expiry have to be legible and machine-readable after any lamination. Check the scan on the finished stock, not on a proof.',
     pairs: ['medicine-boxes', 'electronics-boxes'],
@@ -122,7 +122,7 @@ export const wellnessPharmaFacts: ProductFactsMap = {
     pairs: ['vitamin-boxes', 'cbd-gummies-boxes', 'medicine-boxes'],
     ask: {
       q: 'Will a carton keep dissolvable tablets dry?',
-      a: 'No. Board is not a moisture barrier at any weight or coating. Dissolvables need a foil blister or a foil-laminate sachet, and the carton sits around that — protecting it from crushing and carrying the labelling.',
+      a: 'No. Board is not a moisture barrier at any weight or coating. Dissolvables need a foil blister or a foil-laminate sachet, and the carton sits around that — protecting it from crushing and carrying the labeling.',
     },
   },
   'vitamin-boxes': {
@@ -149,7 +149,7 @@ export const wellnessPharmaFacts: ProductFactsMap = {
     failure: 'The bottle rattles inside an oversized carton and chips at the neck, which is the thinnest part of the glass.',
     buyerNote: 'One carton is ordered across a range that runs 10 ml to 30 ml, so most of the range is packed in a box that is too large for it.',
     context: 'aromatherapy retail and multi-bottle sets, where a range of sizes shares one shelf and one brand system',
-    detail: 'The coloured glass is doing the light protection, not the carton. What the carton has to do is stop the neck striking anything.',
+    detail: 'The colored glass is doing the light protection, not the carton. What the carton has to do is stop the neck striking anything.',
     spec: '16pt SBS with a fitted collar, or a partitioned carton where several bottles ship together.',
     press: 'Botanical name, dilution guidance and safety copy are expected in this category and take more room than the brand usually anticipates.',
     pairs: ['reed-diffuser-boxes', 'home-fragrance-boxes', 'cbd-oil-boxes'],
@@ -170,13 +170,13 @@ export const wellnessPharmaFacts: ProductFactsMap = {
     pairs: ['reed-diffuser-boxes', 'essential-oil-boxes', 'presentation-boxes'],
     ask: {
       q: 'How do I keep a fragrance range looking consistent?',
-      a: 'Lock the board grade, print method and finish across the whole range at the first order, then vary only dimensions. Ranges specified product by product drift, because each one gets optimised for its own budget on the day.',
+      a: 'Lock the board grade, print method and finish across the whole range at the first order, then vary only dimensions. Ranges specified product by product drift, because each one gets optimized for its own budget on the day.',
     },
   },
   'reed-diffuser-boxes': {
     holds: 'a filled glass bottle and a bundle of reeds substantially longer than the bottle is tall',
     sizeNote: 'Governed by the reeds, not the bottle — reeds run 10 to 12 in, so the carton is usually 12 in tall for a bottle around 5 in.',
-    failure: 'The reeds puncture the carton corner in transit, or the bottle leaks because it travelled on its collar rather than on a sealed transit cap.',
+    failure: 'The reeds puncture the carton corner in transit, or the bottle leaks because it traveled on its collar rather than on a sealed transit cap.',
     buyerNote: 'The carton is sized to the bottle and the reeds are treated as an accessory, when they are the component that sets the dimensions.',
     context: 'home fragrance retail and gifting, where the pack ships filled with liquid and cannot leak into a customer\'s order',
     detail: 'Two things decide this format: a reed compartment separate from the bottle, and a sealed transit cap rather than the open collar. Ship on the collar and it will leak.',

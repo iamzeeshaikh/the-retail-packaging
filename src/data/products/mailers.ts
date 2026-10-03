@@ -3,8 +3,8 @@ import type { ProductFactsMap } from './types'
 /**
  * Custom Mailers.
  *
- * A range where several products differ only by a size or a colour, so the
- * facts have to be about what that specific size or colour is bought for.
+ * A range where several products differ only by a size or a color, so the
+ * facts have to be about what that specific size or color is bought for.
  * A 9x12 poly mailer and a 19x24 are genuinely different purchases.
  */
 export const mailerFacts: ProductFactsMap = {
@@ -40,12 +40,12 @@ export const mailerFacts: ProductFactsMap = {
     context: 'wholesale despatch and pallet freight where boxes are stacked several high for days',
     detail: 'Stack height and how long the stack stands matter more than contents weight when choosing a flute.',
     spec: 'Single-wall B or C flute for most loads; double-wall where stack height goes past about five high or the contents exceed roughly 20 kg.',
-    press: 'Most shipping boxes do not need print. One or two flexo colours for identification usually beats a full-coverage design nobody sees.',
+    press: 'Most shipping boxes do not need print. One or two flexo colors for identification usually beats a full-coverage design nobody sees.',
     pairs: ['e-commerce-boxes', 'mailer-boxes', 'padded-mailers'],
     ask: { q: 'What flute grade do I need?', a: 'Send the stack height and the weight sitting above the bottom box, not just the contents weight. Compression failure comes from the stack, and the same flute can be right or badly wrong depending on it.' },
   },
   'bubble-mailers': {
-    holds: 'small items that need cushioning but no crush resistance — jewellery, cosmetics, small electronics',
+    holds: 'small items that need cushioning but no crush resistance — jewelry, cosmetics, small electronics',
     sizeNote: 'Standard sizes run from 4 × 8 in through 12.5 × 19 in, measured as the usable interior rather than the outer.',
     failure: 'The bubble layer compresses permanently under a stack and offers no protection by the time the parcel arrives.',
     buyerNote: 'Buyers treat a bubble mailer as protection against crushing. It is not — it absorbs shock and abrasion, and a stacked pallet will flatten it.',
@@ -58,13 +58,13 @@ export const mailerFacts: ProductFactsMap = {
   },
   'branded-bubble-mailers': {
     holds: 'the same small items as a plain bubble mailer, but for a brand that treats despatch as part of the experience',
-    sizeNote: 'The same size ladder as plain bubble mailers, though print economics favour standardising on one or two.',
+    sizeNote: 'The same size ladder as plain bubble mailers, though print economics favor standardizing on one or two.',
     failure: 'Print rubs off the outer film in transit because the surface was not chosen for handling abrasion.',
     buyerNote: 'Brands print full coverage on a mailer that will be dragged through sorting machinery, and the design arrives scuffed.',
     context: 'direct-to-consumer brands where the parcel is the only physical touchpoint and cost still matters',
     detail: 'Ink adhesion on a poly outer is the whole question. A kraft outer holds print far better if the parcel does not need moisture resistance.',
     spec: 'Kraft outer where print quality leads, poly outer where moisture resistance leads. You are choosing between them, not getting both.',
-    press: 'Solid blocks of colour show scuffing far more than a pattern does. On a mailer that goes through sorting machinery, a pattern is more forgiving.',
+    press: 'Solid blocks of color show scuffing far more than a pattern does. On a mailer that goes through sorting machinery, a pattern is more forgiving.',
     pairs: ['bubble-mailers', 'personalised-poly-mailers', 'custom-poly-mailers'],
     ask: { q: 'Will printing rub off a bubble mailer?', a: 'On a poly outer it can, because sorting machinery abrades the surface. A kraft outer holds print much better. If you need both moisture resistance and print quality, expect a compromise on one.' },
   },
@@ -72,7 +72,7 @@ export const mailerFacts: ProductFactsMap = {
     holds: 'the same contents as a branded mailer, for operations where the parcel is a cost line rather than a brand asset',
     sizeNote: 'Standard sizes from 4 × 8 in to 12.5 × 19 in, usually bought across two or three sizes.',
     failure: 'Nothing distinctive fails here — the risk is buying a size larger than needed and paying for it on every parcel.',
-    buyerNote: 'Because plain mailers are cheap per unit, operations stop optimising the size, and the freight cost quietly exceeds the saving.',
+    buyerNote: 'Because plain mailers are cheap per unit, operations stop optimizing the size, and the freight cost quietly exceeds the saving.',
     context: 'third-party fulfilment and wholesale despatch where one stock serves many clients',
     detail: 'With no print to amortise, the only lever left is size. That makes right-sizing proportionally more valuable here than on a printed mailer.',
     spec: 'A standard kraft or white poly outer with a sealed bubble layer. There is little to specify beyond size and outer material.',
@@ -123,7 +123,7 @@ export const mailerFacts: ProductFactsMap = {
     context: 'apparel and soft-goods despatch where low weight and low cost decide the format',
     detail: 'Size to the folded item including its depth, not to the item laid flat. Depth is what over-fills the seal.',
     spec: 'Co-extruded polyethylene, typically 2.5 to 3 mil. Recycled-content and mono-material options are available where recyclability is claimed.',
-    press: 'Poly takes flexo well but has a wider colour tolerance than board. For a critical brand colour, expect a slight shift from your printed materials.',
+    press: 'Poly takes flexo well but has a wider color tolerance than board. For a critical brand color, expect a slight shift from your printed materials.',
     pairs: ['9x12-poly-mailers', '10x13-poly-mailers-bags', 'personalised-poly-mailers'],
     ask: { q: 'What size poly mailer do I need?', a: 'Size to the folded item including its depth, then add a little slack. Sizing to the item laid flat is the most common error and produces a mailer that will not seal once filled.' },
   },
@@ -131,7 +131,7 @@ export const mailerFacts: ProductFactsMap = {
     holds: 'a single folded garment — a t-shirt, a pair of leggings, a light knit',
     sizeNote: '9 × 12 in is the single most common apparel size, comfortable for one folded garment and tight for two.',
     failure: 'Two garments in a 9 × 12 strains the seal, and the failure happens in the carrier network rather than at the packing bench.',
-    buyerNote: 'Operations standardise on 9 × 12 for everything and then force two-item orders into it rather than stepping up a size.',
+    buyerNote: 'Operations standardize on 9 × 12 for everything and then force two-item orders into it rather than stepping up a size.',
     context: 'apparel fulfilment where single-garment orders are the majority of despatch',
     detail: 'This size is right for one garment. If a meaningful share of orders is two items, a second larger size costs less than the failures.',
     spec: '2.5 mil co-extruded polyethylene is standard at this size; 3 mil where garments have zips or hardware that could catch.',
@@ -165,11 +165,11 @@ export const mailerFacts: ProductFactsMap = {
   'black-poly-mailers': {
     holds: 'the same soft goods as any poly mailer, where opacity is the reason for the choice',
     sizeNote: 'Available across the standard poly size ladder from 6 × 9 in upward.',
-    failure: 'Black shows scuffing and creasing far more than a light colour, so the parcel looks handled even when it is undamaged.',
+    failure: 'Black shows scuffing and creasing far more than a light color, so the parcel looks handled even when it is undamaged.',
     buyerNote: 'Black is chosen for a premium look and then arrives scuffed, which reads worse than a plain white mailer would have.',
     context: 'brands wanting discretion or a premium look on the doorstep',
     detail: 'Opacity is genuine — black poly hides contents completely, which matters for some categories. The trade is that it shows handling.',
-    spec: 'Co-extruded polyethylene with a black outer and usually a grey or white inner, which keeps opacity without doubling the pigment.',
+    spec: 'Co-extruded polyethylene with a black outer and usually a gray or white inner, which keeps opacity without doubling the pigment.',
     press: 'White or metallic ink on black reads strongly, but coverage is limited — fine detail in light ink on a dark ground tends to fill in.',
     pairs: ['custom-poly-mailers', '9x12-poly-mailers', 'personalised-poly-mailers'],
   },
@@ -179,11 +179,11 @@ export const mailerFacts: ProductFactsMap = {
     failure: 'Variable data is placed where the mailer creases or where the seal flap folds over it, making it unreadable on arrival.',
     buyerNote: 'The variable area is positioned for the flat artwork rather than for the mailer as it is actually filled and sealed.',
     context: 'campaigns, subscription boxes and seeding waves where each parcel carries something different',
-    detail: 'Reserve the variable area away from the seal flap and the natural fold, or the personalisation is lost exactly where it matters.',
+    detail: 'Reserve the variable area away from the seal flap and the natural fold, or the personalization is lost exactly where it matters.',
     spec: 'Standard co-extruded polyethylene. What changes is the print process, not the material.',
     press: 'Digital print for variable data. Send the data source early — the variable field has to be reserved in the layout before anything is designed around it.',
     pairs: ['custom-poly-mailers', 'branded-bubble-mailers', 'christmas-poly-mailers'],
-    ask: { q: 'Where should personalised text go on a mailer?', a: 'Away from the seal flap and the natural fold line. Variable text placed for the flat artwork frequently ends up creased or covered once the mailer is filled and sealed.' },
+    ask: { q: 'Where should personalized text go on a mailer?', a: 'Away from the seal flap and the natural fold line. Variable text placed for the flat artwork frequently ends up creased or covered once the mailer is filled and sealed.' },
   },
   'poly-mailers-with-tear-strip': {
     holds: 'soft goods for operations where opening speed matters — returns processing, retail unpacking',
@@ -227,7 +227,7 @@ export const mailerFacts: ProductFactsMap = {
     context: 'art, photography and document despatch where bending destroys the value entirely',
     detail: 'Rigidity has to run along the longest dimension. That is the axis a sorting machine will bend.',
     spec: 'A rigid board backing with a corrugated or heavy board face, sized so the contents cannot slide.',
-    press: '"Do not bend" printed on the outside genuinely reduces damage rates, and it costs one colour.',
+    press: '"Do not bend" printed on the outside genuinely reduces damage rates, and it costs one color.',
     pairs: ['cardboard-document-mailers', 'book-mailers', '7-inch-vinyl-mailers'],
     ask: { q: 'Which direction should a rigid mailer be stiff in?', a: 'Along its longest dimension — that is the axis sorting machinery bends. A mailer stiff across the short side and flexible along the long one will still arrive bent.' },
   },
@@ -239,7 +239,7 @@ export const mailerFacts: ProductFactsMap = {
     context: 'publisher and bookshop despatch where a bumped corner means a return',
     detail: 'A wrap-around mailer that folds to the book thickness protects corners far better than a flat envelope with padding.',
     spec: 'E-flute corrugated in a wrap-around construction with a self-locking closure and no loose space at the corners.',
-    press: 'Usually plain or one colour. The wrap construction has crease lines across most faces, which limits usable print area anyway.',
+    press: 'Usually plain or one color. The wrap construction has crease lines across most faces, which limits usable print area anyway.',
     pairs: ['literature-mailers', 'rigid-mailers', 'cardboard-document-mailers'],
     ask: { q: 'Why do books arrive with damaged corners?', a: 'Because a book is dense and its corners absorb the whole force of a drop. Flat padding does little for that. A wrap-around mailer that folds tight to the thickness protects the corners properly.' },
   },
@@ -267,14 +267,14 @@ export const mailerFacts: ProductFactsMap = {
     ask: { q: 'Can document mailers be made tamper-evident?', a: 'Yes — a peel-and-seal closure or an applied security seal both show interference. A plain tuck closure does not, which matters if the contents are confidential.' },
   },
   'literature-mailers': {
-    holds: 'catalogues, brochures and printed literature in quantity',
+    holds: 'catalogs, brochures and printed literature in quantity',
     sizeNote: 'Sized to the literature stack including its thickness, which people consistently underestimate.',
     failure: 'A stack of brochures is heavier than it looks and splits a mailer sized for its footprint rather than its weight.',
     buyerNote: 'The mailer is specified from the dimensions of one brochure rather than the weight of the whole stack going in it.',
     context: 'marketing despatch and trade distribution of printed material in bulk',
     detail: 'Weight rather than footprint decides the construction. Printed paper is dense.',
     spec: 'E-flute corrugated with a self-locking closure. A paper envelope will not carry a substantial literature stack.',
-    press: 'One or two colours for identification. These are usually opened by a distributor rather than an end customer.',
+    press: 'One or two colors for identification. These are usually opened by a distributor rather than an end customer.',
     pairs: ['white-literature-mailers', 'book-mailers', 'document-mailers'],
   },
   'white-literature-mailers': {
@@ -285,7 +285,7 @@ export const mailerFacts: ProductFactsMap = {
     context: 'customer-facing literature despatch where the parcel itself represents the brand',
     detail: 'If appearance on arrival matters, a coated white liner resists marking considerably better than an uncoated one.',
     spec: 'White-top E-flute, with a coated liner where arrival appearance matters.',
-    press: 'A white liner is the reason to choose this, so it is worth using — colour reproduction is markedly better than on kraft.',
+    press: 'A white liner is the reason to choose this, so it is worth using — color reproduction is markedly better than on kraft.',
     pairs: ['literature-mailers', 'white-tab-locking-literature-mailers', 'book-mailers'],
   },
   'white-tab-locking-literature-mailers': {
@@ -319,7 +319,7 @@ export const mailerFacts: ProductFactsMap = {
     context: 'brands where the environmental claim is a genuine part of the proposition rather than a badge',
     detail: 'Order compostable stock in smaller, more frequent batches than you would poly. Shelf life is a real constraint here.',
     spec: 'Certified compostable film — but almost always industrially compostable, not home compostable. That distinction has to be stated on the pack.',
-    press: 'Compostable films take print acceptably but with a wider colour tolerance than poly. Approve a printed sample if colour matters.',
+    press: 'Compostable films take print acceptably but with a wider color tolerance than poly. Approve a printed sample if color matters.',
     pairs: ['custom-poly-mailers', 'padded-mailers', 'e-commerce-boxes'],
     ask: { q: 'Do compostable mailers have a shelf life?', a: 'Yes, and it catches buyers out. The film begins degrading given warmth and humidity, so a year of stock can be brittle by the end. Order in smaller, more frequent batches than you would poly.' },
   },
@@ -338,12 +338,12 @@ export const mailerFacts: ProductFactsMap = {
   'christmas-poly-mailers': {
     holds: 'soft goods during peak season, with festive artwork on a poly substrate',
     sizeNote: 'The standard poly ladder, most commonly 9 × 12 in and 10 × 13 in for apparel gifting.',
-    failure: 'Colour shift. Festive artwork relies on specific reds and greens, and poly has a wider colour tolerance than board.',
-    buyerNote: 'Brands approve festive colour on a screen and are disappointed by how a saturated red reproduces on polyethylene.',
+    failure: 'Color shift. Festive artwork relies on specific reds and greens, and poly has a wider color tolerance than board.',
+    buyerNote: 'Brands approve festive color on a screen and are disappointed by how a saturated red reproduces on polyethylene.',
     context: 'apparel and gift despatch through the Christmas peak',
     detail: 'If a specific festive red matters, approve a printed sample on the actual film rather than a digital proof.',
     spec: '3 mil rather than 2.5 mil for peak season, where handling is rougher than the rest of the year.',
-    press: 'Saturated reds are the hardest colour to hold on poly. Ask for a press sample if the shade is part of the brand.',
+    press: 'Saturated reds are the hardest color to hold on poly. Ask for a press sample if the shade is part of the brand.',
     pairs: ['christmas-mailers', 'custom-poly-mailers', 'personalised-poly-mailers'],
   },
   'halloween-mailers': {
@@ -370,14 +370,14 @@ export const mailerFacts: ProductFactsMap = {
     pairs: ['halloween-mailers', 'black-poly-mailers', 'custom-poly-mailers'],
   },
   'halloween-bubble-mailers': {
-    holds: 'small seasonal items — cosmetics, jewellery, confectionery — through the October window',
+    holds: 'small seasonal items — cosmetics, jewelry, confectionery — through the October window',
     sizeNote: 'Standard bubble sizes from 4 × 8 in through 8.5 × 12 in for most seasonal gifting.',
     failure: 'The print is on a poly outer that scuffs, and seasonal artwork looks worse damaged than plain packaging would.',
     buyerNote: 'Seasonal print is specified on the cheapest outer available, and the artwork is the thing that suffers.',
     context: 'small-item seasonal gifting and subscription drops in October',
     detail: 'For seasonal print on a bubble mailer, a kraft outer holds the artwork considerably better than poly.',
     spec: 'Kraft outer with a bubble lining where the print matters; poly outer only where moisture resistance is needed.',
-    press: 'Kraft limits the colour range but holds ink far better. For a short seasonal run that trade is usually worth making.',
+    press: 'Kraft limits the color range but holds ink far better. For a short seasonal run that trade is usually worth making.',
     pairs: ['halloween-mailers', 'branded-bubble-mailers', 'bubble-mailers'],
   },
 }

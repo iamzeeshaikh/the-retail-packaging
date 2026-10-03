@@ -17,7 +17,7 @@ export const statesB: Place[] = [
     logistics: {
       h: 'Chicago is the easiest freight destination we ship to',
       body: [
-        'Very little in American freight moves without passing through Chicago, and that works in your favour. Palletised consignments into the metropolitan area typically arrive in 5 to 7 business days, and the density of carriers means capacity is rarely the constraint it can be in more remote markets.',
+        'Very little in American freight moves without passing through Chicago, and that works in your favor. Palletized consignments into the metropolitan area typically arrive in 5 to 7 business days, and the density of carriers means capacity is rarely the constraint it can be in more remote markets.',
         'The practical benefit is scheduling rather than speed. If a delivery date slips at your end, rebooking freight into Chicago is usually possible within a day or two, which is not true everywhere.',
       ],
     },
@@ -46,7 +46,7 @@ export const statesB: Place[] = [
       items: [
         'The exact case dimensions the retailer’s pallet pattern requires.',
         'Whether the case must open into a shelf-ready display, and on which face.',
-        'The perforation or tear-strip behaviour staff expect during replenishment.',
+        'The perforation or tear-strip behavior staff expect during replenishment.',
         'Where the barcode must appear on both the primary pack and the case.',
         'The stacking strength the distribution chain requires, not just the shelf.',
       ],
@@ -82,15 +82,15 @@ export const statesB: Place[] = [
     nearby: [
       { slug: 'chicago', why: 'Where the manufacturing base and the freight infrastructure both sit.' },
       { slug: 'indiana', why: 'Shares the same distribution corridors and many of the same retailers.' },
-      { slug: 'michigan', why: 'The neighbouring Midwest market with an overlapping food sector.' },
+      { slug: 'michigan', why: 'The neighboring Midwest market with an overlapping food sector.' },
     ],
     faqs: [
       { q: 'Can you build packaging to a grocery retailer’s case specification?', a: 'Yes. Send the published requirement and we will design the case and the primary pack together so the pallet pattern works out. Retailer specifications are usually non-negotiable, so we treat them as the fixed constraint and design inward from there.' },
       { q: 'What is shelf-ready packaging?', a: 'A case that arrives at the store, is opened along a designed perforation, and becomes the display itself without anyone unpacking individual units. It has to survive distribution as a case and look deliberate as a display, which is a genuine structural tension.' },
-      { q: 'How quickly does freight reach Chicago?', a: 'Typically 5 to 7 business days after production, which takes 3 to 5 business days from artwork approval. Chicago is among the easiest destinations in the country for palletised freight.' },
+      { q: 'How quickly does freight reach Chicago?', a: 'Typically 5 to 7 business days after production, which takes 3 to 5 business days from artwork approval. Chicago is among the easiest destinations in the country for palletized freight.' },
       { q: 'Do you have a warehouse in Illinois?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Illinois. Everything is made to order and shipped directly to your address.' },
       { q: 'Can you match the case dimensions we already use?', a: 'Yes. Send the current case specification or a physical sample and we will quote to match it exactly, rather than proposing an alternative you would then have to re-clear with the retailer.' },
-      { q: 'What stacking strength do I need for grocery distribution?', a: 'It depends on pallet height and how long stock sits in a distribution centre. Tell us the stack height and the contents weight and we will specify a board grade that holds, rather than guessing at a flute.' },
+      { q: 'What stacking strength do I need for grocery distribution?', a: 'It depends on pallet height and how long stock sits in a distribution center. Tell us the stack height and the contents weight and we will specify a board grade that holds, rather than guessing at a flute.' },
       { q: 'Can you produce short-run packaging for a Chicago trade show?', a: 'Yes. Convention work is usually a short digital run against a fixed date. Give us the event date rather than a lead time and we will work backwards to the latest artwork approval that still makes it.' },
       { q: 'What is the minimum order for an Illinois delivery?', a: 'A flat 100 units on any format. For grocery work the minimum is most useful for validating a structure before committing to a full retail rollout.' },
       { q: 'Where should the barcode go on a retail-ready case?', a: 'That is usually dictated by the retailer, and it differs between the primary pack and the case. The critical point is that a barcode crossing a crease or a perforation will fail at the scanner, so placement is a dieline decision made before print.' },
@@ -185,14 +185,14 @@ export const statesB: Place[] = [
       { href: '/resources/custom-packaging-size-guide/', anchor: 'sizing tightly to cut dimensional weight', note: 'Where the recurring saving on a fulfilment pack actually comes from.' },
     ],
     nearby: [
-      { slug: 'columbus', why: 'The centre of the state’s fulfilment activity.' },
+      { slug: 'columbus', why: 'The center of the state’s fulfilment activity.' },
       { slug: 'michigan', why: 'Shares the automotive supply base and the same freight corridors.' },
       { slug: 'indiana', why: 'A comparable manufacturing and distribution market next door.' },
     ],
     faqs: [
       { q: 'How do I reduce dimensional weight charges on my shipments?', a: 'Size the box around the product rather than around a box you inherited. Most fulfilment operations we quote are using a pack at least one size larger than needed, with void fill compensating. Cutting a die to the right size pays back quickly at volume.' },
       { q: 'Should I spend on a heavier board or on a fitted insert?', a: 'Usually the insert, if your damage is products moving inside the box rather than boxes being crushed. A fitted insert holds the product still and often lets you drop a board grade on the outer, so the two changes together can be cost-neutral.' },
-      { q: 'How fast is freight into Ohio?', a: 'Typically 5 to 7 business days after the 3 to 5 business days of production. Columbus, Cleveland and Cincinnati all take palletised freight without special arrangement.' },
+      { q: 'How fast is freight into Ohio?', a: 'Typically 5 to 7 business days after the 3 to 5 business days of production. Columbus, Cleveland and Cincinnati all take palletized freight without special arrangement.' },
       { q: 'Do you operate a facility in Ohio?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Ohio. Production runs through our manufacturing partners and ships directly to your address.' },
       { q: 'Can you produce packaging for automotive components?', a: 'Yes. Parts packaging is usually an insert problem rather than a box problem — the geometry of the component dictates the design. Send drawings or a sample part and we will specify around it.' },
       { q: 'Can you hold a specification for repeat ordering?', a: 'Yes. Once a first run is approved we hold the board, structure, print method, finishes and dimensions against your account so repeats reference the same specification exactly.' },
@@ -279,7 +279,7 @@ export const statesB: Place[] = [
     ],
     nearby: [
       { slug: 'atlanta', why: 'Where the beauty, film and freight activity all concentrate.' },
-      { slug: 'florida', why: 'The neighbouring market most Georgia freight continues into.' },
+      { slug: 'florida', why: 'The neighboring market most Georgia freight continues into.' },
       { slug: 'north-carolina', why: 'The other major Southeast manufacturing market we ship to.' },
     ],
     faqs: [
@@ -345,7 +345,7 @@ export const statesB: Place[] = [
     logistics: {
       h: 'Freight into the Carolinas',
       body: [
-        'Ground delivery into North Carolina typically takes 5 to 7 business days. The Charlotte and Raleigh-Durham areas both take palletised freight without special arrangement.',
+        'Ground delivery into North Carolina typically takes 5 to 7 business days. The Charlotte and Raleigh-Durham areas both take palletized freight without special arrangement.',
         'For furniture and home-goods buyers the constraint is usually consignment size rather than transit time. Heavy-duty corrugated is bulky before it is assembled, so tell us your storage capacity and we can phase deliveries rather than sending everything at once.',
       ],
     },
@@ -372,7 +372,7 @@ export const statesB: Place[] = [
     ],
     nearby: [
       { slug: 'charlotte', why: 'The state’s largest commercial market.' },
-      { slug: 'georgia', why: 'The neighbouring Southeast market on the same corridors.' },
+      { slug: 'georgia', why: 'The neighboring Southeast market on the same corridors.' },
       { slug: 'virginia', why: 'Comparable mid-Atlantic demand just north.' },
     ],
     faqs: [
@@ -380,7 +380,7 @@ export const statesB: Place[] = [
       { q: 'Can you package furniture or other heavy items?', a: 'Yes. Heavy and awkward contents are a structural problem: edge protection, corner reinforcement and stacking strength decide the specification. Send the weight, dimensions and how high the packs will be stacked.' },
       { q: 'Can you supply packaging for laboratory instruments?', a: 'Yes. This is usually an insert problem — the item geometry dictates the fitted protection, and the outer follows from it. Send drawings or a sample and we will specify around the shape.' },
       { q: 'Do you have a plant in North Carolina?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your North Carolina address.' },
-      { q: 'How long does delivery to Charlotte or Raleigh take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Both areas accept palletised deliveries without special arrangement.' },
+      { q: 'How long does delivery to Charlotte or Raleigh take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Both areas accept palletized deliveries without special arrangement.' },
       { q: 'Can you phase deliveries if we lack storage space?', a: 'Yes. Corrugated in particular is bulky flat, and buyers frequently underestimate the space a full run occupies. Tell us your capacity and we can split the delivery into scheduled drops.' },
       { q: 'What is the minimum order in North Carolina?', a: 'A flat 100 units on any format. For a brewery testing a limited release, that is usually enough to validate the pack before a larger commitment.' },
       { q: 'Do labels or printed sleeves work better for variants?', a: 'Labels are cheaper per change and better for small runs. Printed sleeves cover more of the pack and give a stronger visual difference. Which one wins depends on how different you need the releases to look.' },
@@ -408,7 +408,7 @@ export const statesB: Place[] = [
     climate: {
       h: 'What cold does to glue and board',
       body: [
-        'Adhesive behaviour is temperature dependent in both directions. Standard carton glue becomes brittle in sustained cold, and a glued seam that is perfectly sound at room temperature can crack when a pack is handled after sitting in an unheated warehouse or an overnight trailer at −10°F.',
+        'Adhesive behavior is temperature dependent in both directions. Standard carton glue becomes brittle in sustained cold, and a glued seam that is perfectly sound at room temperature can crack when a pack is handled after sitting in an unheated warehouse or an overnight trailer at −10°F.',
         'Corrugated behaves differently again: it does not become brittle, but repeated freeze-thaw cycling with condensation between them will delaminate the liner from the flute over time. Neither problem is expensive to design around — a cold-tolerant adhesive and a coated liner cover most cases — but both need to be specified rather than discovered.',
       ],
     },
@@ -446,7 +446,7 @@ export const statesB: Place[] = [
     logistics: {
       h: 'Winter freight and delivery dates',
       body: [
-        'Ground freight into Michigan typically takes 5 to 7 business days. Detroit and Grand Rapids both take palletised deliveries without difficulty.',
+        'Ground freight into Michigan typically takes 5 to 7 business days. Detroit and Grand Rapids both take palletized deliveries without difficulty.',
         'Winter weather does occasionally close lanes across the Great Lakes region at short notice. If your date is fixed, tell us and we will build slack in rather than quoting the tightest possible schedule.',
       ],
     },

@@ -58,10 +58,10 @@ export const categoryBySlug = new Map(categories.map((c) => [c.slug, c]))
 /**
  * Curated hero product per category, scored by scripts/pick-category-images.mjs.
  *
- * Two picks are stored. `vivid` favours a photograph with real colour in the
- * product on a clean ground — that is the default, because a grid of grey
+ * Two picks are stored. `vivid` favors a photograph with real color in the
+ * product on a clean ground — that is the default, because a grid of gray
  * studio shots reads as dull. `calm` is the low-chroma alternative, kept for
- * places where consistency matters more than colour.
+ * places where consistency matters more than color.
  */
 const curated = catImagesRaw as Record<string, { calm: string; vivid: string }>
 

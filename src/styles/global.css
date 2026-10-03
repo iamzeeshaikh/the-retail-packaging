@@ -1,6 +1,6 @@
 /* ==========================================================================
    The Retail Packaging — neutral premium design system
-   Near-monochrome UI so the product photography supplies the only colour.
+   Near-monochrome UI so the product photography supplies the only color.
    Jost throughout, self-hosted variable subset, tightly tracked at display size.
    ========================================================================== */
 
@@ -31,7 +31,7 @@ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 ul[role='list'], ol[role='list'] { list-style: none; padding: 0; }
 :target { scroll-margin-top: 6.5rem; }
 /* Components that set their own display (.alert is a flex row) would otherwise
-   beat the UA [hidden] rule and render as empty coloured boxes. */
+   beat the UA [hidden] rule and render as empty colored boxes. */
 [hidden] { display: none !important; }
 
 /* ---------- tokens ---------- */

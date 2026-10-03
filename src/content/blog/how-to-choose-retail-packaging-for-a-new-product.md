@@ -64,7 +64,7 @@ Once the format is fixed, the material question becomes narrow and answerable.
 
 For folding cartons, 12pt board handles light items like cosmetics and confectionery. 16pt to 18pt is where you go for anything with real weight or a product that will be picked up repeatedly in store. For corrugated, E-flute is thin and prints well, B-flute takes more abuse, and BC double-wall is what you specify past roughly twenty pounds of contents.
 
-Kraft and white board are not just a colour choice. Uncoated kraft absorbs moisture, which matters in a humid warehouse, and it takes ink differently — colours print warmer and less saturated than on a white coated stock. If your brand depends on a precise colour, uncoated kraft will fight you.
+Kraft and white board are not just a color choice. Uncoated kraft absorbs moisture, which matters in a humid warehouse, and it takes ink differently — colors print warmer and less saturated than on a white coated stock. If your brand depends on a precise color, uncoated kraft will fight you.
 
 ## Pick a print method based on run length
 
@@ -72,7 +72,7 @@ This is the decision that most often gets made on aesthetics when it should be m
 
 Digital printing has no plate cost. That makes it the obvious choice for short runs, prototypes, seasonal variants and any launch where you are not yet sure how much you will sell. Below roughly a thousand units it is almost always cheaper, and it turns around faster.
 
-Offset lithography and flexography carry a setup cost for plates, but the per-unit price falls sharply once that cost is spread across a large run. Somewhere between one thousand and three thousand units, depending on the format and the number of colours, they overtake digital. Our [comparison of packaging printing methods and their break-even points](/resources/printing-methods-guide/) sets out where each one stops making sense.
+Offset lithography and flexography carry a setup cost for plates, but the per-unit price falls sharply once that cost is spread across a large run. Somewhere between one thousand and three thousand units, depending on the format and the number of colors, they overtake digital. Our [comparison of packaging printing methods and their break-even points](/resources/printing-methods-guide/) sets out where each one stops making sense.
 
 ## Leave room for what the law requires
 
@@ -80,14 +80,14 @@ Regulated panel content eats more space than brands expect, and it cannot be shr
 
 Food products need ingredient lists, allergen declarations and net weight. Cosmetics need an INCI ingredient panel. Supplements need a supplement facts panel with a prescribed format. Cannabis and CBD products need state-specific warnings that vary by where you sell. Products sold in California may need a Proposition 65 warning.
 
-Lay out the back panel before you finalise the carton size, not after. A design that looks balanced with a placeholder block of text often falls apart when the real ingredient list turns out to be forty percent longer.
+Lay out the back panel before you finalize the carton size, not after. A design that looks balanced with a placeholder block of text often falls apart when the real ingredient list turns out to be forty percent longer.
 
 ## Work out what the finish is actually for
 
 Finishing is where budgets quietly disappear. Each option adds a production step and a cost, so it is worth being clear about what each one buys you.
 
 - **Matte lamination** resists fingerprints and scuffing, which matters for packs handled repeatedly in store
-- **Gloss lamination** lifts colour saturation and is more durable against moisture
+- **Gloss lamination** lifts color saturation and is more durable against moisture
 - **Soft-touch lamination** changes how the pack feels in the hand, which is the point of it
 - **Spot UV** creates contrast against a matte background and is wasted on a gloss one
 - **Foil stamping** carries a die cost and works best on small, bold marks rather than fine detail
@@ -101,7 +101,7 @@ A plain unprinted structural sample costs very little and answers the only quest
 
 Put the actual product in the actual sample. Close it. Pick it up. Shake it gently. If it rattles, you need an insert. If the lid strains, the dieline is too tight. If it feels flimsy with the product inside, step up the board grade.
 
-A printed prototype answers a different question — whether the colour and finish look right. That costs more and is worth it if colour accuracy is critical to your brand.
+A printed prototype answers a different question — whether the color and finish look right. That costs more and is worth it if color accuracy is critical to your brand.
 
 ## A working sequence
 

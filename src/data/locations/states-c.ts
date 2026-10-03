@@ -17,14 +17,14 @@ export const statesC: Place[] = [
     climate: {
       h: 'Recycled stock in a wet climate',
       body: [
-        'Recycled paperboard has shorter fibres than virgin stock, which makes it slightly less stiff and slightly more absorbent at the same caliper. In a dry warehouse that difference is academic. In the Pacific Northwest, where ambient humidity stays high for much of the year, it becomes visible: a recycled carton stored uncoated through a Seattle winter will feel softer than a virgin one beside it.',
+        'Recycled paperboard has shorter fibers than virgin stock, which makes it slightly less stiff and slightly more absorbent at the same caliper. In a dry warehouse that difference is academic. In the Pacific Northwest, where ambient humidity stays high for much of the year, it becomes visible: a recycled carton stored uncoated through a Seattle winter will feel softer than a virgin one beside it.',
         'That does not mean choosing between recycled content and performance. It means specifying them together — a recycled board with a moisture-resistant coating, or a slightly heavier recycled caliper. Either keeps the environmental claim intact and the pack rigid.',
       ],
     },
     industries: {
       h: 'What Washington brands package',
       body: [
-        'A coffee sector with national reach, technical outdoor goods and a hardware industry account for most enquiries.',
+        'A coffee sector with national reach, technical outdoor goods and a hardware industry account for most inquiries.',
       ],
       items: [
         { name: 'Coffee and specialty beverage', detail: 'Bags, boxes and sleeves where barrier performance protects the product and recycled content carries the brand position. The two requirements have to be reconciled.' },
@@ -44,7 +44,7 @@ export const statesC: Place[] = [
       h: 'Reconciling recycled content with performance',
       intro: 'Work through these before committing to a recycled specification.',
       items: [
-        'Which claim you intend to print: recycled content, kerbside recyclable, or certified compostable.',
+        'Which claim you intend to print: recycled content, curbside recyclable, or certified compostable.',
         'Whether the stock will be stored in a conditioned space or not.',
         'Whether a moisture-resistant coating would compromise the recyclability you are claiming.',
         'Whether a slightly heavier recycled caliper achieves the same result without a coating.',
@@ -54,7 +54,7 @@ export const statesC: Place[] = [
     logistics: {
       h: 'Freight to the Pacific Northwest',
       body: [
-        'Ground freight into Washington typically takes 5 to 7 business days, and the distance means the window has little slack in it. Seattle and Tacoma both take palletised deliveries without difficulty.',
+        'Ground freight into Washington typically takes 5 to 7 business days, and the distance means the window has little slack in it. Seattle and Tacoma both take palletized deliveries without difficulty.',
         'The extra transit time is worth planning for rather than working around. If your reorder point is calculated on a national average lead time, it is probably a few days short for Washington.',
       ],
     },
@@ -69,7 +69,7 @@ export const statesC: Place[] = [
       h: 'Ranges that suit Washington briefs',
       intro: 'Weighted toward recycled and barrier formats.',
       picks: [
-        { slug: 'sustainable-packaging', why: 'Where most Washington enquiries start, and where the claims need care.' },
+        { slug: 'sustainable-packaging', why: 'Where most Washington inquiries start, and where the claims need care.' },
         { slug: 'custom-pouches', why: 'Barrier formats for coffee and specialty beverage.' },
         { slug: 'electronics-packaging', why: 'Fitted protection for the state’s hardware sector.' },
         { slug: 'custom-mailers', why: 'Minimal shipping formats for direct-to-consumer brands.' },
@@ -85,15 +85,15 @@ export const statesC: Place[] = [
       { slug: 'colorado', why: 'A comparable market for outdoor and technical goods.' },
     ],
     faqs: [
-      { q: 'Does recycled board perform worse in a damp climate?', a: 'Slightly, at the same caliper. Recycled fibres are shorter, so the board is marginally less stiff and takes on moisture a little faster. In the Pacific Northwest that becomes noticeable over a winter of uncoated storage. A coating or a heavier caliper resolves it.' },
-      { q: 'Will a moisture-resistant coating make my packaging non-recyclable?', a: 'Not necessarily. An aqueous coating generally keeps paper recyclable through kerbside collection; a plastic film laminate usually does not. If recyclability is the claim you intend to print, tell us and we will stay on the aqueous side.' },
+      { q: 'Does recycled board perform worse in a damp climate?', a: 'Slightly, at the same caliper. Recycled fibers are shorter, so the board is marginally less stiff and takes on moisture a little faster. In the Pacific Northwest that becomes noticeable over a winter of uncoated storage. A coating or a heavier caliper resolves it.' },
+      { q: 'Will a moisture-resistant coating make my packaging non-recyclable?', a: 'Not necessarily. An aqueous coating generally keeps paper recyclable through curbside collection; a plastic film laminate usually does not. If recyclability is the claim you intend to print, tell us and we will stay on the aqueous side.' },
       { q: 'Can you produce genuinely minimal packaging?', a: 'Yes, and it works best when the pack is sized tightly to the product first. Removing material from an oversized box raises damage rates. Reduce the gap, then reduce the material.' },
       { q: 'Do you have a facility in Washington?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Washington. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'How long does delivery to Seattle take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. There is little slack in that window at this distance, so build your reorder point against the top of it.' },
       { q: 'Can you supply barrier packaging for coffee?', a: 'Yes. Coffee needs an oxygen and moisture barrier to hold freshness, which constrains the material set considerably. We will be straightforward about where a barrier requirement and a recyclability claim conflict.' },
       { q: 'What is the minimum order for a Washington delivery?', a: 'A flat 100 units on any format. That is enough to run a recycled specification through a wet season as a storage test before committing.' },
       { q: 'Can you certify recycled content?', a: 'We can state the recycled content of the board we supply and provide the mill documentation behind it. We do not issue certifications ourselves, and we would rather give you the underlying evidence than a claim you cannot substantiate.' },
-      { q: 'Is compostable packaging worth it?', a: 'Only if your customers can actually compost it. Certified compostable stock generally needs industrial facilities, which are not universally available. If kerbside recycling is the realistic route for your buyers, a recyclable stock does more good.' },
+      { q: 'Is compostable packaging worth it?', a: 'Only if your customers can actually compost it. Certified compostable stock generally needs industrial facilities, which are not universally available. If curbside recycling is the realistic route for your buyers, a recyclable stock does more good.' },
       { q: 'How much does sustainable packaging cost in Washington?', a: 'Recycled paperboard is usually within a few percent of conventional. Certified compostable runs materially higher. Prices start from $0.30 per piece at large volumes and we quote each option so you can see the real difference.' },
     ],
     cta: {
@@ -155,14 +155,14 @@ export const statesC: Place[] = [
     logistics: {
       h: 'Freight into Arizona',
       body: [
-        'Ground delivery into Arizona typically takes 5 to 7 business days. Phoenix takes palletised freight easily; Tucson and the smaller markets can add a day.',
+        'Ground delivery into Arizona typically takes 5 to 7 business days. Phoenix takes palletized freight easily; Tucson and the smaller markets can add a day.',
         'Summer delivery timing is worth a thought. A trailer sitting in a Phoenix yard in July gets very hot, so if you are receiving laminated stock in high summer, arranging a morning delivery slot is a small thing that helps.',
       ],
     },
     ordering: {
       h: 'Getting the Arizona specification right',
       body: [
-        'Tell us how the cartons will be assembled — by hand in batches, or on an automatic erector. Crease behaviour matters far more on hand assembly, where a cracked fold is discovered one carton at a time.',
+        'Tell us how the cartons will be assembled — by hand in batches, or on an automatic erector. Crease behavior matters far more on hand assembly, where a cracked fold is discovered one carton at a time.',
         'Also tell us whether storage is conditioned. If it is, both adjustments become unnecessary and we will not charge you for them.',
       ],
     },
@@ -190,7 +190,7 @@ export const statesC: Place[] = [
       { q: 'Does Arizona heat affect laminated packaging?', a: 'Yes, the same way it does in Texas. Above roughly 100°F some laminating adhesives soften and stacked cartons can bond where the film touches. A heat-stable adhesive or an aqueous coating avoids it.' },
       { q: 'Do I need both the heat and the dryness adjustment?', a: 'If the stock sits in unconditioned space, usually yes — the two conditions arrive together here, and fixing one leaves the other. In conditioned storage neither is necessary and we will not specify them.' },
       { q: 'Do you have a facility in Arizona?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Arizona address.' },
-      { q: 'How long does delivery to Phoenix take?', a: 'Ground freight is typically 5 to 7 business days after production. Phoenix takes palletised deliveries easily; Tucson and smaller markets can add a day.' },
+      { q: 'How long does delivery to Phoenix take?', a: 'Ground freight is typically 5 to 7 business days after production. Phoenix takes palletized deliveries easily; Tucson and smaller markets can add a day.' },
       { q: 'Does hand assembly change the specification?', a: 'It changes how much crease cracking costs you. On an automatic erector a marginal crease produces a scrap rate; by hand it produces a slow, frustrating afternoon. We specify more conservatively for hand assembly.' },
       { q: 'What is the minimum order for an Arizona delivery?', a: 'A flat 100 units on any format, which is a sensible quantity for testing a crease profile before committing to a full run.' },
       { q: 'Can you supply packaging with electrostatic protection?', a: 'We can specify board and liners appropriate for electronics handling. Tell us the exact requirement your process operates under, since it varies considerably between component types.' },
@@ -254,13 +254,13 @@ export const statesC: Place[] = [
         ['Print plates', 'Avoid — use digital', 'Cheaper than digital'],
         ['Board grade', 'Minor difference', 'A major cost lever'],
         ['Fitted insert', 'Worth it — solves fit cheaply', 'Worth it — reduces damage'],
-        ['Applied finishes', 'Per-unit labour dominates', 'Amortised across the run'],
+        ['Applied finishes', 'Per-unit labor dominates', 'Amortised across the run'],
       ],
     },
     logistics: {
       h: 'Delivering into Greater Boston',
       body: [
-        'Ground freight into Massachusetts typically takes 5 to 7 business days. Most of the state takes palletised delivery without difficulty.',
+        'Ground freight into Massachusetts typically takes 5 to 7 business days. Most of the state takes palletized delivery without difficulty.',
         'Boston and Cambridge receiving is the exception worth flagging. University and lab buildings frequently have restricted access, central receiving departments and delivery windows. Tell us the receiving arrangement at quoting and we will size the consignment to fit it.',
       ],
     },
@@ -282,7 +282,7 @@ export const statesC: Place[] = [
       ],
     },
     resources: [
-      { href: '/resources/packaging-insert-guide/', anchor: 'choosing between foam, board and moulded inserts', note: 'The decision that carries most technical briefs.' },
+      { href: '/resources/packaging-insert-guide/', anchor: 'choosing between foam, board and molded inserts', note: 'The decision that carries most technical briefs.' },
       { href: '/samples/', anchor: 'testing fit before a short run commits', note: 'Cheap insurance when there is no second run.' },
     ],
     nearby: [
@@ -331,7 +331,7 @@ export const statesC: Place[] = [
       h: 'Designing for the billing method',
       body: [
         'Before we specify anything for a Tennessee shipper, we ask how the freight is billed. Air freight charges on actual or volumetric weight, whichever is greater; road freight is far less sensitive. The same product can justify two quite different packs depending on the answer.',
-        'If you ship both ways, tell us the split. It is often worth optimising for whichever channel carries the majority and accepting a slight inefficiency on the other, rather than compromising both.',
+        'If you ship both ways, tell us the split. It is often worth optimizing for whichever channel carries the majority and accepting a slight inefficiency on the other, rather than compromising both.',
       ],
     },
     industries: {
@@ -349,7 +349,7 @@ export const statesC: Place[] = [
     demandTable: {
       h: 'Road freight versus air freight decisions',
       intro: 'The same product, two different specifications.',
-      head: ['Decision', 'Optimised for road', 'Optimised for air'],
+      head: ['Decision', 'Optimized for road', 'Optimized for air'],
       rows: [
         ['Outer board grade', 'Heavier — cheap protection', 'Lighter — weight is billed'],
         ['Void fill', 'Acceptable', 'Avoid — pays for air'],
@@ -380,16 +380,16 @@ export const statesC: Place[] = [
       { href: '/resources/custom-packaging-size-guide/', anchor: 'volumetric weight and pack dimensions', note: 'Why a slightly smaller box changes an air freight bill.' },
     ],
     nearby: [
-      { slug: 'georgia', why: 'The neighbouring Southeast freight hub.' },
+      { slug: 'georgia', why: 'The neighboring Southeast freight hub.' },
       { slug: 'north-carolina', why: 'Comparable regional demand on the same corridors.' },
       { slug: 'missouri', why: 'Another central distribution market we ship into.' },
     ],
     faqs: [
       { q: 'How do I cut packaging weight without raising damage?', a: 'Add a fitted insert and lighten the outer. Most damage comes from the product moving inside the box rather than the box failing, so holding the product still lets you drop a board grade. The insert weighs less than the board you remove.' },
       { q: 'Does air freight really change the specification?', a: 'Yes, substantially. Air freight bills on actual or volumetric weight, whichever is greater, on every parcel. A heavier board that is sensible insurance on the road becomes a recurring cost in the air.' },
-      { q: 'What if I ship by both road and air?', a: 'Tell us the split. It is usually better to optimise for whichever channel carries the majority and accept a small inefficiency on the other than to compromise both with a middle specification.' },
+      { q: 'What if I ship by both road and air?', a: 'Tell us the split. It is usually better to optimize for whichever channel carries the majority and accept a small inefficiency on the other than to compromise both with a middle specification.' },
       { q: 'Do you have a facility in Memphis or Nashville?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Tennessee. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'How quickly can packaging reach Nashville?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Both Nashville and Memphis take palletised freight easily.' },
+      { q: 'How quickly can packaging reach Nashville?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Both Nashville and Memphis take palletized freight easily.' },
       { q: 'Can you produce merchandise packaging for a tour date?', a: 'Yes. Give us the date rather than asking for a lead time and we will tell you the latest artwork approval that still lands in time.' },
       { q: 'What is the minimum order in Tennessee?', a: 'A flat 100 units on any format, which suits short merchandise runs tied to a single event.' },
       { q: 'Is void fill a problem for air freight?', a: 'It is, twice over. It adds weight and it usually means the box is larger than it needs to be, which raises the volumetric charge. A correctly sized box with an insert is almost always cheaper to fly.' },
@@ -434,7 +434,7 @@ export const statesC: Place[] = [
         { name: 'Pharmaceutical manufacturing', detail: 'Cartons, inserts and leaflets with version control and a documented approval trail as standard requirements.' },
         { name: 'Recreational vehicles and components', detail: 'Northern Indiana carries the national RV industry. Parts are large, heavy and irregular, which makes edge protection and stacking strength the governing constraints.' },
         { name: 'Industrial manufacturing', detail: 'Machined components where the insert has to match the part geometry precisely.' },
-        { name: 'Agriculture and food processing', detail: 'Bulk and processed goods needing moisture resistance and predictable stacking behaviour.' },
+        { name: 'Agriculture and food processing', detail: 'Bulk and processed goods needing moisture resistance and predictable stacking behavior.' },
       ],
     },
     overview: {
@@ -458,7 +458,7 @@ export const statesC: Place[] = [
     logistics: {
       h: 'Central corridors, straightforward freight',
       body: [
-        'Ground freight into Indiana typically takes 5 to 7 business days. The state sits on major national corridors and Indianapolis in particular is an easy destination for palletised consignments.',
+        'Ground freight into Indiana typically takes 5 to 7 business days. The state sits on major national corridors and Indianapolis in particular is an easy destination for palletized consignments.',
         'For heavy-duty corrugated the constraint is more often storage than transit. Flat-packed heavy board takes considerable space, so tell us your capacity and we can schedule phased deliveries.',
       ],
     },
@@ -475,7 +475,7 @@ export const statesC: Place[] = [
       picks: [
         { slug: 'custom-packaging-inserts', why: 'Geometry-specific protection, the core of most briefs here.' },
         { slug: 'pharmaceutical-packaging', why: 'Where documented version control is part of the specification.' },
-        { slug: 'custom-mailers', why: 'For components shipped individually rather than palletised.' },
+        { slug: 'custom-mailers', why: 'For components shipped individually rather than palletized.' },
         { slug: 'electronics-packaging', why: 'Fitted protection for sensitive assemblies.' },
       ],
     },
@@ -484,7 +484,7 @@ export const statesC: Place[] = [
       { href: '/materials/', anchor: 'flute grades and what each one carries', note: 'The board comparison for heavy contents.' },
     ],
     nearby: [
-      { slug: 'indianapolis', why: 'The state’s main commercial and distribution centre.' },
+      { slug: 'indianapolis', why: 'The state’s main commercial and distribution center.' },
       { slug: 'illinois', why: 'The adjacent distribution hub most freight routes through.' },
       { slug: 'ohio', why: 'A comparable manufacturing market with overlapping supply chains.' },
     ],
@@ -493,7 +493,7 @@ export const statesC: Place[] = [
       { q: 'Can you package large, irregular components?', a: 'Yes. Irregular items are an insert and edge-protection problem rather than a box problem. Send drawings, weight and the vulnerable points and we will specify around the geometry.' },
       { q: 'Can you supply pharmaceutical packaging with an audit trail?', a: 'Yes. We issue dated proofs against a revision number and retain the approval record where your quality system requires it. Tell us at quoting so the documentation is generated alongside the job.' },
       { q: 'Do you have a plant in Indiana?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Indiana address.' },
-      { q: 'How long does delivery to Indianapolis take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Indianapolis is an easy destination for palletised freight.' },
+      { q: 'How long does delivery to Indianapolis take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Indianapolis is an easy destination for palletized freight.' },
       { q: 'What board grade do I need for heavy parts?', a: 'It depends on weight, stack height and how long stock sits. Send those three numbers rather than asking for a flute grade — the same flute can be right or badly wrong depending on the load above it.' },
       { q: 'What is the minimum order in Indiana?', a: 'A flat 100 units on any format. For protective work that is usually enough to trial a structure against your actual handling process before committing.' },
       { q: 'Can you phase deliveries of bulky corrugated?', a: 'Yes. Heavy-duty corrugated takes considerable space even flat-packed, and buyers routinely underestimate it. Tell us your storage capacity and we will schedule drops around it.' },

@@ -96,16 +96,16 @@ export const promoSustainableFacts: ProductFactsMap = {
   'eco-friendly-cosmetic-packaging': {
     holds: 'a cosmetic container inside a carton that has to survive a recyclability claim as well as a shelf',
     sizeNote: 'Same dimensional problem as any cosmetic carton — the difference is entirely in the material and finish decisions, not the size.',
-    failure: 'The carton is rejected at kerbside because a plastic laminate was applied for the soft-touch finish, and a laminated carton is not accepted as paper in most US municipal streams.',
+    failure: 'The carton is rejected at curbside because a plastic laminate was applied for the soft-touch finish, and a laminated carton is not accepted as paper in most US municipal streams.',
     buyerNote: 'Recycled content is specified carefully and then a plastic lamination is added for the finish, which undoes the claim entirely.',
     context: 'beauty brands making a public environmental commitment, where the claim is checked by customers more closely than in most categories',
     detail: 'Lamination is the decision that decides recyclability. A soft-touch varnish or an uncoated stock gets a similar hand feel and stays in the paper stream.',
     spec: 'Uncoated or recycled board with an aqueous or soft-touch varnish rather than a film laminate.',
-    press: 'Uncoated stock absorbs ink, so colours go flatter and darker than the proof. Approve a printed sample on the actual board, not a digital proof.',
+    press: 'Uncoated stock absorbs ink, so colors go flatter and darker than the proof. Approve a printed sample on the actual board, not a digital proof.',
     pairs: ['eco-friendly-soap-packaging-boxes', 'kraft-packaging', 'minimal-packaging'],
     ask: {
       q: 'Can I have a soft-touch finish and still call the carton recyclable?',
-      a: 'Not with a plastic laminate — that takes it out of the paper stream in most US municipalities. A soft-touch aqueous varnish gets you close on feel and keeps the carton kerbside recyclable. We will send both so you can judge the difference by hand.',
+      a: 'Not with a plastic laminate — that takes it out of the paper stream in most US municipalities. A soft-touch aqueous varnish gets you close on feel and keeps the carton curbside recyclable. We will send both so you can judge the difference by hand.',
     },
   },
   'eco-friendly-paper-tube': {
@@ -120,7 +120,7 @@ export const promoSustainableFacts: ProductFactsMap = {
     pairs: ['eco-friendly-tube-packaging', 'kraft-packaging', 'home-fragrance-boxes'],
     ask: {
       q: 'Are paper tubes actually recyclable?',
-      a: 'Only if the ends are paper too. A spiral-wound board tube with metal ends crimped on cannot be separated by a consumer and generally is not accepted. Specify paperboard ends explicitly — the metal version is the default in most catalogues.',
+      a: 'Only if the ends are paper too. A spiral-wound board tube with metal ends crimped on cannot be separated by a consumer and generally is not accepted. Specify paperboard ends explicitly — the metal version is the default in most catalogs.',
     },
   },
   'eco-friendly-soap-packaging-boxes': {
@@ -156,16 +156,16 @@ export const promoSustainableFacts: ProductFactsMap = {
   'kraft-packaging': {
     holds: 'anything where the unbleached board itself is the intended look rather than a cost decision',
     sizeNote: 'No fixed range — kraft is a material choice applied across formats, so dimensions follow whichever format you are specifying.',
-    failure: 'Printed colours come out muddy and dark, because they are sitting on a brown substrate rather than on white, and nobody saw a sample first.',
-    buyerNote: 'Artwork is approved on a white screen and a white proof, then printed on brown board where every colour shifts.',
+    failure: 'Printed colors come out muddy and dark, because they are sitting on a brown substrate rather than on white, and nobody saw a sample first.',
+    buyerNote: 'Artwork is approved on a white screen and a white proof, then printed on brown board where every color shifts.',
     context: 'brands using an unbleached look deliberately, across food, cosmetics, e-commerce and gifting',
-    detail: 'Kraft subtracts from every colour laid on it. Either design for that — one or two colours, high contrast — or specify a white underprint, which costs an extra pass.',
-    spec: 'Recycled kraft board, with a white-lined variant available where colour fidelity matters more than the exposed brown look.',
+    detail: 'Kraft subtracts from every color laid on it. Either design for that — one or two colors, high contrast — or specify a white underprint, which costs an extra pass.',
+    spec: 'Recycled kraft board, with a white-lined variant available where color fidelity matters more than the exposed brown look.',
     press: 'Fine detail and pale tints disappear on kraft. Solid marks and heavy line weights are what hold up.',
     pairs: ['eco-friendly-soap-packaging-boxes', 'minimal-packaging', 'eco-friendly-cosmetic-packaging'],
     ask: {
-      q: 'Why do my colours look wrong on kraft?',
-      a: 'The brown substrate shows through the ink and pulls every colour down. A white underprint restores them at the cost of an extra press pass, or the design can be built for kraft with one or two high-contrast colours. Always approve a printed sample on the real board.',
+      q: 'Why do my colors look wrong on kraft?',
+      a: 'The brown substrate shows through the ink and pulls every color down. A white underprint restores them at the cost of an extra press pass, or the design can be built for kraft with one or two high-contrast colors. Always approve a printed sample on the real board.',
     },
   },
   'minimal-packaging': {
@@ -176,7 +176,7 @@ export const promoSustainableFacts: ProductFactsMap = {
     context: 'brands reducing packaging weight and shipping volume, usually with a published target to meet',
     detail: 'Right-sizing beats lightweighting. A box cut to the product ships more units per pallet and cuts dimensional weight, and it does not increase damage the way thinner board does.',
     spec: 'The lightest board that holds the measured damage rate, established with a sample run rather than assumed.',
-    press: 'One or two colours on uncoated stock. Restraint reads as intent here, where a full-bleed print undercuts the message.',
+    press: 'One or two colors on uncoated stock. Restraint reads as intent here, where a full-bleed print undercuts the message.',
     pairs: ['kraft-packaging', 'eco-friendly-cosmetic-packaging', 'eco-friendly-tube-packaging'],
     ask: {
       q: 'How far can I reduce the board before it becomes a problem?',
@@ -193,8 +193,8 @@ export const promoSustainableFacts: ProductFactsMap = {
     buyerNote: 'It is specified as dry board, when in service it is always damp — from condensation on cold cups or steam from hot ones.',
     context: 'coffee shops and drive-through service, where a tray is loaded quickly and carried immediately',
     detail: 'The handle area needs either a moisture-resistant board or a reinforced aperture. It is the single point where these fail and it fails under load.',
-    spec: 'Moulded pulp or E-flute corrugated with a moisture-resistant treatment on the handle area.',
-    press: 'One or two colours flexo. This is a genuinely disposable item and print cost per unit shows up quickly at volume.',
+    spec: 'Molded pulp or E-flute corrugated with a moisture-resistant treatment on the handle area.',
+    press: 'One or two colors flexo. This is a genuinely disposable item and print cost per unit shows up quickly at volume.',
     pairs: ['cold-cup-boxes', 'french-fries-containers'],
     ask: {
       q: 'Why do cup carriers tear at the handle?',
@@ -255,7 +255,7 @@ export const promoSustainableFacts: ProductFactsMap = {
     failure: 'The bands are packed loose in one compartment, the customer cannot tell the strengths apart, and the set gets returned as incomplete or wrong.',
     buyerNote: 'The pack is designed around fitting the bands in, when the real job is keeping five near-identical items distinguishable.',
     context: 'fitness retail and online sales, where a set is bought on the strength range and used over months',
-    detail: 'Each strength needs its own labelled position, or a printed card that maps colour to resistance. Latex also degrades under UV and ozone, so an opaque carton outlasts a clear window.',
+    detail: 'Each strength needs its own labeled position, or a printed card that maps color to resistance. Latex also degrades under UV and ozone, so an opaque carton outlasts a clear window.',
     spec: 'Folding carton or a printed box with a partition per band, in preference to a clear-fronted pack.',
     press: 'Print the resistance range prominently — it is the specification customers compare across brands and it decides the sale.',
     pairs: ['belly-band-packaging', 'promotional-boxes'],

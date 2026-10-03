@@ -1,0 +1,212 @@
+{
+  "privacy-policy": [
+    {
+      "q": "What personal information does The Retail Packaging collect?",
+      "a": "Only what a quote request needs. That means your name, email address, phone number, project details and any artwork you upload, plus the page you sent the request from. Our hosting provider also keeps standard server logs, which include IP addresses."
+    },
+    {
+      "q": "Why do you keep my details after I ask for a quote?",
+      "a": "We use them to answer your inquiry, prepare a quote, produce and deliver your order, and keep a record of the specification so a reorder matches the first run. We do not build marketing profiles from quote requests."
+    },
+    {
+      "q": "What legal basis do you rely on to process my data?",
+      "a": "When you ask for a quote, we process your data to take steps you requested before a contract is in place. Production records are kept under our legitimate interest in maintaining an accurate order history."
+    },
+    {
+      "q": "Who else sees the information I send you?",
+      "a": "Only those who need it to fulfill your order. Production partners receive your artwork and specifications, and carriers receive delivery details. We do not sell contact data or share it with anyone for their own marketing."
+    },
+    {
+      "q": "Can I ask you to delete my artwork files once an order is finished?",
+      "a": "Yes. Uploaded files are normally kept with your order record so a reorder can reuse them, but if you tell us you want the artwork deleted after the order completes, we will remove it."
+    },
+    {
+      "q": "How long do you retain inquiry and order records?",
+      "a": "Inquiries that never become orders are kept for 24 months. Order records, including specifications and artwork, are kept for 7 years, which covers reorders and any period in which a commercial dispute could arise."
+    },
+    {
+      "q": "How do I get a copy of the personal data you hold about me?",
+      "a": "Email info@theretailpackaging.com and ask. You can also ask us to correct your data or delete it where we are not required to keep it. We respond to these requests within 30 days."
+    },
+    {
+      "q": "Does the privacy policy say anything about analytics?",
+      "a": "Yes. The site sets no advertising cookies, and where analytics is switched on it is used to see which pages are useful, not to identify individual visitors. The cookie policy gives the full detail on browser storage."
+    },
+    {
+      "q": "How are my form submissions and uploads protected?",
+      "a": "Forms are sent over HTTPS. Uploaded files are checked by type and size and renamed before they are stored, and the credentials for our email systems sit in server environment variables, never in the code your browser receives."
+    },
+    {
+      "q": "Who should I contact with a question about my privacy?",
+      "a": "Send privacy questions or data requests to info@theretailpackaging.com. Say what you need, whether that is a copy of your data, a correction or a deletion, and we will reply within 30 days."
+    }
+  ],
+  "terms-and-conditions": [
+    {
+      "q": "How long does a quote from The Retail Packaging stay valid?",
+      "a": "Thirty days, unless the quote states otherwise. Each quote lists the specification, quantity, lead time and price, and prices exclude freight and applicable taxes unless noted. Changing the size, quantity or material means we reissue the quote."
+    },
+    {
+      "q": "When is a custom packaging order officially accepted?",
+      "a": "When we confirm it in writing. Even after that, production does not start until your artwork is approved and any agreed payment terms are met. Production then takes 3-5 business days, with transit of 5-7 business days after that."
+    },
+    {
+      "q": "Who is responsible for the text and claims printed on my packaging?",
+      "a": "You are. That covers regulated panel information, ingredient declarations, warnings, barcodes and any claims. We check files for print readiness, such as bleed, resolution, fonts and cut lines, but that check does not confirm legal or factual accuracy."
+    },
+    {
+      "q": "What happens if a mistake appears in a proof I already approved?",
+      "a": "Production runs against the proof you approve, so an error that was present in that approved proof is not grounds for a replacement at our cost. That is why we ask you to check the digital proof carefully before signing off."
+    },
+    {
+      "q": "Do I pay for cutting dies again when I reorder?",
+      "a": "No. Cutting and stamping dies are made for your specification and charged once, then kept available for reorders at the same specification. If the dimensions change, new tooling is needed and is charged again."
+    },
+    {
+      "q": "Why might I receive slightly more or fewer units than I ordered?",
+      "a": "Custom manufacturing carries a standard tolerance of plus or minus 10% on the ordered quantity. You are invoiced for the quantity actually delivered, so you only pay for what arrives."
+    },
+    {
+      "q": "How soon should I report damage to a delivery?",
+      "a": "Within 5 business days of arrival. Risk passes to you on delivery, so inspect consignments when they land. Lead times are counted from artwork approval and are good-faith estimates, and we tell you promptly if a confirmed date is at risk."
+    },
+    {
+      "q": "Is there a charge to cancel a custom order?",
+      "a": "Not before artwork approval, apart from any tooling already produced. Once production begins, cancellation is charged at the costs incurred, which for custom manufacturing is usually the full order value."
+    },
+    {
+      "q": "Can I send back packaging that was made correctly?",
+      "a": "No. Packaging made to an approved specification cannot be resold, so it cannot be returned. If goods do not match the approved specification or arrive damaged, we replace or credit them."
+    },
+    {
+      "q": "Is your liability limited on an order?",
+      "a": "Yes. Our liability for any order is capped at the value of that order, and we are not liable for indirect or consequential losses such as lost profit, lost sales or third-party costs. The terms are governed by United States law."
+    }
+  ],
+  "cookie-policy": [
+    {
+      "q": "Does this site set advertising or tracking cookies?",
+      "a": "No. The site sets no advertising or tracking cookies of its own. It uses just two small pieces of browser storage, and both exist only to make features of the site work for you."
+    },
+    {
+      "q": "What is the trp-pkg-tool-v1 storage item for?",
+      "a": "It is a local storage key that saves your packaging tool draft in your own browser, so you can close the page and pick up where you left off. It stays on your device and is not sent to us."
+    },
+    {
+      "q": "Is my packaging tool draft sent to you before I submit it?",
+      "a": "No. The draft lives only in your browser until you choose to submit the form. Nothing from the tool reaches us until you press submit and send the request yourself."
+    },
+    {
+      "q": "What happens to the quote reference stored in my session?",
+      "a": "The session storage key trp_quote_ref carries your quote reference to the confirmation page so it can be shown to you. It is deleted as soon as it has been displayed."
+    },
+    {
+      "q": "Is analytics running on this website?",
+      "a": "Only if a measurement ID has been configured. When analytics is on, it is set up to show which pages are useful rather than to identify individuals, and it does not set advertising cookies."
+    },
+    {
+      "q": "Does the WhatsApp button load any outside script?",
+      "a": "No. The WhatsApp button is a plain link. Clicking it opens WhatsApp, but no third-party script runs on this site to provide the button, so nothing from WhatsApp loads while you browse our pages."
+    },
+    {
+      "q": "Do you embed chat widgets or social media pixels?",
+      "a": "No. We do not embed third-party chat widgets, social pixels or advertising tags, so none of those services collect data through your visit to this site. If you want to talk to us, email or the WhatsApp link work without any embedded code."
+    },
+    {
+      "q": "How do I clear the data this site saves in my browser?",
+      "a": "Use your browser settings to clear local and session storage at any time. Doing that removes any saved packaging tool draft, and nothing else on the site depends on it."
+    },
+    {
+      "q": "Will the site still work if I block browser storage?",
+      "a": "Yes. Apart from saving a packaging tool draft, all functionality on the site keeps working without stored data, so you can still browse products, read guides and send a quote request. You would just need to finish the tool in one sitting."
+    },
+    {
+      "q": "How will I know if the cookie policy changes?",
+      "a": "If we add anything that stores data in your browser, this page is updated before the change goes live. The date at the top of the page shows when it was last revised."
+    }
+  ],
+  "accessibility-statement": [
+    {
+      "q": "Which accessibility standard does this website aim to meet?",
+      "a": "WCAG 2.2 Level AA. Accessibility was built into the site components from the start rather than added afterward, and the statement lists both what has been implemented and the limitations that remain."
+    },
+    {
+      "q": "Can I use the whole site with only a keyboard?",
+      "a": "Yes. Everything works from the keyboard, including the mega menu, gallery, accordions and packaging tool. A skip link to the main content is the first focusable element, and Escape closes open menus and returns focus to the trigger."
+    },
+    {
+      "q": "How are form errors announced to screen reader users?",
+      "a": "Every form control has an associated label, and errors are announced and linked to their fields with aria-describedby, so screen reader users hear what went wrong and where to fix it."
+    },
+    {
+      "q": "Does the site respect reduced motion settings?",
+      "a": "Yes. If your device is set to prefer reduced motion, the site turns off all animation and 3D movement, including in the packaging tool. Focus indicators also stay visible on every interactive element and are never removed."
+    },
+    {
+      "q": "Can I use the site with JavaScript turned off?",
+      "a": "Yes. Content stays readable and usable with JavaScript disabled, so you can still read product pages, specifications and guides and find the information you need without scripts running in your browser."
+    },
+    {
+      "q": "Why is the 3D box preview hidden from assistive technology?",
+      "a": "The 3D preview in the packaging tool is decorative. Everything it shows is also in the written specification summary beside it, so it is hidden from assistive technology rather than described twice."
+    },
+    {
+      "q": "How is product photography described for visitors who cannot see it?",
+      "a": "Product photos carry descriptive alt text that varies across a gallery rather than repeating. Some manufacturer-supplied photos have alt text that describes the product rather than every visual detail of the image."
+    },
+    {
+      "q": "How do specification tables behave on small screens?",
+      "a": "Complex specification tables scroll sideways on narrow screens instead of squeezing the text. They stay keyboard scrollable and use proper row and column headers, so the data still reads correctly with assistive technology."
+    },
+    {
+      "q": "Has the site been certified by an outside accessibility body?",
+      "a": "No. Components are tested with keyboard navigation and automated accessibility checks during the build. The statement describes what we check ourselves, not an accreditation from a third party, and we welcome reports of anything we missed."
+    },
+    {
+      "q": "How do I report an accessibility barrier on the site?",
+      "a": "Email info@theretailpackaging.com and describe what you were trying to do. We aim to respond within 5 business days and will offer another way to complete the task while we fix it. Touch targets are at least 44 pixels."
+    }
+  ],
+  "blog": [
+    {
+      "q": "What topics does The Retail Packaging blog cover?",
+      "a": "Practical decisions about custom packaging: choosing a format, comparing materials, printing methods, how costs are calculated, artwork preparation, inserts and retail shelf requirements. The blog avoids trend pieces and sticks to questions buyers actually face."
+    },
+    {
+      "q": "Which article should I read first when launching a new product?",
+      "a": "Start with How to Choose Retail Packaging for a New Product, then work through the Custom Retail Packaging Design Checklist. Together they help you settle format, size and print before you request a quote."
+    },
+    {
+      "q": "Is there an article explaining what drives a packaging quote?",
+      "a": "Yes. How Custom Packaging Costs Are Calculated walks through board area, plate setup, finishing steps, tooling and freight, which is quoted per consignment. It also explains why setup costs weigh more heavily on short runs."
+    },
+    {
+      "q": "How can the blog help me stop artwork bouncing at prepress?",
+      "a": "Read How to Prepare Artwork for Custom Packaging before you send files. It covers the usual reasons files get sent back, and we also provide a free dieline and a digital proof before any production starts."
+    },
+    {
+      "q": "Should I pick digital or offset printing for my run?",
+      "a": "The article Digital Printing vs Offset Printing for Packaging compares the two by quantity, color control and setup, so you can see which suits your run length. Ask us if your order sits between the two."
+    },
+    {
+      "q": "Where can I compare board, kraft and corrugated materials?",
+      "a": "Retail Packaging Materials Compared for Growing Brands sets the common options side by side. For the protective side of a pack, How Packaging Inserts Protect and Present Products explains how inserts hold items in place."
+    },
+    {
+      "q": "Does the blog cover lower-impact packaging choices?",
+      "a": "Yes. Sustainable Retail Packaging Options for US Businesses looks at material and format choices that cut waste, written for brands weighing recyclability against cost and protection. The Sustainable Packaging Guide in the resources section adds reference detail."
+    },
+    {
+      "q": "Is there guidance on getting packaging ready for store shelves?",
+      "a": "Retail Ready Packaging Requirements for Store Shelves covers what retailers tend to ask for, from shelf presence to handling. Read it before committing to a format for a wholesale or retail launch."
+    },
+    {
+      "q": "How is the blog different from the resources section?",
+      "a": "The blog holds longer articles on specific decisions, while the resources section holds reference guides such as the size guide, glossary and dieline guide. Use the blog to decide and the guides to specify."
+    },
+    {
+      "q": "How do I keep up with new packaging articles?",
+      "a": "Subscribe to the RSS feed at theretailpackaging.com/rss.xml, which lists every post as it is published, or check the blog page, where articles are sorted newest first. How to Order Custom Packaging in Bulk is a good next read."
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 ---
+import { withOverride } from '../lib/meta-overrides'
 import Base from '../layouts/Base.astro'
 import Breadcrumbs from '../components/Breadcrumbs.astro'
 import Gallery from '../components/Gallery.astro'
@@ -41,7 +42,7 @@ const related = relatedProducts(p, 4)
 /* Headings for the fixed bands. Derived from the same traits that chose the
    layout, so the labels match what the page actually argues. */
 const hc = { p, t: traits, layout }
-const { title, description } = productMeta(p)
+const { title, description } = withOverride(path, productMeta(p))
 const hero = p.images[0]
 
 const trail = [
@@ -275,7 +276,7 @@ const schema = S.graph([
   @media (max-width: 1040px) { .p-panel { position: static; } }
 
   /* ---------- prose ---------- */
-  /* Centred: left-aligned inside the 1580px wrap left ~900px of dead space to
+  /* Centered: left-aligned inside the 1580px wrap left ~900px of dead space to
      the right of every paragraph on all 371 product pages. */
   .p-prose { max-width: 74ch; margin-inline: auto; }
   .pb-prose { max-width: 74ch; margin-inline: auto; }

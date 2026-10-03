@@ -1,12 +1,12 @@
 import type { ProductFactsMap } from './types'
 
 /**
- * Electronics Packaging and Custom Jewellery Boxes.
+ * Electronics Packaging and Custom Jewelry Boxes.
  *
  * Two ranges with opposite problems, which is why they sit in one file without
  * blurring together. Electronics is a weight-and-compliance problem: the pack
  * has to survive a courier and carry marks that are required by law before it
- * carries any brand. Jewellery is a retention problem: almost nothing in the
+ * carries any brand. Jewelry is a retention problem: almost nothing in the
  * range is heavy, and almost everything in it moves, tangles or scratches
  * against the board if it is not held in one position.
  */
@@ -19,7 +19,7 @@ export const electronicsJewelleryFacts: ProductFactsMap = {
     failure: 'The carton is stacked three or four high on a pallet and the bottom unit crushes at the corners, because the walls were rated for the appliance alone rather than for everything sitting on top of it.',
     buyerNote: 'Board is chosen by feel — "something thick" — when the number that decides it is the edge crush rating against the stacking height in the warehouse.',
     context: 'pallet racking, LTL freight and retail backrooms, where the carton is stacked and moved several times before a customer ever sees it',
-    detail: 'Tell us the stacking height and whether it travels palletised or by parcel courier. Those two answers set the flute and the wall count; the appliance weight on its own does not.',
+    detail: 'Tell us the stacking height and whether it travels palletized or by parcel courier. Those two answers set the flute and the wall count; the appliance weight on its own does not.',
     spec: 'Double-wall BC flute for anything above roughly 15 lb or stacked more than two high. Single-wall C is enough for a light unit shipped singly.',
     press: 'Flexo direct to kraft is the honest route here. Litho-laminating a carton that is going to be opened once and recycled adds cost the category rarely supports.',
     pairs: ['electronics-boxes', 'speaker-boxes', 'car-battery-packaging'],
@@ -78,7 +78,7 @@ export const electronicsJewelleryFacts: ProductFactsMap = {
     sizeNote: 'No single range — this is the format we quote when the product does not fit one of the named categories, so the dieline is cut from your dimensions rather than adapted from a stock size.',
     failure: 'A drop onto a corner transmits straight through to the product, because the void fill was specified to stop movement rather than to absorb impact.',
     buyerNote: 'Stopping the product moving is treated as the same problem as protecting it. They are different: a tightly packed product with no cushioning still takes the full shock of a drop.',
-    context: 'mixed electronics catalogues, where one buyer is specifying packs for a range of products with quite different weights',
+    context: 'mixed electronics catalogs, where one buyer is specifying packs for a range of products with quite different weights',
     detail: 'Movement and impact are separate problems with separate answers. Fitted board stops movement; a corrugated pad, foam or a suspension insert absorbs impact. Most briefs need both.',
     spec: 'Single-wall E flute for small items where print quality matters, B or C flute once weight or drop height climbs.',
     press: 'If any part of the range carries an anti-static requirement, say so at quoting — it changes the liner, and it cannot be added after the board is bought.',
@@ -139,7 +139,7 @@ export const electronicsJewelleryFacts: ProductFactsMap = {
     failure: 'A corner drop drives the cabinet edge through the wall, because the weight is concentrated and corners are where a carton is weakest.',
     buyerNote: 'Weight is judged against the size of the box, when a speaker is far denser than its volume suggests and needs to be specified against the actual figure.',
     context: 'consumer audio retail and parcel delivery, where corner impacts during handling are the normal case rather than the exception',
-    detail: 'Corner cushioning does more than wall thickness on this product. Moulded pulp or foam corner blocks take the impact into the cushion rather than into the cabinet.',
+    detail: 'Corner cushioning does more than wall thickness on this product. Molded pulp or foam corner blocks take the impact into the cushion rather than into the cabinet.',
     spec: 'Double-wall BC flute above about 15 lb, single-wall C below it, with corner blocks in either case.',
     press: 'Larger cartons ship flat and get handled a lot before they are packed. A matt laminate or an aqueous coating stops scuffing showing on the way to being filled.',
     pairs: ['headphone-boxes', 'electronics-boxes', 'appliances-packaging'],
@@ -149,17 +149,17 @@ export const electronicsJewelleryFacts: ProductFactsMap = {
     },
   },
 
-  /* ---------- Custom Jewellery Boxes ---------- */
+  /* ---------- Custom Jewelry Boxes ---------- */
 
   'bracelet-boxes': {
     holds: 'a bracelet or bangle, which is either laid out straight or held as a rigid circle — two quite different internal shapes',
     sizeNote: 'A laid-flat chain bracelet needs roughly 8.5 × 2 in; a bangle needs a square nearer 3.5 × 3.5 in. The clasp type decides which.',
     failure: 'A flexible bracelet slides the length of the box and arrives coiled in one corner with the clasp caught in the links.',
     buyerNote: 'One box is ordered for a range that contains both chain bracelets and solid bangles, and the same interior cannot hold both.',
-    context: 'jewellery counters and online gifting, where the box is opened by the recipient rather than by the buyer',
+    context: 'jewelry counters and online gifting, where the box is opened by the recipient rather than by the buyer',
     detail: 'A slotted pad that grips the bracelet at two points. Held at one point it swings; held at two it stays laid out as it was packed.',
     spec: 'Rigid board with a foam pad under velvet or a paper-wrapped insert.',
-    press: 'Interior colour carries more of the impression than the outer print. The lid is open for the whole moment that matters.',
+    press: 'Interior color carries more of the impression than the outer print. The lid is open for the whole moment that matters.',
     pairs: ['necklace-boxes', 'earring-boxes', 'jewellery-boxes'],
     ask: {
       q: 'Can one box suit both bracelets and bangles?',
@@ -171,7 +171,7 @@ export const electronicsJewelleryFacts: ProductFactsMap = {
     sizeNote: 'Among the smallest formats we make, commonly 2 × 2 × 1 in, and sized to the pad rather than to the earrings.',
     failure: 'One earring works loose, migrates under the pad and is assumed lost, which turns a small item into a full replacement.',
     buyerNote: 'A plain foam pad is specified without pierced holes, so posts sit on the surface with nothing holding them.',
-    context: 'jewellery retail and small-parcel shipping, where the item is worth many times the cost of the pack',
+    context: 'jewelry retail and small-parcel shipping, where the item is worth many times the cost of the pack',
     detail: 'A pierced pad the posts push through, or a slotted card for hooks. The pad has to grip the fitting, not just sit under it.',
     spec: 'Rigid board with a slit foam pad, or a folding carton with a card fitment for lower price points.',
     press: 'The printable area is tiny. One mark and one line of type is usually all that reads at this size.',
@@ -183,17 +183,17 @@ export const electronicsJewelleryFacts: ProductFactsMap = {
   },
   'jewellery-boxes': {
     holds: 'mixed pieces across a retail range, where one outer format has to work for several quite different items',
-    sizeNote: 'Specified as a family rather than a single size — typically two or three footprints sharing one board, one wrap and one interior colour.',
+    sizeNote: 'Specified as a family rather than a single size — typically two or three footprints sharing one board, one wrap and one interior color.',
     failure: 'The range looks assembled from three different suppliers, because each size was specified separately as it was needed.',
     buyerNote: 'Boxes are ordered one at a time as each product launches, and the shared material decisions that hold a range together are never made.',
-    context: 'jewellery retail and e-commerce, where a customer buying twice should recognise the second box as the same brand',
-    detail: 'Fix the wrap, the interior colour and the closure once, then vary only the footprint. That is what makes a range read as a range.',
+    context: 'jewelry retail and e-commerce, where a customer buying twice should recognize the second box as the same brand',
+    detail: 'Fix the wrap, the interior color and the closure once, then vary only the footprint. That is what makes a range read as a range.',
     spec: 'Rigid board throughout, since mixing rigid and folding across a range is immediately visible to a customer.',
     press: 'Choose one wrap stock and one foil and hold them across every size. Consistency reads as quality here more than any individual treatment does.',
     pairs: ['ring-boxes', 'necklace-boxes', 'bracelet-boxes'],
     ask: {
       q: 'Should I order each box size separately as I need them?',
-      a: 'Specify them as a family even if you order them in stages. Fixing the wrap stock, interior colour and closure once means sizes added a year apart still match. Boxes specified one at a time almost never do.',
+      a: 'Specify them as a family even if you order them in stages. Fixing the wrap stock, interior color and closure once means sizes added a year apart still match. Boxes specified one at a time almost never do.',
     },
   },
   'necklace-boxes': {
@@ -201,7 +201,7 @@ export const electronicsJewelleryFacts: ProductFactsMap = {
     sizeNote: 'Long and shallow, commonly 8 × 2 × 1 in, sized to the chain laid out rather than to the pendant.',
     failure: 'The chain arrives knotted. It is the single most common complaint in this category and it happens in transit, not in the shop.',
     buyerNote: 'The box is sized to hold the necklace, when the job is to stop it moving — a chain with room to move will tangle every time.',
-    context: 'jewellery retail and mail order, where the box is turned over repeatedly between packing and opening',
+    context: 'jewelry retail and mail order, where the box is turned over repeatedly between packing and opening',
     detail: 'Secure the chain at both ends and the pendant separately. Held at one end only, the free end swings and the chain works itself into a knot.',
     spec: 'Rigid board with a slotted pad, or a folding carton with a card fitment where the price point is tighter.',
     press: 'A deep matt interior makes a bright chain read clearly against it. Light interiors lose the piece.',
@@ -216,7 +216,7 @@ export const electronicsJewelleryFacts: ProductFactsMap = {
     sizeNote: 'Compact, around 3 × 3 × 1.25 in — closer to a ring box than to a necklace box, despite the chain.',
     failure: 'The pendant swings against the board and picks up fine scratches, which show badly on polished silver and plated finishes.',
     buyerNote: 'It is treated as a small necklace box, so the pendant is left loose on a flat pad with the chain coiled around it.',
-    context: 'gifting and jewellery retail, where the piece is examined closely at the moment it is opened',
+    context: 'gifting and jewelry retail, where the piece is examined closely at the moment it is opened',
     detail: 'A recessed seat for the pendant with the chain slotted separately. Recessed, the pendant cannot travel far enough to strike anything.',
     spec: 'Rigid board with a die-cut foam recess under a soft lining.',
     press: 'The lining stock matters more than the wrap. A suede or velvet touch is what the recipient registers, and it also stops the scratching.',

@@ -15,17 +15,17 @@ faqs:
   - q: What is the single most commonly skipped check?
     a: Ordering a plain structural sample and testing it with the real product. It catches fit problems, closure problems and clearance problems in one step, and it is the only check that tests the pack rather than the specification.
   - q: Who should sign off the proof?
-    a: Someone authorised to commit the spend, and it should be recorded in writing. Verbal approval from whoever happens to be available is how the wrong artwork version reaches press, and a proof approved from memory rather than against a written specification catches nothing.
+    a: Someone authorized to commit the spend, and it should be recorded in writing. Verbal approval from whoever happens to be available is how the wrong artwork version reaches press, and a proof approved from memory rather than against a written specification catches nothing.
   - q: Do I need all of this for a small first run?
     a: The structural and compliance sections, yes — a fit problem or a missing warning costs the same whether the run is 100 units or 100,000. The retail and logistics sections only apply if you are supplying a retailer or shipping at volume.
   - q: What should we keep after production finishes?
-    a: The approved print file, the dieline, the board specification, the finish list and the colour targets, archived together. A reorder that references them is faster, cheaper and consistent with the previous run. A reorder that starts from scratch is a new job.
+    a: The approved print file, the dieline, the board specification, the finish list and the color targets, archived together. A reorder that references them is faster, cheaper and consistent with the previous run. A reorder that starts from scratch is a new job.
   - q: How do I calculate a reorder trigger point?
     a: Lead time multiplied by consumption rate, plus a safety margin. Using 5,000 a month against a six-week lead time means reordering at around 7,500 remaining. Getting this wrong is more expensive than over-ordering, because expedited freight erases any price break.
   - q: What storage conditions actually matter?
     a: Humidity and heat. Board absorbs moisture until it equalises with its surroundings and loses rigidity as it does, so stock held over six weeks unconditioned can fail a compression test it passed on delivery. Sustained heat softens laminating adhesives.
   - q: Should I confirm receiving constraints before ordering?
-    a: Yes, and it is skipped constantly. A pack that is perfect and cannot be received has still failed. Check whether the address takes a pallet, whether there is a dock, what the delivery window is, and whether a 3PL has its own labelling rules.
+    a: Yes, and it is skipped constantly. A pack that is perfect and cannot be received has still failed. Check whether the address takes a pallet, whether there is a dock, what the delivery window is, and whether a 3PL has its own labeling rules.
   - q: What does "clearance per side" mean?
     a: Clearance is specified per side, not per dimension. Two millimetres of clearance on a 60 mm product gives a 64 mm internal dimension, not 62 mm. Confusing the two is the most common sizing error we see on a first order.
   - q: Who should test the opening method?
@@ -60,7 +60,7 @@ Work through this before committing a packaging run. Most production problems ar
 - Bleed applied to every trim edge at the correct distance for the format
 - Critical content held inside safety margins
 - No text or barcode crossing a fold
-- Colour mode CMYK, spot colours named consistently
+- Color mode CMYK, spot colors named consistently
 - Rich black build used on large solids, 100% K on small text
 - Images 300 dpi at placed size
 - Fonts outlined or embedded
@@ -90,10 +90,10 @@ Work through this before committing a packaging run. Most production problems ar
 
 - Proof checked against a written specification, not from memory
 - Correct artwork version confirmed
-- Physical sample reviewed if fit or colour is critical
-- Approval given by someone authorised to give it
+- Physical sample reviewed if fit or color is critical
+- Approval given by someone authorized to give it
 
-Once production completes, archive the approved print file, dieline, board specification, finish list and colour targets together. Reorders that reuse them are faster, cheaper and more consistent, as set out in our [guide to ordering packaging in volume](/resources/wholesale-order-guide/).
+Once production completes, archive the approved print file, dieline, board specification, finish list and color targets together. Reorders that reuse them are faster, cheaper and more consistent, as set out in our [guide to ordering packaging in volume](/resources/wholesale-order-guide/).
 
 ## Why the order matters
 
@@ -125,4 +125,4 @@ Storage conditions matter because paperboard absorbs moisture until it equalises
 
 The reorder trigger point is simply lead time multiplied by consumption rate, plus a safety margin. Calculating it once at the first order avoids the recurring emergency of reordering too late and paying for expedited freight — which over a year usually exceeds whatever the original price break saved.
 
-Once production completes, archive the approved print file, dieline, board specification, finish list and colour targets together. Reorders that reuse them are faster, cheaper and more consistent, as set out in our [guide to ordering packaging in volume](/resources/wholesale-order-guide/).
+Once production completes, archive the approved print file, dieline, board specification, finish list and color targets together. Reorders that reuse them are faster, cheaper and more consistent, as set out in our [guide to ordering packaging in volume](/resources/wholesale-order-guide/).

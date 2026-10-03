@@ -1,6 +1,6 @@
 ---
 title: Packaging Insert Guide
-description: Board, foam and moulded pulp inserts compared, with cavity tolerances, multi-piece layout guidance and when an insert is not needed at all.
+description: Board, foam and molded pulp inserts compared, with cavity tolerances, multi-piece layout guidance and when an insert is not needed at all.
 metaTitle: Packaging Insert Guide | Board, Foam, Pulp
 publishDate: 2026-05-28
 updatedDate: 2026-08-11
@@ -17,7 +17,7 @@ faqs:
   - q: Can an insert let me use a cheaper outer box?
     a: Frequently, yes. Once the contents cannot move, the outer only has to resist crushing rather than absorb internal impact. Dropping a board grade on the outer often offsets most of the insert cost, so the pair can be close to cost-neutral.
   - q: Which insert material is most recyclable?
-    a: Board and moulded pulp both go into standard paper recycling. Foam generally does not. If recyclability is firm, moulded pulp is the closest thing to foam performance that still recycles — accepting somewhat less shock absorption.
+    a: Board and molded pulp both go into standard paper recycling. Foam generally does not. If recyclability is firm, molded pulp is the closest thing to foam performance that still recycles — accepting somewhat less shock absorption.
   - q: Do I need an insert for soft goods?
     a: Rarely. A folded garment cushions itself and has no rigid parts to break. Right-sizing the outer is almost always the better answer for soft goods, and it reduces dimensional weight at the same time.
   - q: How much clearance does a foam cavity need versus board?
@@ -29,7 +29,7 @@ faqs:
   - q: Do I need to send the box dimensions as well as the product?
     a: Yes. An insert is cut to the inside of the outer pack, not to the product alone, so both sets of dimensions are needed. Internal box dimensions specifically — most box specifications are quoted externally and board thickness makes the difference.
   - q: How do I test whether an insert works?
-    a: Load it with the real product and drop it about a metre onto a hard floor on several faces. If the product shifts, tighten the cavity. If the insert deforms, step up the material. If the outer creases at a corner, the load is not distributing and the geometry needs work.
+    a: Load it with the real product and drop it about a meter onto a hard floor on several faces. If the product shifts, tighten the cavity. If the insert deforms, step up the material. If the outer creases at a corner, the load is not distributing and the geometry needs work.
 ---
 
 Most transit damage happens because the product moved inside a box that survived. An insert stops that movement, and it is usually the cheapest reliability improvement in a specification.
@@ -40,11 +40,11 @@ Most transit damage happens because the product moved inside a box that survived
 |---|---|---|---|---|
 | Corrugated | Immobilises well, absorbs poorly | Low | Fair | Yes, with the box |
 | Chipboard | Light restraint only | Low | Good in shallow trays | Yes |
-| Moulded pulp | Good impact absorption | Medium | Poor surface | Yes |
+| Molded pulp | Good impact absorption | Medium | Poor surface | Yes |
 | PU foam | Excellent absorption | Medium-high | Very good | No |
 | EVA foam | Excellent, clean cut edge | High | Excellent | No |
 
-Board handles most products up to moderate weight. Foam is for anything genuinely fragile — glass, ceramics, unprotected screens. Moulded pulp sits between the two but cannot be a visible presentation layer.
+Board handles most products up to moderate weight. Foam is for anything genuinely fragile — glass, ceramics, unprotected screens. Molded pulp sits between the two but cannot be a visible presentation layer.
 
 ## Cavity tolerance
 
@@ -74,7 +74,7 @@ Where items of very different weights sit together, say so — a heavy item shif
 
 ## Testing
 
-Order a plain sample of insert and outer together, load it with the real product and drop it from about a metre onto a hard floor on several faces.
+Order a plain sample of insert and outer together, load it with the real product and drop it from about a meter onto a hard floor on several faces.
 
 If the product shifts, tighten the cavity. If the insert deforms, step up the material. If the outer creases at a corner, load is not being distributed and the geometry needs work. Our [guide to measuring products and allowing clearance](/resources/custom-packaging-size-guide/) covers the dimension side of the same problem.
 
@@ -98,14 +98,14 @@ Damage patterns point directly at the fix, and misreading them is what produces 
 
 The distinction that matters most is the first two rows. They look similar on a summary report and need opposite responses.
 
-## Cost behaviour
+## Cost behavior
 
-Inserts carry a tooling cost — a cutting die for board and foam, a mould for pulp — plus a per-unit cost. Board tooling is inexpensive and pulp tooling is not, which is why moulded pulp only makes sense at volume even where it is technically the better answer.
+Inserts carry a tooling cost — a cutting die for board and foam, a mold for pulp — plus a per-unit cost. Board tooling is inexpensive and pulp tooling is not, which is why molded pulp only makes sense at volume even where it is technically the better answer.
 
-That gives a rough hierarchy for short runs: board first, foam second, pulp only when the quantity justifies the mould.
+That gives a rough hierarchy for short runs: board first, foam second, pulp only when the quantity justifies the mold.
 
 ## Testing
 
-Order a plain sample of insert and outer together, load it with the real product and drop it from about a metre onto a hard floor on several faces.
+Order a plain sample of insert and outer together, load it with the real product and drop it from about a meter onto a hard floor on several faces.
 
 If the product shifts, tighten the cavity. If the insert deforms, step up the material. If the outer creases at a corner, load is not being distributed and the geometry needs work. Our [guide to measuring products and allowing clearance](/resources/custom-packaging-size-guide/) covers the dimension side of the same problem.

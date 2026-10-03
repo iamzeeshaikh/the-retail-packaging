@@ -349,7 +349,7 @@
    ]
   },
   {
-   "name": "Custom Jewellery Boxes",
+   "name": "Custom Jewelry Boxes",
    "slug": "custom-jewellery-boxes",
    "url": "/custom-jewellery-boxes/",
    "products": [
@@ -2377,20 +2377,20 @@
    "imageCount": 5
   },
   {
-   "name": "Personalised Paper Cups",
+   "name": "Personalized Paper Cups",
    "slug": "personalised-paper-cups",
    "url": "/personalised-paper-cups/",
    "category": "Custom Printed Cups",
    "categorySlug": "custom-printed-cups",
    "categoryUrl": "/custom-printed-cups/",
    "sourceDir": "/Users/sajjadahmad/Documents/the-retail-packaging/custom-printed-cups/Personalised Paper Cups",
-   "sourceFolder": "Personalised Paper Cups",
+   "sourceFolder": "Personalized Paper Cups",
    "imageFiles": [
-    "personalised paper cups-PBEE-1.png",
-    "personalised paper cups-PBEE-2.png",
-    "personalised paper cups-PBEE-3.png",
-    "personalised paper cups-PBEE-4.png",
-    "personalised paper cups-PBEE-5.png"
+    "personalized paper cups-PBEE-1.png",
+    "personalized paper cups-PBEE-2.png",
+    "personalized paper cups-PBEE-3.png",
+    "personalized paper cups-PBEE-4.png",
+    "personalized paper cups-PBEE-5.png"
    ],
    "imageCount": 5
   },
@@ -3473,19 +3473,19 @@
    "imageCount": 5
   },
   {
-   "name": "Personalised Poly Mailers",
+   "name": "Personalized Poly Mailers",
    "slug": "personalised-poly-mailers",
    "url": "/personalised-poly-mailers/",
    "category": "Custom Mailers",
    "categorySlug": "custom-mailers",
    "categoryUrl": "/custom-mailers/",
    "sourceDir": "/Users/sajjadahmad/Documents/the-retail-packaging/custom-mailers/Personalised Poly Mailers",
-   "sourceFolder": "Personalised Poly Mailers",
+   "sourceFolder": "Personalized Poly Mailers",
    "imageFiles": [
-    "personalised poly mailers​-TPB-2.png",
-    "personalised poly mailers​-TPB-3.png",
-    "personalised poly mailers​-TPB-4.png",
-    "personalised poly mailers​-TPB-5.png",
+    "personalized poly mailers​-TPB-2.png",
+    "personalized poly mailers​-TPB-3.png",
+    "personalized poly mailers​-TPB-4.png",
+    "personalized poly mailers​-TPB-5.png",
     "personalized mailers-PBEE-1.png",
     "personalized mailers-PBEE-2.png",
     "personalized mailers-PBEE-3.png",
@@ -4882,7 +4882,7 @@
    "name": "Bracelet Boxes",
    "slug": "bracelet-boxes",
    "url": "/bracelet-boxes/",
-   "category": "Custom Jewellery Boxes",
+   "category": "Custom Jewelry Boxes",
    "categorySlug": "custom-jewellery-boxes",
    "categoryUrl": "/custom-jewellery-boxes/",
    "sourceDir": "/Users/sajjadahmad/Documents/the-retail-packaging/custom-jewellery-boxes/Bracelet Boxes",
@@ -4900,7 +4900,7 @@
    "name": "Earring Boxes",
    "slug": "earring-boxes",
    "url": "/earring-boxes/",
-   "category": "Custom Jewellery Boxes",
+   "category": "Custom Jewelry Boxes",
    "categorySlug": "custom-jewellery-boxes",
    "categoryUrl": "/custom-jewellery-boxes/",
    "sourceDir": "/Users/sajjadahmad/Documents/the-retail-packaging/custom-jewellery-boxes/Earring Boxes",
@@ -4912,20 +4912,20 @@
    "imageCount": 2
   },
   {
-   "name": "Jewellery Boxes",
+   "name": "Jewelry Boxes",
    "slug": "jewellery-boxes",
    "url": "/jewellery-boxes/",
-   "category": "Custom Jewellery Boxes",
+   "category": "Custom Jewelry Boxes",
    "categorySlug": "custom-jewellery-boxes",
    "categoryUrl": "/custom-jewellery-boxes/",
    "sourceDir": "/Users/sajjadahmad/Documents/the-retail-packaging/custom-jewellery-boxes/Jewellery Boxes",
-   "sourceFolder": "Jewellery Boxes",
+   "sourceFolder": "Jewelry Boxes",
    "imageFiles": [
-    "Rigid Jewellery Boxes-PBEE-1.png",
-    "Rigid Jewellery Boxes-PBEE-3.png",
-    "Rigid Jewellery Boxes-PBEE-4.png",
-    "Rigid Jewellery Boxes-RPP-1.png",
-    "Rigid Jewellery Boxes-RPP-2.png"
+    "Rigid Jewelry Boxes-PBEE-1.png",
+    "Rigid Jewelry Boxes-PBEE-3.png",
+    "Rigid Jewelry Boxes-PBEE-4.png",
+    "Rigid Jewelry Boxes-RPP-1.png",
+    "Rigid Jewelry Boxes-RPP-2.png"
    ],
    "imageCount": 5
   },
@@ -4933,7 +4933,7 @@
    "name": "Necklace Boxes",
    "slug": "necklace-boxes",
    "url": "/necklace-boxes/",
-   "category": "Custom Jewellery Boxes",
+   "category": "Custom Jewelry Boxes",
    "categorySlug": "custom-jewellery-boxes",
    "categoryUrl": "/custom-jewellery-boxes/",
    "sourceDir": "/Users/sajjadahmad/Documents/the-retail-packaging/custom-jewellery-boxes/Necklace Boxes",
@@ -4953,7 +4953,7 @@
    "name": "Pendant Boxes",
    "slug": "pendant-boxes",
    "url": "/pendant-boxes/",
-   "category": "Custom Jewellery Boxes",
+   "category": "Custom Jewelry Boxes",
    "categorySlug": "custom-jewellery-boxes",
    "categoryUrl": "/custom-jewellery-boxes/",
    "sourceDir": "/Users/sajjadahmad/Documents/the-retail-packaging/custom-jewellery-boxes/Pendant Boxes",
@@ -4970,7 +4970,7 @@
    "name": "Ring Boxes",
    "slug": "ring-boxes",
    "url": "/ring-boxes/",
-   "category": "Custom Jewellery Boxes",
+   "category": "Custom Jewelry Boxes",
    "categorySlug": "custom-jewellery-boxes",
    "categoryUrl": "/custom-jewellery-boxes/",
    "sourceDir": "/Users/sajjadahmad/Documents/the-retail-packaging/custom-jewellery-boxes/Ring Boxes",
@@ -4990,7 +4990,7 @@
    "name": "Watch Boxes",
    "slug": "watch-boxes",
    "url": "/watch-boxes/",
-   "category": "Custom Jewellery Boxes",
+   "category": "Custom Jewelry Boxes",
    "categorySlug": "custom-jewellery-boxes",
    "categoryUrl": "/custom-jewellery-boxes/",
    "sourceDir": "/Users/sajjadahmad/Documents/the-retail-packaging/custom-jewellery-boxes/Watch Boxes",
@@ -6455,22 +6455,22 @@
    "imageCount": 8
   },
   {
-   "name": "Personalised Mylar Bags",
+   "name": "Personalized Mylar Bags",
    "slug": "personalised-mylar-bags",
    "url": "/personalised-mylar-bags/",
    "category": "Custom Pouches",
    "categorySlug": "custom-pouches",
    "categoryUrl": "/custom-pouches/",
    "sourceDir": "/Users/sajjadahmad/Documents/the-retail-packaging/custom-pouches/Personalised Mylar Bags",
-   "sourceFolder": "Personalised Mylar Bags",
+   "sourceFolder": "Personalized Mylar Bags",
    "imageFiles": [
-    "personalised mylar bags-DODO-AU-1.png",
-    "personalised mylar bags-DODO-AU-2.png",
-    "personalised mylar bags-DODO-AU-3.png",
-    "personalised mylar bags-DODO-AU-4.png",
-    "personalised mylar bags-DODO-AU-5.png",
-    "personalised mylar bags-DODO-AU-6.png",
-    "personalised mylar bags-DODO-AU-7.png"
+    "personalized mylar bags-DODO-AU-1.png",
+    "personalized mylar bags-DODO-AU-2.png",
+    "personalized mylar bags-DODO-AU-3.png",
+    "personalized mylar bags-DODO-AU-4.png",
+    "personalized mylar bags-DODO-AU-5.png",
+    "personalized mylar bags-DODO-AU-6.png",
+    "personalized mylar bags-DODO-AU-7.png"
    ],
    "imageCount": 7
   },

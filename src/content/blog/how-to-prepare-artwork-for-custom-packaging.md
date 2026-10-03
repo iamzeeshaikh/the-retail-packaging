@@ -1,6 +1,6 @@
 ---
 title: How to Prepare Artwork for Custom Packaging
-description: File setup for packaging print — dielines, bleed, colour mode, resolution, fonts and the export settings that stop artwork bouncing at prepress.
+description: File setup for packaging print — dielines, bleed, color mode, resolution, fonts and the export settings that stop artwork bouncing at prepress.
 metaTitle: How to Prepare Artwork for Custom Packaging
 publishDate: 2026-07-10
 updatedDate: 2026-08-11
@@ -16,10 +16,10 @@ faqs:
     a: Keep it inside the safety margin, typically 4 mm from every trim and fold line. Cutting is never perfectly accurate, so content closer than that risks being trimmed or landing on a crease where it distorts.
   - q: My logo looks fine on screen but blurry in the proof. Why?
     a: It is almost certainly a raster file rather than a vector — often a PNG taken from a website. Screen resolution is far lower than print, so what looks sharp at 72 dpi has soft edges at print size that nothing recovers.
-  - q: What colour mode should I work in?
-    a: CMYK from the start. An RGB file gets converted, and the conversion shifts colour most in saturated blues, bright greens and vivid oranges. Working in CMYK means you have seen the shift rather than inheriting it at proof.
-  - q: How do I make sure my brand colour prints correctly?
-    a: Specify it as a named spot colour rather than a process build, and approve a press-printed sample on the actual substrate. A monitor is backlit and a carton is not, so screen approval is not a reliable basis for a colour that matters.
+  - q: What color mode should I work in?
+    a: CMYK from the start. An RGB file gets converted, and the conversion shifts color most in saturated blues, bright greens and vivid oranges. Working in CMYK means you have seen the shift rather than inheriting it at proof.
+  - q: How do I make sure my brand color prints correctly?
+    a: Specify it as a named spot color rather than a process build, and approve a press-printed sample on the actual substrate. A monitor is backlit and a carton is not, so screen approval is not a reliable basis for a color that matters.
   - q: What is bleed and how much do I need?
     a: Artwork extended past the trim edge so cutting variance never exposes bare board. 3 mm is standard for folding cartons; corrugated needs more because cutting variance is greater.
   - q: Where should the barcode go?
@@ -27,7 +27,7 @@ faqs:
   - q: How many proof rounds should I expect?
     a: One or two if the file arrives correct. Most extra rounds come from mechanical issues — resolution, missing bleed, overprint settings — rather than design changes, which is why running a pre-flight list before sending is worth the ten minutes.
   - q: What should I keep after the job runs?
-    a: The approved print file, the dieline, the board specification, the finish list and the colour targets, archived together. A reorder referencing them skips most of prepress. A reorder without them is effectively a new job.
+    a: The approved print file, the dieline, the board specification, the finish list and the color targets, archived together. A reorder referencing them skips most of prepress. A reorder without them is effectively a new job.
 ---
 
 Packaging artwork is not print artwork with a different outline. It is a flat file that has to survive being folded, glued, cut and sometimes wrapped around a curve, and the setup requirements reflect that.
@@ -40,7 +40,7 @@ Ask your supplier for the dieline template before you begin. It arrives as a vec
 
 Place it on its own layer and lock it. Build all artwork on layers beneath it so you can always see where the structure sits. Never redraw it by hand or rebuild it from measurements, because small discrepancies between your version and the production die produce misregistered folds.
 
-The dieline must not print. Set its lines to a named spot colour such as "Dieline" or "CutContour" and mark that colour as non-printing in your export settings. Suppliers strip it out, but a clearly labelled layer removes any ambiguity about intent.
+The dieline must not print. Set its lines to a named spot color such as "Dieline" or "CutContour" and mark that color as non-printing in your export settings. Suppliers strip it out, but a clearly labeled layer removes any ambiguity about intent.
 
 ## Understand which panels are visible
 
@@ -54,9 +54,9 @@ On sleeves and wraps, work out where the seam falls and keep the main brand mark
 
 Bleed is artwork extended past the cut line so a cutting variance never exposes unprinted board.
 
-Folding cartons and labels typically need 3 mm. Rigid box wraps need much more, usually 15 mm, because the printed paper turns in around the greyboard edges. Pouches need bleed on all sides of the flat dieline including the gusset panels.
+Folding cartons and labels typically need 3 mm. Rigid box wraps need much more, usually 15 mm, because the printed paper turns in around the grayboard edges. Pouches need bleed on all sides of the flat dieline including the gusset panels.
 
-Extend the background artwork itself into the bleed area rather than adding a coloured block behind it, or you will get a visible line where the two meet.
+Extend the background artwork itself into the bleed area rather than adding a colored block behind it, or you will get a visible line where the two meet.
 
 ## Hold critical content inside the safety margin
 
@@ -64,15 +64,15 @@ Keep text, logos and anything that must not be clipped at least 4 mm inside ever
 
 Pay particular attention to fold lines. Content that crosses a crease distorts slightly at the fold and can look like a fault. Barcodes must never cross a fold.
 
-## Set colour up the way it will print
+## Set color up the way it will print
 
-Convert the document to CMYK. RGB files converted automatically at the press produce colour shifts that nobody intended.
+Convert the document to CMYK. RGB files converted automatically at the press produce color shifts that nobody intended.
 
-If you are printing spot colours, define them as named spot swatches and use them consistently. Two swatches with slightly different names that look identical on screen will be separated as two plates and charged accordingly. Delete unused swatches before export.
+If you are printing spot colors, define them as named spot swatches and use them consistently. Two swatches with slightly different names that look identical on screen will be separated as two plates and charged accordingly. Delete unused swatches before export.
 
-Use a rich black build for large solid black areas rather than 100% K alone, which prints as a flat dark grey across a wide panel. Keep small text and thin rules as 100% K only, because four-colour small type shows registration fringing at the edges.
+Use a rich black build for large solid black areas rather than 100% K alone, which prints as a flat dark gray across a wide panel. Keep small text and thin rules as 100% K only, because four-colour small type shows registration fringing at the edges.
 
-If your substrate is uncoated kraft or recycled board, expect colours to print warmer and less saturated. That is the material behaving normally, not a printing error. Request a proof on the real substrate if precise colour matters.
+If your substrate is uncoated kraft or recycled board, expect colors to print warmer and less saturated. That is the material behaving normally, not a printing error. Request a proof on the real substrate if precise color matters.
 
 ## Check resolution at placed size
 
@@ -92,22 +92,22 @@ Watch minimum sizes. Positive text below about 6pt loses legibility on most pack
 
 ## Export a print-ready file
 
-PDF/X-4 or PDF/X-1a are the usual choices for packaging. Both flatten transparency predictably and embed colour intent.
+PDF/X-4 or PDF/X-1a are the usual choices for packaging. Both flatten transparency predictably and embed color intent.
 
 Include bleed in the export and add trim marks outside the bleed area. Do not include registration marks inside the artwork area or crop marks that overlap the design.
 
-Check total ink coverage before exporting. Most presses cap total area coverage around 300%, and a design built by stacking dense colours can exceed that, producing set-off and slow drying. Design software can display total ink coverage as a separation preview.
+Check total ink coverage before exporting. Most presses cap total area coverage around 300%, and a design built by stacking dense colors can exceed that, producing set-off and slow drying. Design software can display total ink coverage as a separation preview.
 
 Name the file clearly with the product, the size and a version. A file called "final-final-v3.pdf" is how the wrong version reaches press.
 
 ## What to send with the file
 
-Alongside the artwork, send the finished dimensions, the substrate, the finish list and any spot colour references. If you have a Pantone target, state it explicitly rather than assuming the CMYK build communicates it.
+Alongside the artwork, send the finished dimensions, the substrate, the finish list and any spot color references. If you have a Pantone target, state it explicitly rather than assuming the CMYK build communicates it.
 
-If any element is critical — a specific brand colour, a legally required panel, an exact logo size — say so in the email. Prepress teams check a great many things, but they cannot know which of them you care about most.
+If any element is critical — a specific brand color, a legally required panel, an exact logo size — say so in the email. Prepress teams check a great many things, but they cannot know which of them you care about most.
 
 Brands producing several SKUs on the same structure should confirm whether one dieline can serve all of them, since [keeping a single structural die across variants](/resources/packaging-cost-factors/) removes a tooling charge from every additional design.
 
 ## After approval
 
-Once a proof is signed off, archive the approved file together with the dieline, board specification and colour targets. Reorders that reuse an approved file skip prepress almost entirely, which shortens the lead time and removes a whole category of risk from repeat production.
+Once a proof is signed off, archive the approved file together with the dieline, board specification and color targets. Reorders that reuse an approved file skip prepress almost entirely, which shortens the lead time and removes a whole category of risk from repeat production.

@@ -13,14 +13,14 @@ export const statesA: Place[] = [
     keyword: 'custom packaging California',
     h1: 'Packaging for California’s beauty, wellness and DTC brands',
     eyebrow: 'California · United States',
-    lede: 'More independent skincare, supplement and cannabis brands launch in California than anywhere else in the country, and each of those categories brings its own labelling rules. We manufacture to order and ship statewide.',
+    lede: 'More independent skincare, supplement and cannabis brands launch in California than anywhere else in the country, and each of those categories brings its own labeling rules. We manufacture to order and ship statewide.',
     metaTitle: 'Custom Packaging California | Beauty, CBD & DTC',
     metaDescription: 'Custom packaging for California beauty, wellness, cannabis and DTC brands. Prop 65 panel space, child-resistant structures and made-to-order runs from 100 units.',
     sectors: ['Beauty and skincare', 'Cannabis and CBD', 'Specialty food and beverage', 'Direct-to-consumer brands'],
     overview: {
       h: 'Why California specifications run longer than most',
       body: [
-        'A carton leaving for a California retailer usually has to carry more printed information than the same carton going anywhere else. Proposition 65 warnings, cannabis compliance panels, CalRecycle labelling rules and the ingredient disclosure that beauty buyers now expect all compete for the same panel area, and they arrive late in the process when the artwork is already laid out.',
+        'A carton leaving for a California retailer usually has to carry more printed information than the same carton going anywhere else. Proposition 65 warnings, cannabis compliance panels, CalRecycle labeling rules and the ingredient disclosure that beauty buyers now expect all compete for the same panel area, and they arrive late in the process when the artwork is already laid out.',
         'The practical consequence is that dieline planning matters more here. We would rather know at quoting that a Prop 65 panel is coming than reflow a finished layout, so tell us which disclosures apply before we cut the structural die.',
       ],
     },
@@ -51,7 +51,7 @@ export const statesA: Place[] = [
     logistics: {
       h: 'Freight into California and what slows it down',
       body: [
-        'We ship into California by ground freight from our production partners, with most consignments landing in 5 to 7 business days. Palletised orders into the Los Angeles basin and Oakland are the simplest to schedule, because both take standard dock deliveries without special arrangement.',
+        'We ship into California by ground freight from our production partners, with most consignments landing in 5 to 7 business days. Palletized orders into the Los Angeles basin and Oakland are the simplest to schedule, because both take standard dock deliveries without special arrangement.',
         'The delays we see are almost never in production. They come from delivery addresses that turn out to be residential or shared-unit industrial parks with no forklift. If your receiving point cannot take a pallet, say so at quoting and we will break the consignment into cartons instead.',
       ],
     },
@@ -62,7 +62,7 @@ export const statesA: Place[] = [
         'Whether a Proposition 65 warning applies to your product, and how much panel area it needs.',
         'For cannabis products, which compliance marks the current regulations require and at what minimum size.',
         'Whether your retailer has a planogram dimension you must hit rather than a preference.',
-        'Whether the delivery address can accept a palletised consignment.',
+        'Whether the delivery address can accept a palletized consignment.',
         'Whether recycled content or recyclability is a claim you intend to print, since each needs different evidence.',
       ],
     },
@@ -77,7 +77,7 @@ export const statesA: Place[] = [
       h: 'Ranges that fit California demand',
       intro: 'These four cover most of what we quote into the state.',
       picks: [
-        { slug: 'custom-cosmetic-packaging', why: 'The largest share of California enquiries, where finish quality carries the brand.' },
+        { slug: 'custom-cosmetic-packaging', why: 'The largest share of California inquiries, where finish quality carries the brand.' },
         { slug: 'custom-cbd-packaging', why: 'Structures built around closure and compliance requirements rather than aesthetics alone.' },
         { slug: 'custom-mailers', why: 'For the DTC sellers who make up much of the state’s e-commerce volume.' },
         { slug: 'sustainable-packaging', why: 'Recycled and recyclable stocks, for brands making an environmental claim they must defend.' },
@@ -95,15 +95,15 @@ export const statesA: Place[] = [
     ],
     faqs: [
       { q: 'Do I need a Proposition 65 panel on my packaging?', a: 'That depends on your product and its ingredients, and it is a legal question for you rather than for us. What we can do is reserve the panel area on the dieline so the warning does not force a redesign after artwork is finished. Tell us at quoting if one is likely.' },
-      { q: 'Can you produce child-resistant packaging for California cannabis products?', a: 'We can produce child-resistant carton structures and rigid boxes with certified closures. Compliance is verified against the regulations in force when your order runs, so send us the specific requirement your licence operates under rather than a general description.' },
+      { q: 'Can you produce child-resistant packaging for California cannabis products?', a: 'We can produce child-resistant carton structures and rigid boxes with certified closures. Compliance is verified against the regulations in force when your order runs, so send us the specific requirement your license operates under rather than a general description.' },
       { q: 'How long does delivery to California take?', a: 'Ground freight usually lands in 5 to 7 business days once production finishes, and production is 3 to 5 business days after artwork approval. Los Angeles and Oakland are the least trouble to book, since both take standard dock deliveries.' },
       { q: 'Do you have a facility in California?', a: 'We manufacture through our production partners and ship direct, so there is no office, plant or warehouse in California. Production runs through our manufacturing partners and ships directly to your California address.' },
-      { q: 'Can you match a Pantone across a repeat California order?', a: 'Yes, on offset and flexo runs where we hold the ink formulation. Digital press has a wider tolerance, so if exact colour consistency across repeat runs matters more than short-run economics, tell us and we will quote the litho route.' },
+      { q: 'Can you match a Pantone across a repeat California order?', a: 'Yes, on offset and flexo runs where we hold the ink formulation. Digital press has a wider tolerance, so if exact color consistency across repeat runs matters more than short-run economics, tell us and we will quote the litho route.' },
       { q: 'What is the minimum order for a California delivery?', a: 'A flat 100 units on any format. Shipping to California does not change the minimum, though freight is quoted separately and depends on consignment size.' },
       { q: 'Can you deliver to a Los Angeles address without a loading dock?', a: 'Yes, but tell us before the consignment is booked. Without a dock we ship in cartons rather than on a pallet, or arrange a lift-gate delivery, and both affect the freight cost.' },
       { q: 'Do you offer recyclable packaging that meets California expectations?', a: 'We produce recycled paperboard, kerbside-recyclable coated stock and certified compostable options. Those are three different claims with three different evidence requirements, so tell us which one you intend to print on the pack and we will specify a material that supports it.' },
-      { q: 'Can you split one California order across several addresses?', a: 'Yes. Splitting a run between, say, a Los Angeles fulfilment centre and a Bay Area retail account is straightforward if you tell us the split at quoting so freight is costed correctly from the start.' },
-      { q: 'Can I get a sample sent to California before committing?', a: 'Yes. We can send a plain structural sample so you can check the fit, or a printed prototype for colour and finish. Sample costs are normally credited against the production order.' },
+      { q: 'Can you split one California order across several addresses?', a: 'Yes. Splitting a run between, say, a Los Angeles fulfilment center and a Bay Area retail account is straightforward if you tell us the split at quoting so freight is costed correctly from the start.' },
+      { q: 'Can I get a sample sent to California before committing?', a: 'Yes. We can send a plain structural sample so you can check the fit, or a printed prototype for color and finish. Sample costs are normally credited against the production order.' },
       { q: 'How much does custom packaging cost for a California brand?', a: 'Prices start from $0.30 per piece for large-volume orders, with final pricing driven by size, material, printing, finishes and quantity. Freight into California is quoted separately.' },
     ],
     cta: {
@@ -144,7 +144,7 @@ export const statesA: Place[] = [
         'Food service across Houston, Dallas and San Antonio accounts for the largest share, with fulfilment volume close behind.',
       ],
       items: [
-        { name: 'Quick-service food', detail: 'Multi-site operators buying cups, trays and carriers in bulk. Grease resistance and stacking behaviour at the counter matter more than finish.' },
+        { name: 'Quick-service food', detail: 'Multi-site operators buying cups, trays and carriers in bulk. Grease resistance and stacking behavior at the counter matter more than finish.' },
         { name: 'Barbecue and specialty food', detail: 'A distinctly Texan category with distinctly awkward packaging: heavy, hot, greasy contents that punish an under-specified board.' },
         { name: 'Oil and industrial supply', detail: 'Parts and consumables that need protective corrugated rather than retail presentation, often with barcode placement dictated by an internal system.' },
         { name: 'E-commerce fulfilment', detail: 'The I-35 spine between San Antonio and Dallas carries a growing concentration of third-party fulfilment operations buying mailers by the pallet.' },
@@ -165,7 +165,7 @@ export const statesA: Place[] = [
     logistics: {
       h: 'Freight across a state this size',
       body: [
-        'Ground freight into Texas typically runs 5 to 7 business days. Dallas and Houston both take palletised deliveries without difficulty, and both sit on enough freight capacity that consignment size rarely causes a problem.',
+        'Ground freight into Texas typically runs 5 to 7 business days. Dallas and Houston both take palletized deliveries without difficulty, and both sit on enough freight capacity that consignment size rarely causes a problem.',
         'The distances inside the state are the thing to plan for. El Paso is closer to San Diego than to Houston, so a single Texas order delivered to several sites is not one freight leg but several. Tell us the split at quoting rather than after the run.',
       ],
     },
@@ -202,8 +202,8 @@ export const statesA: Place[] = [
       { q: 'What is the cheapest print route for a large Texas run?', a: 'Above roughly 1,000 units offset or flexo usually beats digital, because the plate cost spreads across more pieces. Most Texas orders we quote are past that point. Below it, digital removes the plate cost entirely.' },
       { q: 'Can you supply grease-resistant food packaging?', a: 'Yes. Greaseproof papers and grease-resistant coatings are standard options across our food formats. For barbecue and other hot, heavy contents we usually recommend a heavier board as well, because moisture from hot food softens an under-specified tray before grease does.' },
       { q: 'Do you have a warehouse in Texas?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Texas. Everything is made to order and shipped to your address, which is why we quote freight separately rather than folding it into a unit price.' },
-      { q: 'How quickly can packaging reach Houston or Dallas?', a: 'Production takes 3 to 5 business days after artwork approval, then ground freight into Texas is typically 5 to 7 business days. Both cities take palletised freight without special arrangement.' },
-      { q: 'What is the minimum order for a Texas delivery?', a: 'A flat 100 units on any format, the same as anywhere else. Most Texas enquiries are well above it, but the minimum exists so you can test a structure before committing to a bulk run.' },
+      { q: 'How quickly can packaging reach Houston or Dallas?', a: 'Production takes 3 to 5 business days after artwork approval, then ground freight into Texas is typically 5 to 7 business days. Both cities take palletized freight without special arrangement.' },
+      { q: 'What is the minimum order for a Texas delivery?', a: 'A flat 100 units on any format, the same as anywhere else. Most Texas inquiries are well above it, but the minimum exists so you can test a structure before committing to a bulk run.' },
       { q: 'Can you print to a food-contact standard?', a: 'Yes. Where packaging touches food directly we specify food-contact compliant boards and inks. Tell us whether contact is direct or through a liner, because it changes which stocks are available to you.' },
       { q: 'Can you handle barcode placement for an internal warehouse system?', a: 'Yes. Send the symbology, the required size and the face it must appear on. Getting this right at dieline stage avoids the common problem of a barcode landing across a crease where scanners fail.' },
       { q: 'How much does custom packaging cost in Texas?', a: 'From $0.30 per piece at large volumes, with the final figure driven by size, material, printing, finishes and quantity. Texas quantities often reach the volume bands where unit cost falls sharply.' },
@@ -278,7 +278,7 @@ export const statesA: Place[] = [
     logistics: {
       h: 'Getting freight down the peninsula',
       body: [
-        'Deliveries into Florida usually take 5 to 7 business days by ground. Miami, Orlando and Tampa are all straightforward for palletised freight, though the far south of the state adds a day or two over the panhandle.',
+        'Deliveries into Florida usually take 5 to 7 business days by ground. Miami, Orlando and Tampa are all straightforward for palletized freight, though the far south of the state adds a day or two over the panhandle.',
         'Hurricane season is worth acknowledging honestly. Between June and November a named storm can close freight lanes for several days with no notice. We cannot control that, but we can build slack into a delivery date if your deadline is fixed — tell us the date that actually matters.',
       ],
     },
@@ -306,7 +306,7 @@ export const statesA: Place[] = [
     nearby: [
       { slug: 'miami', why: 'The densest concentration of beauty, beverage and import activity in the state.' },
       { slug: 'jacksonville', why: 'A distribution-weighted market with a different buyer profile.' },
-      { slug: 'georgia', why: 'The neighbouring state most Florida freight passes through.' },
+      { slug: 'georgia', why: 'The neighboring state most Florida freight passes through.' },
     ],
     faqs: [
       { q: 'Does Florida humidity really affect packaging?', a: 'Yes, measurably. Paperboard absorbs atmospheric moisture until it equalises with its surroundings, and it loses stiffness as it does. Cartons stored unconditioned through a Florida summer can buckle in a stack even though they passed compression testing when they left the plant.' },
@@ -370,7 +370,7 @@ export const statesA: Place[] = [
       items: [
         'Whether the building has a loading dock, or whether the delivery needs a lift-gate.',
         'What the permitted delivery hours are, since many buildings restrict them tightly.',
-        'Whether there is a freight elevator, and its dimensions if the consignment is palletised.',
+        'Whether there is a freight elevator, and its dimensions if the consignment is palletized.',
         'Whether a smaller number of cartons is easier to receive than one pallet.',
         'Whether the address is a street-level retail unit, which changes the arrangement again.',
       ],
@@ -416,7 +416,7 @@ export const statesA: Place[] = [
       { q: 'Can I see a printed prototype before the full run?', a: 'Yes, and for finish-led work we recommend it. Foil and soft-touch both read differently in person than on screen. Sample costs are normally credited against the production order.' },
       { q: 'What is the minimum order for a New York delivery?', a: 'A flat 100 units on any format, which suits the short-run pattern here. Below about 1,000 units we print digitally, which removes the plate cost.' },
       { q: 'Can one box work as both retail packaging and a shipper?', a: 'Sometimes, but it is usually a compromise. A box built to look good on a shelf is rarely built to survive a carrier network alone. We more often specify a presentation box inside a plain outer, and will tell you honestly which route costs less overall.' },
-      { q: 'Can you match a Pantone on a short digital run?', a: 'Digital has a wider colour tolerance than offset. For a critical brand colour on a short run we can either run litho with a spot ink at higher cost, or supply a digital proof so you can approve the achievable match before production.' },
+      { q: 'Can you match a Pantone on a short digital run?', a: 'Digital has a wider color tolerance than offset. For a critical brand color on a short run we can either run litho with a spot ink at higher cost, or supply a digital proof so you can approve the achievable match before production.' },
       { q: 'Do you handle deliveries with restricted building hours?', a: 'Yes. Tell us the permitted window at quoting and we will book freight against it. Missed delivery windows in Manhattan usually mean a redelivery charge, so it is worth getting right the first time.' },
       { q: 'How much does short-run presentation packaging cost?', a: 'Prices start from $0.30 per piece at large volume, but a short high-finish run sits well above that floor. Rigid construction, foil, deboss and hand assembly each add a stage. We quote the finish schedule line by line so you can see what each element costs.' },
     ],
@@ -462,9 +462,9 @@ export const statesA: Place[] = [
       intro: 'Supplying these upfront avoids a proof cycle spent asking for them.',
       items: [
         'The artwork revision number and the date it was approved internally.',
-        'Who is authorised to sign off a proof on your side.',
+        'Who is authorized to sign off a proof on your side.',
         'Whether you need dated, versioned proofs retained for audit.',
-        'Any barcode or serialisation requirement, with the symbology and minimum size.',
+        'Any barcode or serialization requirement, with the symbology and minimum size.',
         'Whether the carton must match an existing production standard rather than a fresh design.',
       ],
     },
@@ -482,7 +482,7 @@ export const statesA: Place[] = [
     logistics: {
       h: 'Sitting on the East Coast freight corridors',
       body: [
-        'Ground delivery into Pennsylvania is typically 5 to 7 business days, and the state sits on enough freight corridors that the window holds up reliably. The state sits on major East Coast freight corridors and both the Philadelphia and Pittsburgh ends take palletised freight without difficulty.',
+        'Ground delivery into Pennsylvania is typically 5 to 7 business days, and the state sits on enough freight corridors that the window holds up reliably. The state sits on major East Coast freight corridors and both the Philadelphia and Pittsburgh ends take palletized freight without difficulty.',
         'For repeat regulated runs the freight is rarely the variable. Scheduling is: if your production planning works to a fixed reorder point, tell us and we can hold the specification ready so a repeat needs approval only, not re-quoting.',
       ],
     },
@@ -508,21 +508,21 @@ export const statesA: Place[] = [
       { href: '/how-it-works/', anchor: 'where proof approval sits in the production sequence', note: 'Useful when mapping our stages onto your internal QA process.' },
     ],
     nearby: [
-      { slug: 'philadelphia', why: 'The centre of the state’s life-sciences packaging demand.' },
+      { slug: 'philadelphia', why: 'The center of the state’s life-sciences packaging demand.' },
       { slug: 'new-jersey', why: 'The adjacent state with an overlapping pharmaceutical cluster.' },
       { slug: 'maryland', why: 'Another mid-Atlantic market on the same freight corridors.' },
     ],
     faqs: [
       { q: 'Can you supply versioned proofs with sign-off records?', a: 'Yes. Where your quality system requires it we issue dated proofs against a revision number and retain the approval record. Tell us at quoting so the documentation is built alongside the job rather than reconstructed later.' },
       { q: 'Can you guarantee a repeat run matches the previous one?', a: 'On offset and flexo we hold the ink formulation and the plate specification, which makes run-to-run consistency achievable within a tight tolerance. Digital has a wider tolerance. If matching a previous run is critical, we will recommend the litho route.' },
-      { q: 'Do you handle serialisation or variable barcodes?', a: 'We can accommodate variable data on digital runs. Send the symbology, the data source and the required placement early — barcodes that land across a crease fail at the scanner, and that is a dieline decision rather than a print one.' },
+      { q: 'Do you handle serialization or variable barcodes?', a: 'We can accommodate variable data on digital runs. Send the symbology, the data source and the required placement early — barcodes that land across a crease fail at the scanner, and that is a dieline decision rather than a print one.' },
       { q: 'Do you have a plant in Pennsylvania?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Pennsylvania address, usually within 5 to 7 business days of dispatch.' },
       { q: 'How do I register a specification for repeat ordering?', a: 'Once the first run is approved we hold the full specification — board, structure, print method, finishes and dimensions — against your account. Repeat orders reference it, so nothing is re-derived and nothing changes unintentionally.' },
       { q: 'What is the minimum order for a Pennsylvania delivery?', a: 'A flat 100 units on any format. For regulated work the minimum is useful mainly as a way to validate a structure before it enters a controlled specification.' },
       { q: 'Can you supply printed leaflets and inserts as well as cartons?', a: 'Yes. Leaflets, outserts and fitted inserts can run alongside the carton so the components arrive together and share one approval cycle.' },
       { q: 'How quickly can you turn a proof around?', a: 'Prepress normally issues a proof within one business day of receiving print-ready artwork. Where a documented approval trail is required, that step is the same speed but generates a retained record.' },
       { q: 'Can you match an existing production standard rather than a new design?', a: 'Yes, and it is common here. Send the current specification and a physical sample if you have one. We will quote to match it rather than proposing an alternative you would then have to requalify.' },
-      { q: 'How much does regulated packaging cost in Pennsylvania?', a: 'From $0.30 per piece at large volumes. Documentation and version control do not carry a separate line charge, but tighter colour tolerance usually points to offset, which changes the economics at lower quantities.' },
+      { q: 'How much does regulated packaging cost in Pennsylvania?', a: 'From $0.30 per piece at large volumes. Documentation and version control do not carry a separate line charge, but tighter color tolerance usually points to offset, which changes the economics at lower quantities.' },
     ],
     cta: {
       h: 'Start a Pennsylvania specification',

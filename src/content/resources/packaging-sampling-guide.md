@@ -11,7 +11,7 @@ heroProduct: candle-boxes-with-insert
 heroAlt: Candle box with a fitted insert shown open to reveal the cavity
 faqs:
   - q: What is the difference between a plain sample and a printed prototype?
-    a: A plain sample answers questions about fit, structure and closure — does the product go in, does it stay in, does the box close. A printed prototype answers questions about colour, finish and how the design reproduces. They test different things and cost different amounts.
+    a: A plain sample answers questions about fit, structure and closure — does the product go in, does it stay in, does the box close. A printed prototype answers questions about color, finish and how the design reproduces. They test different things and cost different amounts.
   - q: Is a digital proof enough, or do I need a physical sample?
     a: A digital proof catches layout and content errors. It cannot tell you how soft-touch lamination feels, how a foil catches the light, whether a perforation tears cleanly, or whether your product actually fits. For anything finish-led or fit-critical, a physical sample is the only real answer.
   - q: Are sample costs refunded?
@@ -23,7 +23,7 @@ faqs:
   - q: Can you sample a perforation?
     a: Yes, and you should. A perforation is the single element that cannot be judged from a drawing — too weak and it opens in transit, too strong and store staff tear it badly. It has to be felt, which means a physical sample on any display or shelf-ready case.
   - q: Does a sample tell me anything about long-run consistency?
-    a: No, and that is its main limitation. A prototype shows what one unit looks like. Colour consistency across a full run is a press question, and it is answered by the print route and a held ink formulation rather than by sampling.
+    a: No, and that is its main limitation. A prototype shows what one unit looks like. Color consistency across a full run is a press question, and it is answered by the print route and a held ink formulation rather than by sampling.
   - q: Should I sample a repeat order?
     a: Usually not, if it references a held specification and nothing has changed. Sampling is for new structures, fitted cavities, perforations, unfamiliar finishes on a given substrate, and any tight fit. A straight repeat needs none of those checks.
   - q: What is a production first-off?
@@ -41,7 +41,7 @@ The mistake is ordering the wrong kind of sample for the question you actually h
 | Type | Tests | Typical cost | Lead time |
 |---|---|---|---|
 | Plain structural sample | Does the product fit and the pack close | Low | 3 – 5 days |
-| Printed prototype | Colour, finish, artwork position | Medium | 5 – 8 days |
+| Printed prototype | Color, finish, artwork position | Medium | 5 – 8 days |
 | Production proof | Final approval before the run | Included or low | 1 – 3 days |
 
 ## Plain structural samples
@@ -54,21 +54,21 @@ Order this before artwork is finished, because a structural change invalidates t
 
 ## Printed prototypes
 
-Produced digitally on the intended substrate with your artwork applied. This answers colour and finish questions that a screen cannot.
+Produced digitally on the intended substrate with your artwork applied. This answers color and finish questions that a screen cannot.
 
-Worth the cost when your brand depends on precise colour, when printing on kraft or uncoated stock where colour shifts, or when a finish like soft-touch or spot UV needs to be judged by hand.
+Worth the cost when your brand depends on precise color, when printing on kraft or uncoated stock where color shifts, or when a finish like soft-touch or spot UV needs to be judged by hand.
 
-Note that a digital prototype approximates an offset production run rather than matching it exactly. For critical colour, ask about a press proof instead.
+Note that a digital prototype approximates an offset production run rather than matching it exactly. For critical color, ask about a press proof instead.
 
 ## Production proofs
 
-A digital proof confirming content, layout and position before the run. This is the final check, not a colour standard, because your screen and the press are different devices.
+A digital proof confirming content, layout and position before the run. This is the final check, not a color standard, because your screen and the press are different devices.
 
 Check the proof against a written specification rather than from memory. Approvals given from memory are how the wrong version of a panel reaches production.
 
 ## Drop testing
 
-For anything shipping through a carrier, load a sample with the real product and drop it from about a metre onto a hard floor, on several different faces and corners.
+For anything shipping through a carrier, load a sample with the real product and drop it from about a meter onto a hard floor, on several different faces and corners.
 
 Not a formal protocol, but it identifies obvious failures immediately. Corners fail first, then edges, then faces.
 
@@ -88,9 +88,9 @@ Everything else — new product, new size, new material, new format — is worth
 
 | Sample | Answers | Does not answer |
 |---|---|---|
-| Plain structural | Fit, closure, assembly, stacking | Colour, finish, print quality |
-| Digital proof | Layout, content, position | Feel, finish, substrate colour |
-| Printed prototype | Colour, finish, overall impression | Long-run consistency |
+| Plain structural | Fit, closure, assembly, stacking | Color, finish, print quality |
+| Digital proof | Layout, content, position | Feel, finish, substrate color |
+| Printed prototype | Color, finish, overall impression | Long-run consistency |
 | Production first-off | Everything, on the real press | Nothing — it is the run |
 
 Choosing the wrong one is the common waste. A printed prototype ordered to check whether a bottle fits is an expensive way to answer a question a plain sample answers for less.

@@ -11,13 +11,13 @@ faqs:
   - q: Why is my quote so much higher per unit than a competitor's bulk price?
     a: Almost always quantity. Setup costs are fixed and divide by however many units you make, so a 250-unit run carries the same plate and makeready cost as a 25,000-unit one. It is arithmetic rather than a penalty for ordering small.
   - q: What part of the quote can I actually negotiate?
-    a: Less than you would think on price, and more than you would think on specification. Removing a finishing pass, reducing colour count or adjusting a dimension so it nests better on the sheet all move the number more than asking for a discount.
+    a: Less than you would think on price, and more than you would think on specification. Removing a finishing pass, reducing color count or adjusting a dimension so it nests better on the sheet all move the number more than asking for a discount.
   - q: Is the cheapest quote usually the cheapest packaging?
     a: Not over a year. A pack that fails in transit costs the product, the replacement shipping and the customer. And a quote that omits tooling or freight is not comparable with one that includes them — the gap is usually where the difference sits.
   - q: How much does tooling cost and is it charged again?
     a: It varies by structure, and it should be a one-time cost reused on reorders. Ask explicitly whether a reorder incurs it again and who holds the die. It is one of the most common gaps in a first quote.
-  - q: Why does one extra colour cost so much?
-    a: On offset and flexo each colour is a separate plate and press unit, so a fifth colour adds tooling, setup and running cost together. On digital the colour count barely registers. It is one of the biggest structural differences between the routes.
+  - q: Why does one extra color cost so much?
+    a: On offset and flexo each color is a separate plate and press unit, so a fifth color adds tooling, setup and running cost together. On digital the color count barely registers. It is one of the biggest structural differences between the routes.
   - q: What is the largest cost most brands overlook?
     a: Outbound freight. Dimensional weight is charged on every parcel forever and never appears on a packaging invoice, so it goes unexamined — even though it usually dwarfs the difference between two board grades.
   - q: Does ordering more always reduce the unit price?
@@ -46,21 +46,21 @@ Board grade multiplies that area cost. Moving from 14pt to 18pt is roughly a pro
 
 ## Setup costs are fixed, and that changes everything
 
-Plate-based printing carries a setup cost that does not change with quantity. Offset and flexographic printing need plates made for each colour. Foil stamping needs a die. Embossing needs a die. Structural die-cutting needs a cutting forme.
+Plate-based printing carries a setup cost that does not change with quantity. Offset and flexographic printing need plates made for each color. Foil stamping needs a die. Embossing needs a die. Structural die-cutting needs a cutting forme.
 
 That fixed cost is the reason unit price falls as quantity rises. Spread a $600 plate set across 500 units and it adds $1.20 per box. Spread it across 20,000 and it adds three cents.
 
 Digital printing has no plates, which is why it wins on short runs and loses on long ones. There is no setup to amortise, but the per-sheet running cost is higher and never falls.
 
-The crossover generally sits somewhere between 1,000 and 3,000 units, depending on how many colours you are printing and how complex the finishing is.
+The crossover generally sits somewhere between 1,000 and 3,000 units, depending on how many colors you are printing and how complex the finishing is.
 
-## Printing cost scales with colours and coverage
+## Printing cost scales with colors and coverage
 
-On plate-based printing, each additional colour is another plate and another pass. A one-colour job is materially cheaper than a four-colour one, and a design using two spot colours can be far cheaper than a full-colour photographic design at the same quantity.
+On plate-based printing, each additional color is another plate and another pass. A one-colour job is materially cheaper than a four-colour one, and a design using two spot colors can be far cheaper than a full-colour photographic design at the same quantity.
 
-Ink coverage matters too, though less than brands expect. A design with a solid flood colour across every panel uses more ink and can require slower press speeds than a design with white space, but it is rarely the dominant cost.
+Ink coverage matters too, though less than brands expect. A design with a solid flood color across every panel uses more ink and can require slower press speeds than a design with white space, but it is rarely the dominant cost.
 
-Digital printing is largely indifferent to colour count, which is another reason it suits complex short-run work and versioned designs.
+Digital printing is largely indifferent to color count, which is another reason it suits complex short-run work and versioned designs.
 
 ## Every finishing step is a separate pass
 
@@ -86,12 +86,12 @@ For direct-to-consumer brands there is a second freight cost that is larger than
 
 ## What a good quote should tell you
 
-A quote worth acting on states the board grade, the finished dimensions, the print method and colour count, the finishing operations, the quantity, the tooling position and the lead time. If it gives you a single number with no specification, you cannot compare it with anything.
+A quote worth acting on states the board grade, the finished dimensions, the print method and color count, the finishing operations, the quantity, the tooling position and the lead time. If it gives you a single number with no specification, you cannot compare it with anything.
 
 It should also tell you where the price breaks are. Asking what the same job costs at the next quantity band up is one of the most useful questions a buyer can ask, because the answer often reveals that a modest increase in order size lowers the unit cost substantially.
 
 ## Practical ways to reduce cost without weakening the pack
 
-Reduce the number of colours before you reduce the board grade. Ask whether a small dimensional change improves sheet nesting. Choose one finish instead of three. Order at a quantity that sits just above a price break rather than just below it. Keep the same dieline across product variants and change only the print, so one tooling cost serves several SKUs.
+Reduce the number of colors before you reduce the board grade. Ask whether a small dimensional change improves sheet nesting. Choose one finish instead of three. Order at a quantity that sits just above a price break rather than just below it. Keep the same dieline across product variants and change only the print, so one tooling cost serves several SKUs.
 
 What not to cut is structural performance. The cheapest packaging in a quote is not the cheapest packaging in a year if it fails in transit. Our breakdown of [the factors that drive packaging pricing](/resources/packaging-cost-factors/) goes into where the savings are genuinely safe to take.

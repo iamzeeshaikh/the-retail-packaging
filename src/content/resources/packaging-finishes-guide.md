@@ -20,16 +20,16 @@ faqs:
     a: The die crushes thin elements. Foil reproduces bold shapes cleanly and hairlines poorly, so a mark with fine strokes comes out soft or broken. Simplify the artwork for the foil version rather than stamping the standard logo and hoping.
   - q: How much does each finish add to the lead time?
     a: Every finish is a separate pass, so each one adds handling time rather than just cost. Die-based finishes — foil, emboss, deboss — also need the die made first. On a short run with three finishes, the finishing stages often take longer than the printing.
-  - q: Will lamination change my printed colours?
-    a: Yes, noticeably. Matte laminate mutes and slightly darkens a sheet; gloss deepens and saturates it. On a brand colour that matters, approve the proof laminated rather than bare, because the difference is visible side by side.
+  - q: Will lamination change my printed colors?
+    a: Yes, noticeably. Matte laminate mutes and slightly darkens a sheet; gloss deepens and saturates it. On a brand color that matters, approve the proof laminated rather than bare, because the difference is visible side by side.
   - q: Can I emboss any thickness of board?
-    a: Depth is limited by the board. A 14pt carton takes a shallow impression; rigid greyboard takes a much deeper one. Asking for a pronounced emboss on thin stock cracks the surface at the edges of the impression rather than producing relief.
+    a: Depth is limited by the board. A 14pt carton takes a shallow impression; rigid grayboard takes a much deeper one. Asking for a pronounced emboss on thin stock cracks the surface at the edges of the impression rather than producing relief.
   - q: Is foil only available in gold and silver?
-    a: No — matte metallics, coloured foils and holographic effects are all standard. A matte foil on uncoated stock reads very differently from bright gold on gloss, so it is worth seeing samples before assuming foil means shine.
+    a: No — matte metallics, colored foils and holographic effects are all standard. A matte foil on uncoated stock reads very differently from bright gold on gloss, so it is worth seeing samples before assuming foil means shine.
   - q: Can foil and emboss be combined?
     a: Yes, and it is a strong effect, but it is a more demanding setup because the foil has to register to the relief. Expect a longer proofing cycle and design the mark for both from the start rather than adding the emboss later.
   - q: Where should a window go on the panel?
-    a: Over the product, not centred for visual balance. A window positioned for the layout frequently shows the side of the product or an empty gap above the fill line, which sells it less well than no window at all.
+    a: Over the product, not centered for visual balance. A window positioned for the layout frequently shows the side of the product or an empty gap above the fill line, which sells it less well than no window at all.
 ---
 
 Every finish is a separate production pass with its own cost. Understanding what each one actually does prevents specifications that layer three effects competing for attention.
@@ -40,13 +40,13 @@ A thin plastic film bonded to the printed sheet.
 
 | Type | Effect | Best for | Watch out |
 |---|---|---|---|
-| Matte | Non-reflective, soft | Packs handled in store | Shows scuffing less, colour slightly muted |
+| Matte | Non-reflective, soft | Packs handled in store | Shows scuffing less, color slightly muted |
 | Gloss | Saturated, reflective | Vivid photography | Fingerprints visible |
 | Soft-touch | Velvet texture | Premium feel | Shows marks more than matte |
 
 Lamination adds durability and moisture resistance, but a plastic laminate makes paper packaging harder to recycle in standard streams.
 
-It also changes colour. Matte laminate mutes and slightly darkens a printed sheet; gloss deepens and saturates it. On a brand colour that matters, approve the proof laminated rather than bare, because the difference is visible.
+It also changes color. Matte laminate mutes and slightly darkens a printed sheet; gloss deepens and saturates it. On a brand color that matters, approve the proof laminated rather than bare, because the difference is visible.
 
 ## Coatings
 
@@ -72,7 +72,7 @@ Metallic foil applied by a heated die. Requires a die, which is a one-time tooli
 
 Reproduces bold shapes cleanly and fine detail poorly, because the die crushes thin elements. Simplify the mark before stamping rather than after seeing the result. Works well on both coated and uncoated stocks.
 
-Foil is available well beyond gold and silver — matte metallics, coloured foils and holographic effects are all standard. A matte foil on an uncoated stock reads very differently from a bright gold on gloss, and it is worth seeing samples before assuming foil means shine.
+Foil is available well beyond gold and silver — matte metallics, colored foils and holographic effects are all standard. A matte foil on an uncoated stock reads very differently from a bright gold on gloss, and it is worth seeing samples before assuming foil means shine.
 
 ## Embossing and debossing
 
@@ -80,7 +80,7 @@ Embossing raises the board; debossing recesses it. Both need a die.
 
 Artwork must be designed for relief from the start. Applying an emboss to a logo drawn for flat print usually produces a soft, indistinct impression. Combining emboss with registered foil is achievable but a more demanding setup.
 
-Board thickness limits depth. A 14pt carton takes a shallow impression; rigid greyboard takes a much deeper one. Asking for a pronounced emboss on a thin stock cracks the surface at the edges of the impression.
+Board thickness limits depth. A 14pt carton takes a shallow impression; rigid grayboard takes a much deeper one. Asking for a pronounced emboss on a thin stock cracks the surface at the edges of the impression.
 
 ## Windows
 
@@ -88,9 +88,9 @@ A die-cut aperture with film applied behind it. PET is standard; PLA is availabl
 
 Windows weaken the panel slightly, so placement matters on structural faces.
 
-They also need positioning against the product rather than the panel. A window centred for visual balance frequently shows the customer the side of the product, or an empty gap above the fill line.
+They also need positioning against the product rather than the panel. A window centered for visual balance frequently shows the customer the side of the product, or an empty gap above the fill line.
 
-## Cost behaviour
+## Cost behavior
 
 Finishes with dies — foil, emboss, deboss — carry a one-time tooling cost plus a per-unit pass cost. Finishes without dies — laminations, coatings — carry only the pass cost.
 

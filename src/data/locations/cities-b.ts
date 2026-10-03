@@ -19,7 +19,7 @@ export const citiesB: Place[] = [
     overview: {
       h: 'Growing out of a market stall',
       body: [
-        'A recognisable Philadelphia pattern: a producer starts at a market with hand-labelled jars, gets into two or three shops, and suddenly needs packaging that looks like a product rather than a hobby. The quantities are still small and the budget is real.',
+        'A recognizable Philadelphia pattern: a producer starts at a market with hand-labelled jars, gets into two or three shops, and suddenly needs packaging that looks like a product rather than a hobby. The quantities are still small and the budget is real.',
         'The right first step is usually not a fully printed carton. A well-chosen base pack with a strong printed label achieves most of the visual jump for a fraction of the cost, and it leaves room to upgrade once the volume justifies it.',
       ],
     },
@@ -82,12 +82,12 @@ export const citiesB: Place[] = [
     faqs: [
       { q: 'Should I start with printed boxes or printed labels?', a: 'Labels, in most cases. A strong printed label on a well-chosen stock base achieves most of the visual jump from hand-made to retail-ready, and costs a fraction of a fully printed carton. Upgrade when the volume justifies it.' },
       { q: 'What is the smallest order you will take?', a: 'A flat 100 units on any format. There is no small-order surcharge, and below about 1,000 units we print digitally, which removes plate costs entirely.' },
-      { q: 'Can one label design cover several products?', a: 'Yes, and it is worth designing for from the start. A common layout with a variable product name and colour lets you add lines without redesigning. Ranges grow faster than most producers expect.' },
+      { q: 'Can one label design cover several products?', a: 'Yes, and it is worth designing for from the start. A common layout with a variable product name and color lets you add lines without redesigning. Ranges grow faster than most producers expect.' },
       { q: 'Do you have a shop in Philadelphia?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Philadelphia or anywhere else. We post physical samples so you can assess the material directly.' },
       { q: 'Can you supply coffee bags with degassing valves?', a: 'Yes. Freshly roasted coffee off-gasses, and without a one-way valve the bag inflates. It is a standard option on our pouch formats.' },
       { q: 'How long will a small order take?', a: 'Production is 3 to 5 business days after artwork approval, plus 5 to 7 days freight into Philadelphia.' },
       { q: 'Can you deliver in stages if I have no storage?', a: 'Yes. We can produce the run and schedule drops against your space rather than delivering everything at once.' },
-      { q: 'I do not have professional artwork. Can you still help?', a: 'We can work from what you have and tell you honestly whether it will reproduce well. We do not offer full design services, but we will flag resolution, colour and bleed problems before anything goes to print.' },
+      { q: 'I do not have professional artwork. Can you still help?', a: 'We can work from what you have and tell you honestly whether it will reproduce well. We do not offer full design services, but we will flag resolution, color and bleed problems before anything goes to print.' },
       { q: 'Will my packaging survive being shipped?', a: 'Only if it is specified for it. A retail pack designed for a shopping bag is not built for a carrier network. If you ship as well as sell in person, tell us and we will specify accordingly or recommend a protective outer.' },
       { q: 'How much should a first packaging order cost?', a: 'Prices start from $0.30 per piece at large volumes, and a small first run sits above that. We quote each option separately, so you can see whether a label route or a printed carton fits the budget you have.' },
     ],
@@ -228,7 +228,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Freight into San Diego',
       body: [
-        'Ground delivery typically takes 5 to 7 business days. The metropolitan area takes palletised freight without difficulty.',
+        'Ground delivery typically takes 5 to 7 business days. The metropolitan area takes palletized freight without difficulty.',
         'Many local breweries and labs receive at premises without a dock. Tell us the address type and we will ship cartons rather than a pallet where that is easier.',
       ],
     },
@@ -260,7 +260,7 @@ export const citiesB: Place[] = [
     ],
     faqs: [
       { q: 'How do I run frequent seasonal releases affordably?', a: 'Keep one element constant and vary a small one. A constant carrier with a variable printed sleeve, or a constant pack with a variable label, means each release carries a small setup rather than a full one.' },
-      { q: 'What is a setup charge and why does it matter so much?', a: 'It covers preparing the press for your specific job — plates on offset, or file and colour setup on digital. It is charged per design, so a brand running eight designs a year pays it eight times regardless of quantity.' },
+      { q: 'What is a setup charge and why does it matter so much?', a: 'It covers preparing the press for your specific job — plates on offset, or file and color setup on digital. It is charged per design, so a brand running eight designs a year pays it eight times regardless of quantity.' },
       { q: 'Can you package laboratory instruments?', a: 'Yes. The fitted insert is the real design work; send drawings or a sample and we will specify the cavity around the geometry, then choose an outer to suit.' },
       { q: 'Do you have a facility in San Diego?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in San Diego. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'How long does delivery to San Diego take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
@@ -328,7 +328,7 @@ export const citiesB: Place[] = [
         'Measure the product and compare it to the box actually in use.',
         'Weigh a packed parcel and find which dimensional band it sits in.',
         'Work out how far you are from the band below.',
-        'Check whether soft goods are travelling in a box that could be a flat mailer.',
+        'Check whether soft goods are traveling in a box that could be a flat mailer.',
         'Separate crush damage from movement damage before changing board grade.',
       ],
     },
@@ -469,7 +469,7 @@ export const citiesB: Place[] = [
       { q: 'Can you deliver to a studio without a loading dock?', a: 'Yes. Tell us at quoting and we will ship cartons rather than a pallet.' },
       { q: 'How long does an Austin order take?', a: 'Production is 3 to 5 business days after artwork approval, plus 5 to 7 days freight.' },
       { q: 'We have never ordered packaging before. Where do we start?', a: 'With the product dimensions and how it will be sold or shipped. From those two facts we can propose a structure and tell you what it costs, which is usually enough to make the next decision.' },
-      { q: 'Is uncoated stock cheaper than coated?', a: 'Not always, but it often looks more expensive than it is. What matters more is matching the stock to the ink and the brand — a saturated colour on uncoated board reads very differently to the same colour on gloss.' },
+      { q: 'Is uncoated stock cheaper than coated?', a: 'Not always, but it often looks more expensive than it is. What matters more is matching the stock to the ink and the brand — a saturated color on uncoated board reads very differently to the same color on gloss.' },
       { q: 'How much does a distinctive small run cost?', a: 'From $0.30 per piece at large volumes, and a short run sits above that. We quote each element separately — structure, print, finish — so you can see which parts are worth keeping.' },
     ],
     cta: {
@@ -496,7 +496,7 @@ export const citiesB: Place[] = [
       h: 'Fast turn, low storage',
       body: [
         'Ground delivery into Jacksonville typically takes 5 to 7 business days, and the city sits at the top of the peninsula rather than down it, which keeps it clear of the lane closures that hit South Florida in storm season.',
-        'Distribution operations generally want packaging to arrive close to when it is needed rather than sitting in stock. That works in Florida’s favour — packaging that turns over quickly never has time to absorb the humidity that damages long-stored board.',
+        'Distribution operations generally want packaging to arrive close to when it is needed rather than sitting in stock. That works in Florida’s favor — packaging that turns over quickly never has time to absorb the humidity that damages long-stored board.',
       ],
     },
     industries: {
@@ -541,7 +541,7 @@ export const citiesB: Place[] = [
     ],
     nearby: [
       { slug: 'florida', why: 'Statewide context, including the humidity specification.' },
-      { slug: 'georgia', why: 'The neighbouring freight hub just north.' },
+      { slug: 'georgia', why: 'The neighboring freight hub just north.' },
       { slug: 'miami', why: 'The other major Florida distribution market.' },
     ],
     faqs: [
@@ -579,7 +579,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Volume in, volume out',
       body: [
-        'Ground freight into Fort Worth runs 5 to 7 business days, and the area has substantial distribution infrastructure that makes palletised delivery routine at almost any scale.',
+        'Ground freight into Fort Worth runs 5 to 7 business days, and the area has substantial distribution infrastructure that makes palletized delivery routine at almost any scale.',
         'At bulk quantities the constraint moves from freight to storage. A large run occupies real warehouse space even flat-packed, so we frequently phase deliveries across weeks rather than sending everything at once.',
       ],
     },
@@ -599,7 +599,7 @@ export const citiesB: Place[] = [
         { name: 'Distribution and warehousing', detail: 'High-volume buyers of shippers and cases where a fraction of a cent per unit is a real number.' },
         { name: 'Manufacturing', detail: 'Finished-goods and component packaging, usually on repeat specifications.' },
         { name: 'Food and agriculture', detail: 'Producers and processors buying in bulk against a seasonal cycle.' },
-        { name: 'Aviation and industrial supply', detail: 'Parts packaging where protection and traceable labelling both matter.' },
+        { name: 'Aviation and industrial supply', detail: 'Parts packaging where protection and traceable labeling both matter.' },
       ],
     },
     demandTable: {
@@ -607,7 +607,7 @@ export const citiesB: Place[] = [
       intro: 'In rough order of how much they move a large quote.',
       head: ['Lever', 'Typical effect', 'When to decide it'],
       rows: [
-        ['Print route', 'Large at volume', 'Before artwork is finalised'],
+        ['Print route', 'Large at volume', 'Before artwork is finalized'],
         ['Board grade', 'Large, but risky to cut', 'After the damage rate is known'],
         ['Sheet nesting', 'Small per unit, large in total', 'Before the die is cut'],
         ['Finishing', 'Moderate', 'Early — each stage is a pass'],
@@ -666,11 +666,11 @@ export const citiesB: Place[] = [
     variant: 'ecommerce-led',
     sections: ['overview', 'checklist', 'demandTable', 'industries', 'formats', 'logistics', 'ordering', 'nearby', 'resources'],
     keyword: 'custom packaging Columbus Ohio',
-    h1: 'Fulfilment packaging for Columbus distribution centres',
+    h1: 'Fulfilment packaging for Columbus distribution centers',
     eyebrow: 'Columbus · Ohio',
     lede: 'Columbus exists on the fulfilment map because of where it is. For packaging, that means almost everything we ship here is bought to be shipped again within days.',
     metaTitle: 'Custom Packaging Columbus | Fulfilment & DTC',
-    metaDescription: 'Custom fulfilment packaging for Columbus distribution centres and DTC brands. Right-sized mailers, fitted inserts and lower damage rates.',
+    metaDescription: 'Custom fulfilment packaging for Columbus distribution centers and DTC brands. Right-sized mailers, fitted inserts and lower damage rates.',
     sectors: ['E-commerce fulfilment', 'Apparel and retail distribution', 'Consumer goods', 'Third-party logistics'],
     overview: {
       h: 'A pack that gets used within the week',
@@ -716,8 +716,8 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Inbound speed and replenishment',
       body: [
-        'Ground freight into Columbus takes 5 to 7 business days and the area handles palletised delivery routinely.',
-        'For continuous operations we schedule repeat deliveries against consumption. That matters more than raw speed — a predictable weekly drop is more useful to a fulfilment centre than an occasional fast one.',
+        'Ground freight into Columbus takes 5 to 7 business days and the area handles palletized delivery routinely.',
+        'For continuous operations we schedule repeat deliveries against consumption. That matters more than raw speed — a predictable weekly drop is more useful to a fulfilment center than an occasional fast one.',
       ],
     },
     ordering: {
@@ -747,7 +747,7 @@ export const citiesB: Place[] = [
       { slug: 'chicago', why: 'The largest distribution hub in the region.' },
     ],
     faqs: [
-      { q: 'Can you set up a regular replenishment schedule?', a: 'Yes. For continuous operations we schedule deliveries against consumption rather than quoting one large drop. Predictable weekly or fortnightly supply is usually more useful to a fulfilment centre than occasional speed.' },
+      { q: 'Can you set up a regular replenishment schedule?', a: 'Yes. For continuous operations we schedule deliveries against consumption rather than quoting one large drop. Predictable weekly or fortnightly supply is usually more useful to a fulfilment center than occasional speed.' },
       { q: 'How do I know whether to change board grade or add an insert?', a: 'Look at what arrives damaged. Crushed boxes mean the grade is too light. Intact boxes with damaged contents mean the product is moving inside, and an insert fixes that at lower cost than heavier board.' },
       { q: 'How many box sizes should a fulfilment operation run?', a: 'Usually fewer than it does. Each extra size adds purchasing, storage and pick complexity. Send your SKU dimensions and we will propose a consolidated set.' },
       { q: 'Do you have a warehouse in Columbus?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Columbus. Production runs through our manufacturing partners and ships directly to you.' },
@@ -781,7 +781,7 @@ export const citiesB: Place[] = [
     industries: {
       h: 'Brands at the scaling stage',
       body: [
-        'Most Charlotte enquiries come from brands past their first product and moving into multiple channels at once.',
+        'Most Charlotte inquiries come from brands past their first product and moving into multiple channels at once.',
       ],
       items: [
         { name: 'Food and beverage brands', detail: 'Ranges expanding from one product to several, where a coherent system matters more than any single pack.' },
@@ -802,7 +802,7 @@ export const citiesB: Place[] = [
       intro: 'What to fix once so it holds across every future product.',
       items: [
         'A consistent panel layout that works whether the product name is short or long.',
-        'A colour system with room for variants you have not launched yet.',
+        'A color system with room for variants you have not launched yet.',
         'One structural family, so new products look related without new tooling each time.',
         'A decision on which elements change per variant and which never change.',
         'A shipping format that shares the identity without copying the retail pack.',
@@ -811,7 +811,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Freight into Charlotte',
       body: [
-        'Ground delivery typically takes 5 to 7 business days, and Charlotte takes palletised freight without difficulty.',
+        'Ground delivery typically takes 5 to 7 business days, and Charlotte takes palletized freight without difficulty.',
         'Growing brands often outgrow their storage before they outgrow their volume. If space is tight, we can phase deliveries rather than sending a full run at once.',
       ],
     },
@@ -843,13 +843,13 @@ export const citiesB: Place[] = [
     ],
     faqs: [
       { q: 'Should one pack work for both retail and shipping?', a: 'Rarely. Shelf wants face area and finish; shipping wants tight dimensions and protection. One pack doing both is usually mediocre at each. A shared visual system across two formats works better and often costs less.' },
-      { q: 'How do I design packaging for products I have not launched yet?', a: 'Fix the system rather than the artwork — panel layout, colour logic, structural family — and leave the variable elements clearly defined. A new product then slots in without a redesign.' },
+      { q: 'How do I design packaging for products I have not launched yet?', a: 'Fix the system rather than the artwork — panel layout, color logic, structural family — and leave the variable elements clearly defined. A new product then slots in without a redesign.' },
       { q: 'Can you quote a whole range at once?', a: 'Yes, and it is usually cheaper than quoting products one at a time. Shared structures and combined runs both reduce cost, and neither is available if each product is treated separately.' },
       { q: 'Do you have a facility in Charlotte?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Charlotte. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'How long does delivery to Charlotte take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'What is the minimum order in Charlotte?', a: 'A flat 100 units on any format, which makes it practical to launch a new range member in small quantity first.' },
       { q: 'Can you phase deliveries if storage is tight?', a: 'Yes. Growing brands frequently outgrow their storage before their volume. We can schedule drops rather than delivering everything at once.' },
-      { q: 'How do I keep variants distinct without confusing the range?', a: 'Change one element consistently — usually colour or a single band — and hold everything else constant. Variants that differ in several ways at once stop reading as a family.' },
+      { q: 'How do I keep variants distinct without confusing the range?', a: 'Change one element consistently — usually color or a single band — and hold everything else constant. Variants that differ in several ways at once stop reading as a family.' },
       { q: 'Should the shipping box be printed?', a: 'It depends on your channel. For direct sales where the customer opens it, print can be worth it. For wholesale shipments to a retailer, plain is usually the better use of the budget.' },
       { q: 'How much does a range of packaging cost?', a: 'From $0.30 per piece at large volumes per format. Shared structures across a range reduce tooling considerably, which is the main saving available when quoting a system rather than a single pack.' },
     ],
@@ -876,7 +876,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Weight is billed, every time',
       body: [
-        'Ground freight into Indianapolis takes 5 to 7 business days and the city is straightforward for palletised delivery. What makes it distinctive is what happens next: a substantial share of what is packed here leaves by air.',
+        'Ground freight into Indianapolis takes 5 to 7 business days and the city is straightforward for palletized delivery. What makes it distinctive is what happens next: a substantial share of what is packed here leaves by air.',
         'Air billing charges on actual or volumetric weight, whichever is greater, on every parcel. That makes both the weight and the dimensions of a pack recurring costs rather than one-off design choices.',
       ],
     },
@@ -914,7 +914,7 @@ export const citiesB: Place[] = [
       h: 'Quoting for air parcels',
       body: [
         'Tell us how your parcels are billed and what your damage rate is. Those two numbers set the trade-off far better than any general rule.',
-        'If you ship both by air and by road, tell us the split so we can optimise for the channel that carries the majority.',
+        'If you ship both by air and by road, tell us the split so we can optimize for the channel that carries the majority.',
       ],
     },
     formats: {
@@ -941,7 +941,7 @@ export const citiesB: Place[] = [
       { q: 'Is dropping board grade a good way to cut weight?', a: 'On its own, usually not — damage tends to rise by more than the freight saving. It works when paired with a fitted insert that stops the product moving, because then the outer no longer has to absorb that movement.' },
       { q: 'Do you have a facility in Indianapolis?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Indianapolis. Production runs through our manufacturing partners and ships to your address.' },
       { q: 'How long does delivery to Indianapolis take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
-      { q: 'What if I ship by both air and road?', a: 'Tell us the split. Optimising for the majority channel and accepting a small inefficiency on the other usually beats a compromise specification that suits neither.' },
+      { q: 'What if I ship by both air and road?', a: 'Tell us the split. Optimizing for the majority channel and accepting a small inefficiency on the other usually beats a compromise specification that suits neither.' },
       { q: 'Does void fill hurt on air parcels?', a: 'Twice over. It adds mass and it usually indicates the box is larger than necessary, which raises the volumetric charge. A right-sized box with an insert is nearly always cheaper to fly.' },
       { q: 'What is the minimum order in Indianapolis?', a: 'A flat 100 units on any format, enough to trial a lighter specification against real shipments.' },
       { q: 'Can you supply documented specifications for pharmaceutical distribution?', a: 'Yes. Dated proofs against a revision number with retained approval records, where your quality system requires it.' },
@@ -971,7 +971,7 @@ export const citiesB: Place[] = [
     industries: {
       h: 'A roasting city with a recycling conscience',
       body: [
-        'Coffee dominates the enquiries we get from Seattle, and the second most common subject is recyclability.',
+        'Coffee dominates the inquiries we get from Seattle, and the second most common subject is recyclability.',
       ],
       items: [
         { name: 'Coffee roasting', detail: 'Bags with valves and barrier layers, frequently changing for single origins, and almost always with a sustainability question attached.' },
@@ -1003,7 +1003,7 @@ export const citiesB: Place[] = [
       intro: 'What each material actually gives you.',
       head: ['Material', 'Barrier performance', 'Recyclability'],
       rows: [
-        ['Multi-layer laminate', 'Highest', 'Not kerbside recyclable'],
+        ['Multi-layer laminate', 'Highest', 'Not curbside recyclable'],
         ['Mono-material film', 'Good, shorter shelf life', 'Store drop-off in many areas'],
         ['Kraft with liner', 'Moderate', 'Depends entirely on the liner'],
         ['Compostable film', 'Lower, shortest shelf life', 'Industrial facilities only'],
@@ -1012,7 +1012,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Freight to the Northwest',
       body: [
-        'Ground delivery into Seattle typically takes 5 to 7 business days, and the distance means there is less slack in that window than there is on a short eastern run. The metropolitan area takes palletised freight without difficulty.',
+        'Ground delivery into Seattle typically takes 5 to 7 business days, and the distance means there is less slack in that window than there is on a short eastern run. The metropolitan area takes palletized freight without difficulty.',
         'If your reorder point is set on a national average lead time, it is probably a few days short for Seattle. Worth adjusting rather than discovering during a busy season.',
       ],
     },
@@ -1077,7 +1077,7 @@ export const citiesB: Place[] = [
     overview: {
       h: 'Where a growing brand wastes money',
       body: [
-        'The three most common mistakes we see from brands at this stage are the same everywhere but especially visible here: tooling a structure before the range has settled, buying a year of stock to hit a price break, and paying for finishes that do not survive being looked at on a shelf from a metre away.',
+        'The three most common mistakes we see from brands at this stage are the same everywhere but especially visible here: tooling a structure before the range has settled, buying a year of stock to hit a price break, and paying for finishes that do not survive being looked at on a shelf from a meter away.',
         'None of those is about being cheap. They are about sequencing. Get the structure and the system right first, keep the quantities honest until demand is proven, and put the finish budget on the one element customers actually touch.',
       ],
     },
@@ -1107,7 +1107,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Delivery into the Front Range',
       body: [
-        'Ground freight into Denver typically takes 5 to 7 business days, and the Front Range corridor takes palletised deliveries without difficulty.',
+        'Ground freight into Denver typically takes 5 to 7 business days, and the Front Range corridor takes palletized deliveries without difficulty.',
         'Many small producers here receive at breweries, kitchens or shared units without a dock. Tell us and we will ship cartons rather than a pallet.',
       ],
     },
@@ -1130,7 +1130,7 @@ export const citiesB: Place[] = [
     },
     resources: [
       { href: '/resources/packaging-cost-factors/', anchor: 'the costs that grow with a range', note: 'Setup per design, not unit price.' },
-      { href: '/finishes-and-add-ons/', anchor: 'which finishes read from a metre away', note: 'Where to put a limited finish budget.' },
+      { href: '/finishes-and-add-ons/', anchor: 'which finishes read from a meter away', note: 'Where to put a limited finish budget.' },
     ],
     nearby: [
       { slug: 'colorado', why: 'Statewide context, including altitude and dry-air effects.' },
@@ -1146,7 +1146,7 @@ export const citiesB: Place[] = [
       { q: 'What is the minimum order in Denver?', a: 'A flat 100 units on any format, which suits a limited release or a first production run.' },
       { q: 'How do I keep costs down as my range grows?', a: 'Hold one structure constant and vary a label or sleeve per product. Each new line then carries a small setup rather than new tooling, which is where a growing range usually leaks money.' },
       { q: 'Can you deliver to a brewery without a dock?', a: 'Yes. Tell us at quoting and we will ship cartons rather than a pallet.' },
-      { q: 'Can you produce compliant cannabis packaging?', a: 'We can produce child-resistant structures with certified closures. Send the specific requirement your licence operates under, since compliance is verified against the regulations in force when the order runs.' },
+      { q: 'Can you produce compliant cannabis packaging?', a: 'We can produce child-resistant structures with certified closures. Send the specific requirement your license operates under, since compliance is verified against the regulations in force when the order runs.' },
       { q: 'How much does packaging cost for a Denver brand?', a: 'From $0.30 per piece at large volumes. For a growing range, the setup cost per design usually affects your annual spend more than the unit price does.' },
     ],
     cta: {
@@ -1185,7 +1185,7 @@ export const citiesB: Place[] = [
       h: 'Heat retention in a cold city',
       body: [
         'A takeaway container that performs well in a mild climate can disappoint in a Boston February, because the food is losing heat for the whole walk. Board thickness contributes a little, but the larger factors are the amount of trapped air, the fit of the lid, and whether the pack vents.',
-        'There is a genuine tension: venting stops food going soggy but lets heat escape. Which side to favour depends on the dish, and it is worth deciding deliberately rather than accepting whatever the stock container happens to do.',
+        'There is a genuine tension: venting stops food going soggy but lets heat escape. Which side to favor depends on the dish, and it is worth deciding deliberately rather than accepting whatever the stock container happens to do.',
       ],
     },
     demandTable: {
@@ -1205,7 +1205,7 @@ export const citiesB: Place[] = [
       items: [
         'Work out how many weeks of stock you can genuinely hold.',
         'Ask for phased deliveries against that figure rather than one drop.',
-        'Standardise on fewer container sizes to reduce shelf space.',
+        'Standardize on fewer container sizes to reduce shelf space.',
         'Choose formats that nest or stack flat.',
         'Time larger deliveries away from your busiest service days.',
       ],
@@ -1213,7 +1213,7 @@ export const citiesB: Place[] = [
     logistics: {
       h: 'Delivering into Boston',
       body: [
-        'Ground freight reaches Boston in 5 to 7 business days. Delivery into the city itself can be awkward — narrow streets, restricted hours and limited kerbside access are all common.',
+        'Ground freight reaches Boston in 5 to 7 business days. Delivery into the city itself can be awkward — narrow streets, restricted hours and limited curbside access are all common.',
         'For most food businesses a few cartons rather than a pallet solves it. Tell us the premises type and we will pack the consignment to suit.',
       ],
     },

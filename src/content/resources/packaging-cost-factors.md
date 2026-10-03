@@ -1,6 +1,6 @@
 ---
 title: Packaging Cost Factors
-description: What actually drives packaging price — sheet area, plate setup, colour count, finishing passes, tooling and freight — and where savings are safe to take.
+description: What actually drives packaging price — sheet area, plate setup, color count, finishing passes, tooling and freight — and where savings are safe to take.
 metaTitle: Packaging Cost Factors | What Drives Price
 publishDate: 2026-06-15
 updatedDate: 2026-08-11
@@ -18,12 +18,12 @@ faqs:
     a: Sometimes substantially. You are buying sheet area, and the manufacturer fits as many dielines onto a press sheet as will go. A quarter inch that moves the layout from six-up to eight-up cuts material cost by a quarter with no visible change to the pack.
   - q: Is it safe to drop a board grade to save money?
     a: Only if you know your damage rate. Cutting a grade across a large run saves a visible amount and costs far more if damage rises even slightly, because a failure costs the product, the replacement shipping and the customer. Establish the current rate before changing anything.
-  - q: Why does adding one more colour cost so much?
-    a: On offset and flexo, each colour is a separate plate and a separate press unit — so a fifth colour adds tooling, setup and running cost together. On digital the colour count barely matters at all, which is one of the biggest structural differences between the routes.
+  - q: Why does adding one more color cost so much?
+    a: On offset and flexo, each color is a separate plate and a separate press unit — so a fifth color adds tooling, setup and running cost together. On digital the color count barely matters at all, which is one of the biggest structural differences between the routes.
   - q: Why does the unit price barely move between 10,000 and 12,000 units?
     a: Because by that point the fixed setup cost is already spread thin. The steep part of the curve is at low volumes where plates, dies and makeready dominate. Past that, savings only come from material and press efficiency, which move slowly.
   - q: Does ink coverage affect the price?
-    a: Modestly. Heavy coverage uses more ink and can slow drying, but ink is rarely a large share of the total. Colour count matters far more than coverage, because each colour is a plate and a press unit on plate-based printing.
+    a: Modestly. Heavy coverage uses more ink and can slow drying, but ink is rarely a large share of the total. Color count matters far more than coverage, because each color is a plate and a press unit on plate-based printing.
   - q: Is tooling a recurring cost?
     a: It should not be. A die is a one-time cost reused on reorders — but ask explicitly whether a reorder incurs it again and who holds the die. It is one of the more common gaps in a first quote and it changes the comparison between suppliers.
   - q: What does right-sizing actually save?
@@ -44,19 +44,19 @@ Board grade multiplies that area cost. Moving from 14pt to 18pt is roughly propo
 
 ## Setup is fixed and does not scale
 
-Plate-based printing needs a plate per colour. Foil, embossing and structural die-cutting each need a die. None of these costs change with quantity.
+Plate-based printing needs a plate per color. Foil, embossing and structural die-cutting each need a die. None of these costs change with quantity.
 
 Spread a $600 plate set across 500 units and it adds $1.20 per box. Across 20,000 it adds three cents. That is the entire reason unit price falls with volume.
 
 Digital printing has no plates, so there is nothing to amortise — but its per-sheet running cost is higher and never falls.
 
-## Colour count and coverage
+## Color count and coverage
 
-On plate-based printing, each colour is another plate and another pass. A two-spot-colour design can be far cheaper than full-colour photography at the same quantity.
+On plate-based printing, each color is another plate and another pass. A two-spot-colour design can be far cheaper than full-colour photography at the same quantity.
 
-Ink coverage matters less than brands expect. A flood colour uses more ink and can slow press speeds, but it is rarely the dominant cost.
+Ink coverage matters less than brands expect. A flood color uses more ink and can slow press speeds, but it is rarely the dominant cost.
 
-Digital is largely indifferent to colour count, which is another reason it suits complex short runs.
+Digital is largely indifferent to color count, which is another reason it suits complex short runs.
 
 ## Finishing passes
 
@@ -87,7 +87,7 @@ For direct-to-consumer brands there is a second, larger freight cost: dimensiona
 
 ## Where savings are safe
 
-- Reduce colour count before reducing board grade
+- Reduce color count before reducing board grade
 - Ask whether a small dimensional change nests better on the sheet
 - Choose one finish rather than three
 - Order just above a price break rather than just below
@@ -104,7 +104,7 @@ Comparing quotes properly requires the specification, not just the number, and o
 
 Packaging pricing is not linear, and understanding the shape explains most of what looks arbitrary in a quote.
 
-Setup costs — plates, dies, press makeready, colour matching — are incurred once regardless of quantity. Running costs — board, ink, press time per unit — scale with it.
+Setup costs — plates, dies, press makeready, color matching — are incurred once regardless of quantity. Running costs — board, ink, press time per unit — scale with it.
 
 At low quantities the fixed portion dominates, so the unit price falls steeply as volume rises. Past the point where setup is spread thin, the curve flattens and further savings come only from material and press efficiency. That is why the step from 250 to 1,000 units changes the unit price dramatically and the step from 10,000 to 12,000 barely moves it.
 
@@ -130,7 +130,7 @@ Set against that, the difference between two board grades or two print routes is
 
 ## Where savings are safe
 
-- Reduce colour count before reducing board grade
+- Reduce color count before reducing board grade
 - Ask whether a small dimensional change nests better on the sheet
 - Choose one finish rather than three
 - Order just above a price break rather than just below

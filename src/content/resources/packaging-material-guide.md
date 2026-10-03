@@ -1,6 +1,6 @@
 ---
 title: Packaging Material Guide
-description: Board grades, corrugated flutes, rigid greyboard, laminated films and moulded pulp compared on strength, print quality, cost and recyclability.
+description: Board grades, corrugated flutes, rigid grayboard, laminated films and molded pulp compared on strength, print quality, cost and recyclability.
 metaTitle: Packaging Material Guide | Board, Film, Pulp
 publishDate: 2026-05-04
 updatedDate: 2026-08-11
@@ -13,26 +13,26 @@ faqs:
   - q: How do I choose a board grade?
     a: From the weight of the contents and the journey, not from how the board looks. Weigh the product, establish how far and how roughly it travels, then take the lightest material that survives with margin. Spend the remaining budget on print rather than on board you do not need.
   - q: What is the difference between SBS and CCNB?
-    a: SBS is bleached virgin board with a coated white surface and the best print reproduction. CCNB is recycled with a coated printing face and a grey reverse. CCNB costs less and prints nearly as well on the front; the grey back is invisible in most applications.
+    a: SBS is bleached virgin board with a coated white surface and the best print reproduction. CCNB is recycled with a coated printing face and a gray reverse. CCNB costs less and prints nearly as well on the front; the gray back is invisible in most applications.
   - q: Which flute should I use?
     a: E-flute for mailers and retail shippers, B or C for general and larger shipping, F for small retail-facing boxes where print quality matters. Double-wall only when stack height or contents weight genuinely demand it. Flute choice trades thickness against print quality.
   - q: Does recycled board perform worse?
-    a: Marginally, at the same caliper. Shorter fibre means slightly less rigidity and slightly faster moisture uptake, and it cracks a little more readily at a crease. Stepping up one caliper restores the performance and usually costs less than people expect.
-  - q: Why does the same colour look different on kraft?
-    a: Because kraft is unbleached and absorbent. Ink sinks in and the brown substrate shows through, so colours read warmer and duller. White needs an opaque underbase to register at all. Design for kraft from the start rather than adapting a design made on white.
+    a: Marginally, at the same caliper. Shorter fiber means slightly less rigidity and slightly faster moisture uptake, and it cracks a little more readily at a crease. Stepping up one caliper restores the performance and usually costs less than people expect.
+  - q: Why does the same color look different on kraft?
+    a: Because kraft is unbleached and absorbent. Ink sinks in and the brown substrate shows through, so colors read warmer and duller. White needs an opaque underbase to register at all. Design for kraft from the start rather than adapting a design made on white.
   - q: When do I need double-wall corrugated?
     a: When stack height goes past roughly five high, or contents exceed around 20 kg. Below that single-wall B or C flute handles most loads. Double-wall costs more and takes more space flat, so it is worth specifying only where the load genuinely demands it.
-  - q: What is greyboard and where is it used?
+  - q: What is grayboard and where is it used?
     a: Thick rigid board used for boxes that do not collapse, wrapped in a printed paper. It is the substrate behind every rigid box, and its thickness is why a rigid box holds noticeably less than a folding carton at the same external size.
   - q: Does a white-top liner matter on corrugated?
-    a: For print quality, yes — a white top gives far better colour reproduction than kraft liner. For strength it makes no difference. If the box is customer-facing it earns its cost; if it goes to a warehouse it usually does not.
+    a: For print quality, yes — a white top gives far better color reproduction than kraft liner. For strength it makes no difference. If the box is customer-facing it earns its cost; if it goes to a warehouse it usually does not.
   - q: Can I mix materials in one pack?
     a: You can, and it is often the right functional answer, but it affects recyclability. A carton that is entirely paper recycles cleanly; the same carton with a plastic window and a foil block does not. If a recyclability claim matters, design for a single stream.
   - q: What material handles moisture best?
     a: It depends where the moisture is. Ambient humidity needs a moisture-resistant coating; surface condensation needs an exterior barrier; leaking contents need a wet-strength board with a liner. They are three different problems and one specification does not cover all of them.
 ---
 
-Material is the first decision that constrains everything after it. Board grade sets what the pack can carry, print behaviour and, to a large extent, cost. This guide sets out what each substrate does and where it disappoints.
+Material is the first decision that constrains everything after it. Board grade sets what the pack can carry, print behavior and, to a large extent, cost. This guide sets out what each substrate does and where it disappoints.
 
 ## Paperboard grades
 
@@ -47,7 +47,7 @@ Paperboard thickness is quoted in points, where one point is one thousandth of a
 | 18pt kraft | 0.018 in | Up to ~4 lb | Natural finish, absorbs moisture |
 | Recycled CCNB | 14pt – 20pt | Similar to SBS | Greyer base, marginally less rigid |
 
-SBS is bleached and coated, so it holds fine detail and reproduces colour accurately. Kraft is unbleached — colours print warmer and duller, and white ink needs an opaque underbase.
+SBS is bleached and coated, so it holds fine detail and reproduces color accurately. Kraft is unbleached — colors print warmer and duller, and white ink needs an opaque underbase.
 
 ## Corrugated flutes
 
@@ -63,9 +63,9 @@ Corrugated strength comes from the fluted layer, and flute size determines the t
 
 Specify double-wall past roughly twenty pounds of contents, or where cases stack several high on a pallet for extended periods.
 
-## Rigid greyboard
+## Rigid grayboard
 
-Rigid boxes use 1.5 mm to 2 mm greyboard wrapped in printed or specialty paper. They are hand-assembled, ship pre-formed rather than flat, and cost several times an equivalent folding carton.
+Rigid boxes use 1.5 mm to 2 mm grayboard wrapped in printed or specialty paper. They are hand-assembled, ship pre-formed rather than flat, and cost several times an equivalent folding carton.
 
 What you buy is physical presence — weight in the hand and resistance when the lid lifts. That does more for premium positioning than print ever does. The costs are lead time and freight volume.
 
@@ -81,21 +81,21 @@ Flexible packaging is built from bonded layers, each doing a job: printed outer,
 
 Barrier performance sets shelf life, and shelf life sets the price. Mono-material films need filling line adjustment, so trial before converting a live product.
 
-## Moulded pulp
+## Molded pulp
 
-Formed from recycled paper slurry, moulded pulp absorbs impact well and recycles cleanly. Its surface is rough and it holds looser tolerances than die-cut board, so it works as a hidden protective layer rather than a visible one. Tooling costs more than a cutting die, so it suits volume.
+Formed from recycled paper slurry, molded pulp absorbs impact well and recycles cleanly. Its surface is rough and it holds looser tolerances than die-cut board, so it works as a hidden protective layer rather than a visible one. Tooling costs more than a cutting die, so it suits volume.
 
 ## Choosing by weight and journey
 
 Weigh the product and establish how it travels. Then take the lightest material that survives that journey with margin, and spend the remaining budget on print and finish rather than on board you do not need.
 
-Where a product is fragile rather than heavy, the answer is usually structural. A fitted insert holding the item still does more for damage rates than a heavier outer, and our [comparison of board, foam and moulded pulp inserts](/resources/packaging-insert-guide/) covers which material suits which product.
+Where a product is fragile rather than heavy, the answer is usually structural. A fitted insert holding the item still does more for damage rates than a heavier outer, and our [comparison of board, foam and molded pulp inserts](/resources/packaging-insert-guide/) covers which material suits which product.
 
 ## Reading a material specification
 
 A complete material line names four things, and a quote that gives fewer is not comparable with one that gives more.
 
-**The grade.** SBS, CCNB, kraft, greyboard — this tells you the fibre and the surface.
+**The grade.** SBS, CCNB, kraft, grayboard — this tells you the fiber and the surface.
 
 **The caliper or flute.** Thickness for solid board, letter grade for corrugated. This is what determines what the pack carries.
 
@@ -125,12 +125,12 @@ That last row is the one worth remembering. A material change cannot solve a mov
 
 Barrier performance sets shelf life, and shelf life sets the price. Mono-material films need filling line adjustment, so trial before converting a live product.
 
-## Moulded pulp
+## Molded pulp
 
-Formed from recycled paper slurry, moulded pulp absorbs impact well and recycles cleanly. Its surface is rough and it holds looser tolerances than die-cut board, so it works as a hidden protective layer rather than a visible one. Tooling costs more than a cutting die, so it suits volume.
+Formed from recycled paper slurry, molded pulp absorbs impact well and recycles cleanly. Its surface is rough and it holds looser tolerances than die-cut board, so it works as a hidden protective layer rather than a visible one. Tooling costs more than a cutting die, so it suits volume.
 
 ## Choosing by weight and journey
 
 Weigh the product and establish how it travels. Then take the lightest material that survives that journey with margin, and spend the remaining budget on print and finish rather than on board you do not need.
 
-Where a product is fragile rather than heavy, the answer is usually structural. A fitted insert holding the item still does more for damage rates than a heavier outer, and our [comparison of board, foam and moulded pulp inserts](/resources/packaging-insert-guide/) covers which material suits which product.
+Where a product is fragile rather than heavy, the answer is usually structural. A fitted insert holding the item still does more for damage rates than a heavier outer, and our [comparison of board, foam and molded pulp inserts](/resources/packaging-insert-guide/) covers which material suits which product.

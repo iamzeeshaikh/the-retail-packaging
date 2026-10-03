@@ -5,19 +5,26 @@ import Breadcrumbs from '../components/Breadcrumbs.astro'
 import { legalPages, type LegalPage } from '../data/legal'
 import { clampText } from '../lib/copy'
 import * as S from '../lib/schema'
+import Faqs from '../components/Faqs.astro'
+import { withOverride } from '../lib/meta-overrides'
+import pageFaqs from '../data/page-faqs.json'
 
 export const getStaticPaths = (() =>
   legalPages.map((p) => ({ params: { legal: p.slug }, props: { page: p } }))) satisfies GetStaticPaths
 
 const { page } = Astro.props as { page: LegalPage }
 const path = `/${page.slug}/`
-const title = clampText(page.metaTitle, 62)
-const description = clampText(page.description, 132)
+const { title, description } = withOverride(path, {
+  title: clampText(page.metaTitle, 62),
+  description: clampText(page.description, 132),
+})
+const faqs = (pageFaqs as Record<string, { q: string; a: string }[]>)[page.slug] ?? []
 const trail = [{ name: 'Home', url: '/' }, { name: page.title, url: path }]
 const schema = S.graph([
   S.organization(), S.website(),
   S.webPage({ path, title, description, dateModified: '2026-08-10' }),
   S.breadcrumbs(path, trail),
+  ...(faqs.length ? [S.faqPage(path, faqs)] : []),
 ])
 ---
 <Base title={title} description={description} path={path} schema={schema}>
@@ -38,6 +45,7 @@ const schema = S.graph([
       </div>
     </div>
   </section>
+  {faqs.length > 0 && <Faqs faqs={faqs} title={`Questions about our ${page.title.toLowerCase()}`} />}
 </Base>
 <style>
   .updated { font-size:var(--fs-xs); color:var(--text-faint); margin:var(--s-3) 0 var(--s-5);

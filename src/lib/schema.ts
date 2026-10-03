@@ -172,7 +172,7 @@ export function product(input: ProductSchemaInput): Json {
   const url = canonical(input.path)
   /* Merchant listings want a product identifier. These formats are made to
      order, so there is no GTIN to quote — an SKU and MPN derived from the
-     format slug are stable, honest and unique across the catalogue. */
+     format slug are stable, honest and unique across the catalog. */
   const code = `TRP-${input.path.replace(/\//g, '').toUpperCase()}`
   const node: Json = {
     '@type': 'Product',
@@ -192,8 +192,10 @@ export function product(input: ProductSchemaInput): Json {
        UNIT_PRICE_FROM constant the visible price line on the page is built
        from, so the two cannot drift.
 
-       No `shippingDetails`: freight here is quoted per consignment and the
-       business publishes no rate, so there is nothing honest to put in it. */
+       `shippingDetails` carries no rate: freight is quoted per consignment
+       and the business publishes none. The delivery window is confirmed by the
+       client for all four markets (3-5 business days production after artwork
+       approval, then 5-7 in transit), so that much is stated. */
     offers: {
       '@type': 'Offer',
       '@id': `${url}#offer`,
@@ -204,6 +206,18 @@ export function product(input: ProductSchemaInput): Json {
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
       seller: { '@id': `${SITE.origin}/#organization` },
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: ['US', 'GB', 'CA', 'AU'].map((addressCountry) => ({
+          '@type': 'DefinedRegion',
+          addressCountry,
+        })),
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 5, unitCode: 'DAY' },
+          transitTime: { '@type': 'QuantitativeValue', minValue: 5, maxValue: 7, unitCode: 'DAY' },
+        },
+      },
       /* Real policy, quoted from /shipping-information/: packaging made to an
          approved proof cannot be resold, so it is not returnable. */
       hasMerchantReturnPolicy: {
