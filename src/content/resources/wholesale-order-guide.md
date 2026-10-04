@@ -72,27 +72,7 @@ If taking a full delivery, confirm receiving first — pallet height limits, doc
 
 Moisture and heat are the two agents of degradation.
 
-Corrugated and uncoated board absorb ambient moisture, reducing compression strength measurably. Keep stock on pallets off concrete, away from external walls, covered.
-
-Sustained heat softens laminating adhesives and pressure-sensitive closures. In warm climates, specify heat-stable laminates at order rather than treating it as a storage problem.
-
 Rotate so older stock is used first.
-
-## Keep repeat runs consistent
-
-Ask your supplier to hold the dieline, board specification, color targets and finish list on file. Reorders reusing an approved file skip most of prepress.
-
-Keep your own archive too. A brand holding its own copies is never dependent on a supplier relationship continuing.
-
-## Plan the reorder before you need it
-
-The common failure is not over-ordering — it is running out mid-lead-time.
-
-Production is 3 to 5 business days after approval, plus transit, plus proof time. A realistic reorder lead time is four to six weeks.
-
-Set the trigger accordingly. Using 5,000 a month with a six-week lead time means reordering at around 7,500 remaining, not 2,000.
-
-Understanding why the price curve bends where it does makes these negotiations more productive, and our [breakdown of packaging cost factors](/resources/packaging-cost-factors/) sets out the underlying mechanics.
 
 ## Comparing quotes properly
 
@@ -108,7 +88,7 @@ At volume the levers change, and the ones people negotiate hardest are rarely th
 
 **Print route.** Above a few thousand units, offset or flexo overtakes digital decisively. This is usually the largest single lever on a big run.
 
-**Sheet efficiency.** A dimensional change of a few millimetres can allow an extra piece per press sheet. That is a permanent reduction in unit cost for the life of the die, and it is invisible unless someone checks it before tooling.
+**Sheet efficiency.** A dimensional change of a few millimeters can allow an extra piece per press sheet. That is a permanent reduction in unit cost for the life of the die, and it is invisible unless someone checks it before tooling.
 
 **Board grade.** Substantial, but risky to cut without knowing your damage rate. Saving on grade and paying in replacements is a common false economy.
 

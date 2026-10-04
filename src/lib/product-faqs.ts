@@ -176,7 +176,7 @@ function rider(kind: Rider, p: Product, t: Set<Trait>): string {
       if (hasT('small'))
         return 'Small formats consolidate well, so if you are ordering several at once they normally travel as a single consignment rather than being charged separately.'
       if (hasT('shipping', 'subscription'))
-        return 'If you are shipping to a fulfilment center rather than your own address, send their receiving requirements with the order — pallet height and labeling rules are usually fixed and refusals are expensive.'
+        return 'If you are shipping to a fulfillment center rather than your own address, send their receiving requirements with the order — pallet height and labeling rules are usually fixed and refusals are expensive.'
       if (p.form.id === 'label' || p.form.id === 'sticker')
         return 'Roll-form work travels well and takes very little space, so freight is rarely the deciding cost on this format even at high quantities.'
       if (p.form.id === 'rigid-box')

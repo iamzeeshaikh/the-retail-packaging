@@ -23,7 +23,7 @@ faqs:
   - q: What is the difference between ECT and burst strength?
     a: ECT measures compression strength on the board's edge, which is what determines stacking performance on a pallet. Burst strength measures resistance to puncture. ECT is the more relevant figure for shipping, and it has largely superseded burst for that purpose.
   - q: What does grammage mean and when is it used?
-    a: Paper weight in grams per square meter. It is used for bags, wraps and papers, where caliper is not a useful measure. Board is quoted in points or millimetres of thickness instead, so seeing gsm tells you roughly what family of material you are looking at.
+    a: Paper weight in grams per square meter. It is used for bags, wraps and papers, where caliper is not a useful measure. Board is quoted in points or millimeters of thickness instead, so seeing gsm tells you roughly what family of material you are looking at.
   - q: What is migration in a packaging context?
     a: The transfer of a substance from the packaging into the product — ink, adhesive components or fragrance oil moving through the material. It matters most for food contact and for fragranced products, and it is why a coated inner face gets specified.
   - q: What is a price break?
@@ -36,7 +36,7 @@ Packaging quotes use vocabulary that is rarely explained. These are the terms th
 
 ## Structure and materials
 
-**Caliper** — board thickness, quoted in points (thousandths of an inch) or millimetres.
+**Caliper** — board thickness, quoted in points (thousandths of an inch) or millimeters.
 
 **Flute** — the corrugated wave between liners. Letter grades (F, E, B, C, BC) denote thickness and strength.
 
@@ -80,7 +80,7 @@ Packaging quotes use vocabulary that is rarely explained. These are the terms th
 
 **Makeready** — press setup before a run begins. A fixed cost regardless of quantity.
 
-**Spot color** — a named premixed ink rather than a four-colour build.
+**Spot color** — a named premixed ink rather than a four-color build.
 
 ## Finishing
 

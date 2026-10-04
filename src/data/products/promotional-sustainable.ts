@@ -261,7 +261,7 @@ export const promoSustainableFacts: ProductFactsMap = {
     pairs: ['belly-band-packaging', 'promotional-boxes'],
     ask: {
       q: 'Should resistance bands be sold in a window pack?',
-      a: 'We would usually advise against it. Latex degrades under UV, so a clear window shortens shelf life on the exact product it is showing. An opaque carton with the colour-to-resistance mapping printed clearly does the selling job without that cost.',
+      a: 'We would usually advise against it. Latex degrades under UV, so a clear window shortens shelf life on the exact product it is showing. An opaque carton with the color-to-resistance mapping printed clearly does the selling job without that cost.',
     },
   },
 }

@@ -417,22 +417,22 @@ export const citiesA: Place[] = [
     variant: 'ecommerce-led',
     sections: ['overview', 'demandTable', 'industries', 'checklist', 'formats', 'logistics', 'ordering', 'nearby', 'resources'],
     keyword: 'custom packaging Phoenix',
-    h1: 'Shipping packaging for Phoenix fulfilment operations',
+    h1: 'Shipping packaging for Phoenix fulfillment operations',
     eyebrow: 'Phoenix · Arizona',
-    lede: 'Phoenix has become a serious fulfilment market, and fulfilment packaging is judged on two numbers: what it costs to ship and how often it arrives damaged.',
-    metaTitle: 'Custom Packaging Phoenix | Fulfilment & Shipping',
-    metaDescription: 'Custom shipping packaging for Phoenix fulfilment operations and DTC brands. Right-sized mailers, fitted inserts and lower dimensional weight.',
-    sectors: ['E-commerce fulfilment', 'Supplements and nutrition', 'Electronics distribution', 'Home goods'],
+    lede: 'Phoenix has become a serious fulfillment market, and fulfillment packaging is judged on two numbers: what it costs to ship and how often it arrives damaged.',
+    metaTitle: 'Custom Packaging Phoenix | Fulfillment & Shipping',
+    metaDescription: 'Custom shipping packaging for Phoenix fulfillment operations and DTC brands. Right-sized mailers, fitted inserts and lower dimensional weight.',
+    sectors: ['E-commerce fulfillment', 'Supplements and nutrition', 'Electronics distribution', 'Home goods'],
     overview: {
       h: 'Two numbers decide everything',
       body: [
-        'For a fulfilment operation, packaging is a recurring cost with a recurring risk attached. The unit price of the box is the least interesting number in the calculation. What matters is the shipping cost it generates on every parcel and the damage rate it fails to prevent.',
+        'For a fulfillment operation, packaging is a recurring cost with a recurring risk attached. The unit price of the box is the least interesting number in the calculation. What matters is the shipping cost it generates on every parcel and the damage rate it fails to prevent.',
         'A box that costs three cents more but drops a dimensional weight band pays for itself immediately. A box that costs three cents less and raises damage by half a percent is a bad trade on almost any product value.',
       ],
     },
     demandTable: {
       h: 'What a packaging change is actually worth',
-      intro: 'The arithmetic that should drive a fulfilment decision.',
+      intro: 'The arithmetic that should drive a fulfillment decision.',
       head: ['Change', 'Effect on unit cost', 'Effect on total cost'],
       rows: [
         ['Right-sizing the box', 'Neutral or slightly lower', 'Large saving on every parcel'],
@@ -445,17 +445,17 @@ export const citiesA: Place[] = [
     industries: {
       h: 'What ships out of Phoenix',
       body: [
-        'A growing fulfilment sector, with supplements and electronics well represented.',
+        'A growing fulfillment sector, with supplements and electronics well represented.',
       ],
       items: [
-        { name: 'E-commerce fulfilment', detail: 'Third-party and in-house operations buying mailers at pallet quantities, where small dimensional savings compound quickly.' },
+        { name: 'E-commerce fulfillment', detail: 'Third-party and in-house operations buying mailers at pallet quantities, where small dimensional savings compound quickly.' },
         { name: 'Supplements and nutrition', detail: 'A substantial local sector shipping direct as well as into retail, with cartons that must work in both channels.' },
         { name: 'Electronics distribution', detail: 'Devices and accessories where fitted protection prevents most of the damage.' },
         { name: 'Home goods', detail: 'Bulkier items where dimensional weight dominates the shipping bill.' },
       ],
     },
     checklist: {
-      h: 'Auditing an existing fulfilment pack',
+      h: 'Auditing an existing fulfillment pack',
       intro: 'Five checks that usually find money.',
       items: [
         'Measure the product and compare it against the box you are actually using.',
@@ -469,11 +469,11 @@ export const citiesA: Place[] = [
       h: 'Inbound freight and summer storage',
       body: [
         'Ground delivery into Phoenix typically takes 5 to 7 business days and the metropolitan area takes palletized freight easily.',
-        'Summer storage is worth a thought for laminated stock, though most fulfilment packaging is plain corrugated, which is unaffected by heat in a way that laminated cartons are not.',
+        'Summer storage is worth a thought for laminated stock, though most fulfillment packaging is plain corrugated, which is unaffected by heat in a way that laminated cartons are not.',
       ],
     },
     ordering: {
-      h: 'Getting a fulfilment quote that means something',
+      h: 'Getting a fulfillment quote that means something',
       body: [
         'Send product dimensions and your current damage rate rather than the box you are using now. The current box is usually inherited rather than chosen, and quoting a replacement for it just repeats an old decision.',
         'If you run multiple product sizes, send the range. Consolidating to fewer box sizes is often possible and reduces both purchasing complexity and storage.',
@@ -506,9 +506,9 @@ export const citiesA: Place[] = [
       { q: 'How many box sizes should we run?', a: 'Fewer than most operations do. Every extra size adds purchasing, storage and pick complexity. We will look at your product range and tell you honestly whether it can consolidate.' },
       { q: 'How long does delivery to Phoenix take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
       { q: 'What is the minimum order in Phoenix?', a: 'A flat 100 units on any format, which is enough to trial a right-sized box against your real damage rate before switching a line.' },
-      { q: 'Does Arizona heat affect corrugated shippers?', a: 'Not meaningfully. Heat affects laminated cartons, where adhesives soften. Plain corrugated, which is most fulfilment packaging, is unaffected.' },
+      { q: 'Does Arizona heat affect corrugated shippers?', a: 'Not meaningfully. Heat affects laminated cartons, where adhesives soften. Plain corrugated, which is most fulfillment packaging, is unaffected.' },
       { q: 'Should we print our shipping boxes?', a: 'That is a brand decision rather than a cost one. Printing does not change shipping cost or protection. If the unboxing matters to your customers it can be worth it; if parcels go to a business address, usually not.' },
-      { q: 'How much does fulfilment packaging cost in Phoenix?', a: 'From $0.30 per piece at large volumes. For a shipper the more useful figure is the total per-parcel cost including freight, and we are happy to work that through with you.' },
+      { q: 'How much does fulfillment packaging cost in Phoenix?', a: 'From $0.30 per piece at large volumes. For a shipper the more useful figure is the total per-parcel cost including freight, and we are happy to work that through with you.' },
     ],
     cta: {
       h: 'Audit a Phoenix shipping pack',

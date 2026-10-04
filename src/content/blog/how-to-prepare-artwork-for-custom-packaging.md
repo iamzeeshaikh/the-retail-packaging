@@ -70,7 +70,7 @@ Convert the document to CMYK. RGB files converted automatically at the press pro
 
 If you are printing spot colors, define them as named spot swatches and use them consistently. Two swatches with slightly different names that look identical on screen will be separated as two plates and charged accordingly. Delete unused swatches before export.
 
-Use a rich black build for large solid black areas rather than 100% K alone, which prints as a flat dark gray across a wide panel. Keep small text and thin rules as 100% K only, because four-colour small type shows registration fringing at the edges.
+Use a rich black build for large solid black areas rather than 100% K alone, which prints as a flat dark gray across a wide panel. Keep small text and thin rules as 100% K only, because four-color small type shows registration fringing at the edges.
 
 If your substrate is uncoated kraft or recycled board, expect colors to print warmer and less saturated. That is the material behaving normally, not a printing error. Request a proof on the real substrate if precise color matters.
 

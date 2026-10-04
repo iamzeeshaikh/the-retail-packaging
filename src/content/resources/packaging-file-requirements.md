@@ -84,12 +84,6 @@ Bleed applied to every trim edge at the distance appropriate to the format. Crit
 - Color conversion off, or set to the supplied profile
 - Layers flattened unless separations are requested
 
-## Naming and delivery
-
-Name files with product, size and version — for example `lipstick-carton-45x45x90-v2.pdf`. Vague names are how the wrong version reaches press.
-
-Send files under 20 MB by email; anything larger via a download link. Include a note stating what is critical: an exact brand color, a legally required panel, a fixed logo size. Prepress checks a great many things but cannot know which you care about most.
-
 ## Pre-flight checklist
 
 - CMYK, spot colors named and tidy
@@ -101,8 +95,6 @@ Send files under 20 MB by email; anything larger via a download link. Include a 
 - Overprint checked, especially on white objects
 - Ink coverage within limit
 - Correct version, clearly named
-
-Full setup guidance including bleed distances by format is in our [dieline and artwork preparation guide](/resources/dieline-and-artwork-guide/).
 
 ## Supplying artwork from different tools
 

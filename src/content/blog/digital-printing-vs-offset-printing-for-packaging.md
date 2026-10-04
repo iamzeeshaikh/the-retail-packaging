@@ -9,9 +9,9 @@ heroProduct: custom-poly-mailers
 heroAlt: Custom printed poly mailers showing solid color coverage across the film surface
 faqs:
   - q: At what quantity should I switch from digital to offset?
-    a: Somewhere between 500 and 2,000 units for a simple job, but it is not a fixed number. A one-colour design crosses over early and a five-colour one much later. If your quantity sits in that band, ask for both prices rather than applying a rule.
+    a: Somewhere between 500 and 2,000 units for a simple job, but it is not a fixed number. A one-color design crosses over early and a five-color one much later. If your quantity sits in that band, ask for both prices rather than applying a rule.
   - q: Is offset print quality actually better, or just different?
-    a: Better in specific ways — it holds fine type more crisply and lays down named spot inks directly rather than approximating them. For full-colour photographic work the gap is much smaller than people assume, and on a short run digital frequently looks equivalent.
+    a: Better in specific ways — it holds fine type more crisply and lays down named spot inks directly rather than approximating them. For full-color photographic work the gap is much smaller than people assume, and on a short run digital frequently looks equivalent.
   - q: Will customers notice the difference between the two?
     a: On a photographic design, almost never. On a solid brand color seen next to previous stock, sometimes. The people who notice are usually the brand team comparing runs, not the customer holding one pack.
   - q: Does digital limit what finishes I can apply?
@@ -48,7 +48,7 @@ Offset carries plate costs, makeready time and press setup. Call that a fixed bl
 
 That produces two very different curves. Digital unit cost is nearly a horizontal line. Offset unit cost starts high and falls steeply as the fixed block spreads across more units.
 
-For most packaging work, the crossover falls somewhere between 1,000 and 3,000 units. A single-colour job crosses over earlier because there is only one plate to pay for. A six-colour job with foil crosses over later because the fixed block is much larger.
+For most packaging work, the crossover falls somewhere between 1,000 and 3,000 units. A single-color job crosses over earlier because there is only one plate to pay for. A six-color job with foil crosses over later because the fixed block is much larger.
 
 ## Where digital clearly wins
 

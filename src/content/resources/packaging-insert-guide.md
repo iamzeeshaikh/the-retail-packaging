@@ -72,12 +72,6 @@ An insert is cut to the inside of the outer pack, not to the product alone, so b
 
 Where items of very different weights sit together, say so — a heavy item shifting beside a light one is a common damage mode.
 
-## Testing
-
-Order a plain sample of insert and outer together, load it with the real product and drop it from about a meter onto a hard floor on several faces.
-
-If the product shifts, tighten the cavity. If the insert deforms, step up the material. If the outer creases at a corner, load is not being distributed and the geometry needs work. Our [guide to measuring products and allowing clearance](/resources/custom-packaging-size-guide/) covers the dimension side of the same problem.
-
 ## Transit fit and presentation fit are different jobs
 
 An insert that grips a product firmly for transit is usually invisible and slightly tight. An insert that presents a product on opening seats it loosely and is part of what the recipient sees. Asking one part to do both tends to compromise one of them.

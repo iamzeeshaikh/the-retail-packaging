@@ -318,7 +318,7 @@ export const displayLabelFacts: ProductFactsMap = {
     spec: 'A thin synthetic face that conforms to a small diameter without lifting.',
     press: 'Very little area. Required ingredient copy usually consumes most of it, so plan the panel before the design.',
     pairs: ['custom-lip-balm-labels', 'pressure-sensitive-labels', 'lip-balm-boxes'],
-    ask: { q: 'How much overlap does a wrap label need?', a: 'Enough to bond properly without bulging — usually a few millimetres. Sized exactly to the circumference the edge lifts; too generous and the seam shows as a ridge on a small tube.' },
+    ask: { q: 'How much overlap does a wrap label need?', a: 'Enough to bond properly without bulging — usually a few millimeters. Sized exactly to the circumference the edge lifts; too generous and the seam shows as a ridge on a small tube.' },
   },
   'custom-lip-balm-labels': {
     holds: 'the same wrap labels, printed for a specific brand rather than supplied plain',

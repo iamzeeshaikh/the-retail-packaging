@@ -78,12 +78,6 @@ Sample costs are normally credited against a production order that follows, whic
 
 Tooling is the exception. If a sample requires a new cutting die, that die cost carries forward to production rather than being duplicated.
 
-## When to skip sampling
-
-Reorders of an unchanged specification do not need new samples. A minor artwork revision on a proven structure needs a proof but not a structural sample.
-
-Everything else — new product, new size, new material, new format — is worth sampling. Our [pre-production checklist](/resources/retail-packaging-checklist/) sets out what to verify at each stage before committing a run.
-
 ## What each sample type answers
 
 | Sample | Answers | Does not answer |
@@ -122,6 +116,8 @@ Sampling is not always necessary, and pretending otherwise wastes time.
 A repeat order against a held specification does not need one. A plain shipper with no fit requirement rarely does. A format you have run several times in a slightly different size usually does not.
 
 What always justifies a sample: a new structure, a fitted cavity, a perforation, a finish you have not seen on that substrate, and any product where the fit is tight.
+
+Our [pre-production checklist](/resources/retail-packaging-checklist/) sets out what to verify at each stage before committing a run.
 
 ## Building it into the timeline
 

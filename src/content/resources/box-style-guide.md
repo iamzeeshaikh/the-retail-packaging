@@ -1,15 +1,17 @@
 ---
 title: Box Style Guide
 description: Folding cartons, mailers, rigid boxes, display units and trays compared on construction, assembly, shipping and where each style stops working.
-metaTitle: Box Style Guide | Packaging Structures Compared
+metaTitle: "Retail Box Styles Explained | Box Style Guide"
 publishDate: 2026-05-08
-updatedDate: 2026-08-11
+updatedDate: 2026-10-04
 keyword: box style guide
 kind: guide
 order: 20
 heroProduct: mailer-boxes
 heroAlt: Custom mailer boxes with roll-end tuck-front construction shown flat and assembled
 faqs:
+  - q: What is the difference between an inner carton and an outer carton?
+    a: An inner carton groups a small number of units, often a dozen, so a store can order and shelve them in convenient lots. The outer carton is the corrugated shipping case that holds several inners on the pallet. The retail pack sits inside the inner, so one product can travel in three layers of packaging.
   - q: What is the difference between a tuck end and an auto-lock bottom?
     a: A reverse tuck end folds closed at both ends and is assembled by hand — cheapest, fine for light contents. An auto-lock bottom snaps into a locked base as the carton is opened, so it takes real weight and assembles faster. The auto-lock costs more in board and tooling and pays for itself on anything heavy or high-volume.
   - q: When should I use a rigid box instead of a folding carton?
@@ -78,20 +80,17 @@ Footprint has to match the retailer planogram exactly, and stacking strength mus
 
 Open-top structures die-cut from grease-resistant board with locking corners. Speed of assembly at the counter matters as much as the print.
 
-## Choosing between styles
+## Inner carton vs outer carton
 
-| Requirement | Style |
-|---|---|
-| Light retail product, lowest cost | Reverse tuck end |
-| Weight in a folding carton | Auto-lock bottom |
-| E-commerce shipping and unboxing | Roll-end tuck front |
-| Bulk shipping, no presentation | Regular slotted container |
-| Premium presentation | Rigid two-piece or hinged lid |
-| Several printed variants, one structure | Sleeve and tray |
-| Retail shelf placement | Display case with tear-away front |
-| Hot or greasy food | Locking-corner tray |
+Box styles also stack inside each other, and the names for each layer cause confusion on purchase orders.
 
-Once the style is settled, the material question narrows considerably — our [comparison of board grades and flute types](/resources/packaging-material-guide/) covers what each structure should be produced on.
+| Layer | Also called | Usual style | Who sees it |
+|---|---|---|---|
+| Retail pack | Primary or unit pack | Tuck end, auto-lock, rigid, sleeve | The shopper |
+| Inner carton | Inner pack, display inner | Plain or lightly printed carton, or a display case | Store staff |
+| Outer carton | Master case, shipper | Regular slotted container | Warehouse and carrier |
+
+The inner count is a commercial decision as much as a structural one. Retailers order in inners, so a pack of 12 against a buyer who wants 6 leaves stock sitting in their back room. Settle the inner and outer counts before the retail pack is sized, because the outer dimensions follow from them.
 
 ## How structure drives cost
 

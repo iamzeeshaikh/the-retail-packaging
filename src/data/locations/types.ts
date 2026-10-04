@@ -21,7 +21,7 @@ export type StateVariant =
 
 export type CityVariant =
   | 'sector-spotlight'  // one dominant local sector carries the page
-  | 'ecommerce-led'     // fulfilment and shipping economics lead
+  | 'ecommerce-led'     // fulfillment and shipping economics lead
   | 'hospitality-led'   // food service and venue volume leads
   | 'maker-led'         // small-batch and independent brands lead
   | 'logistics-hub'     // freight position is the story

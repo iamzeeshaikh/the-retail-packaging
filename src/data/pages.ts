@@ -77,10 +77,10 @@ export const infoPages: InfoPage[] = [
       },
       {
         h2: 'Who we work with',
-        link: { lead: 'Fulfilment buyers in particular tend to start with ', href: '/custom-mailers/', anchor: 'corrugated mailers and e-commerce boxes', tail: ', where a fraction of an inch changes the freight bill.' },
+        link: { lead: 'Fulfillment buyers in particular tend to start with ', href: '/custom-mailers/', anchor: 'corrugated mailers and e-commerce boxes', tail: ', where a fraction of an inch changes the freight bill.' },
         body: [
-          'Most of our volume comes from four groups: early-stage brands producing a first run, established retail brands reordering at scale, agencies specifying packaging on behalf of clients, and fulfilment operations buying mailers and inserts in quantity.',
-          'The specification conversation differs a great deal between them. A startup usually needs the smallest viable run and honest advice about what to skip. A fulfilment buyer usually needs a fraction of an inch removed from a mailer, because dimensional weight costs more than the box.',
+          'Most of our volume comes from four groups: early-stage brands producing a first run, established retail brands reordering at scale, agencies specifying packaging on behalf of clients, and fulfillment operations buying mailers and inserts in quantity.',
+          'The specification conversation differs a great deal between them. A startup usually needs the smallest viable run and honest advice about what to skip. A fulfillment buyer usually needs a fraction of an inch removed from a mailer, because dimensional weight costs more than the box.',
         ],
       },
     ],
@@ -118,7 +118,7 @@ export const infoPages: InfoPage[] = [
           { h: 'Dieline', d: 'Once the quote is approved we send a dieline template sized to your product. Artwork is built on this template, not on a guessed rectangle.' },
           { h: 'Prepress and proof', d: 'Our team checks bleed, resolution, fonts, color build and cut lines, then issues a digital proof. Physical samples are available where fit or color is critical.' },
           { h: 'Production', d: 'Printing, die-cutting, finishing and assembly. Most formats complete in 3 to 5 business days after proof approval.' },
-          { h: 'Delivery', d: 'Shipped flat or assembled depending on format, to one address or split across fulfilment sites. Freight is quoted separately.' },
+          { h: 'Delivery', d: 'Shipped flat or assembled depending on format, to one address or split across fulfillment sites. Freight is quoted separately.' },
         ],
       },
       {
@@ -265,7 +265,7 @@ export const infoPages: InfoPage[] = [
         link: { lead: 'Run length is the deciding factor, and ', href: '/resources/wholesale-order-guide/', anchor: 'the wholesale order guide shows where the crossover falls', tail: ' at each quantity band.' },
         body: [
           'Digital carries no plate cost, so its unit price is close to flat regardless of quantity. Plate-based printing carries a fixed setup that spreads across the run, so its unit price falls steeply as volume rises.',
-          'The crossover usually sits between 1,000 and 3,000 units, earlier for one-colour work and later for six-colour designs with foil. Ask for the same job quoted at your quantity and one band up — two points reveal the shape of both curves.',
+          'The crossover usually sits between 1,000 and 3,000 units, earlier for one-color work and later for six-color designs with foil. Ask for the same job quoted at your quantity and one band up — two points reveal the shape of both curves.',
         ],
       },
       {
@@ -279,7 +279,7 @@ export const infoPages: InfoPage[] = [
     ],
     faqs: [
       { q: 'Which printing method should I choose?', a: 'Under about 1,000 units, digital almost always. Above about 3,000, offset or flexo depending on substrate. Between the two, ask for both prices at your exact quantity.' },
-      { q: 'How many colors can I print?', a: 'Digital handles full color with no per-colour cost. Plate-based methods add a plate and a press pass per color, so color count directly affects setup cost.' },
+      { q: 'How many colors can I print?', a: 'Digital handles full color with no per-color cost. Plate-based methods add a plate and a press pass per color, so color count directly affects setup cost.' },
       { q: 'Can you match a Pantone color?', a: 'On offset and flexo we print the Pantone ink directly. On digital we produce the closest process build, which is very close but not an exact match on critical brand colors.' },
       { q: 'Is digital print quality good enough for retail packaging?', a: 'For most retail packaging viewed at arm\'s length, yes. Offset holds finer detail in small type and large solids more evenly, which shows under close inspection.' },
       { q: 'Can you print inside a box?', a: 'Yes, on mailers, folding cartons and rigid boxes. It matters most when the product does not fill the pack, because that is when the interior is visible at opening.' },
@@ -449,7 +449,7 @@ export const infoPages: InfoPage[] = [
       { q: 'Can you work from a rough sketch?', a: 'Yes. A sketch plus accurate product dimensions is enough to begin structural work. Print artwork needs brand assets in usable form.' },
       { q: 'Do I own the artwork you create?', a: 'Yes. Artwork produced for your packaging is yours, and we supply the print-ready files on request.' },
       { q: 'Can you adapt artwork to a new size?', a: 'Yes, and it is better than scaling. A design rebuilt on the new dieline keeps type sizes and margins correct rather than distorting them proportionally.' },
-      { q: 'Do you provide 3D visuals?', a: 'We can produce a rendered visual of the finished pack for internal approval. It is a representation rather than a colour-accurate proof.' },
+      { q: 'Do you provide 3D visuals?', a: 'We can produce a rendered visual of the finished pack for internal approval. It is a representation rather than a color-accurate proof.' },
       { q: 'How long does design take?', a: 'Structural dielines are usually ready within two to three business days of confirmed dimensions. Print artwork depends on scope, typically five to ten business days.' },
       { q: 'Can you design for several SKUs at once?', a: 'Yes, and it is more efficient. One structure serving several printed variants removes a tooling cost from every additional design.' },
       { q: 'Will you check artwork I produce myself?', a: 'Yes. Our prepress team reviews every file regardless of who created it, checking bleed, resolution, fonts, color build and cut lines.' },
@@ -469,7 +469,7 @@ export const infoPages: InfoPage[] = [
     heroProduct: 'printed-paper-cups',
     sections: [
       { h2: 'The routes we run',
-        link: { lead: 'Where each route stops being economic is set out in ', href: '/resources/printing-methods-guide/', anchor: 'the printing methods guide', tail: '.' }, body: ['Digital for short runs, prototypes and versioned designs where plate costs cannot be justified. Offset lithography for volume board work where color accuracy matters and spot colors need to print directly. Flexography for corrugated, film and bag substrates at volume. Screen printing for fabric and heavy ink lay applications.', 'The crossover between digital and plate-based printing usually sits between 1,000 and 3,000 units, earlier for single-colour work and later for complex multi-colour designs with finishing.'] },
+        link: { lead: 'Where each route stops being economic is set out in ', href: '/resources/printing-methods-guide/', anchor: 'the printing methods guide', tail: '.' }, body: ['Digital for short runs, prototypes and versioned designs where plate costs cannot be justified. Offset lithography for volume board work where color accuracy matters and spot colors need to print directly. Flexography for corrugated, film and bag substrates at volume. Screen printing for fabric and heavy ink lay applications.', 'The crossover between digital and plate-based printing usually sits between 1,000 and 3,000 units, earlier for single-color work and later for complex multi-color designs with finishing.'] },
       { h2: 'Color management', body: ['Spot colors print directly from named inks on offset and flexo. Digital produces the closest process build, which is very close but not identical on critical brand colors.', 'On uncoated and kraft substrates every method prints warmer and duller than on coated white board. That is the material behaving normally. Where color is critical we recommend a proof on the actual substrate rather than a generic proof stock.'] },
       { h2: 'Interior and specialty printing',
         link: { lead: 'Interior print pays off most on formats the customer opens themselves, such as ', href: '/custom-mailers/', anchor: 'printed e-commerce mailers', tail: '.' }, body: ['Interior printing is available on mailers, folding cartons and rigid boxes. It earns its cost most clearly when the product does not fill the pack, because that is when the customer sees the inside face at opening.', 'White ink on kraft and clear substrates requires an opaque underbase so colors above it stay accurate. It adds a pass and a cost but is the only way to hold color on a dark or transparent surface.'] },
@@ -477,7 +477,7 @@ export const infoPages: InfoPage[] = [
     faqs: [
       { q: 'Which print method suits my run?', a: 'Under about 1,000 units, digital almost always. Above about 3,000, offset or flexo depending on substrate. Between the two, ask for both prices at your exact quantity.' },
       { q: 'Can you match a specific Pantone?', a: 'On offset and flexo we print the Pantone ink directly. On digital we produce the closest process build, which differs slightly on critical brand colors.' },
-      { q: 'How many colors can I use?', a: 'Digital handles full color at no per-colour cost. Plate-based methods add a plate and a pass per color, so color count directly affects setup cost.' },
+      { q: 'How many colors can I use?', a: 'Digital handles full color at no per-color cost. Plate-based methods add a plate and a pass per color, so color count directly affects setup cost.' },
       { q: 'Do you print inside boxes?', a: 'Yes, on mailers, cartons and rigid boxes. It is most worth the cost when the product does not fill the pack.' },
       { q: 'Can you print on kraft board?', a: 'Yes. Expect colors to appear warmer and less saturated, and note that white requires an opaque underbase.' },
       { q: 'What is litho-lamination?', a: 'An offset-printed sheet bonded to corrugated board, giving photographic print quality that flexography cannot achieve directly. It costs more than flexo.' },
@@ -534,7 +534,7 @@ export const infoPages: InfoPage[] = [
         link: { lead: 'Proofing accounts for more of that window than production does, as ', href: '/how-it-works/', anchor: 'the six-stage order process shows', tail: '.' }, body: ['Most formats complete production in 3 to 5 business days after artwork approval. Hand-assembled rigid boxes and specialty finishes sit at the longer end. Transit is additional and depends on destination and consignment size.', 'For a first order, allow four to six weeks from inquiry to delivery. Specification, artwork and proofing account for most of that, not production.'] },
       { h2: 'How orders arrive',
         link: { lead: 'Rigid boxes are the exception because they ship assembled, which is explained across ', href: '/custom-gift-boxes/', anchor: 'the rigid and gift box range', tail: '.' }, body: ['Folding cartons, corrugated, mailers, bags and sleeves ship flat and knocked down, which keeps freight cost low. Rigid boxes ship pre-assembled and take more freight volume. Labels ship on cores or in sheets. Cups nest in sleeves inside cartons.', 'Larger orders ship palletized. Tell us if your address cannot receive a pallet.'] },
-      { h2: 'Receiving requirements', body: ['Confirm dock access, forklift availability, pallet height limits and delivery windows before dispatch. A consignment that cannot be unloaded incurs redelivery charges.', 'Third-party fulfilment centers almost always have specific labeling, pallet height and booking rules. Send those to us with your order rather than after despatch.'] },
+      { h2: 'Receiving requirements', body: ['Confirm dock access, forklift availability, pallet height limits and delivery windows before dispatch. A consignment that cannot be unloaded incurs redelivery charges.', 'Third-party fulfillment centers almost always have specific labeling, pallet height and booking rules. Send those to us with your order rather than after despatch.'] },
       { h2: 'Freight and returns',
         link: { lead: 'Because nothing here is a stock item, ', href: '/samples/', anchor: 'checking a sample before the run matters', tail: ' more than it would with catalog packaging.' }, body: ['Freight is quoted separately from the packaging and depends on weight, volume and destination. We can split a single production run across several delivery points.', 'Because every order is manufactured to your specification, custom packaging is not returnable once produced to an approved proof. If an order arrives damaged or does not match the approved specification, contact us immediately and we will resolve it.'] },
     ],
@@ -542,7 +542,7 @@ export const infoPages: InfoPage[] = [
       { q: 'How long will my order take?', a: 'Production is 3 to 5 business days after artwork approval, plus transit. A first order typically takes four to six weeks end to end including specification and proofing.' },
       { q: 'Do you ship to all US states?', a: 'Yes, all fifty. Alaska and Hawaii take longer and cost more in freight, and we quote those routes individually.' },
       { q: 'How is freight calculated?', a: 'On weight or volume, whichever is greater, plus destination. Flat-packed formats cost less to ship than pre-assembled ones.' },
-      { q: 'Can you deliver to a fulfilment center?', a: 'Yes, and it is common. Send us the receiving requirements — most 3PLs have specific labeling, pallet height and booking rules.' },
+      { q: 'Can you deliver to a fulfillment center?', a: 'Yes, and it is common. Send us the receiving requirements — most 3PLs have specific labeling, pallet height and booking rules.' },
       { q: 'Can delivery be split across addresses?', a: 'Yes. Tell us the split at quoting so freight is costed correctly rather than adjusted afterwards.' },
       { q: 'Can I stage delivery over time?', a: 'Yes. Production runs once at the volume price and stock is released in agreed instalments. Agree this at quoting since storage terms form part of it.' },
       { q: 'What if my order arrives damaged?', a: 'Contact us immediately with photographs of the damage and the packaging it arrived in. We will resolve it with the carrier and arrange replacement where appropriate.' },
@@ -687,7 +687,7 @@ export const INFO_BANDS: Record<string, InfoBands> = {
   'shipping-information': {
     eyebrow: 'Delivery',
     h2: 'Tell us where it has to land',
-    lede: 'Destination, dock access and any fulfilment-centre rules change the freight quote more than the packaging does. Send them with your inquiry.',
+    lede: 'Destination, dock access and any fulfillment-center rules change the freight quote more than the packaging does. Send them with your inquiry.',
     faqTitle: 'Questions about lead times and delivery',
   },
   samples: {

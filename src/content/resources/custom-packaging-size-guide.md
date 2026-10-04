@@ -67,7 +67,7 @@ Conventions differ, and getting them mixed up produces packaging in the wrong pr
 - **Labels** — width × height of the die, not the liner
 - **Trays** — top opening × depth
 
-Always confirm whether a supplier is quoting internal or external dimensions. On corrugated the difference is several millimetres per wall.
+Always confirm whether a supplier is quoting internal or external dimensions. On corrugated the difference is several millimeters per wall.
 
 ## Practical size ranges
 
@@ -81,24 +81,6 @@ These are efficient ranges rather than limits. Anything is possible; some things
 | Corrugated shipper | 6 × 6 × 4 in to 24 × 18 × 12 in |
 | Paper bag | 5 × 3 × 8 in to 16 × 6 × 12 in |
 | Stand-up pouch | 3.5 × 5 in to 12 × 16 in |
-
-## Why small changes affect price
-
-You buy sheet area, not boxes. The manufacturer fits as many flat dielines as possible onto a press sheet, and the sheet cost divides by how many fit.
-
-A half inch that pushes the layout from eight-up to six-up raises material cost by a third with no visible benefit. Ask whether a small dimensional change nests better — sometimes a quarter inch costs nothing in function and saves real money.
-
-## Dimensional weight
-
-For anything shipped to consumers, carriers charge on the greater of actual weight and volumetric weight. An oversized mailer costs money on every order, permanently.
-
-Reducing a mailer by an inch often saves more across a year of shipping than any material change, which makes right-sizing both the cheapest and the most environmentally useful decision available.
-
-## Confirm with a sample
-
-Order a plain structural sample and put the actual product inside it. Close it, lift it, shake it gently. Rattling means an insert is needed; a straining lid means the dieline is tight.
-
-The sample costs very little. Discovering the problem after a production run costs the run, and [the way tooling and setup costs behave](/resources/packaging-cost-factors/) explains why a resize after tooling is more expensive than it first appears.
 
 ## Measuring properly
 
@@ -114,7 +96,7 @@ Most fit failures come from measuring the wrong thing rather than measuring inac
 
 ## Clearance, and where it goes wrong
 
-Clearance is specified per side. Two millimetres of clearance on a 60 mm product produces a 64 mm internal dimension, not 62 mm. Confusing the two is the most common sizing error we see.
+Clearance is specified per side. Two millimeters of clearance on a 60 mm product produces a 64 mm internal dimension, not 62 mm. Confusing the two is the most common sizing error we see.
 
 How much depends on the product. Rigid items with consistent dimensions need very little. Anything that flexes, varies between units or has to be inserted quickly at a packing bench needs more. Foam cavities need less than board because foam compresses.
 

@@ -55,7 +55,7 @@ export const statesB: Place[] = [
       h: 'Designing outward from the shelf',
       body: [
         'The efficient order for an Illinois grocery brief is backwards from how most people approach it. Start with the retailer’s case and planogram constraints, derive the primary pack dimensions from those, and only then design the artwork onto the resulting panels.',
-        'Done the other way round, the primary pack usually ends up a few millimetres off a clean case fit, and the cost of that shows up as wasted board on every pallet for the life of the product.',
+        'Done the other way round, the primary pack usually ends up a few millimeters off a clean case fit, and the cost of that shows up as wasted board on every pallet for the life of the product.',
       ],
     },
     ordering: {
@@ -108,18 +108,18 @@ export const statesB: Place[] = [
     variant: 'demand-led',
     sections: ['demandTable', 'industries', 'overview', 'logistics', 'formats', 'checklist', 'ordering', 'resources', 'nearby'],
     keyword: 'custom packaging Ohio',
-    h1: 'Packaging for Ohio manufacturers and fulfilment operations',
+    h1: 'Packaging for Ohio manufacturers and fulfillment operations',
     eyebrow: 'Ohio · United States',
     lede: 'Ohio sits inside a day’s drive of a very large share of the US population, which is why so much of what we ship here is destined to be shipped again.',
-    metaTitle: 'Custom Packaging Ohio | Manufacturing & Fulfilment',
-    metaDescription: 'Custom packaging for Ohio manufacturers, fulfilment operators and consumer brands. Protective corrugated, mailers and repeat production runs.',
-    sectors: ['Manufacturing and industrial', 'E-commerce fulfilment', 'Food and beverage', 'Automotive supply'],
+    metaTitle: 'Custom Packaging Ohio | Manufacturing & Fulfillment',
+    metaDescription: 'Custom packaging for Ohio manufacturers, fulfillment operators and consumer brands. Protective corrugated, mailers and repeat production runs.',
+    sectors: ['Manufacturing and industrial', 'E-commerce fulfillment', 'Food and beverage', 'Automotive supply'],
     demandTable: {
       h: 'What Ohio orders, and what decides it',
       intro: 'Packaging bought to be shipped again behaves differently to packaging bought for a shelf.',
       head: ['Buyer', 'Typical requirement', 'Deciding factor'],
       rows: [
-        ['Fulfilment operator', 'Mailers in pallet quantities', 'Dimensional weight and carrier damage rates'],
+        ['Fulfillment operator', 'Mailers in pallet quantities', 'Dimensional weight and carrier damage rates'],
         ['Industrial manufacturer', 'Corrugated shippers with fitted inserts', 'Part protection and handling weight'],
         ['Automotive supply', 'Returnable-style protective packs', 'Repeat handling and part geometry'],
         ['Food and beverage', 'Cartons and carriers', 'Stacking and moisture resistance'],
@@ -133,27 +133,27 @@ export const statesB: Place[] = [
       ],
       items: [
         { name: 'Manufacturing and industrial', detail: 'Components and consumables needing protective corrugated and fitted inserts, usually specified against handling rather than display.' },
-        { name: 'E-commerce fulfilment', detail: 'Columbus in particular carries significant fulfilment capacity. Mailers bought by the pallet, where a small dimensional saving compounds across every parcel.' },
+        { name: 'E-commerce fulfillment', detail: 'Columbus in particular carries significant fulfillment capacity. Mailers bought by the pallet, where a small dimensional saving compounds across every parcel.' },
         { name: 'Food and beverage', detail: 'Regional producers running repeat carton specifications, often supplying grocery accounts across the Midwest.' },
         { name: 'Automotive supply', detail: 'Parts packaging where geometry drives the insert design and repeated handling drives the board grade.' },
       ],
     },
     overview: {
-      h: 'Why a millimetre matters more here',
+      h: 'Why a millimeter matters more here',
       body: [
         'When packaging exists to be shipped, its outer dimensions are a recurring cost rather than a one-off design decision. Carriers bill on dimensional weight, so an unnecessarily generous mailer pays a penalty on every parcel for as long as the product sells.',
-        'Sizing tightly around the product is almost always the largest saving available on an Ohio fulfilment brief, and it is larger than anything we can do on board price. Send us the product dimensions rather than the box dimensions you currently use, and we will tell you whether there is room to shrink.',
+        'Sizing tightly around the product is almost always the largest saving available on an Ohio fulfillment brief, and it is larger than anything we can do on board price. Send us the product dimensions rather than the box dimensions you currently use, and we will tell you whether there is room to shrink.',
       ],
     },
     logistics: {
       h: 'A central position, used twice',
       body: [
-        'Ground freight into Ohio typically arrives in 5 to 7 business days. The state’s position means most of the country is reachable within a day or two by road from here, which is exactly why so much fulfilment capacity sits in the state.',
+        'Ground freight into Ohio typically arrives in 5 to 7 business days. The state’s position means most of the country is reachable within a day or two by road from here, which is exactly why so much fulfillment capacity sits in the state.',
         'For operations that reship, that matters more than inbound speed. Packaging arriving in Columbus can be on a customer’s doorstep almost anywhere east of the Rockies inside two days.',
       ],
     },
     checklist: {
-      h: 'Reducing dimensional weight on a fulfilment pack',
+      h: 'Reducing dimensional weight on a fulfillment pack',
       intro: 'Worth working through before reordering an existing mailer.',
       items: [
         'Measure the product, not the current box — most boxes in use are inherited rather than chosen.',
@@ -174,7 +174,7 @@ export const statesB: Place[] = [
       h: 'Ranges built for shipping, not shelving',
       intro: 'What Ohio buyers most often need.',
       picks: [
-        { slug: 'custom-mailers', why: 'The core fulfilment format, where dimensional weight drives the economics.' },
+        { slug: 'custom-mailers', why: 'The core fulfillment format, where dimensional weight drives the economics.' },
         { slug: 'custom-packaging-inserts', why: 'Fitted protection that often lets you drop a board grade on the outer.' },
         { slug: 'electronics-packaging', why: 'Component and device protection with geometry-specific inserts.' },
         { slug: 'custom-food-packaging', why: 'For the state’s regional food producers supplying Midwest grocery.' },
@@ -182,27 +182,27 @@ export const statesB: Place[] = [
     },
     resources: [
       { href: '/resources/packaging-insert-guide/', anchor: 'when an insert beats a heavier outer board', note: 'The trade-off that usually decides a protective specification.' },
-      { href: '/resources/custom-packaging-size-guide/', anchor: 'sizing tightly to cut dimensional weight', note: 'Where the recurring saving on a fulfilment pack actually comes from.' },
+      { href: '/resources/custom-packaging-size-guide/', anchor: 'sizing tightly to cut dimensional weight', note: 'Where the recurring saving on a fulfillment pack actually comes from.' },
     ],
     nearby: [
-      { slug: 'columbus', why: 'The center of the state’s fulfilment activity.' },
+      { slug: 'columbus', why: 'The center of the state’s fulfillment activity.' },
       { slug: 'michigan', why: 'Shares the automotive supply base and the same freight corridors.' },
       { slug: 'indiana', why: 'A comparable manufacturing and distribution market next door.' },
     ],
     faqs: [
-      { q: 'How do I reduce dimensional weight charges on my shipments?', a: 'Size the box around the product rather than around a box you inherited. Most fulfilment operations we quote are using a pack at least one size larger than needed, with void fill compensating. Cutting a die to the right size pays back quickly at volume.' },
+      { q: 'How do I reduce dimensional weight charges on my shipments?', a: 'Size the box around the product rather than around a box you inherited. Most fulfillment operations we quote are using a pack at least one size larger than needed, with void fill compensating. Cutting a die to the right size pays back quickly at volume.' },
       { q: 'Should I spend on a heavier board or on a fitted insert?', a: 'Usually the insert, if your damage is products moving inside the box rather than boxes being crushed. A fitted insert holds the product still and often lets you drop a board grade on the outer, so the two changes together can be cost-neutral.' },
       { q: 'How fast is freight into Ohio?', a: 'Typically 5 to 7 business days after the 3 to 5 business days of production. Columbus, Cleveland and Cincinnati all take palletized freight without special arrangement.' },
       { q: 'Do you operate a facility in Ohio?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Ohio. Production runs through our manufacturing partners and ships directly to your address.' },
       { q: 'Can you produce packaging for automotive components?', a: 'Yes. Parts packaging is usually an insert problem rather than a box problem — the geometry of the component dictates the design. Send drawings or a sample part and we will specify around it.' },
       { q: 'Can you hold a specification for repeat ordering?', a: 'Yes. Once a first run is approved we hold the board, structure, print method, finishes and dimensions against your account so repeats reference the same specification exactly.' },
-      { q: 'What is the minimum order for an Ohio delivery?', a: 'A flat 100 units on any format. For fulfilment buyers the minimum mostly matters as a way to trial a smaller box before switching a whole line over to it.' },
+      { q: 'What is the minimum order for an Ohio delivery?', a: 'A flat 100 units on any format. For fulfillment buyers the minimum mostly matters as a way to trial a smaller box before switching a whole line over to it.' },
       { q: 'Can one pack work across several carrier networks?', a: 'It can, but specify for the harshest one. Carrier handling differs enough that a pack tuned to a gentle network will show higher damage on a rougher one. Tell us which carriers you use and we will specify for the worst case.' },
       { q: 'Do you supply plain unprinted shippers?', a: 'Yes. Plain corrugated is often the right answer for an outer that only needs to protect. Spending the print budget on the retail carton inside usually delivers more than printing the shipper.' },
-      { q: 'How much does fulfilment packaging cost in Ohio?', a: 'From $0.30 per piece at large volumes. For fulfilment buyers the unit price is rarely the whole picture — the recurring carrier saving from a smaller pack often exceeds the difference between two board grades.' },
+      { q: 'How much does fulfillment packaging cost in Ohio?', a: 'From $0.30 per piece at large volumes. For fulfillment buyers the unit price is rarely the whole picture — the recurring carrier saving from a smaller pack often exceeds the difference between two board grades.' },
     ],
     cta: {
-      h: 'Quote an Ohio fulfilment pack',
+      h: 'Quote an Ohio fulfillment pack',
       body: 'Send the product dimensions and your current damage rate. We will tell you whether the pack can shrink and what that saves.',
     },
   }),

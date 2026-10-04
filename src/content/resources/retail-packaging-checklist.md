@@ -27,7 +27,7 @@ faqs:
   - q: Should I confirm receiving constraints before ordering?
     a: Yes, and it is skipped constantly. A pack that is perfect and cannot be received has still failed. Check whether the address takes a pallet, whether there is a dock, what the delivery window is, and whether a 3PL has its own labeling rules.
   - q: What does "clearance per side" mean?
-    a: Clearance is specified per side, not per dimension. Two millimetres of clearance on a 60 mm product gives a 64 mm internal dimension, not 62 mm. Confusing the two is the most common sizing error we see on a first order.
+    a: Clearance is specified per side, not per dimension. Two millimeters of clearance on a 60 mm product gives a 64 mm internal dimension, not 62 mm. Confusing the two is the most common sizing error we see on a first order.
   - q: Who should test the opening method?
     a: Someone who has not seen the pack before. The person who designed it knows where it opens and will not find the point where a customer hesitates — and that hesitation is where packaging gets torn.
 ---
@@ -92,8 +92,6 @@ Work through this before committing a packaging run. Most production problems ar
 - Correct artwork version confirmed
 - Physical sample reviewed if fit or color is critical
 - Approval given by someone authorized to give it
-
-Once production completes, archive the approved print file, dieline, board specification, finish list and color targets together. Reorders that reuse them are faster, cheaper and more consistent, as set out in our [guide to ordering packaging in volume](/resources/wholesale-order-guide/).
 
 ## Why the order matters
 

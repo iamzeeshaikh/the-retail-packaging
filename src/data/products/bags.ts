@@ -87,7 +87,7 @@ export const bagFacts: ProductFactsMap = {
     context: 'delis, cafés and forecourt food-to-go where speed of service decides everything',
     detail: 'Grease resistance stops the stain; a release-coated inner stops the bag sticking to the filling. They are different things.',
     spec: 'Greaseproof paper with a release-treated inner face for anything served hot.',
-    press: 'A single-colour flexo print is standard. The bag is in a customer\'s hand for two minutes, which limits what print earns.',
+    press: 'A single-color flexo print is standard. The bag is in a customer\'s hand for two minutes, which limits what print earns.',
     pairs: ['bakery-bags', 'custom-paper-lunch-bags', 'flat-bottom-popcorn-bags'],
   },
   'custom-paper-lunch-bags': {
@@ -287,14 +287,14 @@ export const bagFacts: ProductFactsMap = {
   'custom-jute-tote-bags': {
     holds: 'heavy or bulky goods where a natural, rugged material suits the brand',
     sizeNote: 'Usually larger and squarer than cotton totes, with a firm base and structured sides.',
-    failure: 'Jute sheds fibers and can mark light-coloured contents, particularly when new.',
+    failure: 'Jute sheds fibers and can mark light-colored contents, particularly when new.',
     buyerNote: 'Jute is chosen for the eco impression without checking it against the contents — it is a coarse fiber.',
     context: 'grocery, garden and eco-positioned retail where the material signals the values',
     detail: 'A laminated inner face stops shedding and makes the bag wipeable, at some cost to the natural feel.',
-    spec: 'Jute with a laminated inner where contents are light-coloured or food-related.',
+    spec: 'Jute with a laminated inner where contents are light-colored or food-related.',
     press: 'The weave is coarse. Bold, simple marks work; fine line work and small type do not survive it.',
     pairs: ['custom-canvas-tote-bags', 'custom-tote-bags', 'kraft-paper-bags'],
-    ask: { q: 'Does jute shed onto its contents?', a: 'It can, particularly when new. If the bag carries light-coloured clothing or food, a laminated inner face solves it — at some cost to the natural feel that made you pick jute.' },
+    ask: { q: 'Does jute shed onto its contents?', a: 'It can, particularly when new. If the bag carries light-colored clothing or food, a laminated inner face solves it — at some cost to the natural feel that made you pick jute.' },
   },
   'custom-monogrammed-tote-bags': {
     holds: 'a personal item where the individual name is the whole point of the product',

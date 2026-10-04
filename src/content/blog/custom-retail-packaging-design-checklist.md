@@ -72,7 +72,7 @@ Set that content at its real, final length and at the minimum legible size, then
 
 Convert everything to CMYK unless you are printing spot colors, in which case define those as named spot swatches rather than CMYK approximations.
 
-Rich blacks need a build, not 100% K alone, which prints as a washed gray on large areas. A common build is 60C 40M 40Y 100K, though your printer may specify their own. Small text should stay 100% K only, because a four-colour build on small type shows registration fringing.
+Rich blacks need a build, not 100% K alone, which prints as a washed gray on large areas. A common build is 60C 40M 40Y 100K, though your printer may specify their own. Small text should stay 100% K only, because a four-color build on small type shows registration fringing.
 
 Be realistic about color on uncoated stock. If you are printing on kraft or uncoated board, colors will appear duller and warmer than they do on screen or on a coated proof. Ask for a proof on the actual substrate if color accuracy matters.
 

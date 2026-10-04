@@ -68,7 +68,7 @@ A single delivery of a large run is rarely the best arrangement, and many suppli
 
 Staged or scheduled delivery means production runs once, capturing the volume price, but stock arrives in agreed instalments. You pay the unit price of a large order without needing the warehouse space for it, and the supplier holds the remainder.
 
-This suits brands with limited storage, seasonal demand, or multiple fulfilment sites. Agree the schedule at quoting rather than after production, because storage terms are part of the negotiation.
+This suits brands with limited storage, seasonal demand, or multiple fulfillment sites. Agree the schedule at quoting rather than after production, because storage terms are part of the negotiation.
 
 If you do take a full delivery, confirm the receiving reality first. Pallet height limits, dock access, forklift availability and delivery windows all matter, and a consignment that cannot be unloaded costs redelivery fees.
 

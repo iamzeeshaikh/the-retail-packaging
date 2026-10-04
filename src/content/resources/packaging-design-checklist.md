@@ -23,7 +23,7 @@ faqs:
   - q: Which panel should carry the brand mark?
     a: The one that faces the shopper on shelf, which is not always the largest face. Packs frequently sit shoulder to shoulder, making a narrow side panel the face people actually see. Ask how the product is merchandised before deciding.
   - q: Why use rich black on solids but 100% K on small text?
-    a: A four-colour black on small type registers imperfectly and reads soft, because four plates cannot align perfectly at that scale. A single black plate stays crisp. On large solid areas the reverse applies — one plate looks washed out and a rich build looks dense.
+    a: A four-color black on small type registers imperfectly and reads soft, because four plates cannot align perfectly at that scale. A single black plate stays crisp. On large solid areas the reverse applies — one plate looks washed out and a rich build looks dense.
   - q: What is total ink coverage and why does it have a limit?
     a: The sum of all four channels in the heaviest area. Past the substrate's limit the ink cannot absorb, causing set-off onto the next sheet and slow drying. Stacking heavy channels to make a darker black is the usual way it gets exceeded.
   - q: What happens if I leave a white object set to overprint?
@@ -99,8 +99,6 @@ This checklist is for the design stage specifically — the decisions made betwe
 - Approval given by someone authorized to give it
 - Approved file archived with dieline, board spec and color targets
 
-The technical export requirements behind several of these checks are set out in full in our [packaging file requirements reference](/resources/packaging-file-requirements/).
-
 ## Designing on the dieline, not beside it
 
 The most common structural error in packaging artwork is designing on a rectangle and transferring to the dieline afterwards. It looks equivalent and it is not.
@@ -127,7 +125,7 @@ Not every face carries equal weight, and treating them equally wastes effort.
 
 Three practical constraints catch designs that were built without them.
 
-Rich black on large solids and 100% K on small text. A four-colour black on 8pt type registers imperfectly and reads soft; a single-plate black stays crisp.
+Rich black on large solids and 100% K on small text. A four-color black on 8pt type registers imperfectly and reads soft; a single-plate black stays crisp.
 
 Total ink coverage within the press limit. Stacking four heavy channels on a dark area exceeds what the substrate can absorb, and the result is set-off and slow drying rather than a richer black.
 

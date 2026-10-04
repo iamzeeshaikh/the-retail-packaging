@@ -79,18 +79,6 @@ Flexible packaging is built from bonded layers, each doing a job: printed outer,
 - **Mono-PE** — single polymer family, recyclable through store drop-off
 - **Kraft/PLA** — certified industrial compostable
 
-Barrier performance sets shelf life, and shelf life sets the price. Mono-material films need filling line adjustment, so trial before converting a live product.
-
-## Molded pulp
-
-Formed from recycled paper slurry, molded pulp absorbs impact well and recycles cleanly. Its surface is rough and it holds looser tolerances than die-cut board, so it works as a hidden protective layer rather than a visible one. Tooling costs more than a cutting die, so it suits volume.
-
-## Choosing by weight and journey
-
-Weigh the product and establish how it travels. Then take the lightest material that survives that journey with margin, and spend the remaining budget on print and finish rather than on board you do not need.
-
-Where a product is fragile rather than heavy, the answer is usually structural. A fitted insert holding the item still does more for damage rates than a heavier outer, and our [comparison of board, foam and molded pulp inserts](/resources/packaging-insert-guide/) covers which material suits which product.
-
 ## Reading a material specification
 
 A complete material line names four things, and a quote that gives fewer is not comparable with one that gives more.

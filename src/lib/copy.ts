@@ -285,7 +285,7 @@ export const CATEGORY_NOTES: Record<
   'custom-bands': {
     angle: 'Printed bands that hold a set together and carry the branding without a full outer box.',
     decides: 'Band width relative to pack height. Too narrow looks like an afterthought; too wide hides the product.',
-    watchOut: 'Bands need a snug fit. A few millimetres of slack and the set slides apart in transit.',
+    watchOut: 'Bands need a snug fit. A few millimeters of slack and the set slides apart in transit.',
     keyword: 'custom bands',
   },
   'electronics-packaging': {

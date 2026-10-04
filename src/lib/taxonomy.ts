@@ -117,8 +117,8 @@ export const FORM_FACTORS: Record<FormFactorId, FormFactor> = {
     addons: ['Corrugated insert', 'Tear strip', 'Double-wall upgrade', 'Handle cut-out'],
     moq: 'Minimum order is 100 units on any format, and unit cost falls sharply as the quantity rises.',
     shipping: 'Boxes ship flat and knocked down, stacked on pallets for volume orders.',
-    artwork: 'Flexo printing holds line work well but not fine gradients, so keep type above 7pt and avoid four-colour photography unless you choose litho-lamination.',
-    applications: ['E-commerce shipping', 'Wholesale and distribution', 'Retail-ready shelf cases', 'Subscription fulfilment'],
+    artwork: 'Flexo printing holds line work well but not fine gradients, so keep type above 7pt and avoid four-color photography unless you choose litho-lamination.',
+    applications: ['E-commerce shipping', 'Wholesale and distribution', 'Retail-ready shelf cases', 'Subscription fulfillment'],
     specNotes: {
       'Board grade': 'E, B or BC double-wall flute',
       'Construction': 'Die-cut or slotted, glued or stitched',
@@ -453,7 +453,7 @@ export const FORM_FACTORS: Record<FormFactorId, FormFactor> = {
     addons: ['Grease-resistant barrier', 'Matching seal label', 'Pre-cut sheets or roll format'],
     moq: 'Minimum order is 100 units on any format, and unit cost falls sharply as the quantity rises.',
     shipping: 'Wraps ship as flat cut sheets in reams, or on rolls for higher-volume lines.',
-    artwork: 'Because the sheet folds around the product, place the main mark off-centre so it lands face-up on the finished wrap.',
+    artwork: 'Because the sheet folds around the product, place the main mark off-center so it lands face-up on the finished wrap.',
     applications: ['Soap and bath products', 'Bakery and confectionery', 'Deli counters', 'Handmade goods'],
     specNotes: {
       'Material': 'Greaseproof or uncoated paper',

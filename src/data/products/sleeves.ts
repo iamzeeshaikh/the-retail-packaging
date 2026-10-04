@@ -208,7 +208,7 @@ export const sleeveFacts: ProductFactsMap = {
     sizeNote: 'Sized to the pack including any tape or closure, which adds a small thickness.',
     failure: 'The sleeve is sized to the empty box, and a filled box is slightly larger than a flat-packed one.',
     buyerNote: 'Dimensions are taken from the box specification rather than from a filled and closed example.',
-    context: 'fulfilment operations that hold plain stock and brand it per client or per campaign',
+    context: 'fulfillment operations that hold plain stock and brand it per client or per campaign',
     detail: 'Measure a filled, closed box. A packed carton bulges slightly and a sleeve has no tolerance for it.',
     spec: 'A light board — the sleeve carries no load and the box beneath provides all the structure.',
     press: 'This is the whole reason to use a mailer sleeve, so full-coverage print is usually justified here.',

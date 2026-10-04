@@ -479,7 +479,7 @@ export const categoriesB: CategoryMap = {
     ],
     faqs: [
       { q: 'What is the most common electronics packaging failure?', a: 'A cable or accessory with nowhere to sit, pressing against the device and marking it. It is a cavity layout problem rather than a protection one, and it is entirely avoidable.' },
-      { q: 'Should I send drawings or a sample?', a: 'A sample, if possible. Irregular geometry is hard to capture accurately from a drawing, and a cavity that is a millimetre out either grips too hard or lets the device move.' },
+      { q: 'Should I send drawings or a sample?', a: 'A sample, if possible. Irregular geometry is hard to capture accurately from a drawing, and a cavity that is a millimeter out either grips too hard or lets the device move.' },
       { q: 'Which insert material should I use?', a: 'Board for light and regular items and for presentation, foam for fragile or irregular items needing shock absorption, molded pulp where recyclability matters. Many device boxes use a board tray over a foam layer.' },
       { q: 'Can you supply anti-static or ESD-appropriate materials?', a: 'We can specify boards and liners appropriate for electronics handling. Tell us the exact requirement your process operates under, since it varies considerably by component type.' },
       { q: 'How do I design an unboxing sequence?', a: 'Decide what the customer sees first, what lifts out and what is underneath, then build the insert layers to that. It is a structural decision made before any artwork.' },
@@ -656,7 +656,7 @@ export const categoriesB: CategoryMap = {
       { q: 'What is the minimum order for promotional packaging?', a: 'A flat 100 units on any format, which suits most seeding waves without forcing you into a larger commitment.' },
       { q: 'Can you include product as well as packaging?', a: 'We manufacture the packaging; we do not fulfil or pack. What we can do is design the insert around your contents so packing is quick when you or your agency assemble them.' },
       { q: 'Which finishes suit a short promotional run?', a: 'Ones that need a single pass. Each applied finish is a separate stage, and on a short timeline finishing is what costs days rather than money.' },
-      { q: 'Can you ship to multiple addresses?', a: 'We deliver to the addresses you give us, but individual media addresses are usually better handled by a fulfilment partner. We normally ship the run to one point for packing.' },
+      { q: 'Can you ship to multiple addresses?', a: 'We deliver to the addresses you give us, but individual media addresses are usually better handled by a fulfillment partner. We normally ship the run to one point for packing.' },
       { q: 'Can you match a brand color exactly on a short run?', a: 'Digital has a wider tolerance than offset. For a critical brand color we can run litho with a spot ink at higher cost, or supply a proof so you can approve the achievable match first.' },
       { q: 'How much does promotional packaging cost?', a: 'From $0.30 per piece at large volumes, but promotional runs are small by design and sit well above that. Finishing passes rather than board drive the figure.' },
     ],

@@ -8,12 +8,12 @@ export const statesD: Place[] = [
     variant: 'distribution-led',
     sections: ['logistics', 'industries', 'overview', 'demandTable', 'formats', 'ordering', 'nearby', 'resources'],
     keyword: 'custom packaging New Jersey',
-    h1: 'Packaging into the New Jersey port and fulfilment corridor',
+    h1: 'Packaging into the New Jersey port and fulfillment corridor',
     eyebrow: 'New Jersey · United States',
     lede: 'A great deal of what reaches New York City is warehoused in New Jersey first. If you sell into the metropolitan market, this is usually where the packaging actually lands.',
-    metaTitle: 'Custom Packaging New Jersey | Port & Fulfilment',
-    metaDescription: 'Custom packaging for New Jersey fulfilment operators, pharmaceutical manufacturers and food importers. Fast mid-Atlantic freight, made to order from 100 units.',
-    sectors: ['Warehousing and fulfilment', 'Pharmaceutical manufacturing', 'Food import and distribution', 'Personal care manufacturing'],
+    metaTitle: 'Custom Packaging New Jersey | Port & Fulfillment',
+    metaDescription: 'Custom packaging for New Jersey fulfillment operators, pharmaceutical manufacturers and food importers. Fast mid-Atlantic freight, made to order from 100 units.',
+    sectors: ['Warehousing and fulfillment', 'Pharmaceutical manufacturing', 'Food import and distribution', 'Personal care manufacturing'],
     logistics: {
       h: 'The warehouse behind the metropolitan market',
       body: [
@@ -24,10 +24,10 @@ export const statesD: Place[] = [
     industries: {
       h: 'What New Jersey packages',
       body: [
-        'A fulfilment economy sits alongside genuine manufacturing depth in pharmaceuticals and personal care.',
+        'A fulfillment economy sits alongside genuine manufacturing depth in pharmaceuticals and personal care.',
       ],
       items: [
-        { name: 'Warehousing and fulfilment', detail: 'Third-party operations buying mailers and shippers at pallet quantities, where dimensional weight drives every decision.' },
+        { name: 'Warehousing and fulfillment', detail: 'Third-party operations buying mailers and shippers at pallet quantities, where dimensional weight drives every decision.' },
         { name: 'Pharmaceutical manufacturing', detail: 'A long-established cluster with the version control and documented approval requirements that go with it.' },
         { name: 'Food import and distribution', detail: 'Port activity feeds a substantial import and repacking sector needing food-contact compliant materials.' },
         { name: 'Personal care manufacturing', detail: 'Contract manufacturers producing for multiple brands, often needing the same structure with different artwork.' },
@@ -45,7 +45,7 @@ export const statesD: Place[] = [
       intro: 'Volume-led, with regulated work alongside.',
       head: ['Buyer', 'Typical order', 'Governing factor'],
       rows: [
-        ['Fulfilment operator', 'Mailers by the pallet', 'Dimensional weight'],
+        ['Fulfillment operator', 'Mailers by the pallet', 'Dimensional weight'],
         ['Pharmaceutical manufacturer', 'Cartons, leaflets and inserts', 'Version control and audit trail'],
         ['Food importer', 'Repack cartons and trays', 'Food-contact compliance'],
         ['Contract manufacturer', 'One structure, many artworks', 'Shared tooling, separate print setup'],
@@ -54,15 +54,15 @@ export const statesD: Place[] = [
     ordering: {
       h: 'Placing a New Jersey order',
       body: [
-        'For fulfilment buyers, send the product dimensions rather than your current box, and your damage rate if you have one.',
+        'For fulfillment buyers, send the product dimensions rather than your current box, and your damage rate if you have one.',
         'For contract manufacturers, send the structure first and the artwork list second. Getting the shared die agreed before the first client run saves repeating tooling costs later.',
       ],
     },
     formats: {
       h: 'Ranges suited to New Jersey',
-      intro: 'Fulfilment and regulated formats lead.',
+      intro: 'Fulfillment and regulated formats lead.',
       picks: [
-        { slug: 'custom-mailers', why: 'The core format for the state’s fulfilment operations.' },
+        { slug: 'custom-mailers', why: 'The core format for the state’s fulfillment operations.' },
         { slug: 'pharmaceutical-packaging', why: 'Where documented version control is part of the job.' },
         { slug: 'custom-cosmetic-packaging', why: 'For personal-care contract manufacturers running multiple brands.' },
         { slug: 'custom-food-packaging', why: 'Repack formats for the import and distribution sector.' },
@@ -84,10 +84,10 @@ export const statesD: Place[] = [
       { q: 'Do you have a warehouse in New Jersey?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships directly to your address.' },
       { q: 'Can you supply food-contact compliant repack materials?', a: 'Yes. Tell us whether contact is direct or through a liner, since it changes which stocks are available and what documentation we can provide.' },
       { q: 'Can you provide versioned proofs for pharmaceutical work?', a: 'Yes. Dated proofs against a revision number with a retained approval record, where your quality system requires it. Ask at quoting so the documentation is built alongside the job.' },
-      { q: 'What is the minimum order for a New Jersey delivery?', a: 'A flat 100 units on any format. Most fulfilment inquiries here are far above it, but it lets you trial a smaller mailer before switching a line over.' },
-      { q: 'How do I cut dimensional weight on fulfilment packaging?', a: 'Size the box to the product rather than to the box you inherited. Most operations we quote are running at least one size too large with void fill compensating, and the carrier saving compounds on every parcel.' },
+      { q: 'What is the minimum order for a New Jersey delivery?', a: 'A flat 100 units on any format. Most fulfillment inquiries here are far above it, but it lets you trial a smaller mailer before switching a line over.' },
+      { q: 'How do I cut dimensional weight on fulfillment packaging?', a: 'Size the box to the product rather than to the box you inherited. Most operations we quote are running at least one size too large with void fill compensating, and the carrier saving compounds on every parcel.' },
       { q: 'Can you hold stock for us?', a: 'We manufacture to order rather than warehousing finished goods. For a scheduled requirement we phase production and delivery against your consumption instead, which achieves the same thing without you paying to store it.' },
-      { q: 'How much does custom packaging cost in New Jersey?', a: 'From $0.30 per piece at large volumes. For fulfilment buyers the recurring carrier saving from a tighter pack usually outweighs the difference between board grades.' },
+      { q: 'How much does custom packaging cost in New Jersey?', a: 'From $0.30 per piece at large volumes. For fulfillment buyers the recurring carrier saving from a tighter pack usually outweighs the difference between board grades.' },
     ],
     cta: {
       h: 'Quote a New Jersey delivery',
@@ -105,7 +105,7 @@ export const statesD: Place[] = [
     eyebrow: 'Virginia · United States',
     lede: 'Virginia sends us two kinds of brief that rarely appear together elsewhere: boutique specialty retail, and suppliers working to a procurement specification.',
     metaTitle: 'Custom Packaging Virginia | Specialty Retail & Supply',
-    metaDescription: 'Custom packaging for Virginia specialty food, wine, government suppliers and data-centre hardware. Made to order from 100 units with written specifications.',
+    metaDescription: 'Custom packaging for Virginia specialty food, wine, government suppliers and data-center hardware. Made to order from 100 units with written specifications.',
     sectors: ['Specialty food and wine', 'Government and defence supply', 'Data center and hardware', 'Tourism and heritage retail'],
     retail: {
       h: 'Heritage retail and the gift trade',
@@ -122,7 +122,7 @@ export const statesD: Place[] = [
       items: [
         { name: 'Specialty food and wine', detail: 'Vineyard and producer packaging, usually short runs with a traditional aesthetic and gift positioning.' },
         { name: 'Government and defence supply', detail: 'Suppliers working to a written procurement specification, where matching the stated requirement exactly matters more than proposing something better.' },
-        { name: 'Data center and hardware', detail: 'Northern Virginia’s data-centre concentration generates component and equipment packaging with protective requirements.' },
+        { name: 'Data center and hardware', detail: 'Northern Virginia’s data-center concentration generates component and equipment packaging with protective requirements.' },
         { name: 'Tourism and heritage retail', detail: 'Gift and souvenir packaging bought in small quantities against a seasonal visitor calendar.' },
       ],
     },
@@ -438,7 +438,7 @@ export const statesD: Place[] = [
     overview: {
       h: 'The crossover is not a fixed number',
       body: [
-        'The point where offset overtakes digital depends on how many colors you are running, whether the artwork changes between variants, and how much finishing is involved. A single-colour job crosses over much earlier than a five-colour one, and a range with six variants may never cross over at all because each variant carries its own plate set.',
+        'The point where offset overtakes digital depends on how many colors you are running, whether the artwork changes between variants, and how much finishing is involved. A single-color job crosses over much earlier than a five-color one, and a range with six variants may never cross over at all because each variant carries its own plate set.',
         'Because so many Missouri orders land in the ambiguous band, we quote both routes when a job is close to the line. It costs us nothing and it means you are choosing on numbers rather than on a rule of thumb.',
       ],
     },
@@ -488,7 +488,7 @@ export const statesD: Place[] = [
       { slug: 'indiana', why: 'Comparable Midwest manufacturing demand.' },
     ],
     faqs: [
-      { q: 'When does offset become cheaper than digital?', a: 'Usually somewhere between 500 and 2,000 units, but it is not a fixed number. A one-colour job crosses over early; a five-colour job crosses over much later. If your quantity is in that band, ask for both prices.' },
+      { q: 'When does offset become cheaper than digital?', a: 'Usually somewhere between 500 and 2,000 units, but it is not a fixed number. A one-color job crosses over early; a five-color job crosses over much later. If your quantity is in that band, ask for both prices.' },
       { q: 'I have six product variants. Which print route should I use?', a: 'Very likely digital, whatever the total quantity. Each variant needs its own plate set on offset, so six variants means six setups. Digital carries no plate cost, which usually wins outright when variants multiply.' },
       { q: 'Will you quote both print routes?', a: 'Yes. When a job sits close to the crossover we supply both without being asked. It costs us nothing and it means you choose on the actual numbers.' },
       { q: 'Do you have a facility in Missouri?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in the state. Production runs through our manufacturing partners and ships to your Missouri address.' },

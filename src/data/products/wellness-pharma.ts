@@ -104,7 +104,7 @@ export const wellnessPharmaFacts: ProductFactsMap = {
     pairs: ['medical-device-boxes', 'vitamin-boxes'],
     ask: {
       q: 'Why does my carton jam on the packing line?',
-      a: 'Most often the leaflet. A folded patient leaflet adds several millimetres of depth, and a carton sized from the blister alone runs tight and jams at speed. Send us the leaflet with the product sample and we will size the dieline around both.',
+      a: 'Most often the leaflet. A folded patient leaflet adds several millimeters of depth, and a carton sized from the blister alone runs tight and jams at speed. Send us the leaflet with the product sample and we will size the dieline around both.',
     },
   },
 

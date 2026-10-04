@@ -107,7 +107,7 @@ export const citiesB: Place[] = [
     keyword: 'custom packaging San Antonio',
     h1: 'Packaging supply at the southern end of the I-35 corridor',
     eyebrow: 'San Antonio · Texas',
-    lede: 'San Antonio anchors the southern end of the I-35 fulfilment corridor and sits close enough to the border that a good deal of what we ship here is destined to cross it.',
+    lede: 'San Antonio anchors the southern end of the I-35 fulfillment corridor and sits close enough to the border that a good deal of what we ship here is destined to cross it.',
     metaTitle: 'Custom Packaging San Antonio | I-35 Corridor Supply',
     metaDescription: 'Custom packaging for San Antonio distribution, food service and manufacturing. Corridor freight, heat-stable specifications and bulk runs.',
     sectors: ['Distribution and logistics', 'Food service and hospitality', 'Manufacturing', 'Cross-border trade'],
@@ -148,7 +148,7 @@ export const citiesB: Place[] = [
       h: 'Formats for corridor supply',
       intro: 'Shipping and food-service led.',
       picks: [
-        { slug: 'custom-mailers', why: 'Core shipping format for corridor and fulfilment operations.' },
+        { slug: 'custom-mailers', why: 'Core shipping format for corridor and fulfillment operations.' },
         { slug: 'custom-food-packaging', why: 'Takeaway and catering formats for the hospitality sector.' },
         { slug: 'custom-packaging-inserts', why: 'Protection where extra handling stages raise the risk.' },
         { slug: 'custom-printed-cups', why: 'High-frequency food-service consumables.' },
@@ -491,7 +491,7 @@ export const citiesB: Place[] = [
     lede: 'Jacksonville is a port and distribution city first. Most packaging we ship here is bought by operations that will fill it and move it on within days.',
     metaTitle: 'Custom Packaging Jacksonville | Port & Distribution',
     metaDescription: 'Custom packaging for Jacksonville distribution, logistics and food operations. Fast turnaround stock, moisture-resistant board and bulk runs.',
-    sectors: ['Port and distribution', 'Logistics and third-party fulfilment', 'Food processing', 'Healthcare supply'],
+    sectors: ['Port and distribution', 'Logistics and third-party fulfillment', 'Food processing', 'Healthcare supply'],
     logistics: {
       h: 'Fast turn, low storage',
       body: [
@@ -506,7 +506,7 @@ export const citiesB: Place[] = [
       ],
       items: [
         { name: 'Port and distribution', detail: 'Repack and consolidation operations buying shippers and cases at volume.' },
-        { name: 'Logistics and third-party fulfilment', detail: 'Operations shipping on behalf of multiple clients, needing plain stock and fast replenishment.' },
+        { name: 'Logistics and third-party fulfillment', detail: 'Operations shipping on behalf of multiple clients, needing plain stock and fast replenishment.' },
         { name: 'Food processing', detail: 'Producers needing food-contact compliant materials with moisture resistance built in.' },
         { name: 'Healthcare supply', detail: 'Distribution requiring documented specifications and consistent repeats.' },
       ],
@@ -529,7 +529,7 @@ export const citiesB: Place[] = [
       h: 'Formats for distribution operations',
       intro: 'Volume and turnover led.',
       picks: [
-        { slug: 'custom-mailers', why: 'Core shipping format for fulfilment operations.' },
+        { slug: 'custom-mailers', why: 'Core shipping format for fulfillment operations.' },
         { slug: 'custom-packaging-inserts', why: 'Protection for repack and consolidation work.' },
         { slug: 'custom-food-packaging', why: 'Food-contact compliant formats for processing operations.' },
         { slug: 'custom-display-boxes', why: 'Retail-ready cases for product moving onward to stores.' },
@@ -549,7 +549,7 @@ export const citiesB: Place[] = [
       { q: 'Can you schedule deliveries against consumption?', a: 'Yes. For continuous operations we can phase production and delivery to match how quickly you use stock, rather than delivering one large run you then have to store.' },
       { q: 'How long does delivery to Jacksonville take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production. Sitting at the top of the peninsula, it is less exposed to the storm-season lane closures that affect South Florida.' },
       { q: 'Do you have a facility in Jacksonville?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Jacksonville or anywhere in Florida. Production runs through our manufacturing partners and ships to your address.' },
-      { q: 'Do you supply plain unprinted shippers?', a: 'Yes, and for third-party fulfilment it is usually the sensible choice, since one plain stock serves every client.' },
+      { q: 'Do you supply plain unprinted shippers?', a: 'Yes, and for third-party fulfillment it is usually the sensible choice, since one plain stock serves every client.' },
       { q: 'What is the minimum order in Jacksonville?', a: 'A flat 100 units on any format, though distribution quantities here are typically far above it.' },
       { q: 'Can you supply food-contact compliant materials?', a: 'Yes. Tell us whether contact is direct or through a liner, since it changes which stocks are available and what documentation we can provide.' },
       { q: 'Can hurricane season affect deliveries?', a: 'It can. A named storm closes freight lanes for days at a time. If a delivery is critical, tell us and we will build slack into the schedule rather than quoting the tightest timeline.' },
@@ -587,7 +587,7 @@ export const citiesB: Place[] = [
       h: 'What actually changes the price at volume',
       body: [
         'At a few hundred units, the specification barely moves the price. At fifty thousand, three decisions dominate: the print route, the board grade, and how efficiently the shape nests on the press sheet.',
-        'That last one is the least obvious and often the most valuable. A dimensional change of a few millimetres can allow an extra piece per sheet, and at volume that is a permanent reduction in cost per unit. If your dimensions have any flexibility, tell us — it is worth checking before the die is cut.',
+        'That last one is the least obvious and often the most valuable. A dimensional change of a few millimeters can allow an extra piece per sheet, and at volume that is a permanent reduction in cost per unit. If your dimensions have any flexibility, tell us — it is worth checking before the die is cut.',
       ],
     },
     industries: {
@@ -618,7 +618,7 @@ export const citiesB: Place[] = [
       h: 'Quoting a bulk Fort Worth run',
       body: [
         'Send the annual volume rather than the first order quantity. Pricing bands work on committed volume and the difference between quoting one drop and a year’s requirement is usually significant.',
-        'Tell us whether your dimensions are fixed or have a few millimetres of flexibility, so we can check the nesting before tooling.',
+        'Tell us whether your dimensions are fixed or have a few millimeters of flexibility, so we can check the nesting before tooling.',
       ],
     },
     formats: {
@@ -641,7 +641,7 @@ export const citiesB: Place[] = [
       { slug: 'indianapolis', why: 'A comparable central distribution market.' },
     ],
     faqs: [
-      { q: 'Can a small dimension change reduce my unit cost?', a: 'Sometimes substantially. If a few millimetres allows an extra piece to nest on the press sheet, every unit gets cheaper for the life of the die. It is worth telling us whether your dimensions have any flexibility before we tool.' },
+      { q: 'Can a small dimension change reduce my unit cost?', a: 'Sometimes substantially. If a few millimeters allows an extra piece to nest on the press sheet, every unit gets cheaper for the life of the die. It is worth telling us whether your dimensions have any flexibility before we tool.' },
       { q: 'Should I quote for one order or a year?', a: 'A year, if you can. Pricing bands work on committed volume, and quoting a single drop when you will actually buy twelve usually leaves money on the table.' },
       { q: 'Can you phase delivery of a bulk run?', a: 'Yes, and at these quantities it is normal. We produce the run and schedule drops against your storage capacity across weeks or months.' },
       { q: 'Do you have a warehouse in Fort Worth?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Fort Worth. Production runs through our manufacturing partners and ships to your address.' },
@@ -666,12 +666,12 @@ export const citiesB: Place[] = [
     variant: 'ecommerce-led',
     sections: ['overview', 'checklist', 'demandTable', 'industries', 'formats', 'logistics', 'ordering', 'nearby', 'resources'],
     keyword: 'custom packaging Columbus Ohio',
-    h1: 'Fulfilment packaging for Columbus distribution centers',
+    h1: 'Fulfillment packaging for Columbus distribution centers',
     eyebrow: 'Columbus · Ohio',
-    lede: 'Columbus exists on the fulfilment map because of where it is. For packaging, that means almost everything we ship here is bought to be shipped again within days.',
-    metaTitle: 'Custom Packaging Columbus | Fulfilment & DTC',
-    metaDescription: 'Custom fulfilment packaging for Columbus distribution centers and DTC brands. Right-sized mailers, fitted inserts and lower damage rates.',
-    sectors: ['E-commerce fulfilment', 'Apparel and retail distribution', 'Consumer goods', 'Third-party logistics'],
+    lede: 'Columbus exists on the fulfillment map because of where it is. For packaging, that means almost everything we ship here is bought to be shipped again within days.',
+    metaTitle: 'Custom Packaging Columbus | Fulfillment & DTC',
+    metaDescription: 'Custom fulfillment packaging for Columbus distribution centers and DTC brands. Right-sized mailers, fitted inserts and lower damage rates.',
+    sectors: ['E-commerce fulfillment', 'Apparel and retail distribution', 'Consumer goods', 'Third-party logistics'],
     overview: {
       h: 'A pack that gets used within the week',
       body: [
@@ -680,7 +680,7 @@ export const citiesB: Place[] = [
       ],
     },
     checklist: {
-      h: 'A fulfilment packaging review',
+      h: 'A fulfillment packaging review',
       intro: 'What we look at when an operation asks us to reduce cost.',
       items: [
         'Product dimensions against the box currently in use.',
@@ -691,7 +691,7 @@ export const citiesB: Place[] = [
       ],
     },
     demandTable: {
-      h: 'Where fulfilment packaging fails',
+      h: 'Where fulfillment packaging fails',
       intro: 'Two different failures with two different fixes.',
       head: ['Symptom', 'Cause', 'Fix'],
       rows: [
@@ -707,7 +707,7 @@ export const citiesB: Place[] = [
         'Apparel and consumer goods dominate, moving through both in-house and third-party operations.',
       ],
       items: [
-        { name: 'E-commerce fulfilment', detail: 'High parcel volumes where a single dimensional band saves meaningfully across a year.' },
+        { name: 'E-commerce fulfillment', detail: 'High parcel volumes where a single dimensional band saves meaningfully across a year.' },
         { name: 'Apparel and retail distribution', detail: 'Soft goods that frequently ship in boxes when a flat format would do.' },
         { name: 'Consumer goods', detail: 'Mixed product sizes where consolidating box count reduces complexity as much as cost.' },
         { name: 'Third-party logistics', detail: 'Operations serving multiple clients, needing plain stock and dependable replenishment.' },
@@ -717,7 +717,7 @@ export const citiesB: Place[] = [
       h: 'Inbound speed and replenishment',
       body: [
         'Ground freight into Columbus takes 5 to 7 business days and the area handles palletized delivery routinely.',
-        'For continuous operations we schedule repeat deliveries against consumption. That matters more than raw speed — a predictable weekly drop is more useful to a fulfilment center than an occasional fast one.',
+        'For continuous operations we schedule repeat deliveries against consumption. That matters more than raw speed — a predictable weekly drop is more useful to a fulfillment center than an occasional fast one.',
       ],
     },
     ordering: {
@@ -728,7 +728,7 @@ export const citiesB: Place[] = [
       ],
     },
     formats: {
-      h: 'Formats for Columbus fulfilment',
+      h: 'Formats for Columbus fulfillment',
       intro: 'Shipping-led throughout.',
       picks: [
         { slug: 'custom-mailers', why: 'The core format, where right-sizing produces the saving.' },
@@ -747,16 +747,16 @@ export const citiesB: Place[] = [
       { slug: 'chicago', why: 'The largest distribution hub in the region.' },
     ],
     faqs: [
-      { q: 'Can you set up a regular replenishment schedule?', a: 'Yes. For continuous operations we schedule deliveries against consumption rather than quoting one large drop. Predictable weekly or fortnightly supply is usually more useful to a fulfilment center than occasional speed.' },
+      { q: 'Can you set up a regular replenishment schedule?', a: 'Yes. For continuous operations we schedule deliveries against consumption rather than quoting one large drop. Predictable weekly or fortnightly supply is usually more useful to a fulfillment center than occasional speed.' },
       { q: 'How do I know whether to change board grade or add an insert?', a: 'Look at what arrives damaged. Crushed boxes mean the grade is too light. Intact boxes with damaged contents mean the product is moving inside, and an insert fixes that at lower cost than heavier board.' },
-      { q: 'How many box sizes should a fulfilment operation run?', a: 'Usually fewer than it does. Each extra size adds purchasing, storage and pick complexity. Send your SKU dimensions and we will propose a consolidated set.' },
+      { q: 'How many box sizes should a fulfillment operation run?', a: 'Usually fewer than it does. Each extra size adds purchasing, storage and pick complexity. Send your SKU dimensions and we will propose a consolidated set.' },
       { q: 'Do you have a warehouse in Columbus?', a: 'We manufacture through our production partners and ship direct — there is no office or warehouse in Columbus. Production runs through our manufacturing partners and ships directly to you.' },
       { q: 'How long does delivery to Columbus take?', a: 'Ground freight is typically 5 to 7 business days after the 3 to 5 business days of production.' },
-      { q: 'Will right-sizing really save enough to justify new tooling?', a: 'At fulfilment volumes, usually within months. The saving applies to every parcel, so the payback depends on your volume rather than on the size of the saving per parcel.' },
+      { q: 'Will right-sizing really save enough to justify new tooling?', a: 'At fulfillment volumes, usually within months. The saving applies to every parcel, so the payback depends on your volume rather than on the size of the saving per parcel.' },
       { q: 'What is the minimum order in Columbus?', a: 'A flat 100 units on any format, which lets you trial a new box against real shipments before switching a line.' },
       { q: 'Do you supply plain stock for third-party operations?', a: 'Yes. Plain corrugated serves every client from one stock, which is usually the right answer for a 3PL.' },
       { q: 'Can you hold the specification so repeats match?', a: 'Yes. We hold board, structure, dimensions and print details against your account so reorders reference the same specification exactly.' },
-      { q: 'How much does fulfilment packaging cost?', a: 'From $0.30 per piece at large volumes. For a fulfilment operation the more meaningful number is total cost per parcel including freight and damage, which we are happy to work through.' },
+      { q: 'How much does fulfillment packaging cost?', a: 'From $0.30 per piece at large volumes. For a fulfillment operation the more meaningful number is total cost per parcel including freight and damage, which we are happy to work through.' },
     ],
     cta: {
       h: 'Review a Columbus packaging set',
@@ -933,7 +933,7 @@ export const citiesB: Place[] = [
     ],
     nearby: [
       { slug: 'indiana', why: 'Statewide context, including RV and heavy industrial work.' },
-      { slug: 'columbus', why: 'A comparable Midwest fulfilment market.' },
+      { slug: 'columbus', why: 'A comparable Midwest fulfillment market.' },
       { slug: 'chicago', why: 'The largest distribution hub in the region.' },
     ],
     faqs: [

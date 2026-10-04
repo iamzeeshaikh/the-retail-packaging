@@ -1,9 +1,9 @@
 ---
 title: Dieline and Artwork Guide
-description: How to work on a packaging dieline, set bleed and safety margins, handle color and fonts, and export a print-ready file that passes prepress first time.
-metaTitle: Dieline and Artwork Guide | Packaging Files
+description: "Print-ready artwork guidelines for packaging dielines: bleed and safety margins, color, fonts, barcodes and export settings that pass prepress first time."
+metaTitle: "Dieline Artwork Guide: Print-Ready Packaging Files"
 publishDate: 2026-05-24
-updatedDate: 2026-08-11
+updatedDate: 2026-10-04
 keyword: dieline and artwork
 kind: howto
 order: 60
@@ -13,7 +13,7 @@ faqs:
   - q: Why can I not just design on a rectangle and send that?
     a: A dieline carries information a rectangle does not — which panel faces front, where the glue lap hides artwork, where creases fall, and where the safe area runs. Artwork built without it routinely places something important under a lap or across a fold, and that is only discovered at proof.
   - q: How much bleed do I need?
-    a: 3 mm past every trim edge is the working standard for folding cartons; corrugated needs more because cutting variance is greater. The reason is mechanical — cutting is never perfect, and without bleed a millimetre of drift exposes bare board along an edge.
+    a: 3 mm past every trim edge is the working standard for folding cartons; corrugated needs more because cutting variance is greater. The reason is mechanical — cutting is never perfect, and without bleed a millimeter of drift exposes bare board along an edge.
   - q: What is a safety margin and how far in should content sit?
     a: It is the distance critical content is held inside trim and fold lines, typically 4 mm. Anything closer risks being trimmed off or landing on a crease, where it distorts. Backgrounds can run to bleed; text and barcodes cannot.
   - q: Should I outline fonts or embed them?
@@ -58,7 +58,7 @@ Extend the actual background artwork into the bleed rather than adding a colored
 
 Convert to CMYK. Define spot colors as named swatches used consistently — two similarly named swatches separate as two plates and are charged as two.
 
-Use a rich black build for large solid areas rather than 100% K alone, which prints as flat gray across a wide panel. Keep small text and thin rules 100% K only, because four-colour small type shows registration fringing.
+Use a rich black build for large solid areas rather than 100% K alone, which prints as flat gray across a wide panel. Keep small text and thin rules 100% K only, because four-color small type shows registration fringing.
 
 Check total ink coverage stays within the press limit, usually around 300%.
 
@@ -69,10 +69,6 @@ Raster images need 300 dpi at placed size, not original size. Scaling up in the 
 Outline all fonts before export, or embed them fully. Outline late so the master file stays editable.
 
 Keep positive text above 6pt and reversed-out text above 8pt. Below that, ink spread fills in counters, particularly on uncoated stock.
-
-## Barcodes
-
-Place on a flat panel, never across a fold or a curve. Keep at or above 80% of nominal size. Print dark on light with a clear quiet zone. Red on white does not scan reliably; light bars on dark do not scan at all.
 
 ## Export
 
@@ -90,8 +86,6 @@ Name the file with product, size and version. A file called "final-v3" is how th
 - Unused swatches deleted
 - Overprint settings checked, especially on white objects
 - Total ink coverage within limit
-
-Once approved, archive the print file alongside the dieline, board specification and color targets. Reorders that reuse an approved file skip most of prepress, which is set out further in our [file requirements reference](/resources/packaging-file-requirements/).
 
 ## What prepress actually checks
 

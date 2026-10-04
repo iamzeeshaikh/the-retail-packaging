@@ -132,7 +132,7 @@ export const categoriesA: CategoryMap = {
       { q: 'Are poly mailers recyclable?', a: 'Through store drop-off in many areas rather than curbside. Mono-material polyethylene is the more recyclable option; mixed-material films generally are not. If recyclability is a stated claim, we will keep to mono-material.' },
       { q: 'Can you match a mailer we already use?', a: 'Yes — send the dimensions or a sample. But it is worth asking whether the existing box is right before we reproduce it, because most are inherited rather than chosen.' },
       { q: 'What is the minimum order for mailers?', a: 'A flat 100 units on any format, which is enough to trial a smaller size against real shipments before switching a line over.' },
-      { q: 'Do you supply plain unprinted mailers?', a: 'Yes, and for third-party fulfilment or wholesale despatch it is usually the sensible choice — one plain stock serves every client.' },
+      { q: 'Do you supply plain unprinted mailers?', a: 'Yes, and for third-party fulfillment or wholesale despatch it is usually the sensible choice — one plain stock serves every client.' },
       { q: 'How much do custom mailers cost?', a: 'From $0.30 per piece at large volumes. For a shipper the more useful figure is total cost per parcel including freight and damage, which we are happy to work through with you.' },
     ],
     cta: {
@@ -427,7 +427,7 @@ export const categoriesA: CategoryMap = {
     guidance: {
       h: 'Fit is the whole specification',
       body: [
-        'A sleeve that is a millimetre loose slides off in handling; a millimetre tight will not go on without tearing. Because the sleeve wraps something else, its dimensions are derived from that object rather than chosen.',
+        'A sleeve that is a millimeter loose slides off in handling; a millimeter tight will not go on without tearing. Because the sleeve wraps something else, its dimensions are derived from that object rather than chosen.',
         'Send the item the sleeve goes around — or its exact dimensions including any lid overhang — and tell us whether it is applied by hand or by machine, because machine application needs a slightly more generous tolerance.',
       ],
     },
@@ -459,7 +459,7 @@ export const categoriesA: CategoryMap = {
     ],
     faqs: [
       { q: 'Why use a sleeve instead of printing the pack?', a: 'Cost across variants. Printing each pack in full means a setup charge per variant; a common base with a printed sleeve moves that cost onto a much smaller piece of material while keeping the variants visually distinct.' },
-      { q: 'How do I measure for a sleeve?', a: 'From the item it wraps, including any lid overhang. Send the object or its exact dimensions — a sleeve is derived rather than chosen, and a millimetre either way is the difference between sliding off and tearing.' },
+      { q: 'How do I measure for a sleeve?', a: 'From the item it wraps, including any lid overhang. Send the object or its exact dimensions — a sleeve is derived rather than chosen, and a millimeter either way is the difference between sliding off and tearing.' },
       { q: 'Are sleeves applied by hand or machine?', a: 'Either, but tell us which. Machine application needs a slightly more generous tolerance than hand application, and specifying for the wrong one causes jams or loose sleeves.' },
       { q: 'Do cup sleeves provide insulation?', a: 'Yes, meaningfully. A single-wall cup with a sleeve is usually cheaper than a double-wall cup and performs comparably, which is why the combination is so common in coffee service.' },
       { q: 'Can a sleeve carry all my regulatory copy?', a: 'Often, yes, and it can be a good solution — the sleeve carries the variable information while the base pack stays constant. Check that the copy remains legible at the sleeve width before committing.' },

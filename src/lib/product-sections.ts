@@ -82,7 +82,7 @@ function overview(c: Ctx): Block {
   if (has(c, 'cold'))
     second.push('Cold and condensation are different problems. Cold makes standard adhesive brittle; condensation softens uncoated board from the outside. If your product meets both, the specification has to address both.')
   if (has(c, 'small'))
-    second.push('At this size the tolerances tighten. A millimetre of slack that would be invisible on a large carton is obvious on a small one, so we usually recommend a structural sample before print.')
+    second.push('At this size the tolerances tighten. A millimeter of slack that would be invisible on a large carton is obvious on a small one, so we usually recommend a structural sample before print.')
   if (!second.length)
     second.push(pick([
       `Minimum order is 100 units on any format, and unit cost falls sharply as quantity rises. Nothing here is a stock item — every run is cut to the dimensions you give us.`,
@@ -296,11 +296,11 @@ function sizing(c: Ctx): Block {
     has(c, 'shipping')
       ? 'Size to the product, not to the box you are using now. Most packs in service were inherited rather than chosen, and dropping a dimensional weight band saves on every parcel for as long as the product sells.'
       : has(c, 'display')
-        ? 'Confirm your retailer’s planogram dimension before we cut the die. A few millimetres on the primary pack can force a full redesign of the case around it.'
+        ? 'Confirm your retailer’s planogram dimension before we cut the die. A few millimeters on the primary pack can force a full redesign of the case around it.'
         : pick([
             'If your product sits outside the usual range, send the measurements and we will tell you whether this format still works or whether a different structure would serve you better.',
             'Send the product measurements rather than a box size. A pack sized to an inherited box carries whatever compromise produced it.',
-            'Dimensions have a cost dimension too: a few millimetres can change how many pieces nest on a press sheet, so tell us if yours have any flexibility.',
+            'Dimensions have a cost dimension too: a few millimeters can change how many pieces nest on a press sheet, so tell us if yours have any flexibility.',
           ], p.slug + 'sz')
   )
   return { h: 'Getting the size right', body }

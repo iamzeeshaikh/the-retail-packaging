@@ -14,7 +14,7 @@ export const statesA: Place[] = [
     h1: 'Packaging for California’s beauty, wellness and DTC brands',
     eyebrow: 'California · United States',
     lede: 'More independent skincare, supplement and cannabis brands launch in California than anywhere else in the country, and each of those categories brings its own labeling rules. We manufacture to order and ship statewide.',
-    metaTitle: 'Custom Packaging California | Beauty, CBD & DTC',
+    metaTitle: 'Custom Retail Packaging California | Beauty, CBD & DTC',
     metaDescription: 'Custom packaging for California beauty, wellness, cannabis and DTC brands. Prop 65 panel space, child-resistant structures and made-to-order runs from 100 units.',
     sectors: ['Beauty and skincare', 'Cannabis and CBD', 'Specialty food and beverage', 'Direct-to-consumer brands'],
     overview: {
@@ -102,7 +102,7 @@ export const statesA: Place[] = [
       { q: 'What is the minimum order for a California delivery?', a: 'A flat 100 units on any format. Shipping to California does not change the minimum, though freight is quoted separately and depends on consignment size.' },
       { q: 'Can you deliver to a Los Angeles address without a loading dock?', a: 'Yes, but tell us before the consignment is booked. Without a dock we ship in cartons rather than on a pallet, or arrange a lift-gate delivery, and both affect the freight cost.' },
       { q: 'Do you offer recyclable packaging that meets California expectations?', a: 'We produce recycled paperboard, kerbside-recyclable coated stock and certified compostable options. Those are three different claims with three different evidence requirements, so tell us which one you intend to print on the pack and we will specify a material that supports it.' },
-      { q: 'Can you split one California order across several addresses?', a: 'Yes. Splitting a run between, say, a Los Angeles fulfilment center and a Bay Area retail account is straightforward if you tell us the split at quoting so freight is costed correctly from the start.' },
+      { q: 'Can you split one California order across several addresses?', a: 'Yes. Splitting a run between, say, a Los Angeles fulfillment center and a Bay Area retail account is straightforward if you tell us the split at quoting so freight is costed correctly from the start.' },
       { q: 'Can I get a sample sent to California before committing?', a: 'Yes. We can send a plain structural sample so you can check the fit, or a printed prototype for color and finish. Sample costs are normally credited against the production order.' },
       { q: 'How much does custom packaging cost for a California brand?', a: 'Prices start from $0.30 per piece for large-volume orders, with final pricing driven by size, material, printing, finishes and quantity. Freight into California is quoted separately.' },
     ],
@@ -121,13 +121,13 @@ export const statesA: Place[] = [
     h1: 'Custom packaging built for Texas volume and Texas heat',
     eyebrow: 'Texas · United States',
     lede: 'Texas orders arrive larger than the coastal average and they sit in warmer warehouses. Both facts change the specification, and both are worth settling before we cut a die.',
-    metaTitle: 'Custom Packaging Texas | Food Service & Fulfilment',
-    metaDescription: 'Custom packaging shipped across Texas. Heat-stable coatings for hot warehouses, food-service formats and bulk runs for the I-35 fulfilment corridor.',
-    sectors: ['Quick-service food', 'Barbecue and specialty food', 'Oil and industrial supply', 'E-commerce fulfilment'],
+    metaTitle: 'Custom Packaging Texas | Food Service & Fulfillment',
+    metaDescription: 'Custom packaging shipped across Texas. Heat-stable coatings for hot warehouses, food-service formats and bulk runs for the I-35 fulfillment corridor.',
+    sectors: ['Quick-service food', 'Barbecue and specialty food', 'Oil and industrial supply', 'E-commerce fulfillment'],
     overview: {
       h: 'Bigger runs, warmer storage',
       body: [
-        'Two things separate a Texas brief from a comparable one on either coast. Order quantities tend to be larger, because food-service operators here buy for multiple sites and fulfilment operations along the I-35 corridor buy in pallet quantities rather than carton quantities. That pushes most jobs past the point where offset or flexo beats digital on unit cost.',
+        'Two things separate a Texas brief from a comparable one on either coast. Order quantities tend to be larger, because food-service operators here buy for multiple sites and fulfillment operations along the I-35 corridor buy in pallet quantities rather than carton quantities. That pushes most jobs past the point where offset or flexo beats digital on unit cost.',
         'The second is storage temperature, and it is the one buyers underestimate. It changes which coating we recommend, not whether the job can be done.',
       ],
     },
@@ -141,13 +141,13 @@ export const statesA: Place[] = [
     industries: {
       h: 'Where Texas packaging demand comes from',
       body: [
-        'Food service across Houston, Dallas and San Antonio accounts for the largest share, with fulfilment volume close behind.',
+        'Food service across Houston, Dallas and San Antonio accounts for the largest share, with fulfillment volume close behind.',
       ],
       items: [
         { name: 'Quick-service food', detail: 'Multi-site operators buying cups, trays and carriers in bulk. Grease resistance and stacking behavior at the counter matter more than finish.' },
         { name: 'Barbecue and specialty food', detail: 'A distinctly Texan category with distinctly awkward packaging: heavy, hot, greasy contents that punish an under-specified board.' },
         { name: 'Oil and industrial supply', detail: 'Parts and consumables that need protective corrugated rather than retail presentation, often with barcode placement dictated by an internal system.' },
-        { name: 'E-commerce fulfilment', detail: 'The I-35 spine between San Antonio and Dallas carries a growing concentration of third-party fulfilment operations buying mailers by the pallet.' },
+        { name: 'E-commerce fulfillment', detail: 'The I-35 spine between San Antonio and Dallas carries a growing concentration of third-party fulfillment operations buying mailers by the pallet.' },
       ],
     },
     demandTable: {
@@ -157,7 +157,7 @@ export const statesA: Place[] = [
       rows: [
         ['Quick-service chain', '25,000+ cups or trays', 'Grease resistance and unit cost at volume'],
         ['Barbecue and smokehouse', 'Heavy-duty trays and carriers', 'Load weight and moisture from hot contents'],
-        ['Fulfilment operator', 'Pallet quantities of mailers', 'Dimensional weight and carrier survival'],
+        ['Fulfillment operator', 'Pallet quantities of mailers', 'Dimensional weight and carrier survival'],
         ['Industrial supplier', 'Corrugated shippers with inserts', 'Protection and barcode placement'],
         ['Retail brand', 'Cartons with heat-stable coating', 'Summer warehouse temperature'],
       ],
@@ -178,11 +178,11 @@ export const statesA: Place[] = [
     },
     formats: {
       h: 'Ranges that suit Texas buyers',
-      intro: 'Weighted toward food service and fulfilment, which is where the volume sits.',
+      intro: 'Weighted toward food service and fulfillment, which is where the volume sits.',
       picks: [
         { slug: 'custom-food-packaging', why: 'The largest category we quote into Texas, from takeout cartons to carriers.' },
         { slug: 'custom-printed-cups', why: 'Multi-site quick-service operators buying at volume.' },
-        { slug: 'custom-mailers', why: 'For the fulfilment corridor between San Antonio and Dallas.' },
+        { slug: 'custom-mailers', why: 'For the fulfillment corridor between San Antonio and Dallas.' },
         { slug: 'custom-food-trays', why: 'Built for heavy, hot and greasy contents rather than dry goods.' },
       ],
     },
@@ -194,7 +194,7 @@ export const statesA: Place[] = [
       { slug: 'houston', why: 'The largest single source of Texas food-service demand.' },
       { slug: 'dallas', why: 'Distribution weight and a separate retail market.' },
       { slug: 'austin', why: 'A different buyer profile — smaller runs, more independent brands.' },
-      { slug: 'san-antonio', why: 'Anchors the southern end of the I-35 fulfilment corridor.' },
+      { slug: 'san-antonio', why: 'Anchors the southern end of the I-35 fulfillment corridor.' },
     ],
     faqs: [
       { q: 'Will Texas summer heat damage laminated packaging in storage?', a: 'It can. Above roughly 100°F some laminating adhesives soften enough that stacked cartons bond where the film touches. It is avoidable: specify a heat-stable adhesive, or use an aqueous coating instead of a film laminate. Tell us if your stock sits in an unconditioned warehouse.' },
@@ -405,7 +405,7 @@ export const statesA: Place[] = [
     ],
     nearby: [
       { slug: 'new-york-city', why: 'Where almost all of the state’s presentation-led demand sits.' },
-      { slug: 'new-jersey', why: 'Where much New York fulfilment actually ships from.' },
+      { slug: 'new-jersey', why: 'Where much New York fulfillment actually ships from.' },
       { slug: 'massachusetts', why: 'The nearest comparable market for short-run, high-finish work.' },
     ],
     faqs: [

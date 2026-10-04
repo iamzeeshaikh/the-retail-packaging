@@ -1,13 +1,17 @@
 ---
 title: Retail Ready Packaging Requirements for Store Shelves
-description: What retailers expect from shelf-ready packaging — footprint, opening, identification, stacking strength and the planogram checks to do before tooling.
-metaTitle: Retail Ready Packaging Requirements Explained
+description: What retail-ready packaging is, how it differs from ordinary retail packaging, and the design requirements retailers check before a case reaches the shelf.
+metaTitle: "Retail-Ready Packaging: Definition, Design and Requirements"
 publishDate: 2026-08-05
-updatedDate: 2026-08-11
+updatedDate: 2026-10-04
 keyword: retail ready packaging
 heroProduct: soap-display-boxes
 heroAlt: Soap display boxes arranged as a retail-ready counter unit with a printed header
 faqs:
+  - q: What is the difference between retail packaging and retail-ready packaging?
+    a: Retail packaging is the pack a shopper picks up and takes home, such as a carton, pouch or bag. Retail-ready packaging is the outer case those packs travel in, built so a store colleague can open it and put the whole case on the shelf as a display.
+  - q: Is shelf-ready packaging the same as retail-ready packaging?
+    a: Yes. Shelf-ready packaging, retail-ready packaging and the abbreviations SRP and RRP all describe the same idea, a shipping case that becomes the shelf display once it is opened. Some retailers prefer one term in their supplier manuals, but the requirements are the same.
   - q: What is retail-ready packaging actually required to do?
     a: Survive distribution as a case, open along a designed line without tools, and become a display that looks deliberate. Those three jobs pull against each other, which is why the format is harder than it appears.
   - q: Where do retailer requirements come from?
@@ -33,6 +37,20 @@ faqs:
 Retail-ready packaging, sometimes called shelf-ready packaging, is a case that arrives at a store, opens in one movement, and becomes the display without anything being unpacked. Retailers push for it because it cuts the labor of restocking. Brands benefit because it controls how the product looks on shelf rather than leaving that to whoever is filling the aisle.
 
 The requirements are specific, and most of them have to be settled before a structural die is cut.
+
+## Retail packaging vs retail-ready packaging
+
+The two terms get used interchangeably, and that causes real ordering mistakes. Retail packaging is the unit a shopper buys. Retail-ready packaging is the case that carries several of those units and turns into their display.
+
+| | Retail packaging | Retail-ready packaging | Plain shipping case |
+|---|---|---|---|
+| Who handles it | The shopper | Store staff, then the shopper | Warehouse staff only |
+| Main job | Sell and protect one unit | Ship, open cleanly, display a group | Protect a group in transit |
+| Typical structure | Folding carton, pouch, bag, label | Corrugated case with a tear-away front | Regular slotted container |
+| Printed for | The shelf and the home | The aisle and the stockroom | Identification only |
+| Thrown away | At home | In store, once empty | In the stockroom |
+
+Most products need the first and one of the other two. A brand selling only online has no use for a retail-ready case; a brand going into grocery or pharmacy chains is often required to supply one.
 
 ## The five things a retailer is judging
 
@@ -97,6 +115,21 @@ Floor-standing displays are built to pallet or half-pallet dimensions and need g
 For both, the header card does the selling. One clear message reads from a distance; three competing ones read as none.
 
 Brands producing point-of-sale units alongside shelf cases will find the structural options across both in our [range of retail display and counter packaging](/custom-display-boxes/), which covers tear-away cases, counter units and floor-standing displays.
+
+## Retail-ready packaging design checklist
+
+Run through these before a structural die is cut. Each one comes up again at the retailer's distribution center if it is missed.
+
+1. Get the retailer's shelf-ready specification in writing, including case dimensions, pallet pattern and barcode position.
+2. Confirm shelf depth, shelf height and facing width from the planogram, and design the footprint to the most restrictive retailer if you sell through several.
+3. Choose the opening method: a perforated tear-away front, a lift-off lid or an open tray with a shrink sleeve.
+4. Set the front lip height so the product is visible but cannot slide out.
+5. Specify board grade against pallet stacking and storage time, not the contents weight.
+6. Put product name, variant, count and barcode on at least two adjacent outer faces.
+7. Print the tray interior and the panels that show as the case empties.
+8. Prototype, fill, palletize and open it one-handed before approving tooling.
+
+Brands launching into several stores at once can work through the wider [pre-production packaging checklist](/resources/retail-packaging-checklist/) alongside this one.
 
 ## Test before tooling
 

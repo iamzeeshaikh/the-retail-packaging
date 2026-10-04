@@ -271,7 +271,7 @@ export const cosmeticFacts: ProductFactsMap = {
     context: 'beauty retail where stock may sit for months and shade ranges run long',
     detail: 'Tell us the formulation base. Solvent-compatible adhesive costs nothing extra and prevents a slow failure.',
     spec: '16pt SBS with a solvent-compatible adhesive, and a fitted insert to keep glass off board.',
-    press: 'Accurate shade representation is the buying criterion. A printed swatch has to be colour-managed carefully.',
+    press: 'Accurate shade representation is the buying criterion. A printed swatch has to be color-managed carefully.',
     pairs: ['lipstick-boxes', 'foundation-boxes', 'blush-boxes'],
     ask: { q: 'Can nail polish damage its own carton?', a: 'Solvent vapor can weaken standard carton adhesive over months in storage. It is a slow failure that appears long after production. A solvent-compatible glue prevents it at no meaningful extra cost.' },
   },

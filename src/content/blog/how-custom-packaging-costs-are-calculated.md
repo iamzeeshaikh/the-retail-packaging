@@ -56,7 +56,7 @@ The crossover generally sits somewhere between 1,000 and 3,000 units, depending 
 
 ## Printing cost scales with colors and coverage
 
-On plate-based printing, each additional color is another plate and another pass. A one-colour job is materially cheaper than a four-colour one, and a design using two spot colors can be far cheaper than a full-colour photographic design at the same quantity.
+On plate-based printing, each additional color is another plate and another pass. A one-color job is materially cheaper than a four-color one, and a design using two spot colors can be far cheaper than a full-color photographic design at the same quantity.
 
 Ink coverage matters too, though less than brands expect. A design with a solid flood color across every panel uses more ink and can require slower press speeds than a design with white space, but it is rarely the dominant cost.
 

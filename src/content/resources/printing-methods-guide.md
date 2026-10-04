@@ -13,7 +13,7 @@ faqs:
   - q: How do I know which print method my job needs?
     a: Ask for the same specification quoted digitally and plate-based, at your quantity and at the next band up. Four numbers show you the shape of both cost curves and where they cross for your particular job — which is more reliable than any rule of thumb, because the crossover moves with color count and finishing.
   - q: Why does color count change the price so much on offset but not digital?
-    a: Offset uses one plate and one press unit per color, so a five-colour job carries five plates and five setups. Digital builds every color from the same four process inks in one pass, so the color count barely registers. It is the single biggest structural difference between the two routes.
+    a: Offset uses one plate and one press unit per color, so a five-color job carries five plates and five setups. Digital builds every color from the same four process inks in one pass, so the color count barely registers. It is the single biggest structural difference between the two routes.
   - q: Can I start on digital and move to offset later?
     a: Yes, and it is a sensible path while volumes are uncertain. Expect a small color shift when you switch, because digital builds a color from process inks while offset can lay it down as a named spot ink. We will show you both on a proof before the changeover run.
   - q: What is litho lamination and when is it worth it?
@@ -60,7 +60,7 @@ Ink transfers from plate to blanket to substrate. One plate per color, and once 
 
 Best color accuracy of the board methods, and spot colors print directly from named inks rather than being approximated. Holds fine detail in small type better than any alternative.
 
-The cost structure is the mirror of digital: high to start, low to continue. Each additional color is another plate and another press unit, which is why a five-colour offset job and a five-colour digital job diverge so sharply in price.
+The cost structure is the mirror of digital: high to start, low to continue. Each additional color is another plate and another press unit, which is why a five-color offset job and a five-color digital job diverge so sharply in price.
 
 ## Flexography
 

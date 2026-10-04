@@ -52,7 +52,7 @@ Digital printing has no plates, so there is nothing to amortise — but its per-
 
 ## Color count and coverage
 
-On plate-based printing, each color is another plate and another pass. A two-spot-colour design can be far cheaper than full-colour photography at the same quantity.
+On plate-based printing, each color is another plate and another pass. A two-spot-color design can be far cheaper than full-color photography at the same quantity.
 
 Ink coverage matters less than brands expect. A flood color uses more ink and can slow press speeds, but it is rarely the dominant cost.
 
@@ -82,23 +82,6 @@ This is why a 250-unit first run carries a poor unit price, and why changing dim
 ## Freight
 
 Priced on weight or volume, whichever is greater. Flat-packed formats ship cheaper than pre-assembled ones, which is why rigid boxes carry higher freight than folding cartons of the same finished size.
-
-For direct-to-consumer brands there is a second, larger freight cost: dimensional weight on every outbound parcel, forever.
-
-## Where savings are safe
-
-- Reduce color count before reducing board grade
-- Ask whether a small dimensional change nests better on the sheet
-- Choose one finish rather than three
-- Order just above a price break rather than just below
-- Share one structural die across several printed variants
-- Right-size the pack, which cuts material and freight together
-
-## Where savings are not safe
-
-Structural performance. The cheapest packaging in a quote is not the cheapest packaging over a year if it fails in transit — a crushed carton costs the product, the replacement shipping and the customer.
-
-Comparing quotes properly requires the specification, not just the number, and our [checklist for pre-production sign-off](/resources/retail-packaging-checklist/) covers what to confirm in writing before committing.
 
 ## How the curve behaves
 
