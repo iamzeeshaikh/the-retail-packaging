@@ -1,0 +1,9 @@
+.git/
+.vercel/
+.astro/
+node_modules/
+dist/
+reports/
+.env
+.env.*
+._*
