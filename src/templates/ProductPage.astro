@@ -6,6 +6,7 @@ import Gallery from '../components/Gallery.astro'
 import QuickSpec from '../components/QuickSpec.astro'
 import ProductCard from '../components/ProductCard.astro'
 import QuoteForm from '../components/QuoteForm.astro'
+import OrderBox from '../components/OrderBox.astro'
 import Faqs from '../components/Faqs.astro'
 import CtaBand from '../components/CtaBand.astro'
 import { relatedProducts, categoryBySlug, type Product } from '../lib/catalog'
@@ -19,6 +20,7 @@ import {
 } from '../lib/product-headings'
 import { specLine, minQty, leadTime, fmtQty } from '../lib/commerce'
 import { SITE } from '../lib/site'
+import { PACK_LINE } from '../lib/order.mjs'
 import * as S from '../lib/schema'
 
 export interface Props { product: Product }
@@ -65,7 +67,8 @@ const specs: [string, string][] = [
     ['Finishes', f.finishes.slice(0, 5).join(', ')],
     ['Minimum order', f.moq.replace(/^[^.]*?from /i, 'From ').split('.')[0] + '.'],
     ['Lead time', '3 to 5 business days after artwork approval'],
-    ['Shipping', 'Across the US, UK, Canada and Australia'],
+    ['Price', `${PACK_LINE} on the standard build`],
+    ['Shipping', 'Free to the US, UK, Canada and Australia'],
   ]),
 ]
 
@@ -114,13 +117,14 @@ const schema = S.graph([
           <div><dt>Minimum order</dt><dd>{fmtQty(minQty(p))} units</dd></div>
           <div><dt>Production</dt><dd>{leadTime(p)[0]}–{leadTime(p)[1]} business days</dd></div>
           <div><dt>Construction</dt><dd>{f.singular}</dd></div>
-          <div><dt>Delivery</dt><dd>US, UK, Canada, Australia</dd></div>
+          <div><dt>Delivery</dt><dd>Free shipping</dd></div>
         </dl>
 
         <Gallery product={p} />
       </div>
 
       <div class="p-panel">
+        <OrderBox slug={p.slug} name={p.name} />
         <QuoteForm
           id="quote"
           variant="short"

@@ -15,7 +15,7 @@ import { factsFor } from '../data/products'
 import { traitsOf } from './product-traits'
 import { benefitLabels } from './product-headings'
 
-/* Same line as SITE.priceLine, which is built from the UNIT_PRICE_FROM floor
+/* Same line as SITE.priceLine, the online pack price from src/lib/order.mjs
    the Product Offer quotes. One constant, so page text and schema cannot
    drift apart. */
 export const PRICE_LINE = SITE.priceLine
@@ -366,7 +366,7 @@ export function productFaqs(p: Product): Faq[] {
     },
     {
       q: `How much do ${l} cost?`,
-      a: `${PRICE_LINE} Because this format is made to order, we quote each project rather than publishing a fixed rate.`,
+      a: `${PRICE_LINE}`,
     },
     {
       q: `How are ${l} delivered?`,
@@ -451,7 +451,7 @@ export function categoryFaqs(c: Category, count: number): Faq[] {
     },
     {
       q: `How is pricing calculated for ${k}?`,
-      a: `${PRICE_LINE} We quote each project individually because the same format can vary widely in cost once size, board grade and finishing are set.`,
+      a: `${PRICE_LINE} Quoted projects are priced individually because the same format can vary widely in cost once size, board grade and finishing are set.`,
     },
     {
       q: `What artwork format should I send?`,

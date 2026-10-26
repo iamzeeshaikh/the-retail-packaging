@@ -1,0 +1,108 @@
+---
+/**
+ * Checkout for the online order box. No card is taken here: the order is emailed to the
+ * office and paid by PayPal invoice, bank transfer invoice, or cash on delivery in the
+ * US and Canada. Lines live in localStorage; api/order.js re-prices every line.
+ */
+import Base from '../layouts/Base.astro'
+import raw from '../data/catalog.json'
+import { SITE } from '../lib/site'
+import { PACK_QTY, PACK_PRICE, MAX_PACKS, SHIP_COUNTRIES, SHIP_LINE, PAYMENT_METHODS, COD_COUNTRIES, HANDLING_DAYS, TRANSIT_DAYS, money } from '../lib/order.mjs'
+
+const catalog = Object.fromEntries((raw.products as { slug: string; name: string }[]).map((p) => [p.slug, p.name]))
+const cfg = { catalog, pack: PACK_PRICE, qty: PACK_QTY, max: MAX_PACKS, cod: COD_COUNTRIES }
+---
+<Base title="Checkout | The Retail Packaging" description={`Order custom packaging online: ${PACK_QTY} units for ${money(PACK_PRICE)} per product with ${SHIP_LINE.toLowerCase()}. Pay by invoice after you approve your free proof.`} path="/checkout/" noindex>
+  <section class="section">
+    <div class="wrap co">
+      <h1>Checkout</h1>
+      <p class="lede">{SHIP_LINE}. Nothing is printed or charged before you approve a free digital proof of your artwork.</p>
+
+      <form id="trp-co-form" class="co-grid" novalidate>
+        <div class="co-main">
+          <fieldset class="co-set">
+            <legend>Your details</legend>
+            <div class="co-two">
+              <div class="field co-wide"><label for="co-name">Full name *</label><input class="input" id="co-name" name="name" autocomplete="name" required maxlength="120" /></div>
+              <div class="field"><label for="co-email">Email *</label><input class="input" id="co-email" name="email" type="email" autocomplete="email" required maxlength="180" /></div>
+              <div class="field"><label for="co-phone">Phone *</label><input class="input" id="co-phone" name="phone" type="tel" autocomplete="tel" required maxlength="40" /></div>
+              <div class="field co-wide"><label for="co-company">Company (optional)</label><input class="input" id="co-company" name="company" autocomplete="organization" maxlength="140" /></div>
+            </div>
+          </fieldset>
+
+          <fieldset class="co-set">
+            <legend>Shipping address</legend>
+            <div class="co-two">
+              <div class="field co-wide"><label for="co-country">Country *</label>
+                <select class="select" id="co-country" name="country" autocomplete="country" required>
+                  {SHIP_COUNTRIES.map((c) => <option value={c.code}>{c.name}</option>)}
+                </select>
+              </div>
+              <div class="field co-wide"><label for="co-a1">Address *</label><input class="input" id="co-a1" name="address1" autocomplete="address-line1" required maxlength="200" /></div>
+              <div class="field co-wide"><label for="co-a2">Apartment, suite, unit (optional)</label><input class="input" id="co-a2" name="address2" autocomplete="address-line2" maxlength="200" /></div>
+              <div class="field"><label for="co-city">City *</label><input class="input" id="co-city" name="city" autocomplete="address-level2" required maxlength="100" /></div>
+              <div class="field"><label for="co-region">State, province or county</label><input class="input" id="co-region" name="region" autocomplete="address-level1" maxlength="60" /></div>
+              <div class="field"><label for="co-postal">ZIP or postcode *</label><input class="input" id="co-postal" name="postal" autocomplete="postal-code" required maxlength="20" /></div>
+            </div>
+            <p class="small muted">Shipping somewhere else? <a href="/request-a-quote/">Request a quote</a> with your country.</p>
+          </fieldset>
+
+          <fieldset class="co-set">
+            <legend>Payment</legend>
+            {PAYMENT_METHODS.map((m, i) => (
+              <label class="co-pay" data-pm={m.id}>
+                <input type="radio" name="payment" value={m.id} checked={i === 0} />
+                <span><strong>{m.name}</strong><br /><span class="small muted">{m.detail}</span></span>
+              </label>
+            ))}
+          </fieldset>
+
+          <fieldset class="co-set">
+            <legend>Artwork and notes</legend>
+            <div class="field"><label for="co-art">Logo or artwork file (optional, up to 4 MB)</label><input id="co-art" name="artwork" type="file" accept=".pdf,.ai,.eps,.svg,.png,.jpg,.jpeg,.zip" /></div>
+            <div class="field"><label for="co-notes">Notes: size, colors, finish, deadline (optional)</label><textarea class="input" id="co-notes" name="notes" rows="4" maxlength="3000"></textarea></div>
+          </fieldset>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
+        </div>
+
+        <aside class="co-side">
+          <h2>Your order</h2>
+          <table class="co-lines"><tbody data-lines><tr><td>Your order is empty. <a href="/sitemap/">Choose packaging</a></td></tr></tbody></table>
+          <table class="co-sum">
+            <tr><td>Shipping</td><td class="r co-free">Free</td></tr>
+            <tr><th>Total</th><th class="r" data-grand>$0.00</th></tr>
+          </table>
+          <p class="small muted">Production {HANDLING_DAYS[0]}–{HANDLING_DAYS[1]} business days after proof approval, then {TRANSIT_DAYS[0]}–{TRANSIT_DAYS[1]} business days in transit. Prices in US dollars.</p>
+          <p class="co-err" data-err role="alert"></p>
+          <button type="submit" class="btn btn-primary btn-block" data-place disabled>Place order</button>
+          <p class="small muted">Questions? Call {SITE.phone} or email {SITE.email}.</p>
+        </aside>
+      </form>
+    </div>
+  </section>
+  <script is:inline define:vars={{ cfg }}>window.TRP_CHECKOUT = cfg;</script>
+  <script src="/trp-checkout.js" defer></script>
+</Base>
+
+<style>
+  .co h1 { margin-bottom: 8px; }
+  .co-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px; align-items: start; margin-top: 24px; }
+  .co-set { border: 1px solid var(--line, #d9d9de); background: #fff; padding: 18px 20px; margin: 0 0 20px; border-radius: 2px; }
+  .co-set legend { font-weight: 600; padding: 0 6px; }
+  .co-two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px 16px; }
+  .co-wide { grid-column: 1 / -1; }
+  .co-pay { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-top: 1px solid var(--line, #ececf0); cursor: pointer; }
+  .co-pay:first-of-type { border-top: 0; }
+  .co-pay.off { opacity: .45; cursor: not-allowed; }
+  .co-pay input { margin-top: 4px; }
+  .co-side { border: 1px solid var(--line, #d9d9de); background: #fff; padding: 20px; position: sticky; top: 96px; border-radius: 2px; }
+  .co-side h2 { font-size: 20px; margin: 0 0 12px; }
+  .co-lines, .co-sum { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .co-lines td { padding: 10px 0; border-bottom: 1px solid var(--line, #ececf0); vertical-align: top; }
+  .co-sum td, .co-sum th { padding: 8px 0; text-align: left; }
+  .r { text-align: right !important; white-space: nowrap; }
+  .co-free { color: #1d7a3a; font-weight: 600; }
+  .co-err { color: #b91c1c; min-height: 1em; font-size: 14px; }
+  [aria-invalid='true'] { border-color: #b91c1c !important; }
+  @media (max-width: 900px) { .co-grid { grid-template-columns: minmax(0, 1fr); } .co-side { position: static; } .co-two { grid-template-columns: minmax(0, 1fr); } }
+</style>

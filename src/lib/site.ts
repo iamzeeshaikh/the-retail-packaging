@@ -36,7 +36,7 @@ export const SITE = {
   markets: ['United States', 'United Kingdom', 'Canada', 'Australia'] as const,
   marketCodes: ['US', 'GB', 'CA', 'AU'] as const,
   social: [] as string[], // no invented profiles
-  priceLine: `Prices start from $${UNIT_PRICE_FROM} per piece for large-volume orders. Final pricing depends on size, material, printing, finishes, and quantity.`,
+  priceLine: `Order online at $30.00 for 100 units on our standard build, with free shipping to the US, UK, Canada and Australia. Special sizes, materials, finishes and large runs are priced by quote.`,
 } as const
 
 export function abs(path: string): string {

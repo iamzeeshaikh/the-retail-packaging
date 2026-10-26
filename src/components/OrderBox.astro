@@ -1,0 +1,45 @@
+---
+/**
+ * Online order box on every product page. The price comes from src/lib/order.mjs,
+ * the same constant the Product Offer JSON-LD and the Merchant feed read, so the page,
+ * the listing and the order can never disagree. "Add to order" keeps the line in
+ * localStorage and opens /checkout/; public/trp-order.js does the interaction.
+ */
+import { PACK_QTY, PACK_PRICE, MAX_PACKS, SHIP_LINE, PAYMENT_LINE, money } from '../lib/order.mjs'
+
+interface Props { slug: string; name: string }
+const { slug, name } = Astro.props
+const options = Array.from({ length: MAX_PACKS }, (_, i) => i + 1)
+---
+
+<form class="order-box" id="order" data-trp-order data-slug={slug} data-pack={PACK_PRICE} action="/checkout/" method="get">
+  <p class="ob-title">Order online</p>
+  <p class="ob-price"><strong>{money(PACK_PRICE)}</strong> <span>for {PACK_QTY} {name.toLowerCase()}</span></p>
+  <p class="ob-ship">{SHIP_LINE}</p>
+  <div class="ob-row">
+    <div class="field">
+      <label for={`ob-qty-${slug}`}>Quantity</label>
+      <select class="select" id={`ob-qty-${slug}`} name="packs">
+        {options.map((n) => <option value={n}>{(n * PACK_QTY).toLocaleString('en-US')} units</option>)}
+      </select>
+    </div>
+    <p class="ob-total">Total <strong data-total>{money(PACK_PRICE)}</strong></p>
+  </div>
+  <input type="hidden" name="add" value={slug} />
+  <button type="submit" class="btn btn-primary btn-block">Add to order</button>
+  <p class="ob-note">{PAYMENT_LINE} The price covers our standard build. Special sizes, materials and finishes are priced by quote.</p>
+</form>
+<script src="/trp-order.js" defer></script>
+
+<style>
+  .order-box { border: 1px solid var(--line, #d9d9de); background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 2px; }
+  .ob-title { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; margin: 0 0 6px; }
+  .ob-price { margin: 0; font-size: 15px; }
+  .ob-price strong { font-size: 30px; line-height: 1.1; margin-right: 4px; }
+  .ob-ship { margin: 6px 0 14px; font-size: 14px; font-weight: 600; color: #1d7a3a; }
+  .ob-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: end; margin-bottom: 14px; }
+  .ob-row .field { margin: 0; }
+  .ob-total { margin: 0 0 10px; font-size: 14px; white-space: nowrap; }
+  .ob-total strong { font-size: 18px; }
+  .ob-note { margin: 12px 0 0; font-size: 13px; line-height: 1.5; color: var(--muted, #5b5b63); }
+</style>

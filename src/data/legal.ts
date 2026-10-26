@@ -39,10 +39,11 @@ export const legalPages: LegalPage[] = [
     title: 'Terms and Conditions',
     metaTitle: 'Terms and Conditions | The Retail Packaging',
     description: 'The terms covering quotes, orders, artwork approval, tooling, delivery, cancellation and liability for custom packaging manufactured to order.',
-    updated: '10 August 2026',
+    updated: '26 October 2026',
     intro: 'These terms apply to quotes issued and orders accepted by The Retail Packaging. Custom manufacturing carries obligations on both sides, and these set them out plainly.',
     sections: [
       { h2: 'Quotes', body: ['Quotes state a specification, quantity, lead time and price. They are valid for 30 days unless stated otherwise. Prices are exclusive of freight and applicable taxes unless the quote says otherwise.', 'A change to specification, quantity or material after quoting requires a reissued quote, because each of those changes the price.'] },
+      { h2: 'Online orders', body: ['Products ordered through the website are sold in runs of 100 units at $30.00 per product on our standard build, with free shipping to the United States, the United Kingdom, Canada and Australia. Payment is by PayPal invoice or bank transfer invoice after you approve your free digital proof, or cash on delivery for US and Canadian addresses. Nothing is printed before you approve the proof.'] },
       { h2: 'Orders and acceptance', body: ['An order is accepted when we confirm it in writing. Production does not begin until artwork is approved and, where applicable, payment terms are met.'] },
       { h2: 'Artwork and approval', body: ['You are responsible for the content of artwork you supply, including the accuracy of regulated panel information, ingredient declarations, warnings, barcodes and any claims printed on the pack.', 'We check artwork for technical print readiness — bleed, resolution, embedded fonts, color build and cut lines. That check does not verify legal or factual accuracy of the content.', 'Production runs against the proof you approve. Errors present in an approved proof are not grounds for replacement at our cost.'] },
       { h2: 'Tooling', body: ['Structural cutting dies and stamping dies are produced for your specification and charged once. They remain available for reorders at the same specification. A change in dimensions requires new tooling.'] },

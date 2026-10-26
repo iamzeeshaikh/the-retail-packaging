@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro'
+import { SITE } from '../lib/site'
+import { PAYMENT_METHODS, HANDLING_DAYS, TRANSIT_DAYS } from '../lib/order.mjs'
+const pay = Object.fromEntries(PAYMENT_METHODS.map((m) => [m.id, m.detail]))
+---
+<Base title="Order Received | The Retail Packaging" description="Your packaging order has been received. We email a free digital proof before anything is printed." path="/order-confirmed/" noindex>
+  <section class="section">
+    <div class="wrap wrap-narrow">
+      <h1>Order received</h1>
+      <p class="lede">Thank you. Your order is with our team and a copy is on its way to your inbox.</p>
+      <p data-ref hidden>Your order number: <strong data-ref-value></strong></p>
+      <h2>What happens next</h2>
+      <ol>
+        <li>We check your artwork and email a free digital proof.</li>
+        <li>You approve the proof or ask for changes. Nothing is printed before you approve.</li>
+        <li data-pay>{pay.paypal}</li>
+        <li>Production takes {HANDLING_DAYS[0]}–{HANDLING_DAYS[1]} business days, then your order ships free and arrives in {TRANSIT_DAYS[0]}–{TRANSIT_DAYS[1]} business days.</li>
+      </ol>
+      <p class="muted">Questions? Call {SITE.phone} or email {SITE.email} and quote your order number.</p>
+    </div>
+  </section>
+  <script is:inline define:vars={{ pay }}>
+    (function () {
+      var q = new URLSearchParams(location.search), ref = q.get('ref'), p = q.get('pay');
+      if (ref) { var r = document.querySelector('[data-ref]'); r.querySelector('[data-ref-value]').textContent = ref; r.hidden = false; }
+      if (p && pay[p]) document.querySelector('[data-pay]').textContent = pay[p];
+    })();
+  </script>
+</Base>

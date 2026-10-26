@@ -500,7 +500,7 @@ function cost(c: Ctx): Block {
     h: 'What moves the price',
     body: [
       'Four things drive a quote more than anything else: the quantity, the print route, the board grade and the number of finishing passes. Dimensions matter too, but usually through how efficiently the shape nests on the press sheet.',
-      'Prices start from $0.30 per piece for large-volume orders. If a cheaper route exists we say so at quoting rather than after the invoice.',
+      'Online orders on our standard build are $30.00 per 100 units with free shipping. For anything beyond that build we quote, and if a cheaper route exists we say so at quoting rather than after the invoice.',
     ],
   }
 }

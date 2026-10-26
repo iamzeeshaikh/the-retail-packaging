@@ -5,7 +5,8 @@
  * the page. `aggregateRating` and `review` are supported but deliberately
  * withheld until verified review data exists — see `RATINGS_ENABLED`.
  */
-import { SITE, UNIT_PRICE_FROM, abs, canonical } from './site'
+import { SITE, abs, canonical } from './site'
+import { PACK_QTY, PACK_PRICE_TEXT, SHIP_COUNTRIES, HANDLING_DAYS, TRANSIT_DAYS } from './order.mjs'
 
 /**
  * Offer validity: one year from the build date, computed rather than pinned to
@@ -186,38 +187,33 @@ export function product(input: ProductSchemaInput): Json {
     brand: { '@type': 'Brand', name: SITE.name },
     manufacturer: { '@id': `${SITE.origin}/#organization` },
     image: input.images.map((i) => abs(i)),
-    /* A single Offer, not an AggregateOffer. Google does not treat a price
-       range as eligible for a merchant listing, so every product page failed
-       that check. The price is the published $0.30 volume floor — the same
-       UNIT_PRICE_FROM constant the visible price line on the page is built
-       from, so the two cannot drift.
-
-       `shippingDetails` carries no rate: freight is quoted per consignment
-       and the business publishes none. The delivery window is confirmed by the
-       client for all four markets (3-5 business days production after artwork
-       approval, then 5-7 in transit), so that much is stated. */
+    /* A single Offer, not an AggregateOffer. The price is the online pack price from
+       src/lib/order.mjs (100 units for $30.00, owner 2026-10-26): the same constant the
+       order box, the checkout, api/order.js and the Merchant feed read, so the page, the
+       listing and the order cannot drift. eligibleQuantity says the price is for 100.
+       Shipping is free to all four markets: 3-5 business days production after proof
+       approval, then 5-7 in transit. */
     offers: {
       '@type': 'Offer',
       '@id': `${url}#offer`,
       url,
       priceCurrency: 'USD',
-      price: UNIT_PRICE_FROM,
+      price: PACK_PRICE_TEXT,
+      eligibleQuantity: { '@type': 'QuantitativeValue', value: PACK_QTY, unitCode: 'C62' },
       priceValidUntil: priceValidUntil(),
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
       seller: { '@id': `${SITE.origin}/#organization` },
-      shippingDetails: {
+      shippingDetails: SHIP_COUNTRIES.map((c) => ({
         '@type': 'OfferShippingDetails',
-        shippingDestination: ['US', 'GB', 'CA', 'AU'].map((addressCountry) => ({
-          '@type': 'DefinedRegion',
-          addressCountry,
-        })),
+        shippingRate: { '@type': 'MonetaryAmount', value: '0', currency: 'USD' },
+        shippingDestination: { '@type': 'DefinedRegion', addressCountry: c.code },
         deliveryTime: {
           '@type': 'ShippingDeliveryTime',
-          handlingTime: { '@type': 'QuantitativeValue', minValue: 3, maxValue: 5, unitCode: 'DAY' },
-          transitTime: { '@type': 'QuantitativeValue', minValue: 5, maxValue: 7, unitCode: 'DAY' },
+          handlingTime: { '@type': 'QuantitativeValue', minValue: HANDLING_DAYS[0], maxValue: HANDLING_DAYS[1], unitCode: 'DAY' },
+          transitTime: { '@type': 'QuantitativeValue', minValue: TRANSIT_DAYS[0], maxValue: TRANSIT_DAYS[1], unitCode: 'DAY' },
         },
-      },
+      })),
       /* Real policy, quoted from /shipping-information/: packaging made to an
          approved proof cannot be resold, so it is not returnable. */
       hasMerchantReturnPolicy: {

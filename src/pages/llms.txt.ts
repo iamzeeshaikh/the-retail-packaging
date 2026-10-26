@@ -12,8 +12,8 @@ export const GET: APIRoute = () => {
 > Custom retail packaging manufactured to order for brands selling in the United States, the United Kingdom, Canada and Australia.
 > ${totals.products} formats across ${totals.categories} categories, all cut to the buyer's dimensions.
 
-Pricing starts from $0.30 per piece at large volume. Final pricing depends on size, material,
-printing, finishes and quantity, so every project is quoted individually.
+Every product can be ordered online at $30.00 for 100 units on the standard build, with free
+shipping to the US, UK, Canada and Australia. Special builds and large runs are quoted individually.
 
 We do not operate local offices in the cities we ship to. Every quote states the board grade,
 the structure, the print method, the finishing and the lead time rather than a price alone.
