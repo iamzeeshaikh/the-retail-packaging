@@ -9,9 +9,14 @@ import { PACK_QTY, PACK_PRICE_TEXT, SHIP_COUNTRIES, HANDLING_DAYS, TRANSIT_DAYS 
 
 const x = (s: unknown) => String(s ?? '').replace(/[<>&'"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[c]!)
 
+// Packaging for these is legal and stays on the site, but Google Shopping disapproves the
+// listings under its tobacco and personal-hardships policies (first review 2026-10-26).
+// Repeated policy disapprovals put the account at risk, so they stay out of the feed.
+const FEED_EXCLUDE = new Set(['cigarette-boxes', 'cbd-dissolvable-sleep-tablets-boxes'])
+
 export const GET: APIRoute = () => {
   const items = products
-    .filter((p) => p.images.length)
+    .filter((p) => p.images.length && !FEED_EXCLUDE.has(p.slug))
     .map((p) => {
       const imgs = p.images.slice(0, 6).map((i) => `${SITE.origin}${i.base}-1400.webp`)
       const cat = categoryBySlug.get(p.categorySlug)
