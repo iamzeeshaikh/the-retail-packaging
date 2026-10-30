@@ -32,6 +32,18 @@ export const SITE = {
   whatsappMessage:
     'Hi The Retail Packaging! I need more info about The Retail Packaging https://theretailpackaging.com/',
   country: 'US',
+  /* Business address (owner decision 2026-10-31). Google Merchant Center
+     carries this exact address, so the footer, contact page, llms.txt, the
+     privacy policy and the Organization schema all read it from here. */
+  address: {
+    street: '1639 70th St',
+    locality: 'Brooklyn',
+    region: 'NY',
+    postalCode: '11204',
+    country: 'US',
+    countryName: 'United States',
+  },
+  addressLine: '1639 70th St, Brooklyn, NY 11204, United States',
   /** Markets served, in the order they are listed publicly. */
   markets: ['United States', 'United Kingdom', 'Canada', 'Australia'] as const,
   marketCodes: ['US', 'GB', 'CA', 'AU'] as const,

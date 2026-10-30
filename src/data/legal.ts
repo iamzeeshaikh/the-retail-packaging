@@ -31,7 +31,7 @@ export const legalPages: LegalPage[] = [
       { h2: 'Your rights', body: ['You can ask us for a copy of the data we hold about you, ask us to correct it, or ask us to delete it where we are not required to keep it. Write to the contact address below and we will respond within 30 days.'] },
       { h2: 'Cookies and analytics', body: ['The site sets no advertising cookies. Where analytics is enabled it is used to understand which pages are useful, not to identify individuals. Full detail is in our cookie policy.'] },
       { h2: 'Security', body: ['Form submissions travel over HTTPS. Uploaded files are validated by type and size and renamed before storage. Credentials for our email systems are held in environment variables and never appear in the website code delivered to your browser.'] },
-      { h2: 'Contact', body: ['Questions about this policy, or requests about your data, can be sent to info@theretailpackaging.com, or by phone on +1 503-461-4788 in the US or +44 7458 651107 in the UK.'] },
+      { h2: 'Contact', body: ['Questions about this policy, or requests about your data, can be sent to info@theretailpackaging.com, by phone on +1 503-461-4788 in the US or +44 7458 651107 in the UK, or by post to 1639 70th St, Brooklyn, NY 11204, United States.'] },
     ],
   },
   {

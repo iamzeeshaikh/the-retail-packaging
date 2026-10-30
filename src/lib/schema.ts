@@ -45,6 +45,14 @@ export function organization(): Json {
     image: { '@id': `${SITE.origin}/#logo` },
     email: SITE.email,
     telephone: SITE.phone,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: SITE.address.street,
+      addressLocality: SITE.address.locality,
+      addressRegion: SITE.address.region,
+      postalCode: SITE.address.postalCode,
+      addressCountry: SITE.address.country,
+    },
     areaServed: SITE.markets.map((name) => ({ '@type': 'Country', name })),
     contactPoint: [
       {

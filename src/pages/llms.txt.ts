@@ -35,6 +35,7 @@ ${cats}
 Phone (US): ${SITE.phone}
 Phone (UK): ${SITE.phoneUk}
 Email: ${SITE.email}
+Address: ${SITE.addressLine}
 `
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
 }

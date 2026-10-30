@@ -16,7 +16,7 @@ const faqs = [
   { q: 'Who will I be speaking to?', a: 'A specifier who can discuss structure, material and print, not a call handler passing a message along. The same person then handles your quote, proof and production.' },
   { q: 'Can you help before I know what I need?', a: 'Yes, and that is a common starting point. Describe the product and how it sells, and we will suggest formats worth considering.' },
   { q: 'How do I check on an existing order?', a: 'Reply to your quote email or call with the reference number. We can tell you where the job is in production and whether the date is still firm.' },
-  { q: 'Do you have a physical address for visits?', a: 'We do not run public facility visits. For large programs we can arrange a production review with the relevant partner facility.' },
+  { q: 'Do you have a physical address for visits?', a: `Our business address is ${SITE.addressLine}. We do not run public facility visits. For large programs we can arrange a production review with the relevant partner facility.` },
   { q: 'Can I send artwork by email?', a: 'Yes, for files under 20 MB. Anything larger is better sent as a download link, or uploaded through the quote form.' },
   { q: 'Do you work with agencies?', a: 'Yes. We can work directly with an agency on behalf of a client, including supplying dielines and technical specifications for design work.' },
   { q: 'Do you handle inquiries from outside the US?', a: 'Yes. We supply brands in the United Kingdom, Canada and Australia as well as the United States, on identical terms — same specification process, same 100-unit minimum, same 3 to 5 day production and 5 to 7 day transit. Only the freight cost changes, and we work that out per consignment.' },
@@ -46,6 +46,7 @@ const schema = S.graph([
           <div><dt>Phone (US)</dt><dd><a href={SITE.phoneHref} data-analytics="phone-click">{SITE.phone}</a></dd></div>
           <div><dt>Phone (UK)</dt><dd><a href={SITE.phoneUkHref} data-analytics="phone-click">{SITE.phoneUk}</a></dd></div>
           <div><dt>Email</dt><dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd></div>
+          <div><dt>Address</dt><dd><address class="c-address">{SITE.addressLine}</address></dd></div>
           <div><dt>WhatsApp</dt><dd><a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" data-analytics="whatsapp-click">{SITE.whatsappDisplay}</a></dd></div>
           <div><dt>Coverage</dt><dd>United States, United Kingdom, Canada, Australia</dd></div>
         </dl>
@@ -69,4 +70,5 @@ const schema = S.graph([
     padding:.7rem 0; border-bottom:1px solid var(--border); font-size:var(--fs-sm); }
   .contact-list dt { font-weight:600; color:var(--ink); }
   .contact-list dd { margin:0; color:var(--text-muted); }
+  .c-address { font-style:normal; }
 </style>

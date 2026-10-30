@@ -55,6 +55,7 @@ const legal = [
           <a href={SITE.phoneHref} data-analytics="phone-click">US {SITE.phone}</a>
           <a href={SITE.phoneUkHref} data-analytics="phone-click">UK {SITE.phoneUk}</a>
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          <address class="foot-address">{SITE.addressLine}</address>
         </div>
         <a class="btn btn-accent" href="/request-a-quote/">Request a Quote</a>
       </div>
@@ -103,6 +104,7 @@ const legal = [
   .foot-contact { display: grid; gap: 0.35rem; margin-bottom: var(--s-6); }
   .foot-contact a { color: var(--accent-soft); text-decoration: none; }
   .foot-contact a:hover { text-decoration: underline; }
+  .foot-address { font-style: normal; color: rgba(246, 243, 237, 0.72); }
   .foot-contact span { color: rgba(246, 243, 237, 0.5); font-size: var(--fs-xs); }
 
   .foot-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-8); }
